@@ -4,3 +4,26 @@ alias ..="cd .."
 # Directory Listings 
 alias la="ls -la"
 alias ls1="ls -1"
+
+# Misc
+alias sudo="sudo "
+alias week="date +%V"
+
+# Git aliases
+# Thanks to TJ Holowaychuk
+alias gl="git log --pretty=oneline --abbrev-commit --graph --decorate"
+alias gd="git diff | vim"
+alias ga="git add"
+alias gbd="git branch -D"
+alias gst="git status"
+alias gca="git commit -a -m"
+alias gm="git merge --no-ff"
+alias gpt="git push --tags"
+alias gp="git push"
+alias grh="git reset --hard"
+alias gb="git branch"
+alias gcob="git checkout -b"
+alias gco="git checkout"
+alias gba="git branch -a"
+alias gcp="git cherry-pick"
+alias gpom="git pull origin master"
