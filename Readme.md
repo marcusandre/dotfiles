@@ -1,5 +1,5 @@
 
-# Marcus André's Dotfiles
+# Dotfiles
 
 That's the way I like my system to work. :-)
 
