@@ -1,0 +1,6 @@
+# Navigation
+alias ..="cd .."
+
+# Directory Listings 
+alias la="ls -la"
+alias ls1="ls -1"

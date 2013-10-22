@@ -1,0 +1,26 @@
+# Prefix Path
+export PATH=/usr/local/bin:$PATH
+
+# Hail to the Vim, Baby
+export EDITOR=vim
+
+# Homebrew Bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
+fi
+
+# Initialize rbenv and it's rubies
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Init z
+. `brew --prefix`/etc/profile.d/z.sh
+
+# Call the prompt
+if [ -f ~/.bash_prompt ]; then
+    source ~/.bash_prompt
+fi
+
+# Call the aliases
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
