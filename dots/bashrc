@@ -24,3 +24,6 @@ fi
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
+
+# Load nvm into shell session
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
