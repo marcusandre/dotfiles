@@ -10,5 +10,10 @@ if [[ ! -d ~/.nvm ]]; then
   git clone https://github.com/creationix/nvm.git ~/.nvm
 fi
 
+# install vundle
+if [[ ! -d ~/.vim/bundle/vundle ]]; then
+  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
+
 # reload the profile
 source ~/.bash_profile
