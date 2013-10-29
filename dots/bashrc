@@ -17,7 +17,9 @@ fi
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Init z
-. `brew --prefix`/etc/profile.d/z.sh
+if [ -f ~/bin/z ]; then
+  . ~/bin/z
+fi
 
 # Call the prompt
 if [ -f ~/.bash_prompt ]; then

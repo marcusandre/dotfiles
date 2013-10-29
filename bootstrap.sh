@@ -15,5 +15,11 @@ if [[ ! -d ~/.vim/bundle/vundle ]]; then
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 
+# install z
+if [[ ! -f ~/bin/z ]]; then
+  wget https://raw.github.com/rupa/z/master/z.sh -O ~/bin/z
+  chmod +x ~/bin/z
+fi
+
 # reload the profile
 source ~/.bash_profile
