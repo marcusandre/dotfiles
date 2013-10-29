@@ -15,6 +15,10 @@ if [[ ! -d ~/.vim/bundle/vundle ]]; then
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 
+if [[ ! -d ~/bin ]]; then
+  mkdir ~/bin
+fi
+
 # install z
 if [[ ! -f ~/bin/z ]]; then
   wget https://raw.github.com/rupa/z/master/z.sh -O ~/bin/z
