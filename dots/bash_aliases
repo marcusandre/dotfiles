@@ -1,13 +1,15 @@
 # Navigation
 alias ..="cd .."
 
-# Directory Listings 
+# Directory Listings
 alias la="ls -la"
 alias ls1="ls -1"
 
 # Misc
 alias sudo="sudo "
 alias week="date +%V"
+alias rf="rm -rf"
+alias mounts="mount | column -t"
 
 # Git aliases
 # Thanks to TJ Holowaychuk
@@ -27,3 +29,15 @@ alias gco="git checkout"
 alias gba="git branch -a"
 alias gcp="git cherry-pick"
 alias gpom="git pull origin master"
+
+# Functions
+
+# cd into new directory
+function take {
+  mkdir -p "$@" && cd "$_";
+}
+
+# serve tree via http
+function serve {
+  python -m SimpleHTTPServer
+}
