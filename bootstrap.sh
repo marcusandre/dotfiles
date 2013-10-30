@@ -25,5 +25,11 @@ if [[ ! -f ~/bin/z ]]; then
   chmod +x ~/bin/z
 fi
 
+# install watch
+if [[ ! -f ~/bin/watch ]]; then
+  git clone https://github.com/visionmedia/watch.git /tmp/watch && cd /tmp/watch
+  PREFIX=~ make install
+fi
+
 # reload the profile
 source ~/.bash_profile
