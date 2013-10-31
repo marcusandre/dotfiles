@@ -31,5 +31,9 @@ if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
 fi
 
+# Source bash_completion manualy if it's exist
+# There are companies where you don't get admin rights. :(
+[ -s $HOME/bin/git-completion.bash ] && source $HOME/bin/git-completion.bash
+
 # Load nvm into shell session
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
