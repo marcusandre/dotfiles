@@ -11,5 +11,11 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on     " required!
+set t_Co=256
+let g:solarized_termcolors=256
+syntax enable
+set background=light
+colorscheme solarized
