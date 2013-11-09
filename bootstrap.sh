@@ -1,4 +1,12 @@
 #!/bin/bash
+# install homebrew, if we are on a mac
+if [ "$(uname -s)" != "Darwin" ]; then
+  if test ! $(which brew); then
+    echo "This is a Mac! Let's install homebrew..."
+    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+  fi
+fi
+
 # symlink all dot-files and prefix them with a dot char
 for f in `pwd`/dots/*
 do
