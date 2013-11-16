@@ -5,6 +5,11 @@ if [ "$(uname -s)" == "Darwin" ]; then
     echo "This is a Mac! Let's install homebrew..."
     ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
   fi
+
+  # A much faster keyboard experience
+  defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+  defaults write NSGlobalDomain KeyRepeat -int 0.02
+  defaults write NSGlobalDomain InitialKeyRepeat -int 12
 fi
 
 # symlink all dot-files and prefix them with a dot char
