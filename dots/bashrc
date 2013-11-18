@@ -1,5 +1,5 @@
 # Prefix Path
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 if [ -d ~/bin ]; then
   export PATH=~/bin:$PATH
