@@ -1,4 +1,7 @@
 #/bin/bash
+
+set -e
+
 brew install git
 brew install git-extras
 brew install bash-completion
