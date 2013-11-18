@@ -14,7 +14,9 @@
   * ```z``` tracks your most used directories and jumps into them.
   * ```watch``` executes a given command periodically.
 
-## What's this ```Homebrew``` thing
+## FAQ
+
+### What's this Homebrew thing
 
   ```Homebrew``` is a package manager for OSX:
 
