@@ -5,6 +5,11 @@ if [ -d ~/bin ]; then
   export PATH=~/bin:$PATH
 fi
 
+# Adding Android Development Tools to PATH.
+if [ -d ~/bin/adt-bundle-mac-x86_64-20131030 ]; then
+  export PATH=$PATH:~/bin/adt-bundle-mac-x86_64-20131030/sdk/tools
+fi
+
 # Hail to the Vim, Baby
 export EDITOR=vim
 
