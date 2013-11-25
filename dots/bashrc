@@ -7,7 +7,9 @@ fi
 
 # Adding Android Development Tools to PATH.
 if [ -d ~/bin/adt-bundle-mac-x86_64-20131030 ]; then
-  export PATH=$PATH:~/bin/adt-bundle-mac-x86_64-20131030/sdk/tools
+  export ANDROID_TOOLS_HOME=~/bin/adt-bundle-mac-x86_64-20131030/sdk/tools
+  export ANDROID_PLATFORM_TOOLS_HOME=~/bin/adt-bundle-mac-x86_64-20131030/sdk/platform-tools
+  export PATH=$PATH:$ANDROID_TOOLS_HOME:$ANDROID_PLATFORM_TOOLS_HOME
 fi
 
 # Hail to the Vim, Baby
