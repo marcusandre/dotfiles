@@ -11,6 +11,7 @@ alias sudo="sudo "
 alias week="date +%V"
 alias rf="rm -rf"
 alias mounts="mount | column -t"
+alias m="make "
 
 # Git aliases
 # Thanks to TJ Holowaychuk
