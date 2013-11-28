@@ -43,3 +43,8 @@ function take {
 function serve {
   python -m SimpleHTTPServer
 }
+
+# link sublime text executable
+if test ! $(which subl); then
+  ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+fi
