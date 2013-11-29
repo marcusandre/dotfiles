@@ -5,6 +5,7 @@
     l = log --pretty=oneline --abbrev-commit --graph --decorate
     unstage = reset HEAD
     track = checkout -t
+    dev = checkout -b development
 [core]
     excludesfile = /Users/marcus/.gitignore_global
     editor = vim
