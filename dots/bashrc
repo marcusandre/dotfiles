@@ -13,6 +13,19 @@ export HISTIGNORE="ls:ls *:cd:cd -:clear:pwd;exit:date:* --help"
 export MANPAGER="less -X"
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
+# Shell settings
+shopt -s cdspell
+shopt -s checkwinsize
+shopt -s histappend
+shopt -s nocaseglob
+
+# Input settings
+set completion-ignore-case on
+set show-all-if-ambiguous on
+
+# Hail to the Vim, Baby
+export EDITOR=vim
+
 # Adding Android Development Tools to PATH.
 if [ -d ~/bin/adt-bundle-mac-x86_64-20131030 ]; then
   export ANDROID_TOOLS_HOME=~/bin/adt-bundle-mac-x86_64-20131030/sdk/tools
@@ -23,9 +36,6 @@ if [ -d ~/bin/adt-bundle-mac-x86_64-20131030 ]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
   fi
 fi
-
-# Hail to the Vim, Baby
-export EDITOR=vim
 
 # Homebrew Bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
