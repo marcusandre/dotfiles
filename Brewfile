@@ -1,3 +1,6 @@
+update
+upgrade
+
 install git
 install git-extras
 install bash
@@ -15,3 +18,5 @@ install homebrew/dupes/grep
 
 tap phinze/homebrew-cask
 install brew-cask
+
+cleanup
