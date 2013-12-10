@@ -9,6 +9,15 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
 
+[*.css]
+indent_size = 4
+
+[*.html]
+indent_size = 4
+
+[*.xml]
+indent_size = 4
+
 [*.md]
 trim_trailing_whitespace = false
 
