@@ -12,6 +12,7 @@ install vim
 install wget
 install redis
 install bash-completion
+install pwgen
 
 tap homebrew/dupes
 install homebrew/dupes/grep
