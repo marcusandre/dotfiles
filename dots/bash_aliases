@@ -15,6 +15,7 @@ alias m="make "
 alias s="subl ."
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'"
 alias colors="printf \"\e[%dm%d dark\e[0m  \e[%d;1m%d bold\e[0m\n\" {30..37}{,,,}"
+alias topram="ps aux |tail -n+2 |sort -nrk4 |head -$(($(tput lines)-1)) |cut -c 1-$(tput cols)"
 
 # Git aliases
 # Thanks to TJ Holowaychuk
@@ -45,6 +46,12 @@ function take {
 # serve tree via http
 function serve {
   python -m SimpleHTTPServer
+}
+
+# this is the most important alias ever.
+
+function fliptable {
+  echo "（╯°□°）╯ ┻━┻";
 }
 
 # link sublime text executable
