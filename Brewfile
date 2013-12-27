@@ -13,6 +13,7 @@ install wget
 install redis
 install bash-completion
 install pwgen
+install jq
 
 tap homebrew/dupes
 install homebrew/dupes/grep
