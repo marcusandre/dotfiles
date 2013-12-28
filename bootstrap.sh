@@ -49,3 +49,6 @@ fi
 
 # reload the profile
 source ~/.bash_profile
+
+# install vundles
+vim +BundleInstall +qall
