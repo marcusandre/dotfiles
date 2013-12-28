@@ -1,10 +1,11 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
+set nocompatible
+filetype off
+set encoding=utf-8
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle
+" Let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
@@ -22,8 +23,46 @@ set cursorline
 set mouse=a
 set scrolloff=10
 
-syntax on
-filetype plugin indent on     " required!
+" Filetypes
+au BufRead,BufNewFile *.md set filetype=markdown
+
+syntax enable
+filetype plugin indent on
+
+" Interactions & Lines
+set scrolloff=3
+set sidescrolloff=5
+set sidescroll=1
+set backspace=indent,eol,start
+set whichwrap=h,l,b,<,>,~,[,]
+set nowrap
+
+" Visuals
+
+" Show status line
+set laststatus=2
+" Show what mode you’re currently in
+set showmode
+" Show what commands you’re typing
+set showcmd
+" Allow modelines
+set modeline
+" Show current line and column position in file
+set ruler
+" Show file title in terminal tab
+set title
+" Highlight current line
+set cursorline
+" Don’t keep results highlighted after searching
+set nohlsearch
+" highlight while typeing
+set incsearch
+" Smart case searching...
+set ignorecase
+set smartcase
+
+" Themes
 set t_Co=256
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
+set background=light
 colorscheme Tomorrow
