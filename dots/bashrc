@@ -23,6 +23,10 @@ shopt -s nocaseglob
 set completion-ignore-case on
 set show-all-if-ambiguous on
 
+# Misc settings
+complete -cf sudo
+export PAGER="most"
+
 # Hail to the Vim, Baby
 export EDITOR=vim
 
