@@ -9,7 +9,9 @@ install tree
 install rbenv
 install ruby-build
 install vim
-install wget
+install wget --enable-iri
+install coreutils
+install hub
 install redis
 install bash-completion
 install pwgen
