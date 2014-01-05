@@ -20,7 +20,7 @@ alias topram="ps aux |tail -n+2 |sort -nrk4 |head -$(($(tput lines)-1)) |cut -c 
 # Git aliases
 # Thanks to TJ Holowaychuk
 alias gl="git log --pretty=oneline --abbrev-commit --graph --decorate"
-alias gd="git diff | vim"
+alias gd="git diff"
 alias ga="git add"
 alias gbd="git branch -D"
 alias gst="git status"
