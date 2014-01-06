@@ -39,6 +39,8 @@ set nowrap
 
 " Visuals
 
+" Show linenumbers
+set number
 " Show status line
 set laststatus=2
 " Show what mode you’re currently in
