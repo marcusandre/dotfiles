@@ -8,7 +8,7 @@
     dev = checkout -b development
 [core]
     excludesfile = /Users/marcus/.gitignore_global
-    editor = vim
+	editor = vim
 [color]
     diff = auto
     status = auto
