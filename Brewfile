@@ -16,6 +16,7 @@ install redis
 install bash-completion
 install pwgen
 install jq
+install mon
 
 tap homebrew/completions
 install vagrant-completion
