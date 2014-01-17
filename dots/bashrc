@@ -19,6 +19,12 @@ shopt -s checkwinsize
 shopt -s histappend
 shopt -s nocaseglob
 
+# notify of background job completion
+set -o notify
+
+# skip this stupid mail check
+unset MAILCHECK
+
 # default umask
 umask 0022
 
