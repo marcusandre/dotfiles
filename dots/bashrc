@@ -19,6 +19,9 @@ shopt -s checkwinsize
 shopt -s histappend
 shopt -s nocaseglob
 
+# default umask
+umask 0022
+
 # Input settings
 set completion-ignore-case on
 set show-all-if-ambiguous on
