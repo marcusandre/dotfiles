@@ -28,23 +28,8 @@ fi
 
 # install vundle
 if [[ ! -d ~/.vim/bundle/vundle ]]; then
+  mkdir -p ~/.vim/bundle/vundle
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-fi
-
-if [[ ! -d ~/bin ]]; then
-  mkdir ~/bin
-fi
-
-# install z
-if [[ ! -f ~/bin/z ]]; then
-  wget https://raw.github.com/rupa/z/master/z.sh -O ~/bin/z
-  chmod +x ~/bin/z
-fi
-
-# install watch
-if [[ ! -f ~/bin/watch ]]; then
-  git clone https://github.com/visionmedia/watch.git /tmp/watch && cd /tmp/watch
-  PREFIX=~ make install
 fi
 
 # reload the profile

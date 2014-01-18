@@ -17,6 +17,8 @@ install bash-completion
 install pwgen
 install mon
 install youtube-dl
+install z
+install visionmedia-watch
 
 tap homebrew/completions
 install vagrant-completion
