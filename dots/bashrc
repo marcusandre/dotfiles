@@ -55,14 +55,6 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-# Initialize rbenv and it's rubies
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# Init z
-if [ -f ~/bin/z ]; then
-  . ~/bin/z
-fi
-
 # Call the prompt
 if [ -f ~/.bash_prompt ]; then
   source ~/.bash_prompt
@@ -77,5 +69,8 @@ fi
 # There are companies where you don't get admin rights. :(
 [ -s $HOME/bin/git-completion.bash ] && source $HOME/bin/git-completion.bash
 
-# Load nvm into shell session
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
+# Init nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# Initialize rbenv and it's rubies
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

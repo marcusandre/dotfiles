@@ -19,6 +19,7 @@ install mon
 install youtube-dl
 install z
 install visionmedia-watch
+install nvm
 
 tap homebrew/completions
 install vagrant-completion
