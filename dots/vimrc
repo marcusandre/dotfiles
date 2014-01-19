@@ -13,6 +13,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'bling/vim-airline'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 set nocompatible
