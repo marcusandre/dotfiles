@@ -72,6 +72,9 @@ export NODE_ENV="development"
 # There are companies where you don't get admin rights. :(
 [ -s $HOME/bin/git-completion.bash ] && source $HOME/bin/git-completion.bash
 
+# Init z
+. `brew --prefix`/etc/profile.d/z.sh
+
 # Init nvm
 source $(brew --prefix nvm)/nvm.sh
 
