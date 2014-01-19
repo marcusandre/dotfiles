@@ -1,38 +1,40 @@
 [user]
-	name = Marcus André
-	email = hello@marcusandre.de
+  name = Marcus André
+  email = hello@marcusandre.de
 [alias]
-    l = log --pretty=oneline --abbrev-commit --graph --decorate
-    unstage = reset HEAD
-    track = checkout -t
-    dev = checkout -b development
+  l = log --pretty=oneline --abbrev-commit --graph --decorate
+  unstage = reset HEAD
+  track = checkout -t
+  dev = checkout -b development
 [core]
-    excludesfile = /Users/marcus/.gitignore_global
-	editor = vim
+  excludesfile = /Users/marcus/.gitignore_global
+  editor = vim
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
 [color "diff"]
-    whitespace = red reverse
-    plain = white
-    meta = cyan
-    frag = magenta bold
-    old = red
-    new = green
-    commit = yellow
+  whitespace = red reverse
+  plain = white
+  meta = cyan
+  frag = magenta bold
+  old = red
+  new = green
+  commit = yellow
 [diff]
-    wordRegex = [^[:space:]]
+  wordRegex = [^[:space:]]
 [apply]
-    whitespace = nowarn
+  whitespace = nowarn
 [mergetool]
-    keepBackup = false
+  keepBackup = false
 [difftool]
-    prompt = false
+  prompt = false
 [help]
-    autocorrect = 1
+  autocorrect = 1
 [push]
-    default = simple
+  default = simple
 [credential]
-    helper = osxkeychain
+  helper = osxkeychain
+[github]
+  user = marcusandre
