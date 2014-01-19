@@ -27,6 +27,11 @@ if [[ ! -d ~/.vim/bundle/vundle ]]; then
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 
+# link sublime text executable
+if test ! $(which subl); then
+  ln -sf "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+fi
+
 # reload the profile
 source ~/.bash_profile
 
