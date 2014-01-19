@@ -65,6 +65,9 @@ if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
 fi
 
+# Set NODE_ENV
+export NODE_ENV="development"
+
 # Source bash_completion manualy if it's exist
 # There are companies where you don't get admin rights. :(
 [ -s $HOME/bin/git-completion.bash ] && source $HOME/bin/git-completion.bash
