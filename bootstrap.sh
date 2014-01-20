@@ -6,7 +6,7 @@ set -e
 if [ "$(uname -s)" == "Darwin" ]; then
   if test ! $(which brew); then
     echo "This is a Mac! Let's install homebrew..."
-    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   fi
 
   # A much faster keyboard experience
