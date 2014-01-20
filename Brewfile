@@ -17,6 +17,7 @@ install youtube-dl
 install z
 install visionmedia-watch
 install nvm
+install most
 
 tap homebrew/completions
 install vagrant-completion
