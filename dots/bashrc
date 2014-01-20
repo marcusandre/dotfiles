@@ -77,6 +77,3 @@ export NODE_ENV="development"
 
 # Init nvm
 source $(brew --prefix nvm)/nvm.sh
-
-# Initialize rbenv and it's rubies
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
