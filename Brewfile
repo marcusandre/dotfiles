@@ -16,6 +16,7 @@ install mon
 install youtube-dl
 install visionmedia-watch
 install nvm
+install go
 install most
 install redis
 install hub

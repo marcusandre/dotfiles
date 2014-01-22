@@ -77,3 +77,7 @@ export NODE_ENV="development"
 
 # Init nvm
 source $(brew --prefix nvm)/nvm.sh
+
+# Setup Go
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
