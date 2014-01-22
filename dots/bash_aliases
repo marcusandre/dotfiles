@@ -50,7 +50,6 @@ function serve {
 }
 
 # this is the most important alias ever.
-
 function fliptable {
   echo "（╯°□°）╯ ┻━┻";
 }

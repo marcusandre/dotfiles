@@ -4,20 +4,21 @@ upgrade
 install git
 install git-extras
 install bash
+install bash-completion
+install coreutils
+install z
 install ack
 install tree
 install vim
 install wget --enable-iri
-install coreutils
-install hub
-install bash-completion
 install pwgen
 install mon
 install youtube-dl
-install z
 install visionmedia-watch
 install nvm
 install most
+install redis
+install hub
 
 tap homebrew/completions
 install vagrant-completion
