@@ -1,0 +1,6 @@
+--type-set=txt=.txt
+--type-set=markdown=.md,.markdown
+--ignore-dir=log
+--ignore-dir=cache
+--ignore-dir=vendor
+--ignore-dir=node_modules
