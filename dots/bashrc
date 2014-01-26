@@ -39,17 +39,6 @@ export PAGER="most"
 # Hail to the Vim, Baby
 export EDITOR=vim
 
-# Adding Android Development Tools to PATH.
-if [ -d ~/bin/adt-bundle-mac-x86_64-20131030 ]; then
-  export ANDROID_TOOLS_HOME=~/bin/adt-bundle-mac-x86_64-20131030/sdk/tools
-  export ANDROID_PLATFORM_TOOLS_HOME=~/bin/adt-bundle-mac-x86_64-20131030/sdk/platform-tools
-  export PATH=$PATH:$ANDROID_TOOLS_HOME:$ANDROID_PLATFORM_TOOLS_HOME
-
-  if [[ `uname` == "Darwin" ]]; then
-    export JAVA_HOME=$(/usr/libexec/java_home)
-  fi
-fi
-
 # Homebrew Bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
