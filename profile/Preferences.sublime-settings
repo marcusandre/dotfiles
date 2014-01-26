@@ -1,0 +1,37 @@
+{
+	"create_window_at_startup": false,
+	"file_exclude_patterns":
+	[
+		"npm-debug.log",
+		".DS_Store"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"node_modules",
+		".vagrant",
+		"components",
+		"dist"
+	],
+	"font_face": "Monaco",
+	"font_size": 14,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_numbers": true,
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
+	"remember_open_files": true,
+	"rulers":
+	[
+		80
+	],
+	"scroll_past_end": true,
+	"word_wrap": false,
+  "theme": "Spacegray Eighties.sublime-theme",
+  "color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme"
+}
