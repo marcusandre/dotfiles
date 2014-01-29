@@ -22,6 +22,8 @@
   old = red
   new = green
   commit = yellow
+[branch]
+	autosetuprebase = always
 [diff]
   wordRegex = [^[:space:]]
 [apply]
