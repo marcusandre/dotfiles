@@ -1,5 +1,5 @@
 [user]
-  name = Marcus André
+  name = Marcus André
   email = hello@marcusandre.de
 [alias]
   l = log --pretty=oneline --abbrev-commit --graph --decorate
