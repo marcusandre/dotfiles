@@ -15,6 +15,7 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'bling/vim-airline'
 Bundle 'reedes/vim-colors-pencil'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'kien/ctrlp.vim'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 
@@ -39,6 +40,10 @@ set sidescroll=1
 set backspace=indent,eol,start
 set whichwrap=h,l,b,<,>,~,[,]
 set nowrap
+
+" Map ctrl-p bundle
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Visuals
 
