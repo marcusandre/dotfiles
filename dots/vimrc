@@ -16,6 +16,7 @@ Bundle 'bling/vim-airline'
 Bundle 'reedes/vim-colors-pencil'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
+Bundle 'mileszs/ack.vim'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 
