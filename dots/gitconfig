@@ -2,10 +2,10 @@
   name = Marcus André
   email = hello@marcusandre.de
 [alias]
-  l = log --pretty=oneline --abbrev-commit --graph --decorate
-  unstage = reset HEAD
-  track = checkout -t
   dev = checkout -b development
+  l = log --pretty=oneline --abbrev-commit --graph --decorate
+  track = checkout -t
+  unstage = checkout -- .
 [core]
   excludesfile = /Users/marcus/.gitignore
   editor = vim
