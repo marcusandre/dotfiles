@@ -37,7 +37,10 @@ alias gco="git checkout"
 alias gba="git branch -a"
 alias gpom="git pull origin master"
 
-# Functions
+# Vagrant aliases
+alias vup="vagrant up"
+alias vha="vagrant halt"
+alias vdf="vagrant destroy -f"
 
 # cd into new directory
 function take {
