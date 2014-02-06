@@ -40,6 +40,7 @@ alias gpom="git pull origin master"
 # Vagrant aliases
 alias vup="vagrant up"
 alias vha="vagrant halt"
+alias vst="vagrant status"
 alias vdf="vagrant destroy -f"
 
 # cd into new directory
