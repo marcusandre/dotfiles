@@ -1,4 +1,4 @@
-update
+update &>1
 upgrade
 
 install git
