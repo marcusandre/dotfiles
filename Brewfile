@@ -20,6 +20,7 @@ install go
 install most
 install redis
 install hub
+install phantomjs
 
 tap homebrew/completions
 install vagrant-completion
