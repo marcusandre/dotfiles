@@ -1,4 +1,4 @@
-update &>1
+update
 upgrade
 
 install git
@@ -17,6 +17,8 @@ install youtube-dl
 install visionmedia-watch
 install nvm
 install go
+install rbenv
+install ruby-build
 install most
 install redis
 install hub

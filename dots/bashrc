@@ -70,3 +70,6 @@ source $(brew --prefix nvm)/nvm.sh
 # Setup Go
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
+
+# Init rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
