@@ -2,6 +2,9 @@
 
 set -e
 
+# no mac, no dotfiles!
+[ $(uname -s) != "Darwin" ] && return
+
 # install homebrew, if we are on a mac
 if [ "$(uname -s)" == "Darwin" ]; then
   if test ! $(which brew); then
