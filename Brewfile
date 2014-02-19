@@ -23,6 +23,7 @@ install most
 install redis
 install hub
 install phantomjs
+install wrk
 
 tap homebrew/completions
 install vagrant-completion
