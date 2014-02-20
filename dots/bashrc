@@ -54,6 +54,11 @@ if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
 fi
 
+# Call the extras (hidden by default)
+if [ -f ~/.extras ]; then
+  source ~/.extras
+fi
+
 # Set NODE_ENV
 export NODE_ENV="development"
 
