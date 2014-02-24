@@ -25,10 +25,4 @@ install hub
 install phantomjs
 install wrk
 
-tap homebrew/completions
-install vagrant-completion
-
-tap homebrew/dupes
-install homebrew/dupes/grep
-
-cleanup
+cleanup --force
