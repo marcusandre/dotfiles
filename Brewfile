@@ -24,5 +24,6 @@ install redis
 install hub
 install phantomjs
 install wrk
+install htop
 
 cleanup --force
