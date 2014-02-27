@@ -12,7 +12,7 @@ install tree
 install vim
 install wget --enable-iri
 install pwgen
-install mon
+install mongroup
 install youtube-dl
 install visionmedia-watch
 install nvm
