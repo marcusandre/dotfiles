@@ -40,6 +40,8 @@ alias gcob="git checkout -b"
 alias gco="git checkout"
 alias gba="git branch -a"
 alias gpom="git pull origin master"
+alias gr2="git rebase -i HEAD~2"
+alias gr3="git rebase -i HEAD~3"
 
 # Vagrant aliases
 alias vup="vagrant up"
