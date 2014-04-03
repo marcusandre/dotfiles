@@ -48,7 +48,7 @@ alias gr3="git rebase -i HEAD~3"
 alias vup="vagrant up"
 alias vha="vagrant halt"
 alias vst="vagrant status"
-alias vdf="vagrant destroy -f"
+alias vdf="vagrant destroy -f; rm -rf .vagrant"
 
 # cd into new directory
 function take {
