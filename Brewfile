@@ -25,5 +25,6 @@ install hub
 install phantomjs
 install wrk
 install htop
+install ssh-copy-id
 
 cleanup --force
