@@ -17,6 +17,7 @@ install youtube-dl
 install visionmedia-watch
 install nvm
 install go
+install boot2docker
 install rbenv
 install ruby-build
 install most
