@@ -21,6 +21,7 @@ alias colors="printf \"\e[%dm%d dark\e[0m  \e[%d;1m%d bold\e[0m\n\" {30..37}{,,,
 alias topram="ps aux |tail -n+2 |sort -nrk4 |head -$(($(tput lines)-1)) |cut -c 1-$(tput cols)"
 alias hosts="sudo vim /private/etc/hosts"
 alias icurl="curl -I"
+alias rmds="find . -name \".DS_Store\" | xargs rm"
 
 # Git aliases
 # Thanks to TJ Holowaychuk
