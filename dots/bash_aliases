@@ -22,6 +22,7 @@ alias topram="ps aux |tail -n+2 |sort -nrk4 |head -$(($(tput lines)-1)) |cut -c 
 alias hosts="sudo vim /private/etc/hosts"
 alias icurl="curl -I"
 alias rmds="find . -name \".DS_Store\" | xargs rm"
+alias pull="curl -L#"
 
 # Git aliases
 # Thanks to TJ Holowaychuk
