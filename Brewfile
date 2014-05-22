@@ -21,8 +21,8 @@ install boot2docker
 install rbenv
 install ruby-build
 install most
-install redis
 install hub
+install gist
 install wrk
 install htop
 install ssh-copy-id
