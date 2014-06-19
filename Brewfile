@@ -12,17 +12,12 @@ install tree
 install vim
 install wget --enable-iri
 install pwgen
-install mongroup
 install youtube-dl
-install visionmedia-watch
 install nvm
 install go
-install boot2docker
-install rbenv
 install ruby-build
+install rbenv
 install most
-install hub
-install gist
 install wrk
 install htop
 install ssh-copy-id

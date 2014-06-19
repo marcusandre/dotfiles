@@ -10,22 +10,16 @@ alias ls1="ls -1"
 alias sudo="sudo "
 alias week="date +%V"
 alias rf="rm -rf"
-alias mounts="mount | column -t"
 alias m="make "
-alias t="make test"
-alias s="subl -n ."
+# alias s="subl -n ."
+alias s="subl ."
 alias irc="irssi -n meggesje -c irc.freenode.net"
-alias npmeu="npm --registry http://registry.npmjs.eu"
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to clipboard.\n'"
 alias colors="printf \"\e[%dm%d dark\e[0m  \e[%d;1m%d bold\e[0m\n\" {30..37}{,,,}"
-alias topram="ps aux |tail -n+2 |sort -nrk4 |head -$(($(tput lines)-1)) |cut -c 1-$(tput cols)"
-alias hosts="sudo vim /private/etc/hosts"
-alias icurl="curl -I"
 alias rmds="find . -name \".DS_Store\" | xargs rm"
 alias pull="curl -L#"
 
 # Git aliases
-# Thanks to TJ Holowaychuk
 alias gl="git log --pretty=oneline --abbrev-commit --graph --decorate"
 alias gd="git diff"
 alias ga="git add"
@@ -59,13 +53,4 @@ function take {
 # serve tree via http
 function serve {
   python -m SimpleHTTPServer
-}
-
-# this is the most important alias ever.
-function fliptable {
-  echo "（╯°□°）╯ ┻━┻";
-}
-
-function publish {
-  git push --tags && git push
 }
