@@ -4,7 +4,11 @@
     $ git clone https://github.com/marcusandre/dotfiles.git ~/.dotfiles
     $ cd ~/.dotfiles && ./bootstrap.sh
 
-if you also want to install some great and basic [Homebrew](http://brew.sh/)
-packages, you should run:
+  You should also run the next command to install some great and basic
+  [Homebrew](http://brew.sh/) packages and dependencies:
 
     $ cd ~/.dotfiles && brew bundle
+
+## License
+
+  WTFPL
