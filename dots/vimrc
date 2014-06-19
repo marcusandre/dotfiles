@@ -1,83 +1,53 @@
+" thanks to hukl: github.com/hukl/dotfiles
 set nocompatible
-filetype off
-set encoding=utf-8
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'bling/vim-airline'
-Bundle 'reedes/vim-colors-pencil'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle '29decibel/vim-stringify'
-Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
-
-set nocompatible
-set nobackup
-set nowritebackup
-set noswapfile
-set cursorline
-set mouse=a
-set scrolloff=10
-
-" Filetypes
-au BufRead,BufNewFile *.md set filetype=markdown
-
-syntax enable
+" Enable syntax highlighting
+syntax on
 filetype plugin indent on
 
-" Interactions & Lines
-set scrolloff=3
-set sidescrolloff=5
-set sidescroll=1
-set backspace=indent,eol,start
-set whichwrap=h,l,b,<,>,~,[,]
-set nowrap
-
-" Map ctrl-p bundle
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-" Visuals
-
-" Show linenumbers
+" Add line numbers
 set number
-" Show status line
-set laststatus=2
-" Show what mode you’re currently in
-set showmode
-" Show what commands you’re typing
-set showcmd
-" Allow modelines
-set modeline
-" Show current line and column position in file
 set ruler
-" Show file title in terminal tab
-set title
-" Highlight current line
-set cursorline
-" Don’t keep results highlighted after searching
-set nohlsearch
-" highlight while typeing
-set incsearch
-" Smart case searching...
-set ignorecase
-set smartcase
 
-" Themes
-set t_Co=256
-" let g:solarized_termcolors=256
-set background=light
-" colorscheme Freshcut
-colorscheme Tomorrow
+" Set encoding
+set encoding=utf-8
+
+" Whitespace stuff
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+" Show trailing spaces and highlight hard tabs
+set list listchars=tab:»·,trail:·
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" Search related settings
+set incsearch
+set hlsearch
+
+" Map Ctrl+l to clear highlighted searches
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+" Disable code folding
+set nofoldenable
+
+" Directories for swp files
+set backupdir=~/.vimbackup
+set directory=~/.vimbackup
+
+" make uses real tabs
+au FileType make set noexpandtab
+
+" Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,config.ru} set ft=ruby
+
+" md, markdown, and mk are markdown and define buffer-local preview
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+" add json syntax highlighting
+au BufNewFile,BufRead *.json set ft=javascript
+au BufRead,BufNewFile *.txt call s:setupWrapping()

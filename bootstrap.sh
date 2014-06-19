@@ -24,7 +24,12 @@ do
   ln -sf "$f" "$HOME/.${f##*/}"
 done
 
-# install vundle
+# (opt) create vimbackup
+if [[ ! -d ~/.vimbackup ]]; then
+  mkdir -p ~/.vimbackup
+fi
+
+# (opt) install vundle
 if [[ ! -d ~/.vim/bundle/vundle ]]; then
   mkdir -p ~/.vim/bundle/vundle
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
