@@ -4,6 +4,7 @@ alias ..="cd .."
 # Directory Listings
 alias ls="ls -GFh"
 alias la="ls -la"
+alias lh="ls -lah"
 alias ls1="ls -1"
 
 # Misc
