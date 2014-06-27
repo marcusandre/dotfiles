@@ -14,6 +14,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 
@@ -27,6 +28,9 @@ set laststatus=2
 syntax on
 filetype plugin indent on
 set t_Co=256
+
+" Gvim
+:set guifont=Monaco:h15
 
 " Add line numbers
 set number
