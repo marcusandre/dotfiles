@@ -34,7 +34,8 @@ set show-all-if-ambiguous on
 
 # Misc settings
 complete -cf sudo
-export PAGER=most
+export PAGER=less
+export TERM=xterm-256color
 
 # Hail to the Vim, Baby
 export EDITOR=vim

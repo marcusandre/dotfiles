@@ -1,9 +1,36 @@
-" thanks to hukl: github.com/hukl/dotfiles
+" Improved
 set nocompatible
+filetype off
+
+" Include vundle
+set rtp+=~/.vim/bundle/vundle
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Plugins
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/syntastic'
+
+" Always show airline
+call vundle#end()
+
+" Plugin things
+set laststatus=2
 
 " Enable syntax highlighting
 syntax on
 filetype plugin indent on
+set t_Co=256
+
+" Gvim
+:set guifont=Monaco:h15
 
 " Add line numbers
 set number

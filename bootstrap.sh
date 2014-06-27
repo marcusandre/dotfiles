@@ -30,9 +30,13 @@ if [[ ! -d ~/.vimbackup ]]; then
 fi
 
 # (opt) install vundle
-if [[ ! -d ~/.vim/bundle/vundle ]]; then
+if [[ ! -d ~/.vim/bundle/vundle ]]
+then
   mkdir -p ~/.vim/bundle/vundle
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+  vim +BundleInstall +qall < /dev/tty
+else
+  cd ~/.vim/bundle/vundle && git pull -q
 fi
 
 # reload the profile
