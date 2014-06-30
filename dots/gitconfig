@@ -6,6 +6,7 @@
   l = log --pretty=oneline --abbrev-commit --graph --decorate
   track = checkout -t
   unstage = checkout -- .
+  today = log --since=midnight --author='Marcus André' --oneline
 [core]
   excludesfile = /Users/marcus/.gitignore
   editor = vim
