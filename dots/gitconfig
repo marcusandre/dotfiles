@@ -2,41 +2,16 @@
   name = Marcus André
   email = hello@marcusandre.de
 [alias]
-  dev = checkout -b development
   l = log --pretty=oneline --abbrev-commit --graph --decorate
+  co = checkout
   track = checkout -t
   unstage = checkout -- .
   today = log --since=midnight --author='Marcus André' --oneline
 [core]
-  excludesfile = /Users/marcus/.gitignore
-  editor = vim
+  excludesfile = ~/.gitignore_global
+  editor = vim -c 'startinsert'
 [color]
-  diff = auto
-  status = auto
-  branch = auto
   ui = true
-[color "diff"]
-  whitespace = red reverse
-  plain = white
-  meta = cyan
-  frag = magenta bold
-  old = red
-  new = green
-  commit = yellow
-[branch]
-	autosetuprebase = always
-[diff]
-  wordRegex = [^[:space:]]
-[apply]
-  whitespace = nowarn
-[mergetool]
-  keepBackup = false
-[difftool]
-  prompt = false
-[help]
-  autocorrect = 1
-[push]
-  default = simple
 [credential]
   helper = osxkeychain
 [github]
