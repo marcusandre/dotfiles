@@ -16,3 +16,5 @@
   helper = osxkeychain
 [github]
   user = marcusandre
+[push]
+  default = simple
