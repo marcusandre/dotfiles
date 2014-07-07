@@ -8,7 +8,7 @@
   unstage = checkout -- .
   today = log --since=midnight --author='Marcus André' --oneline
 [core]
-  excludesfile = ~/.gitignore_global
+  excludesfile = /Users/marcus/.gitignore_global
   editor = vim -c 'startinsert'
 [color]
   ui = true
@@ -18,3 +18,5 @@
   user = marcusandre
 [push]
   default = simple
+[merge]
+  ff = no
