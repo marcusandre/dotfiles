@@ -36,11 +36,8 @@ then
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
   vim +BundleInstall +qall < /dev/tty
 else
-  cd ~/.vim/bundle/vundle && git pull -q
+  vim +BundleUpdate +qall < /dev/tty
 fi
 
 # reload the profile
 source ~/.bash_profile
-
-# install vundles
-vim +BundleInstall +qall
