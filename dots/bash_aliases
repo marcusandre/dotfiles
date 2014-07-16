@@ -2,18 +2,27 @@
 alias ..="cd .."
 
 # Directory Listings
+if [ $(uname -s) == "Linux" ]; then
+  alias ls="ls --color"
+else
+  alias ls="ls -G"
+fi
+
 alias ls="ls -GFh"
 alias la="ls -la"
 alias lh="ls -lah"
 alias ls1="ls -1"
 
 # Misc
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -iv"
+alias rf="rm -rf"
 alias sudo="sudo "
 alias week="date +%V"
-alias rf="rm -rf"
 alias m="make "
-# alias s="subl -n ."
 alias s="subl ."
+alias grep="grep --line-number --color"
 alias irc="irssi -n meggesje -c irc.freenode.net"
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to clipboard.\n'"
 alias colors="printf \"\e[%dm%d dark\e[0m  \e[%d;1m%d bold\e[0m\n\" {30..37}{,,,}"

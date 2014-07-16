@@ -7,6 +7,7 @@ fi
 
 # History settings
 export HISTCONTROL=ignoredups
+export HISTTIMEFORMAT="%d/%m/%Y %H:%M:%S "
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 export HISTIGNORE="ls:ls *:cd:cd -:pwd:exit:date:clear:* --help"
