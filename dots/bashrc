@@ -55,7 +55,7 @@ if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
 fi
 
-# Call the extras (hidden by default)
+# Call the extras
 if [ -f ~/.extras ]; then
   source ~/.extras
 fi
@@ -71,8 +71,8 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 # Setup Go
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
+export GOPATH=$HOME/.golang
+export PATH=$GOPATH/bin:$PATH
 
 # Init rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
