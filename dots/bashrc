@@ -68,7 +68,6 @@ export NODE_ENV="development"
 . `brew --prefix`/etc/profile.d/z.sh
 
 # Init nvm
-export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 # Setup Go
