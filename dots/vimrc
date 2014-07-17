@@ -19,6 +19,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
+Plugin 'fatih/vim-go'
 
 " Always show airline
 call vundle#end()

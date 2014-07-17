@@ -3,6 +3,7 @@ upgrade
 
 install git
 install git-extras
+install hg
 install bash
 install bash-completion
 install coreutils
