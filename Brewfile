@@ -18,9 +18,9 @@ install nvm
 install go
 install ruby-build
 install rbenv
+install redis
 install docker
 install boot2docker
 install wrk
-install htop
 
 cleanup --force
