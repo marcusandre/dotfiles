@@ -20,9 +20,7 @@ install ruby-build
 install rbenv
 install docker
 install boot2docker
-install most
 install wrk
 install htop
-install ssh-copy-id
 
 cleanup --force
