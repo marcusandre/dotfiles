@@ -18,6 +18,8 @@ install nvm
 install go
 install ruby-build
 install rbenv
+install docker
+install boot2docker
 install most
 install wrk
 install htop
