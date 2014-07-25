@@ -9,6 +9,7 @@ install bash-completion
 install coreutils
 install z
 install ack
+install httpie
 install tree
 install vim
 install wget --enable-iri
