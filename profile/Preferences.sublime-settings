@@ -2,6 +2,8 @@
   "caret_style": "phase",
   "color_scheme": "Packages/Theme - Spacegray/base16-ocean.light.tmTheme",
   "create_window_at_startup": false,
+  "hot_exit": true,
+  "remember_open_files": false,
   "file_exclude_patterns":
   [
     ".DS_Store",
@@ -27,7 +29,6 @@
   "line_numbers": true,
   "line_padding_bottom": 1,
   "line_padding_top": 1,
-  "remember_open_files": true,
   "rulers":
   [
     80
