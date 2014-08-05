@@ -14,6 +14,7 @@ install tree
 install vim
 install wget --enable-iri
 install pwgen
+install ffmpeg
 install youtube-dl
 install phantomjs
 install nvm
