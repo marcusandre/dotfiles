@@ -59,6 +59,11 @@ function take {
   mkdir -p "$@" && cd "$_";
 }
 
+# create .tgz
+function pack {
+  tar -czf $1.tgz $1
+}
+
 # serve tree via http
 function serve {
   python -m SimpleHTTPServer
