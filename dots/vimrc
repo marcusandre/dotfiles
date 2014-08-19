@@ -1,5 +1,6 @@
 " Improved
 set nocompatible
+set encoding=utf-8
 filetype off
 
 " Include vundle
@@ -19,6 +20,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5.vim'
+Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'fatih/vim-go'
 Plugin 'flazz/vim-colorschemes'
 
@@ -29,9 +32,9 @@ call vundle#end()
 set laststatus=2
 
 " Enable syntax highlighting
-syntax on
-filetype plugin indent on
+syntax enable
 set t_Co=256
+filetype plugin indent on
 
 " Gvim
 :set guifont=Monaco:h15
@@ -39,9 +42,6 @@ set t_Co=256
 " Add line numbers
 set number
 set ruler
-
-" Set encoding
-set encoding=utf-8
 
 " Whitespace stuff
 set nowrap
@@ -66,6 +66,9 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 " Disable code folding
 set nofoldenable
 
+" Show file title in terminal tab
+set title
+
 " Directories for swp files
 set backupdir=~/.vimbackup
 set directory=~/.vimbackup
@@ -76,8 +79,8 @@ au FileType make set noexpandtab
 " Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,config.ru} set ft=ruby
 
-" md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+" Set Markdown filetypes
+au BufRead,BufNewFile *.md set filetype=markdown
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
