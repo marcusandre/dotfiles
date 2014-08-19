@@ -20,6 +20,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'fatih/vim-go'
+Plugin 'flazz/vim-colorschemes'
 
 " Always show airline
 call vundle#end()
