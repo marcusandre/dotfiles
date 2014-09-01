@@ -25,5 +25,6 @@ install redis
 install docker
 install boot2docker
 install wrk
+install mosh
 
 cleanup --force
