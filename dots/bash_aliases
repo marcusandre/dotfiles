@@ -29,6 +29,7 @@ alias colors="printf \"\e[%dm%d dark\e[0m  \e[%d;1m%d bold\e[0m\n\" {30..37}{,,,
 alias ip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
 alias rmds="find . -name \".DS_Store\" | xargs rm"
 alias pull="curl -L#"
+alias npw="pwgen -Bs 16 1"
 
 # Git aliases
 alias gl="git log --pretty=oneline --abbrev-commit --graph --decorate"
