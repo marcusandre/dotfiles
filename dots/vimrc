@@ -36,6 +36,7 @@ set laststatus=2
 syntax enable
 set t_Co=256
 filetype plugin indent on
+colorscheme Monokai
 
 " Gvim
 :set guifont=Monaco:h15
