@@ -17,3 +17,5 @@
   user = marcusandre
 [push]
   default = simple
+[merge]
+  ff = false
