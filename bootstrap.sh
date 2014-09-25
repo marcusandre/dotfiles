@@ -5,8 +5,8 @@ set -e
 # no mac, no dotfiles!
 [ $(uname -s) != "Darwin" ] && return
 
-# install homebrew, if we are on a mac
 if [ "$(uname -s)" == "Darwin" ]; then
+  # install homebrew, if we are on a mac
   if test ! $(which brew); then
     echo "This is a Mac! Let's install homebrew..."
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
