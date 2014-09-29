@@ -65,6 +65,9 @@ set hlsearch
 " Map Ctrl+l to clear highlighted searches
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
+" Allow saving of files as sudo
+cmap w!! w !sudo tee > /dev/null %
+
 " Disable code folding
 set nofoldenable
 
