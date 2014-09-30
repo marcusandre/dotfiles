@@ -66,5 +66,6 @@ function pack {
 
 # serve tree via http
 function serve {
-  python -m SimpleHTTPServer
+  local port=${1-3000};
+  python -m SimpleHTTPServer ${port}
 }
