@@ -13,13 +13,13 @@
 		".git",
 		".hg",
 		".vagrant",
-		"node_modules",
-		".sass-cache"
+		"components",
+		"node_modules"
 	],
-	"font_face": "Consolas",
+	"font_face": "Inconsolata",
 	"font_size": 14,
 	"highlight_line": true,
-	"hot_exit": true,
+	"hot_exit": false,
 	"ignored_packages":
 	[
 		"Github Color Theme",
@@ -28,7 +28,7 @@
 	"line_numbers": true,
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
-	"remember_open_files": false,
+	"remember_open_files": true,
 	"rulers":
 	[
 		80
