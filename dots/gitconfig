@@ -6,7 +6,7 @@
   co = checkout
   track = checkout -t
   unstage = checkout -- .
-  today = log --since=midnight --author='Marcus André' --oneline
+  today = log --since=midnight --author='Marcus André' --oneline --no-merges
 [core]
   excludesfile = /Users/marcus/.gitignore_global
 [color]
