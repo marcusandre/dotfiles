@@ -18,3 +18,5 @@
   user = marcusandre
 [push]
   default = simple
+[help]
+  autocorrect = 1
