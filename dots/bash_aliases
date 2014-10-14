@@ -47,7 +47,7 @@ alias grh="git reset --hard"
 alias gco="git checkout"
 alias gba="git branch -a"
 alias gfp="git fetch origin --prune"
-alias gcd='cd "$(git rev-parse --show-toplevel)"'
+alias gr='cd "$(git rev-parse --show-toplevel)"'
 
 # Vagrant aliases
 alias vup="vagrant up"
