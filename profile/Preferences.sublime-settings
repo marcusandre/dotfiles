@@ -1,6 +1,6 @@
 {
 	"caret_style": "phase",
-	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.light.tmTheme",
+	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
 	"create_window_at_startup": false,
 	"file_exclude_patterns":
 	[
@@ -17,7 +17,7 @@
 		"node_modules"
 	],
 	"font_face": "Inconsolata",
-	"font_size": 14,
+	"font_size": 16,
 	"highlight_line": true,
 	"hot_exit": false,
 	"ignored_packages":
@@ -34,6 +34,6 @@
 		80
 	],
 	"scroll_past_end": true,
-	"theme": "Spacegray Light.sublime-theme",
+	"theme": "Spacegray Eighties.sublime-theme",
 	"word_wrap": false
 }
