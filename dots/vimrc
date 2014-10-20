@@ -25,6 +25,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'fatih/vim-go'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/bats.vim'
+Plugin 'ekalinin/Dockerfile.vim'
 
 " Always show airline
 call vundle#end()
