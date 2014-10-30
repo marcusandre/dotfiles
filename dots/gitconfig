@@ -8,6 +8,7 @@
   unstage = checkout -- .
   amend = commit --amend
   today = log --since=midnight --author='Marcus André' --oneline --no-merges
+  today-fs = log --since=midnight --no-merges --name-only
 [core]
   excludesfile = /Users/marcus/.gitignore_global
 [color]
