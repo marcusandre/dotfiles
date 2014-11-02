@@ -21,11 +21,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'fatih/vim-go'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-scripts/bats.vim'
-Plugin 'ekalinin/Dockerfile.vim'
 
 " Always show airline
 call vundle#end()
@@ -37,7 +32,7 @@ set laststatus=2
 syntax enable
 set t_Co=256
 filetype plugin indent on
-colorscheme Monokai
+" colorscheme Monokai
 
 " Gvim
 :set guifont=Monaco:h15
