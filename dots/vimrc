@@ -21,6 +21,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " Always show airline
 call vundle#end()
