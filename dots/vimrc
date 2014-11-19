@@ -1,89 +1,37 @@
-" Improved
+" vim oder vi
 set nocompatible
-set encoding=utf-8
-filetype off
 
-" Include vundle
-set rtp+=~/.vim/bundle/vundle
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" Plugins
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'bling/vim-bufferline'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-surround'
-Plugin 'mattn/emmet-vim'
-Plugin 'othree/html5.vim'
-Bundle 'christoomey/vim-tmux-navigator'
-
-" Always show airline
-call vundle#end()
-
-" Plugin things
-set laststatus=2
-
-" Enable syntax highlighting
-syntax enable
-set t_Co=256
-filetype plugin indent on
-" colorscheme Monokai
-
-" Gvim
-:set guifont=Monaco:h15
-
-" Add line numbers
-set number
+" basics
+set backspace=2
+set nobackup
+set nowritebackup
+set noswapfile
+set history=100
 set ruler
+set showcmd
+set incsearch
+set laststatus=2
+set autowrite
 
-" Whitespace stuff
-set nowrap
+" display
+syntax on
+filetype plugin indent on
+
+" indenting
 set tabstop=2
 set shiftwidth=2
-set softtabstop=2
+set shiftround
 set expandtab
 
-" Show trailing spaces and highlight hard tabs
-set list listchars=tab:»·,trail:·
+" whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+" lines and rows
+set textwidth=80
+set colorcolumn=+1
+set number
+set numberwidth=5
 
-" Search related settings
-set incsearch
-set hlsearch
-
-" Map Ctrl+l to clear highlighted searches
-nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-
-" Allow saving of files as sudo
-cmap w!! w !sudo tee > /dev/null %
-
-" Disable code folding
-set nofoldenable
-
-" Show file title in terminal tab
-set title
-
-" Directories for swp files
-set backupdir=~/.vimbackup
-set directory=~/.vimbackup
-
-" make uses real tabs
-au FileType make set noexpandtab
-
-" Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,config.ru} set ft=ruby
-
-" Set Markdown filetypes
-au BufRead,BufNewFile *.md set filetype=markdown
-
-" add json syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
-au BufRead,BufNewFile *.txt call s:setupWrapping()
+" splits
+set splitbelow
+set splitright
