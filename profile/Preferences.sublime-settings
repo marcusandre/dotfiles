@@ -1,6 +1,6 @@
 {
-	"caret_style": "phase",
-	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
+	"caret_style": "smooth",
+	"color_scheme": "Packages/Theme - Freesia/Triplet Lite.tmTheme",
 	"create_window_at_startup": false,
 	"file_exclude_patterns":
 	[
@@ -16,24 +16,25 @@
 		"components",
 		"node_modules"
 	],
-	"font_face": "Inconsolata",
-	"font_size": 16,
+	"font_face": "M+ 1m",
+	"font_size": 15,
 	"highlight_line": true,
 	"hot_exit": false,
 	"ignored_packages":
 	[
 		"Github Color Theme",
-		"Vintage"
+		"Vintage",
+		"CSS"
 	],
 	"line_numbers": true,
 	"line_padding_bottom": 1,
-	"line_padding_top": 1,
+	"line_padding_top": 0,
 	"remember_open_files": true,
 	"rulers":
 	[
 		80
 	],
 	"scroll_past_end": true,
-	"theme": "Spacegray Eighties.sublime-theme",
+	"theme": "Higuchi.sublime-theme",
 	"word_wrap": false
 }
