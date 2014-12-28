@@ -3,4 +3,10 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-export PS1="\n    \e[1;36mλ\e[0m \W\$(parse_git_branch): "
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  # ssh
+  export PS1="\n    \e[1;36mλ\e[0m (\h) \W\$(parse_git_branch): "
+else
+  # local
+  export PS1="\n    \e[1;36mλ\e[0m \W\$(parse_git_branch): "
+fi
