@@ -1,7 +1,10 @@
 {
+	"auto_complete": true,
 	"caret_style": "smooth",
 	"color_scheme": "Packages/Theme - Freesia/Triplet Lite.tmTheme",
 	"create_window_at_startup": false,
+	"draw_indent_guides": true,
+	"draw_white_space": "selection",
 	"file_exclude_patterns":
 	[
 		".DS_Store",
@@ -22,9 +25,9 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Github Color Theme",
 		"Vintage",
-		"CSS"
+		"CSS",
+		"Github Color Theme"
 	],
 	"line_numbers": true,
 	"line_padding_bottom": 1,
@@ -36,5 +39,6 @@
 	],
 	"scroll_past_end": true,
 	"theme": "Higuchi.sublime-theme",
+	"trim_trailing_white_space_on_save": true,
 	"word_wrap": false
 }
