@@ -12,6 +12,7 @@ set showcmd
 set incsearch
 set laststatus=2
 set autowrite
+set shell=bash
 
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -34,6 +35,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
+Plugin 'rizzatti/dash.vim'
 
 " display
 syntax on
