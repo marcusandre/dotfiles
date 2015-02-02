@@ -9,14 +9,11 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
 
-[*.xml]
-indent_size = 4
+[*.go]
+indent_style = tab
 
 [*.md]
 trim_trailing_whitespace = false
-
-[template.*]
-insert_final_newline = false
 
 [*.svg]
 insert_final_newline = false
