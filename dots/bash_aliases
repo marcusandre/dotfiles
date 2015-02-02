@@ -23,13 +23,12 @@ alias week="date +%V"
 alias m="make "
 alias s="subl ."
 alias ngrep="grep --line-number --color"
-alias irc="irssi -n meggesje -c irc.freenode.net"
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to clipboard.\n'"
-alias colors="printf \"\e[%dm%d dark\e[0m  \e[%d;1m%d bold\e[0m\n\" {30..37}{,,,}"
 alias ip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
 alias rmds="find . -name \".DS_Store\" | xargs rm"
 alias pull="curl -L#"
 alias npw="pwgen -Bs 16 1"
+alias godeps='go get ./..'
 
 # Docker aliases
 alias drm="docker rm $(docker ps -a -q)"
