@@ -36,7 +36,7 @@ fi
 #
 
 if [[ $* == *--recipes* ]]; then
-  recipes=('bash' 'git' 'vim')
+  recipes=('bash' 'git' 'vim' 'wget' 'curl')
   recipes=$(printf " %s" "${recipes[@]}")
   recipes=${recipes:1}
   brew update
