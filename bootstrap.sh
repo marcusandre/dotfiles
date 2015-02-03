@@ -14,6 +14,10 @@ set -e
 
 files=$(find . -type f -maxdepth 1 -not -name "*.md" -not -name "bootstrap.sh" -exec basename {} \;)
 
+#
+# Create symlinks for relevant files
+#
+
 for file in $files; do
   echo "$HOME/$file => $(pwd)/$file"
   ln -sf $(pwd)/$file $HOME/$file
