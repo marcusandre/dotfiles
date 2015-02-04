@@ -42,3 +42,19 @@ if [[ $* == *--recipes* ]]; then
   brew install $recipes
   brew cleanup --force
 fi
+
+#
+# install vundle
+#
+
+if [[ $* == *--vundle* ]]; then
+  dir=~/.vim/bundle/Vundle.vim
+
+  if [ ! -d "$dir" ]; then
+    git clone https://github.com/gmarik/Vundle.vim.git "$dir"
+    vim +PluginInstall +qall
+  else
+    cd "$dir" && git pull
+    vim +PluginUpdate +qall
+  fi
+fi
