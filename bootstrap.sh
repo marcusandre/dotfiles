@@ -14,7 +14,7 @@ set -e
 
 if [[ $* == *--link* ]]; then
   # find relevant files
-  files=$(find . -type f -maxdepth 1 -not -name "*.md" -not -name "bootstrap.sh" -exec basename {} \;)
+  files=$(find . -type f -maxdepth 1 -not -name "*.md" -not -name "bootstrap.sh"  -not -name "Makefile" -exec basename {} \;)
 
   for file in $files; do
     echo "$HOME/$file => $(pwd)/$file"
