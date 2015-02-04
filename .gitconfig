@@ -3,7 +3,6 @@
   email = hello@marcusandre.de
 [alias]
   l = log --pretty=oneline --abbrev-commit --graph --decorate
-  co = checkout
   track = checkout -t
   unstage = checkout -- .
   amend = commit --amend

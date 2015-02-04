@@ -2,42 +2,44 @@
 
 set -e
 
-# no mac, no dotfiles!
+#
+# skip if we're not running a mac
+#
+
 [ $(uname -s) != "Darwin" ] && return
 
-if [ "$(uname -s)" == "Darwin" ]; then
-  # install homebrew, if we are on a mac
-  if test ! $(which brew); then
-    echo "This is a Mac! Let's install homebrew..."
-    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-  fi
+#
+# find relevant files
+#
 
-  # A much faster keyboard experience
-  defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-  defaults write NSGlobalDomain KeyRepeat -int 0.02
-  defaults write NSGlobalDomain InitialKeyRepeat -int 12
-fi
+files=$(find . -type f -maxdepth 1 -not -name "*.md" -not -name "bootstrap.sh" -exec basename {} \;)
 
-# symlink all dot-files and prefix them with a dot char
-for f in `pwd`/dots/*
-do
-  ln -sf "$f" "$HOME/.${f##*/}"
+#
+# create symlinks for relevant files
+#
+
+for file in $files; do
+  echo "$HOME/$file => $(pwd)/$file"
+  ln -sf $(pwd)/$file $HOME/$file
 done
 
-# (opt) create vimbackup
-if [[ ! -d ~/.vimbackup ]]; then
-  mkdir -p ~/.vimbackup
+#
+# install homebrew
+#
+
+if [[ $* == *--brew* ]]; then
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# (opt) install vundle
-if [[ ! -d ~/.vim/bundle/vundle ]]
-then
-  mkdir -p ~/.vim/bundle/vundle
-  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-  vim +BundleInstall +qall < /dev/tty
-else
-  vim +BundleUpdate +qall < /dev/tty
-fi
+#
+# install homebrew recipes
+#
 
-# reload the profile
-source ~/.bash_profile
+if [[ $* == *--recipes* ]]; then
+  recipes=(bash git vim wget curl bash-completion git-extras)
+  recipes=$(printf " %s" "${recipes[@]}")
+  recipes=${recipes:1}
+  brew update
+  brew install $recipes
+  brew cleanup --force
+fi

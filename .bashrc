@@ -62,20 +62,23 @@ if [ -f ~/.extras ]; then
   source ~/.extras
 fi
 
-# Set NODE_ENV
-export NODE_ENV="development"
-
 # Init z
-. `brew --prefix`/etc/profile.d/z.sh
+if [ -f $(brew --prefix)/etc/profile.d/z.sh ]; then
+  . $(brew --prefix)/etc/profile.d/z.sh
+fi
 
 # Setup Go
 export GOPATH=$HOME/.golang
 export PATH=$GOPATH/bin:$PATH
 
 # Init rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # Setup boot2docker
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/marcus/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+if hash boot2docker 2>/dev/null; then
+  export DOCKER_HOST=tcp://192.168.59.103:2376
+  export DOCKER_CERT_PATH=/Users/marcus/.boot2docker/certs/boot2docker-vm
+  export DOCKER_TLS_VERIFY=1
+fi
