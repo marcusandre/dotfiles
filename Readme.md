@@ -1,7 +1,7 @@
 
 # Dotfiles
 
-  My system configuration files.
+  My OSX configuration files.
 
 ## Usage
 
