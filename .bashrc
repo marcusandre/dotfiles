@@ -79,6 +79,6 @@ fi
 # Setup boot2docker
 if hash boot2docker 2>/dev/null; then
   export DOCKER_HOST=tcp://192.168.59.103:2376
-  export DOCKER_CERT_PATH=/Users/marcus/.boot2docker/certs/boot2docker-vm
+  export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
   export DOCKER_TLS_VERIFY=1
 fi
