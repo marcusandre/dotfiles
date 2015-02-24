@@ -23,7 +23,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 Plugin 'christoomey/vim-run-interactive'
-Plugin 'croaky/vim-colors-github'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
@@ -36,6 +35,8 @@ Plugin 'vim-scripts/ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
 Plugin 'rizzatti/dash.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'fatih/vim-go'
 
 " display
 syntax on
