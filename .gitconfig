@@ -4,6 +4,7 @@
 [alias]
   l = log --pretty=oneline --abbrev-commit --graph --decorate
   join = merge --no-ff
+  upgrade = !git fetch origin --prune && git rebase origin/master
   track = checkout -t
   unstage = checkout -- .
   amend = commit --amend
