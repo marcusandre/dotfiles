@@ -1,44 +1,42 @@
 {
-  "auto_complete": true,
-  "caret_style": "smooth",
-  "color_scheme": "Packages/Theme - Spacegray/base16-ocean.light.tmTheme",
-  "create_window_at_startup": false,
-  "draw_indent_guides": true,
-  "draw_white_space": "selection",
-  "file_exclude_patterns":
-  [
-    ".DS_Store",
-    "npm-debug.log"
-  ],
-  "folder_exclude_patterns":
-  [
-    ".svn",
-    ".git",
-    ".hg",
-    ".vagrant",
-    "components",
-    "node_modules"
-  ],
-  "font_face": "M+ 1m",
-  "font_size": 15,
-  "highlight_line": true,
-  "hot_exit": false,
-  "ignored_packages":
-  [
-    "Github Color Theme",
-    "CSS",
-    "Vintage"
-  ],
-  "line_numbers": true,
-  "line_padding_bottom": 1,
-  "line_padding_top": 0,
-  "remember_open_files": true,
-  "rulers":
-  [
-    80
-  ],
-  "scroll_past_end": true,
-  "theme": "Spacegray Light.sublime-theme",
-  "trim_trailing_white_space_on_save": true,
-  "word_wrap": false
+	"caret_style": "smooth",
+	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
+	"create_window_at_startup": false,
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"npm-debug.log"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		".vagrant",
+		"components",
+		"node_modules"
+	],
+  // "font_face": "M+ 1m",
+	"font_face": "Source Code Pro",
+	"font_size": 15,
+	"highlight_line": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"CSS",
+		"Vintage",
+		"Makefile",
+		"Github Color Theme"
+	],
+	"line_numbers": true,
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"remember_open_files": true,
+	"rulers":
+	[
+		80
+	],
+	"scroll_past_end": true,
+	"theme": "Spacegray Eighties.sublime-theme",
+	"word_wrap": false
 }
