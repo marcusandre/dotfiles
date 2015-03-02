@@ -2,17 +2,29 @@
 set nocompatible
 
 " basics
-set backspace=2
+set backspace=indent,eol,start
 set nobackup
 set nowritebackup
+set directory=.,$TEMP
+set backupdir=.,$TEMP
 set noswapfile
 set history=100
 set ruler
 set showcmd
-set incsearch
+set showmode
+set hidden
 set laststatus=2
 set autowrite
 set shell=bash
+set wildmenu
+set wildmode=list:longest
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set scrolloff=5
+set title
+set visualbell
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -60,3 +72,12 @@ set numberwidth=5
 " splits
 set splitbelow
 set splitright
+
+" disable arrow keys
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
+
+" colorscheme
+set t_Co=256
