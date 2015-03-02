@@ -49,6 +49,9 @@ Plugin 'vim-scripts/tComment'
 Plugin 'rizzatti/dash.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'fatih/vim-go'
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+
+call vundle#end()
 
 " display
 syntax on
@@ -81,3 +84,4 @@ noremap   <Right>  <NOP>
 
 " colorscheme
 set t_Co=256
+color Tomorrow-Night
