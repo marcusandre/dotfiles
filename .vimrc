@@ -22,7 +22,7 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-set scrolloff=5
+set scrolloff=3
 set title
 set visualbell
 
@@ -34,19 +34,14 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
-Plugin 'christoomey/vim-run-interactive'
-Plugin 'kien/ctrlp.vim'
+Plugin 'godlygeek/tabular.git'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/ctags.vim'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'vim-scripts/tComment'
-Plugin 'rizzatti/dash.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'fatih/vim-go'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
@@ -70,7 +65,7 @@ set list listchars=tab:»·,trail:·,nbsp:·
 set textwidth=80
 set colorcolumn=+1
 set number
-set numberwidth=5
+set numberwidth=4
 
 " splits
 set splitbelow
