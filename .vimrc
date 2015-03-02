@@ -35,7 +35,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 Plugin 'godlygeek/tabular.git'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
