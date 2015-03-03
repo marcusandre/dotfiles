@@ -68,8 +68,9 @@ if [ -f $(brew --prefix)/etc/profile.d/z.sh ]; then
 fi
 
 # Setup Go
-export GOROOT=$HOME/.golang
-export PATH=$GOROOT/bin:$PATH
+export GOROOT=$HOME/.go
+export GOPATH=$HOME/.golang
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 # Init rbenv
 if which rbenv > /dev/null; then
