@@ -34,6 +34,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
+Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular.git'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
