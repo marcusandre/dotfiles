@@ -76,6 +76,9 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+" mappings
+let mapleader = ","
+
 " map cursor for insert mode
 let &t_SI .= "\<Esc>[5 q"
 let &t_EI .= "\<Esc>[2 q"
