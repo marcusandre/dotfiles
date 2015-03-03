@@ -98,4 +98,4 @@ let &t_EI .= "\<Esc>[2 q"
 
 " colorscheme
 set t_Co=256
-color Tomorrow-Night
+color Tomorrow
