@@ -69,7 +69,7 @@ fi
 
 # Setup Go
 export GOROOT=$HOME/.go
-export GOPATH=$HOME/.golang
+export GOPATH=$HOME/Code/Go
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 # Init rbenv
