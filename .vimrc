@@ -77,6 +77,11 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+" bind commands
+command! Q q
+command! W w
+command! WQ wq
+
 " mappings
 let mapleader = ","
 
