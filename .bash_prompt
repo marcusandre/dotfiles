@@ -5,8 +5,8 @@ parse_git_branch() {
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   # ssh
-  export PS1="\n    \e[1;36mλ\e[0m (\h) \W\$(parse_git_branch): "
+  export PS1="\n    \[\e[00;36m\]λ\[\e[0m\] (\h) \W\[\e[00;37m\]\$(parse_git_branch)\[\e[0m\]: "
 else
   # local
-  export PS1="\n    \e[1;36mλ\e[0m \W\$(parse_git_branch): "
+  export PS1="\n    \[\e[00;36m\]λ\[\e[0m\] \W\[\e[00;37m\]\$(parse_git_branch)\[\e[0m\]: "
 fi
