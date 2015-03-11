@@ -12,7 +12,7 @@
   today-fs = log --since=midnight --no-merges --name-only
   ack = log --color=always --all --topo-order --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(black bold)(by %an)%Creset' --full-history -S
 [core]
-  excludesfile = /Users/marcus/.gitignore_global
+  excludesfile = –/.gitignore
 [color]
   ui = true
 [credential]
