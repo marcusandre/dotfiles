@@ -28,7 +28,7 @@ alias ip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
 alias rmds="find . -name \".DS_Store\" | xargs rm"
 alias pull="curl -L#"
 alias npw="pwgen -Bs 16 1"
-alias godeps='go get ./..'
+alias godeps='go get ./...'
 
 # Docker aliases
 if hash docker 2>/dev/null; then
