@@ -67,6 +67,9 @@ set colorcolumn=+1
 set number
 set numberwidth=4
 
+" mvim
+set guifont=M+\ 1m:h16
+
 " splits
 set splitbelow
 set splitright
