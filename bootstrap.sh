@@ -35,7 +35,7 @@ fi
 #
 
 if [[ $* == *--recipes* ]]; then
-  recipes=(bash git vim wget curl bash-completion git-extras the_silver_searcher)
+  recipes=(bash git vim wget curl bash-completion git-extras the_silver_searcher z)
   recipes=$(printf " %s" "${recipes[@]}")
   recipes=${recipes:1}
   brew update
