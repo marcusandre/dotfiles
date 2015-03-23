@@ -20,6 +20,8 @@ shopt -s cdspell
 shopt -s checkwinsize
 shopt -s histappend
 shopt -s nocaseglob
+shopt -s extglob
+shopt -s globstar 2>/dev/null
 
 # notify of background job completion
 set -o notify
