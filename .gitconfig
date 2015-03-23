@@ -2,15 +2,17 @@
   name = Marcus André
   email = hello@marcusandre.de
 [alias]
-  l = log --pretty=oneline --abbrev-commit --graph --decorate
-  join = merge --no-ff
-  upgrade = !git fetch origin --prune && git rebase origin/master
-  track = checkout -t
-  unstage = checkout -- .
   amend = commit --amend
+  cached = diff --cached
+  co = checkout
+  join = merge --no-ff
+  l = log --pretty=oneline --abbrev-commit --graph --decorate
   today = log --since=midnight --author='Marcus André' --oneline --no-merges
   today-fs = log --since=midnight --no-merges --name-only
-  ack = log --color=always --all --topo-order --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(black bold)(by %an)%Creset' --full-history -S
+  todo = !git ls-files | xargs grep --color=auto -onE '(TODO|FIXME):.*$'
+  track = checkout -t
+  unstage = checkout -- .
+  upgrade = !git fetch origin --prune && git rebase origin/master
 [core]
   excludesfile = –/.gitignore
 [color]
