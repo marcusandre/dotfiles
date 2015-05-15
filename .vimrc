@@ -44,12 +44,13 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'fatih/vim-go'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 call vundle#end()
 
 " display
-syntax on
+syntax enable
 filetype plugin indent on
 
 " indenting
@@ -106,4 +107,5 @@ let &t_EI .= "\<Esc>[2 q"
 
 " colorscheme
 set t_Co=256
-color Tomorrow
+set background=dark
+colorscheme solarized
