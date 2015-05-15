@@ -25,6 +25,7 @@ set hlsearch
 set scrolloff=3
 set title
 set visualbell
+set modeline
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -58,15 +59,19 @@ set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
+set smartindent
+set breakindent
+set autoindent
+set wrap linebreak nolist
 
 " whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
 " lines and rows
-set textwidth=80
-set colorcolumn=+1
 set number
 set numberwidth=4
+set textwidth=80
+set colorcolumn=+1
 
 " mvim
 set guifont=M+\ 1m:h16
@@ -75,19 +80,30 @@ set guifont=M+\ 1m:h16
 set splitbelow
 set splitright
 
+" set leader key
+let mapleader = ","
+
+" mappings
+nmap <leader>p :CtrlP<cr>
+nmap <leader>/ :nohlsearch<cr>
+
 " disable arrow keys
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
+map  <up>    <nop>
+imap <up>    <nop>
+map  <down>  <nop>
+imap <down>  <nop>
+map  <left>  <nop>
+imap <left>  <nop>
+map  <right> <nop>
+imap <right> <nop>
 
 " bind commands
 command! Q q
 command! W w
 command! WQ wq
 
-" mappings
-let mapleader = ","
+" ctrl-p settings
+set wildignore+=*/node_modules/*
 
 " vim-go mappings
 au FileType go nmap <Leader>gd <Plug>(go-doc)
@@ -101,9 +117,8 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 " vim-go settings
 let g:go_fmt_command = "goimports"
 
-" map cursor for insert mode
-let &t_SI .= "\<Esc>[5 q"
-let &t_EI .= "\<Esc>[2 q"
+" Use the nearest .git directory as `cwd`
+let g:ctrlp_working_path_mode = 'r'
 
 " colorscheme
 set t_Co=256
