@@ -89,7 +89,7 @@ let mapleader = ","
 
 " mappings
 nmap <leader>p :CtrlP<cr>
-nmap <leader>/ :nohlsearch<cr>
+nmap <leader>s :nohlsearch<cr>
 
 " disable arrow keys
 map  <up>    <nop>
