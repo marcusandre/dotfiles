@@ -19,6 +19,7 @@
   default = simple
 [core]
   excludesfile = –/.gitignore
+  precomposeunicode = false
 [color]
   ui = true
 [credential]
