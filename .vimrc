@@ -126,4 +126,4 @@ let g:ctrlp_working_path_mode = 'r'
 
 " colorscheme
 set t_Co=256
-colorscheme Tomorrow-Night-Eighties
+colorscheme Tomorrow
