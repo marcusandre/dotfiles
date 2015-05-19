@@ -71,3 +71,9 @@ alias vup="vagrant up"
 alias vha="vagrant halt"
 alias vst="vagrant status"
 alias vdf="vagrant destroy -f; rm -rf .vagrant"
+
+# zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# z
+. `brew --prefix`/etc/profile.d/z.sh
