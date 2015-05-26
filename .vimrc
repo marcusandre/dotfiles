@@ -37,7 +37,7 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular.git'
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
@@ -47,6 +47,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'NLKNguyen/papercolor-theme'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
@@ -131,4 +132,4 @@ let g:ctrlp_working_path_mode = 'r'
 
 " colorscheme
 set t_Co=256
-colorscheme Tomorrow
+colorscheme PaperColor
