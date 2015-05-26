@@ -46,6 +46,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
+Plugin 'bronson/vim-trailing-whitespace'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
