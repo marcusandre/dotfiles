@@ -44,11 +44,6 @@ export TERM=xterm-256color
 # Hail to the Vim, Baby
 export EDITOR=vim
 
-# Homebrew Bash completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-
 # Call the prompt
 if [ -f ~/.bash_prompt ]; then
   source ~/.bash_prompt
@@ -59,14 +54,14 @@ if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
 fi
 
+# Call the osx specific files
+if [ -f ~/.osxrc ]; then
+  source ~/.osxrc
+fi
+
 # Call the extras
 if [ -f ~/.extras ]; then
   source ~/.extras
-fi
-
-# Init z
-if [ -f $(brew --prefix)/etc/profile.d/z.sh ]; then
-  . $(brew --prefix)/etc/profile.d/z.sh
 fi
 
 # Setup Go

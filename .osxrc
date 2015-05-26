@@ -1,0 +1,9 @@
+# Homebrew Bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+# Init z
+if [ -f $(brew --prefix)/etc/profile.d/z.sh ]; then
+  . $(brew --prefix)/etc/profile.d/z.sh
+fi
