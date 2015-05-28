@@ -3,12 +3,6 @@
 set -e
 
 #
-# skip if we're not running a mac
-#
-
-[ $(uname -s) != "Darwin" ] && return
-
-#
 # create symlinks for relevant files
 #
 

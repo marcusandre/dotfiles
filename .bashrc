@@ -55,8 +55,10 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Call the osx specific files
-if [ -f ~/.osxrc ]; then
-  source ~/.osxrc
+if [[ "$(uname)" = "Darwin" ]]; then
+  if [ -f ~/.osxrc ]; then
+    source ~/.osxrc
+  fi
 fi
 
 # Call the extras
