@@ -2,6 +2,7 @@
   name = Marcus André
   email = hello@marcusandre.de
 [alias]
+  append = commit -a --amend -C HEAD
   amend = commit --amend
   cached = diff --cached
   co = checkout
