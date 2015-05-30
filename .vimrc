@@ -111,6 +111,7 @@ imap <right> <nop>
 command! Q q
 command! W w
 command! WQ wq
+cmap WJ w !sudo tee %
 
 " ctrl-p settings
 set wildignore+=*/node_modules/*
