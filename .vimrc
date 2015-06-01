@@ -47,6 +47,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'tpope/vim-markdown'
+Plugin 'reedes/vim-pencil'
 Plugin 'NLKNguyen/papercolor-theme'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
@@ -124,6 +126,16 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 
 " vim-go settings
 let g:go_fmt_command = "goimports"
+
+" pencil settings for writing prose
+let g:pencil#wrapModeDefault = 'soft'
+let g:pencil#autoformat = 1
+
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init({'wrap': 'hard'})
+augroup END
 
 " Use the nearest .git directory as `cwd`
 let g:ctrlp_working_path_mode = 'r'
