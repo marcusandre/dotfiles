@@ -29,6 +29,7 @@ alias myip="curl icanhazip.com"
 alias rmds="find . -name \".DS_Store\" | xargs rm"
 alias pull="curl -L#"
 alias godeps='go get ./...'
+alias listening='lsof -Pan -iTCP -sTCP:listen'
 
 # Git aliases
 if hash git 2>/dev/null; then
