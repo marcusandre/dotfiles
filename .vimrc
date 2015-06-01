@@ -95,6 +95,7 @@ let mapleader = ","
 " mappings
 nmap <leader>p :CtrlP<cr>
 nmap <leader>s :nohlsearch<cr>
+nmap <leader>f gwip<cr>
 
 " disable arrow keys
 map  <up>    <nop>
