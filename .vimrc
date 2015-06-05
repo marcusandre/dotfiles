@@ -1,57 +1,22 @@
-" vim oder vi
-set nocompatible
-
 " basics
-set backspace=indent,eol,start
-set nobackup
-set nowritebackup
-set directory=.,$TEMP
-set backupdir=.,$TEMP
-set noswapfile
-set history=100
-set ruler
-set showcmd
-set showmode
-set hidden
-set laststatus=2
-set autowrite
-set shell=bash
-set wildmenu
-set wildmode=list:longest
-set ignorecase
-set smartcase
-set incsearch
-set hlsearch
-set scrolloff=3
-set title
-set visualbell
-set modeline
-
 filetype off
+set nocompatible
+set encoding=utf-8
+
+" enable Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Let Vundle manage Vundle
+" plugins
 Plugin 'gmarik/Vundle.vim'
-
-" Plugins
-Plugin 'majutsushi/tagbar'
-Plugin 'godlygeek/tabular.git'
-" Plugin 'bling/vim-airline'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'rust-lang/rust.vim'
-Plugin 'fatih/vim-go'
-Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tpope/vim-markdown'
-Plugin 'reedes/vim-pencil'
+Plugin 'godlygeek/tabular.git'
+Plugin 'tpope/vim-surround'
+Plugin 'rust-lang/rust.vim'
 Plugin 'NLKNguyen/papercolor-theme'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 call vundle#end()
 
@@ -59,43 +24,58 @@ call vundle#end()
 syntax enable
 filetype plugin indent on
 
-" indenting
+" settings
 set tabstop=2
 set shiftwidth=2
-set shiftround
 set expandtab
-set smartindent
-set breakindent
+set smarttab
 set autoindent
-set wrap linebreak nolist
-
-" whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
-
-" lines and rows
-set number
+set ruler
+set hidden
+"  set number
 set numberwidth=4
 set textwidth=80
 set colorcolumn=+1
+set ignorecase
+set smartcase
+set showmatch
+set incsearch
+set hlsearch
+set relativenumber
+set ls=2
+set cursorline
+set nowrap
+set backspace=indent,eol,start
+set wildmenu
+set ttyfast
+set showmode
+set showcmd
+set cmdheight=1
+set nobackup
+set nowritebackup
+set history=100
+set shell=bash
+set scrolloff=3
+set title
+set visualbell
+set modeline
+set undofile
+set undolevels=100
 
-" splits
-set splitbelow
-set splitright
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-" always jump search results in the middle of the screen
-nnoremap n nzz
+" whitespace
+set list
+set list listchars=tab:»·,trail:·,nbsp:·
 
 " set leader key
 let mapleader = ","
 
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 " mappings
 nmap <leader>p :CtrlP<cr>
 nmap <leader>s :nohlsearch<cr>
-nmap <leader>f gwip<cr>
 
 " disable arrow keys
 map  <up>    <nop>
@@ -111,31 +91,12 @@ imap <right> <nop>
 command! Q q
 command! W w
 command! WQ wq
-cmap WJ w !sudo tee %
+cmap wf w !sudo tee %
 
-" ctrl-p settings
-set wildignore+=*/node_modules/*
-
-" vim-go mappings
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-
-" vim-go settings
-let g:go_fmt_command = "goimports"
-
-" pencil settings for writing prose
-let g:pencil#wrapModeDefault = 'soft'
-let g:pencil#autoformat = 1
-
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
-  autocmd FileType text         call pencil#init({'wrap': 'hard'})
+" realign buffers when iterm goes fullscreen
+augroup FixProportionsOnResize
+  au!
+  au VimResized * exe "normal! \<c-w>="
 augroup END
 
 " Use the nearest .git directory as `cwd`
