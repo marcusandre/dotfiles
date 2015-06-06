@@ -17,6 +17,7 @@ Plugin 'godlygeek/tabular.git'
 Plugin 'tpope/vim-surround'
 Plugin 'rust-lang/rust.vim'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
 
