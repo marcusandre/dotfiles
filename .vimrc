@@ -54,6 +54,9 @@ set showcmd
 set cmdheight=1
 set nobackup
 set nowritebackup
+set directory=.,$TEMP
+set backupdir=.,$TEMP
+set noswapfile
 set history=100
 set shell=bash
 set scrolloff=3
