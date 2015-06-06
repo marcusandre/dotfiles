@@ -63,8 +63,7 @@ set scrolloff=3
 set title
 set visualbell
 set modeline
-set undofile
-set undolevels=100
+set noundofile
 
 " whitespace
 set list
