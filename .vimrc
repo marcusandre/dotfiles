@@ -18,6 +18,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'rust-lang/rust.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'luochen1990/indent-detector.vim'
 
 call vundle#end()
 
