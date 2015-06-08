@@ -79,6 +79,7 @@ nnoremap N Nzzzv
 " mappings
 nmap <leader>p :CtrlP<cr>
 nmap <leader>s :nohlsearch<cr>
+nmap <Leader>w :w<CR>
 
 " disable arrow keys
 map  <up>    <nop>
