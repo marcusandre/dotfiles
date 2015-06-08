@@ -116,3 +116,6 @@ let g:ctrlp_working_path_mode = 'r'
 " colorscheme
 set t_Co=256
 colorscheme zenburn
+
+" vim-airline settings
+let g:airline_theme='wombat'
