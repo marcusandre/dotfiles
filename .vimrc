@@ -82,6 +82,11 @@ nmap <leader>p :CtrlP<cr>
 nmap <leader>s :nohlsearch<cr>
 nmap <Leader>w :w<CR>
 
+" automatically jump to end of pasted text
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
 " disable arrow keys
 map  <up>    <nop>
 imap <up>    <nop>
