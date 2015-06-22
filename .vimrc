@@ -21,6 +21,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'luochen1990/indent-detector.vim'
+Plugin 'elzr/vim-json'
 
 call vundle#end()
 
