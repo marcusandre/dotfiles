@@ -18,10 +18,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-vinegar'
 Plugin 'godlygeek/tabular.git'
 Plugin 'rust-lang/rust.vim'
+Plugin 'fatih/vim-go'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'luochen1990/indent-detector.vim'
-Plugin 'elzr/vim-json'
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
@@ -122,6 +122,15 @@ if executable("ag")
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
+
+" vim-go settings and mappings
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+
+let g:go_fmt_command = "goimports" " insert import paths automatically
 
 " colorscheme
 set t_Co=256
