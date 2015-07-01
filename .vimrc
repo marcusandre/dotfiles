@@ -105,7 +105,7 @@ imap <right> <nop>
 command! Q q
 command! W w
 command! WQ wq
-cmap wf w !sudo tee %
+cmap w!! w !sudo tee %
 
 " realign buffers when iterm goes fullscreen
 augroup FixProportionsOnResize
