@@ -52,3 +52,19 @@ if [[ $* == *--vundle* ]]; then
     vim +PluginUpdate +qall
   fi
 fi
+
+#
+# Install Golang
+#
+
+
+if [[ $* == *--golang* ]]; then
+  dir=~/.go
+
+  if [ ! -d "$dir" ]; then
+    git clone https://github.com/golang/go.git "$dir"
+    cd $dir/src && git checkout go1.4.2 && ./all.bash
+  else
+    echo "Golang seems to be already installed."
+  fi
+fi
