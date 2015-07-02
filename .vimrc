@@ -137,5 +137,4 @@ autocmd FileType css noremap <buffer> <leader>bc :CSScomb<CR>
 autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb<CR>
 
 " colorscheme
-set t_Co=256
 colorscheme Tomorrow-Night-Eighties
