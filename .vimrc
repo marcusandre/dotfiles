@@ -17,6 +17,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-vinegar'
 Plugin 'godlygeek/tabular.git'
+Plugin 'csscomb/vim-csscomb'
 Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
 Plugin 'NLKNguyen/papercolor-theme'
@@ -129,8 +130,11 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-
 let g:go_fmt_command = "goimports" " insert import paths automatically
+
+" csscomb
+autocmd FileType css noremap <buffer> <leader>bc :CSScomb<CR>
+autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb<CR>
 
 " colorscheme
 set t_Co=256
