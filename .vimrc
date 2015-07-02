@@ -134,4 +134,4 @@ let g:go_fmt_command = "goimports" " insert import paths automatically
 
 " colorscheme
 set t_Co=256
-colorscheme Tomorrow
+colorscheme Tomorrow-Night-Eighties
