@@ -14,9 +14,11 @@ $ cd .dotfiles && make
 
 #### Makefile
 
-  $ make update # fetch latest dotfile release
-  $ make link # symlinks the dotfiles
-  $ make vim # install vundle or update packages
+```bash
+$ make update # fetch latest dotfile release
+$ make link # symlinks the dotfiles
+$ make vim # install vundle or update packages
+```
 
 #### bootstrap.sh
 
