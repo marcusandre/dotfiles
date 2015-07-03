@@ -86,6 +86,7 @@ nnoremap N Nzzzv
 nmap <leader>o :CtrlP<cr>
 nmap <leader>p :set invpaste paste?
 nmap <leader>s :nohlsearch<cr>
+nmap <leader>q :quit<cr>
 nmap <Leader>, :w<CR>
 nmap <Leader>w <C-w>
 nmap <Leader>. <C-w><C-w>
