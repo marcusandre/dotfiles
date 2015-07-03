@@ -83,9 +83,18 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " mappings
-nmap <leader>p :CtrlP<cr>
+nmap <leader>o :CtrlP<cr>
+nmap <leader>p :set invpaste paste?
 nmap <leader>s :nohlsearch<cr>
-nmap <Leader>w :w<CR>
+nmap <Leader>, :w<CR>
+nmap <Leader>w <C-w>
+nmap <Leader>. <C-w><C-w>
+
+" easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " automatically jump to end of pasted text
 vnoremap <silent> y y`]
