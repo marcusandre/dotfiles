@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'mattn/emmet-vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
@@ -22,8 +23,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'luochen1990/indent-detector.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
@@ -147,4 +147,4 @@ autocmd FileType css noremap <buffer> <leader>bc :CSScomb<CR>
 autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb<CR>
 
 " colorscheme
-colorscheme Tomorrow-Night-Eighties
+colorscheme PaperColor
