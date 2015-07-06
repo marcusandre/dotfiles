@@ -37,9 +37,10 @@ set shiftwidth=2
 set expandtab
 set smarttab
 set autoindent
+set smartindent
 set ruler
 set hidden
-"  set number
+" set number
 set numberwidth=4
 set textwidth=80
 set colorcolumn=+1
@@ -73,7 +74,7 @@ set noundofile
 
 " whitespace
 set list
-set list listchars=tab:»·,trail:·,nbsp:·
+set listchars=tab:»·,trail:·,nbsp:·
 
 " set leader key
 let mapleader = ","
@@ -84,7 +85,7 @@ nnoremap N Nzzzv
 
 " mappings
 nmap <leader>o :CtrlP<cr>
-nmap <leader>p :set invpaste paste?
+nmap <leader>p :set invpaste paste?<cr>
 nmap <leader>s :nohlsearch<cr>
 nmap <leader>q :quit<cr>
 nmap <Leader>, :w<CR>
