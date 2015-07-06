@@ -148,3 +148,4 @@ autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb<CR>
 
 " colorscheme
 colorscheme PaperColor
+let g:airline_theme="papercolor"
