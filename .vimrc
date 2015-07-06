@@ -88,8 +88,8 @@ nmap <leader>o :CtrlP<cr>
 nmap <leader>p :set invpaste paste?<cr>
 nmap <leader>s :nohlsearch<cr>
 nmap <leader>q :quit<cr>
-nmap <Leader>, :w<CR>
-nmap <Leader>w <C-w>
+nmap <Leader>w :w<CR>
+nmap <Leader>, <C-w>
 nmap <Leader>. <C-w><C-w>
 
 " easier split navigations
