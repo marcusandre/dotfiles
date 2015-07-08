@@ -87,7 +87,6 @@ nnoremap N Nzzzv
 nmap <leader>o :CtrlP<cr>
 nmap <leader>p :set invpaste paste?<cr>
 nmap <leader>s :nohlsearch<cr>
-nmap <leader>q :quit<cr>
 nmap <Leader>w :w<CR>
 nmap <Leader>, <C-w>
 nmap <Leader>. <C-w><C-w>
@@ -141,12 +140,14 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-let g:go_fmt_command = "goimports" " insert import paths automatically
+
+" insert import paths automatically + fmt
+let g:go_fmt_command = "goimports"
 
 " csscomb
 autocmd FileType css noremap <buffer> <leader>bc :CSScomb<CR>
 autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb<CR>
 
 " colorscheme
-colorscheme PaperColor
-let g:airline_theme="papercolor"
+colorscheme Tomorrow-Night
+" let g:airline_theme="papercolor"
