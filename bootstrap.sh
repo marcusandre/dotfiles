@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -e
 
@@ -32,8 +32,10 @@ if [[ $* == *--recipes* ]]; then
   recipes=(bash git vim wget curl cmake bash-completion git-extras the_silver_searcher ack z)
   recipes=$(printf " %s" "${recipes[@]}")
   recipes=${recipes:1}
+  brew tap neovim/neovim
   brew update
   brew install $recipes
+  brew install --HEAD neovim
   brew cleanup --force
 fi
 
@@ -41,15 +43,15 @@ fi
 # install vundle
 #
 
-if [[ $* == *--vundle* ]]; then
-  dir=~/.vim/bundle/Vundle.vim
+if [[ $* == *--vim-plug* ]]; then
+  url=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
   if [ ! -d "$dir" ]; then
-    git clone https://github.com/gmarik/Vundle.vim.git "$dir"
-    vim +PluginInstall +qall
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs $url
+    ln -sf ~/.vim ~/.nvim
+    vim +PlugInstall +qall now
   else
-    cd "$dir" && git pull
-    vim +PluginUpdate +qall
+    vim +PlugUpgrade +PlugUpdate +qall now
   fi
 fi
 

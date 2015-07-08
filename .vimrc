@@ -3,29 +3,27 @@ filetype off
 set nocompatible
 set encoding=utf-8
 
-" enable Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" enable vim-plug
+call plug#begin()
 
 " plugins
-Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'mattn/emmet-vim'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-vinegar'
-Plugin 'godlygeek/tabular.git'
-Plugin 'csscomb/vim-csscomb'
-Plugin 'rust-lang/rust.vim'
-Plugin 'fatih/vim-go'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'flazz/vim-colorschemes'
-" Plugin 'Valloric/YouCompleteMe'
+Plug 'kien/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'mattn/emmet-vim'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
+Plug 'godlygeek/tabular'
+Plug 'csscomb/vim-csscomb'
+Plug 'fatih/vim-go'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'flazz/vim-colorschemes'
+" Plug 'Valloric/YouCompleteMe'
 
-call vundle#end()
+" end vim-plug
+call plug#end()
 
 " display
 syntax enable

@@ -8,4 +8,4 @@ link:
 	@./bootstrap.sh --link
 
 vim:
-	@./bootstrap.sh --vundle
+	@./bootstrap.sh --vim-plug
