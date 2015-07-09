@@ -29,7 +29,8 @@ fi
 #
 
 if [[ $* == *--recipes* ]]; then
-  recipes=(bash git vim wget curl cmake bash-completion git-extras the_silver_searcher ack z)
+  recipes=(bash git vim wget curl cmake bash-completion)
+  recipes+=(git-extras the_silver_searcher ack z jq tmux)
   recipes=$(printf " %s" "${recipes[@]}")
   recipes=${recipes:1}
   brew tap neovim/neovim
