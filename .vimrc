@@ -144,7 +144,7 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 let g:go_fmt_command = "goimports"
 
 " csscomb
-autocmd FileType css noremap <buffer> <leader>bc :CSScomb<CR>
+autocmd FileType css noremap <buffer> <leader>co :CSScomb<CR>
 autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb<CR>
 
 " colorscheme
