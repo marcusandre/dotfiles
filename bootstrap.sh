@@ -52,7 +52,7 @@ if [[ $* == *--vim-plug* ]]; then
     ln -sf ~/.vim ~/.nvim
     vim +PlugInstall +qall now
   else
-    vim +PlugUpgrade +PlugUpdate +qall now
+    vim +PlugUpgrade +PlugClean +PlugUpdate +qall now
   fi
 fi
 

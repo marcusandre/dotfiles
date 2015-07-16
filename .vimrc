@@ -8,6 +8,7 @@ call plug#begin()
 
 " plugins
 Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim'
@@ -24,7 +25,6 @@ Plug 'csscomb/vim-csscomb'
 Plug 'fatih/vim-go'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'flazz/vim-colorschemes'
-" Plug 'Valloric/YouCompleteMe'
 
 " end vim-plug
 call plug#end()
@@ -89,7 +89,8 @@ nnoremap N Nzzzv
 nmap <leader>o :CtrlP<cr>
 nmap <leader>p :set invpaste paste?<cr>
 nmap <leader>s :nohlsearch<cr>
-nmap <Leader>w :w<CR>
+nmap <Leader>w :w<cr>
+nmap <Leader>t :NERDTreeToggle<cr>
 nmap <Leader>, <C-w>
 nmap <Leader>. <C-w><C-w>
 
@@ -136,6 +137,10 @@ if executable("ag")
   let g:ctrlp_use_caching = 0
 endif
 
+" open NERDTree if buffer is empty at startup
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " vim-go settings and mappings
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
@@ -151,5 +156,5 @@ autocmd FileType css noremap <buffer> <leader>co :CSScomb<CR>
 autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb<CR>
 
 " colorscheme
-colorscheme PaperColor
-let g:airline_theme="papercolor"
+colorscheme zenburn
+let g:airline_theme="zenburn"
