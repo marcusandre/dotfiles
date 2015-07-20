@@ -156,5 +156,5 @@ autocmd FileType css noremap <buffer> <leader>co :CSScomb<CR>
 autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb<CR>
 
 " colorscheme
-colorscheme zenburn
-let g:airline_theme="zenburn"
+colorscheme Tomorrow-Night-Eighties
+let g:airline_theme="tomorrow"
