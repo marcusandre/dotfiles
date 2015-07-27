@@ -29,8 +29,8 @@ alias ip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
 alias myip="curl icanhazip.com"
 alias rmds="find . -name \".DS_Store\" | xargs rm"
 alias pull="curl -L#"
-alias godeps='go get ./...'
-alias listening='lsof -Pan -iTCP -sTCP:listen'
+alias godeps="go get ./..."
+alias listening="lsof -Pan -iTCP -sTCP:listen"
 
 # Git aliases
 if hash git 2>/dev/null; then
@@ -74,5 +74,5 @@ function pack {
 # serve tree via http
 function serve {
   local port=${1-3000};
-  python -m SimpleHTTPServer ${port}
+  php -S 0.0.0.0:${port}
 }

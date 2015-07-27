@@ -76,6 +76,7 @@ set title
 set visualbell
 set modeline
 set noundofile
+set nowrap
 
 " whitespace
 set list
@@ -104,9 +105,9 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " automatically jump to end of pasted text
-vnoremap <silent> y y`]
-vnoremap <silent> p p`]
-nnoremap <silent> p p`]
+" vnoremap <silent> y y`]
+" vnoremap <silent> p p`]
+" nnoremap <silent> p p`]
 
 " disable arrow keys
 map  <up>    <nop>
@@ -158,6 +159,10 @@ let g:go_fmt_command = "goimports"
 autocmd FileType css noremap <buffer> <leader>co :CSScomb<CR>
 autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb<CR>
 
+" markdown
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_frontmatter=1
+
 " colorscheme
-colorscheme Tomorrow-Night-Eighties
+colorscheme Tomorrow-Night
 let g:airline_theme="tomorrow"
