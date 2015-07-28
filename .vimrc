@@ -93,10 +93,10 @@ nnoremap N Nzzzv
 nmap <leader>o :CtrlP<cr>
 nmap <leader>p :set invpaste paste?<cr>
 nmap <Leader>s :w<cr>
-nmap <Leader>t :NERDTreeToggle<cr>
 nmap <Leader>, <C-w>
 nmap <Leader>. <C-w><C-w>
 nmap <ESC><ESC> :nohlsearch<CR>
+nmap - :NERDTreeToggle<cr>
 
 " easier split navigations
 nnoremap <C-J> <C-W><C-J>
