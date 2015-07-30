@@ -165,5 +165,5 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
 " colorscheme
-colorscheme Tomorrow-Night
-let g:airline_theme="tomorrow"
+colorscheme PaperColor
+let g:airline_theme="papercolor"
