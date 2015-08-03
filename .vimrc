@@ -166,7 +166,7 @@ let g:go_fmt_command = "goimports"
 
 " csscomb
 autocmd FileType css noremap <buffer> <leader>co :CSScomb<CR>
-autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb<CR>
+autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass,*.styl silent! :CSScomb<CR>
 
 " markdown
 let g:vim_markdown_folding_disabled=1
