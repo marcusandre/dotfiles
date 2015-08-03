@@ -134,8 +134,9 @@ augroup FixProportionsOnResize
   au VimResized * exe "normal! \<c-w>="
 augroup END
 
-" use the nearest .git directory as `cwd`
-let g:ctrlp_working_path_mode = 'r'
+" jump to start or end of line
+nmap H ^
+nmap L $
 
 " override to use The Silver Searcher
 if executable("ag")
