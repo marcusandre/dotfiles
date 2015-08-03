@@ -28,6 +28,7 @@ Plug 'csscomb/vim-csscomb'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'w0ng/vim-hybrid'
 Plug 'flazz/vim-colorschemes'
 
 " end vim-plug
@@ -166,5 +167,5 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
 " colorscheme
-colorscheme PaperColor
-let g:airline_theme="papercolor"
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
