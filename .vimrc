@@ -186,5 +186,7 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " colorscheme
+set t_Co=256
+set background=dark
 let g:hybrid_use_Xresources = 1
 colorscheme hybrid
