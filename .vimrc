@@ -172,6 +172,19 @@ autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass,*.styl silent! :CSSc
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
+" airline
+let g:airline_powerline_fonts = 0
+let g:airline_theme = 'powerlineish'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
+
 " colorscheme
 let g:hybrid_use_Xresources = 1
 colorscheme hybrid
