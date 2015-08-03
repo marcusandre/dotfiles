@@ -138,12 +138,16 @@ augroup END
 nmap H ^
 nmap L $
 
-" override to use The Silver Searcher
+" override ctrlp to use The Silver Searcher
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
+
+" use the nearest .git directory as `cwd`
+let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_show_hidden = 1
 
 " open NERDTree if buffer is empty at startup
 autocmd StdinReadPre * let s:std_in=1
