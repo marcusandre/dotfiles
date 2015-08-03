@@ -45,6 +45,7 @@ set expandtab
 set smarttab
 set autoindent
 set smartindent
+set breakindent
 set ruler
 set hidden
 " set number
