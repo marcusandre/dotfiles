@@ -94,6 +94,7 @@ nnoremap N Nzzzv
 
 " mappings
 nmap <leader>o :CtrlP<cr>
+nmap <Leader>b :CtrlPBuffer<CR>
 nmap <leader>p :set invpaste paste?<cr>
 nmap <Leader>s :w<cr>
 nmap <Leader>, <C-w>
