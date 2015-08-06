@@ -48,7 +48,6 @@ set smartindent
 set breakindent
 set ruler
 set hidden
-" set number
 set numberwidth=4
 set textwidth=80
 set colorcolumn=+1
@@ -58,6 +57,7 @@ set showmatch
 set incsearch
 set hlsearch
 set relativenumber
+set number
 set ls=2
 set cursorline
 set nowrap
