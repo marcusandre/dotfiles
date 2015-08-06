@@ -187,6 +187,9 @@ autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass,*.styl silent! :CSSc
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
+" editorconfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
 " airline
 let g:airline_powerline_fonts = 0
 let g:airline_theme = 'powerlineish'
