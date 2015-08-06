@@ -80,6 +80,9 @@ set visualbell
 set modeline
 set noundofile
 set nowrap
+set complete=.,b,u,]
+set wildmode=longest,list:longest
+set completeopt=menu,preview
 
 " whitespace
 set list
@@ -97,6 +100,7 @@ nmap <leader>o :CtrlP<cr>
 nmap <Leader>b :CtrlPBuffer<CR>
 nmap <leader>p :set invpaste paste?<cr>
 nmap <Leader>s :w<cr>
+imap <Tab> <C-N>
 nmap <Leader>, <C-w>
 nmap <Leader>. <C-w><C-w>
 nmap <ESC><ESC> :nohlsearch<CR>
