@@ -96,14 +96,20 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " mappings
-nmap <leader>o :CtrlP<cr>
-nmap <Leader>b :CtrlPBuffer<CR>
+nmap <silent> <Leader><space> :CtrlP<cr>
+nmap <silent> <Leader>b<space> :CtrlPBuffer<cr>
+nmap <leader>bp :bp<cr>
+nmap <leader>bn :bn<cr>
 nmap <leader>p :set invpaste paste?<cr>
 nmap <Leader>s :w<cr>
+nmap <silent> <leader>r :redraw!<cr>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>gd :Gdiff<cr>
 imap <Tab> <C-N>
 nmap <Leader>, <C-w>
 nmap <Leader>. <C-w><C-w>
-nmap <ESC><ESC> :nohlsearch<CR>
+nmap <ESC><ESC> :nohlsearch<cr>
 nmap - :NERDTreeToggle<cr>
 
 " easier split navigations
@@ -111,6 +117,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Treat long lines as break lines
+nnoremap j gj
+nnoremap k gk
 
 " automatically jump to end of pasted text
 " vnoremap <silent> y y`]
@@ -170,8 +180,8 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 let g:go_fmt_command = "goimports"
 
 " csscomb
-autocmd FileType css noremap <buffer> <leader>co :CSScomb<CR>
-autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass,*.styl silent! :CSScomb<CR>
+autocmd FileType css noremap <buffer> <leader>co :CSScomb<cr>
+autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass,*.styl silent! :CSScomb<cr>
 
 " markdown
 let g:vim_markdown_folding_disabled=1
