@@ -106,7 +106,6 @@ nmap <silent> <leader>r :redraw!<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
-imap <Tab> <C-N>
 nmap <Leader>, <C-w>
 nmap <Leader>. <C-w><C-w>
 nmap <ESC><ESC> :nohlsearch<cr>
