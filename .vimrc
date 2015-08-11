@@ -8,22 +8,20 @@ call plug#begin()
 
 " plugins
 Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-repeat'
+Plug 'Shougo/neocomplete.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
-Plug 'wavded/vim-stylus'
 Plug 'mattn/emmet-vim'
 Plug 'bling/vim-airline'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-endwise'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'csscomb/vim-csscomb'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -167,6 +165,9 @@ let g:ctrlp_show_hidden = 1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
+
+" enable omnicompletion at stratup
+let g:neocomplete#enable_at_startup = 1
 
 " vim-go settings and mappings
 au FileType go nmap <leader>r <Plug>(go-run)
