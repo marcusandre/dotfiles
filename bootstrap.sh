@@ -29,13 +29,14 @@ fi
 #
 
 if [[ $* == *--recipes* ]]; then
-  recipes=(bash git vim wget curl cmake bash-completion)
+  recipes=(bash git wget curl cmake bash-completion)
   recipes+=(git-extras the_silver_searcher ack z jq tmux)
   recipes=$(printf " %s" "${recipes[@]}")
   recipes=${recipes:1}
   brew tap neovim/neovim
   brew update
   brew install $recipes
+  brew install vim --with-lua --with-luajit --with-python3
   brew install --HEAD neovim
   brew cleanup --force
 fi
