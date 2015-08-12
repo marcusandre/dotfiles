@@ -95,20 +95,23 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " mappings
-nmap <silent> <Leader><space> :CtrlP<cr>
-nmap <silent> <Leader>b<space> :CtrlPBuffer<cr>
-nmap <leader>bp :bp<cr>
+nmap - :NERDTreeToggle<cr>
+nmap <ESC><ESC> :nohlsearch<cr>
+nmap <leader>, <C-w>
+nmap <leader>. <C-w><C-w>
 nmap <leader>bn :bn<cr>
-nmap <leader>p :set invpaste paste?<cr>
-nmap <Leader>s :w<cr>
-nmap <silent> <leader>r :redraw!<cr>
-nmap <leader>gs :Gstatus<cr>
+nmap <leader>bp :bp<cr>
+nmap <leader>ev :edit $MYVIMRC<CR>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
-nmap <Leader>, <C-w>
-nmap <Leader>. <C-w><C-w>
-nmap <ESC><ESC> :nohlsearch<cr>
-nmap - :NERDTreeToggle<cr>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>p :set invpaste paste?<cr>
+nmap <leader>s :w<cr>
+nmap <leader>sv :source $MYVIMRC<CR>
+nmap <leader>w :set invwrap wrap?<CR>
+nmap <silent> <Leader><space> :CtrlP<cr>
+nmap <silent> <Leader>b<space> :CtrlPBuffer<cr>
+nmap <silent> <leader>r :redraw!<cr>
 
 " easier split navigations
 nnoremap <C-J> <C-W><C-J>
