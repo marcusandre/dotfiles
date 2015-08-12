@@ -48,7 +48,7 @@ $ make vim # install vim-plug or update packages
 ##### --golang
 
   If you are a Golang fanboy, you can easily install the language and setup it's
-  environment. Everything should work now.
+  environment. Everything will work automatically.
 
 ## License
 
