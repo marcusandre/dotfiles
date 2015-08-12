@@ -81,6 +81,7 @@ set nowrap
 set complete=.,b,u,]
 set wildmode=longest,list:longest
 set completeopt=menu,preview
+set lazyredraw
 
 " whitespace
 set list
