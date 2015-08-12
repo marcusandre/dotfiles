@@ -52,6 +52,7 @@ if [[ $* == *--vim-plug* ]]; then
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs $url
     ln -sf ~/.vim ~/.nvim
     vim +PlugInstall +qall now
+    cd ~/.vim/plugged/tern_for_vim && npm install -s
   else
     vim +PlugUpgrade +PlugClean +PlugUpdate +qall now
   fi
