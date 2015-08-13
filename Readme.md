@@ -40,9 +40,9 @@ $ make vim # install vim-plug or update packages
   Installs some magic command line tools via homebrew. Feel free to extent to
   your needs. Or send me a pull request, if I should know a good tool. :)
 
-##### --vim-plug
+##### --vim
 
-  The vim setup requires some plugins. With this command you are able to
+  MY Vim setup requires some plugins. With this command you are able to
   automatically install vim-plug and all the plugins from the ```.vimrc``` file.
 
 ##### --golang

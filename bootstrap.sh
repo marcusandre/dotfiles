@@ -42,10 +42,10 @@ if [[ $* == *--recipes* ]]; then
 fi
 
 #
-# install vundle
+# install/update vim bundles
 #
 
-if [[ $* == *--vim-plug* ]]; then
+if [[ $* == *--vim* ]]; then
   url=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
   if [ ! -d "$dir" ]; then
@@ -54,7 +54,7 @@ if [[ $* == *--vim-plug* ]]; then
     vim +PlugInstall +qall now
     cd ~/.vim/plugged/tern_for_vim && npm install -s
   else
-    vim +PlugUpgrade +PlugClean +PlugUpdate +qall now
+    vim +PlugUpgrade +PlugClean +PlugInstall +PlugUpdate +qall
   fi
 fi
 
