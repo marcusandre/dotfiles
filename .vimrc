@@ -196,7 +196,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " airline
 let g:airline_powerline_fonts = 0
-let g:airline_theme = 'tomorrow'
+let g:airline_theme = 'papercolor'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -210,4 +210,4 @@ let g:airline_symbols.whitespace = 'Ξ'
 " colorscheme
 set t_Co=256
 let g:hybrid_use_Xresources = 1
-colorscheme Tomorrow
+colorscheme PaperColor
