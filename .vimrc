@@ -18,7 +18,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'marijnh/tern_for_vim'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
@@ -167,9 +167,9 @@ let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_show_hidden = 1
 
 " open NERDTree if buffer is empty at startup
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" let NERDTreeShowHidden=1
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeShowHidden=1
 
 " enable omnicompletion at stratup
 let g:neocomplete#enable_at_startup = 1
