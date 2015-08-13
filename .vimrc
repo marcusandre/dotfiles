@@ -38,51 +38,50 @@ syntax enable
 filetype plugin indent on
 
 " settings
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set smarttab
-set autoindent
-set smartindent
-set breakindent
-set ruler
-set hidden
-set numberwidth=4
-set textwidth=80
-set colorcolumn=+1
-set ignorecase
-set smartcase
-set showmatch
-set incsearch
-set hlsearch
-set relativenumber
-set number
-set ls=2
-set cursorline
-set nowrap
+set autoindent " copy indent from current line
 set backspace=indent,eol,start
-set wildmenu
-set ttyfast
-set showmode
-set showcmd
-set cmdheight=1
-set nobackup
-set nowritebackup
-set directory=.,$TEMP
 set backupdir=.,$TEMP
-set noswapfile
-set history=100
-set shell=bash
-set scrolloff=3
-set title
-set visualbell
+set breakindent "Every wrapped line will continue visually indented
+set cmdheight=1
+set colorcolumn=+1
+set complete=.,b,u,]
+set completeopt=menu,menuone,preview
+set cursorline
+set directory=.,$TEMP
+set expandtab
+set hidden " hidden buffers
+set history=1000
+set hlsearch
+set ignorecase
+set incsearch
+set lazyredraw " no redraw while executing makros
+set ls=2
 set modeline
+set nobackup
+set noswapfile
 set noundofile
 set nowrap
-set complete=.,b,u,]
+set nowritebackup
+set number
+set numberwidth=4
+set relativenumber
+set ruler " Show the line and column number
+set scrolloff=6
+set shell=bash
+set shiftwidth=2
+set showcmd " show command message
+set showmatch "briefly jump to the matching
+set showmode " show mode message
+set smartcase
+set smartindent " do smart autoindenting when starting a new line.
+set smarttab
+set tabstop=2 " number of spaces that a <Tab> counts for.
+set textwidth=80
+set title
+set ttyfast " indicates fast terminal connection
+set visualbell
+set wildmenu " enhanced completion mode
 set wildmode=longest,list:longest
-set completeopt=menu,preview
-set lazyredraw
 
 " whitespace
 set list
