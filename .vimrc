@@ -124,9 +124,9 @@ nnoremap j gj
 nnoremap k gk
 
 " automatically jump to end of pasted text
-" vnoremap <silent> y y`]
-" vnoremap <silent> p p`]
-" nnoremap <silent> p p`]
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 
 " disable arrow keys
 map  <up>    <nop>
