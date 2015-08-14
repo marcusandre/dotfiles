@@ -166,11 +166,18 @@ endif
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_show_hidden = 1
 
+" NERDTree settings
+let NERDTreeShowHidden=1
+let NERDTreeWinSize=40
+
 " open NERDTree if buffer is empty at startup
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let NERDTreeShowHidden=1
-let NERDTreeWinSize=40
+
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1
+  \ && exists("b:NERDTreeType")
+  \ && b:NERDTreeType == "primary") | q | endif
 
 " enable omnicompletion at stratup
 let g:neocomplete#enable_at_startup = 1
