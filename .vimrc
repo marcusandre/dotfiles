@@ -249,6 +249,7 @@ let g:NERDTreeWinSize = 30
 let NERDTreeDirArrows = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.git$']
 
 " open NERDTree if buffer is empty at startup
 " autocmd StdinReadPre * let s:std_in=1
