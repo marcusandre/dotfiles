@@ -1,12 +1,19 @@
-" basics
+" Vim Basics
+" ==========
+
 filetype off
 set nocompatible
 set encoding=utf-8
 
-" enable vim-plug
+" Enable vim-plug
+" ===============
+
 call plug#begin()
 
-" plugins
+" Plugins
+" =======
+
+" Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'csscomb/vim-csscomb'
@@ -18,7 +25,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'marijnh/tern_for_vim'
-" Plug 'mhinz/vim-startify'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
@@ -30,73 +36,110 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'w0ng/vim-hybrid'
 
-" end vim-plug
+" End vim-plug
+" ============
+
 call plug#end()
 
-" display
-syntax enable
-filetype plugin indent on
+" Display Settings
+" ================
 
-" settings
-set autoindent " copy indent from current line
-set backspace=indent,eol,start
-set backupdir=.,$TEMP
-set breakindent "Every wrapped line will continue visually indented
+syntax on
+syntax enable
+set t_Co=256
+
+" Editor Setup
+" ============
+
+set autoread                      " Reload files changed outside vim
+set backspace=indent,eol,start    " Allow backspace in insert mode
+set breakindent                   " Every wrapped line will continue visually indented
+set clipboard=unnamed             " Use system clipboard
 set cmdheight=1
-set colorcolumn=+1
 set complete=.,b,u,]
-set completeopt=menu,menuone,preview
 set cursorline
 set directory=.,$TEMP
-set expandtab
-set hidden " hidden buffers
-set history=1000
-set hlsearch
+set hidden                        " Buffers can exist in the background
+set history=1000                  " Store more command line history
+set hlsearch                      " Highlight search by default
 set ignorecase
-set incsearch
-set lazyredraw " no redraw while executing makros
+set incsearch                     " Find the next match of current search
+set laststatus=2                  " Always show status line
+set lazyredraw                    " No redraw while executing makros
 set ls=2
 set modeline
-set nobackup
-set noswapfile
-set noundofile
-set nowrap
-set nowritebackup
-set number
+set number                        " Show line numbers
 set numberwidth=4
 set relativenumber
-set ruler " Show the line and column number
-set scrolloff=6
+set ruler                         " Show the line and column number
 set shell=bash
-set shiftwidth=2
-set showcmd " show command message
-set showmatch "briefly jump to the matching
-set showmode " show mode message
+set showcmd                       " Show incomplete cmds down the bottom
+set showmatch                     " Briefly jump to the matching
+set showmode                      " Show current mode down the bottom
 set smartcase
-set smartindent " do smart autoindenting when starting a new line.
-set smarttab
-set tabstop=2 " number of spaces that a <Tab> counts for.
+set splitbelow                    " Opens horizontal split below current window
+set splitright                    " Opens vertical split right of current window
 set textwidth=80
 set title
-set ttyfast " indicates fast terminal connection
-set visualbell
-set wildmenu " enhanced completion mode
-set wildmode=longest,list:longest
+set ttyfast                       " Send more characters
 
-" whitespace
-set list
-set listchars=tab:»·,trail:·,nbsp:·
+" Indendation Settings
+" ====================
 
-" set leader key
+filetype indent on
+filetype plugin on
+set autoindent     " Copy indent from current line
+set colorcolumn=+1
+set expandtab
+set linebreak      " Wrap lines at convenient points
+set nowrap         " Don't wrap lines
+set shiftwidth=2
+set smartindent    " Do smart autoindenting when starting a new line.
+set smarttab
+set softtabstop=2
+set tabstop=2      " Number of spaces that a <Tab> counts for.
+
+" Whitespace settings
+" ===================
+
+set list listchars=tab:»·,trail:·,nbsp:·
+
+" Disable Swap Files
+" ===================
+
+set nobackup
+set noswapfile
+set nowritebackup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+" Text Completion
+" ===============
+
+set wildmenu                   " Enhanced completion mode
+set wildmode=longest,list,full
+set wildignore+=*vim/backups*
+
+" Scrolling
+" =========
+
+set scrolloff=8
+set sidescrolloff=12
+set sidescroll=1
+
+" Remap Leader Key
+" ================
+
 let mapleader = ","
 
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" mappings
+" Mappings
+" ========
+
 nmap - :NERDTreeToggle<cr>
-nmap <ESC><ESC> :nohlsearch<cr>
 nmap <leader>, <C-w>
 nmap <leader>. <C-w><C-w>
 nmap <leader>bn :bn<cr>
@@ -112,23 +155,48 @@ nmap <leader>w :set invwrap wrap?<CR>
 nmap <silent> <Leader><space> :CtrlP<cr>
 nmap <silent> <Leader>b<space> :CtrlPBuffer<cr>
 nmap <silent> <leader>r :redraw!<cr>
+nmap <silent> H ^
+nmap <silent> L $
+nmap <space> :nohlsearch<cr>
 
-" easier split navigations
+" Rebind Commands
+" ===============
+
+command! Q q
+command! W w
+command! WQ wq
+cmap w!! w !sudo tee %
+
+" Split Navigations
+" =================
+
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Treat long lines as break lines
+" Long Lines as Break Lines
+" =========================
+
 nnoremap j gj
 nnoremap k gk
 
-" automatically jump to end of pasted text
+" Automatically jump to end of pasted text
+" ========================================
+
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-" disable arrow keys
+" Reselect visual block after indent/outdent
+" ==========================================
+
+vnoremap < <gv
+vnoremap > >gv
+
+" Disable Arrow Keys
+" ==================
+
 map  <up>    <nop>
 imap <up>    <nop>
 map  <down>  <nop>
@@ -138,21 +206,35 @@ imap <left>  <nop>
 map  <right> <nop>
 imap <right> <nop>
 
-" bind commands
-command! Q q
-command! W w
-command! WQ wq
-cmap w!! w !sudo tee %
+" Edtor Events
+" ============
 
-" realign buffers when iterm goes fullscreen
+" Resize splits on window resize
+au VimResized * exe "normal! \<c-w>="
+
+" Realign buffers when iterm goes fullscreen
 augroup FixProportionsOnResize
   au!
   au VimResized * exe "normal! \<c-w>="
 augroup END
 
-" jump to start or end of line
-nmap H ^
-nmap L $
+" Plugins
+" =======
+
+" Neocomplete
+" ==============
+let g:acp_enableAtStartup = 0                           " Disable AutoComplPop.
+let g:neocomplete#enable_at_startup = 1                 " Use neocomplete.
+let g:neocomplete#enable_smart_case = 1                 " Use smartcase.
+let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length.
+
+" CTRL-P
+" ========
+let g:ctrlp_dotfiles = 1
+let g:ctrlp_max_height = 5
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_use_caching = 0
+let g:ctrlp_working_path_mode = 'r'
 
 " override ctrlp to use The Silver Searcher
 if executable("ag")
@@ -161,13 +243,12 @@ if executable("ag")
   let g:ctrlp_use_caching = 0
 endif
 
-" use the nearest .git directory as `cwd`
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_show_hidden = 1
-
-" NERDTree settings
+" NERDTree
+" ========
+let g:NERDTreeWinSize = 30
+let NERDTreeDirArrows = 1
+let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden=1
-let NERDTreeWinSize=40
 
 " open NERDTree if buffer is empty at startup
 " autocmd StdinReadPre * let s:std_in=1
@@ -178,31 +259,39 @@ autocmd bufenter * if (winnr("$") == 1
   \ && exists("b:NERDTreeType")
   \ && b:NERDTreeType == "primary") | q | endif
 
-" enable omnicompletion at stratup
-let g:neocomplete#enable_at_startup = 1
-
-" vim-go settings and mappings
-au FileType go nmap <leader>r <Plug>(go-run)
+" Vim-Go
+" ======
 au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-
-" insert import paths automatically + fmt
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>t <Plug>(go-test)
+let g:go_fmt_command = "gofmt"
 let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
 
-" csscomb
+" CSScomb
+" =======
 autocmd FileType css noremap <buffer> <leader>co :CSScomb<cr>
 autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass,*.styl silent! :CSScomb<cr>
 
-" markdown
+" Markdown
+" ========
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
-" editorconfig
+" Editorconfig
+" ============
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-" airline
+" GitGutter
+" =========
+let g:gitgutter_sign_column_always = 1
+let g:gitgutter_eager = 0
+highlight Comment cterm=italic
+
+" Airline
+" =======
 let g:airline_powerline_fonts = 0
 let g:airline_theme = 'papercolor'
 if !exists('g:airline_symbols')
@@ -215,7 +304,8 @@ let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
-" colorscheme
-set t_Co=256
+" Colorscheme
+" ===========
 let g:hybrid_use_Xresources = 1
-colorscheme PaperColor
+set background=light
+silent! colorscheme PaperColor
