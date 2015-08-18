@@ -13,7 +13,6 @@ call plug#begin()
 " Plugins
 " =======
 
-" Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'csscomb/vim-csscomb'
@@ -25,6 +24,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'marijnh/tern_for_vim'
+Plug 'mhinz/vim-startify'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
