@@ -13,6 +13,7 @@ call plug#begin()
 " Plugins
 " =======
 
+Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'csscomb/vim-csscomb'
@@ -141,6 +142,7 @@ nnoremap N Nzzzv
 " ========
 
 nmap - :NERDTreeToggle<cr>
+nmap _ :TagbarToggle<cr>
 nmap <leader>, <C-w>
 nmap <leader>. <C-w><C-w>
 nmap <leader>bn :bn<cr>

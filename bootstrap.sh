@@ -29,7 +29,7 @@ fi
 #
 
 if [[ $* == *--recipes* ]]; then
-  recipes=(bash git wget curl cmake bash-completion)
+recipes=(bash git wget curl cmake bash-completion ctags)
   recipes+=(git-extras the_silver_searcher ack z jq tmux)
   recipes=$(printf " %s" "${recipes[@]}")
   recipes=${recipes:1}
