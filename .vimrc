@@ -221,6 +221,9 @@ augroup FixProportionsOnResize
   au VimResized * exe "normal! \<c-w>="
 augroup END
 
+" Enable spell in Git commit messages
+au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
+
 " Plugins
 " =======
 
