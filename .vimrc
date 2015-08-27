@@ -13,7 +13,6 @@ call plug#begin()
 " Plugins
 " =======
 
-Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'csscomb/vim-csscomb'
@@ -24,6 +23,7 @@ Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
 Plug 'marijnh/tern_for_vim'
 Plug 'mhinz/vim-startify'
 Plug 'NLKNguyen/papercolor-theme'
@@ -58,7 +58,7 @@ set backspace=indent,eol,start    " Allow backspace in insert mode
 set breakindent                   " Every wrapped line will continue visually indented
 set clipboard=unnamed             " Use system clipboard
 set cmdheight=1
-set complete=.,b,u,]
+set complete=.,w,b,u,t,i,kspell
 set cursorline
 set directory=.,$TEMP
 set hidden                        " Buffers can exist in the background
@@ -141,8 +141,6 @@ nnoremap N Nzzzv
 " Mappings
 " ========
 
-nmap - :NERDTreeToggle<cr>
-nmap _ :TagbarToggle<cr>
 nmap <leader>, <C-w>
 nmap <leader>. <C-w><C-w>
 nmap <leader>bn :bn<cr>
@@ -160,6 +158,8 @@ nmap <silent> <Leader>b<space> :CtrlPBuffer<cr>
 nmap <silent> <leader>r :redraw!<cr>
 nmap <silent> H ^
 nmap <silent> L $
+nmap <silent>- :NERDTreeToggle<cr>
+nmap <silent>_ :TagbarToggle<cr>
 nmap <space> :nohlsearch<cr>
 
 " Rebind Commands
@@ -173,10 +173,10 @@ cmap w!! w !sudo tee %
 " Split Navigations
 " =================
 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
 
 " Long Lines as Break Lines
 " =========================
@@ -226,10 +226,10 @@ augroup END
 
 " Neocomplete
 " ==============
-let g:acp_enableAtStartup = 0                           " Disable AutoComplPop.
-let g:neocomplete#enable_at_startup = 1                 " Use neocomplete.
-let g:neocomplete#enable_smart_case = 1                 " Use smartcase.
-let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length.
+let g:acp_enableAtStartup = 0                           " Disable AutoComplPop
+let g:neocomplete#enable_at_startup = 1                 " Use neocomplete
+let g:neocomplete#enable_smart_case = 1                 " Use smartcase
+let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length
 
 " CTRL-P
 " ========
