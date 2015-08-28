@@ -49,6 +49,7 @@
 
 [push]
   default = simple
+  followTags = true
 
 [core]
   excludesfile = ~/.gitignore_global
