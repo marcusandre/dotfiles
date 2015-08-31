@@ -236,11 +236,14 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax key
 
 " CTRL-P
 " ========
-let g:ctrlp_dotfiles = 1
-let g:ctrlp_max_height = 5
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_use_caching = 0
-let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_max_files = 0              " Set no file limit
+let g:ctrlp_max_height = 5             " Set maximum list height
+let g:ctrlp_open_multiple_files = 'ij' " Open multiple files in hidden buffers, and jump to the first one
+let g:ctrlp_open_new_file = 'r'        " Open newly created files in the current window
+let g:ctrlp_show_hidden = 1            " Don't ignore dotfiles and dotdirs
+let g:ctrlp_switch_buffer = 'Et'       " Jump to tab AND buffer if already open
+let g:ctrlp_use_caching = 0            " Disable per-session caching (ag is fast)
+let g:ctrlp_working_path_mode = 'r'    " Set local working directory to neareast .git directory
 
 " override ctrlp to use The Silver Searcher
 if executable("ag")
