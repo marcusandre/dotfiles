@@ -128,6 +128,13 @@ set scrolloff=8
 set sidescrolloff=12
 set sidescroll=1
 
+" Disable Background Color Erase (tmux)
+" ====================================
+
+if &term =~ '256color'
+  set t_ut=
+endif
+
 " Remap Leader Key
 " ================
 
