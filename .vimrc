@@ -56,7 +56,6 @@ set t_Co=256
 set autoread                      " Reload files changed outside vim
 set backspace=indent,eol,start    " Allow backspace in insert mode
 set breakindent                   " Every wrapped line will continue visually indented
-set clipboard=unnamed             " Use system clipboard
 set cmdheight=1
 set complete=.,w,b,u,t,i,kspell
 set cursorline
