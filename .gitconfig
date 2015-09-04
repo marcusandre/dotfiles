@@ -60,6 +60,7 @@
 [core]
   excludesfile = ~/.gitignore_global
   precomposeunicode = false
+  trustctime = false
 
 [credential]
   helper = osxkeychain
