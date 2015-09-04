@@ -222,6 +222,9 @@ imap <right> <nop>
 " Resize splits on window resize
 au VimResized * exe "normal! \<c-w>="
 
+" Set vim to save the file on focus out
+au FocusLost * :wa
+
 " Realign buffers when iterm goes fullscreen
 augroup FixProportionsOnResize
   au!
