@@ -156,9 +156,9 @@ nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>p :set invpaste paste?<cr>
-nmap <leader>s :w<cr>
 nmap <leader>sv :source $MYVIMRC<CR>
-nmap <leader>w :set invwrap wrap?<CR>
+nmap <leader>W :set invwrap wrap?<CR>
+nmap <leader>w :w<cr>
 nmap <silent> <Leader><space> :CtrlP<cr>
 nmap <silent> <Leader>b<space> :CtrlPBuffer<cr>
 nmap <silent> <leader>r :redraw!<cr>
