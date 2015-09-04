@@ -60,6 +60,7 @@ set cmdheight=1
 set complete=.,w,b,u,t,i,kspell
 set cursorline
 set directory=.,$TEMP
+set formatoptions=qrn1            " Reformat text paragraphs or chunks of code
 set hidden                        " Buffers can exist in the background
 set history=1000                  " Store more command line history
 set hlsearch                      " Highlight search by default
