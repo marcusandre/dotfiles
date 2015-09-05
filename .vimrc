@@ -130,6 +130,12 @@ set scrolloff=8
 set sidescrolloff=12
 set sidescroll=1
 
+" Configuration Files
+" ===================
+
+set exrc   " Enable use of directory-specific .vimrc
+set secure " Only run autocommands owned by me
+
 " Disable Background Color Erase (tmux)
 " ====================================
 
