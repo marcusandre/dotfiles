@@ -94,12 +94,13 @@ set autoindent     " Copy indent from current line
 set colorcolumn=+1
 set expandtab
 set linebreak      " Wrap lines at convenient points
+set nojoinspaces   " Join text with only one space
 set nowrap         " Don't wrap lines
 set shiftwidth=2
-set smartindent    " Do smart autoindenting when starting a new line.
+set smartindent    " Do smart autoindenting when starting a new line
 set smarttab
 set softtabstop=2
-set tabstop=2      " Number of spaces that a <Tab> counts for.
+set tabstop=2      " Number of spaces that a <Tab> counts for
 
 " Whitespace settings
 " ===================
