@@ -244,6 +244,12 @@ augroup END
 " Enable spell in Git commit messages
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
+" Filetype CSS
+" =============
+au BufEnter *.css set nosmartindent
+au BufLeave *.css set smartindent
+autocmd BufRead,BufNewFile *.styl set filetype=css
+
 " Plugins
 " =======
 
