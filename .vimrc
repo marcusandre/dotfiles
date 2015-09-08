@@ -159,6 +159,7 @@ nmap <leader>, <C-w>
 nmap <leader>. <C-w><C-w>
 nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
+nmap <leader>cd :lcd %:h<CR>
 nmap <leader>ev :edit $MYVIMRC<CR>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
@@ -293,7 +294,6 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>t <Plug>(go-test)
-let g:go_fmt_command = "gofmt"
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
 
