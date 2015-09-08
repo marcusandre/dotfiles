@@ -166,6 +166,7 @@ nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>p :set invpaste paste?<cr>
+nmap <leader>q :b#<cr>
 nmap <leader>sv :source $MYVIMRC<CR>
 nmap <leader>W :set invwrap wrap?<CR>
 nmap <leader>w :w<cr>
