@@ -1,4 +1,3 @@
-
 root = true
 
 [*]
@@ -9,13 +8,7 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
 
-[*.{php,html}]
-indent_size = 4
-
-[*.{css,sass,scss,less,styl}]
-indent_size = 4
-
-[*.go]
+[{*.go,Makefile}]
 indent_style = tab
 indent_size = 4
 
@@ -24,7 +17,3 @@ trim_trailing_whitespace = false
 
 [*.svg]
 insert_final_newline = false
-
-[Makefile]
-indent_style = tab
-indent_size = 4
