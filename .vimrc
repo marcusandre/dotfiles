@@ -328,7 +328,7 @@ highlight Comment cterm=italic
 " Airline
 " =======
 let g:airline_powerline_fonts = 0
-let g:airline_theme = 'papercolor'
+let g:airline_theme = 'tomorrow'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -343,4 +343,4 @@ let g:airline_symbols.whitespace = 'Ξ'
 " ===========
 let g:hybrid_use_Xresources = 1
 set background=light
-silent! colorscheme PaperColor
+silent! colorscheme Tomorrow-Night-Eighties
