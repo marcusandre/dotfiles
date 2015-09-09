@@ -131,6 +131,12 @@ set scrolloff=8
 set sidescrolloff=12
 set sidescroll=1
 
+" Code Folding
+" ============
+set foldlevel=1       " Start folding on first level
+set foldmethod=indent " Fold based on indents
+set nofoldenable      " Do not fold by default
+
 " Configuration Files
 " ===================
 
