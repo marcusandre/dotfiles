@@ -131,6 +131,11 @@ set scrolloff=8
 set sidescrolloff=12
 set sidescroll=1
 
+" Movement
+" ========
+nnoremap <Tab>      :tabnext<cr>
+nnoremap <S-Tab>    :tabprevious<cr>
+
 " Code Folding
 " ============
 set foldlevel=1       " Start folding on first level
