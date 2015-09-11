@@ -167,19 +167,20 @@ nnoremap N Nzzzv
 " Mappings
 " ========
 
-nmap <leader>, <C-w>
-nmap <leader>. <C-w><C-w>
+nmap <leader>bd :bd<cr>
 nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
-nmap <leader>cd :lcd %:h<CR>
-nmap <leader>ev :edit $MYVIMRC<CR>
+nmap <leader>cd :lcd %:h<cr>
+nmap <leader>ev :vsplit $MYVIMRC<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
+nmap <leader>hs :split
 nmap <leader>p :set invpaste paste?<cr>
 nmap <leader>q :b#<cr>
-nmap <leader>sv :source $MYVIMRC<CR>
-nmap <leader>W :set invwrap wrap?<CR>
+nmap <leader>sv :source $MYVIMRC<cr>
+nmap <leader>vs :vsplit
+nmap <leader>W :set invwrap wrap?<cr>
 nmap <leader>w :w<cr>
 nmap <silent> <Leader><space> :CtrlP<cr>
 nmap <silent> <Leader>b<space> :CtrlPBuffer<cr>
@@ -189,6 +190,7 @@ nmap <silent> L $
 nmap <silent>- :NERDTreeToggle<cr>
 nmap <silent>_ :TagbarToggle<cr>
 nmap <space> :nohlsearch<cr>
+vmap <leader>s :sort i<cr>
 
 " Rebind Commands
 " ===============
