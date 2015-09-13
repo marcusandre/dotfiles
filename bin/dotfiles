@@ -38,7 +38,7 @@ exists() {
 #
 
 link_files() {
-  files=$(find $DOTFILES -type f -name "*.symlink" -exec basename {} \;)
+  files=$(find $DOTFILES -name "*.symlink" -exec basename {} \;)
 
   for file in $files; do
     echo "$ROOT/.$file => $DOTFILES/$file"
