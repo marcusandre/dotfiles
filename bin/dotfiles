@@ -1,0 +1,85 @@
+#!/usr/bin/env bash
+
+ROOT=$HOME
+DOTFILES=$ROOT/.dotfiles
+REPOSITORY=git@github.com:marcusandre/dotfiles.git
+
+#
+# Print usage info
+#
+
+usage() {
+  cat <<EOF
+
+  Usage: dotfiles [options] [url]
+
+  Commands:
+
+    # install dotfiles
+    $ dotfiles
+
+  Options:
+
+    -h, --help print this usage info
+
+EOF
+}
+
+#
+# Check if `path` exists
+#
+
+exists() {
+  test -e $1
+}
+
+#
+# Collect and link relevant files
+#
+
+link_files() {
+  files=$(find $DOTFILES -type f -name "*.symlink" -exec basename {} \;)
+
+  for file in $files; do
+    echo "$ROOT/$file => $DOTFILES/$file"
+    ln -sf $DOTFILES/$file $ROOT/$file
+  done
+}
+
+#
+# Handle dotfiles
+#
+
+handle_dotfiles() {
+  link_files
+}
+
+#
+# Update dotfiles
+#
+
+update_dotfiles() {
+  cd $DOTFILES && git pull
+  handle_dotfiles
+}
+
+#
+# Install dotfiles from git repository
+#
+
+install_dotfiles() {
+  git clone $REPOSITORY $DOTFILES
+  handle_dotfiles
+}
+
+#
+# Choose how to proceed
+#
+
+if [[ $# -eq 0 ]] ; then
+  exists $DOTFILES && update_dotfiles || install_dotfiles
+  exit 0
+else
+  usage
+  exit 1
+fi
