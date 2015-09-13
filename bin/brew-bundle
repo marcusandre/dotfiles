@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [ -f "Brewfile" ]; then
+  while read recipe; do
+    brew $recipe
+  done <Brewfile
+else
+  echo "Brewfile missing."
+  exit 1
+fi

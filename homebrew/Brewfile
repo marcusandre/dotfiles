@@ -1,0 +1,44 @@
+tap neovim/neovim
+upgrade
+update
+install ack
+install autoconf
+install automake
+install bash
+install bash-completion
+install cmake
+install coreutils
+install ctags
+install curl
+install findutils
+install gcc
+install gdbm
+install gettext
+install git
+install git-extras
+install glib
+install go
+install htop-osx
+install hub
+install irssi
+install jq
+install lua
+install nvm
+install openssl
+install pandoc
+install pkg-config
+install pwgen
+install python3
+install reattach-to-user-namespace
+install rename
+install ssh-copy-id
+install the_silver_searcher
+install tmux
+install tree
+install vim --with-lua --with-luajit
+install --HEAD neovim
+install wget
+install xz
+install z
+install zsh
+cleanup --force

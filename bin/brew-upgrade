@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+which -s brew
+if [[ $? != 0 ]] ; then
+  echo "Homebrew seems not to be installed."
+  exit 1
+else
+  brew upgrade && brew update && brew cleanup --force
+fi
