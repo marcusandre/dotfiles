@@ -1,10 +1,13 @@
 
-all: files vim
+all: setup bin vim
 
-files:
-	@./bin/dotfiles
+setup:
+	@./script/setup
+
+bin:
+	rm ~/$@ && ln -s $(shell pwd)/$@ ~/$@
 
 vim:
 	@./script/vim
 
-.PHONY: vim
+.PHONY: vim bin

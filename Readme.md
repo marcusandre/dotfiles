@@ -13,9 +13,9 @@ $ cd .dotfiles && make
 ## Parts
 
 ```bash
-$ make      # update repo, symlink files and setup vim
-$ make link # update repo, symlink files
-$ make vim  # install and/or upgrade vim-plug
+$ make       # update repo, symlink files and setup vim
+$ make setup # update repo, symlink files
+$ make vim   # install and/or upgrade vim-plug
 ```
 
 ## License
