@@ -1,10 +1,6 @@
 # Prefix Path
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-if [ -d ~/bin ]; then
-  export PATH=~/bin:$PATH
-fi
-
 # History settings
 export HISTCONTROL=ignoredups
 export HISTTIMEFORMAT="%d/%m/%Y %H:%M:%S "
@@ -58,3 +54,8 @@ fi
 export GOROOT=$HOME/.go
 export GOPATH=$HOME/Code/Go
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+
+# Check bin in home dir
+if [[ -L ~/bin && -d ~/bin ]]; then
+  export PATH=~/bin:$PATH
+fi
