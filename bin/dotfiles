@@ -38,11 +38,12 @@ exists() {
 #
 
 link_files() {
-  files=$(find $DOTFILES -name "*.symlink" -exec basename {} \;)
+  files=$(find $DOTFILES -name "*.symlink")
 
   for file in $files; do
-    echo "$ROOT/.$file => $DOTFILES/$file"
-    ln -sf $DOTFILES/$file $ROOT/.$file
+    name=$(basename ${file%.symlink})
+    echo "$ROOT/.$name => $file"
+    ln -sf $file $ROOT/.$name
   done
 }
 
