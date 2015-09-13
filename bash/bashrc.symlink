@@ -54,24 +54,7 @@ if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
 fi
 
-# Call the osx specific files
-if [[ "$(uname)" = "Darwin" ]]; then
-  if [ -f ~/.osxrc ]; then
-    source ~/.osxrc
-  fi
-fi
-
-# Call the extras
-if [ -f ~/.extras ]; then
-  source ~/.extras
-fi
-
 # Setup Go
 export GOROOT=$HOME/.go
 export GOPATH=$HOME/Code/Go
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
-
-# Init rbenv
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
