@@ -5,7 +5,7 @@ set -e
 TARGET=~/.vim/autoload/plug.vim
 URL=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-if [ ! -d "$dir" ]; then
+if [ ! -d "$TARGET" ]; then
   curl -fLo $TARGET --create-dirs $URL
   ln -sf ~/.vim ~/.nvim
   vim +PlugInstall +qall
