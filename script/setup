@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 ROOT=$HOME
 DOTFILES=$ROOT/.dotfiles
 REPOSITORY=git@github.com:marcusandre/dotfiles.git
