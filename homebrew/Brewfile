@@ -1,6 +1,7 @@
 tap neovim/neovim
 upgrade
 update
+install --HEAD neovim
 install ack
 install autoconf
 install automake
@@ -36,7 +37,6 @@ install the_silver_searcher
 install tmux
 install tree
 install vim --with-lua --with-luajit
-install --HEAD neovim
 install wget
 install xz
 install z
