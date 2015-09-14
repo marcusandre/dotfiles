@@ -5,7 +5,8 @@ setup:
 	@./script/setup
 
 bin:
-	rm ~/$@ && ln -s $(shell pwd)/$@ ~/$@
+	@if [ -d "~/Dropbox" ]; then rm ~/$@; fi
+	ln -s $(shell pwd)/$@ ~/$@
 
 vim:
 	@./script/vim
