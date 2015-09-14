@@ -92,14 +92,14 @@ set ttyfast                       " Send more characters
 filetype indent on
 filetype plugin on
 set autoindent     " Copy indent from current line
-set colorcolumn=+1
-set expandtab
+set cindent        " Use c indent rules
+set colorcolumn=+1 " Show vertical wrap position
+set expandtab      " Use spaces instead of tabs
 set linebreak      " Wrap lines at convenient points
 set nojoinspaces   " Join text with only one space
+set nosmartindent  " Don't do smart autoindenting when starting a new line
 set nowrap         " Don't wrap lines
 set shiftwidth=2
-set smartindent    " Do smart autoindenting when starting a new line
-set smarttab
 set softtabstop=2
 set tabstop=2      " Number of spaces that a <Tab> counts for
 
