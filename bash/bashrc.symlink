@@ -60,6 +60,12 @@ if [ -f $(brew --prefix)/etc/profile.d/z.sh ]; then
   . $(brew --prefix)/etc/profile.d/z.sh
 fi
 
+# Init z
+if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+  export NVM_DIR=~/.nvm
+  . $(brew --prefix nvm)/nvm.sh
+fi
+
 # Setup Go
 export GOROOT=$HOME/.go
 export GOPATH=$HOME/Code/Go
