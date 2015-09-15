@@ -1,5 +1,5 @@
 
-all: setup bin vim
+all: setup bin vim tmux
 
 setup:
 	@./script/setup
@@ -10,4 +10,7 @@ bin:
 vim:
 	@./script/vim
 
-.PHONY: vim bin
+tmux:
+	@./script/tmux
+
+.PHONY: vim bin tmux

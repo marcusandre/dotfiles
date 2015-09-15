@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -e
+
+TARGET=~/.tmux/plugins/tpm
+REPO=https://github.com/tmux-plugins/tpm
+
+if [ ! -d "$TARGET" ]; then
+  git clone $REPO $TARGET
+  . $TARGET/bin/install_plugins
+else
+  . $TARGET/bin/install_plugins
+fi
