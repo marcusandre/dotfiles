@@ -39,6 +39,7 @@ install tree
 install vim --with-lua --with-luajit
 install wget
 install xz
+install youtube-dl
 install z
 install zsh
 cleanup --force
