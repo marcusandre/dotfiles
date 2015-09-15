@@ -37,12 +37,17 @@ bind -r J resize-pane -D 5
 bind -r K resize-pane -U 5
 bind -r L resize-pane -R 5
 
-# force a reload of the config kile
+# force a reload of the config file
 unbind r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
+# easier and faster switching between next/prev window
+bind C-p previous-window
+bind C-n next-window
+
 # Go to beginning of line
-bind a send-prefix
+bind C-f send-prefix
+bind f last-window
 
 ###########################
 # Status Bar
@@ -78,6 +83,7 @@ set -g pane-active-border-bg colour250
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
 
 # Initialize (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
