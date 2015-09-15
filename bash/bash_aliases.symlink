@@ -66,14 +66,3 @@ fi
 function take {
   mkdir -p "$@" && cd "$_";
 }
-
-# create .tgz
-function pack {
-  tar -czf $1.tgz $1
-}
-
-# serve tree via http
-function serve {
-  local port=${1-3000};
-  php -S 0.0.0.0:${port}
-}
