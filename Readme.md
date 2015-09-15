@@ -15,9 +15,10 @@ $ cd .dotfiles && make
 ### Abstraction
 
 ```bash
-$ make       # update repo, symlink files and setup vim
+$ make       # update, symlinks, vim, tmux
 $ make setup # update repo, symlink files
-$ make vim   # install vim files
+$ make vim   # install vim files and plugins
+$ make tmux  # install tmux files and plugins
 ```
 
 ### Scripts
@@ -28,6 +29,7 @@ $ make vim   # install vim files
 
   * **setup** - dotfiles handling (basically ```make setup```)
   * **vim** - setup vim and it's plugins (basically ```make vim```)
+  * **tmux** - setup tmux and it's plugins (basically ```make tmux```)
   * **golang** - clone and install Golang v.1.4.2
 
 ## License
