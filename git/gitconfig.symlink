@@ -27,6 +27,7 @@
   branches = branch -a --color -v
   cached = diff --cached
   co = checkout
+  discard = reset --hard HEAD
   hash = rev-parse --short HEAD
   join = merge --no-ff
   l = log --pretty=oneline --abbrev-commit --graph --decorate
@@ -35,7 +36,7 @@
   today-fs = log --since=midnight --no-merges --name-only
   todo = !git ls-files | xargs grep --color=auto -onE '(TODO|FIXME):.*$'
   track = checkout -t
-  unstage = checkout -- .
+  unstage = reset HEAD
   upgrade = !git fetch origin --prune && git rebase origin/master
 
 [merge]
