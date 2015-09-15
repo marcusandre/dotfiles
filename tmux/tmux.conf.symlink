@@ -38,8 +38,8 @@ bind -r K resize-pane -U 5
 bind -r L resize-pane -R 5
 
 # force a reload of the config file
-unbind r
-bind r source-file ~/.tmux.conf \; display "Reloaded!"
+unbind l
+bind l source-file ~/.tmux.conf \; display "Reloaded!"
 
 # easier and faster switching between next/prev window
 bind C-p previous-window
@@ -61,6 +61,9 @@ set -g status-interval 30
 
 # center the status bar
 set -g status-justify left
+
+# set right status
+set-option -g status-right '#[fg=default]%a %d %b %H:%M'
 
 ###########################
 # Colors
