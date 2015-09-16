@@ -175,11 +175,11 @@ nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gt :GitGutterToggle<cr>
-nmap <leader>hs :split
+nmap <leader>hs :split<cr>
 nmap <leader>p :set invpaste paste?<cr>
 nmap <leader>q :b#<cr>
 nmap <leader>sv :source $MYVIMRC<cr>
-nmap <leader>vs :vsplit
+nmap <leader>vs :vsplit<cr>
 nmap <leader>W :set invwrap wrap?<cr>
 nmap <leader>w :w<cr>
 nmap <silent> <Leader><space> :CtrlP<cr>
