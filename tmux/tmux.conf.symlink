@@ -70,14 +70,12 @@ set-option -g status-right '#[fg=default]%a %d %b %H:%M'
 ###########################
 
 # color status bar
-# set -g status-bg colour153
 set -g status-bg default
 set -g status-fg colour239
 
 # highlight current window
-# set-window-option -g window-status-current-bg colour153
 set-window-option -g window-status-current-bg default
-set-window-option -g window-status-current-fg colour32
+set-window-option -g window-status-current-fg colour69
 
 # set color of active pane
 set -g pane-border-fg colour242
