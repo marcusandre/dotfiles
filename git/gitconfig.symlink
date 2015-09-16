@@ -27,6 +27,7 @@
   branches = branch -a --color -v
   cached = diff --cached
   co = checkout
+  ds = !git diff | diffstat -C
   discard = reset --hard HEAD
   hash = rev-parse --short HEAD
   join = merge --no-ff
