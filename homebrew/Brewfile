@@ -30,8 +30,10 @@ install pandoc
 install pkg-config
 install pwgen
 install python3
+install rbenv
 install reattach-to-user-namespace
 install rename
+install ruby-build
 install ssh-copy-id
 install the_silver_searcher
 install tmux
