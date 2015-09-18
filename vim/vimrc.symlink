@@ -184,15 +184,16 @@ nmap <leader>sv :source $MYVIMRC<cr>
 nmap <leader>vs :vsplit<cr>
 nmap <leader>W :set invwrap wrap?<cr>
 nmap <leader>w :w<cr>
+nmap <silent> - :NERDTreeToggle<cr>
 nmap <silent> <Leader><space> :CtrlP<cr>
 nmap <silent> <Leader>b<space> :CtrlPBuffer<cr>
 nmap <silent> <leader>r :redraw!<cr>
+nmap <silent> <space> :nohlsearch<cr>
+nmap <silent> _ :TagbarToggle<cr>
 nmap <silent> H ^
 nmap <silent> L $
-nmap <silent>- :NERDTreeToggle<cr>
-nmap <silent>_ :TagbarToggle<cr>
-nmap <space> :nohlsearch<cr>
-vmap <leader>s :sort i<cr>
+vmap <silent> r :w !bash<cr>
+vmap <silent> s :sort i<cr>
 
 " Rebind Commands
 " ===============
@@ -202,8 +203,8 @@ command! W w
 command! WQ wq
 cmap w!! w !sudo tee %
 
-" Split Navigations
-" =================
+" Navigate Splits
+" ===============
 
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
@@ -232,14 +233,14 @@ vnoremap > >gv
 " Disable Arrow Keys
 " ==================
 
-map  <up>    <nop>
+imap <down>  <nop>
+imap <left>  <nop>
+imap <right> <nop>
 imap <up>    <nop>
 map  <down>  <nop>
-imap <down>  <nop>
 map  <left>  <nop>
-imap <left>  <nop>
 map  <right> <nop>
-imap <right> <nop>
+map  <up>    <nop>
 
 " Edtor Events
 " ============
