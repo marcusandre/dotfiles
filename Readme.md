@@ -3,6 +3,10 @@
 
   My OSX configuration files. Please feel free to fork! :)
 
+## Previev
+
+  ![screenshot](./src/screenshot.png)
+
 ## Usage
 
 ```bash
