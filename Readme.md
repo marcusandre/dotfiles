@@ -3,7 +3,7 @@
 
   My OSX configuration files. Please feel free to fork! :)
 
-## Previev
+## Preview
 
   ![screenshot](./src/screenshot.png)
 
