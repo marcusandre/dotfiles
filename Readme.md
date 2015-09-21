@@ -36,6 +36,9 @@ $ make tmux  # install tmux files and plugins
   * **tmux** - setup tmux and it's plugins (basically ```make tmux```)
   * **golang** - clone and install Golang v.1.4.2
 
+## See also
+- [yoshuawuyts/dotfiles](https://github.com/yoshuawuyts/dotfiles)
+
 ## License
 
   MIT
