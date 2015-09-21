@@ -88,10 +88,14 @@ set -g status-fg colour239
 set-window-option -g window-status-current-bg default
 set-window-option -g window-status-current-fg colour69
 
-# List of plugins
+# set pane border color
+set -g pane-border-fg colour239
+set -g pane-active-border-fg colour249
+
+# list of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 
-# Initialize (keep this line at the very bottom of tmux.conf)
+# initialize (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
