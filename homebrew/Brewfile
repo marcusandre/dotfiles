@@ -39,6 +39,7 @@ install the_silver_searcher
 install tmux
 install tree
 install vim --with-lua --with-luajit
+install weechat
 install wget
 install xz
 install youtube-dl
