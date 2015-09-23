@@ -33,6 +33,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
 Plug 'Shougo/neocomplete.vim'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
@@ -260,24 +261,38 @@ augroup END
 " Enable spell in Git commit messages
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
-" Filetype CSS
-" =============
+" Filetypes
+" =========
+
+" CSS
+" ===
 au BufEnter *.css set nosmartindent
 au BufLeave *.css set smartindent
 autocmd BufRead,BufNewFile *.styl set filetype=css
 
+" JS
+" ==
+let g:syntastic_javascript_checkers = ['standard']
+
 " Plugins
 " =======
 
+" Syntastic
+" =========
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " Neocomplete
-" ==============
+" ===========
 let g:acp_enableAtStartup = 0                           " Disable AutoComplPop
 let g:neocomplete#enable_at_startup = 1                 " Use neocomplete
 let g:neocomplete#enable_smart_case = 1                 " Use smartcase
 let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length
 
 " CTRL-P
-" ========
+" ======
 let g:ctrlp_max_files = 0              " Set no file limit
 let g:ctrlp_max_height = 5             " Set maximum list height
 let g:ctrlp_open_multiple_files = 'ij' " Open multiple files in hidden buffers, and jump to the first one
