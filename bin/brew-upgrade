@@ -7,5 +7,5 @@ if [[ $? != 0 ]] ; then
   echo "Homebrew seems not to be installed."
   exit 1
 else
-  brew update && brew upgrade && brew cleanup --force
+  brew update && brew upgrade --all && brew cleanup --force
 fi
