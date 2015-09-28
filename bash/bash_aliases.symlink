@@ -61,3 +61,8 @@ if hash vagrant 2>/dev/null; then
   alias vst="vagrant status"
   alias vdf="vagrant destroy -f; rm -rf .vagrant"
 fi
+
+# cd into new directory
+function take {
+  mkdir -p "$@" && cd "$_";
+}
