@@ -54,6 +54,14 @@ if hash git 2>/dev/null; then
   alias gr='cd "$(git rev-parse --show-toplevel)"'
 fi
 
+# NPM aliases
+if hash npm 2>/dev/null; then
+  alias nrs="npm run start"
+  alias nrb="npm run build"
+  alias nrt="npm run test"
+  alias nrw="npm run watch"
+fi
+
 # Vagrant aliases
 if hash vagrant 2>/dev/null; then
   alias vup="vagrant up"
