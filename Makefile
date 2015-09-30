@@ -5,7 +5,7 @@ setup:
 	@./script/setup
 
 bin:
-	ln -sf $(shell pwd)/$@ ~/$@
+	test -h ~/$@ || ln -s $(shell pwd)/$@ ~/$@
 
 vim:
 	@./script/vim
