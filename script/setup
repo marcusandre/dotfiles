@@ -13,12 +13,12 @@ REPOSITORY=git@github.com:marcusandre/dotfiles.git
 usage() {
   cat <<EOF
 
-  Usage: dotfiles [options] [url]
+  Usage: setup [options] [url]
 
   Commands:
 
     # install dotfiles
-    $ dotfiles
+    $ setup
 
   Options:
 
