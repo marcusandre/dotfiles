@@ -44,7 +44,7 @@ link_files() {
 
   for file in $files; do
     name=$(basename ${file%.symlink})
-    echo "$ROOT/.$name => $file"
+    echo -e "\e[36m$ROOT/.$name \e[37m=> $file\e[0m"
     ln -sf $file $ROOT/.$name
   done
 }
