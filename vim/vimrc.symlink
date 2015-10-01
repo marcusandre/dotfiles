@@ -176,6 +176,7 @@ nmap <leader>bd :bd<cr>
 nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
 nmap <leader>cd :lcd %:h<cr>
+nmap <leader>e :edit!<cr>
 nmap <leader>ev :vsplit $MYVIMRC<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
