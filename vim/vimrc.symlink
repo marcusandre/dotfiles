@@ -34,6 +34,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimproc.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tmhedberg/matchit'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -170,6 +172,8 @@ nnoremap N Nzzzv
 " Mappings
 " ========
 
+nmap <leader><space> :Unite -buffer-name=files -start-insert file/async file_rec/async<cr>
+nmap <leader>b<space> :Unite -buffer-name=buffers buffer<cr>
 nmap <leader>bd :bd<cr>
 nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
