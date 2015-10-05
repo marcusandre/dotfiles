@@ -172,7 +172,7 @@ nnoremap N Nzzzv
 " Mappings
 " ========
 
-nmap <leader>, :Unite --buffer-name=buffers buffer<cr>
+nmap <leader>, :Unite -buffer-name=buffers buffer<cr>
 nmap <leader>/ :Unite grep:.<cr>
 nmap <leader>bd :bd<cr>
 nmap <leader>bn :bn<cr>
@@ -180,7 +180,7 @@ nmap <leader>bp :bp<cr>
 nmap <leader>cd :lcd %:h<cr>
 nmap <leader>e :edit!<cr>
 nmap <leader>ev :vsplit $MYVIMRC<cr>
-nmap <leader>f :Unite --buffer-name=files file_rec/async<cr>
+nmap <leader>f :Unite -buffer-name=files file_rec/async<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
@@ -190,7 +190,7 @@ nmap <leader>q :b#<cr>
 nmap <leader>sv :source $MYVIMRC<cr>
 nmap <leader>W :set invwrap wrap?<cr>
 nmap <leader>w :w<cr>
-nmap <leader>y :Unite --buffer-name=yanks history/yank<cr>
+nmap <leader>y :Unite -buffer-name=yanks history/yank<cr>
 nmap <silent> <leader>r :redraw!<cr>
 nmap <silent> <space> :nohlsearch<cr>
 nmap <silent> _ :TagbarToggle<cr>
