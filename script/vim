@@ -4,11 +4,13 @@ set -e
 
 TARGET=~/.vim/autoload/plug.vim
 URL=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+VIMPROC=~/.vim/plugged/vimproc.vim
 
-if [ ! -d "$TARGET" ]; then
+if [ ! -f "$TARGET" ]; then
   curl -fLo $TARGET --create-dirs $URL
   ln -sf ~/.vim ~/.nvim
   vim +PlugInstall +qall
+  cd $VIMPROC && make
 else
-  vim +PlugUpgrade +qall
+  vim +PlugUpgrade +PlugUpdate +PlugClean +qall
 fi
