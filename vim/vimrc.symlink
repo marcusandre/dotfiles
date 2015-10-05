@@ -32,7 +32,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/neocomplete.vim'
@@ -189,7 +188,6 @@ nmap <leader>sv :source $MYVIMRC<cr>
 nmap <leader>vs :vsplit<cr>
 nmap <leader>W :set invwrap wrap?<cr>
 nmap <leader>w :w<cr>
-nmap <silent> - :NERDTreeToggle<cr>
 nmap <silent> <Leader><space> :CtrlP<cr>
 nmap <silent> <Leader>b<space> :CtrlPBuffer<cr>
 nmap <silent> <leader>r :redraw!<cr>
@@ -312,23 +310,6 @@ if executable("ag")
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
-
-" NERDTree
-" ========
-let g:NERDTreeWinSize = 30
-let NERDTreeDirArrows = 1
-let NERDTreeMinimalUI = 1
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.git$']
-
-" open NERDTree if buffer is empty at startup
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1
-  \ && exists("b:NERDTreeType")
-  \ && b:NERDTreeType == "primary") | q | endif
 
 " Vim-Go
 " ======
