@@ -2,15 +2,29 @@
 
 set -e
 
-TARGET=~/.vim/autoload/plug.vim
-URL=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-VIMPROC=~/.vim/plugged/vimproc.vim
+VIMDIR=~/.vim
+NVIMDIR=~/.nvim
+PLUGVIM=$VIMDIR/autoload/plug.vim
+VIMPROC=$VIMDIR/plugged/vimproc.vim
+REMOTE=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-if [ ! -f "$TARGET" ]; then
-  curl -fLo $TARGET --create-dirs $URL
-  ln -sf ~/.vim ~/.nvim
+function link() {
+  test -h $VIMDIR/snippets || ln -sf $(pwd)/vim/snippets $VIMDIR/snippets
+  test -h $NVIMDIR || ln -sf $VIMDIR $NVIMDIR
+}
+
+function install() {
+  curl -fLo $PLUGVIM --create-dirs $REMOTE
   vim +PlugInstall +qall
-  cd $VIMPROC && make
-else
+  cd $VIMPROC && make >/dev/null
+}
+
+function upgrade(){
   vim +PlugUpgrade +PlugUpdate +PlugClean +qall
+}
+
+if [ ! -f "$PLUGVIM" ]; then
+  install && link
+else
+  upgrade && link
 fi
