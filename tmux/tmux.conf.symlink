@@ -73,7 +73,7 @@ set -g status-interval 30
 set -g status-justify left
 
 # setup right status bar
-set-option -g status-right '#(spotify artist) - #(spotify track) | #[fg=default]%a %d %b %H:%M'
+set-option -g status-right '#(spotify-tmux) | #[fg=default]%a %d %b %H:%M'
 set-option -g status-right-length 80
 
 ###########################
