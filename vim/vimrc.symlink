@@ -345,5 +345,5 @@ let g:airline_symbols.whitespace = 'Ξ'
 " Colorscheme
 " ===========
 let g:hybrid_use_Xresources = 1
-set background=light
+set background=dark
 silent! colorscheme Tomorrow-Night-Eighties
