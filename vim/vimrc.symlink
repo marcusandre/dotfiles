@@ -36,6 +36,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimproc.vim'
+Plug 'takac/vim-hardtime'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tmhedberg/matchit'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -297,6 +298,12 @@ let g:acp_enableAtStartup = 0                           " Disable AutoComplPop
 let g:neocomplete#enable_at_startup = 1                 " Use neocomplete
 let g:neocomplete#enable_smart_case = 1                 " Use smartcase
 let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length
+
+" Hardtime
+" ========
+let g:hardtime_default_on = 1
+let g:hardtime_ignore_quickfix = 1
+let g:hardtime_maxcount = 2
 
 " Vim-Go
 " ======
