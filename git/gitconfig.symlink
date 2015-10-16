@@ -22,13 +22,15 @@
   untracked = cyan
 
 [alias]
+  ai = add --interactive
   amend = commit --amend
+  ap = add --patch
   append = commit -a --amend -C HEAD
   branches = branch -a --color -v
   cached = diff --cached
   co = checkout
-  ds = !git diff | diffstat -C
   discard = reset --hard HEAD
+  ds = !git diff | diffstat -C
   hash = rev-parse --short HEAD
   join = merge --no-ff
   l = log --pretty=oneline --abbrev-commit --graph --decorate
