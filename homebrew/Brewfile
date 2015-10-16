@@ -38,6 +38,7 @@ install ssh-copy-id
 install the_silver_searcher
 install tmux
 install tree
+install vifm
 install vim --with-lua --with-luajit
 install weechat
 install wget
