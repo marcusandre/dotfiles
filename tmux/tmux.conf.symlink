@@ -12,10 +12,7 @@ set -g history-limit 5000
 setw -g mode-keys vi
 
 # enable mouse
-set -g mode-mouse on
-set -g mouse-resize-pane on
-set -g mouse-select-pane on
-set -g mouse-select-window on
+set -g mouse
 
 # decrease command delay (increases vim responsiveness)
 set -sg escape-time 1
