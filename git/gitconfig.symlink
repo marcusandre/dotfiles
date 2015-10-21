@@ -1,6 +1,6 @@
 [user]
-  name = Marcus André
   email = hello@marcusandre.de
+  name = Marcus André
 
 [color]
   ui = auto
@@ -31,21 +31,27 @@
   co = checkout
   discard = reset --hard HEAD
   ds = !git diff | diffstat -C
+  fd = diff -U9999
+  fop = fetch origin --prune
   hash = rev-parse --short HEAD
   join = merge --no-ff
   l = log --pretty=oneline --abbrev-commit --graph --decorate
   prevent = update-index --assume-unchanged
-  today = log --since=midnight --author='Marcus André' --oneline --no-merges
+  s = status -sb
+  today = log --since=midnight --oneline --no-merges
   today-fs = log --since=midnight --no-merges --name-only
-  todo = !git ls-files | xargs grep --color=auto -onE '(TODO|FIXME):.*$'
+  todo = !git ls-files | xargs grep --color=auto -onE '(TODO|todo):.*$'
   track = checkout -t
   unstage = reset HEAD
   upgrade = !git fetch origin --prune && git rebase origin/master
 
 [merge]
   conflictstyle = diff3
+  summary = true
+  verbosity = 1
 
 [diff]
+  algorithm = patience
   tool = vimdiff
 
 [difftool]
@@ -62,7 +68,9 @@
   followTags = true
 
 [core]
+  editor = vim
   excludesfile = ~/.gitignore_global
+  pager = less -+$LESS -FRX
   precomposeunicode = false
   trustctime = false
 
