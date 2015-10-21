@@ -1,8 +1,9 @@
---type-set=txt=.txt
---type-set=markdown=.md,.markdown
---ignore-dir=log
---ignore-dir=cache
---ignore-dir=vendor
---ignore-dir=node_modules
 --ignore-dir=build
+--ignore-dir=cache
 --ignore-dir=dist
+--ignore-dir=log
+--ignore-dir=node_modules
+--ignore-dir=vendor
+--sort-files
+--type-set=markdown=.md,.markdown
+--type-set=txt=.txt
