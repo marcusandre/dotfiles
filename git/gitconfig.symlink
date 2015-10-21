@@ -38,6 +38,7 @@
   l = log --pretty=oneline --abbrev-commit --graph --decorate
   prevent = update-index --assume-unchanged
   s = status -sb
+  st = status
   today = log --since=midnight --oneline --no-merges
   today-fs = log --since=midnight --no-merges --name-only
   todo = !git ls-files | xargs grep --color=auto -onE '(TODO|todo):.*$'
