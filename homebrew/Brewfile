@@ -20,6 +20,7 @@ install git-extras
 install glib
 install go
 install htop-osx
+install httpie
 install hub
 install irssi
 install jq
