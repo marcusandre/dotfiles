@@ -301,7 +301,7 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax key
 
 " Hardtime
 " ========
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
 let g:hardtime_ignore_quickfix = 1
 let g:hardtime_maxcount = 2
 
