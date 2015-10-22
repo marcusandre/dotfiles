@@ -38,6 +38,19 @@ if hash vagrant 2>/dev/null; then
   alias vdf="vagrant destroy -f; rm -rf .vagrant"
 fi
 
+# Git aliases
+if hash git 2>/dev/null; then
+  alias gl="git log --pretty=oneline --abbrev-commit --graph --decorate"
+  alias gd="git diff"
+  alias gst="git status"
+  alias gs="git status -sb"
+  alias gpt="git push --tags"
+  alias gp="git push"
+  alias gba="git branch -a"
+  alias gfp="git fetch origin --prune"
+  alias gr='cd "$(git rev-parse --show-toplevel)"'
+fi
+
 # cd into new directory
 function take {
   mkdir -p "$@" && cd "$_";
