@@ -14,6 +14,7 @@ alias lh="ls -lah"
 alias ls1="ls -1"
 
 # Misc
+alias cls='clear; ls -lah'
 alias cp="cp -iv"
 alias e="nvim"
 alias ip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
