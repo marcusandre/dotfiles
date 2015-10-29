@@ -43,6 +43,7 @@ install vifm
 install vim --with-lua --with-luajit
 install weechat
 install wget
+install wrk
 install xz
 install youtube-dl
 install z
