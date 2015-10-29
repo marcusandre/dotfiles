@@ -1,7 +1,14 @@
-# A simple bash prompt
+#
+# A minimal PS1 with git branch support.
+#
+
 parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \(\1\)/'
 }
+
+#
+# Different PS1 for non- and login shells
+#
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   # ssh
