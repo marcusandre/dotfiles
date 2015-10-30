@@ -127,9 +127,14 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " Text Completion
 " ===============
 
-set wildmenu                   " Enhanced completion mode
-set wildmode=longest,list,full
-set wildignore+=*vim/backups*
+set wildmenu                                   " Enhanced completion mode
+set wildmode=list:longest
+set wildignore+=*.DS_Store                     " OSX
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " Binary images
+set wildignore+=*.luac                         " Lua byte code
+set wildignore+=*.o,*.obj,*.exe,*.dll          " Compiled object files
+set wildignore+=*.sw?                          " Vim swap files
+set wildignore+=.hg,.git,.svn                  " version control
 
 " Scrolling
 " =========
