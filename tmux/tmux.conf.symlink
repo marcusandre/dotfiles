@@ -48,6 +48,9 @@ bind -r L resize-pane -R 5
 unbind r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
+# faster kill session
+bind q kill-session
+
 # easier and faster switching between next/prev window
 bind C-p previous-window
 bind C-n next-window
