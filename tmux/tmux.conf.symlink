@@ -23,6 +23,9 @@ set -g repeat-time 1000
 # re-number windows when one is closed
 set -g renumber-windows on
 
+# disable automatic renaming
+setw -g automatic-rename off
+
 ###########################
 #  Key Bindings
 ###########################
