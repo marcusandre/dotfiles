@@ -19,6 +19,9 @@ shopt -s nocaseglob
 shopt -s extglob
 shopt -s globstar 2>/dev/null
 
+# vi mode
+set -o vi
+
 # notify of background job completion
 set -o notify
 
