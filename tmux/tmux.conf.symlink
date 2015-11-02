@@ -11,6 +11,11 @@ set -g history-limit 5000
 # use vim key bindings
 setw -g mode-keys vi
 
+# mimic vim
+bind-key -t vi-copy v begin-selection
+bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+unbind -t vi-copy Enter
+
 # enable mouse
 set -g mouse
 
