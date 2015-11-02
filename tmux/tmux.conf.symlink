@@ -16,6 +16,9 @@ bind-key -t vi-copy v begin-selection
 bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
 unbind -t vi-copy Enter
 
+# fixes the clipboard in vim
+set-option -g default-command "reattach-to-user-namespace -l bash"
+
 # enable mouse
 set -g mouse
 
