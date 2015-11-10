@@ -27,6 +27,7 @@ install irssi
 install jq
 install lua
 install luajit
+install mosh
 install nvm
 install openssl
 install pandoc
