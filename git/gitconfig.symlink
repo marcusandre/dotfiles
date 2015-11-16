@@ -86,3 +86,5 @@
 
 [help]
   autocorrect = 5
+[commit]
+	template = /Users/megges/.gitcommit_message
