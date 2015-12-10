@@ -13,6 +13,7 @@ install cmake
 install coreutils
 install ctags
 install curl
+install elixir
 install findutils
 install fzf
 install gcc
