@@ -1,6 +1,7 @@
 tap neovim/neovim
 upgrade
 update
+install --devel protobuf
 install --HEAD neovim
 install ack
 install autoconf
