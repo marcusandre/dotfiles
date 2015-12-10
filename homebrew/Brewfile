@@ -13,6 +13,7 @@ install coreutils
 install ctags
 install curl
 install findutils
+install fzf
 install gcc
 install gdbm
 install gettext
