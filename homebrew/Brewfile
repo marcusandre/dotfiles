@@ -28,6 +28,7 @@ install httpie
 install hub
 install irssi
 install jq
+install leiningen
 install lua
 install luajit
 install mosh
