@@ -25,6 +25,7 @@ Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
+Plug 'mattonrails/vim-mix'
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-node', { 'for': 'javascript' }
 Plug 'NLKNguyen/papercolor-theme'
