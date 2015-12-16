@@ -1,8 +1,7 @@
-tap neovim/neovim
+tap homebrew/versions
 upgrade
 update
 install --devel protobuf
-install --HEAD neovim
 install ack
 install autoconf
 install automake
@@ -16,7 +15,6 @@ install curl
 install elixir
 install findutils
 install fzf
-install gcc
 install gdbm
 install gettext
 install git
