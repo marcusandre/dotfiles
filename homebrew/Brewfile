@@ -1,7 +1,6 @@
 tap homebrew/versions
 upgrade
 update
-install --devel protobuf
 install ack
 install autoconf
 install automake
@@ -34,6 +33,7 @@ install nvm
 install openssl
 install pandoc
 install pkg-config
+install protobuf
 install pwgen
 install python3
 install rbenv
@@ -42,6 +42,7 @@ install rename
 install ruby-build
 install ssh-copy-id
 install the_silver_searcher
+install tig
 install tmux
 install tree
 install vifm
