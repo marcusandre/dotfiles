@@ -80,7 +80,7 @@ if which rbenv > /dev/null; then
 fi
 
 # Setup Go
-export GOROOT=$HOME/.go
+export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/Code/Go
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
