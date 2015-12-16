@@ -17,6 +17,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'csscomb/vim-csscomb', { 'for': 'css' }
 Plug 'editorconfig/editorconfig-vim'
+Plug 'elixir-lang/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'flazz/vim-colorschemes'
