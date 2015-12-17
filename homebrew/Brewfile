@@ -14,8 +14,6 @@ install curl
 install elixir
 install findutils
 install fzf
-install gdbm
-install gettext
 install git
 install git-extras
 install glib
