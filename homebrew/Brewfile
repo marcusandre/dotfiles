@@ -27,6 +27,7 @@ install leiningen
 install lua
 install luajit
 install mosh
+install nmap
 install nvm
 install openssl
 install pandoc
