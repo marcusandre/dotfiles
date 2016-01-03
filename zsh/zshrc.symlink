@@ -1,0 +1,53 @@
+# Set path env
+typeset -U path
+path=(/usr/local/bin /usr/local/sbin $path[@])
+
+# Set ZSH env
+export ZSH=~/.zsh
+
+# Enable vim keys
+bindkey -v
+
+# Enable command completion
+autoload -U compinit && compinit -i
+
+# Enable prompt system
+autoload -U promptinit && promptinit
+
+# Set basic prompt
+prompt walters
+
+# Autocompletion with arrow-key driven interface
+zstyle ':completion:*' menu select
+zstyle ':completion:*' rehash true
+
+# Autocompletion of command line switches for aliases
+setopt completealiases
+
+# Preventing duplicate lines in history
+setopt HIST_IGNORE_DUPS
+
+# (Un)freeze terminal
+ttyctl -f
+
+# Aliases
+alias cls='clear; ls -lah'
+alias cp="cp -iv"
+alias e="vim"
+alias ip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
+alias la="ls -la"
+alias lh="ls -lah"
+alias ls1="ls -1"
+alias ls="ls -GFh"
+alias m="make "
+alias mv="mv -iv"
+alias ngrep="grep --line-number --color"
+alias pubip="curl icanhazip.com"
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy"
+alias pull="curl -L#"
+alias rf="rm -rf"
+alias rm="rm -iv"
+alias rmds="find . -name \".DS_Store\" | xargs rm"
+alias sudo="sudo "
+alias v="vim"
+alias week="date +%V"
