@@ -18,6 +18,7 @@ Plug 'bling/vim-airline'
 Plug 'csscomb/vim-csscomb', { 'for': 'css' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
+Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'flazz/vim-colorschemes'
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
