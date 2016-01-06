@@ -2,12 +2,9 @@ tap homebrew/versions
 upgrade
 update
 install ack
-install autoconf
-install automake
 install bash
 install bash-completion
 install clib
-install cmake
 install coreutils
 install ctags
 install curl
@@ -16,30 +13,23 @@ install findutils
 install fzf
 install git
 install git-extras
-install glib
 install go
 install htop-osx
 install httpie
-install hub
-install irssi
 install jq
-install leiningen
-install lua
+install lua52
 install luajit
 install mosh
 install nmap
 install nvm
 install openssl
 install pandoc
-install pkg-config
 install protobuf
 install pwgen
-install python3
 install rbenv
 install reattach-to-user-namespace
 install rename
 install ruby-build
-install sift
 install ssh-copy-id
 install the_silver_searcher
 install tig
@@ -53,5 +43,4 @@ install wrk
 install xz
 install youtube-dl
 install z
-install zsh
 cleanup --force
