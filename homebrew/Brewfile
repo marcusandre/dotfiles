@@ -46,7 +46,7 @@ install tig
 install tmux
 install tree
 install vifm
-install vim --with-lua --with-luajit
+install vim --with-lua --with-luajit --override-system-vi
 install weechat
 install wget
 install wrk
