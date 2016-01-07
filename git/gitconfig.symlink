@@ -68,6 +68,9 @@
   default = simple
   followTags = true
 
+[commit]
+  template = /Users/megges/.gitcommit_message
+
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
@@ -86,5 +89,3 @@
 
 [help]
   autocorrect = 5
-[commit]
-	template = /Users/megges/.gitcommit_message
