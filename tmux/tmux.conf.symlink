@@ -55,6 +55,9 @@ bind -r J resize-pane -D 5
 bind -r K resize-pane -U 5
 bind -r L resize-pane -R 5
 
+# access copy mode
+bind c copy-mode
+
 # force a reload of the config file
 unbind r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
@@ -80,7 +83,7 @@ set -g status-utf8 on
 # set refresh interval for status bar
 set -g status-interval 30
 
-# center the status bar
+# re-position status bar
 set -g status-justify left
 
 # setup right status bar
