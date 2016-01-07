@@ -69,11 +69,6 @@ if [ -f $(brew --prefix nvm)/nvm.sh ]; then
   . $(brew --prefix nvm)/nvm.sh
 fi
 
-# Source nvm completion
-if [ -f $(which npm) ]; then
-  eval "$(npm completion)"
-fi
-
 # Init rbenv
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
