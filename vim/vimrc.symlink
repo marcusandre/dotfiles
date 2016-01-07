@@ -357,6 +357,13 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 " Colorscheme
 " ===========
+
 let g:hybrid_use_Xresources = 1
-set background=dark
-silent! colorscheme Tomorrow-Night-Eighties
+set background=light
+silent! colorscheme PaperColor
+
+" MacVim
+" ======
+
+set guifont=Consolas:h17
+set linespace=7
