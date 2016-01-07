@@ -53,11 +53,6 @@ if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
 fi
 
-# Init nix (https://nixos.org/nix/)
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ];
-  then . ~/.nix-profile/etc/profile.d/nix.sh;
-fi
-
 # Homebrew Bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
@@ -83,6 +78,11 @@ fi
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/Code/Go
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+
+# Init nix (https://nixos.org/nix/)
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ];
+  then . ~/.nix-profile/etc/profile.d/nix.sh;
+fi
 
 # Check bin in home dir
 if [[ -L ~/bin && -d ~/bin ]]; then
