@@ -87,7 +87,7 @@ set -g status-interval 30
 set -g status-justify left
 
 # setup right status bar
-set-option -g status-right '#(spotify-tmux) | #[fg=default]%a %d %b %H:%M'
+set-option -g status-right '#{prefix_highlight} #(spotify-tmux) | #[fg=default]%a %d %b %H:%M'
 set-option -g status-right-length 80
 
 ###########################
@@ -120,6 +120,7 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
 
 # initialize (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
