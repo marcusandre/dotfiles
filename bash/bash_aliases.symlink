@@ -14,6 +14,7 @@ alias lh="ls -lah"
 alias ls1="ls -1"
 
 # Misc
+alias 6to4="traceroute 192.88.99.1"
 alias cdg="cd $GOPATH/src"
 alias cls='clear; ls -lah'
 alias cp="cp -iv"
