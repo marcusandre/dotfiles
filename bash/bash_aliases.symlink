@@ -19,6 +19,7 @@ alias cdg="cd $GOPATH/src"
 alias cls='clear; ls -lah'
 alias cp="cp -iv"
 alias e="vim"
+alias eg="open -a /Applications/MacVim.app"
 alias ip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
 alias m="make "
 alias mv="mv -iv"
