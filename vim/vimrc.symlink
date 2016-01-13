@@ -20,11 +20,11 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'flazz/vim-colorschemes'
-Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
+Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mattonrails/vim-mix'
@@ -286,6 +286,11 @@ let g:syntastic_javascript_checkers = ['standard']
 
 " Plugins
 " =======
+
+" EasyAlign
+" =========
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " Syntastic
 " =========
