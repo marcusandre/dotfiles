@@ -34,6 +34,9 @@ set -g renumber-windows on
 # disable automatic renaming
 setw -g automatic-rename off
 
+# Center the window list
+set -g status-justify centre
+
 ###########################
 #  Key Bindings
 ###########################
@@ -56,7 +59,7 @@ bind -r K resize-pane -U 5
 bind -r L resize-pane -R 5
 
 # access copy mode
-bind c copy-mode
+bind C copy-mode
 
 # force a reload of the config file
 unbind r
