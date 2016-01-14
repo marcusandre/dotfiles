@@ -25,6 +25,7 @@ Plug 'jonathanfilip/vim-lucius'
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
 Plug 'junegunn/vim-easy-align'
+Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mattonrails/vim-mix'
@@ -37,7 +38,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimproc.vim'
 Plug 'takac/vim-hardtime'
 Plug 'terryma/vim-multiple-cursors'
@@ -183,7 +183,8 @@ nnoremap N Nzzzv
 " ========
 
 map <leader><space> /
-nmap <leader>b :Unite -buffer-name=buffers buffer<cr>
+nmap <leader><leader> :CtrlP<cr>
+nmap <leader>b :CtrlPBuffer<cr>
 nmap <leader>cd :lcd %:h<cr>
 nmap <leader>e :edit!<cr>
 nmap <leader>ev :vsplit $MYVIMRC<cr>
