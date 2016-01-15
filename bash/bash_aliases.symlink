@@ -15,7 +15,6 @@ alias ls1="ls -1"
 
 # Misc
 alias 6to4="traceroute 192.88.99.1"
-alias cdg="cd $GOPATH/src"
 alias cls='clear; ls -lah'
 alias cp="cp -iv"
 alias e="vim"
@@ -33,14 +32,6 @@ alias rmds="find . -name \".DS_Store\" | xargs rm"
 alias sudo="sudo "
 alias v="vim"
 alias week="date +%V"
-
-# Vagrant aliases
-if hash vagrant 2>/dev/null; then
-  alias vup="vagrant up"
-  alias vha="vagrant halt"
-  alias vst="vagrant status"
-  alias vdf="vagrant destroy -f; rm -rf .vagrant"
-fi
 
 # Git aliases
 if hash git 2>/dev/null; then
