@@ -19,6 +19,7 @@ install httpie
 install jq
 install lua52
 install luajit
+install md5sha1sum
 install mosh
 install nmap
 install nvm
