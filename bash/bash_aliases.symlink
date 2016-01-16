@@ -1,4 +1,5 @@
 # Navigation
+alias -- -='cd -'
 alias ..="cd .."
 
 # Directory Listings

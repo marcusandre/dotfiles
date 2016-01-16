@@ -11,13 +11,18 @@ export MANPAGER="less -X"
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export LC_ALL="en_US.UTF-8"
 
+# Add `Code` to CDPATH for very quick navigation
+export CDPATH=".:~/Code"
+
 # Shell settings
+shopt -s autocd
 shopt -s cdspell
 shopt -s checkwinsize
-shopt -s histappend
-shopt -s nocaseglob
+shopt -s dirspell
 shopt -s extglob
 shopt -s globstar 2>/dev/null
+shopt -s histappend
+shopt -s nocaseglob
 
 # vi mode
 set -o vi
