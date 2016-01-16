@@ -24,22 +24,11 @@ shopt -s globstar 2>/dev/null
 shopt -s histappend
 shopt -s nocaseglob
 
-# vi mode
-set -o vi
-
-# notify of background job completion
-set -o notify
-
 # skip this stupid mail check
 unset MAILCHECK
 
 # default umask
 umask 0022
-
-# Input settings
-set completion-ignore-case on
-set show-all-if-ambiguous on
-set completion-map-case on
 
 # Misc settings
 complete -cf sudo
