@@ -34,6 +34,7 @@ umask 0022
 # Input settings
 set completion-ignore-case on
 set show-all-if-ambiguous on
+set completion-map-case on
 
 # Misc settings
 complete -cf sudo
