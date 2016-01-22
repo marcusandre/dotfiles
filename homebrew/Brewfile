@@ -19,6 +19,7 @@ install httpie
 install jq
 install lua52
 install luajit
+install macvim --with-lua --with-luajit --with-python3
 install md5sha1sum
 install mosh
 install nmap
