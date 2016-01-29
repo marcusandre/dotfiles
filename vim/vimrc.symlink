@@ -23,6 +23,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+Plug 'junegunn/gv.vim'
 Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
