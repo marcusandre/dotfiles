@@ -44,7 +44,7 @@ set -g status-justify centre
 
 # tmux prefix
 unbind C-b
-set -g prefix C-f
+set -g prefix C-a
 
 # moving among panes
 bind h select-pane -L
