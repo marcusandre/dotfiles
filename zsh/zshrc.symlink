@@ -1,6 +1,7 @@
 # Set path env
 typeset -U path
 path=(/usr/local/bin /usr/local/sbin $path[@])
+fpath=($HOME/.dotfiles/zsh $fpath)
 
 # Set ZSH env
 export ZSH=~/.zsh
@@ -15,7 +16,7 @@ autoload -U compinit && compinit -i
 autoload -U promptinit && promptinit
 
 # Set basic prompt
-prompt walters
+prompt pure
 
 # Autocompletion with arrow-key driven interface
 zstyle ':completion:*' menu select
