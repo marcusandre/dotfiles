@@ -64,3 +64,8 @@ antigen apply
 # Load `nvm`
 export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
+
+# Setup Go
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/Code/Go
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
