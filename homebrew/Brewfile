@@ -2,6 +2,7 @@ tap homebrew/versions
 upgrade
 update
 install ack
+install antigen
 install bash
 install bash-completion
 install clib
