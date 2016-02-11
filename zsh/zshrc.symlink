@@ -3,6 +3,11 @@ typeset -U path
 path=(/usr/local/bin /usr/local/sbin $path[@])
 fpath=($HOME/.dotfiles/zsh $fpath)
 
+# Add $home/bin to path
+if [ -d $HOME/bin ]; then
+  path=($HOME/bin $path[@])
+fi
+
 # Set env
 export EDITOR="vim"
 export LC_ALL="en_US.UTF-8"
