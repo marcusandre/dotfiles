@@ -26,11 +26,11 @@ autoload -U promptinit && promptinit
 # Enable globbing
 setopt extended_glob
 
-# Set prompt
-prompt pure
-
 # source every .zsh file in this rep
 for file ($ZSH/**/*.zsh) source $file
+
+# Set prompt
+prompt pure
 
 # Autocompletion with arrow-key driven interface
 zstyle ':completion:*' menu select
@@ -50,6 +50,13 @@ bindkey '^R' history-incremental-search-backward
 
 # Load antigen
 . $(brew --prefix antigen)/share/antigen.zsh
+
+# Load antigen plugins
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Apply antigen
+antigen apply
 
 # Load `z`
 . $(brew --prefix)/etc/profile.d/z.sh
