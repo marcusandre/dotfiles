@@ -65,6 +65,12 @@ antigen apply
 export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
 
+# Load `rbenv`
+
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
+
 # Setup Go
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/Code/Go
