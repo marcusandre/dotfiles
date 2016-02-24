@@ -86,14 +86,15 @@ set shell=bash
 set showcmd                       " Show incomplete cmds down the bottom
 set showmatch                     " Briefly jump to the matching
 set showmode                      " Show current mode down the bottom
-set smartcase
+set viminfo                       " Remember information
+set smartcase                     " A must when searching for stuff
 set splitbelow                    " Opens horizontal split below current window
 set splitright                    " Opens vertical split right of current window
 set textwidth=80
 set title
 set ttyfast                       " Send more characters
 
-" Indendation Settings
+" Indentation Settings
 " ====================
 
 filetype indent on
@@ -260,6 +261,12 @@ au VimResized * exe "normal! \<c-w>="
 
 " Set vim to save the file on focus out
 " au FocusLost * :wa
+
+" Remember cursor position of the last editing
+" and jump to it when opening the same file again
+if has("autocmd")
+  autocmd BufReadPost * if line("'\"") | exe "'\"" | endif
+endif
 
 " Realign buffers when iterm goes fullscreen
 augroup FixProportionsOnResize
