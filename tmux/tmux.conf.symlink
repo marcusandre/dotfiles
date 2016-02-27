@@ -73,7 +73,10 @@ unbind r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # faster kill session
-bind q kill-session
+bind X kill-session
+
+# synchronize panes
+bind-key a set-window-option synchronize-panes
 
 # easier and faster switching between next/prev window
 bind C-p previous-window
