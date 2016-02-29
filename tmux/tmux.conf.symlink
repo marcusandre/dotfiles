@@ -32,8 +32,10 @@ set -g repeat-time 1000
 set -g renumber-windows on
 
 # enable automatic renaming
-set-option -gw automatic-rename on
 set-option -g set-titles on
+set-option -g visual-activity off
+set-option -gw automatic-rename on
+set-option -gw monitor-activity off
 
 # Center the window list
 set -g status-justify centre
@@ -45,6 +47,10 @@ set -g status-justify centre
 # tmux prefix
 unbind C-b
 set -g prefix C-f
+
+# send clear commands
+bind C-l send-keys 'C-l'
+bind C-k send-keys 'C-k'
 
 # moving among panes
 bind h select-pane -L
@@ -73,7 +79,7 @@ unbind r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # faster kill session
-bind X kill-session
+bind X confirm-before kill-session
 
 # synchronize panes
 bind-key a set-window-option synchronize-panes
