@@ -56,6 +56,7 @@ bindkey '^R' history-incremental-search-backward
 
 # Load antigen plugins
 antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Apply antigen
