@@ -98,7 +98,7 @@ bind -n WheelDownPane select-pane -t= \; send-keys -M
 set -g status-utf8 on
 
 # set refresh interval for status bar
-set -g status-interval 30
+set -g status-interval 10
 
 # re-position status bar
 set -g status-justify left
