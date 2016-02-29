@@ -72,7 +72,7 @@ bind-key tab select-pane -t :.+
 bind-key btab select-pane -t :.-
 
 # access copy mode
-bind C copy-mode
+bind , copy-mode
 
 # force a reload of the config file
 unbind r
