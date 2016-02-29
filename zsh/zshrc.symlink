@@ -17,6 +17,9 @@ export ZSH="$HOME/.dotfiles"
 # Enable vim keys
 bindkey -v
 
+# Enable auto-cd
+setopt AUTO_CD
+
 # Enable command completion
 autoload -U compinit && compinit -i
 
