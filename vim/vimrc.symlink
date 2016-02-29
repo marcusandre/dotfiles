@@ -196,6 +196,8 @@ nmap <leader>sv :source $MYVIMRC<cr>
 nmap <leader>W :set invwrap wrap?<cr>
 nmap <leader>w :w<cr>
 nmap <leader>x :bd<cr>
+nmap <leader>y "*y
+nmap <leader>Y "*Y
 nmap <silent> <leader>r :redraw!<cr>
 nmap <silent> _ :TagbarToggle<cr>
 nmap <silent> H ^
