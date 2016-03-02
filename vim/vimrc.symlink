@@ -207,9 +207,10 @@ nmap <space> :nohlsearch<cr>
 vmap <silent> r :w !bash<cr>
 vmap <silent> s :sort i<cr>
 
-" Rebind Commands
-" ===============
+" Commands
+" ========
 
+command! FJ %!python -m json.tool
 command! Q q
 command! W w
 command! WQ wq
