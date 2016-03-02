@@ -36,7 +36,7 @@ alias week="date +%V"
 
 # Git aliases
 if hash git 2>/dev/null; then
-  alias gl="git log --pretty=oneline --abbrev-commit --graph --decorate"
+  alias gl="git l"
   alias gd="git diff"
   alias gst="git status"
   alias gs="git status -sb"

@@ -20,7 +20,7 @@ alias v="vim"
 alias week="date +%V"
 
 # Git aliases
-alias gl="git log --pretty=oneline --abbrev-commit --graph --decorate"
+alias gl="git l"
 alias gd="git diff"
 alias gst="git status"
 alias gs="git status -sb"
