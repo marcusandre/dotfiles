@@ -36,7 +36,7 @@
   hash = rev-parse --short HEAD
   join = merge --no-ff
   l = log --pretty=oneline --abbrev-commit --graph --decorate
-  ll = log --pretty=format:'%C(cyan)%h%C(yellow)%d%C(reset) %s - %C(magenta)%an, %ar%C(reset)' --graph --decorate
+  ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
   prevent = update-index --assume-unchanged
   s = status -sb
   st = status
