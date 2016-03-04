@@ -68,7 +68,7 @@ set cmdheight=1
 set complete=.,w,b,u,t,i,kspell
 set cursorline
 set directory=.,$TEMP
-set fileformats=unix,mac      " <EOL> formats when (e.g.) starting to edit a new buffer
+set fileformats=unix,mac          " <EOL> formats when (e.g.) starting to edit a new buffer
 set formatoptions=qrn1            " Reformat text paragraphs or chunks of code
 set hidden                        " Buffers can exist in the background
 set history=1000                  " Store more command line history
@@ -87,13 +87,13 @@ set shell=bash
 set showcmd                       " Show incomplete cmds down the bottom
 set showmatch                     " Briefly jump to the matching
 set showmode                      " Show current mode down the bottom
-set viminfo                       " Remember information
 set smartcase                     " A must when searching for stuff
 set splitbelow                    " Opens horizontal split below current window
 set splitright                    " Opens vertical split right of current window
 set textwidth=80
 set title
 set ttyfast                       " Send more characters
+set viminfo                       " Remember information
 
 " Indentation Settings
 " ====================
