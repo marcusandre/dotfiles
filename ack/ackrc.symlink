@@ -1,3 +1,4 @@
+--follow
 --ignore-dir=build
 --ignore-dir=cache
 --ignore-dir=dist
@@ -5,5 +6,12 @@
 --ignore-dir=node_modules
 --ignore-dir=vendor
 --sort-files
+--type-set=css=.css,.less,.scss,.styl
+--type-set=html=.html,.handlebars,.hbs
+--type-set=json=.json
 --type-set=markdown=.md,.markdown
+--type-set=md=.markdown,.md
+--type-set=styl=.styl
+--type-set=style=.scss,.sass,.styl,.less,.css
+--type-set=svg=.svg
 --type-set=txt=.txt
