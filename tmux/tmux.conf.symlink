@@ -36,6 +36,7 @@ set-option -g set-titles on
 set-option -g visual-activity off
 set-option -gw automatic-rename on
 set-option -gw monitor-activity off
+set-option -g window-status-current-format '[#I]'
 
 # Center the window list
 set -g status-justify centre
