@@ -186,7 +186,7 @@ nmap <leader><leader> :CtrlP<cr>
 nmap <leader>b :CtrlPBuffer<cr>
 nmap <leader>cd :lcd %:h<cr>
 nmap <leader>e :edit!<cr>
-nmap <leader>ev :vsplit $MYVIMRC<cr>
+nmap <leader>ev :e $MYVIMRC<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
@@ -210,6 +210,7 @@ vmap <silent> s :sort i<cr>
 " Commands
 " ========
 
+command! Reload source $MYVIMRC
 command! FJ %!python -m json.tool
 command! Q q
 command! W w
