@@ -386,5 +386,5 @@ silent! colorscheme lucius
 " MacVim
 " ======
 
-set guifont=Consolas:h17
-set linespace=7
+set guifont=CamingoCode:h19
+set linespace=5
