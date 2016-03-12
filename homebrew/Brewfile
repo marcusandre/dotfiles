@@ -33,6 +33,7 @@ install rbenv
 install reattach-to-user-namespace
 install rename
 install ruby-build
+install smartmontools
 install ssh-copy-id
 install the_silver_searcher
 install tig
