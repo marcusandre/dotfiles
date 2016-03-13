@@ -26,9 +26,7 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
-Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-startify'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'plasticboy/vim-markdown'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -36,7 +34,6 @@ Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/neocomplete.vim'
 Plug 'takac/vim-hardtime'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tmhedberg/matchit'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-abolish'
@@ -186,6 +183,8 @@ nmap <leader><leader> :CtrlP<cr>
 nmap <leader>b :CtrlPBuffer<cr>
 nmap <leader>cd :lcd %:h<cr>
 nmap <leader>e :edit!<cr>
+nmap <leader>cx :ccl<cr>
+nmap <leader>co :copen<cr>
 nmap <leader>ev :e $MYVIMRC<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
@@ -197,10 +196,7 @@ nmap <leader>sv :source $MYVIMRC<cr>
 nmap <leader>W :set invwrap wrap?<cr>
 nmap <leader>w :w<cr>
 nmap <leader>x :bd<cr>
-nmap <leader>y "*y
-nmap <leader>Y "*Y
 nmap <silent> <leader>r :redraw!<cr>
-nmap <silent> _ :TagbarToggle<cr>
 nmap <silent> H ^
 nmap <silent> L $
 nmap <space> :nohlsearch<cr>
@@ -288,8 +284,8 @@ au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
 " CSS
 " ===
-au BufEnter *.css set nosmartindent
-au BufLeave *.css set smartindent
+au BufEnter *.css set nocindent
+au BufLeave *.css set cindent
 autocmd BufRead,BufNewFile *.styl set filetype=css
 
 " JS
