@@ -20,6 +20,12 @@ bindkey -v
 # Enable auto-cd
 setopt AUTO_CD
 
+# Enable use of pushd and popd
+setopt autopushd
+setopt pushdsilent
+setopt pushdignoredups
+setopt pushdtohome
+
 # Enable command completion
 autoload -U compinit && compinit -i
 
@@ -84,3 +90,8 @@ fi
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/Code/Go
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+
+# Create folder and cd into it
+take () {
+  mkdir -p $1 && cd $1
+}
