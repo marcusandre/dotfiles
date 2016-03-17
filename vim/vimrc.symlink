@@ -184,10 +184,11 @@ map <leader><space> /
 nmap <leader><leader> :CtrlP<cr>
 nmap <leader>b :CtrlPBuffer<cr>
 nmap <leader>cd :lcd %:h<cr>
-nmap <leader>e :edit!<cr>
-nmap <leader>cx :ccl<cr>
 nmap <leader>co :copen<cr>
+nmap <leader>cx :ccl<cr>
+nmap <leader>e :edit!<cr>
 nmap <leader>ev :e $MYVIMRC<cr>
+nmap <leader>ga :Git append<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
