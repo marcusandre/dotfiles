@@ -82,6 +82,7 @@ set number                        " Show line numbers
 set numberwidth=4
 set relativenumber
 set ruler                         " Show the line and column number
+set secure " Only run autocommands owned by me
 set shell=bash
 set showcmd                       " Show incomplete cmds down the bottom
 set showmatch                     " Briefly jump to the matching
@@ -92,7 +93,6 @@ set splitright                    " Opens vertical split right of current window
 set textwidth=80
 set title
 set ttyfast                       " Send more characters
-set viminfo                       " Remember information
 
 " Indentation Settings
 " ====================
@@ -122,8 +122,6 @@ set list listchars=tab:»·,trail:·,nbsp:·
 set nobackup
 set noswapfile
 set nowritebackup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Text Completion
 " ===============
@@ -151,15 +149,7 @@ nnoremap <S-Tab>    :bp<cr>
 
 " Code Folding
 " ============
-set foldlevel=1       " Start folding on first level
-set foldmethod=indent " Fold based on indents
 set nofoldenable      " Do not fold by default
-
-" Configuration Files
-" ===================
-
-set exrc   " Enable use of directory-specific .vimrc
-set secure " Only run autocommands owned by me
 
 " Disable Background Color Erase (tmux)
 " ====================================
@@ -219,10 +209,10 @@ cmap w!! w !sudo tee %
 " Navigate Splits
 " ===============
 
+nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
-nnoremap <C-h> <C-w><C-h>
 
 " Long Lines as Break Lines
 " =========================
@@ -259,7 +249,7 @@ map  <up>    <nop>
 " ============
 
 " When vimrc is edited, reload it
-au! bufwritepost .vimrc source %
+" au! bufwritepost .vimrc source %
 
 " Resize splits on window resize
 au VimResized * exe "normal! \<c-w>="
@@ -269,9 +259,10 @@ au VimResized * exe "normal! \<c-w>="
 
 " Remember cursor position of the last editing
 " and jump to it when opening the same file again
-if has("autocmd")
-  autocmd BufReadPost * if line("'\"") | exe "'\"" | endif
-endif
+"
+" if has("autocmd")
+"   autocmd BufReadPost * if line("'\"") | exe "'\"" | endif
+" endif
 
 " Realign buffers when iterm goes fullscreen
 augroup FixProportionsOnResize
@@ -282,7 +273,7 @@ augroup END
 " Enable spell in Git commit messages
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
-" Filetypes
+" Languages
 " =========
 
 " CSS
@@ -290,10 +281,6 @@ au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 au BufEnter *.css set nocindent
 au BufLeave *.css set cindent
 autocmd BufRead,BufNewFile *.styl set filetype=css
-
-" JS
-" ==
-let g:syntastic_javascript_checkers = ['standard']
 
 " Plugins
 " =======
@@ -309,6 +296,7 @@ nmap ga <Plug>(EasyAlign)
 
 " Syntastic
 " =========
+let g:syntastic_javascript_checkers = ['standard']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -326,12 +314,6 @@ let g:neocomplete#enable_at_startup = 1                 " Use neocomplete
 let g:neocomplete#enable_smart_case = 1                 " Use smartcase
 let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length
 
-" Hardtime
-" ========
-let g:hardtime_default_on = 0
-let g:hardtime_ignore_quickfix = 1
-let g:hardtime_maxcount = 2
-
 " Vim-Go
 " ======
 au FileType go nmap <leader>b <Plug>(go-build)
@@ -345,7 +327,7 @@ let g:go_fmt_fail_silently = 1
 " CSScomb
 " =======
 autocmd FileType css noremap <buffer> <leader>co :CSScomb<cr>
-autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass,*.styl silent! :CSScomb<cr>
+" autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass,*.styl silent! :CSScomb<cr>
 
 " Markdown
 " ========
@@ -381,7 +363,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 let g:hybrid_use_Xresources = 1
 set background=dark
-silent! colorscheme lucius
+silent! colorscheme Tomorrow-Night
 
 " MacVim
 " ======
