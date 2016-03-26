@@ -26,6 +26,7 @@ install mosh
 install nmap
 install nvm
 install openssl
+install osxfuse
 install pandoc
 install protobuf
 install pwgen
