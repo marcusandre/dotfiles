@@ -66,7 +66,7 @@
   autosqash = true
 
 [push]
-  default = simple
+  default = current
   followTags = true
 
 [commit]
