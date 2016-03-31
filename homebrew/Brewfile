@@ -5,11 +5,7 @@ install ack
 install antigen
 install bash
 install bash-completion
-install clib
-install coreutils
-install ctags
 install curl
-install elixir
 install findutils
 install fzf
 install git
@@ -19,33 +15,22 @@ install htop-osx
 install httpie
 install jq
 install lua52
-install luajit
-install macvim --with-lua --with-luajit --with-python3
 install md5sha1sum
-install mosh
-install nmap
 install nvm
 install openssl
 install osxfuse
 install pandoc
-install protobuf
 install pwgen
 install rbenv
 install reattach-to-user-namespace
 install rename
 install ruby-build
-install smartmontools
 install ssh-copy-id
 install the_silver_searcher
-install tig
 install tmux
 install tree
-install vifm
 install vim --with-lua --with-luajit --override-system-vi
-install weechat
 install wget
-install wrk
-install xz
-install youtube-dl
 install z
+install zsh
 cleanup --force
