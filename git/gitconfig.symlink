@@ -26,6 +26,7 @@
   amend = commit --amend
   ap = add --patch
   append = commit -a --amend -C HEAD
+  b = checkout -b
   branches = branch -a --color -v
   cached = diff --cached
   co = checkout
