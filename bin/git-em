@@ -1,0 +1,3 @@
+#!/bin/sh
+EDITOR=$(printenv EDITOR)
+$EDITOR $(git status --porcelain | awk '{print $2}')
