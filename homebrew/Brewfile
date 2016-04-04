@@ -1,36 +1,24 @@
-tap homebrew/versions
-upgrade
-update
-install ack
-install antigen
-install bash
-install bash-completion
-install curl
-install findutils
-install fzf
-install git
-install git-extras
-install go
-install htop-osx
-install httpie
-install jq
-install lua52
-install md5sha1sum
-install nvm
-install openssl
-install osxfuse
-install pandoc
-install pwgen
-install rbenv
-install reattach-to-user-namespace
-install rename
-install ruby-build
-install ssh-copy-id
-install the_silver_searcher
-install tmux
-install tree
-install vim --with-lua --with-luajit --override-system-vi
-install wget
-install z
-install zsh
-cleanup --force
+ack
+antigen
+bash
+bash-completion
+curl
+findutils
+fzf
+git
+git-extras
+go
+nvm
+openssl
+pwgen
+rbenv
+reattach-to-user-namespace
+ruby-build
+ssh-copy-id
+the_silver_searcher
+tmux
+tree
+vim --with-lua --with-luajit --override-system-vi
+wget
+z
+zsh

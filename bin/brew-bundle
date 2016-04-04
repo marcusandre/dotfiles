@@ -23,9 +23,16 @@ function usage() {
 function process() {
   local Brewfile=$1
 
+  # fresh repo
+  brew upgrade
+  brew update
+
   while read recipe; do
-    brew $recipe
+    brew install $recipe
   done <$Brewfile
+
+  # remove old stuff
+  brew cleanup --force
 }
 
 #
