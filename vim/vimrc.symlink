@@ -14,6 +14,7 @@ call plug#begin()
 " =======
 
 Plug 'airblade/vim-gitgutter'
+Plug 'alvan/vim-closetag'
 Plug 'csscomb/vim-csscomb', { 'for': 'css' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
