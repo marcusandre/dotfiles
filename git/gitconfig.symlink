@@ -71,7 +71,7 @@
   followTags = true
 
 [commit]
-  template = /Users/megges/.gitcommit_message
+  template = ~/.gitcommit_message
 
 [core]
   editor = vim
