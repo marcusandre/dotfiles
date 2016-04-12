@@ -21,11 +21,6 @@ Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'flazz/vim-colorschemes'
 Plug 'jiangmiao/auto-pairs'
-Plug 'jonathanfilip/vim-lucius'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/gv.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'rking/ag.vim'
@@ -345,7 +340,7 @@ highlight Comment cterm=italic
 " Airline
 " =======
 let g:airline_powerline_fonts = 0
-let g:airline_theme = 'lucius'
+let g:airline_theme = 'tomorrow'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -359,12 +354,5 @@ let g:airline_symbols.whitespace = 'Ξ'
 " Colorscheme
 " ===========
 
-let g:hybrid_use_Xresources = 1
 set background=dark
-silent! colorscheme lucius
-
-" MacVim
-" ======
-
-set guifont=CamingoCode:h19
-set linespace=5
+silent! colorscheme Tomorrow-Night-Eighties
