@@ -175,6 +175,7 @@ nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gt :GitGutterToggle<cr>
+nmap <leader>l :Lines<cr>
 nmap <leader>p :set invpaste paste?<cr>
 nmap <leader>q :b#<cr>
 nmap <leader>sv :source $MYVIMRC<cr>
