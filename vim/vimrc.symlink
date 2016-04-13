@@ -21,7 +21,8 @@ Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'flazz/vim-colorschemes'
 Plug 'jiangmiao/auto-pairs'
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'rking/ag.vim'
 Plug 'robertmeta/nofrils'
@@ -164,8 +165,8 @@ nnoremap N Nzzzv
 " ========
 
 map <leader><space> /
-nmap <leader><leader> :CtrlP<cr>
-nmap <leader>b :CtrlPBuffer<cr>
+nmap <leader><leader> :GitFiles<cr>
+nmap <leader>b :Buffer<cr>
 nmap <leader>cd :lcd %:h<cr>
 nmap <leader>co :copen<cr>
 nmap <leader>cx :ccl<cr>
@@ -277,10 +278,6 @@ autocmd BufRead,BufNewFile *.styl set filetype=css
 
 " Plugins
 " =======
-
-" Ctrl-P
-" ======
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " EasyAlign
 " =========

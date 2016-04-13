@@ -83,6 +83,7 @@ fi
 
 # Load fzf shell extension
 if [ -f ~/.fzf.zsh ]; then
+  export FZF_DEFAULT_COMMAND='ag -g ""'
   source ~/.fzf.zsh
 fi
 
