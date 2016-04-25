@@ -8,6 +8,7 @@ fzf
 git
 git-extras
 go
+neovim/neovim/neovim
 nvm
 openssl
 pwgen
