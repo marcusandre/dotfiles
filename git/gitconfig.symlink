@@ -44,6 +44,10 @@
 [difftool]
   prompt = false
 
+[grep]
+  extendRegexp = true
+  lineNumber = true
+
 [fetch]
   prune = true
 
