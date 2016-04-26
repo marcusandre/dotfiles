@@ -62,6 +62,7 @@
   template = ~/.gitcommit_message
 
 [core]
+  autocrlf = input
   editor = vim
   excludesfile = ~/.gitignore_global
   pager = less -+$LESS -FRX
