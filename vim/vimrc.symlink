@@ -351,4 +351,4 @@ let g:airline_symbols.whitespace = 'Ξ'
 " ===========
 
 set background=dark
-silent! colorscheme Tomorrow-Night-Eighties
+silent! colorscheme Tomorrow
