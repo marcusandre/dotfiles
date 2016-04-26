@@ -22,22 +22,18 @@
   untracked = cyan
 
 [alias]
-  ai = add --interactive
   amend = commit --amend
-  ap = add --patch
   append = commit -a --amend -C HEAD
-  b = checkout -b
   branches = branch -a --color -v
   cached = diff --cached
-  co = checkout
   discard = reset --hard HEAD
   ds = !git diff | diffstat -C
   fd = diff -U9999
   fop = fetch origin --prune
   hash = rev-parse --short HEAD
-  join = merge --no-ff
   l = log --pretty=oneline --abbrev-commit --graph --decorate
   ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
+  nevermind = !git reset --hard HEAD && git clean -d -f
   prevent = update-index --assume-unchanged
   s = status -sb
   st = status
@@ -45,7 +41,7 @@
   today-fs = log --since=midnight --no-merges --name-only
   todo = !git ls-files | xargs grep --color=auto -onE '(TODO|todo):.*$'
   track = checkout -t
-  unstage = reset HEAD
+  unstage = reset -q HEAD --
   upgrade = !git fetch origin --prune && git rebase origin/master
 
 [merge]
