@@ -3,20 +3,20 @@
 set -e
 
 VIMDIR=~/.vim
-NVIMDIR=~/.nvim
+NVIMDIR=~/.config/nvim
 PLUGVIM=$VIMDIR/autoload/plug.vim
-VIMPROC=$VIMDIR/plugged/vimproc.vim
 REMOTE=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 function link() {
   test -h $VIMDIR/snippets || ln -sf $(pwd)/vim/snippets $VIMDIR/snippets
+  test -h $NVIMDIR || mkdir -p $NVIMDIR
   test -h $NVIMDIR || ln -sf $VIMDIR $NVIMDIR
+  test -h $NVIMDIR/init.vim || ln -s ~/.vimrc $NVIMDIR/init.vim
 }
 
 function install() {
   curl -fLo $PLUGVIM --create-dirs $REMOTE
   vim +PlugInstall +qall
-  cd $VIMPROC && make >/dev/null
 }
 
 function upgrade(){
