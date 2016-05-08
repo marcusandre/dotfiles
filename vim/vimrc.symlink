@@ -76,11 +76,11 @@ set number                        " Show line numbers
 set numberwidth=4
 set relativenumber
 set ruler                         " Show the line and column number
-set secure " Only run autocommands owned by me
 set shell=bash
 set showcmd                       " Show incomplete cmds down the bottom
 set showmatch                     " Briefly jump to the matching
 set showmode                      " Show current mode down the bottom
+set sidescroll=1                  " The minimal number of columns to scroll horizontally
 set smartcase                     " A must when searching for stuff
 set splitbelow                    " Opens horizontal split below current window
 set splitright                    " Opens vertical split right of current window
