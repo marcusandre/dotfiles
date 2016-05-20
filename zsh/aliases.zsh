@@ -30,3 +30,12 @@ alias gba="git branch -a"
 alias gfp="git fetch origin --prune"
 alias gr='cd "$(git rev-parse --show-toplevel)"'
 
+# Jump to relevant go folder
+gogo () {
+  cd $GOPATH/src/github.com/$(git config github.user)
+}
+
+# Create folder and cd into it
+take () {
+  mkdir -p $1 && cd $1
+}
