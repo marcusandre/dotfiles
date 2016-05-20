@@ -70,6 +70,7 @@ set incsearch                     " Find the next match of current search
 set laststatus=2                  " Always show status line
 set lazyredraw                    " No redraw while executing makros
 set ls=2
+set shell=/bin/bash               " Set shell to bash"
 set modeline
 set number                        " Show line numbers
 set numberwidth=4
