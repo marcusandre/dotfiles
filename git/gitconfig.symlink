@@ -2,6 +2,14 @@
   email = hello@marcusandre.de
   name = Marcus André
 
+[core]
+  autocrlf = input
+  editor = vim
+  excludesfile = ~/.gitignore_global
+  pager = less -+$LESS -FRX
+  precomposeunicode = false
+  trustctime = false
+
 [color]
   branch = auto
   diff = auto
@@ -61,13 +69,8 @@
 [commit]
   template = ~/.gitcommit_message
 
-[core]
-  autocrlf = input
-  editor = vim
-  excludesfile = ~/.gitignore_global
-  pager = less -+$LESS -FRX
-  precomposeunicode = false
-  trustctime = false
+[rerere]
+  enabled = true
 
 [credential]
   helper = osxkeychain
