@@ -3,7 +3,6 @@
 
 filetype off
 set nocompatible
-set encoding=utf-8
 
 " Enable vim-plug
 " ===============
@@ -14,26 +13,18 @@ call plug#begin()
 " =======
 
 Plug 'airblade/vim-gitgutter'
-Plug 'alvan/vim-closetag'
 Plug 'csscomb/vim-csscomb', { 'for': 'css' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'flazz/vim-colorschemes'
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plug 'plasticboy/vim-markdown'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
-Plug 'Shougo/neocomplete.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -53,30 +44,18 @@ set t_Co=256
 " Editor Setup
 " ============
 
-set autoread                      " Reload files changed outside vim
-set backspace=indent,eol,start    " Allow backspace in insert mode
 set breakindent                   " Every wrapped line will continue visually indented
 set cmdheight=1
-set complete=.,w,b,u,t,i,kspell
 set cursorline
 set directory=.,$TEMP
 set fileformats=unix,mac          " <EOL> formats when (e.g.) starting to edit a new buffer
-set formatoptions=qrn1            " Reformat text paragraphs or chunks of code
 set hidden                        " Buffers can exist in the background
-set history=1000                  " Store more command line history
 set hlsearch                      " Highlight search by default
 set ignorecase
-set incsearch                     " Find the next match of current search
-set laststatus=2                  " Always show status line
 set lazyredraw                    " No redraw while executing makros
-set ls=2
 set shell=/bin/bash               " Set shell to bash"
-set modeline
 set number                        " Show line numbers
-set numberwidth=4
 set relativenumber
-set ruler                         " Show the line and column number
-set shell=bash
 set showcmd                       " Show incomplete cmds down the bottom
 set showmatch                     " Briefly jump to the matching
 set showmode                      " Show current mode down the bottom
@@ -93,22 +72,14 @@ set ttyfast                       " Send more characters
 
 filetype indent on
 filetype plugin on
-set autoindent     " Copy indent from current line
 set cindent        " Use c indent rules
-set colorcolumn=+1 " Show vertical wrap position
 set expandtab      " Use spaces instead of tabs
 set linebreak      " Wrap lines at convenient points
 set nojoinspaces   " Join text with only one space
-set nosmartindent  " Don't do smart autoindenting when starting a new line
 set nowrap         " Don't wrap lines
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2      " Number of spaces that a <Tab> counts for
-
-" Whitespace settings
-" ===================
-
-set list listchars=tab:»·,trail:·,nbsp:·
 
 " Disable Swap Files
 " ===================
@@ -117,29 +88,8 @@ set nobackup
 set noswapfile
 set nowritebackup
 
-" Text Completion
-" ===============
-
-set wildmenu                                   " Enhanced completion mode
-set wildmode=list:longest
-set wildignore+=*.DS_Store                     " OSX
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " Binary images
-set wildignore+=*.luac                         " Lua byte code
-set wildignore+=*.o,*.obj,*.exe,*.dll          " Compiled object files
-set wildignore+=*.sw?                          " Vim swap files
-set wildignore+=.hg,.git,.svn                  " version control
-
-" Scrolling
-" =========
-
-set scrolloff=8
-set sidescrolloff=12
-set sidescroll=1
-
 " Movement
 " ========
-nnoremap <Tab>      :bn<cr>
-nnoremap <S-Tab>    :bp<cr>
 
 " Code Folding
 " ============
@@ -148,58 +98,51 @@ set nofoldenable      " Do not fold by default
 " Disable Background Color Erase (tmux)
 " ====================================
 
-if &term =~ '256color'
-  set t_ut=
-endif
-
 " Remap Leader Key
 " ================
 
 let mapleader = ","
 
-" Keep search matches in the middle of the window.
-nnoremap n nzzzv
-nnoremap N Nzzzv
+
+" Disable Arrow Keys
+" ==================
+
+imap <down>  <nop>
+imap <left>  <nop>
+imap <right> <nop>
+imap <up>    <nop>
+map  <down>  <nop>
+map  <left>  <nop>
+map  <right> <nop>
+map  <up>    <nop>
 
 " Mappings
 " ========
 
-map <leader><space> /
+cmap w!! w !sudo tee %
 nmap <leader><leader> :GitFiles<cr>
 nmap <leader>b :Buffer<cr>
-nmap <leader>cd :lcd %:h<cr>
-nmap <leader>co :copen<cr>
-nmap <leader>cx :ccl<cr>
-nmap <leader>e :edit!<cr>
-nmap <leader>ev :e $MYVIMRC<cr>
 nmap <leader>ga :Git append<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
-nmap <leader>gt :GitGutterToggle<cr>
 nmap <leader>l :Lines<cr>
 nmap <leader>p :set invpaste paste?<cr>
-nmap <leader>q :b#<cr>
-nmap <leader>sv :source $MYVIMRC<cr>
-nmap <leader>W :w<cr>
 nmap <leader>w :update<cr>
 nmap <leader>x :bd<cr>
+nmap <S-Tab> :bp<cr>
 nmap <silent> <leader>r :redraw!<cr>
-nmap <silent> H ^
-nmap <silent> L $
 nmap <space> :nohlsearch<cr>
-vmap <silent> r :w !bash<cr>
-vmap <silent> s :sort i<cr>
+nmap <Tab> :bn<cr>
+nmap n nzzzv
+nmap N Nzzzv
+vmap <leader>s :sort i<cr>
 
 " Commands
 " ========
 
 command! Reload source $MYVIMRC
 command! FJ %!python -m json.tool
-command! Q q
-command! W w
-command! WQ wq
-cmap w!! w !sudo tee %
 
 " Navigate Splits
 " ===============
@@ -228,36 +171,8 @@ nnoremap <silent> p p`]
 vnoremap < <gv
 vnoremap > >gv
 
-" Disable Arrow Keys
-" ==================
-
-imap <down>  <nop>
-imap <left>  <nop>
-imap <right> <nop>
-imap <up>    <nop>
-map  <down>  <nop>
-map  <left>  <nop>
-map  <right> <nop>
-map  <up>    <nop>
-
-" Edtor Events
-" ============
-
-" When vimrc is edited, reload it
-" au! bufwritepost .vimrc source %
-
 " Resize splits on window resize
 au VimResized * exe "normal! \<c-w>="
-
-" Set vim to save the file on focus out
-" au FocusLost * :wa
-
-" Remember cursor position of the last editing
-" and jump to it when opening the same file again
-"
-" if has("autocmd")
-"   autocmd BufReadPost * if line("'\"") | exe "'\"" | endif
-" endif
 
 " Realign buffers when iterm goes fullscreen
 augroup FixProportionsOnResize
@@ -268,52 +183,16 @@ augroup END
 " Enable spell in Git commit messages
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
-" Languages
-" =========
-
 " CSS
 " ===
 au BufEnter *.css set nocindent
 au BufLeave *.css set cindent
 autocmd BufRead,BufNewFile *.styl set filetype=css
 
-" Plugins
-" =======
-
 " EasyAlign
 " =========
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-
-" Syntastic
-" =========
-let g:syntastic_javascript_checkers = ['standard']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height = 5
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" Neocomplete
-" ===========
-let g:acp_enableAtStartup = 0                           " Disable AutoComplPop
-let g:neocomplete#enable_at_startup = 1                 " Use neocomplete
-let g:neocomplete#enable_smart_case = 1                 " Use smartcase
-let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length
-
-" Vim-Go
-" ======
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>t <Plug>(go-test)
-let g:go_fmt_command = "goimports"
-let g:go_fmt_fail_silently = 1
 
 " CSScomb
 " =======
@@ -333,7 +212,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " =========
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_eager = 0
-highlight Comment cterm=italic
 
 " Airline
 " =======
@@ -349,8 +227,12 @@ let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
-" Colorscheme
-" ===========
+" Highlighting
+" ============
+
+if &term =~ '256color'
+  set t_ut=
+endif
 
 set background=dark
 silent! colorscheme Tomorrow-Night-Eighties
