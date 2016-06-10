@@ -198,7 +198,7 @@ let g:gitgutter_eager = 0
 " Lightline
 " =======
 
-let g:lightline = {'colorscheme': 'wombat'}
+let g:lightline = {'colorscheme': 'PaperColor'}
 
 " Highlighting
 " ============
@@ -208,4 +208,4 @@ if &term =~ '256color'
 endif
 
 set background=dark
-silent! colorscheme Tomorrow-Night-Eighties
+silent! colorscheme Tomorrow
