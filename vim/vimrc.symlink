@@ -17,8 +17,10 @@ Plug 'csscomb/vim-csscomb', { 'for': 'css' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'flazz/vim-colorschemes'
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -26,8 +28,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " End vim-plug
 " ============
@@ -44,65 +44,52 @@ set t_Co=256
 " Editor Setup
 " ============
 
-set breakindent                   " Every wrapped line will continue visually indented
+set breakindent          " Every wrapped line will continue visually indented
+set cindent              " Use c indent rules
 set cmdheight=1
 set cursorline
 set directory=.,$TEMP
-set fileformats=unix,mac          " <EOL> formats when (e.g.) starting to edit a new buffer
-set hidden                        " Buffers can exist in the background
-set hlsearch                      " Highlight search by default
+set equalalways          " Multiple windows, when created, are equal in size
+set expandtab            " Use spaces instead of tabs
+set fileformats=unix,mac " <EOL> formats when (e.g.) starting to edit a new buffer
+set hidden               " Buffers can exist in the background
+set hlsearch             " Highlight search by default
 set ignorecase
-set lazyredraw                    " No redraw while executing makros
-set shell=/bin/bash               " Set shell to bash"
-set number                        " Show line numbers
+set lazyredraw           " No redraw while executing makros
+set linebreak            " Wrap lines at convenient points
+set nobackup
+set nofoldenable         " Do not fold by default
+set nojoinspaces         " Join text with only one space
+set noswapfile
+set nowrap               " Don't wrap lines
+set nowritebackup
+set number               " Show line numbers
 set relativenumber
-set showcmd                       " Show incomplete cmds down the bottom
-set showmatch                     " Briefly jump to the matching
-set showmode                      " Show current mode down the bottom
-set sidescroll=1                  " The minimal number of columns to scroll horizontally
-set smartcase                     " A must when searching for stuff
-set splitbelow                    " Opens horizontal split below current window
-set splitright                    " Opens vertical split right of current window
+set shell=/bin/bash      " Set shell to bash"
+set shiftwidth=2
+set showcmd              " Show incomplete cmds down the bottom
+set showmatch            " Briefly jump to the matching
+set showmode             " Show current mode down the bottom
+set sidescroll=1         " The minimal number of columns to scroll horizontally
+set smartcase            " A must when searching for stuff
+set softtabstop=2
+set splitbelow           " Opens horizontal split below current window
+set splitright           " Opens vertical split right of current window
+set tabstop=2            " Number of spaces that a <Tab> counts for
 set textwidth=80
 set title
-set ttyfast                       " Send more characters
+set ttyfast              " Send more characters
 
 " Indentation Settings
 " ====================
 
 filetype indent on
 filetype plugin on
-set cindent        " Use c indent rules
-set expandtab      " Use spaces instead of tabs
-set linebreak      " Wrap lines at convenient points
-set nojoinspaces   " Join text with only one space
-set nowrap         " Don't wrap lines
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2      " Number of spaces that a <Tab> counts for
-
-" Disable Swap Files
-" ===================
-
-set nobackup
-set noswapfile
-set nowritebackup
-
-" Movement
-" ========
-
-" Code Folding
-" ============
-set nofoldenable      " Do not fold by default
-
-" Disable Background Color Erase (tmux)
-" ====================================
 
 " Remap Leader Key
 " ================
 
 let mapleader = ","
-
 
 " Disable Arrow Keys
 " ==================
@@ -116,57 +103,42 @@ map  <left>  <nop>
 map  <right> <nop>
 map  <up>    <nop>
 
+" Improved line jumping
+" =====================
+
+map j gj
+map k gk
+
 " Mappings
 " ========
 
 cmap w!! w !sudo tee %
+imap jk <Esc>
 nmap <leader><leader> :GitFiles<cr>
 nmap <leader>b :Buffer<cr>
 nmap <leader>ga :Git append<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
+nmap <leader>i :set list!<cr>
 nmap <leader>l :Lines<cr>
 nmap <leader>p :set invpaste paste?<cr>
 nmap <leader>w :update<cr>
 nmap <leader>x :bd<cr>
 nmap <S-Tab> :bp<cr>
 nmap <silent> <leader>r :redraw!<cr>
-nmap <space> :nohlsearch<cr>
 nmap <Tab> :bn<cr>
 nmap n nzzzv
 nmap N Nzzzv
 vmap <leader>s :sort i<cr>
 
-" Commands
-" ========
-
-command! Reload source $MYVIMRC
-command! FJ %!python -m json.tool
-
-" Navigate Splits
-" ===============
-
-nnoremap <C-h> <C-w><C-h>
-nnoremap <C-j> <C-w><C-j>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-l> <C-w><C-l>
-
-" Long Lines as Break Lines
-" =========================
-
-nnoremap j gj
-nnoremap k gk
-
 " Automatically jump to end of pasted text
-" ========================================
 
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 " Reselect visual block after indent/outdent
-" ==========================================
 
 vnoremap < <gv
 vnoremap > >gv
@@ -183,11 +155,22 @@ augroup END
 " Enable spell in Git commit messages
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
+" Go
+" ==
+
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+
 " CSS
 " ===
 au BufEnter *.css set nocindent
 au BufLeave *.css set cindent
-autocmd BufRead,BufNewFile *.styl set filetype=css
 
 " EasyAlign
 " =========
@@ -197,7 +180,6 @@ nmap ga <Plug>(EasyAlign)
 " CSScomb
 " =======
 autocmd FileType css noremap <buffer> <leader>co :CSScomb<cr>
-" autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass,*.styl silent! :CSScomb<cr>
 
 " Markdown
 " ========
@@ -213,19 +195,10 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_eager = 0
 
-" Airline
+" Lightline
 " =======
-let g:airline_powerline_fonts = 0
-let g:airline_theme = 'tomorrow'
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
+
+let g:lightline = {'colorscheme': 'wombat'}
 
 " Highlighting
 " ============
