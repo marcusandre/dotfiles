@@ -144,6 +144,9 @@ nnoremap <silent> p p`]
 vnoremap < <gv
 vnoremap > >gv
 
+" Get :help for word under cursor
+nnoremap K :help <C-r><C-w><CR>
+
 " Resize splits on window resize
 au VimResized * exe "normal! \<c-w>="
 
