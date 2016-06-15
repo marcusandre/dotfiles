@@ -101,9 +101,6 @@ bind -n WheelDownPane select-pane -t= \; send-keys -M
 # Status Bar
 ###########################
 
-# enable UTF-8 support in status bar
-set -g status-utf8 on
-
 # set refresh interval for status bar
 set -g status-interval 10
 
