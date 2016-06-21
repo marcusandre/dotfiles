@@ -15,13 +15,16 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'csscomb/vim-csscomb', { 'for': 'css' }
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'flazz/vim-colorschemes'
+Plug 'isRuslan/vim-es6'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
+Plug 'mxw/vim-jsx'
 Plug 'sheerun/vim-polyglot'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-fugitive'
@@ -119,10 +122,9 @@ nmap <leader><leader> :GitFiles<cr>
 nmap <leader>b :Buffer<cr>
 nmap <leader>ga :Git append<cr>
 nmap <leader>gc :Gcommit<cr>
-nmap <leader>gd :Gdiff<cr>
+nmap <leader>gd :Gvdiff<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>i :set list!<cr>
-nmap <leader>l :Lines<cr>
 nmap <leader>p :set invpaste paste?<cr>
 nmap <leader>w :update<cr>
 nmap <leader>x :bd<cr>
@@ -176,6 +178,11 @@ let g:go_highlight_structs = 1
 au BufEnter *.css set nocindent
 au BufLeave *.css set cindent
 
+" JavaScript
+" ==========
+let g:javascript_enable_domhtmlcss = 1
+let g:jsx_ext_required = 0
+
 " EasyAlign
 " =========
 xmap ga <Plug>(EasyAlign)
@@ -212,4 +219,4 @@ if &term =~ '256color'
 endif
 
 set background=dark
-silent! colorscheme Tomorrow
+silent! colorscheme Tomorrow-Night-Eighties
