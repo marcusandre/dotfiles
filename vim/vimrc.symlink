@@ -20,8 +20,6 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'flazz/vim-colorschemes'
 Plug 'isRuslan/vim-es6'
 Plug 'itchyny/lightline.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'

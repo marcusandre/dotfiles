@@ -75,12 +75,6 @@ antigen apply
 export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
 
-# Load fzf shell extension
-if [ -f ~/.fzf.zsh ]; then
-  export FZF_DEFAULT_COMMAND='ag -g ""'
-  source ~/.fzf.zsh
-fi
-
 # Setup Go
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/Code/Go

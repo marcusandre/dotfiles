@@ -5,7 +5,6 @@ bash-completion
 curl
 findutils
 flow
-fzf
 git
 git-extras
 go

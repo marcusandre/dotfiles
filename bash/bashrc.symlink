@@ -83,5 +83,3 @@ fi
 if [[ -L ~/bin && -d ~/bin ]]; then
   export PATH=~/bin:$PATH
 fi
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
