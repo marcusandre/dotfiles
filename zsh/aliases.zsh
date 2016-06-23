@@ -4,6 +4,7 @@ alias cls='clear; ls -lah'
 alias cp="cp -iv"
 alias e="vim"
 alias ip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
+alias j="jobs"
 alias la="ls -la"
 alias ls="ls -GFh"
 alias m="make "
