@@ -161,6 +161,13 @@ augroup END
 " Enable spell in Git commit messages
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
+" Ensure that helptags are generated for the vim help directory
+let g:DocPath = expand("$VIMRUNTIME/doc")
+let g:DocTags = join([g:DocPath, "tags"], "/")
+if !filereadable(g:DocTags)
+	execute join(["helptags", g:DocPath])
+endif
+
 " Go
 " ==
 
