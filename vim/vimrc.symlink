@@ -21,10 +21,12 @@ Plug 'flazz/vim-colorschemes'
 Plug 'isRuslan/vim-es6'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'sheerun/vim-polyglot'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
@@ -216,5 +218,5 @@ if &term =~ '256color'
   set t_ut=
 endif
 
-set background=dark
-silent! colorscheme Tomorrow-Night-Eighties
+set background=light
+silent! colorscheme PaperColor
