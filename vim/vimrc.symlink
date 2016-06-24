@@ -14,6 +14,7 @@ call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
 Plug 'csscomb/vim-csscomb', { 'for': 'css' }
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go' }
@@ -21,7 +22,6 @@ Plug 'flazz/vim-colorschemes'
 Plug 'isRuslan/vim-es6'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'sheerun/vim-polyglot'
