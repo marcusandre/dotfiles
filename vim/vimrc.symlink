@@ -67,8 +67,6 @@ set nojoinspaces         " Join text with only one space
 set noswapfile           " Do not create swap files
 set nowrap               " Don't wrap lines
 set nowritebackup        " Do not create backup if a file get's overwritten
-set number               " Show line numbers
-set relativenumber       " Enable relative line numbers
 set shell=/bin/bash      " Set shell to bash"
 set shiftwidth=2         " Effective value of spaces
 set showcmd              " Show incomplete cmds down the bottom
