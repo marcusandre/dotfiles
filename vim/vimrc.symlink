@@ -119,7 +119,6 @@ map k gk
 
 cmap w!! w !sudo tee %
 imap jk <Esc>
-nmap <leader>ga :Git append<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gvdiff<cr>
 nmap <leader>gs :Gstatus<cr>
@@ -164,6 +163,11 @@ let g:DocTags = join([g:DocPath, "tags"], "/")
 if !filereadable(g:DocTags)
 	execute join(["helptags", g:DocPath])
 endif
+
+" Ctrl-P
+" ======
+let g:ctrlp_map = "<leader><leader>"
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " Go
 " ==
