@@ -119,8 +119,6 @@ map k gk
 
 cmap w!! w !sudo tee %
 imap jk <Esc>
-nmap <leader><leader> :GitFiles<cr>
-nmap <leader>b :Buffer<cr>
 nmap <leader>ga :Git append<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gvdiff<cr>
@@ -137,13 +135,11 @@ nmap N Nzzzv
 vmap <leader>s :sort i<cr>
 
 " Automatically jump to end of pasted text
-
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 " Reselect visual block after indent/outdent
-
 vnoremap < <gv
 vnoremap > >gv
 
@@ -171,7 +167,6 @@ endif
 
 " Go
 " ==
-
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
 let g:go_highlight_fields = 1
@@ -216,7 +211,6 @@ let g:gitgutter_eager = 0
 
 " Lightline
 " =======
-
 let g:lightline = {'colorscheme': 'PaperColor'}
 
 " Highlighting
