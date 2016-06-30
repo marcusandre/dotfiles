@@ -119,6 +119,8 @@ cmap w!! w !sudo tee %
 imap jk <Esc>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gvdiff<cr>
+nmap <leader>gj :GitGutterNextHunk<cr>
+nmap <leader>gk :GitGutterPrevHunk<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>i :set list!<cr>
 nmap <leader>p :set invpaste paste?<cr>
