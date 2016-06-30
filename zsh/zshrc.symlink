@@ -51,6 +51,9 @@ setopt completealiases
 # Preventing duplicate lines in history
 setopt HIST_IGNORE_DUPS
 
+# Keep background jobs running
+setopt NO_HUP
+
 # (Un)freeze terminal
 ttyctl -f
 
