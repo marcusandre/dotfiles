@@ -49,40 +49,41 @@ set t_Co=256
 " Editor Setup
 " ============
 
-set breakindent          " Every wrapped line will continue visually indented
-set cindent              " Use c indent rules
-set cmdheight=1          " Number of screen lines to use for command-line
-set cursorline           " Highlight screen line of cursor with CursorLine
-set directory=.,$TEMP    " Directory for swap files
-set equalalways          " Multiple windows, when created, are equal in size
-set expandtab            " Use spaces instead of tabs
-set fileformats=unix,mac " <EOL> formats when (e.g.) starting to edit a new buffer
-set hidden               " Buffers can exist in the background
-set hlsearch             " Highlight search by default
-set ignorecase           " Ignore case of normal letters
-set lazyredraw           " No redraw while executing makros
-set linebreak            " Wrap lines at convenient points
-set nobackup             " Do not create backups of files
-set nofoldenable         " Do not fold by default
-set nojoinspaces         " Join text with only one space
-set noswapfile           " Do not create swap files
-set nowrap               " Don't wrap lines
-set nowritebackup        " Do not create backup if a file get's overwritten
-set shell=/bin/bash      " Set shell to bash"
-set shiftwidth=2         " Effective value of spaces
-set showcmd              " Show incomplete cmds down the bottom
-set showmatch            " Briefly jump to the matching
-set showmode             " Show current mode down the bottom
-set sidescroll=1         " The minimal number of columns to scroll horizontally
-set smartcase            " A must when searching for stuff
-set softtabstop=2        " Number of spaces that a <Tab> counts for
-set splitbelow           " Opens horizontal split below current window
-set splitright           " Opens vertical split right of current window
-set synmaxcol=400        " Maximum column in which to search for syntax items.
-set tabstop=2            " Number of spaces that a <Tab> counts for
-set textwidth=80         " Maximum width of text that is being inserted
-set title                " Set window title dynamicaly
-set ttyfast              " Send more characters
+set breakindent                  " Every wrapped line will continue visually indented
+set cindent                      " Use c indent rules
+set cmdheight=1                  " Number of screen lines to use for command-line
+set cursorline                   " Highlight screen line of cursor with CursorLine
+set directory=.,$TEMP            " Directory for swap files
+set equalalways                  " Multiple windows, when created, are equal in size
+set expandtab                    " Use spaces instead of tabs
+set fileformats=unix,mac         " <EOL> formats when (e.g.) starting to edit a new buffer
+set hidden                       " Buffers can exist in the background
+set hlsearch                     " Highlight search by default
+set ignorecase                   " Ignore case of normal letters
+set lazyredraw                   " No redraw while executing makros
+set linebreak                    " Wrap lines at convenient points
+set nobackup                     " Do not create backups of files
+set nofoldenable                 " Do not fold by default
+set nojoinspaces                 " Join text with only one space
+set noswapfile                   " Do not create swap files
+set nowrap                       " Don't wrap lines
+set nowritebackup                " Do not create backup if a file get's overwritten
+set shell=/bin/bash              " Set shell to bash"
+set shiftwidth=2                 " Effective value of spaces
+set showcmd                      " Show incomplete cmds down the bottom
+set showmatch                    " Briefly jump to the matching
+set showmode                     " Show current mode down the bottom
+set sidescroll=1                 " The minimal number of columns to scroll horizontally
+set smartcase                    " A must when searching for stuff
+set softtabstop=2                " Number of spaces that a <Tab> counts for
+set splitbelow                   " Opens horizontal split below current window
+set splitright                   " Opens vertical split right of current window
+set synmaxcol=400                " Maximum column in which to search for syntax items.
+set tabstop=2                    " Number of spaces that a <Tab> counts for
+set textwidth=80                 " Maximum width of text that is being inserted
+set title                        " Set window title dynamicaly
+set ttyfast                      " Send more characters
+set viminfo='1000,<500,:500,/500 " viminfo settings for remembering information
 
 " Indentation Settings
 " ====================
