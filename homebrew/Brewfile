@@ -13,7 +13,7 @@ reattach-to-user-namespace
 ssh-copy-id
 tmux
 tree
-vim --with-lua --override-system-vi
+vim --with-lua --with-python3 --with-override-system-vi
 wget
 z
 zsh
