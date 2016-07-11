@@ -200,6 +200,10 @@ let g:jsx_ext_required = 0
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+" Emmet
+" =====
+let g:user_emmet_leader_key='<C-.>'
+
 " CSScomb
 " =======
 autocmd FileType css noremap <buffer> <leader>co :CSScomb<cr>
@@ -218,10 +222,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_eager = 0
 
-" Lightline
-" =======
-let g:lightline = {'colorscheme': 'PaperColor'}
-
 " Highlighting
 " ============
 
@@ -230,4 +230,4 @@ if &term =~ '256color'
 endif
 
 set background=light
-silent! colorscheme PaperColor
+silent! colorscheme Tomorrow
