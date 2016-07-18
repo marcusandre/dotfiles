@@ -66,9 +66,6 @@
   default = current
   followTags = true
 
-[commit]
-  template = ~/.gitcommit_message
-
 [rerere]
   enabled = true
 

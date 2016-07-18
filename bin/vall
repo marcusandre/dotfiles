@@ -1,4 +1,0 @@
-#!/bin/sh
-EDITOR=$(printenv EDITOR)
-PARAM=$1
-$EDITOR $(ack $PARAM -l)

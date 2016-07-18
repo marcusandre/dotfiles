@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+link() {
+  stow --verbose --target=$HOME zsh
+  stow --verbose --target=$HOME git
+}
+
+link

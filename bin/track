@@ -1,3 +1,0 @@
-#!/bin/sh
-echo `date +%F" "%H:%m` $* >> ~/timelog.txt
-tail -10 ~/timelog.txt

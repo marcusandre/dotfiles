@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-port=${1-3000}
-python -m SimpleHTTPServer ${port}
