@@ -3,13 +3,29 @@
 
 Please feel free to fork or contribute.
 
-## Installation
+## Components
+
+* [Git](https://git-scm.com/)
+* [Vim](http://www.vim.org/about.php)
+* [Zsh](http://www.zsh.org/)
+
+## Install
+
+Run the following command inside of your favourite terminal, after you read the
+dependencies section.
 
 ```sh
-$ ./install
+$ git clone https://github.com/marcusandre/dotfiles.git ~/.dotfiles
+$ cd $_ && make install
 ```
 
-### Preparation
+You can also prune all configuration files via:
+
+```sh
+$ make uninstall
+```
+
+### Dependencies
 
 #### GNU Stow
 
