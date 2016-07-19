@@ -25,6 +25,9 @@ autoload -U compinit && compinit -i
 # Enable prompt system
 autoload -U promptinit && promptinit
 
+# Enable color support
+autoload -U colors && colors
+
 # Enable globbing
 setopt extended_glob
 
@@ -45,7 +48,8 @@ setopt NO_HUP
 # Prompt
 #
 
-PROMPT=$'\n  λ %~ > '
+NEWLINE=$'\n'
+PROMPT="${NEWLINE}  %{$fg[cyan]%}λ%{$reset_color%} %~ > "
 RPROMPT='%*'
 
 #

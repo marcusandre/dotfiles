@@ -83,7 +83,7 @@ There are other great dotfiles around:
 - [yoshuawuyts/dotfiles](https://github.com/yoshuawuyts/dotfiles)
 - [marcusandre/dotfiles@1.0.0](https://github.com/marcusandre/dotfiles/tree/cc7938d1817798f98c670c74863eec71e27a0b2c)*
 
-\* This is an older state i used to use for a long time
+\* This is an older state I used to use for a long time
 
 ## License
 
