@@ -19,10 +19,22 @@ $ git clone https://github.com/marcusandre/dotfiles.git ~/.dotfiles
 $ cd $_ && make install
 ```
 
+If you just want to install the **vim** configuration run:
+
+```sh
+$ stow vim
+```
+
 You can also prune all configuration files via:
 
 ```sh
 $ make uninstall
+```
+
+or if you just want to prune the vim configuration run:
+
+```sh
+$ stow -D vim
 ```
 
 ### Dependencies
