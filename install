@@ -1,8 +1,9 @@
 #!/usr/bin/env sh
 
 link() {
-  stow zsh
   stow git
+  stow vim
+  stow zsh
 }
 
 link
