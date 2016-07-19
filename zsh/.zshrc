@@ -42,6 +42,13 @@ setopt HIST_IGNORE_DUPS
 setopt NO_HUP
 
 #
+# Prompt
+#
+
+PROMPT=$'\n  λ %~ > '
+RPROMPT='%*'
+
+#
 # Aliases
 #
 
