@@ -25,7 +25,11 @@ dotfiles with ease.
 
 It sings in my ears.
 
-macOS users would install stow via: ```brew install stow```.
+macOS users would install stow via: 
+
+```sh
+brew install stow
+```
 
 #### vim-plug
 
@@ -39,6 +43,21 @@ manager*.
 ```sh
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+##### Install & Update plugins
+
+This is what you should run in the beginning:
+
+```
+vim +PlugInstall +qall
+```
+
+Then every other time:
+
+
+```
+vim +PlugUpdate +qall
 ```
 
 ## See also
