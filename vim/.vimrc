@@ -1,6 +1,6 @@
 set nocompatible " Disable backwards compatibility with vi
 
-" plugins {{{
+" Plugins {{{
 
 call plug#begin()
 
@@ -8,8 +8,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ajh17/VimCompletesMe'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
 Plug 'sheerun/vim-polyglot'
@@ -23,7 +21,7 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 " }}}
-" settings {{{
+" Settings {{{
 
 colorscheme Tomorrow-Night-Eighties
 set autoindent                   " enable auto indentation
@@ -52,41 +50,29 @@ set viminfo='1000,<500,:500,/500 " viminfo settings for remembering information
 set wildmenu                     " Enhanced command-line completion
 
 " }}}
-" file types {{{
+" File Types {{{
 
 filetype indent on " Enable file type detection
 
 " }}}
-" listings {{{
+" Listings {{{
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 " }}}
-" commands {{{
-
-
-" }}}
-" maps {{{
+" Maps {{{
 
 nnoremap , <nop>
 let mapleader="\,"
 
-nmap <leader>W :setlocal wrap!<CR>:setlocal wrap?<CR>
-nmap <leader>l :set list!<CR>
-nmap <leader>n :setlocal nu!<CR>:setlocal rnu!<CR>
-nmap <leader>p :set invpaste paste?<CR>
-nmap <leader>w :write<CR>
-
-" fzf
-nmap <c-b> :Buffers<CR>
-nmap <c-p> :Files .<CR>
+" change vim behaviour quickly
+nnoremap <C-l> :set list!<CR>
+nnoremap <C-n> :setlocal nu!<CR>:setlocal rnu!<CR>
+nnoremap <C-p> :set invpaste paste?<CR>
+nnoremap <C-w> :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 " exit insert mode with jk
 imap jk <ESC>
-
-" start/end of lines
-nmap H ^
-nmap L $
 
 " switch buffers with tab
 nnoremap <S-Tab> :bNext<cr>
