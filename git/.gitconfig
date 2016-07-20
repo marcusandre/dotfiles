@@ -39,6 +39,7 @@
   track = checkout -t
   unstage = reset -q HEAD --
   upgrade = !git fetch origin --prune && git rebase origin/master
+  yesterday = diff --name-only --stat @{1.days.ago}
 
 [merge]
   conflictstyle = diff3
