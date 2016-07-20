@@ -23,9 +23,9 @@ call plug#end()
 " }}}
 " Settings {{{
 
-colorscheme Tomorrow-Night-Eighties
+colorscheme PaperColor
 set autoindent                   " enable auto indentation
-set background=dark              " easy on the eyes
+set background=light             " easy on the eyes
 set breakindent                  " wraps paragraphs like sublime text
 set colorcolumn=80               " line at column 80
 set cursorline                   " highlight current line
