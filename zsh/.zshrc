@@ -1,17 +1,30 @@
-# Set path env
+
+#
+# Environment
+#
+
+export CLICOLOR=1
+export EDITOR="nvim"
+export LC_ALL="en_US.UTF-8"
+export TERM="xterm-256color"
+
+#
+# PATH
+#
+
 typeset -U path
 path=(/usr/local/bin /usr/local/sbin $path[@])
 
-# Set env
-export EDITOR="nvim"
-export LC_ALL="en_US.UTF-8"
-export TERM="screen-256color"
+#
+# Zsh Setup
+#
 
 # Enable vim keys
 bindkey -v
 
-# Enable auto-cd
-setopt AUTO_CD
+# `cd` into frequently used directories
+setopt auto_cd
+cdpath=($HOME/code)
 
 # Enable use of pushd and popd
 setopt autopushd
@@ -87,6 +100,10 @@ alias gp="git push"
 alias gba="git branch -a"
 alias gfp="git fetch origin --prune"
 alias gr='cd "$(git rev-parse --show-toplevel)"'
+
+#
+# Functions
+#
 
 # Create folder and cd into it
 take () {
