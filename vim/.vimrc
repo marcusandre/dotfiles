@@ -107,7 +107,13 @@ vmap <enter> <plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
 
 " }}}
+" gutentags {{{
+
+let g:gutentags_cache_dir = '/tmp'
+
+" }}}
 " neocomplete {{{
+
 
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
