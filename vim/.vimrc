@@ -53,7 +53,7 @@ set wildmenu                     " Enhanced command-line completion
 " }}}
 " File Types {{{
 
-filetype indent on " Enable file type detection
+filetype plugin indent on " Enable file type detection
 
 " }}}
 " Listings {{{
@@ -78,7 +78,7 @@ imap jk <ESC>
 nnoremap <S-Tab> :bNext<cr>
 nnoremap <Tab> :bnext<cr>
 
-"split windows
+" split windows
 nnoremap <Bar> <C-W>v<C-W><Right>
 nnoremap _ <C-W>s<C-W><Down>
 
