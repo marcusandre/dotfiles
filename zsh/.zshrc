@@ -109,3 +109,39 @@ alias gr='cd "$(git rev-parse --show-toplevel)"'
 take () {
   mkdir -p $1 && cd $1
 }
+
+#
+# Tools
+#
+
+source `brew --prefix`/etc/profile.d/z.sh
+
+#
+# zplug
+#
+
+# Check if zplug is installed
+if [[ ! -d ~/.zplug ]]; then
+  git clone https://github.com/zplug/zplug ~/.zplug
+  source ~/.zplug/init.zsh && zplug update --self
+fi
+
+# Load zplug
+export ZPLUG_HOME=~/.zplug
+source $ZPLUG_HOME/init.zsh
+
+# Load plugins
+zplug "zsh-users/zsh-syntax-highlighting"
+
+# Install packages not installed yet
+if ! zplug check --verbose; then
+	printf "Install? [y/N]: "
+	if read -q; then
+		echo; zplug install
+	else
+		echo
+	fi
+fi
+
+# Enable zplug
+zplug load
