@@ -25,10 +25,11 @@ call plug#end()
 " }}}
 " Settings {{{
 
-colorscheme PaperColor
+colorscheme Tomorrow
 set autoindent                   " enable auto indentation
 set background=light             " easy on the eyes
 set breakindent                  " wraps paragraphs like sublime text
+set cm=blowfish2                 " method used for encryption
 set colorcolumn=80               " line at column 80
 set cursorline                   " highlight current line
 set dir=/tmp                     " directory for tmp files
@@ -47,6 +48,7 @@ set showcmd                      " Show (partial) command in last line
 set showmatch                    " show matching brackets
 set smartcase                    " smart case when searching
 set smartindent                  " Auto-indent new lines
+set splitbelow splitright        " More natural split opening
 set tabstop=2                    " number of spaces that a <Tab> in the file counts for
 set viminfo='1000,<500,:500,/500 " viminfo settings for remembering information
 set wildmenu                     " Enhanced command-line completion
