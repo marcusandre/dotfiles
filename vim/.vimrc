@@ -4,9 +4,10 @@ set nocompatible " Disable backwards compatibility with vi
 
 call plug#begin()
 
+Plug 'Shougo/neocomplete.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'ajh17/VimCompletesMe'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ervandew/supertab'
 Plug 'flazz/vim-colorschemes'
 Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
@@ -66,10 +67,9 @@ nnoremap , <nop>
 let mapleader="\,"
 
 " change vim behaviour quickly
-nnoremap <C-l> :set list!<CR>
 nnoremap <C-n> :setlocal nu!<CR>:setlocal rnu!<CR>
 nnoremap <C-p> :set invpaste paste?<CR>
-nnoremap <C-w> :setlocal wrap!<CR>:setlocal wrap?<CR>
+nnoremap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 " exit insert mode with jk
 imap jk <ESC>
@@ -82,11 +82,35 @@ nnoremap <Tab> :bnext<cr>
 nnoremap <Bar> <C-W>v<C-W><Right>
 nnoremap _ <C-W>s<C-W><Down>
 
+" automatically jump to end of pasted text
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
+" reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" }}}
+" Enable omni completion  {{{
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+
 " }}}
 " EasyAlign {{{
 
 nmap ga <Plug>(EasyAlign)
 vmap <enter> <plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
+
+" }}}
+" neocomplete {{{
+
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 2
 
 " }}}
