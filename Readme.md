@@ -9,7 +9,7 @@ Please feel free to fork or contribute.
 * [Vim](http://www.vim.org/about.php)
 * [Zsh](http://www.zsh.org/)
 
-## Install
+## Installation
 
 Run the following command inside of your favourite terminal, after you read the
 dependencies section.
@@ -39,6 +39,22 @@ $ stow -D vim
 
 ### Dependencies
 
+#### tl;dr
+
+Run the following command after you install the homebrew package manager:
+
+```sh
+$ brew install git stow tmux vim zsh
+```
+
+- Homebrew
+  - GNU Stow
+  - Git
+  - tmux
+  - Vim
+    - vim-plug
+  - Zsh
+
 #### GNU Stow
 
 You should use [GNU Stow](https://www.gnu.org/software/stow/) to manage these
@@ -52,12 +68,6 @@ dotfiles with ease.
 > subdirectories such as .../share, .../man, and so on.
 
 It sings in my ears.
-
-macOS users would install stow via: 
-
-```sh
-brew install stow
-```
 
 #### vim-plug
 
