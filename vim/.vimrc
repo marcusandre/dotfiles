@@ -12,6 +12,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'junegunn/vim-easy-align'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mattn/emmet-vim'
+Plug 'roxma/vim-tmux-clipboard'
 Plug 'sheerun/vim-polyglot'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-commentary'
@@ -25,7 +26,7 @@ call plug#end()
 " }}}
 " Settings {{{
 
-colorscheme Tomorrow
+colorscheme Tomorrow-Night-Eighties
 set autoindent                   " enable auto indentation
 set background=light             " easy on the eyes
 set breakindent                  " wraps paragraphs like sublime text
