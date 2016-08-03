@@ -10,7 +10,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 Plug 'flazz/vim-colorschemes'
 Plug 'junegunn/vim-easy-align'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'mattn/emmet-vim'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'sheerun/vim-polyglot'
@@ -27,6 +26,7 @@ call plug#end()
 " Settings {{{
 
 colorscheme Tomorrow-Night-Eighties
+set title                        " show current file in title bar
 set autoindent                   " enable auto indentation
 set background=light             " easy on the eyes
 set breakindent                  " wraps paragraphs like sublime text
@@ -60,11 +60,6 @@ set wildmenu                     " Enhanced command-line completion
 filetype plugin indent on " Enable file type detection
 
 " }}}
-" Listings {{{
-
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-
-" }}}
 " Maps {{{
 
 nnoremap , <nop>
@@ -75,21 +70,17 @@ nnoremap <C-n> :setlocal nu!<CR>:setlocal rnu!<CR>
 nnoremap <C-p> :set invpaste paste?<CR>
 nnoremap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
-" exit insert mode with jk
+" exit insert mode quickly
 imap jk <ESC>
+imap kj <ESC>
 
 " switch buffers with tab
 nnoremap <S-Tab> :bNext<cr>
 nnoremap <Tab> :bnext<cr>
 
 " split windows
-nnoremap <Bar> <C-W>v<C-W><Right>
-nnoremap _ <C-W>s<C-W><Down>
-
-" automatically jump to end of pasted text
-vnoremap <silent> y y`]
-vnoremap <silent> p p`]
-nnoremap <silent> p p`]
+nnoremap <leader>% <C-W>v
+nnoremap <leader>" <C-W>s
 
 " reselect visual block after indent/outdent
 vnoremap < <gv
@@ -110,13 +101,7 @@ vmap <enter> <plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
 
 " }}}
-" gutentags {{{
-
-let g:gutentags_cache_dir = '/tmp'
-
-" }}}
 " neocomplete {{{
-
 
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
