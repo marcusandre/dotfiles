@@ -4,10 +4,8 @@ set nocompatible " Disable backwards compatibility with vi
 
 call plug#begin()
 
-Plug 'Shougo/neocomplete.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ervandew/supertab'
 Plug 'flazz/vim-colorschemes'
 Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
@@ -17,7 +15,6 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 
 call plug#end()
@@ -25,18 +22,20 @@ call plug#end()
 " }}}
 " Settings {{{
 
-colorscheme Tomorrow-Night-Eighties
-set title                        " show current file in title bar
 set autoindent                   " enable auto indentation
 set background=light             " easy on the eyes
+set backspace=indent,eol,start   " configure backspacing
 set breakindent                  " wraps paragraphs like sublime text
 set cm=blowfish2                 " method used for encryption
 set colorcolumn=80               " line at column 80
+set complete-=i                  " specify how keyword completion works
 set cursorline                   " highlight current line
 set dir=/tmp                     " directory for tmp files
 set expandtab                    " number of spaces to insert a <Tab>
 set hidden                       " close modified buffers
 set hlsearch                     " Highlight search results
+set incsearch                    " show where a pattern, as it was typed so far, matches
+set laststatus=2                 " always show the status line
 set lazyredraw                   " don't redraw screen while running macros
 set nobackup                     " no backup files
 set nonumber                     " hide line numbers
@@ -44,20 +43,35 @@ set norelativenumber             " do not use relative line numbers
 set noswapfile                   " no swap files
 set nowrap                       " softwrap lines
 set nowritebackup                " no backups before overwriting
+set ruler                        " show line and column number of cursor position
+set shell=/bin/bash              " configure which shell to use
 set shiftwidth=2                 " number of space characters inserted for indentation
-set showcmd                      " Show (partial) command in last line
+set showcmd                      " show (partial) command in last line
 set showmatch                    " show matching brackets
 set smartcase                    " smart case when searching
 set smartindent                  " Auto-indent new lines
+set smarttab                     " insert blanks according to <shiftwidth>
 set splitbelow splitright        " More natural split opening
 set tabstop=2                    " number of spaces that a <Tab> in the file counts for
+set title                        " show current file in title bar
 set viminfo='1000,<500,:500,/500 " viminfo settings for remembering information
 set wildmenu                     " Enhanced command-line completion
 
 " }}}
 " File Types {{{
 
-filetype plugin indent on " Enable file type detection
+if has('autocmd')
+  filetype plugin indent on " Enable file type detection
+endif
+
+" }}}
+" Syntax & Colour {{{
+
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
+
+colorscheme Tomorrow
 
 " }}}
 " Maps {{{
@@ -86,6 +100,16 @@ nnoremap <leader>" <C-W>s
 vnoremap < <gv
 vnoremap > >gv
 
+" Use <C-L> to clear search highlighting
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
+
+" }}}
+" Commands {{{
+
+command! HTML set filetype=html
+
 " }}}
 " Enable omni completion  {{{
 
@@ -99,13 +123,5 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 nmap ga <Plug>(EasyAlign)
 vmap <enter> <plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
-
-" }}}
-" neocomplete {{{
-
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 2
 
 " }}}
