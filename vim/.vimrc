@@ -71,7 +71,7 @@ if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
 
-colorscheme Tomorrow
+colorscheme Solarized
 
 " }}}
 " Maps {{{
