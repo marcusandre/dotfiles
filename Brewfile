@@ -31,6 +31,7 @@ brew 'youtube-dl'
 brew 'z'
 brew 'zplug'
 brew 'zsh'
+brew 'zsh-completion'
 mas 'Caffeine', id: 411246225
 mas 'Sip', id: 507257563
 mas 'The Unarchiver', id: 425424353

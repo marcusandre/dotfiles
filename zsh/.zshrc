@@ -14,6 +14,7 @@ export TERM="xterm-256color"
 
 typeset -U path
 path=(/usr/local/bin /usr/local/sbin $path[@])
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 #
 # Zsh Setup
@@ -47,6 +48,11 @@ setopt extended_glob
 # Autocompletion with arrow-key driven interface
 zstyle ':completion:*' menu select
 zstyle ':completion:*' rehash true
+
+# Enable command caching and force prefix matching
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
 
 # Autocompletion of command line switches for aliases
 setopt completealiases
