@@ -14,7 +14,6 @@ brew 'go'
 brew 'htop'
 brew 'jq'
 brew 'lua'
-brew 'mas'
 brew 'nvm'
 brew 'pwgen'
 brew 'reattach-to-user-namespace'
@@ -31,10 +30,4 @@ brew 'youtube-dl'
 brew 'z'
 brew 'zplug'
 brew 'zsh'
-brew 'zsh-completion'
-mas 'Caffeine', id: 411246225
-mas 'Sip', id: 507257563
-mas 'The Unarchiver', id: 425424353
-mas 'Tweetbot', id: 557168941
-mas 'Wallcat', id: 1000397973
-mas 'Xcode', id: 497799835
+brew 'zsh-completions'

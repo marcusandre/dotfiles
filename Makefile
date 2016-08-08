@@ -5,3 +5,6 @@ install:
 
 uninstall:
 	@stow -D --verbose $(DIRS)
+
+deps: install
+	@brew bundle --global
