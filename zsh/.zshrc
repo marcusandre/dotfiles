@@ -52,7 +52,7 @@ zstyle ':completion:*' rehash true
 setopt completealiases
 
 # Preventing duplicate lines in history
-setopt HIST_IGNORE_DUPS
+# setopt HIST_IGNORE_DUPS
 
 # Keep background jobs running
 setopt NO_HUP
@@ -100,6 +100,11 @@ alias gp="git push"
 alias gba="git branch -a"
 alias gfp="git fetch origin --prune"
 alias gr='cd "$(git rev-parse --show-toplevel)"'
+
+# TaskWarrior aliases
+alias t="task"
+alias th="task help | less"
+alias ta="task add"
 
 #
 # Functions
