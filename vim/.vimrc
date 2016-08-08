@@ -23,7 +23,7 @@ call plug#end()
 " Settings {{{
 
 set autoindent                   " enable auto indentation
-set background=light             " easy on the eyes
+set background=dark              " easy on the eyes
 set backspace=indent,eol,start   " configure backspacing
 set breakindent                  " wraps paragraphs like sublime text
 set cm=blowfish2                 " method used for encryption
@@ -64,6 +64,12 @@ if has('autocmd')
   filetype plugin indent on " Enable file type detection
 endif
 
+" CSS
+autocmd BufEnter *.css set nocindent
+autocmd BufLeave *.css set cindent
+autocmd BufNewFile,BufRead *.scss set ft=scss.css
+autocmd BufNewFile,BufRead *.styl set ft=styl.css
+
 " }}}
 " Syntax & Colour {{{
 
@@ -85,12 +91,13 @@ nnoremap <C-p> :set invpaste paste?<CR>
 nnoremap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 " exit insert mode quickly
+imap <leader><leader> <ESC>
 imap jk <ESC>
 imap kj <ESC>
 
 " switch buffers with tab
-nnoremap <S-Tab> :bNext<cr>
-nnoremap <Tab> :bnext<cr>
+nnoremap <S-Tab> :bprevious<CR>
+nnoremap <Tab> :bnext<CR>
 
 " split windows
 nnoremap <leader>% <C-W>v
@@ -100,6 +107,10 @@ nnoremap <leader>" <C-W>s
 vnoremap < <gv
 vnoremap > >gv
 
+" faster git command access
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
+
 " Use <C-L> to clear search highlighting
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
@@ -108,7 +119,7 @@ endif
 " }}}
 " Commands {{{
 
-command! HTML set filetype=html
+command! fth set filetype=html
 
 " }}}
 " Enable omni completion  {{{
