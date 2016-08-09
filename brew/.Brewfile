@@ -3,6 +3,7 @@ tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'homebrew/dupes'
 brew 'ack'
+brew 'awk'
 brew 'bash'
 brew 'bash-completion'
 brew 'curl', args: ['with-libssh2', 'with-nghttp2']
