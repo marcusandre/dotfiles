@@ -143,6 +143,7 @@ export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
 
 # Load plugins
+zplug "zplug/zplug"
 zplug "zsh-users/zsh-syntax-highlighting"
 
 # Install packages not installed yet
