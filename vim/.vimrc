@@ -107,9 +107,10 @@ nnoremap <leader>" <C-W>s
 vnoremap < <gv
 vnoremap > >gv
 
-" faster git command access
-nnoremap <leader>gs :Gstatus<CR>
+" git commands
+nnoremap <leader>gb :Gbrowse<CR>
 nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gs :Gstatus<CR>
 
 " Use <C-L> to clear search highlighting
 if maparg('<C-L>', 'n') ==# ''
@@ -119,7 +120,7 @@ endif
 " }}}
 " Commands {{{
 
-command! fth set filetype=html
+command! FTH set filetype=html
 
 " }}}
 " Enable omni completion  {{{
