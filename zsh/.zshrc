@@ -55,7 +55,7 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
 # Autocompletion of command line switches for aliases
-setopt completealiases
+unsetopt complete_aliases
 
 # Preventing duplicate lines in history
 # setopt HIST_IGNORE_DUPS
@@ -97,6 +97,7 @@ alias v="vim"
 alias week="date +%V"
 
 # Git aliases
+alias g="git"
 alias gl="git l"
 alias gd="git diff"
 alias gst="git status"
