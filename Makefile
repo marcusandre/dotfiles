@@ -7,4 +7,5 @@ uninstall:
 	@stow -D --verbose $(DIRS)
 
 deps: install
+	@stow --verbose brew
 	@brew bundle --global
