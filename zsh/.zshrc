@@ -7,13 +7,15 @@ export CLICOLOR=1
 export EDITOR="vim"
 export LC_ALL="en_US.UTF-8"
 export TERM="xterm-256color"
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=~/go
 
 #
 # PATH
 #
 
 typeset -U path
-path=(/usr/local/bin /usr/local/sbin $path[@])
+path=(/usr/local/bin /usr/local/sbin $GOROOT/bin $GOPATH/bin $path[@])
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 #
@@ -25,7 +27,7 @@ bindkey -v
 
 # `cd` into frequently used directories
 setopt auto_cd
-cdpath=($HOME/code)
+cdpath=($HOME/code $GOPATH/src/github.com)
 
 # Enable use of pushd and popd
 setopt autopushd
