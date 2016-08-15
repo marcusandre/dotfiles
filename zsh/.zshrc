@@ -7,6 +7,7 @@ export CLICOLOR=1
 export EDITOR="vim"
 export LC_ALL="en_US.UTF-8"
 export TERM="xterm-256color"
+export NVM_DIR="$HOME/.nvm"
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=~/go
 
@@ -129,6 +130,7 @@ take () {
 #
 
 source `brew --prefix`/etc/profile.d/z.sh
+source `brew --prefix nvm`/nvm.sh
 
 #
 # zplug
