@@ -9,3 +9,6 @@ uninstall:
 deps: install
 	@stow --verbose brew
 	@brew bundle --global
+
+kwm: deps
+	@brew services start koekeishiya/kwm/kwm
