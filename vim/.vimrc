@@ -92,8 +92,6 @@ nnoremap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 " exit insert mode quickly
 imap <leader><leader> <ESC>
-imap jk <ESC>
-imap kj <ESC>
 
 " switch buffers with tab
 nnoremap <S-Tab> :bprevious<CR>
