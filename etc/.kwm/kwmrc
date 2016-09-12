@@ -1,55 +1,5 @@
-/*
-This is a sample config for Kwm
-
-The following statements can be used to set Kwms internal directory structure.
-
-    This is the root folder for Kwms files, the only thing this actually
-    specifies is the location of the 'init' script which Kwm runs upon startup.
-    Defaults to $HOME/.kwm
-
-        kwm_home /path/to/.kwm
-
-    This is the root folder in which all files included using 'include' must reside.
-    Defaults to $HOME/.kwm
-
-        kwm_include /path/to/.kwm/include
-
-    This is the folder in which all bsp-layouts managed by 'tree load' and 'tree save'
-    is loaded from / saved to. Defaults to $HOME/.kwm/layouts
-
-        kwm_layouts /path/to/.kwm/layouts
-
-Commands prefixed with 'kwmc' will call
-local functions corresponding to the
-kwmc syntax.
-
-To run an external program or command,
-use the prefix 'exec' followed by command.
-e.g 'exec mvim' would open macvim
-
-Read file and execute commands as
-if they were written inside kwmrc.
-
-include filename
-
-e.g: bindsym-commands in a separate file called 'binds'
-include binds
-
-Create variables that can be used in the below commands.
-Variables are in file-scope and must be defined before
-they can be used. Re-definition is also possible.
-Variable names can not contain whitespace, where as
-the value can.
-
-define variable value
-
-e.g: create a variable for the hyper-key
-define hyper cmd+ctrl+alt+shift
-kwmc bindsym hyper-h window -f west
-*/
-
 // Set default values for screen padding
-kwmc config padding 40 20 20 20
+kwmc config padding 15 15 15 15
 
 // Set default values for container gaps
 kwmc config gap 15 15
@@ -69,15 +19,13 @@ kwmc config lock-to-container on
 // Set focus-follows-mouse-mode to autoraise
 kwmc config focus-follows-mouse on
 
-/* Focus-follows-mouse is temporarily disabled when
-   a floating window has focus */
+// Focus-follows-mouse is temporarily disabled if floating window is focused
 kwmc config standby-on-float on
 
-/* Center window when made floating */
+// Center window when made floating
 kwmc config center-on-float on
 
-/* The mouse will automatically move to the center
-   of the focused window */
+// The mouse will automatically move to the center of the focused window
 kwmc config mouse-follows-focus on
 
 // Allow window focus to wrap-around
@@ -142,8 +90,8 @@ kwmc bindsym ctrl-s mode activate prefix
 // Quit Kwm
 kwmc bindsym cmd+alt+ctrl-q quit
 
-// Launch iTerm2
-kwmc bindsym cmd-return exec open -na /Applications/iTerm2.app
+// Launch Terminal
+kwmc bindsym cmd-return exec open -na /Applications/Utilities/Terminal.app
 
 // Set Space Tiling Mode To BSP
 kwmc bindsym cmd+ctrl-a space -t bsp
