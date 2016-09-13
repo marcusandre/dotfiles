@@ -4,9 +4,12 @@ set nocompatible " Disable backwards compatibility with vi
 
 call plug#begin()
 
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'flazz/vim-colorschemes'
+Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
 Plug 'roxma/vim-tmux-clipboard'
@@ -126,6 +129,12 @@ command! FTH set filetype=html
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+
+" }}}
+" FZF {{{
+
+nnoremap <leader>m :FZF<CR>
+nnoremap <leader>b :Buffers<CR>
 
 " }}}
 " EasyAlign {{{
