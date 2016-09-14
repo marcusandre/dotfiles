@@ -40,6 +40,7 @@ set hlsearch                     " Highlight search results
 set incsearch                    " show where a pattern, as it was typed so far, matches
 set laststatus=2                 " always show the status line
 set lazyredraw                   " don't redraw screen while running macros
+set mouse=a                      " enable mouse support
 set nobackup                     " no backup files
 set nonumber                     " hide line numbers
 set norelativenumber             " do not use relative line numbers
