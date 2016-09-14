@@ -97,6 +97,9 @@ nnoremap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 " exit insert mode quickly
 imap <leader><leader> <ESC>
 
+" close buffer but keep split intact
+nnoremap <leader>d :bp\|bd #<CR>
+
 " switch buffers with tab
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <Tab> :bnext<CR>
