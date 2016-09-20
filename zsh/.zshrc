@@ -67,14 +67,6 @@ unsetopt complete_aliases
 setopt NO_HUP
 
 #
-# Prompt
-#
-
-NEWLINE=$'\n'
-PROMPT="${NEWLINE}  %{$fg[cyan]%}λ%{$reset_color%} %~ > "
-RPROMPT='%*'
-
-#
 # Aliases
 #
 
@@ -148,6 +140,8 @@ source $ZPLUG_HOME/init.zsh
 
 # Load plugins
 zplug "zplug/zplug"
+zplug "mafredri/zsh-async"
+zplug "sindresorhus/pure"
 zplug "zsh-users/zsh-syntax-highlighting"
 
 # Install packages not installed yet
