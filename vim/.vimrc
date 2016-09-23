@@ -43,8 +43,8 @@ set laststatus=2                 " always show the status line
 set lazyredraw                   " don't redraw screen while running macros
 set mouse=a                      " enable mouse support
 set nobackup                     " no backup files
-set nonumber                     " hide line numbers
-set norelativenumber             " do not use relative line numbers
+set number                       " show line numbers
+set relativenumber               " use relative line numbers
 set noswapfile                   " no swap files
 set nowrap                       " softwrap lines
 set nowritebackup                " no backups before overwriting
