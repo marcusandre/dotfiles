@@ -19,6 +19,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'trevordmiller/nova-vim'
 
 call plug#end()
 
@@ -81,7 +82,7 @@ if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
 
-colorscheme Solarized
+colorscheme nova
 
 " }}}
 " Maps {{{
