@@ -128,14 +128,15 @@ source `brew --prefix nvm`/nvm.sh
 # zplug
 #
 
+export ZPLUG_HOME=~/.zplug
+
 # Check if zplug is installed
-if [[ ! -d ~/.zplug ]]; then
-  git clone https://github.com/zplug/zplug ~/.zplug
-  source ~/.zplug/init.zsh && zplug update --self
+if [[ ! -d $ZPLUG_HOME ]]; then
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME
+  source $ZPLUG_HOME/init.zsh && zplug update --self
 fi
 
 # Load zplug
-export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
 
 # Load plugins

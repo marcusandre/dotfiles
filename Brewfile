@@ -34,7 +34,6 @@ brew 'vim', args: ['with-lua', 'with-override-system-vi']
 brew 'wget'
 brew 'youtube-dl'
 brew 'z'
-brew 'zplug'
 brew 'zsh'
 brew 'zsh-completions'
 cask 'borgbackup'
