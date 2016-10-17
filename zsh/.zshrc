@@ -63,6 +63,10 @@ unsetopt complete_aliases
 # Preventing duplicate lines in history
 # setopt HIST_IGNORE_DUPS
 
+# Enable searching through history
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
 # Keep background jobs running
 setopt NO_HUP
 
