@@ -7,7 +7,7 @@ call plug#begin()
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
+Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'flazz/vim-colorschemes'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
@@ -21,13 +21,16 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'trevordmiller/nova-vim'
 
+if has('mac')
+  Plug 'rizzatti/dash.vim'
+endif
+
 call plug#end()
 
 " }}}
 " Settings {{{
 
-set autoindent                   " enable auto indentation
-set background=dark              " easy on the eyes
+set autoindent                   " indent according to previous line
 set backspace=indent,eol,start   " configure backspacing
 set breakindent                  " wraps paragraphs like sublime text
 set cm=blowfish2                 " method used for encryption
@@ -35,19 +38,21 @@ set colorcolumn=80               " line at column 80
 set complete-=i                  " specify how keyword completion works
 set cursorline                   " highlight current line
 set dir=/tmp                     " directory for tmp files
-set expandtab                    " number of spaces to insert a <Tab>
-set hidden                       " close modified buffers
+set display=lastline             " show as much as possible of the last line
+set expandtab                    " use spaces instead of tabs
+set hidden                       " switch between buffers without saving
 set hlsearch                     " Highlight search results
 set incsearch                    " show where a pattern, as it was typed so far, matches
 set laststatus=2                 " always show the status line
 set lazyredraw                   " don't redraw screen while running macros
 set mouse=a                      " enable mouse support
 set nobackup                     " no backup files
-set number                       " show line numbers
-set relativenumber               " use relative line numbers
+set nonumber                     " show line numbers
+set norelativenumber             " use relative line numbers
 set noswapfile                   " no swap files
 set nowrap                       " softwrap lines
 set nowritebackup                " no backups before overwriting
+set path+=**                     " search down into subfolders
 set ruler                        " show line and column number of cursor position
 set shell=/bin/bash              " configure which shell to use
 set shiftwidth=2                 " number of space characters inserted for indentation
@@ -56,9 +61,11 @@ set showmatch                    " show matching brackets
 set smartcase                    " smart case when searching
 set smartindent                  " Auto-indent new lines
 set smarttab                     " insert blanks according to <shiftwidth>
-set splitbelow splitright        " More natural split opening
+set splitbelow                   " open new windows below the current window
+set splitright                   " open new windows right of the current window
 set tabstop=2                    " number of spaces that a <Tab> in the file counts for
 set title                        " show current file in title bar
+set ttyfast                      " faster redrawing
 set viminfo='1000,<500,:500,/500 " viminfo settings for remembering information
 set wildmenu                     " Enhanced command-line completion
 
@@ -82,7 +89,8 @@ if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
 
-colorscheme nova
+set background=light
+colorscheme lucius
 
 " }}}
 " Maps {{{
