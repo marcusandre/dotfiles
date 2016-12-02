@@ -1,11 +1,27 @@
-DIRS=$(shell find . -type d -maxdepth 1 ! -name '.*' | cut -c 3-)
 
-install:
-	@stow --verbose $(DIRS)
+STOW ?= stow
 
-uninstall:
-	@stow -D --verbose $(DIRS)
+all: link vim
 
-deps: install
-	@stow --verbose brew
-	@brew bundle
+link:
+	@$(STOW) -v bash
+	@$(STOW) -v etc
+	@$(STOW) -v git
+	@$(STOW) -v tmux
+	@$(STOW) -v vim
+
+unlink:
+	@$(STOW) -v -D bash
+	@$(STOW) -v -D etc
+	@$(STOW) -v -D git
+	@$(STOW) -v -D tmux
+	@$(STOW) -v -D vim
+
+vim: ~/.vim/autoload/plug.vim plugins
+
+plugins:
+	@vim +PlugInstall +qall
+
+~/.vim/autoload/plug.vim:
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

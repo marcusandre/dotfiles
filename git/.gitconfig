@@ -1,80 +1,45 @@
 [user]
   email = hello@marcusandre.de
   name = Marcus André
-
 [core]
+  abbrev = 12
   autocrlf = input
-  editor = vim
-  excludesfile = ~/.gitignore_global
-  pager = less -+$LESS -FRX
-  precomposeunicode = false
-  trustctime = false
-
+  excludesfile = '~/.gitignore_global'
 [color]
-  branch = auto
-  diff = auto
-  grep = auto
-  status = auto
   ui = auto
-
 [alias]
-  amend = commit --amend
   append = commit -a --amend -C HEAD
+  br = branch
   branches = branch -a --color -v
   cached = diff --cached
   discard = reset --hard HEAD
   ds = !git diff | diffstat -C
-  fd = diff -U9999
-  fop = fetch origin --prune
   hash = rev-parse --short HEAD
   l = log --pretty=oneline --abbrev-commit --graph --decorate
   ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
   nevermind = !git reset --hard HEAD && git clean -d -f
   prevent = update-index --assume-unchanged
+  root = rev-parse --show-toplevel
   s = status -sb
   st = status
   today = log --since=midnight --oneline --no-merges
   today-fs = log --since=midnight --no-merges --name-only
-  todo = !git ls-files | xargs grep --color=auto -onE '(TODO|todo):.*$'
   track = checkout -t
+  unmerged = ls-files --unmerged
+  unpush = push -f origin HEAD^:master
   unstage = reset -q HEAD --
   upgrade = !git fetch origin --prune && git rebase origin/master
   yesterday = diff --name-only --stat @{1.days.ago}
-
-[merge]
-  conflictstyle = diff3
-  summary = true
-  verbosity = 1
-
 [diff]
-  algorithm = patience
   tool = vimdiff
-
-[difftool]
-  prompt = false
-
-[grep]
-  extendRegexp = true
-  lineNumber = true
-
-[fetch]
-  prune = true
-
-[rebase]
-  autosqash = true
-
-[push]
-  default = current
-  followTags = true
-
-[rerere]
-  enabled = true
-
+[pull]
+  rebase = true
+[log]
+  date = iso
+  abbrevCommit = true
+[advice]
+  statusHints = false
 [credential]
   helper = osxkeychain
-
 [github]
   user = marcusandre
-
-[help]
-  autocorrect = 5

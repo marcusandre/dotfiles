@@ -1,159 +1,112 @@
-set nocompatible " Disable backwards compatibility with vi
+set nocompatible
 
-" Plugins {{{
-
-call plug#begin()
-
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
+Plug 'chriskempson/base16-vim'
+Plug 'dracula/vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'flazz/vim-colorschemes'
-Plug 'junegunn/gv.vim'
-Plug 'junegunn/vim-easy-align'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/seoul256.vim'
 Plug 'mattn/emmet-vim'
-Plug 'roxma/vim-tmux-clipboard'
-Plug 'sheerun/vim-polyglot'
-Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'trevordmiller/nova-vim'
-
-if has('mac')
-  Plug 'rizzatti/dash.vim'
-endif
-
+Plug 'tpope/vim-vinegar'
+Plug 'vim-scripts/matchit.zip'
 call plug#end()
 
-" }}}
-" Settings {{{
+" Enable wildmenu
+set wildmenu
 
-set autoindent                   " indent according to previous line
-set backspace=indent,eol,start   " configure backspacing
-set breakindent                  " wraps paragraphs like sublime text
-set cm=blowfish2                 " method used for encryption
-set colorcolumn=80               " line at column 80
-set complete-=i                  " specify how keyword completion works
-set cursorline                   " highlight current line
-set dir=/tmp                     " directory for tmp files
-set display=lastline             " show as much as possible of the last line
-set expandtab                    " use spaces instead of tabs
-set hidden                       " switch between buffers without saving
-set hlsearch                     " Highlight search results
-set incsearch                    " show where a pattern, as it was typed so far, matches
-set laststatus=2                 " always show the status line
-set lazyredraw                   " don't redraw screen while running macros
-set mouse=a                      " enable mouse support
-set nobackup                     " no backup files
-set nonumber                     " show line numbers
-set norelativenumber             " use relative line numbers
-set noswapfile                   " no swap files
-set nowrap                       " softwrap lines
-set nowritebackup                " no backups before overwriting
-set path+=**                     " search down into subfolders
-set ruler                        " show line and column number of cursor position
-set shell=/bin/bash              " configure which shell to use
-set shiftwidth=2                 " number of space characters inserted for indentation
-set showcmd                      " show (partial) command in last line
-set showmatch                    " show matching brackets
-set smartcase                    " smart case when searching
-set smartindent                  " Auto-indent new lines
-set smarttab                     " insert blanks according to <shiftwidth>
-set splitbelow                   " open new windows below the current window
-set splitright                   " open new windows right of the current window
-set tabstop=2                    " number of spaces that a <Tab> in the file counts for
-set title                        " show current file in title bar
-set ttyfast                      " faster redrawing
-set viminfo='1000,<500,:500,/500 " viminfo settings for remembering information
-set wildmenu                     " Enhanced command-line completion
+" Don't use swap or backup files
+set noswapfile
+set nobackup
 
-" }}}
-" File Types {{{
+" Setup lines and numbers
+set number
+set relativenumber
+set ruler
 
-if has('autocmd')
-  filetype plugin indent on " Enable file type detection
+" Setup status and dislpay
+set laststatus=2
+set display+=lastline
+
+" Set encoding
+set encoding=utf-8
+
+" Setup searching
+set incsearch
+set hlsearch
+
+" Setup whitespace and indents
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set smarttab
+set autoindent
+
+" Setup history and sessions
+set history=1000
+set sessionoptions-=options
+
+" Show trailing spaces and highlight hard tabs
+set list listchars=tab:»·,trail:·
+
+" Enable backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" Natural split handling
+set splitright
+set splitbelow
+set mouse=a
+
+" Setup Update times
+set ttimeout
+set ttimeoutlen=100
+set updatetime=100
+
+" Update changed files
+set autoread
+
+" Enable syntax highlighting
+syntax enable
+filetype plugin indent on
+
+" Setup whitespace for different file types
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+au BufNewFile,BufRead Vagrantfile set filetype=ruby
+au FileType make setlocal noet ts=4 sw=4 sts=4
+
+" Allow color schemes to do bright colors without forcing bold
+if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
+  set t_Co=16
 endif
 
-" CSS
-autocmd BufEnter *.css set nocindent
-autocmd BufLeave *.css set cindent
-autocmd BufNewFile,BufRead *.scss set ft=scss.css
-autocmd BufNewFile,BufRead *.styl set ft=styl.css
+" Set colorscheme
+set background=dark
+colorscheme dracula
 
-" }}}
-" Syntax & Colour {{{
+" Set leader key
+let mapleader = "\<Space>"
 
-if has('syntax') && !exists('g:syntax_on')
-  syntax enable
-endif
+" Easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
-set background=light
-colorscheme lucius
+" Replace with style
+nnoremap c* *Ncgn
 
-" }}}
-" Maps {{{
+" Edit file relative to buffer with :ze
+cnoremap ze edit <c-r>=expand("%:h")<cr>/
 
-nnoremap , <nop>
-let mapleader="\,"
+" Stop highlighting search results
+nnoremap ,, :nohlsearch<CR>
 
-" change vim behaviour quickly
-nnoremap <C-n> :setlocal nu!<CR>:setlocal rnu!<CR>
-nnoremap <C-p> :set invpaste paste?<CR>
-nnoremap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
-
-" exit insert mode quickly
-imap <leader><leader> <ESC>
-
-" close buffer but keep split intact
-nnoremap <leader>d :bp\|bd #<CR>
-
-" switch buffers with tab
-nnoremap <S-Tab> :bprevious<CR>
-nnoremap <Tab> :bnext<CR>
-
-" split windows
-nnoremap <leader>% <C-W>v
-nnoremap <leader>" <C-W>s
-
-" reselect visual block after indent/outdent
-vnoremap < <gv
-vnoremap > >gv
-
-" git commands
-nnoremap <leader>gb :Gbrowse<CR>
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gs :Gstatus<CR>
-
-" Use <C-L> to clear search highlighting
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
-endif
-
-" }}}
-" Commands {{{
-
-command! FTH set filetype=html
-
-" }}}
-" Enable omni completion  {{{
-
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-
-" }}}
-" FZF {{{
-
-nnoremap <leader>m :FZF<CR>
-nnoremap <leader>b :Buffers<CR>
-
-" }}}
-" EasyAlign {{{
-
-nmap ga <Plug>(EasyAlign)
-vmap <enter> <plug>(EasyAlign)
-xmap ga <Plug>(EasyAlign)
-
-" }}}
+" Setup vim-go
+let g:go_fmt_command = "goimports"
