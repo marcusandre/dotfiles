@@ -48,6 +48,7 @@ set softtabstop=2
 set expandtab
 set smarttab
 set autoindent
+set textwidth=79
 
 " Setup history and sessions
 set history=1000
@@ -88,7 +89,7 @@ endif
 
 " Set colorscheme
 set background=dark
-colorscheme dracula
+colorscheme base16-tomorrow-night
 
 " Set leader key
 let mapleader = "\<Space>"
