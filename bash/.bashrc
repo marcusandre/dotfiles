@@ -58,6 +58,7 @@ alias gd='git diff'
 alias gds='git ds'
 alias gl='git ll'
 alias gp='git push'
+alias gr='cd $(git root)'
 alias gs='git st'
 alias gsb='git s'
 
