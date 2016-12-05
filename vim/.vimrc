@@ -3,13 +3,14 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
-Plug 'dracula/vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/seoul256.vim'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -92,22 +93,31 @@ set background=dark
 colorscheme base16-tomorrow-night
 
 " Set leader key
-let mapleader = "\<Space>"
+let mapleader = ","
 
 " Easier split navigation
+nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " Replace with style
 nnoremap c* *Ncgn
 
+" Cycle through buffers
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
+" Quick fix list
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>c :cclose<CR>
+
 " Edit file relative to buffer with :ze
-cnoremap ze edit <c-r>=expand("%:h")<cr>/
+cnoremap ze edit <c-r>=expand("%:h")<CR>/
 
 " Stop highlighting search results
-nnoremap ,, :nohlsearch<CR>
+nnoremap <leader><leader> :nohlsearch<CR>
 
 " Setup vim-go
 let g:go_fmt_command = "goimports"
