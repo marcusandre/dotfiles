@@ -75,3 +75,10 @@ alias tmn='tmux new -s $(basename $(pwd))'
 take() {
   [ "$1" ] && mkdir -p "$1" && cd "$1"
 }
+
+# Z
+# --------------------------------------------------------------------
+
+if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
+  . `brew --prefix`/etc/profile.d/z.sh
+fi
