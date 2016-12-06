@@ -44,8 +44,8 @@ alias ...='cd ../..'
 alias wk='cd $GOPATH/src/bitbucket.org/reizwerk'
 
 # fs
-alias la='ls -alF'
-alias ll='ls -l'
+alias la='ls -alhFG'
+alias ll='ls -lG'
 
 # Applications
 alias e='$EDITOR'
@@ -67,7 +67,7 @@ alias vimup='vim +PlugInstall +PlugUpdate +qall'
 
 # tmux
 alias tma='tmux attach -d -t'
-alias tmn='tmux new -s $(basename $(pwd))'
+alias tmn='tmux new -s $(basename $(pwd) | tr -d ".")'
 
 # Functions
 # --------------------------------------------------------------------
