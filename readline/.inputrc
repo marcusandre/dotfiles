@@ -1,39 +1,23 @@
-# Don't display '^C' and other control characters
-set echo-control-characters off
+# Search through history
+"\e[A": history-search-backward
+"\e[B": history-search-forward
 
-# List all ambiguous completion matches immediately
+# Tweaks completions
+set completion-ignore-case on
+set completion-map-case on
 set show-all-if-ambiguous on
-
-# Do not show hidden files in completion matches unless
-# the pattern begins with `.`
-set match-hidden-files off
-
-# Disable confirmation before listing many completion matches
-set completion-query-items -1
-
-# Display completion matches without columns
-set completion-display-width 0
-
-# Enable non-stupid behavior when completing inside a word
+set mark-symlinked-directories on
+set match-hidden-files on
 set skip-completed-text on
+set colored-stats on
 
-# Enable Vi mode
-set editing-mode vi
+# Activate UTF-8 input and output
+set input-meta on
+set output-meta on
+set convert-meta off
 
-$if mode=vi
-  # Clear screen in insert mode
-  set keymap vi-insert
-  "\C-l":clear-screen
-
-  # Disable left and right cursor
-  set keymap vi-command
-  "\e[C":redraw-current-line
-  "\e[D":redraw-current-line
-  set keymap vi-insert
-  "\e[C":redraw-current-line
-  "\e[D":redraw-current-line
+# Mappings and settings specific to bash
+$if Bash
+  Space: magic-space
+  \C-w: backward-kill-word
 $endif
-
-# History search with arrow keys
-"\e[A":history-search-backward
-"\e[B":history-search-forward

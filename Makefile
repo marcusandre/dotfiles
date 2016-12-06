@@ -7,6 +7,7 @@ link:
 	@$(STOW) -v bash
 	@$(STOW) -v etc
 	@$(STOW) -v git
+	@$(STOW) -v readline
 	@$(STOW) -v tmux
 	@$(STOW) -v vim
 
@@ -14,6 +15,7 @@ unlink:
 	@$(STOW) -v -D bash
 	@$(STOW) -v -D etc
 	@$(STOW) -v -D git
+	@$(STOW) -v -D readline
 	@$(STOW) -v -D tmux
 	@$(STOW) -v -D vim
 
