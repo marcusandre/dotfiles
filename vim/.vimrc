@@ -49,7 +49,6 @@ set softtabstop=2
 set expandtab
 set smarttab
 set autoindent
-set textwidth=79
 
 " Setup history and sessions
 set history=1000
@@ -94,6 +93,9 @@ colorscheme base16-tomorrow-night
 
 " Set leader key
 let mapleader = ","
+
+" Hide abandoned buffers
+set hidden
 
 " Easier split navigation
 nnoremap <C-H> <C-W><C-H>
