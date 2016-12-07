@@ -66,6 +66,14 @@ set splitright
 set splitbelow
 set mouse=a
 
+" Improve scroll visibility
+if !&scrolloff
+  set scrolloff=8
+endif
+if !&sidescrolloff
+  set sidescrolloff=10
+endif
+
 " Setup Update times
 set ttimeout
 set ttimeoutlen=100
