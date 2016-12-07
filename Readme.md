@@ -16,7 +16,7 @@ Run the following command inside of your favourite terminal:
 
 ```sh
 $ git clone https://github.com/marcusandre/dotfiles.git ~/.dotfiles
-$ cd $_ && make install
+$ cd $_ && make
 ```
 
 Make sure you have the following dependencies installed:
