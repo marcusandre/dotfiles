@@ -131,7 +131,22 @@ nnoremap <leader>c :cclose<CR>
 cnoremap ze edit <c-r>=expand("%:h")<CR>/
 
 " Stop highlighting search results
-nnoremap <leader><leader> :nohlsearch<CR>
+nnoremap <leader>s :nohlsearch<CR>
+
+" Toggle between normal and relative numbering.
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <leader>nt :call NumberToggle()<CR>
+
+" Fuzzy file and buffer actions
+nnoremap <C-t> :Files<CR>
+nnoremap <C-b> :Buffers<CR>
 
 " Setup vim-go
 let g:go_fmt_command = "goimports"
