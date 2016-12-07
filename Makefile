@@ -1,7 +1,7 @@
 
 STOW ?= stow
 
-all: link vim
+all: link vim fzf
 
 link:
 	@$(STOW) -v bash
@@ -27,3 +27,8 @@ plugins:
 ~/.vim/autoload/plug.vim:
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+fzf: ~/.fzf.bash
+
+~/.fzf.bash:
+	/usr/local/opt/fzf/install --key-bindings --completion --no-update-rc
