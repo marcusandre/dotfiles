@@ -119,6 +119,9 @@ nnoremap c* *Ncgn
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
+" Keep split - close buffer
+nnoremap <leader>d :b#<bar>bd#<CR>
+
 " Quick fix list
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
