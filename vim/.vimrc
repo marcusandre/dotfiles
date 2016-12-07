@@ -1,6 +1,7 @@
 set nocompatible
 
 call plug#begin('~/.vim/plugged')
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'editorconfig/editorconfig-vim'
