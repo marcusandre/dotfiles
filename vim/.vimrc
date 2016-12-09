@@ -1,6 +1,7 @@
 set nocompatible
 
 call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
@@ -10,6 +11,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/seoul256.vim'
 Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
@@ -115,6 +117,12 @@ nnoremap <C-L> <C-W><C-L>
 " Replace with style
 nnoremap c* *Ncgn
 
+" Quick <Esc>
+imap jj <Esc>
+
+" Quick search
+nnoremap <leader><leader> /
+
 " Cycle through buffers
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
@@ -131,7 +139,7 @@ nnoremap <leader>c :cclose<CR>
 cnoremap ze edit <c-r>=expand("%:h")<CR>/
 
 " Stop highlighting search results
-nnoremap <leader>s :nohlsearch<CR>
+nnoremap <Space> :nohlsearch<CR>
 
 " Toggle between normal and relative numbering.
 function! NumberToggle()
@@ -145,8 +153,13 @@ endfunc
 nnoremap <leader>nt :call NumberToggle()<CR>
 
 " Fuzzy file and buffer actions
-nnoremap <C-t> :Files<CR>
-nnoremap <C-b> :Buffers<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+
+" Setup NERDTree
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+map <C-p> :NERDTreeToggle<CR>
 
 " Setup vim-go
 let g:go_fmt_command = "goimports"

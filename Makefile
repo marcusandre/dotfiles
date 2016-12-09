@@ -22,7 +22,7 @@ unlink:
 vim: ~/.vim/autoload/plug.vim plugins
 
 plugins:
-	@vim +PlugInstall +qall
+	@vim +PlugUpdate +qall
 
 ~/.vim/autoload/plug.vim:
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
