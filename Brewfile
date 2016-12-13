@@ -15,7 +15,7 @@ brew 'stow'
 brew 'tmux'
 brew 'trash'
 brew 'tree'
-brew 'vim'
+brew 'vim', args: ['with-lua', 'with-python3', 'override-system-vi']
 brew 'z'
 cask '1password'
 cask 'alfred'
