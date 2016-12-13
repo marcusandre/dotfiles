@@ -64,6 +64,7 @@ alias gsb='git s'
 
 # Vim
 alias vimup='vim +PlugInstall +PlugUpdate +qall'
+alias ve='vim ~/.vimrc'
 
 # tmux
 alias tma='tmux attach -d -t'
