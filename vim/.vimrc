@@ -23,26 +23,50 @@ call plug#end()
 
 " Enable wildmenu
 set wildmenu
+set wildmode=longest:list
 
 " Don't use swap or backup files
 set noswapfile
 set nobackup
 
-" Setup lines and numbers
+" Setup line numbers
 set number
 set relativenumber
+
+" Show current position in the status bar
 set ruler
+
+" Show the keystrokes being entered in the screen
+set showcmd
+
+" Show the current mode if not normal mode
+set showmode
+
+" Improve redrawing
+set ttyfast
 
 " Setup status and dislpay
 set laststatus=2
 set display+=lastline
 
-" Set encoding
-set encoding=utf-8
+" Use UTF-8 by default
+if has('multi_byte')
+  set encoding=utf-8
+endif
 
 " Setup searching
 set incsearch
 set hlsearch
+
+" Clear search highlighting for insert mode
+" Restore when leaving insert mode
+if has('autocmd')
+  augroup highlight
+    autocmd!
+    silent! autocmd InsertEnter * set nohlsearch
+    silent! autocmd InsertLeave * set hlsearch
+  augroup END
+endif
 
 " Setup whitespace and indents
 set nowrap
@@ -52,9 +76,10 @@ set softtabstop=2
 set expandtab
 set smarttab
 set autoindent
+set shiftround
 
 " Setup history and sessions
-set history=1000
+set history=1500
 set sessionoptions-=options
 
 " Show trailing spaces and highlight hard tabs
@@ -67,6 +92,11 @@ set backspace=indent,eol,start
 set splitright
 set splitbelow
 set mouse=a
+
+" tmux mouse handling
+if &term =~ '^screen'
+  set ttymouse=xterm2
+endif
 
 " Improve scroll visibility
 if !&scrolloff
@@ -81,7 +111,7 @@ set ttimeout
 set ttimeoutlen=100
 set updatetime=100
 
-" Update changed files
+" Quietly update buffers
 set autoread
 
 " Enable syntax highlighting
@@ -100,7 +130,7 @@ endif
 
 " Set colorscheme
 set background=dark
-colorscheme base16-tomorrow-night
+silent! colorscheme base16-tomorrow-night
 
 " Set leader key
 let mapleader = ","
@@ -117,11 +147,15 @@ nnoremap <C-L> <C-W><C-L>
 " Replace with style
 nnoremap c* *Ncgn
 
+" Quick :w
+nnoremap ZW :w!<CR>
+nnoremap ZA :wa!<CR>
+
 " Quick <Esc>
 imap jj <Esc>
 
-" Quick search
-nnoremap <leader><leader> /
+" Quick /
+nnoremap <Space> /
 
 " Cycle through buffers
 nnoremap <Tab> :bnext<CR>
@@ -139,7 +173,7 @@ nnoremap <leader>c :cclose<CR>
 cnoremap ze edit <c-r>=expand("%:h")<CR>/
 
 " Stop highlighting search results
-nnoremap <Space> :nohlsearch<CR>
+nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
 " Toggle between normal and relative numbering.
 function! NumberToggle()
@@ -160,6 +194,11 @@ nnoremap <leader>b :Buffers<CR>
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 map <C-p> :NERDTreeToggle<CR>
+
+" Setup GitGutter
+" mnemonic: go hunk
+nnoremap gh :GitGutterNextHunk<CR>
+nnoremap gH :GitGutterPrevHunk<CR>
 
 " Setup vim-go
 let g:go_fmt_command = "goimports"
