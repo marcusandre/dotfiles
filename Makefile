@@ -4,20 +4,12 @@ STOW ?= stow
 all: link vim fzf
 
 link:
-	@$(STOW) -v bash
-	@$(STOW) -v etc
-	@$(STOW) -v git
-	@$(STOW) -v readline
-	@$(STOW) -v tmux
-	@$(STOW) -v vim
+	@$(STOW) -v bash etc git readline tmux vim
+	@$(STOW) -v config -t ~/.config
 
 unlink:
-	@$(STOW) -v -D bash
-	@$(STOW) -v -D etc
-	@$(STOW) -v -D git
-	@$(STOW) -v -D readline
-	@$(STOW) -v -D tmux
-	@$(STOW) -v -D vim
+	@$(STOW) -v -D bash etc git readline tmux vim
+	@$(STOW) -v -D config -t ~/.config
 
 vim: ~/.vim/autoload/plug.vim plugins
 
