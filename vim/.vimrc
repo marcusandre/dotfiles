@@ -3,12 +3,11 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'flazz/vim-colorschemes'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/seoul256.vim'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
 Plug 'tpope/vim-commentary'
@@ -128,8 +127,8 @@ if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
 endif
 
 " Set colorscheme
+silent! colorscheme Tomorrow-Night-Eighties
 set background=dark
-silent! colorscheme base16-tomorrow-night
 
 " Set leader key
 let mapleader = ","
@@ -198,6 +197,7 @@ map <C-p> :NERDTreeToggle<CR>
 " mnemonic: go hunk
 nnoremap gh :GitGutterNextHunk<CR>
 nnoremap gH :GitGutterPrevHunk<CR>
+nnoremap <leader>gt :GitGutterLineHighlightsToggle<CR>
 
 " Setup vim-go
 let g:go_fmt_command = "goimports"
