@@ -1,0 +1,2 @@
+config/ranger/*
+!config/ranger/rc.conf
