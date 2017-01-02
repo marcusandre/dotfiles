@@ -13,6 +13,7 @@ export GOPATH=$HOME
 export PATH=$PATH:$HOME/bin:/usr/local/opt/go/libexec/bin
 export GITHUB_USERNAME='marcusandre'
 export BITBUCKET_USERNAME='reizwerk'
+export GITLAB_USERNAME='megges'
 
 #
 # Prompt
@@ -55,6 +56,7 @@ alias la='ls -alhFG'
 alias less='less -R'
 alias ll='ls -lG'
 alias clone='hub clone'
+alias lab='cd $GOPATH/src/gitlab.com'
 alias code='cd $GOPATH/src/github.com/$GITHUB_USERNAME'
 alias work='cd $GOPATH/src/bitbucket.org/$BITBUCKET_USERNAME'
 
