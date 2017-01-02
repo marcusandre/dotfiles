@@ -1,19 +1,20 @@
 
 STOW ?= stow
+DIRS ?= bash etc git readline tmux vim
 
 all: link vim fzf
 
 link:
-	@$(STOW) -v bash etc git readline tmux vim
+	@$(STOW) -v $(DIRS)
 	@$(STOW) -v config -t ~/.config
 
 unlink:
-	@$(STOW) -v -D bash etc git readline tmux vim
+	@$(STOW) -v -D $(DIRS)
 	@$(STOW) -v -D config -t ~/.config
 
-vim: ~/.vim/autoload/plug.vim plugins
+vim: ~/.vim/autoload/plug.vim vim-plugins
 
-plugins:
+vim-plugins:
 	@vim +PlugUpdate +qall
 
 ~/.vim/autoload/plug.vim:
