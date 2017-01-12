@@ -1,14 +1,15 @@
 set nocompatible
 
 call plug#begin('~/.vim/plugged')
+
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'flazz/vim-colorschemes'
+Plug 'itchyny/vim-cursorword'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
@@ -16,6 +17,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/matchit.zip'
+
 call plug#end()
 
 " Enable wildmenu
@@ -144,10 +146,6 @@ nnoremap <C-L> <C-W><C-L>
 " Replace with style
 nnoremap c* *Ncgn
 
-" Quick :w
-nnoremap ZW :w!<CR>
-nnoremap ZA :wa!<CR>
-
 " Quick <Esc>
 imap jj <Esc>
 
@@ -186,11 +184,6 @@ nnoremap <leader>nt :call NumberToggle()<CR>
 " Fuzzy file and buffer actions
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
-
-" Setup NERDTree
-let NERDTreeShowHidden=1
-let NERDTreeMinimalUI=1
-map <C-p> :NERDTreeToggle<CR>
 
 " Setup GitGutter
 " mnemonic: go hunk
