@@ -20,9 +20,9 @@ Plug 'vim-scripts/matchit.zip'
 
 call plug#end()
 
-" Enable wildmenu
+" Setup command line completion
 set wildmenu
-set wildmode=longest:list
+set wildmode=longest:full,full
 
 " Don't use swap or backup files
 set noswapfile
@@ -69,13 +69,13 @@ endif
 
 " Setup whitespace and indents
 set nowrap
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
 set expandtab
 set smarttab
 set autoindent
 set shiftround
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 " Setup history and sessions
 set history=1500
@@ -87,7 +87,7 @@ set list listchars=tab:»·,trail:·
 " Enable backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" Natural split handling
+" More natural splits
 set splitright
 set splitbelow
 set mouse=a
@@ -105,7 +105,7 @@ if !&sidescrolloff
   set sidescrolloff=10
 endif
 
-" Setup Update times
+" Setup update times
 set ttimeout
 set ttimeoutlen=100
 set updatetime=100
@@ -115,6 +115,8 @@ set autoread
 
 " Enable syntax highlighting
 syntax enable
+
+" Enable indentation per file type
 filetype plugin indent on
 
 " Setup whitespace for different file types
@@ -155,17 +157,6 @@ nnoremap <Space> /
 " Cycle through buffers
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
-
-" Keep split - close buffer
-nnoremap <leader>d :b#<bar>bd#<CR>
-
-" Quick fix list
-map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
-nnoremap <leader>c :cclose<CR>
-
-" Edit file relative to buffer with :ze
-cnoremap ze edit <c-r>=expand("%:h")<CR>/
 
 " Stop highlighting search results
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
