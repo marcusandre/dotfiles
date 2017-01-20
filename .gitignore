@@ -1,2 +1,1 @@
-config/ranger/*
-!config/ranger/rc.conf
+.DS_Store

@@ -6,11 +6,9 @@ all: link vim fzf
 
 link:
 	@$(STOW) -v $(DIRS)
-	@$(STOW) -v config -t ~/.config
 
 unlink:
 	@$(STOW) -v -D $(DIRS)
-	@$(STOW) -v -D config -t ~/.config
 
 vim: ~/.vim/autoload/plug.vim vim-plugins
 
