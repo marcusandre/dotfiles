@@ -10,6 +10,8 @@ Components:
 - [Vim](http://www.vim.org/about.php)
 - [Zsh](http://www.zsh.org/)
 
+These files are very macOS-y!
+
 ## Installation
 
 Run the following command inside of your favourite terminal:

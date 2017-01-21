@@ -122,7 +122,7 @@ filetype plugin indent on
 " Setup whitespace for different file types
 au BufNewFile,BufRead *.go setlocal nolist noet ts=4 sw=4 sts=4
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
-au FileType make setlocal noet ts=4 sw=4 sts=4
+au FileType make setlocal nolist noet ts=4 sw=4 sts=4
 
 " Allow color schemes to do bright colors without forcing bold
 if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
