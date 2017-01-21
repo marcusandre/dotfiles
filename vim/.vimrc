@@ -120,7 +120,7 @@ syntax enable
 filetype plugin indent on
 
 " Setup whitespace for different file types
-au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+au BufNewFile,BufRead *.go setlocal nolist noet ts=4 sw=4 sts=4
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
 au FileType make setlocal noet ts=4 sw=4 sts=4
 
