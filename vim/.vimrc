@@ -158,6 +158,11 @@ nnoremap <Space> /
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
+" Prevention from entering Ex mode.
+" Format the current paragraph or selection instead.
+vmap Q gq
+nmap Q gqap
+
 " Stop highlighting search results
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
