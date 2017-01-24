@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'docker/docker' , { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'flazz/vim-colorschemes'
