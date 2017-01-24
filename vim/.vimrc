@@ -11,6 +11,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'itchyny/vim-cursorword'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
+Plug 'moll/vim-bbye'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
@@ -181,6 +182,9 @@ nnoremap <leader>nt :call NumberToggle()<CR>
 " Fuzzy file and buffer actions
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
+
+" Setup :Bdelete
+nnoremap <leader>d :Bdelete<CR>
 
 " Setup GitGutter
 " mnemonic: go hunk

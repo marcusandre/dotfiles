@@ -47,7 +47,6 @@ fi
 # Prompt
 #
 
-# PS1="\n  \[\e[38;5;168m\]❧ \[\e[0m\] \W : "
 export PROMPT_COMMAND='echo -ne "\n  "; __git_ps1 "\[$(tput setaf 6)\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]" " "; echo -ne "\033]0;${PWD##*/}\007"'
 
 #
@@ -69,8 +68,8 @@ alias gds='git ds'
 alias gl='git ll'
 alias gp='git push'
 alias gr='cd $(git root)'
-alias gs='git st'
-alias gsb='git s'
+alias gs='git s'
+alias gst='git st'
 
 # tmux: attach to <name>
 alias tma='tmux attach -d -t'
