@@ -180,6 +180,9 @@ nmap Q gqap
 " Stop highlighting search results
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
+" Quickly change background setting
+map <Leader>bg :let &background = (background == "dark"? "light" : "dark")<CR>
+
 " Toggle between normal and relative numbering.
 function! NumberToggle()
   if(&relativenumber == 1)
