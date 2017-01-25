@@ -77,7 +77,7 @@ if has('autocmd')
 endif
 
 " Setup whitespace and indents
-set nowrap
+set wrap
 set expandtab
 set smarttab
 set autoindent
@@ -85,6 +85,11 @@ set shiftround
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+
+" Setup breaking
+set nolinebreak
+set breakindent
+set breakindentopt=min:40
 
 " Setup history and sessions
 set history=1500
