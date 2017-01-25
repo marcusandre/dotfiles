@@ -18,7 +18,7 @@ Run the following command inside of your favourite terminal:
 
 ```sh
 $ git clone https://github.com/marcusandre/dotfiles.git ~/.dotfiles
-$ cd $_ && make
+$ cd $_ && brew bundle && make
 ```
 
 Make sure you have the following dependencies installed:
