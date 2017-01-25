@@ -2,13 +2,10 @@
 STOW ?= stow
 DIRS ?= bash etc git readline tmux vim
 
-all: link vim fzf
+all: links vim fzf
 
-link:
-	@$(STOW) -v $(DIRS)
-
-unlink:
-	@$(STOW) -v -D $(DIRS)
+links:
+	@$(STOW) -v -R $(DIRS)
 
 vim: ~/.vim/autoload/plug.vim vim-plugins
 
