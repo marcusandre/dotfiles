@@ -162,6 +162,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
+" Improve movement for wrapped lines
+nnoremap j gj
+nnoremap k gk
+
 " Replace with style
 nnoremap c* *Ncgn
 
