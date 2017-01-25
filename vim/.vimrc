@@ -61,8 +61,10 @@ if has('multi_byte')
 endif
 
 " Setup searching
-set incsearch
 set hlsearch
+set ignorecase
+set incsearch
+set smartcase
 
 " Clear search highlighting for insert mode
 " Restore when leaving insert mode
