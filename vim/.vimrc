@@ -43,6 +43,11 @@ set showcmd
 " Show the current mode if not normal mode
 set showmode
 
+" Move the cursor to the previous matching bracket
+" for a short amount of time (defaults to 5 normally)
+set showmatch
+set matchtime=3
+
 " Improve redrawing
 set ttyfast
 
