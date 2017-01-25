@@ -61,6 +61,7 @@ alias ...='cd ../..'
 alias e='$EDITOR'
 
 # git
+alias gap='git add . -p'
 alias gb='git branch'
 alias gba='git branches'
 alias gd='git diff'
