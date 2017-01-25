@@ -170,10 +170,18 @@ imap jj <Esc>
 nnoremap <Space> /
 
 " Cycle through buffers
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
 
-" Prevention from entering Ex mode.
+" Cycle through jump list as normal but
+" show the position in middle of window
+nnoremap <C-o> <C-o>zvzz
+
+" Make :W and :Q lork like :w and :q
+cabbr W w
+cabbr Q q
+
+" Prevent me from entering Ex mode.
 " Format the current paragraph or selection instead.
 vmap Q gq
 nmap Q gqap
