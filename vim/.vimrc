@@ -4,14 +4,16 @@ call plug#begin('~/.vim/plugged')
 
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
 Plug 'docker/docker' , { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'flazz/vim-colorschemes'
 Plug 'itchyny/vim-cursorword'
-Plug 'jiangmiao/auto-pairs'
-Plug 'mattn/emmet-vim'
+Plug 'jonathanfilip/vim-lucius'
+Plug 'junegunn/vim-peekaboo'
+Plug 'mattn/emmet-vim', { 'for': 'html'  }
 Plug 'moll/vim-bbye'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
