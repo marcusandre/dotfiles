@@ -12,6 +12,7 @@ Plug 'itchyny/vim-cursorword'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mattn/emmet-vim', { 'for': 'html'  }
+Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
 Plug 'tpope/vim-commentary'
@@ -221,6 +222,14 @@ nnoremap <leader>d :Bdelete<CR>
 nnoremap gh :GitGutterNextHunk<CR>
 nnoremap gH :GitGutterPrevHunk<CR>
 nnoremap <leader>gt :GitGutterLineHighlightsToggle<CR>
+
+" Setup ack.vim
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " Setup vim-go
 let g:go_highlight_functions = 1
