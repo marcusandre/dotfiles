@@ -183,6 +183,7 @@ nnoremap <S-Tab> :bprevious<CR>
 " Cycle through quickfix
 nnoremap <C-n> :cnext<CR>
 nnoremap <C-p> :cprevious<CR>
+nnoremap <leader>c :cclose<CR>
 
 " Cycle through jump list as normal but
 " show the position in middle of window
@@ -243,3 +244,4 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
+let g:go_list_type = "quickfix"
