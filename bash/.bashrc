@@ -87,6 +87,7 @@ alias ls='ls -GpF'
 alias ll='ls -alGpF'
 alias less='less -R'
 alias clone='hub clone'
+alias mp3='youtube-dl --prefer-avconv --extract-audio --audio-format mp3'
 
 # directories
 alias code='cd $GOPATH/src/github.com/$GITHUB_USERNAME'
