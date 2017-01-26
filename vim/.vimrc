@@ -177,8 +177,12 @@ imap jj <Esc>
 nnoremap <Space> /
 
 " Cycle through buffers
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprevious<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
+" Cycle through quickfix
+nnoremap <C-n> :cnext<CR>
+nnoremap <C-p> :cprevious<CR>
 
 " Cycle through jump list as normal but
 " show the position in middle of window
