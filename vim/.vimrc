@@ -63,6 +63,9 @@ if has('multi_byte')
   set encoding=utf-8
 endif
 
+" Set format
+set fileformat=unix
+
 " Setup searching
 set hlsearch
 set ignorecase
@@ -144,7 +147,7 @@ endif
 
 " Set colorscheme
 silent! colorscheme solarized
-set background=light
+set background=dark
 
 " Set leader key
 let mapleader = ","
