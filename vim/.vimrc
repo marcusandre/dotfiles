@@ -22,6 +22,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/matchit.zip'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -225,6 +226,11 @@ nnoremap <leader>d :Bdelete<CR>
 nnoremap gh :GitGutterNextHunk<CR>
 nnoremap gH :GitGutterPrevHunk<CR>
 nnoremap <leader>gt :GitGutterLineHighlightsToggle<CR>
+
+" Setup ale
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_enter = 0
 
 " Setup ack.vim
 cnoreabbrev Ack Ack!
