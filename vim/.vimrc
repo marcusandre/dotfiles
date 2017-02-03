@@ -2,14 +2,13 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
+" Plugins
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
 Plug 'docker/docker' , { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'itchyny/vim-cursorword'
-Plug 'jonathanfilip/vim-lucius'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mattn/emmet-vim', { 'for': 'html'  }
 Plug 'mileszs/ack.vim'
@@ -23,6 +22,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/matchit.zip'
 Plug 'w0rp/ale'
+
+" Colors
+Plug 'altercation/vim-colors-solarized'
+Plug 'dracula/vim'
+Plug 'jonathanfilip/vim-lucius'
 
 call plug#end()
 
@@ -147,7 +151,7 @@ if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
 endif
 
 " Set colorscheme
-silent! colorscheme solarized
+silent! colorscheme dracula
 set background=dark
 
 " Set leader key
@@ -171,6 +175,10 @@ nnoremap c* *Ncgn
 
 " Quick <Esc>
 imap jj <Esc>
+imap jk <Esc>
+
+" Quick writes
+nnoremap <leader>w :write<cr>
 
 " Quick /
 nnoremap <Space> /
