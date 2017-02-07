@@ -151,8 +151,8 @@ if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
 endif
 
 " Set colorscheme
-silent! colorscheme dracula
-set background=dark
+silent! colorscheme lucius
+set background=light
 
 " Set leader key
 let mapleader = ","
