@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+# mgs - (c) wtfpl 2017
+#
+# manage your daily tasks like a pro
+# by appending tasks to a text file
+#
+# Usage:
+#
+#   $ todo commit early
+#   $ todo commit often
+#   $ todo
+
+TODOS=${TODOS:-$HOME/.todo}
+
+#
+# List contents of todo file
+#
+
+list() {
+  test -f $TODOS && nl -s ": " $TODOS
+}
+
+#
+# Add arguments to the todo file
+#
+
+add() {
+  echo "$*" >> $TODOS
+}
+
+# remove todo file if invoked with --clear
+test "$1" = '--clear' && rm $TODOS && exit 0
+
+# add to list if any arguments passed
+test -n "$*" && add $* || list
+
+exit 0
