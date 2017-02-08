@@ -6,7 +6,6 @@ day to day work. Please feel free to fork!
 
 Components:
 - [Git](https://git-scm.com/)
-- [tmux](https://www.gnu.org/software/stow/)
 - [Vim](http://www.vim.org/about.php)
 - [Zsh](http://www.zsh.org/)
 

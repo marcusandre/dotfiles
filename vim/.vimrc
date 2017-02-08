@@ -112,11 +112,6 @@ set splitright
 set splitbelow
 set mouse=a
 
-" tmux mouse handling
-if &term =~ '^screen'
-  set ttymouse=xterm2
-endif
-
 " Improve scroll visibility
 if !&scrolloff
   set scrolloff=8
