@@ -52,7 +52,7 @@ fi
 # Prompt
 #
 
-export PROMPT_COMMAND='echo -ne "\n  "; __git_ps1 "\[$(tput setaf 6)\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]" " "; echo -ne "\033]0;${PWD##*/}\007"'
+export PROMPT_COMMAND='echo -ne "\n  λ "; __git_ps1 "\[$(tput setaf 6)\]\W\[$(tput sgr0)\]" " "; echo -ne "\033]0;${PWD##*/}\007"'
 
 #
 # Aliases
