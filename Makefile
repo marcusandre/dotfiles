@@ -1,6 +1,6 @@
 
 STOW ?= stow
-DIRS ?= bash etc git readline tmux vim
+DIRS ?= bash etc git readline tmux scripts vim
 
 all: links vim fzf
 
