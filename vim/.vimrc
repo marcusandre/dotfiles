@@ -145,6 +145,11 @@ au BufNewFile,BufRead Vagrantfile set filetype=ruby
 au FileType make setlocal nolist noet ts=4 sw=4 sts=4
 au FileType gitcommit setlocal tw=68 colorcolumn=69 spell
 
+" Enable omnicompletion for file types
+au FileType css set omnifunc=csscomplete#CompleteCSS
+au FileType html set omnifunc=htmlcomplete#CompleteTags
+au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
 " Allow color schemes to do bright colors without forcing bold
 if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
   set t_Co=16
