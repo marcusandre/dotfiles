@@ -12,6 +12,7 @@
 #   $ todo
 
 TODOS=${TODOS:-$HOME/.todo}
+EDITOR=${EDITOR:-vim}
 
 #
 # List contents of todo file
@@ -29,8 +30,11 @@ add() {
   echo "$*" >> $TODOS
 }
 
+# open file in $EDITOR
+test "$1" == '--open' && $EDITOR $TODOS && exit 0
+
 # remove todo file if invoked with --clear
-test "$1" = '--clear' && rm $TODOS && exit 0
+test "$1" == '--clear' && rm $TODOS && exit 0
 
 # add to list if any arguments passed
 test -n "$*" && add $* || list
