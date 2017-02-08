@@ -3,10 +3,6 @@
 # Environment
 #
 
-# path
-export PATH=$HOME/bin:/usr/local/opt/go/libexec/bin:$PATH
-export GOPATH=$HOME
-
 # locale
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -27,11 +23,20 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 # osx
 export COPYFILE_DISABLE=1
 
-# misc
+# tools
 export GREP_OPTIONS='--color=auto'
+
+# misc
 export GITHUB_USERNAME='marcusandre'
 export BITBUCKET_USERNAME='reizwerk'
-export GITLAB_USERNAME='megges'
+
+# dirs
+export GOPATH=$HOME/go
+export PROJECTS=$HOME/code
+mkdir -p $GOPATH $PROJECTS
+
+# paths
+export PATH=$HOME/bin:/usr/local/opt/go/libexec/bin:$GOPATH/bin:$PATH
 
 #
 # Bash completion
@@ -91,9 +96,7 @@ alias mp3='youtube-dl --prefer-avconv --extract-audio --audio-format mp3'
 alias starthtml='curl -L https://git.io/vDcGT | vim -'
 
 # directories
-alias code='cd $GOPATH/src/github.com/$GITHUB_USERNAME'
-alias lab='cd $GOPATH/src/gitlab.com/$GITLAB_USERNAME'
-alias work='cd $GOPATH/src/bitbucket.org/$BITBUCKET_USERNAME'
+alias code='cd $PROJECTS'
 
 #
 # Create <folder> and cd into it
