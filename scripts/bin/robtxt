@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # mgs - (c) wtfpl 2017
 # create content for robots.txt file which prevents all robots
