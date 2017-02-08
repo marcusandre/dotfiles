@@ -104,6 +104,14 @@ md() {
 }
 
 #
+# Open chromeless Google Chrome website with given <url>
+#
+
+gco() {
+  [ "$1" ] && open -n -a "Google Chrome" --args "--app=$1"
+}
+
+#
 # junegunn/fzf
 #
 # $ brew install fzf && /usr/local/opt/fzf/install
