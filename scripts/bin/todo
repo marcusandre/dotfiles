@@ -30,13 +30,24 @@ add() {
   echo "$*" >> $TODOS
 }
 
-# open file in $EDITOR
-test "$1" == '--open' && $EDITOR $TODOS && exit 0
+#
+# Remove todo from the todo file
+#
 
-# remove todo file if invoked with --clear
+remove() {
+  test -n "$1" || exit 1
+  sed -i "" -e "${1}d" $TODOS; list
+}
+
+# open file in $EDITOR
+test "$1" == '-o' && $EDITOR $TODOS && exit 0
+
+test "$1" == '-r' && remove "$2" && exit 0
+
+# delete todo file if invoked with --clear
 test "$1" == '--clear' && rm $TODOS && exit 0
 
 # add to list if any arguments passed
-test -n "$*" && add $* || list
+test -n "$*" && add "$*" || list
 
 exit 0
