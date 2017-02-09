@@ -15,11 +15,6 @@ export CLICOLOR=1
 export EDITOR=vim
 export VISUAL=$EDITOR
 
-# git
-export GIT_PS1_SHOWCOLORHINTS=true
-export GIT_PS1_SHOWDIRTYSTATE=true
-export GIT_PS1_SHOWUNTRACKEDFILES=true
-
 # osx
 export COPYFILE_DISABLE=1
 
@@ -52,7 +47,14 @@ fi
 # Prompt
 #
 
-export PROMPT_COMMAND='echo -ne "\n  λ "; __git_ps1 "\[$(tput setaf 6)\]\W\[$(tput sgr0)\]" " "; echo -ne "\033]0;${PWD##*/}\007"'
+# git
+export GIT_PS1_SHOWCOLORHINTS=true
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+
+# ps1
+export PROMPT_DIRTRIM=4
+export PS1="\n  \[\033[0;36m\]λ\[\033[0m\] \w\[\033[0;32m\]\$(__git_ps1)\[\033[0m\] > "
 
 #
 # Aliases
