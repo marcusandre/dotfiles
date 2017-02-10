@@ -21,11 +21,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/matchit.zip'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 
 " Colors
 Plug 'altercation/vim-colors-solarized'
-Plug 'dracula/vim'
 Plug 'jonathanfilip/vim-lucius'
 
 call plug#end()
@@ -152,7 +151,8 @@ endif
 
 " Set colorscheme
 silent! colorscheme lucius
-set background=light
+let g:lucius_contrast_bg = "low"
+set background=dark
 
 " Set leader key
 let mapleader = ","
@@ -236,9 +236,9 @@ nnoremap gH :GitGutterPrevHunk<CR>
 nnoremap <leader>gt :GitGutterLineHighlightsToggle<CR>
 
 " Setup ale
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_enter = 0
+" let g:ale_lint_on_save = 1
+" let g:ale_lint_on_text_changed = 0
+" let g:ale_lint_on_enter = 0
 
 " Setup ack.vim
 cnoreabbrev Ack Ack!
