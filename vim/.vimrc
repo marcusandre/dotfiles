@@ -4,10 +4,12 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'Shougo/neocomplete.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'docker/docker' , { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'itchyny/vim-cursorword'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mattn/emmet-vim', { 'for': 'html'  }
@@ -21,7 +23,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/matchit.zip'
-" Plug 'w0rp/ale'
 
 " Colors
 Plug 'altercation/vim-colors-solarized'
@@ -127,6 +128,9 @@ set updatetime=100
 " Quietly update buffers
 set autoread
 
+" Write content when calling :make
+set autowrite
+
 " Enable syntax highlighting
 syntax enable
 
@@ -134,10 +138,10 @@ syntax enable
 filetype plugin indent on
 
 " Setup whitespace for different file types
-au BufNewFile,BufRead *.go setlocal nolist noet ts=4 sw=4 sts=4
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
-au FileType make setlocal nolist noet ts=4 sw=4 sts=4
 au FileType gitcommit setlocal tw=68 colorcolumn=69 spell
+au FileType go setlocal nolist noet ts=4 sw=4 sts=4
+au FileType make setlocal nolist noet ts=4 sw=4 sts=4
 
 " Enable omnicompletion for file types
 au FileType css set omnifunc=csscomplete#CompleteCSS
@@ -151,8 +155,7 @@ endif
 
 " Set colorscheme
 silent! colorscheme lucius
-let g:lucius_contrast_bg = "low"
-set background=dark
+set background=light
 
 " Set leader key
 let mapleader = ","
@@ -208,9 +211,6 @@ nmap Q gqap
 " Stop highlighting search results
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
-" Quickly change background setting
-map <Leader>bg :let &background = (background == "dark"? "light" : "dark")<CR>
-
 " Toggle between normal and relative numbering.
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -220,11 +220,11 @@ function! NumberToggle()
     set relativenumber
   endif
 endfunc
-nnoremap <leader>nt :call NumberToggle()<CR>
+nnoremap <leader>tn :call NumberToggle()<CR>
 
 " Fuzzy file and buffer actions
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>F :Files<CR>
+nnoremap <leader>f :Buffers<CR>
 
 " Setup :Bdelete
 nnoremap <leader>d :Bdelete<CR>
@@ -233,7 +233,6 @@ nnoremap <leader>d :Bdelete<CR>
 " mnemonic: go hunk
 nnoremap gh :GitGutterNextHunk<CR>
 nnoremap gH :GitGutterPrevHunk<CR>
-nnoremap <leader>gt :GitGutterLineHighlightsToggle<CR>
 
 " Setup ale
 " let g:ale_lint_on_save = 1
@@ -249,11 +248,19 @@ if executable('ag')
 endif
 
 " Setup vim-go
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_types = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 let g:go_list_type = "quickfix"
+
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#cmd#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)

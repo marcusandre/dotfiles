@@ -16,8 +16,8 @@ set input-meta on
 set output-meta on
 set convert-meta off
 
-# Mappings and settings specific to bash
-$if Bash
-  Space: magic-space
-  \C-w: backward-kill-word
-$endif
+# # Mappings and settings specific to bash
+# $if Bash
+#   Space: magic-space
+#   \C-w: backward-kill-word
+# $endif
