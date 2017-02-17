@@ -12,6 +12,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'itchyny/vim-cursorword'
 Plug 'junegunn/vim-peekaboo'
+Plug 'majutsushi/tagbar', { 'for': 'go' }
 Plug 'mattn/emmet-vim', { 'for': 'html'  }
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
@@ -264,3 +265,6 @@ endfunction
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
+" Setup Tagbar
+nmap <F8> :TagbarToggle<CR>
