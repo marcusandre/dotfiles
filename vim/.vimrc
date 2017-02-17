@@ -10,6 +10,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'docker/docker' , { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
+Plug 'garyburd/go-explorer', { 'for': 'go' }
 Plug 'itchyny/vim-cursorword'
 Plug 'junegunn/vim-peekaboo'
 Plug 'majutsushi/tagbar', { 'for': 'go' }
