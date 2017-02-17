@@ -11,6 +11,17 @@ export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
 export CLICOLOR=1
 
+# bash
+export HISTCONTROL="erasedups:ignoreboth"
+export HISTFILESIZE=100000
+export HISTIGNORE="&:[ ]*:exit:ls:ls *:la:ll:bg:fg:clear:history"
+export HISTSIZE=500000
+export HISTTIMEFORMAT="%F %T "
+export PROMPT_COMMAND="history -a"
+
+shopt -s cmdhist
+shopt -s histappend
+
 # editor
 export EDITOR=vim
 export VISUAL=$EDITOR
@@ -66,6 +77,8 @@ alias ...='cd ../..'
 
 # editors
 alias e='$EDITOR'
+alias es='vim -o'
+alias ev='vim -O'
 
 # git
 alias gap='git add . -p'
@@ -99,6 +112,12 @@ alias starthtml='curl -L https://git.io/vDcGT | vim -'
 
 # directories
 alias code='cd $PROJECTS'
+
+#
+# tmux
+#
+
+[ -n "$TMUX" ] && export TERM=screen-256color-italic
 
 #
 # Create <folder> and cd into it
