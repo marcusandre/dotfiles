@@ -142,7 +142,7 @@ filetype plugin indent on
 " Setup whitespace for different file types
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
 au FileType gitcommit setlocal tw=68 colorcolumn=69 spell
-au FileType go setlocal nolist noet ts=4 sw=4 sts=4
+au FileType go setlocal nolist noet ts=2 sw=2 sts=2 modifiable
 au FileType make setlocal nolist noet ts=4 sw=4 sts=4
 
 " Enable omnicompletion for file types
