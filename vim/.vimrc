@@ -4,11 +4,11 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'docker/docker' , { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'itchyny/vim-cursorword'
 Plug 'junegunn/vim-peekaboo'
