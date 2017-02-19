@@ -73,6 +73,13 @@ endif
 " Set format
 set fileformat=unix
 
+" Return to last edit position
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \   exe "normal! zz" |
+  \ endif
+
 " Setup searching
 set hlsearch
 set ignorecase
