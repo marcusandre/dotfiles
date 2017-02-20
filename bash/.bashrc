@@ -113,6 +113,9 @@ alias starthtml='curl -L https://git.io/vDcGT | vim -'
 # directories
 alias code='cd $PROJECTS'
 
+# misc
+alias path='echo -e ${PATH//:/\\n}'
+
 #
 # tmux
 #
