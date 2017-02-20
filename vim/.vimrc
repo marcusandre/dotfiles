@@ -29,6 +29,7 @@ Plug 'vim-scripts/matchit.zip'
 " Colors
 Plug 'altercation/vim-colors-solarized'
 Plug 'jonathanfilip/vim-lucius'
+Plug 'trevordmiller/nova-vim'
 
 call plug#end()
 
@@ -163,8 +164,8 @@ if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
 endif
 
 " Set colorscheme
-silent! colorscheme lucius
-set background=light
+silent! colorscheme nova
+" set background=dark
 
 " Set leader key
 let mapleader = ","
