@@ -1,5 +1,13 @@
 set nocompatible
 
+" Install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  " autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  autocmd VimEnter * PlugInstall --sync | qall
+endif
+
 call plug#begin('~/.vim/plugged')
 
 " Plugins
@@ -18,6 +26,7 @@ Plug 'mattn/emmet-vim', { 'for': 'html'  }
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
+Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
