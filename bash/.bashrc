@@ -120,7 +120,7 @@ alias path='echo -e ${PATH//:/\\n}'
 # tmux
 #
 
-[ -n "$TMUX" ] && export TERM=screen-256color
+[ -n "$TMUX" ] && export TERM=xterm-256color
 
 #
 # Create <folder> and cd into it
