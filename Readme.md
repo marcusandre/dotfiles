@@ -7,6 +7,7 @@ day to day work. Please feel free to fork!
 Components:
 - [Git](https://git-scm.com/)
 - [Vim](http://www.vim.org/about.php)
+- [Tmux](https://tmux.github.io/)
 - [Zsh](http://www.zsh.org/)
 
 These files are very macOS-y!
@@ -23,6 +24,12 @@ $ cd $_ && brew bundle && make
 Make sure you have the following dependencies installed:
 
 - [Homebrew](http://brew.sh) package manager (macOS)
+- [GNU Stow](https://www.gnu.org/software/stow/) symlink manager
+
+### Tmux
+
+If you start `tmux` for the first time, you should hier `C-b I` followed by
+`C-b R` to install sane terminal multiplexing defaults.
 
 ## See also
 
