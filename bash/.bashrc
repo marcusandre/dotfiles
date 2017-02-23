@@ -109,6 +109,7 @@ alias less='less -R'
 alias clone='hub clone'
 alias mp3='youtube-dl --prefer-avconv --extract-audio --audio-format mp3'
 alias starthtml='curl -L https://git.io/vDcGT | vim -'
+alias tea='vim ~/Desktop/Tea.md'
 
 # directories
 alias code='cd $PROJECTS'
