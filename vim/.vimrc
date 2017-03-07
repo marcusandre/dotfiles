@@ -15,14 +15,14 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'docker/docker' , { 'rtp': 'contrib/syntax/vim/' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'garyburd/go-explorer', { 'for': 'go' }
 Plug 'itchyny/vim-cursorword'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-peekaboo'
 Plug 'majutsushi/tagbar', { 'for': 'go' }
-Plug 'mattn/emmet-vim', { 'for': 'html'  }
+Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'php']  }
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
@@ -166,6 +166,9 @@ au FileType make setlocal nolist noet ts=4 sw=4 sts=4
 au FileType css set omnifunc=csscomplete#CompleteCSS
 au FileType html set omnifunc=htmlcomplete#CompleteTags
 au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
+" php just makes no sense
+au FileType php setlocal ft=html
 
 " Allow color schemes to do bright colors without forcing bold
 if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
