@@ -118,6 +118,7 @@ set shiftround
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+set nojoinspaces
 
 " Setup history and sessions
 set history=1500
