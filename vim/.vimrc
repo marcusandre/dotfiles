@@ -53,6 +53,7 @@ set nobackup
 " Setup line numbers
 set number
 set relativenumber
+set cursorline
 
 " Show current position in the status bar
 set ruler
@@ -103,6 +104,8 @@ if has('autocmd')
     autocmd!
     silent! autocmd InsertEnter * set nohlsearch
     silent! autocmd InsertLeave * set hlsearch
+    silent! autocmd InsertEnter * set nocursorline
+    silent! autocmd InsertLeave * set cursorline
   augroup END
 endif
 
