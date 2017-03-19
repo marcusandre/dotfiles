@@ -10,6 +10,7 @@ brew 'git'
 brew 'git-extras'
 brew 'httpie'
 brew 'hub'
+brew 'mas'
 brew 'readline'
 brew 'reattach-to-user-namespace'
 brew 'redis'
@@ -29,3 +30,5 @@ cask 'sketch'
 cask 'spectacle'
 cask 'vagrant'
 cask 'virtualbox'
+mas 'Reeder', id: 880001334
+mas 'Tweetbot', id: 557168941
