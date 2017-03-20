@@ -208,6 +208,7 @@ imap jk <Esc>
 
 " Quick writes
 nnoremap <leader>w :write<cr>
+nnoremap <leader>W :wall<cr>
 
 " Quick /
 nnoremap <Space> /
@@ -225,7 +226,7 @@ nnoremap <leader>c :cclose<CR>
 " show the position in middle of window
 nnoremap <C-o> <C-o>zvzz
 
-" Make :W and :Q lork like :w and :q
+" Make :W and :Q commands work like :w and :q
 cabbr W w
 cabbr Q q
 
