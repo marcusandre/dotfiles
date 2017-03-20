@@ -28,8 +28,9 @@ Make sure you have the following dependencies installed:
 
 ### Tmux
 
-If you start `tmux` for the first time, you should hier `C-b I` followed by
-`C-b R` to install sane terminal multiplexing defaults.
+If you start `tmux` for the first time, you should hit the keybord combination
+`C-b I` followed by `C-b R` to install some sane terminal multiplexing
+defaults.
 
 ## See also
 
