@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
 " Plugins
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'Shougo/neocomplete.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
@@ -22,6 +21,7 @@ Plug 'itchyny/vim-cursorword'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-peekaboo'
 Plug 'majutsushi/tagbar', { 'for': 'go' }
+Plug 'maralla/completor.vim'
 Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'php']  }
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
