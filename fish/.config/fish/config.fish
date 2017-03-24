@@ -87,6 +87,14 @@ if set --query fish_greeting
 end
 
 #
+# FZF
+#
+
+if type -q fzf
+  fzf_key_bindings
+end
+
+#
 # Prompt
 #
 
