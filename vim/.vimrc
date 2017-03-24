@@ -301,3 +301,9 @@ let g:go_highlight_build_constraints = 1
 
 " Setup Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" Setup Completor
+let g:completor_go_omni_trigger = '(?:\b[^\W\d]\w*|[\]\)])\.(?:[^\W\d]\w*)?'
+let g:completor_min_chars = 2
+let g:completor_disable_filename = 1
+let g:completor_disable_buffer = 1
