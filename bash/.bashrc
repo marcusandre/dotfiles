@@ -92,6 +92,10 @@ alias gr='cd $(git root)'
 alias gs='git s'
 alias gst='git st'
 
+# go
+alias gt='go test'
+alias gtv='go test -v'
+
 # tmux: attach to <name>
 alias tma='tmux attach -d -t'
 
