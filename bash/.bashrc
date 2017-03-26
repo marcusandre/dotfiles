@@ -34,7 +34,6 @@ export GREP_OPTIONS='--color=auto'
 
 # misc
 export GITHUB_USERNAME='marcusandre'
-export BITBUCKET_USERNAME='reizwerk'
 
 # dirs
 export GOPATH=$HOME/go

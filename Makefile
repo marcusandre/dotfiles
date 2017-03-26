@@ -1,5 +1,5 @@
 STOW ?= stow
-DIRS ?= bash etc fish git readline scripts tmux vim
+DIRS ?= bash etc git readline scripts tmux vim zsh
 
 links:
 	@$(STOW) -v -R $(DIRS)
