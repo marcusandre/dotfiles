@@ -42,9 +42,6 @@ Plug 'trevordmiller/nova-vim'
 
 call plug#end()
 
-" Set shell
-set shell="/usr/bin/env bash"
-
 " Setup command line completion
 set wildmenu
 set wildmode=longest:full,full
