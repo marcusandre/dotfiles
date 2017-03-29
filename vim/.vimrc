@@ -1,5 +1,3 @@
-set nocompatible
-
 " Install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -18,10 +16,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'garyburd/go-explorer', { 'for': 'go' }
 Plug 'itchyny/vim-cursorword'
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-peekaboo'
 Plug 'majutsushi/tagbar', { 'for': 'go' }
-Plug 'maralla/completor.vim'
 Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'php']  }
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
@@ -36,15 +32,15 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/matchit.zip'
 
 " Colors
-Plug 'altercation/vim-colors-solarized'
 Plug 'jonathanfilip/vim-lucius'
+Plug 'junegunn/seoul256.vim'
 Plug 'trevordmiller/nova-vim'
 
 call plug#end()
 
 " Setup command line completion
 set wildmenu
-set wildmode=longest:full,full
+set wildmode=full
 
 " Don't use swap or backup files
 set noswapfile
@@ -53,7 +49,6 @@ set nobackup
 " Setup line numbers
 set number
 set relativenumber
-set cursorline
 
 " Show current position in the status bar
 set ruler
@@ -77,12 +72,7 @@ set laststatus=2
 set display+=lastline
 
 " Use UTF-8 by default
-if has('multi_byte')
-  set encoding=utf-8
-endif
-
-" Set format
-set fileformat=unix
+set encoding=utf-8
 
 " Return to last edit position
 autocmd BufReadPost *
@@ -137,16 +127,11 @@ set mouse=a
 
 " Improve scroll visibility
 if !&scrolloff
-  set scrolloff=8
+  set scrolloff=5
 endif
 if !&sidescrolloff
-  set sidescrolloff=10
+  set sidescrolloff=5
 endif
-
-" Setup update times
-set ttimeout
-set ttimeoutlen=100
-set updatetime=100
 
 " Quietly update buffers
 set autoread
@@ -180,8 +165,8 @@ if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
 endif
 
 " Set colorscheme
-silent! colorscheme nova
-" set background=dark
+silent! colorscheme seoul256
+set background=light
 
 " Set leader key
 let mapleader = ","
@@ -300,10 +285,4 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 " Setup Tagbar
-nmap <F8> :TagbarToggle<CR>
-
-" Setup Completor
-let g:completor_go_omni_trigger = '(?:\b[^\W\d]\w*|[\]\)])\.(?:[^\W\d]\w*)?'
-let g:completor_min_chars = 2
-let g:completor_disable_filename = 1
-let g:completor_disable_buffer = 1
+nmap <leader>T :TagbarToggle<CR>
