@@ -43,6 +43,7 @@ mkdir -p $GOPATH $PROJECTS
 
 # paths
 export PATH=$HOME/bin:/usr/local/opt/go/libexec/bin:$GOPATH/bin:$PATH
+export CDPATH=.:$PROJECTS:$GOPATH/src
 
 #
 # Bash completion
