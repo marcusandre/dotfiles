@@ -19,6 +19,7 @@ export HISTSIZE=500000
 export HISTTIMEFORMAT="%F %T "
 export PROMPT_COMMAND="history -a"
 
+shopt -s checkwinsize
 shopt -s cmdhist
 shopt -s histappend
 
@@ -57,14 +58,14 @@ fi
 # Prompt
 #
 
-# git
 export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
-
-# ps1
 export PROMPT_DIRTRIM=4
-export PS1="\n  \[\033[0;36m\]λ\[\033[0m\] \w\[\033[0;32m\]\$(__git_ps1)\[\033[0m\] > "
+
+PROMPT_COMMAND='history -a; printf "\[\e[38;5;59m\]%$(($COLUMNS - 4))s\r" "$(__git_ps1) ($(date +%m/%d\ %H:%M:%S))"'
+PS1="\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:"
+PS1="$PS1\[\e[m\]\w\[\e[1;31m\]> \[\e[0m\]"
 
 #
 # Aliases
@@ -109,10 +110,10 @@ alias paste='pbpaste'
 alias ls='ls -GpF'
 alias ll='ls -alGpF'
 alias less='less -R'
+alias ag='ag --hidden'
 alias clone='hub clone'
 alias mp3='youtube-dl --prefer-avconv --extract-audio --audio-format mp3'
 alias starthtml='curl -sSL https://git.io/vDcGT | vim -'
-alias tea='vim ~/Desktop/Tea.md'
 
 # directories
 alias code='cd $PROJECTS'
@@ -149,6 +150,7 @@ gco() {
 #
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 #
 # rupa/z
