@@ -164,9 +164,15 @@ if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
   set t_Co=16
 endif
 
-" Set colorscheme
-silent! colorscheme seoul256
-set background=light
+" Set colorscheme by reference to daytime
+let hour = strftime("%H")
+if 6 <= hour && hour < 18
+  silent! colorscheme lucius
+  set background=light
+else
+  silent! colorscheme nova
+  set background=dark
+end
 
 " Set leader key
 let mapleader = ","
