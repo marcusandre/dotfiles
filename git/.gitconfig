@@ -5,6 +5,8 @@
   abbrev = 12
   autocrlf = input
   excludesfile = '~/.gitignore_global'
+[format]
+  pretty = "%H %ci %ce %ae %d %s"
 [alias]
   append = commit -a --amend -C HEAD
   br = branch
