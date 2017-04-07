@@ -141,9 +141,6 @@ cnoremap jk <C-c>
 nnoremap Q @q
 nnoremap Y y$
 
-nnoremap j gj
-nnoremap k gk
-
 nnoremap <leader>w :write<cr>
 nnoremap <leader>W :wall<cr>
 
