@@ -135,7 +135,6 @@ autocmd BufReadPost *
 " ============================================================================
 
 inoremap jk <Esc>
-xnoremap jk <Esc>
 cnoremap jk <C-c>
 
 nnoremap Q @q
