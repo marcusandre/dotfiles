@@ -41,7 +41,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
 
 " Misc
 Plug 'junegunn/vim-peekaboo'
-Plug 'majutsushi/tagbar', { 'for': 'go' }
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'tpope/vim-dispatch'
 
 " Colors
@@ -76,6 +76,16 @@ set ignorecase
 set incsearch
 set smartcase
 
+" Temporary files
+set backupdir=/tmp//,.
+set directory=/tmp//,.
+if v:version >= 703
+  set undodir=/tmp//,.
+endif
+
+" ctags
+set tags=./tags;/
+
 " Command line
 set wildmenu
 set wildmode=full
@@ -89,10 +99,12 @@ set mouse=a
 set autoread
 set autowrite
 set backspace=indent,eol,start
+set complete-=i
 set encoding=utf-8
 set hidden
 set lazyredraw
 set nojoinspaces
+set nostartofline
 set nowrap
 set number relativenumber
 set scrolloff=5
@@ -113,9 +125,8 @@ au FileType make setlocal nolist noet ts=4 sw=4 sts=4
 " ============================================================================
 
 syntax enable
-let g:seoul256_background = 255
 silent! colorscheme lucius
-set background=light
+set background=dark
 
 " }}}
 " ============================================================================
@@ -134,14 +145,16 @@ autocmd BufReadPost *
 " Mappings
 " ============================================================================
 
-inoremap jk <Esc>
 cnoremap jk <C-c>
+inoremap jk <Esc>
+xnoremap jk <Esc>
+
+inoremap <C-s> <C-O>:update<cr>
+nnoremap <leader>W :wall<cr>
+nnoremap <leader>w :update<cr>
 
 nnoremap Q @q
 nnoremap Y y$
-
-nnoremap <leader>w :write<cr>
-nnoremap <leader>W :wall<cr>
 
 nnoremap c* *Ncgn
 
@@ -149,7 +162,10 @@ nnoremap <C-n> :cnext<CR>
 nnoremap <C-p> :cprevious<CR>
 nnoremap <leader>c :cclose<CR>
 
-nnoremap <leader>vs vip:sort u<cr>
+nnoremap gs vip:sort u<cr>
+
+nnoremap <tab> <c-w>w
+nnoremap <S-tab> <c-w>W
 
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
