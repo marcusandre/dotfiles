@@ -1,71 +1,18 @@
-set nocompatible
-filetype off
-
-" }}}
-" ============================================================================
-" VIM-PLUG {{{
-" ============================================================================
-
-call plug#begin()
-
-" Editing
-Plug 'editorconfig/editorconfig-vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-
-" Fuzzing
-Plug 'junegunn/fzf', { 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
-" Autocompletion
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'php']  }
-
-" Navigating
-Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-vinegar'
-Plug 'vim-scripts/matchit.zip'
-
-" Git
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-
-" Linting
-Plug 'w0rp/ale', { 'on': 'ALEEnable' }
-
-" Languages
-Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
-
-" Misc
-Plug 'junegunn/vim-peekaboo'
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-Plug 'tpope/vim-dispatch'
-
-" Colors
-Plug 'jonathanfilip/vim-lucius'
-Plug 'junegunn/seoul256.vim'
-
-call plug#end()
-
+" vim ft=vim ts=2
+"
 " }}}
 " ============================================================================
 " Settings
 " ============================================================================
 
-filetype plugin on
-
-let mapleader = ' '
+set nocompatible
 
 " Indentation
 set autoindent
-set expandtab smarttab
-set shiftround
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set smartindent
+set expandtab
+set nosmarttab
+filetype plugin on
 
 " Show trailing spaces and highlight hard tabs
 set list listchars=tab:»·,trail:·
@@ -75,13 +22,6 @@ set hlsearch
 set ignorecase
 set incsearch
 set smartcase
-
-" Temporary files
-set backupdir=/tmp//,.
-set directory=/tmp//,.
-if v:version >= 703
-  set undodir=/tmp//,.
-endif
 
 " ctags
 set tags=./tags;/
@@ -109,24 +49,33 @@ set nowrap
 set number relativenumber
 set scrolloff=5
 set showmode
+set virtualedit=block
+set visualbell t_vb=
 
 " }}}
 " ============================================================================
-" Filetypes
+" Backups
 " ============================================================================
 
-au BufNewFile,BufRead Vagrantfile set filetype=ruby
-au FileType gitcommit setlocal tw=68 colorcolumn=69 spell
-au FileType make setlocal nolist noet ts=4 sw=4 sts=4
+set backup
+set backupcopy=yes
+set backupdir=$HOME/.vim/backup
+set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
+set directory=~/.vim/swap,~/tmp,.
+set swapfile
+set writebackup
 
-" }}}
-" ============================================================================
-" Colors
-" ============================================================================
+if !isdirectory($HOME . "/.vim/backup")
+  call mkdir($HOME . "/.vim/backup", "p")
+endif
 
-syntax enable
-silent! colorscheme lucius
-set background=dark
+if !isdirectory($HOME . "/.vim/spell")
+  call mkdir($HOME . "/.vim/spell", "p")
+endif
+
+if !isdirectory($HOME . "/.vim/swap")
+  call mkdir($HOME . "/.vim/swap", "p")
+endif
 
 " }}}
 " ============================================================================
@@ -145,57 +94,124 @@ autocmd BufReadPost *
 " Mappings
 " ============================================================================
 
-cnoremap jk <C-c>
-inoremap jk <Esc>
-xnoremap jk <Esc>
+let mapleader = ','
 
 inoremap <C-s> <C-O>:update<cr>
 nnoremap <leader>W :wall<cr>
 nnoremap <leader>w :update<cr>
+
+nnoremap <space> /
 
 nnoremap Q @q
 nnoremap Y y$
 
 nnoremap c* *Ncgn
 
-nnoremap <C-n> :cnext<CR>
-nnoremap <C-p> :cprevious<CR>
-nnoremap <leader>c :cclose<CR>
+nnoremap <C-n> :cnext<cr>
+nnoremap <C-p> :cprevious<cr>
+nnoremap <leader>c :cclose<cr>
 
-nnoremap gs vip:sort u<cr>
+nnoremap gs mzvip:sort u<cr>'z
 
-nnoremap <tab> <c-w>w
-nnoremap <S-tab> <c-w>W
+nnoremap <tab> :bnext<cr>
+nnoremap <S-tab> :bprevious<cr>
 
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
-nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
+nnoremap <silent> <C-l> :nohlsearch<cr><C-l>
+
+nnoremap n nzz
+nnoremap } }zz
+
+" }}}
+" ============================================================================
+" VIM-PLUG {{{
+" ============================================================================
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin()
+
+" Editing
+" Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+
+" Fuzzing
+Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Autocompletion
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'php']  }
+
+" Navigating
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-vinegar'
+Plug 'vim-scripts/matchit.zip'
+
+" Git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+" Linting
+" Plug 'w0rp/ale', { 'on': 'ALEEnable' }
+
+" Languages
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
+
+" Misc
+Plug 'junegunn/vim-peekaboo'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+Plug 'tpope/vim-dispatch'
+
+" Colors
+Plug 'jonathanfilip/vim-lucius'
+Plug 'junegunn/seoul256.vim'
+
+call plug#end()
+
+" }}}
+" ============================================================================
+" Colors
+" ============================================================================
+
+syntax enable
+silent! colorscheme lucius
+set background=dark
 
 " }}}
 " ============================================================================
 " GitGutter
 " ============================================================================
 
-nnoremap gh :GitGutterNextHunk<CR>
-nnoremap gH :GitGutterPrevHunk<CR>
+nnoremap gh :GitGutterNextHunk<cr>
+nnoremap gH :GitGutterPrevHunk<cr>
 
 " }}}
 " ============================================================================
 " Tagbar
 " ============================================================================
 
-nmap <leader>T :TagbarToggle<CR>
+nmap <leader>T :TagbarToggle<cr>
 
 " }}}
 " ============================================================================
 " fzf
 " ============================================================================
 
-nnoremap <leader>F :Files<CR>
-nnoremap <leader>f :Buffers<CR>
+nnoremap <leader>F :Files<cr>
+nnoremap <leader>f :Buffers<cr>
 
 " }}}
 " ============================================================================
@@ -230,8 +246,7 @@ imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 
 augroup go
   autocmd!
-  autocmd BufNewFile,BufRead *.go setlocal nolist noexpandtab ts=2 sw=2 sts=2 modifiable
-  autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+  autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<cr>
   autocmd FileType go nmap <leader>t  <Plug>(go-test)
   autocmd FileType go nmap <leader>r  <Plug>(go-run)
   autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
@@ -255,3 +270,38 @@ function! s:build_go_files()
     call go#cmd#Build(0)
   endif
 endfunction
+
+" }}}
+" ============================================================================
+" Filetypes
+" ============================================================================
+
+augroup manual
+autocmd!
+au Filetype * setlocal shiftwidth=2 softtabstop=2 tabstop=2
+augroup end
+
+augroup golang
+autocmd!
+au BufNewFile,BufRead *.go setlocal nolist noexpandtab ts=2 sw=2 sts=2 modifiable
+augroup end
+
+augroup makefile
+autocmd!
+au FileType make setlocal nolist noet ts=4 sw=4 sts=4
+augroup end
+
+augroup gitcommit
+autocmd!
+au FileType gitcommit setlocal tw=68 colorcolumn=69 spell
+augroup end
+
+augroup vagrantfile
+autocmd!
+au BufNewFile,BufRead Vagrantfile setlocal filetype=ruby
+augroup end
+
+augroup help
+autocmd!
+au FileType help setlocal nospell
+augroup end
