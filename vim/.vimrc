@@ -153,6 +153,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'php']  }
+Plug 'mattn/sonictemplate-vim'
 
 " Navigating
 Plug 'mileszs/ack.vim'
