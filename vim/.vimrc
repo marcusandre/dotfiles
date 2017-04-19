@@ -177,8 +177,8 @@ Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'tpope/vim-dispatch'
 
 " Colors
-Plug 'jonathanfilip/vim-lucius'
-Plug 'junegunn/seoul256.vim'
+Plug 'dracula/vim'
+Plug 'flazz/vim-colorschemes'
 
 call plug#end()
 
@@ -188,7 +188,7 @@ call plug#end()
 " ============================================================================
 
 syntax enable
-silent! colorscheme lucius
+silent! colorscheme dracula
 set background=dark
 
 " }}}
