@@ -169,7 +169,12 @@ Plug 'tpope/vim-fugitive'
 
 " Languages
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'kien/rainbow_parentheses.vim', { 'for': 'clojure' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
 
 " Misc
 Plug 'junegunn/vim-peekaboo'
