@@ -96,9 +96,9 @@ autocmd BufReadPost *
 
 let mapleader = ','
 
-inoremap <C-s> <C-O>:update<cr>
+inoremap <C-s> <C-O>:write<cr>
 nnoremap <leader>W :wall<cr>
-nnoremap <leader>w :update<cr>
+nnoremap <leader>w :write<cr>
 
 nnoremap <space> /
 
