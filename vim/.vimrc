@@ -160,16 +160,19 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " Linting
-" Plug 'w0rp/ale', { 'on': 'ALEEnable' }
+Plug 'w0rp/ale', { 'on': 'ALEEnable' }
 
 " Languages
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'kien/rainbow_parentheses.vim', { 'for': 'clojure' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
+
+" Syntax
+Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
 
 " Misc
 Plug 'junegunn/vim-peekaboo'
