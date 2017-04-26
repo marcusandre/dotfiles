@@ -280,7 +280,7 @@ augroup end
 
 augroup golang
 autocmd!
-au BufNewFile,BufRead *.go setlocal nolist noexpandtab ts=2 sw=2 sts=2 modifiable
+au FileType go setlocal nolist noexpandtab ts=2 sw=2 sts=2 modifiable
 augroup end
 
 augroup makefile
@@ -291,6 +291,11 @@ augroup end
 augroup gitcommit
 autocmd!
 au FileType gitcommit setlocal tw=68 colorcolumn=69 spell
+augroup end
+
+augroup markdown
+autocmd!
+au FileType markdown setlocal spell
 augroup end
 
 augroup vagrantfile
