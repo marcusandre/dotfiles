@@ -257,6 +257,7 @@ augroup go
   autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
   autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
   autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+  autocmd Filetype go abbrev bp _ = "breakpoint"
 augroup END
 
 " Call :GoBuild if its a Go file, or :GoTestCompile if it's a test file
@@ -280,7 +281,7 @@ augroup end
 
 augroup golang
 autocmd!
-au FileType go setlocal nolist noexpandtab ts=2 sw=2 sts=2 modifiable
+au FileType go setlocal nolist noexpandtab ts=4 sw=4 sts=4 modifiable
 augroup end
 
 augroup makefile
