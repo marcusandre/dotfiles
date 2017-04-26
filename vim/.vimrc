@@ -148,10 +148,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'php']  }
-Plug 'mattn/sonictemplate-vim'
+" Plug 'mattn/sonictemplate-vim'
 
 " Navigating
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/matchit.zip'
 
@@ -169,6 +170,7 @@ Plug 'kien/rainbow_parentheses.vim', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
+" Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 " Syntax
 Plug 'dag/vim-fish', { 'for': 'fish' }
@@ -192,13 +194,6 @@ call plug#end()
 syntax enable
 silent! colorscheme dracula
 set background=dark
-
-" ----------------------------------------------------------------------------
-" GitGutter
-" ----------------------------------------------------------------------------
-
-nnoremap gh :GitGutterNextHunk<cr>
-nnoremap gH :GitGutterPrevHunk<cr>
 
 " ----------------------------------------------------------------------------
 " Tagbar
