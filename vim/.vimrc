@@ -5,6 +5,7 @@
 " ----------------------------------------------------------------------------
 
 set nocompatible
+set shell=/usr/local/bin/bash
 
 " Indentation
 set autoindent
@@ -167,6 +168,7 @@ Plug 'w0rp/ale', { 'on': 'ALEEnable' }
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'kien/rainbow_parentheses.vim', { 'for': 'clojure' }
+Plug 'lumiliet/vim-twig', { 'for': 'twig' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
