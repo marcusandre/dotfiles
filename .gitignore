@@ -1,1 +1,3 @@
+fish/.config/fish/*
+!fish/.config/fish/config.fish
 .DS_Store
