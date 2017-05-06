@@ -153,8 +153,8 @@ Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'php']  }
 
 " Navigating
 Plug 'mileszs/ack.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/matchit.zip'
 
 " Git
@@ -194,8 +194,8 @@ call plug#end()
 " ----------------------------------------------------------------------------
 
 syntax enable
-silent! colorscheme dracula
-set background=dark
+silent! colorscheme solarized
+set background=light
 
 " ----------------------------------------------------------------------------
 " Tagbar
@@ -209,6 +209,23 @@ nmap <leader>T :TagbarToggle<cr>
 
 nnoremap <leader>F :Files<cr>
 nnoremap <leader>f :Buffers<cr>
+
+" ----------------------------------------------------------------------------
+" Nerdtree
+" ----------------------------------------------------------------------------
+
+let NERDTreeShowHidden=1
+map <C-n> :NERDTreeToggle<cr>
+
+augroup nerd_dir
+  autocmd!
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
+    \| exe 'NERDTree' argv()[0]
+    \| wincmd p
+    \| ene
+    \| endif
+augroup END
 
 " ----------------------------------------------------------------------------
 " Ack
