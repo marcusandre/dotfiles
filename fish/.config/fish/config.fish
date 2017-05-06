@@ -61,3 +61,8 @@ alias code "cd $PROJECTS"
 # misc
 alias ag "ag --hidden"
 alias clone "hub clone"
+
+# mkdir and cd to it
+function md
+  mkdir -p $argv; cd $argv
+end
