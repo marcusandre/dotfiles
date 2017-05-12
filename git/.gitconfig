@@ -5,8 +5,14 @@
   abbrev = 12
   autocrlf = input
   excludesfile = '~/.gitignore_global'
-[format]
-  pretty = "%H %ci %ce %ae %d %s"
+[diff]
+  tool = vimdiff
+[pull]
+  rebase = true
+[merge]
+  conflictstyle = diff3
+[rerere]
+  enabled = 1
 [alias]
   append = commit -a --amend -C HEAD
   br = branch
@@ -30,10 +36,6 @@
   unstage = reset -q HEAD --
   upgrade = !git fetch origin --prune && git rebase origin/master
   yesterday = diff --name-only --stat @{1.days.ago}
-[diff]
-  tool = vimdiff
-[pull]
-  rebase = true
 [log]
   date = iso
   abbrevCommit = true
@@ -43,6 +45,8 @@
   helper = osxkeychain
 [github]
   user = marcusandre
+[format]
+  pretty = "%H %ci %ce %ae %d %s"
 [color]
   pager = true
   ui = auto

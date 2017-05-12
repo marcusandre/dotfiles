@@ -5,14 +5,13 @@
 " ----------------------------------------------------------------------------
 
 set nocompatible
-set shell=/usr/local/bin/bash
+filetype off
 
 " Indentation
 set autoindent
 set smartindent
 set expandtab
 set nosmarttab
-filetype plugin on
 
 " Show trailing spaces and highlight hard tabs
 set list listchars=tab:»·,trail:·
@@ -47,7 +46,9 @@ set nojoinspaces
 set nostartofline
 set nowrap
 set number relativenumber
+set ruler
 set scrolloff=5
+set shell=/usr/local/bin/bash
 set showmode
 set virtualedit=block
 set visualbell t_vb=
@@ -112,11 +113,7 @@ nnoremap gs mzvip:sort u<cr>'z
 
 nnoremap <tab> :bnext<cr>
 nnoremap <S-tab> :bprevious<cr>
-
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
+nnoremap <leader>d :bp\|bd #<cr>
 
 nnoremap <silent> <C-l> :nohlsearch<cr><C-l>
 
@@ -186,6 +183,7 @@ Plug 'tpope/vim-dispatch'
 " Colors
 Plug 'dracula/vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'trevordmiller/nova-vim'
 
 call plug#end()
 
@@ -194,8 +192,22 @@ call plug#end()
 " ----------------------------------------------------------------------------
 
 syntax enable
-silent! colorscheme solarized
-set background=light
+colorscheme nova
+set background=dark
+
+" ----------------------------------------------------------------------------
+" ale
+" ----------------------------------------------------------------------------
+
+let &runtimepath.=',~/.vim/bundle/ale'
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_linters = {'js': ['standard']}
+filetype plugin on
 
 " ----------------------------------------------------------------------------
 " Tagbar
