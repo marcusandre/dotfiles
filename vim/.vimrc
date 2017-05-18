@@ -193,8 +193,8 @@ call plug#end()
 " ----------------------------------------------------------------------------
 
 syntax enable
-colorscheme tomorrow
-set background=light
+colorscheme nova
+set background=dark
 
 " ----------------------------------------------------------------------------
 " ale
