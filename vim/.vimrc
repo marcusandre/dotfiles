@@ -183,6 +183,7 @@ Plug 'tpope/vim-dispatch'
 " Colors
 Plug 'dracula/vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'robertmeta/nofrils'
 Plug 'trevordmiller/nova-vim'
 
 call plug#end()
@@ -192,8 +193,8 @@ call plug#end()
 " ----------------------------------------------------------------------------
 
 syntax enable
-colorscheme nova
-set background=dark
+colorscheme tomorrow
+set background=light
 
 " ----------------------------------------------------------------------------
 " ale
@@ -222,12 +223,15 @@ nmap <leader>T :TagbarToggle<cr>
 nnoremap <leader>F :Files<cr>
 nnoremap <leader>f :Buffers<cr>
 
+nnoremap <leader>G :GFiles?<cr>
+nnoremap <leader>g :GFiles<cr>
+
 " ----------------------------------------------------------------------------
 " Nerdtree
 " ----------------------------------------------------------------------------
 
 let NERDTreeShowHidden=1
-map <C-n> :NERDTreeToggle<cr>
+map <C-t> :NERDTreeToggle<cr>
 
 augroup nerd_dir
   autocmd!
