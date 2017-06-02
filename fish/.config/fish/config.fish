@@ -66,3 +66,13 @@ alias clone "hub clone"
 function md
   mkdir -p $argv; cd $argv
 end
+
+# create a new html document
+function starthtml
+  curl -sSL https://git.io/vDcGT | vim -
+end
+
+# find file print path
+function ff
+  find . -xdev -name $argv
+end
