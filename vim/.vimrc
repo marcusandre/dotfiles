@@ -143,14 +143,12 @@ Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Autocompletion
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'php']  }
-" Plug 'mattn/sonictemplate-vim'
 
 " Navigating
 Plug 'mileszs/ack.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/matchit.zip'
 
@@ -169,7 +167,7 @@ Plug 'lumiliet/vim-twig', { 'for': 'twig' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
-" Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 " Syntax
 Plug 'dag/vim-fish', { 'for': 'fish' }
@@ -193,8 +191,8 @@ call plug#end()
 " ----------------------------------------------------------------------------
 
 syntax enable
-colorscheme dracula
-set background=dark
+colorscheme lucius
+set background=light
 
 " ----------------------------------------------------------------------------
 " ale
@@ -207,6 +205,7 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
 let g:ale_linters = {'js': ['standard']}
 filetype plugin on
 
@@ -214,7 +213,7 @@ filetype plugin on
 " Tagbar
 " ----------------------------------------------------------------------------
 
-nmap <leader>T :TagbarToggle<cr>
+nmap <leader>tt :TagbarToggle<cr>
 
 " ----------------------------------------------------------------------------
 " fzf
@@ -227,21 +226,11 @@ nnoremap <leader>G :GFiles?<cr>
 nnoremap <leader>g :GFiles<cr>
 
 " ----------------------------------------------------------------------------
-" Nerdtree
+" GitGutter
 " ----------------------------------------------------------------------------
 
-let NERDTreeShowHidden=1
-map <C-t> :NERDTreeToggle<cr>
-
-augroup nerd_dir
-  autocmd!
-  autocmd StdinReadPre * let s:std_in=1
-  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
-    \| exe 'NERDTree' argv()[0]
-    \| wincmd p
-    \| ene
-    \| endif
-augroup END
+nmap gh <Plug>GitGutterNextHunk
+nmap gH <Plug>GitGutterPrevHunk
 
 " ----------------------------------------------------------------------------
 " Ack
@@ -252,7 +241,7 @@ if executable('ag')
 endif
 
 cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <leader>a :Ack!<Space>
 
 " ----------------------------------------------------------------------------
 " vim-go
@@ -277,12 +266,12 @@ augroup go
   autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<cr>
   autocmd FileType go nmap <leader>t  <Plug>(go-test)
   autocmd FileType go nmap <leader>r  <Plug>(go-run)
-  autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
-  autocmd FileType go nmap <Leader>gc <Plug>(go-coverage-toggle)
-  autocmd FileType go nmap <Leader>i <Plug>(go-info)
-  autocmd FileType go nmap <Leader>l <Plug>(go-metalinter)
-  autocmd FileType go nmap <Leader>v <Plug>(go-def-vertical)
-  autocmd FileType go nmap <Leader>s <Plug>(go-def-split)
+  autocmd FileType go nmap <leader>gd <Plug>(go-doc)
+  autocmd FileType go nmap <leader>gc <Plug>(go-coverage-toggle)
+  autocmd FileType go nmap <leader>i <Plug>(go-info)
+  autocmd FileType go nmap <leader>l <Plug>(go-metalinter)
+  autocmd FileType go nmap <leader>v <Plug>(go-def-vertical)
+  autocmd FileType go nmap <leader>s <Plug>(go-def-split)
   autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
   autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
   autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
