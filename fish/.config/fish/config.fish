@@ -45,6 +45,10 @@ alias gr "cd (git root)"
 alias gs "git s"
 alias gst "git st"
 
+# fzf
+alias fa "locate / | fzf --height 50%"
+alias fp "locate $PROJECTS | fzf --height 50%"
+
 # go
 alias gt "go test"
 alias gtv "go test -v"
