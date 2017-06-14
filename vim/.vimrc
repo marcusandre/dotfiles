@@ -150,7 +150,6 @@ Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'php']  }
 " Navigating
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-scripts/matchit.zip'
 
 " Git
 Plug 'airblade/vim-gitgutter'
@@ -193,6 +192,14 @@ call plug#end()
 syntax enable
 colorscheme lucius
 set background=light
+
+" ----------------------------------------------------------------------------
+" Matchit
+" ----------------------------------------------------------------------------
+
+if v:version > 800
+  packadd! matchit
+endif
 
 " ----------------------------------------------------------------------------
 " ale
