@@ -38,6 +38,7 @@ set mouse=a
 set autoread
 set autowrite
 set backspace=indent,eol,start
+set breakindent
 set complete-=i
 set encoding=utf-8
 set hidden
@@ -49,7 +50,9 @@ set number relativenumber
 set ruler
 set scrolloff=5
 set shell=/usr/local/bin/bash
+set showbreak=\\\\\
 set showmode
+set synmaxcol=200
 set virtualedit=block
 set visualbell t_vb=
 
@@ -134,6 +137,7 @@ call plug#begin()
 
 " Editing
 Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/tpope-vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -170,6 +174,8 @@ Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim
 
 " Syntax
 Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'leshill/vim-json', { 'for': 'json'  }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx']  }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
 
 " Misc
@@ -190,8 +196,8 @@ call plug#end()
 " ----------------------------------------------------------------------------
 
 syntax enable
-colorscheme lucius
-set background=light
+colorscheme nova
+set background=dark
 
 " ----------------------------------------------------------------------------
 " Matchit
@@ -295,6 +301,13 @@ function! s:build_go_files()
     call go#cmd#Build(0)
   endif
 endfunction
+
+" ----------------------------------------------------------------------------
+" JavaScript
+" ----------------------------------------------------------------------------
+
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
 
 " ----------------------------------------------------------------------------
 " Filetypes
