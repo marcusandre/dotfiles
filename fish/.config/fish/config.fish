@@ -53,6 +53,12 @@ alias fp "locate $PROJECTS | fzf --height 50%"
 alias gt "go test"
 alias gtv "go test -v"
 
+# npm
+alias nb "npm run build"
+alias nc "npm run coverage"
+alias ns "npm run start"
+alias nt "npm run test"
+
 # tmux: attach to <name>
 alias tma "tmux attach -d -t"
 
