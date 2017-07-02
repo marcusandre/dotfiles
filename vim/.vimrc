@@ -129,8 +129,8 @@ nnoremap } }zz
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin()
@@ -190,6 +190,8 @@ Plug 'robertmeta/nofrils'
 Plug 'trevordmiller/nova-vim'
 
 call plug#end()
+
+command! PU PlugUpdate | PlugUpgrade
 
 " ----------------------------------------------------------------------------
 " Colors
