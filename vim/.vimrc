@@ -1,6 +1,74 @@
 " vim ft=vim ts=2
 "
 " ----------------------------------------------------------------------------
+" vim-plug
+" ----------------------------------------------------------------------------
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+
+" Editing
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/tpope-vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+
+" Fuzzing
+Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Autocompletion
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'php']  }
+
+" Navigating
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-unimpaired'
+
+" Git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+" Linting
+Plug 'w0rp/ale', { 'on': 'ALEEnable' }
+
+" Languages
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'kien/rainbow_parentheses.vim', { 'for': 'clojure' }
+Plug 'lumiliet/vim-twig', { 'for': 'twig' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
+Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+
+" Syntax
+Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'leshill/vim-json', { 'for': 'json'  }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx']  }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
+
+" Misc
+Plug 'junegunn/vim-peekaboo'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+Plug 'tpope/vim-dispatch'
+
+" Colors
+Plug 'dracula/vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'robertmeta/nofrils'
+Plug 'trevordmiller/nova-vim'
+
+call plug#end()
+
+" ----------------------------------------------------------------------------
 " Settings
 " ----------------------------------------------------------------------------
 
@@ -49,7 +117,7 @@ set nowrap
 set number relativenumber
 set ruler
 set scrolloff=5
-set shell=/usr/local/bin/bash
+set shell=/bin/bash
 set showbreak=\\\\\
 set showmode
 set synmaxcol=200
@@ -123,74 +191,6 @@ nnoremap <silent> <C-l> :nohlsearch<cr><C-l>
 nnoremap n nzz
 nnoremap } }zz
 
-" ----------------------------------------------------------------------------
-" vim-plug
-" ----------------------------------------------------------------------------
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin()
-
-" Editing
-Plug 'editorconfig/editorconfig-vim'
-Plug 'tpope/tpope-vim-abolish'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-
-" Fuzzing
-Plug 'junegunn/fzf', { 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
-" Autocompletion
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
-Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'php']  }
-
-" Navigating
-Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-unimpaired'
-
-" Git
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-
-" Linting
-Plug 'w0rp/ale', { 'on': 'ALEEnable' }
-
-" Languages
-Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'kien/rainbow_parentheses.vim', { 'for': 'clojure' }
-Plug 'lumiliet/vim-twig', { 'for': 'twig' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
-Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
-Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-
-" Syntax
-Plug 'dag/vim-fish', { 'for': 'fish' }
-Plug 'leshill/vim-json', { 'for': 'json'  }
-Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx']  }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
-
-" Misc
-Plug 'junegunn/vim-peekaboo'
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-Plug 'tpope/vim-dispatch'
-
-" Colors
-Plug 'dracula/vim'
-Plug 'flazz/vim-colorschemes'
-Plug 'robertmeta/nofrils'
-Plug 'trevordmiller/nova-vim'
-
-call plug#end()
-
 command! PU PlugUpdate | PlugUpgrade
 
 " ----------------------------------------------------------------------------
@@ -198,16 +198,14 @@ command! PU PlugUpdate | PlugUpgrade
 " ----------------------------------------------------------------------------
 
 syntax enable
-colorscheme nova
+colorscheme dracula
 set background=dark
 
 " ----------------------------------------------------------------------------
 " Matchit
 " ----------------------------------------------------------------------------
 
-if v:version > 800
-  packadd! matchit
-endif
+runtime macros/matchit.vim
 
 " ----------------------------------------------------------------------------
 " ale
