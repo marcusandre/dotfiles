@@ -185,7 +185,7 @@ nnoremap <silent> <C-l> :nohlsearch<cr><C-l>
 nnoremap n nzz
 nnoremap } }zz
 
-command! PU PlugUpdate | PlugUpgrade
+command! PU source $MYVIMRC | PlugUpdate | PlugUpgrade
 
 " ----------------------------------------------------------------------------
 " Colors
