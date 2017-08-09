@@ -11,7 +11,7 @@ alias ls='ls -GpF'
 alias ll='ls -alGpF'
 
 # editors
-alias e=$EDITOR
+alias e='vim'
 alias es='vim -o'
 alias ev='vim -O'
 
@@ -42,9 +42,6 @@ alias nb='npm run build'
 alias nc='npm run coverage'
 alias ns='npm run start'
 alias nt='npm run test'
-
-# directories
-alias code='cd $PROJECTS'
 
 # misc
 alias ag='ag --hidden'
