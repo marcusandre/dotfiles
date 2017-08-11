@@ -37,7 +37,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " Linting
-Plug 'w0rp/ale', { 'on': 'ALEEnable' }
+Plug 'w0rp/ale'
 
 " Languages
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
@@ -202,19 +202,32 @@ set background=dark
 runtime macros/matchit.vim
 
 " ----------------------------------------------------------------------------
-" ale
+" Ale
 " ----------------------------------------------------------------------------
 
-let &runtimepath.=',~/.vim/bundle/ale'
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_save = 1
 let g:ale_open_list = 1
-let g:ale_linters = {'js': ['standard']}
-filetype plugin on
+
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_set_loclist = 0
+" let g:ale_set_quickfix = 1
+
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" JavaScript and JSX
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5 --no-semi'
+
+let g:ale_linters = {
+      \'javascript': ['standard'],
+      \'jsx': ['standard']
+      \}
+
+let g:ale_fixers = {
+      \'javascript': ['prettier_standard'],
+      \'jsx': ['prettier_standard']
+      \}
 
 " ----------------------------------------------------------------------------
 " Tagbar
@@ -308,36 +321,41 @@ let g:jsx_ext_required = 0
 " ----------------------------------------------------------------------------
 
 augroup manual
-autocmd!
-au Filetype * setlocal shiftwidth=2 softtabstop=2 tabstop=2
+  autocmd!
+  au Filetype * setlocal shiftwidth=2 softtabstop=2 tabstop=2
 augroup end
 
 augroup golang
-autocmd!
-au FileType go setlocal nolist noexpandtab ts=4 sw=4 sts=4 modifiable
+  autocmd!
+  au FileType go setlocal nolist noexpandtab ts=4 sw=4 sts=4 modifiable
 augroup end
 
 augroup makefile
-autocmd!
-au FileType make setlocal nolist noet ts=4 sw=4 sts=4
+  autocmd!
+  au FileType make setlocal nolist noet ts=4 sw=4 sts=4
 augroup end
 
+augroup jsx
+  autocmd!
+  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
+
 augroup gitcommit
-autocmd!
-au FileType gitcommit setlocal tw=68 colorcolumn=69 spell
+  autocmd!
+  au FileType gitcommit setlocal tw=68 colorcolumn=69 spell
 augroup end
 
 augroup markdown
-autocmd!
-au FileType markdown setlocal spell
+  autocmd!
+  au FileType markdown setlocal spell
 augroup end
 
 augroup vagrantfile
-autocmd!
-au BufNewFile,BufRead Vagrantfile setlocal filetype=ruby
+  autocmd!
+  au BufNewFile,BufRead Vagrantfile setlocal filetype=ruby
 augroup end
 
 augroup help
-autocmd!
-au FileType help setlocal nospell
+  autocmd!
+  au FileType help setlocal nospell
 augroup end
