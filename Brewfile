@@ -28,7 +28,7 @@ brew "stow"
 brew "the_silver_searcher"
 brew "tmux"
 brew "tree"
-brew "vim", args: ["with-lua", "with-luajit", "with-override-system-vi", "with-python3", "with-tcl"]
+brew "vim", args: ["with-lua", "with-override-system-vi", "with-python3", "with-tcl"]
 brew "wallpaper"
 brew "wget"
 brew "youtube-dl"
