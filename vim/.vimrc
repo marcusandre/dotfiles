@@ -29,6 +29,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim', { 'for': ['css', 'html', 'php']  }
 
 " Navigating
+Plug 'jremmen/vim-ripgrep'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-unimpaired'
 

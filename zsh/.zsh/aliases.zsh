@@ -29,6 +29,10 @@ alias gr='cd $(git root)'
 alias gs='git s'
 alias gst='git st'
 
+# searching
+alias ack='rg'
+alias ag='rg'
+
 # fzf
 alias fa='locate / | fzf --height 50%'
 alias fp='locate $PROJECTS | fzf --height 50%'
@@ -42,9 +46,6 @@ alias nb='npm run build'
 alias nc='npm run coverage'
 alias ns='npm run start'
 alias nt='npm run test'
-
-# misc
-alias ag='ag --hidden'
 
 # create dir and cd
 function md() {
