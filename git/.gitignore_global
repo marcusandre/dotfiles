@@ -8,5 +8,7 @@ Session.vim
 [._]s[a-w][a-z]
 
 # Projects
+.idea/
 .vagrant/
 .vscode/
+node_modules/
