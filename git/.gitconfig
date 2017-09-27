@@ -6,11 +6,31 @@
   autocrlf = input
   excludesfile = ~/.gitignore_global
 [diff]
+  algorithm = histogram
+  compactionheuristic = true
+  mnemonicprefix = true
+  renames = copy
   tool = vimdiff
 [pull]
   rebase = true
 [merge]
   conflictstyle = diff3
+  summary = true
+[log]
+  date = iso
+  abbrevCommit = true
+[advice]
+  statusHints = false
+[credential]
+  helper = osxkeychain
+[github]
+  user = marcusandre
+[format]
+  pretty = "%H %ci %ce %ae %d %s"
+  numbered = auto
+[color]
+  interactive = auto
+  ui = auto
 [rerere]
   enabled = 1
 [alias]
@@ -20,6 +40,7 @@
   cached = diff --cached
   discard = reset --hard HEAD
   ds = !git diff | diffstat -C
+  edit = config --global -e
   hash = rev-parse --short HEAD
   l = log --pretty=oneline --abbrev-commit --graph --decorate
   ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
@@ -36,14 +57,3 @@
   unstage = reset -q HEAD --
   upgrade = !git fetch origin --prune && git rebase origin/master
   yesterday = diff --name-only --stat @{1.days.ago}
-[log]
-  date = iso
-  abbrevCommit = true
-[advice]
-  statusHints = false
-[credential]
-  helper = osxkeychain
-[github]
-  user = marcusandre
-[format]
-  pretty = "%H %ci %ce %ae %d %s"
