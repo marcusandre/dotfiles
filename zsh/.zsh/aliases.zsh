@@ -47,6 +47,9 @@ alias nc='npm run coverage'
 alias ns='npm run start'
 alias nt='npm run test'
 
+# misc
+alias starthtml="curl https://gist.githubusercontent.com/marcusandre/7c0ac2481fa269ae5fa712f6c9be37ff/raw/c43d39c95e701f835db346f771aabe6ef198b874/index.html"
+
 # create dir and cd
 function md() {
   mkdir -p "$1" && cd "$1"
