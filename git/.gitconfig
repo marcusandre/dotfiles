@@ -11,8 +11,11 @@
   mnemonicprefix = true
   renames = copy
   tool = vimdiff
+[push]
+  default = current
 [pull]
   rebase = true
+  default = current
 [merge]
   conflictstyle = diff3
   summary = true
