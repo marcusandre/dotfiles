@@ -17,7 +17,6 @@ setopt hist_ignore_space
 export GITHUB_USERNAME='marcusandre'
 
 # Go
-export GOPATH=$HOME/go
 export PROJECTS=$HOME/code
 
 # Path
