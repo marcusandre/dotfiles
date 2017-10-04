@@ -41,6 +41,7 @@
   br = branch
   branches = branch -a --color -v
   cached = diff --cached
+  df = !git diff --color | diff-so-fancy
   discard = reset --hard HEAD
   ds = !git diff | diffstat -C
   edit = config --global -e
