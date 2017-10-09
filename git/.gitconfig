@@ -45,7 +45,7 @@
   discard = reset --hard HEAD
   ds = !git diff | diffstat -C
   edit = config --global -e
-  hash = rev-parse --short HEAD
+  hash = !git rev-parse --short HEAD | cut -c -7
   l = log --pretty=oneline --abbrev-commit --graph --decorate
   ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
   nevermind = !git reset --hard HEAD && git clean -d -f

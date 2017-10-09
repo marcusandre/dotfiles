@@ -1,5 +1,8 @@
 STOW ?= stow
 DIRS ?= etc fish git nvim scripts tmux vim zsh
 
-links:
+install:
 	@$(STOW) -Rv $(DIRS)
+
+uninstall:
+	@$(STOW) -Dv $(DIRS)
