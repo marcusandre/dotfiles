@@ -15,6 +15,26 @@ for config (~/.zsh/*.zsh); do
   source $config
 done
 
+# Options
+setopt emacs
+setopt nobeep
+setopt nonomatch
+setopt shnullcmd
+setopt extendedglob
+setopt bashautolist
+setopt noautomenu
+setopt noalwayslastprompt
+
+# History
+setopt histignoredups
+setopt histignorespace
+setopt incappendhistory
+setopt extendedhistory
+
+SAVEHIST=10000
+HISTSIZE=10000
+HISTFILE=~/.zsh_history
+
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
   git clone https://github.com/zplug/zplug ~/.zplug

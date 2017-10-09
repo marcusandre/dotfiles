@@ -2,4 +2,4 @@
 # Completion
 #
 
-autoload -U compinit; compinit
+autoload -Uz compinit && compinit

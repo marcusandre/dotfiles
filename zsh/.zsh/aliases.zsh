@@ -9,6 +9,7 @@ alias ...='cd ../..'
 # fs
 alias ls='ls -GpF'
 alias ll='ls -alGpF'
+alias t='tree -I "vendor|node_modules"'
 
 # editors
 alias e='vim'
