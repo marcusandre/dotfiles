@@ -50,6 +50,7 @@ alias nt='npm run test'
 
 # misc
 alias fingerprint="ssh-keygen -E md5 -lf"
+alias randomkey="xxd -g 2 -l 64 -p /dev/random | tr -d '\n'"
 alias starthtml="curl https://gist.githubusercontent.com/marcusandre/7c0ac2481fa269ae5fa712f6c9be37ff/raw/c43d39c95e701f835db346f771aabe6ef198b874/index.html"
 
 # create dir and cd
