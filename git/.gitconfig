@@ -11,6 +11,8 @@
   mnemonicprefix = true
   renames = copy
   tool = vimdiff
+[difftool]
+  prompt = false
 [push]
   default = current
 [pull]
@@ -38,11 +40,10 @@
   enabled = 1
 [alias]
   append = commit -a --amend -C HEAD
-  br = branch
   branches = branch -a --color -v
   cached = diff --cached
-  df = !git diff --color | diff-so-fancy
-  discard = reset --hard HEAD
+  df = diff --color
+  discard = reset --hard HEAD^
   ds = !git diff | diffstat -C
   edit = config --global -e
   hash = !git rev-parse --short HEAD | cut -c -7
@@ -52,7 +53,6 @@
   prevent = update-index --assume-unchanged
   root = rev-parse --show-toplevel
   s = status -sb
-  st = status
   today = log --since=midnight --oneline --no-merges
   today-fs = log --since=midnight --no-merges --name-only
   track = checkout -t
@@ -61,3 +61,6 @@
   unstage = reset -q HEAD --
   upgrade = !git fetch origin --prune && git rebase origin/master
   yesterday = diff --name-only --stat @{1.days.ago}
+  d = difftool
+[gpg]
+	program = gpg

@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+set -e
+
+PACKAGES=(
+  awscli
+  bash
+  fd
+  git
+  git-extras
+  ripgrep
+  stow
+  trash
+  tree
+  vim
+  z
+  zsh
+)
+
+FOLDERS=(
+  etc
+  git
+  vim
+  zsh
+)
+
+install_packages() {
+  brew install ${PACKAGES[@]}
+}
+
+install_homebrew() {
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+}
+
+main() {
+  echo ""
+  echo "Install packages: ${PACKAGES[@]}"
+
+  if hash brew 2>/dev/null; then
+    install_packages
+  else
+    install_homebrew && install_packages
+  fi
+
+  echo ""
+  echo "Link folders: ${FOLDERS[@]}"
+  stow ${FOLDERS[@]}
+
+  echo ""
+  echo "Now switch to your prefered shell with the following command:"
+  echo ""
+  echo "  $ chsh -s \$(brew --prefix)/bin/zsh"
+  echo ""
+}
+
+main
