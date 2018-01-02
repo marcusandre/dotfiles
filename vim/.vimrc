@@ -88,7 +88,8 @@ filetype plugin indent on
 
 " Coloring
 syntax on
-colorscheme nofrils-dark
+" colorscheme nofrils-dark
+colorscheme dracula
 
 " Define swap files location
 set backupdir=~/.vim/backup,/tmp/
