@@ -1,18 +1,37 @@
 # == ENVIRONMENT
 
-# Environment setup
 export GOPATH=$HOME/go
 export PATH=$HOME/bin:$GOPATH/bin:$PATH
 
-# History settings
+# == OPTIONS
+
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt PUSHD_MINUS
+setopt GLOBDOTS # Complete hidden files
+
 SAVEHIST=9000
 HISTSIZE=9000
 HISTFILE=~/.zsh_history
+
+# == COMPLETION
+
+setopt BASH_AUTO_LIST
+setopt NO_AUTO_MENU
+setopt NO_ALWAYS_LAST_PROMPT
+
+zmodload zsh/complist
+autoload -Uz compinit && compinit
+
+# == MISC
+
+umask 002
+bindkey -e
 
 # == PROMPT (by Leah)
 # http://chneukirchen.org/blog/archive/2017/02/a-time-proven-zsh-prompt.html
@@ -55,9 +74,6 @@ cnprompt6() {
 
 cnprompt6
 
-# Complete hidden files
-setopt globdots
-
 # == ALIASES
 
 alias ..='cd ..'
@@ -90,6 +106,7 @@ export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 # == HELPERS
 
 # Create new folder an cd into
-md() {
-  mkdir -p "$1" && cd "$_"
-}
+md() { mkdir -p "$1" && cd "$_" }
+
+# Get external ip addr
+extip() { curl ifconfig.me/ip }
