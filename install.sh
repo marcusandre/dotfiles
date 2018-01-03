@@ -10,6 +10,7 @@ PACKAGES=(
   git-extras
   ripgrep
   stow
+  task
   trash
   tree
   vim

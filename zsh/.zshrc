@@ -1,7 +1,15 @@
 # == ENVIRONMENT
 
+# English with UTF8
+export LANG=en_US.UTF-8
+export LC_CTYPE=$LANG
+export LC_COLLATE=C
+
+# Path
 export GOPATH=$HOME/go
 export PATH=$HOME/bin:$GOPATH/bin:$PATH
+
+export EDITOR=vim
 
 # == OPTIONS
 
@@ -91,9 +99,8 @@ alias la='ls -la'
 alias ll='ls -la'
 alias rf='rm -fr'
 alias rmds='find . -name ".DS_Store" -type f -delete'
-alias vgs='vagrant global-status'
-alias vsp='vagrant suspend'
-alias vup='vagrant up'
+alias t='task'
+alias w='timew'
 
 # == FZF
 
