@@ -1,4 +1,7 @@
 # == ENVIRONMENT
+if [[ -f $HOME/.private.zsh ]]; then
+  source $HOME/.private.zsh
+fi
 
 # English with UTF8
 export LANG=en_US.UTF-8
@@ -30,8 +33,9 @@ HISTFILE=~/.zsh_history
 # == COMPLETION
 
 setopt BASH_AUTO_LIST
-setopt NO_AUTO_MENU
+# setopt COMPLETE_ALIASES
 setopt NO_ALWAYS_LAST_PROMPT
+setopt NO_AUTO_MENU
 
 zmodload zsh/complist
 autoload -Uz compinit && compinit
@@ -85,20 +89,21 @@ cnprompt6
 # == ALIASES
 
 alias ..='cd ..'
-alias ack='rg'
-alias ag='rg'
+alias ack=' rg'
+alias ag=' rg'
+alias d='dirs -v'
 alias gba='git branches'
 alias gd='git df'
 alias gl='git l'
 alias gll='git ll'
 alias gp='git push'
-alias gr='git root'
-alias gs='git s'
-alias gst='git status'
-alias la='ls -la'
-alias ll='ls -la'
+alias gr='cd $(git root)'
+alias la=' ls -la'
+alias ll=' ls -la'
 alias rf='rm -fr'
 alias rmds='find . -name ".DS_Store" -type f -delete'
+alias s='git s'
+alias ss='git status'
 alias t='task'
 alias w='timew'
 

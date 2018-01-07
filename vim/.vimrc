@@ -30,7 +30,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
 
-Plug 'dracula/vim'
+" Plug 'dracula/vim'
+Plug 'flazz/vim-colorschemes'
 Plug 'robertmeta/nofrils'
 
 call plug#end()
@@ -88,8 +89,7 @@ filetype plugin indent on
 
 " Coloring
 syntax on
-" colorscheme nofrils-dark
-colorscheme dracula
+colorscheme tomorrow
 
 " Define swap files location
 set backupdir=~/.vim/backup,/tmp/
