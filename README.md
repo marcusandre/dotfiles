@@ -1,5 +1,7 @@
 # dotfiles
 
+Beware, very personal WIP.
+
 ## Install
 
 ```
