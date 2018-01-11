@@ -19,6 +19,7 @@ PACKAGES=(
 )
 
 FOLDERS=(
+  chunkwm
   etc
   git
   vim
@@ -37,11 +38,13 @@ main() {
   echo ""
   echo "Install packages: ${PACKAGES[@]}"
 
-  if hash brew 2>/dev/null; then
-    install_packages
-  else
-    install_homebrew && install_packages
+  # install homebrew if it's missing
+  if ! hash brew 2>/dev/null; then
+    install_homebrew
   fi
+
+  # install needed packages
+  install_packages
 
   echo ""
   echo "Link folders: ${FOLDERS[@]}"

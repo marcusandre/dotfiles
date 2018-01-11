@@ -42,9 +42,11 @@
   append = commit -a --amend -C HEAD
   branches = branch -a --color -v
   cached = diff --cached
+  d = difftool
   df = diff --color
   discard = reset --hard HEAD^
   ds = !git diff | diffstat -C
+  dw = diff --color --word-diff
   edit = config --global -e
   hash = !git rev-parse --short HEAD | cut -c -7
   l = log --pretty=oneline --abbrev-commit --graph --decorate
@@ -61,6 +63,5 @@
   unstage = reset -q HEAD --
   upgrade = !git fetch origin --prune && git rebase origin/master
   yesterday = diff --name-only --stat @{1.days.ago}
-  d = difftool
 [gpg]
 	program = gpg

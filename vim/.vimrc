@@ -9,6 +9,7 @@ endif
 
 call plug#begin()
 
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'blinry/vimboy'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
@@ -18,10 +19,9 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
+Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
-Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-unimpaired'
 
 Plug 'airblade/vim-gitgutter'
@@ -30,13 +30,17 @@ Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
 
-" Plug 'dracula/vim'
+Plug 'SirVer/ultisnips', { 'for': 'go' }
+
+Plug 'fatih/molokai'
 Plug 'flazz/vim-colorschemes'
+Plug 'owickstrom/vim-colors-paramount'
 Plug 'robertmeta/nofrils'
 
 call plug#end()
 
-" Common settings
+" == Common settings
+
 set hidden
 set ruler
 set encoding=utf-8
@@ -49,7 +53,8 @@ set guioptions=
 set nowrap
 
 " Enable line numbers
-set number numberwidth=2 relativenumber
+" INFO: keep disabled for now, because performance matters more
+" set number numberwidth=2 relativenumber
 
 " Define statusline infos
 set laststatus=2
@@ -87,10 +92,6 @@ set wildignore+=.git,vendor/*,node_modules
 filetype off
 filetype plugin indent on
 
-" Coloring
-syntax on
-colorscheme tomorrow
-
 " Define swap files location
 set backupdir=~/.vim/backup,/tmp/
 set directory=~/.vim/backup,/tmp
@@ -101,11 +102,25 @@ if has("autocmd")
         \| exe "normal g'\"" | endif
 endif
 
+" == Syntax
+syntax on
+set t_Co=256
+set background=light
+colorscheme dracula
+
+" == Mappings
+
 " Set leader key
 let mapleader = ","
 
+" Disable Ex-Mode
+nnoremap Q <nop>
+
 " Change word and jump to next occurrence
 nnoremap c* *Ncgn
+
+" Clear current line (like S<esc>)
+nnoremap X 0D
 
 " Enhanced indenting
 vnoremap < <gv
@@ -120,6 +135,7 @@ nnoremap <leader>d :bp\|bd #<cr>
 nnoremap <silent> <C-l> :nohlsearch<cr><C-l>
 
 " Add TODO comment
+nnoremap t iTODO: <esc>:Commentary<cr>==A
 nnoremap T iTODO(mgs): <esc>:Commentary<cr>==A
 
 " Save files
@@ -134,6 +150,9 @@ nnoremap <leader>c :cclose<cr>
 " Toggle wrap
 nnoremap <leader>r :set wrap!<cr>
 
+" insert lambda λ
+imap <C-l> <C-k>l*
+
 " FZF
 nnoremap <leader>F :Files<cr>
 nnoremap <leader>f :Buffers<cr>
@@ -142,7 +161,7 @@ nnoremap <leader>G :GFiles?<cr>
 nnoremap <leader>g :GFiles<cr>
 
 " EasyMotion
-nmap F <Plug>(easymotion-prefix)s
+nmap Q <Plug>(easymotion-prefix)s
 nmap <leader><leader> <Plug>(easymotion-prefix)
 
 " Easy Align
@@ -153,17 +172,14 @@ nmap ga <Plug>(EasyAlign)
 nmap gh <Plug>GitGutterNextHunk
 nmap gH <Plug>GitGutterPrevHunk
 
-" Ack
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+" Rg
+nnoremap <leader>a :Rg<Space>
 
-cnoreabbrev Ack Ack!
-nnoremap <leader>a :Ack!<Space>
+" == Plugins
 
 " vim-go
-let g:go_fmt_command = "goimports"
 let g:go_autodetect_gopath = 1
+let g:go_fmt_command = "goimports"
 let g:go_list_type = "quickfix"
 
 let g:go_highlight_types = 1

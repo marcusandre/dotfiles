@@ -98,6 +98,8 @@ alias gl='git l'
 alias gll='git ll'
 alias gp='git push'
 alias gr='cd $(git root)'
+alias gw='git dw'
+alias k='cd $GOPATH/src/gitlab.com/khakibytes'
 alias la=' ls -la'
 alias ll=' ls -la'
 alias rf='rm -fr'
@@ -110,10 +112,6 @@ alias w='timew'
 # == FZF
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export FZF_DEFAULT_COMMAND="fd . $HOME"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
 # == HELPERS
 
