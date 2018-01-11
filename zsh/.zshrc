@@ -9,8 +9,9 @@ export LC_CTYPE=$LANG
 export LC_COLLATE=C
 
 # Path
-export GOPATH=$HOME/go
-export PATH=$HOME/bin:$GOPATH/bin:$PATH
+export GOPATH="$HOME/go"
+export RUSTPATH="$HOME/.cargo/bin"
+export PATH=$HOME/bin:$GOPATH/bin:$RUSTPATH:$PATH
 
 export EDITOR=vim
 
