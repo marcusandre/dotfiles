@@ -19,7 +19,7 @@ PACKAGES=(
 )
 
 FOLDERS=(
-  chunkwm
+  curl
   etc
   git
   vim

@@ -32,6 +32,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
 
 Plug 'SirVer/ultisnips', { 'for': 'go' }
 
+Plug 'arcticicestudio/nord-vim'
 Plug 'fatih/molokai'
 Plug 'flazz/vim-colorschemes'
 Plug 'owickstrom/vim-colors-paramount'
@@ -106,7 +107,7 @@ endif
 syntax on
 set t_Co=256
 set background=light
-colorscheme dracula
+colorscheme nofrils-acme
 
 " == Mappings
 

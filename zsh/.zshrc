@@ -8,12 +8,23 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=$LANG
 export LC_COLLATE=C
 
+
+# Glenda
+if [[ -d $HOME/9/plan9port ]]; then
+  export PLAN9=$HOME/9/plan9port
+  export PATH=$PATH:$PLAN9/bin
+fi
+
+# Editor
+export EDITOR=vim
+
 # Path
 export GOPATH="$HOME/go"
 export RUSTPATH="$HOME/.cargo/bin"
 export PATH=$HOME/bin:$GOPATH/bin:$RUSTPATH:$PATH
 
-export EDITOR=vim
+# Legacy projects
+export PATH="/usr/local/opt/ansible@2.0/bin:$PATH"
 
 # == OPTIONS
 
@@ -103,7 +114,9 @@ alias gw='git dw'
 alias k='cd $GOPATH/src/gitlab.com/khakibytes'
 alias la=' ls -la'
 alias ll=' ls -la'
+alias ns='cat package.json | jq ".scripts"'
 alias rf='rm -fr'
+alias rm='trash'
 alias rmds='find . -name ".DS_Store" -type f -delete'
 alias s='git s'
 alias ss='git status'
@@ -114,6 +127,10 @@ alias w='timew'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# == Z
+
+[ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
+
 # == HELPERS
 
 # Create new folder an cd into
@@ -121,3 +138,6 @@ md() { mkdir -p "$1" && cd "$_" }
 
 # Get external ip addr
 extip() { curl ifconfig.me/ip }
+
+# Safety copies
+dl3() { youtube-dl --output "%(title)s.%(ext)s" -x --audio-format mp3 --prefer-ffmpeg "$1" }

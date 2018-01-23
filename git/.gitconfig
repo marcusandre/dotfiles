@@ -11,6 +11,8 @@
   mnemonicprefix = true
   renames = copy
   tool = vimdiff
+[apply]
+  whitespace = fix
 [difftool]
   prompt = false
 [push]
