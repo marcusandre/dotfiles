@@ -28,7 +28,16 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
+Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 Plug 'SirVer/ultisnips', { 'for': 'go' }
 
@@ -177,6 +186,9 @@ nmap gH <Plug>GitGutterPrevHunk
 nnoremap <leader>a :Rg<Space>
 
 " == Plugins
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
 
 " vim-go
 let g:go_autodetect_gopath = 1
