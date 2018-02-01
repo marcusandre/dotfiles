@@ -207,11 +207,37 @@ nmap <C-g> :GoDeclsDir<cr>
 imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 
 " Filetypes
-augroup manual      autocmd! au Filetype * setlocal shiftwidth=2 softtabstop=2 tabstop=2 augroup end
-augroup golang      autocmd! au FileType go setlocal nolist noexpandtab ts=4 sw=4 sts=4 modifiable augroup end
-augroup makefile    autocmd! au FileType make setlocal nolist noet ts=4 sw=4 sts=4 augroup end
-augroup jsx         autocmd! au BufNewFile,BufRead *.jsx set filetype=javascript.jsx augroup END
-augroup gitcommit   autocmd! au FileType gitcommit setlocal tw=68 colorcolumn=69 spell augroup end
-augroup markdown    autocmd! au FileType markdown setlocal spell augroup end
-augroup vagrantfile autocmd! au BufNewFile,BufRead Vagrantfile setlocal filetype=ruby augroup end
-augroup help        autocmd! au FileType help setlocal nospell augroup end
+augroup manual
+  autocmd!
+  autocmd Filetype * setlocal sw=2 sts=2 ts=2
+augroup end
+
+augroup golang
+  autocmd!
+  autocmd FileType go setlocal nolist noexpandtab ts=4 sw=4 sts=4 modifiable
+augroup end
+
+augroup makefile
+  autocmd!
+  autocmd FileType make setlocal nolist noexpandtab ts=4 sw=4 sts=4
+augroup end
+
+augroup jsx
+  autocmd!
+  autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
+
+augroup gitcommit
+  autocmd!
+  autocmd FileType gitcommit setlocal tw=68 colorcolumn=69 spell
+augroup end
+
+augroup markdown
+  autocmd!
+  autocmd FileType markdown setlocal spell
+augroup end
+
+augroup vagrantfile
+  autocmd!
+  autocmd BufNewFile,BufRead Vagrantfile setlocal filetype=ruby
+augroup end
