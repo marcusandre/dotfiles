@@ -10,12 +10,12 @@ endif
 call plug#begin()
 
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'blinry/vimboy'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/tpope-vim-abolish'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
@@ -31,15 +31,16 @@ Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript'  }
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
 
-Plug 'SirVer/ultisnips', { 'for': 'go' }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 Plug 'arcticicestudio/nord-vim'
 Plug 'fatih/molokai'
@@ -113,10 +114,15 @@ if has("autocmd")
 endif
 
 " == Syntax
+
 syntax on
 set t_Co=256
-set background=light
-colorscheme Tomorrow
+
+" set background=light
+" colorscheme Tomorrow
+
+set background=dark
+color grb256
 
 " == Mappings
 
@@ -188,7 +194,7 @@ nnoremap <leader>a :Rg<Space>
 " == Plugins
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 " vim-go
 let g:go_autodetect_gopath = 1
