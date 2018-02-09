@@ -101,27 +101,18 @@ cnprompt6
 # == ALIASES
 
 alias ..='cd ..'
-alias ack=' rg'
-alias ag=' rg'
 alias d='dirs -v'
-alias gba='git branches'
-alias gd='git df'
-alias gl='git l'
-alias gll='git ll'
-alias gp='git push'
+alias gh='git rev-parse --short HEAD | cut -c -7 | xargs echo -n | pbcopy'
 alias gr='cd $(git root)'
-alias gw='git dw'
-alias k='cd $GOPATH/src/gitlab.com/khakibytes'
 alias la=' ls -la'
+alias ld=' ls -lad'
 alias ll=' ls -la'
 alias ns='cat package.json | jq ".scripts"'
 alias rf='rm -fr'
 alias rm='trash'
 alias rmds='find . -name ".DS_Store" -type f -delete'
 alias s='git s'
-alias ss='git status'
-alias t='task'
-alias w='timew'
+alias ss='git st'
 
 # == FZF
 
