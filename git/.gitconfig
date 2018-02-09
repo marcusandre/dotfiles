@@ -1,69 +1,43 @@
 [user]
   email = hello@marcusandre.de
   name = Marcus André
-[core]
-  abbrev = 12
-  autocrlf = input
-  excludesfile = ~/.gitignore_global
-[diff]
-  algorithm = histogram
-  compactionheuristic = true
-  mnemonicprefix = true
-  renames = copy
-  tool = vimdiff
 [apply]
   whitespace = fix
-[difftool]
-  prompt = false
-[push]
-  default = current
-[pull]
-  rebase = true
-  default = current
-[merge]
-  conflictstyle = diff3
-  summary = true
 [log]
   date = iso
   abbrevCommit = true
-[advice]
-  statusHints = false
+[color]
+  interactive = auto
+  ui = auto
+[alias]
+  aa = add --all
+  amend = commit --amend
+  append = commit -a --amend -C HEAD
+  branches = branch -a --color -v
+  ci = commit --verbose
+  co = checkout
+  dc = diff --cached
+  dh1 = diff HEAD~1
+  di = diff --color
+  discard = reset --hard HEAD^
+  ds = diff --stat=160,120
+  dw = diff --color --word-diff
+  fa = fetch --all
+  ff = merge --ff-only
+  hash = !git rev-parse --short HEAD | cut -c -7 | xargs echo -n
+  l = log --pretty=oneline --abbrev-commit --graph --decorate
+  ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
+  nevermind = !git reset --hard HEAD && git clean -d -f
+  noff = merge --no-ff
+  prevent = update-index --assume-unchanged
+  pullff = pull --ff-only
+  root = rev-parse --show-toplevel
+  s = status -sb
+  st = status
+  today = log --since=midnight --oneline --no-merges
+  track = checkout -t
+  yesterday = diff --name-only --stat @{1.days.ago}
 [credential]
   helper = osxkeychain
 [github]
   user = marcusandre
-[format]
-  pretty = "%H %ci %ce %ae %d %s"
-  numbered = auto
-[color]
-  interactive = auto
-  ui = auto
-[rerere]
-  enabled = 1
-[alias]
-  append = commit -a --amend -C HEAD
-  branches = branch -a --color -v
-  cached = diff --cached
-  d = difftool
-  df = diff --color
-  discard = reset --hard HEAD^
-  ds = !git diff | diffstat -C
-  dw = diff --color --word-diff
-  edit = config --global -e
-  hash = !git rev-parse --short HEAD | cut -c -7
-  l = log --pretty=oneline --abbrev-commit --graph --decorate
-  ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
-  nevermind = !git reset --hard HEAD && git clean -d -f
-  prevent = update-index --assume-unchanged
-  root = rev-parse --show-toplevel
-  s = status -sb
-  today = log --since=midnight --oneline --no-merges
-  today-fs = log --since=midnight --no-merges --name-only
-  track = checkout -t
-  unmerged = ls-files --unmerged
-  unpush = push -f origin HEAD^:master
-  unstage = reset -q HEAD --
-  upgrade = !git fetch origin --prune && git rebase origin/master
-  yesterday = diff --name-only --stat @{1.days.ago}
-[gpg]
-	program = gpg
