@@ -19,6 +19,7 @@ PACKAGES=(
 )
 
 FOLDERS=(
+  bin
   curl
   etc
   git
