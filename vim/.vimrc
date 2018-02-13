@@ -118,11 +118,8 @@ endif
 syntax on
 set t_Co=256
 
-" set background=light
-" colorscheme Tomorrow
-
-set background=dark
-color grb256
+set background=light
+colorscheme Tomorrow
 
 " == Mappings
 

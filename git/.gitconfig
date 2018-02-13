@@ -22,7 +22,7 @@
   discard = reset --hard HEAD^
   ds = diff --stat=160,120
   dw = diff --color --word-diff
-  fa = fetch --all
+  fa = fetch --all --prune
   ff = merge --ff-only
   hash = !git rev-parse --short HEAD | cut -c -7 | xargs echo -n
   l = log --pretty=oneline --abbrev-commit --graph --decorate

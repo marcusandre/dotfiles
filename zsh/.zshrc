@@ -113,6 +113,7 @@ alias rm='trash'
 alias rmds='find . -name ".DS_Store" -type f -delete'
 alias s='git s'
 alias ss='git st'
+alias wl='wget -c -q --show-progress'
 
 # == FZF
 
