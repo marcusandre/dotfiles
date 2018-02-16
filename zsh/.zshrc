@@ -102,7 +102,7 @@ cnprompt6
 
 alias ..='cd ..'
 alias d='dirs -v'
-alias gh='git rev-parse --short HEAD | cut -c -7 | xargs echo -n | pbcopy'
+alias gh='git-jira-hash'
 alias gr='cd $(git root)'
 alias la=' ls -la'
 alias ld=' ls -lad'
