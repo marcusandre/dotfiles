@@ -21,7 +21,7 @@ export EDITOR=vim
 # Path
 export GOPATH="$HOME/go"
 export RUSTPATH="$HOME/.cargo/bin"
-export PATH=$HOME/bin:$GOPATH/bin:$RUSTPATH:$PATH
+export PATH="$HOME/bin:$PATH:$GOPATH/bin:$RUSTPATH"
 
 # Legacy projects
 export PATH="/usr/local/opt/ansible@2.0/bin:$PATH"
@@ -102,17 +102,24 @@ cnprompt6
 
 alias ..='cd ..'
 alias d='dirs -v'
+alias e='vim'
+alias flushdns='sudo killall -HUP mDNSResponder'
+alias gb='git branches'
+alias gd='git di'
 alias gh='git-jira-hash'
+alias gl='git l'
+alias gll='git ll'
+alias gp='git push'
 alias gr='cd $(git root)'
 alias la=' ls -la'
 alias ld=' ls -lad'
 alias ll=' ls -la'
 alias ns='cat package.json | jq ".scripts"'
 alias rf='rm -fr'
-alias rm='trash'
 alias rmds='find . -name ".DS_Store" -type f -delete'
 alias s='git s'
 alias ss='git st'
+alias vi='vim'
 alias wl='wget -c -q --show-progress'
 
 # == FZF

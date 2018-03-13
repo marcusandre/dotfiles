@@ -6,6 +6,8 @@
 [log]
   date = iso
   abbrevCommit = true
+[merge]
+  conflictstyle = diff3
 [color]
   interactive = auto
   ui = auto
@@ -34,6 +36,7 @@
   root = rev-parse --show-toplevel
   s = status -sb
   st = status
+  sup = submodule update --recursive --remote
   today = log --since=midnight --oneline --no-merges
   track = checkout -t
   yesterday = diff --name-only --stat @{1.days.ago}
