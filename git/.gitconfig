@@ -1,11 +1,15 @@
 [user]
   email = hello@marcusandre.de
   name = Marcus André
+[core]
+  editor = vim
 [apply]
   whitespace = fix
 [log]
   date = iso
   abbrevCommit = true
+[push]
+  default = current
 [merge]
   conflictstyle = diff3
 [color]
@@ -13,7 +17,7 @@
   ui = auto
 [alias]
   aa = add --all
-  amend = commit --amend
+  amend = commit --amend --no-edit
   append = commit -a --amend -C HEAD
   branches = branch -a --color -v
   ci = commit --verbose
