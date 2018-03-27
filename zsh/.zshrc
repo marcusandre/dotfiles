@@ -16,7 +16,7 @@ if [[ -d $HOME/9/plan9port ]]; then
 fi
 
 # Editor
-export EDITOR=vim
+export EDITOR=nvim
 
 # Path
 export GOPATH="$HOME/go"
@@ -102,7 +102,7 @@ cnprompt6
 
 alias ..='cd ..'
 alias d='dirs -v'
-alias e='vim'
+alias e='nvim'
 alias flushdns='sudo killall -HUP mDNSResponder'
 alias gb='git branches'
 alias gd='git di'

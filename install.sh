@@ -8,6 +8,7 @@ PACKAGES=(
   fd
   git
   git-extras
+  neovim
   ripgrep
   stow
   task
@@ -23,6 +24,7 @@ FOLDERS=(
   curl
   etc
   git
+  nvim
   vim
   zsh
 )
