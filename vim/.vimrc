@@ -12,6 +12,7 @@ call plug#begin()
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/tpope-vim-abolish'
 Plug 'tpope/vim-commentary'
@@ -120,7 +121,7 @@ syntax on
 set t_Co=256
 
 set background=light
-colorscheme Tomorrow
+colorscheme tomorrow
 
 " == Mappings
 
@@ -220,6 +221,11 @@ augroup golang
   autocmd!
   autocmd FileType go setlocal nolist noexpandtab ts=4 sw=4 sts=4 modifiable
 augroup end
+
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
 
 augroup makefile
   autocmd!

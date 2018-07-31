@@ -9,22 +9,17 @@ export LC_CTYPE=$LANG
 export LC_COLLATE=C
 
 
-# Glenda
-if [[ -d $HOME/9/plan9port ]]; then
-  export PLAN9=$HOME/9/plan9port
-  export PATH=$PATH:$PLAN9/bin
-fi
-
 # Editor
 export EDITOR=nvim
 
 # Path
 export GOPATH="$HOME/go"
 export RUSTPATH="$HOME/.cargo/bin"
-export PATH="$HOME/bin:$PATH:$GOPATH/bin:$RUSTPATH"
+export PATH="$HOME/bin:$PATH:/usr/local/sbin:$GOPATH/bin:$RUSTPATH"
 
-# Legacy projects
-export PATH="/usr/local/opt/ansible@2.0/bin:$PATH"
+# nvm
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 # == OPTIONS
 
@@ -111,15 +106,17 @@ alias gl='git l'
 alias gll='git ll'
 alias gp='git push'
 alias gr='cd $(git root)'
-alias la=' ls -la'
-alias ld=' ls -lad'
-alias ll=' ls -la'
+alias la=' ls -laG'
+alias ld=' ls -ladG'
+alias ll=' ls -laG'
 alias ns='cat package.json | jq ".scripts"'
 alias rf='rm -fr'
 alias rmds='find . -name ".DS_Store" -type f -delete'
 alias s='git s'
 alias ss='git st'
-alias vi='vim'
+alias t='tree -I "node_modules"'
+alias vi='nvim'
+alias vim='nvim'
 alias wl='wget -c -q --show-progress'
 
 # == FZF
