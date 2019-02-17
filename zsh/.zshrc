@@ -15,7 +15,7 @@ export EDITOR=nvim
 # Path
 export GOPATH="$HOME/go"
 export RUSTPATH="$HOME/.cargo/bin"
-export PATH="$HOME/bin:$PATH:/usr/local/sbin:$GOPATH/bin:$RUSTPATH"
+export PATH="$HOME/bin:$PATH:/usr/local/sbin:$GOPATH/bin:/usr/local/opt/go/libexec/bin:$RUSTPATH"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -97,7 +97,6 @@ cnprompt6
 
 alias ..='cd ..'
 alias d='dirs -v'
-alias e='nvim'
 alias flushdns='sudo killall -HUP mDNSResponder'
 alias gb='git branches'
 alias gd='git di'
@@ -115,8 +114,6 @@ alias rmds='find . -name ".DS_Store" -type f -delete'
 alias s='git s'
 alias ss='git st'
 alias t='tree -I "node_modules"'
-alias vi='nvim'
-alias vim='nvim'
 alias wl='wget -c -q --show-progress'
 
 # == FZF
