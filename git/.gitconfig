@@ -3,9 +3,11 @@
   name = Marcus André
 [core]
   editor = vim
-	excludesfile = /Users/megges/.gitignore-global
+  excludesfile = /Users/megges/.gitignore-global
 [apply]
   whitespace = fix
+[commit]
+  verbose = true
 [log]
   date = iso
   abbrevCommit = true
@@ -13,6 +15,8 @@
   default = current
 [merge]
   conflictstyle = diff3
+[credential]
+  helper = osxkeychain
 [color]
   interactive = auto
   ui = auto
@@ -45,7 +49,5 @@
   today = log --since=midnight --oneline --no-merges
   track = checkout -t
   yesterday = diff --name-only --stat @{1.days.ago}
-[credential]
-  helper = osxkeychain
 [github]
   user = marcusandre
