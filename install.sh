@@ -3,15 +3,11 @@
 set -e
 
 PACKAGES=(
-  awscli
   bash
-  fd
   git
   git-extras
-  neovim
   ripgrep
   stow
-  task
   trash
   tree
   vim
@@ -21,10 +17,9 @@ PACKAGES=(
 
 FOLDERS=(
   bin
-  curl
   etc
   git
-  nvim
+  tmux
   vim
   zsh
 )
