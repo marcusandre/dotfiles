@@ -30,14 +30,16 @@ call plug#end()
 
 set autoread
 set backspace=indent,eol,start
+set complete-=i
 set hidden
 set nowrap
 set showcmd
-set complete-=i
+set ttimeout
+set ttimeoutlen=100
 
 " numbers
-set number 
-set numberwidth=2 
+set number
+set numberwidth=2
 set relativenumber
 set splitbelow splitright
 
@@ -46,6 +48,8 @@ set laststatus=2
 set modelines=2
 set showcmd
 set synmaxcol=1000
+set wildmenu
+set display=truncate
 
 " white space
 set tabstop=2
@@ -59,7 +63,6 @@ set hlsearch incsearch
 set ignorecase smartcase
 
 " file type detection
-filetype off
 filetype plugin indent on
 
 " swap files
@@ -69,9 +72,17 @@ set undodir=/tmp//,.
 
 " Remember last location in file
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-        \| exe "normal g'\"" | endif
+  autocmd BufReadPost *
+        \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+        \ |   exe "normal! g`\""
+        \ | endif
 endif
+
+" Enable using the mouse if available.
+if has('mouse')
+  set mouse=a
+endif
+
 
 " == Syntax
 
@@ -101,7 +112,7 @@ let &statusline = s:statusline_expr()
 let mapleader = ","
 
 " Disable Ex-Mode
-nnoremap Q <nop>
+nnoremap Q gq
 
 " Change word and jump to next occurrence
 nnoremap c* *Ncgn
