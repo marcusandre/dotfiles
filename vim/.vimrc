@@ -13,16 +13,18 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'nightsense/snow'
+Plug 'mhinz/vim-signify'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sgur/vim-editorconfig'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
-Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+Plug 'dracula/vim'
+Plug 'nightsense/snow'
 
 call plug#end()
 
@@ -89,8 +91,9 @@ endif
 syntax on
 set t_Co=256
 
+let g:dracula_colorterm = 0
 set background=dark
-colorscheme snow
+colorscheme dracula
 
 " == statusline
 function! s:statusline_expr()
