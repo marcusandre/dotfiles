@@ -1,25 +1,4 @@
-# == ENVIRONMENT
-if [[ -f $HOME/.private.zsh ]]; then
-  source $HOME/.private.zsh
-fi
-
-# English with UTF8
-export LANG=en_US.UTF-8
-export LC_CTYPE=$LANG
-export LC_COLLATE=C
-
-
-# Editor
-export EDITOR=nvim
-
-# Path
-export GOPATH="$HOME/go"
-export RUSTPATH="$HOME/.cargo/bin"
-export PATH="$HOME/bin:$PATH:/usr/local/sbin:$GOPATH/bin:/usr/local/opt/go/libexec/bin:$RUSTPATH"
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+export ZSH=~/.zsh
 
 # == OPTIONS
 
@@ -31,7 +10,6 @@ setopt EXTENDED_HISTORY
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_MINUS
-setopt GLOBDOTS # Complete hidden files
 
 SAVEHIST=9000
 HISTSIZE=9000
@@ -39,13 +17,13 @@ HISTFILE=~/.zsh_history
 
 # == COMPLETION
 
-setopt BASH_AUTO_LIST
-# setopt COMPLETE_ALIASES
-setopt NO_ALWAYS_LAST_PROMPT
-setopt NO_AUTO_MENU
+setopt GLOBDOTS # Complete hidden files
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-zmodload zsh/complist
-autoload -Uz compinit && compinit
+# Load and run compinit
+autoload -U compinit
+compinit -i
 
 # == MISC
 
@@ -115,14 +93,6 @@ alias s='git s'
 alias ss='git st'
 alias t='tree -I "node_modules"'
 alias wl='wget -c -q --show-progress'
-
-# == FZF
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# == Z
-
-[ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
 
 # == HELPERS
 
