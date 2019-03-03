@@ -25,9 +25,8 @@ export LANG=en_US.UTF-8
 autoload -U compinit
 compinit -i
 
-# == MISC
+# == Keyboard
 
-umask 002
 bindkey -e
 
 # == PROMPT (by Leah)

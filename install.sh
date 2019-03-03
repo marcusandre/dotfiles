@@ -6,6 +6,7 @@ PACKAGES=(
   bash
   git
   git-extras
+  jq
   ripgrep
   stow
   trash
