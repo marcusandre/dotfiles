@@ -22,7 +22,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 Plug 'dracula/vim'
 Plug 'nightsense/snow'
@@ -183,10 +183,12 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 let g:ale_linters = {
+\   'rust': ['rls', 'cargo', 'rustc'],
 \   'javascript': ['eslint'],
 \}
 
 let g:ale_fixers = {
+\   'rust': ['rustfmt'],
 \   'html': ['prettier'],
 \   'javascript': ['prettier', 'eslint'],
 \}
