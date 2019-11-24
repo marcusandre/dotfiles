@@ -4,6 +4,7 @@
 [core]
   editor = vim
   excludesfile = /Users/megges/.gitignore-global
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [apply]
   whitespace = fix
 [commit]
