@@ -103,3 +103,6 @@ extip() { curl ifconfig.me/ip }
 
 # Safety copies
 dl3() { youtube-dl --output "%(title)s.%(ext)s" -x --audio-format mp3 --prefer-ffmpeg "$1" }
+
+# init fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
