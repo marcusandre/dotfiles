@@ -4,6 +4,9 @@ set -e
 
 PACKAGES=(
   bash
+  diff-so-fancy
+  fd
+  fzf
   git
   git-extras
   jq
@@ -29,8 +32,9 @@ install_packages() {
   brew install ${PACKAGES[@]}
 }
 
-install_homebrew() {
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+panic_homebrew() {
+  echo "Please install homebrew before running this script"
+  exit 1
 }
 
 main() {
@@ -39,7 +43,7 @@ main() {
 
   # install homebrew if it's missing
   if ! hash brew 2>/dev/null; then
-    install_homebrew
+    panic_homebrew
   fi
 
   # install needed packages
