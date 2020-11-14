@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-npx license mit > LICENSE
-npx gitignore node
-npm init -y

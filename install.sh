@@ -4,7 +4,6 @@ set -e
 
 PACKAGES=(
   bash
-  diff-so-fancy
   fd
   fzf
   git
@@ -20,10 +19,8 @@ PACKAGES=(
 )
 
 FOLDERS=(
-  bin
   etc
   git
-  tmux
   vim
   zsh
 )
