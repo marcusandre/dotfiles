@@ -51,3 +51,5 @@
   yesterday = diff --name-only --stat @{1.days.ago}
 [github]
   user = marcusandre
+[init]
+	defaultBranch = main
