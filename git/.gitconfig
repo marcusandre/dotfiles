@@ -1,53 +1,28 @@
 [user]
-  email = hello@marcusandre.de
+  email = hello+github@marcusandre.de
   name = Marcus André
 [core]
-  editor = vim
-  excludesfile = /Users/megges/.gitignore-global
+  editor = nvim
 [apply]
   whitespace = fix
 [commit]
   verbose = true
-[log]
-  date = iso
-  abbrevCommit = true
 [push]
   default = current
-[merge]
-  conflictstyle = diff3
 [credential]
   helper = osxkeychain
-[color]
-  interactive = auto
-  ui = auto
 [alias]
-  aa = add --all
   amend = commit --amend --no-edit
   append = commit -a --amend -C HEAD
   branches = branch -a --color -v
-  ci = commit --verbose
   co = checkout
-  dc = diff --cached
-  dh1 = diff HEAD~1
-  di = diff --color
-  discard = reset --hard HEAD^
-  ds = diff --stat=160,120
-  dw = diff --color --word-diff
   fa = fetch --all --prune
-  ff = merge --ff-only
   hash = !git rev-parse --short HEAD | cut -c -7 | xargs echo -n
   l = log --pretty=oneline --abbrev-commit --graph --decorate
   ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
-  nevermind = !git reset --hard HEAD && git clean -d -f
-  noff = merge --no-ff
-  prevent = update-index --assume-unchanged
-  pullff = pull --ff-only
   root = rev-parse --show-toplevel
   s = status -sb
-  st = status
-  sup = submodule update --recursive --remote
   today = log --since=midnight --oneline --no-merges
-  track = checkout -t
   yesterday = diff --name-only --stat @{1.days.ago}
 [github]
   user = marcusandre
