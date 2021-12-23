@@ -1,11 +1,11 @@
 # dotfiles
 
-Beware, very personal WIP.
+My dotfiles.
 
-## Install
+## Installation
 
 ```
-$ ./install
+$ brew bundle && make
 ```
 
 ## Keyboard

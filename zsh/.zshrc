@@ -74,6 +74,7 @@ cnprompt6
 
 alias ..='cd ..'
 alias d='dirs -v'
+alias e='nvim'
 alias flushdns='sudo killall -HUP mDNSResponder'
 alias gb='git branches'
 alias gd='git di'

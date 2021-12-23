@@ -1,20 +1,12 @@
-" vim ft=vim ts=2
 set nocompatible
 
 " == vim-plug
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
-Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sgur/vim-editorconfig'
 Plug 'tpope/vim-commentary'
@@ -25,6 +17,7 @@ Plug 'tpope/vim-surround'
 Plug 'dense-analysis/ale'
 
 Plug 'dracula/vim'
+Plug 'morhetz/gruvbox'
 Plug 'nightsense/snow'
 
 call plug#end()
@@ -35,6 +28,7 @@ set autoread
 set backspace=indent,eol,start
 set complete-=i
 set hidden
+set novisualbell
 set nowrap
 set showcmd
 set ttimeout
@@ -86,13 +80,11 @@ if has('mouse')
   set mouse=a
 endif
 
-
 " == Syntax
 
 syntax on
 set t_Co=256
 
-let g:dracula_colorterm = 0
 set background=dark
 colorscheme dracula
 
