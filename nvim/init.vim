@@ -2,7 +2,7 @@ set nocompatible
 
 " == vim-plug
 
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -86,7 +86,7 @@ syntax on
 set t_Co=256
 
 set background=dark
-colorscheme dracula
+colorscheme snow
 
 " == statusline
 function! s:statusline_expr()

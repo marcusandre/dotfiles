@@ -1,0 +1,52 @@
+env:
+  TERM: xterm-256color
+
+window:
+  dimensions:
+    columns: 160
+    lines: 48
+  dynamic_padding: false
+  dynamic_title: true
+  decorations: full
+
+draw_bold_text_with_bright_colors: true
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: SF Mono
+    style: Regular
+
+  bold:
+    family: SF Mono
+    style: Bold
+
+  italic:
+    family: SF Mono
+    style: Regular Italic
+
+  size: 13.0
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
+
+  use_thin_strokes: true
+
+debug:
+  render_timer: false
+
+background_opacity: 1.0
+
+cursor:
+  style: Block
+  unfocused_hollow: false
+
+live_config_reload: true
