@@ -82,11 +82,9 @@ endif
 
 " == Syntax
 
-syntax on
-set t_Co=256
-
-set background=dark
-colorscheme snow
+let g:dracula_colorterm = 0
+syntax enable
+colorscheme dracula
 
 " == statusline
 function! s:statusline_expr()
