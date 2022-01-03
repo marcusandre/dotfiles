@@ -80,7 +80,7 @@ alias gb='git branches'
 alias gd='git diff'
 alias gl='git l'
 alias gll='git ll'
-alias gp='git push'
+alias gp="git symbolic-ref --short HEAD 2> /dev/null | xargs -L1 git push origin"
 alias gr='cd $(git root)'
 alias la=' ls -laG'
 alias ld=' ls -ladG'
@@ -90,6 +90,7 @@ alias rf='rm -fr'
 alias rmds='find . -name ".DS_Store" -type f -delete'
 alias s='git s'
 alias ss='git status'
+alias vim='nvim'
 alias wl='wget -c -q --show-progress'
 
 # == HELPERS
