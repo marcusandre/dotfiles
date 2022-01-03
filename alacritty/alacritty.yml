@@ -24,7 +24,7 @@ scrolling:
 font:
   normal:
     family: SF Mono
-    style: Regular
+    style: Medium
 
   bold:
     family: SF Mono
@@ -32,7 +32,7 @@ font:
 
   italic:
     family: SF Mono
-    style: Regular Italic
+    style: Medium Italic
 
   size: 12.0
 
