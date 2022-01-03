@@ -1,7 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-brew "fish"
 brew "fzf"
 brew "git"
 brew "jq"
