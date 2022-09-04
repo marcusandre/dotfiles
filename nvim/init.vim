@@ -6,7 +6,9 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'mfussenegger/nvim-dap'
 Plug 'mhinz/vim-signify'
+Plug 'neovim/nvim-lspconfig'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sgur/vim-editorconfig'
 Plug 'tpope/vim-commentary'
@@ -14,11 +16,9 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'dense-analysis/ale'
 
+Plug 'archseer/colibri.vim'
 Plug 'dracula/vim'
-Plug 'morhetz/gruvbox'
-Plug 'nightsense/snow'
 
 call plug#end()
 
@@ -84,7 +84,9 @@ endif
 
 let g:dracula_colorterm = 0
 syntax enable
-colorscheme dracula
+set termguicolors
+set background=dark
+colorscheme colibri
 
 " == statusline
 function! s:statusline_expr()
@@ -162,26 +164,6 @@ augroup nerd_loader
         \|   execute 'autocmd! nerd_loader'
         \| endif
 augroup END
-
-" ale
-let g:ale_fix_on_save = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_sign_column_always = 1
-let g:ale_completion_enabled = 1
-
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
-let g:ale_linters = {
-\   'rust': ['rls', 'cargo', 'rustc'],
-\   'javascript': ['eslint'],
-\}
-
-let g:ale_fixers = {
-\   'rust': ['rustfmt'],
-\   'html': ['prettier'],
-\   'javascript': ['prettier', 'eslint'],
-\}
 
 " == Filetypes
 augroup all

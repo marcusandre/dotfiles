@@ -1,0 +1,27 @@
+colors:
+  primary:
+    text: '0xebeafa'
+    background: '0x3b224c'
+    dim_foreground: '0x9a9a9a'
+    bright_foreground: '0xffffff'
+  selection:
+    text: '0xeaeaea'
+    background: '0x404040'
+  normal:
+    black:   '0x3b224c'
+    red:     '0xf47868'
+    green:   '0x9ff28f'
+    yellow:  '0xefba5d'
+    blue:    '0xa4a0e8'
+    magenta: '0xdbbfef'
+    cyan:    '0x6acdca'
+    white:   '0xebeafa'
+  bright:
+    black:   '0x697c81'
+    red:     '0xff3334'
+    green:   '0x9ec400'
+    yellow:  '0xe7c547'
+    blue:    '0x7aa6da'
+    magenta: '0xb77ee0'
+    cyan:    '0x54ced6'
+    white:   '0xffffff'
