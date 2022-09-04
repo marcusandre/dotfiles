@@ -186,6 +186,11 @@ augroup jsx
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 augroup END
 
+augroup tsx
+  autocmd!
+  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+augroup END
+
 augroup gitcommit
   autocmd!
   autocmd FileType gitcommit setlocal tw=68 colorcolumn=69 spell
