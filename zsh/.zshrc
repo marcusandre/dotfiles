@@ -90,7 +90,6 @@ alias rf='rm -fr'
 alias rmds='find . -name ".DS_Store" -type f -delete'
 alias s='git s'
 alias ss='git status'
-alias vim='nvim'
 alias wl='wget -c -q --show-progress'
 
 # == HELPERS
