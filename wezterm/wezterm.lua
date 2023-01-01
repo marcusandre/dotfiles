@@ -2,10 +2,10 @@ local wezterm = require 'wezterm'
 
 local function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
-    return 'nord'
+    return 'iceberg-dark'
   else
     -- return 'nord-light'
-    return 'PaperColor Light (base16)'
+    return 'iceberg-light'
   end
 end
 
