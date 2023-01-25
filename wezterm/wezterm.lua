@@ -4,7 +4,6 @@ local function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
     return 'iceberg-dark'
   else
-    -- return 'nord-light'
     return 'iceberg-light'
   end
 end
@@ -20,7 +19,8 @@ wezterm.on('window-config-reloaded', function(window)
 end)
 
 return {
-  font = wezterm.font 'JetBrains Mono',
+  -- font = wezterm.font 'JetBrains Mono',
+  font = wezterm.font 'Berkeley Mono',
   font_size = 12.0,
   line_height = 1.1,
   scrollback_lines = 5000,
