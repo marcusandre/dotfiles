@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
 
   -- Navigation
   use {
-    'nvim-telescope/telescope.nvim', 
+    'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
@@ -63,9 +63,9 @@ return require('packer').startup(function(use)
 
   -- Colorschemes
   use 'f-person/auto-dark-mode.nvim'
-  use { 
-    "catppuccin/nvim", 
-    as = "catppuccin" 
+  use {
+    "catppuccin/nvim",
+    as = "catppuccin"
   }
 
   if packer_bootstrap then
