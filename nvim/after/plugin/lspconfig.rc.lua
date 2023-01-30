@@ -1,5 +1,86 @@
-local ok, lspconfig = pcall(require, "lspconfig")
-if (not ok) then return end
+local ok_lsp, lspconfig = pcall(require, "lspconfig")
+local ok_cmp, cmp = pcall(require, "cmp")
+if (not ok_lsp or not ok_cmp) then return end
+
+-- Completion
+
+vim.opt.completeopt:append('menu')
+vim.opt.completeopt:append('menuone')
+vim.opt.completeopt:append('noselect')
+
+local select_opts = {
+  behavior = cmp.SelectBehavior.Select
+}
+
+local select_handlers = {
+  check_back_space = function()
+    local col = vim.fn.col('.') - 1
+    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+      return true
+    else
+      return false
+    end
+  end
+}
+
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+    -- confirm selection
+    ['<CR>'] = cmp.mapping.confirm({select = false}),
+    ['<C-y>'] = cmp.mapping.confirm({select = false}),
+
+    -- navigate items on the list
+    ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
+    ['<Down>'] = cmp.mapping.select_next_item(select_opts),
+    ['<C-p>'] = cmp.mapping.select_prev_item(select_opts),
+    ['<C-n>'] = cmp.mapping.select_next_item(select_opts),
+
+    -- scroll up and down in the completion documentation
+    ['<C-f>'] = cmp.mapping.scroll_docs(5),
+    ['<C-u>'] = cmp.mapping.scroll_docs(-5),
+
+    -- toggle completion
+    ['<C-e>'] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.abort()
+      else
+        cmp.complete()
+      end
+    end),
+
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item(select_opts)
+      elseif select_handlers.check_back_space() then
+        fallback()
+      else
+        cmp.complete()
+      end
+    end, {'i', 's'}),
+
+    -- when menu is visible, navigate to previous item on list
+    -- else, revert to default behavior
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item(select_opts)
+      else
+        fallback()
+      end
+    end, {'i', 's'}),
+  }),
+  sources = cmp.config.sources({
+    {name = 'nvim_lsp'},
+    -- {name = 'buffer'},
+    -- {name = 'path'},
+    -- {name = 'cmdline'},
+  }),
+  preselect = cmp.PreselectMode.Item,
+  completion = {
+    completeopt = 'menu,menuone,noinsert'
+  }
+})
+
+-- LSP
 
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, opts)
@@ -8,7 +89,7 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, opts)
 
 local on_attach = function(_, bufnr)
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
@@ -28,7 +109,11 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities();
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
 lspconfig.sumneko_lua.setup{
+  capabilities = capabilities,
   on_attach = on_attach,
   settings = {
     Lua = {
@@ -40,18 +125,34 @@ lspconfig.sumneko_lua.setup{
 }
 
 lspconfig.rust_analyzer.setup{
+  capabilities = capabilities,
   on_attach = on_attach,
   cmd = {
     "rustup", "run", "stable", "rust-analyzer",
   }
 }
 
-lspconfig.gopls.setup{ on_attach = on_attach, }
+lspconfig.gopls.setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
 
-lspconfig.jsonls.setup{ on_attach = on_attach, }
+lspconfig.jsonls.setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
 
-lspconfig.tsserver.setup{ on_attach = on_attach, }
+lspconfig.tsserver.setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
 
-lspconfig.eslint.setup{ on_attach = on_attach, }
+lspconfig.eslint.setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
 
-lspconfig.stylelint_lsp.setup{ on_attach = on_attach, }
+lspconfig.stylelint_lsp.setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
