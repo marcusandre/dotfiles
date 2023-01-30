@@ -1,10 +1,11 @@
 local wezterm = require 'wezterm'
+local act = wezterm.action
 
 local function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
-    return 'iceberg-dark'
+    return "iceberg-dark"
   else
-    return 'iceberg-light'
+    return "iceberg-light"
   end
 end
 
@@ -19,10 +20,33 @@ wezterm.on('window-config-reloaded', function(window)
 end)
 
 return {
-  -- font = wezterm.font 'JetBrains Mono',
   font = wezterm.font 'Berkeley Mono',
-  font_size = 12.0,
-  line_height = 1.1,
-  scrollback_lines = 5000,
-  audible_bell = 'Disabled'
+  font_size = 12,
+  font_hinting = "None",
+  font_antialias = "Greyscale",
+  line_height = 1.3,
+  scrollback_lines = 10000,
+  window_padding = {
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
+  },
+  keys = {
+    {
+      key = 'm',
+      mods = 'CMD',
+      action = 'DisableDefaultAssignment'
+    },
+    {
+      key = 'k',
+      mods = 'CMD',
+      action = act.Multiple {
+        act.SendKey {
+          key = 'L',
+          mods = 'CTRL'
+        }
+      }
+    },
+  }
 }
