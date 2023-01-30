@@ -26,8 +26,8 @@ local select_handlers = {
 cmp.setup({
   mapping = cmp.mapping.preset.insert({
     -- confirm selection
-    ['<CR>'] = cmp.mapping.confirm({select = false}),
-    ['<C-y>'] = cmp.mapping.confirm({select = false}),
+    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    ['<C-y>'] = cmp.mapping.confirm({ select = false }),
 
     -- navigate items on the list
     ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
@@ -56,7 +56,7 @@ cmp.setup({
       else
         cmp.complete()
       end
-    end, {'i', 's'}),
+    end, { 'i', 's' }),
 
     -- when menu is visible, navigate to previous item on list
     -- else, revert to default behavior
@@ -66,10 +66,10 @@ cmp.setup({
       else
         fallback()
       end
-    end, {'i', 's'}),
+    end, { 'i', 's' }),
   }),
   sources = cmp.config.sources({
-    {name = 'nvim_lsp'},
+    { name = 'nvim_lsp' },
     -- {name = 'buffer'},
     -- {name = 'path'},
     -- {name = 'cmdline'},
@@ -82,37 +82,31 @@ cmp.setup({
 
 -- LSP
 
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, opts)
 
 local on_attach = function(_, bufnr)
-  -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
   vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
   vim.keymap.set('n', '<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, bufopts)
-  vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+  vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<leader>e', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', '<leader>m', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities();
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-lspconfig.sumneko_lua.setup{
+lspconfig.sumneko_lua.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {
@@ -124,7 +118,7 @@ lspconfig.sumneko_lua.setup{
   }
 }
 
-lspconfig.rust_analyzer.setup{
+lspconfig.rust_analyzer.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   cmd = {
@@ -132,27 +126,27 @@ lspconfig.rust_analyzer.setup{
   }
 }
 
-lspconfig.gopls.setup{
+lspconfig.gopls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
 
-lspconfig.jsonls.setup{
+lspconfig.jsonls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
 
-lspconfig.tsserver.setup{
+lspconfig.tsserver.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
 
-lspconfig.eslint.setup{
+lspconfig.eslint.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
 
-lspconfig.stylelint_lsp.setup{
+lspconfig.stylelint_lsp.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
