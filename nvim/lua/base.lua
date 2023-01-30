@@ -35,11 +35,3 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.o.termguicolors = true
-
-if os.getenv('theme') == 'light' then
-  vim.api.nvim_set_option('background', 'light')
-  vim.cmd.colorscheme "catppuccin-latte"
-else
-  vim.api.nvim_set_option('background', 'dark')
-  vim.cmd.colorscheme "catppuccin-mocha"
-end
