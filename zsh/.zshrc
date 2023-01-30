@@ -1,5 +1,24 @@
 export ZSH=~/.zsh
 
+# == ENVIRONMENT
+if [[ -f /Users/mzui5of/.zsh_private ]]; then
+  source /Users/mzui5of/.zsh_private
+fi
+
+# == PATH
+CHUNKS=(
+  $HOME/bin
+  /usr/local/bin
+  /usr/local/sbin
+  $PATH
+)
+
+CHUNKS_STR=${(j.:.)${:-${^CHUNKS}}}
+export PATH=$CHUNKS_STR
+
+# == EDITOR
+export EDITOR=nvim
+
 # == OPTIONS
 
 setopt HIST_IGNORE_DUPS
@@ -94,7 +113,7 @@ alias wl='wget -c -q --show-progress'
 
 # == HELPERS
 
-# Create new folder an cd into
+# Create new folder and cd into
 md() { mkdir -p "$1" && cd "$_" }
 
 # Get external ip addr
@@ -105,3 +124,6 @@ dl3() { youtube-dl --output "%(title)s.%(ext)s" -x --audio-format mp3 --prefer-f
 
 # init fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# init z
+[ -f $(brew --prefix)/etc/profile.d/z.sh ] && . $(brew --prefix)/etc/profile.d/z.sh

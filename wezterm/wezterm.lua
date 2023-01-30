@@ -24,7 +24,7 @@ return {
   font_size = 12,
   font_hinting = "None",
   font_antialias = "Greyscale",
-  line_height = 1.3,
+  line_height = 1.2,
   scrollback_lines = 10000,
   window_padding = {
     left = 0,

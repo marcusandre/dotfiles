@@ -1,9 +1,9 @@
 CONFIG_PATH=${HOME}/.config
 
-all: config nvim wezterm
+all: home nvim wezterm
 
-config:
-	stow -v vim git etc
+home:
+	stow -v etc git vim zsh
 
 nvim:
 	@mkdir -p $(CONFIG_PATH)/nvim
@@ -13,4 +13,4 @@ wezterm:
 	@mkdir -p $(CONFIG_PATH)/wezterm
 	stow -v --target=$(CONFIG_PATH)/wezterm wezterm
 
-.PHONY: config nvim wezterm 
+.PHONY: home nvim wezterm 
