@@ -1,33 +1,85 @@
 [user]
   email = hello+github@marcusandre.de
   name = Marcus André
-[core]
-  editor = nvim
-  pager = diff-so-fancy | less --tabs=4 -RFX
-[apply]
-  whitespace = fix
+
+[alias]
+  git = "!git"
+
+  mainbranch = "!git remote show origin | sed -n '/HEAD branch/s/.*: //p'"
+  synced = "!git pull origin $(git mainbranch) --rebase"
+  update = "!git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase"
+  squash = "!git rebase -v -i $(git mainbranch)"
+  publish = push origin HEAD --force-with-lease
+  overwrite = "!git add . && git commit --amend --no-edit --no-verify && git publish"
+
+  # The basic aliases
+  s = status
+  cm = commit -m
+  root = rev-parse --show-toplevel
+  hash = log -1 --format='%H'
+  back = checkout -
+
+  # Branch related aliases
+  br = branch -a
+  co = checkout
+  com = checkout master
+  groom = "!f() { git branch --merged | egrep -v \"(^\\*|main|master)\" | xargs git branch -d; }; f"
+
+  # Syncing related aliases
+  prune = fetch --prune
+
+  # Rebase related aliases
+  ri = rebase -i
+  rb = "!sh -c \"git rebase -i HEAD~$1\" -"
+  rc = rebase --continue
+  ra = rebase --abort
+  rs = rebase --skip
+  re = rebase --exit
+
+  # Commit related aliases
+  wip = commit -m "WIP" -n
+  amend = commit --amend --no-edit
+  famend = commit --amend --no-edit --no-verify
+
+  # Mistake related aliases
+  nono = checkout -- .
+  wait = reset HEAD
+  undo = reset --soft HEAD^
+
+  # Diff related aliases
+  changes = diff --name-status
+  l = log --graph --decorate --pretty=oneline --abbrev-commit
+  ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
+
 [commit]
+  template = ~/.gittemplate
   verbose = true
+  push = current
+
 [push]
   default = current
+  autoSetupRemote = true
+
+[diff]
+  colorMoved = default
+
+[rebase]
+  autosquash = true
+
+[core]
+  editor = nvim
+
+[add.interactive]
+  useBuiltin = false
+
+[merge]
+  conflictstyle = diff3
+
 [credential]
   helper = osxkeychain
-[alias]
-  amend = commit --amend --no-edit
-  append = commit -a --amend -C HEAD
-  branches = branch -a --color -v
-  co = checkout
-  fa = fetch --all --prune
-  hash = !git rev-parse --short HEAD | cut -c -7 | xargs echo -n
-  l = log --pretty=oneline --abbrev-commit --graph --decorate
-  ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
-  root = rev-parse --show-toplevel
-  s = status -sb
-  today = log --since=midnight --oneline --no-merges
-  yesterday = diff --name-only --stat @{1.days.ago}
-[github]
-  user = marcusandre
+
 [init]
   defaultBranch = main
+
 [rerere]
   enabled = true
