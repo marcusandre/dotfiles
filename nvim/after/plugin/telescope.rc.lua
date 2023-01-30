@@ -14,10 +14,9 @@ telescope.setup({
     },
   },
   pickers = {
-    buffers = { theme = 'dropdown' },
+    buffers = { theme = 'ivy' },
     oldfiles = { theme = 'dropdown' },
-    jumplist = { theme = 'dropdown' },
-    current_buffer_fuzzy_find = { theme = 'dropdown' },
+    current_buffer_fuzzy_find = { theme = 'ivy' },
   },
 })
 
@@ -37,7 +36,7 @@ vim.keymap.set('n', '<leader>ff', function()
   end
 end, bufopts)
 
-vim.keymap.set('n', '<leader>v', function()
+vim.keymap.set('n', '<leader>fv', function()
   builtin.find_files(themes.get_dropdown {
     hidden = true,
     no_ignore = false,
@@ -46,14 +45,13 @@ vim.keymap.set('n', '<leader>v', function()
   })
 end, bufopts)
 
-vim.keymap.set('n', '<leader>fj', function()
-  builtin.current_buffer_fuzzy_find()
-end, bufopts)
-
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {}, bufopts)
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {}, bufopts)
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {}, bufopts)
+vim.keymap.set('n', '<leader>fy', builtin.current_buffer_fuzzy_find, bufopts)
+vim.keymap.set('n', '<leader>fr', builtin.resume, bufopts)
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {}, bufopts)
+vim.keymap.set('n', '<leader>fs', builtin.git_status, {}, bufopts)
 
 -- LSP Keymaps
 vim.keymap.set('n', '<leader>D', builtin.lsp_type_definitions, bufopts)
