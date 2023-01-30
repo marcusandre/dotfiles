@@ -1,6 +1,7 @@
 local ok_lsp, lspconfig = pcall(require, "lspconfig")
 local ok_cmp, cmp = pcall(require, "cmp")
-if (not ok_lsp or not ok_cmp) then return end
+local ok_luasnip, luasnip = pcall(require, "luasnip")
+if (not ok_lsp or not ok_cmp or not ok_luasnip) then return end
 
 -- Completion
 
@@ -68,11 +69,17 @@ cmp.setup({
       end
     end, { 'i', 's' }),
   }),
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end
+  },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    -- {name = 'buffer'},
-    -- {name = 'path'},
-    -- {name = 'cmdline'},
+    { name = 'buffer' },
+    { name = 'luasnip' },
+    { name = 'path' },
+    { name = 'cmdline' },
   }),
   preselect = cmp.PreselectMode.Item,
   completion = {
