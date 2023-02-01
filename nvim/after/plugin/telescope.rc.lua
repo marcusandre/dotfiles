@@ -14,9 +14,9 @@ telescope.setup({
     },
   },
   pickers = {
-    buffers = { theme = 'ivy' },
+    buffers = { theme = 'dropdown' },
     oldfiles = { theme = 'dropdown' },
-    current_buffer_fuzzy_find = { theme = 'ivy' },
+    current_buffer_fuzzy_find = { theme = 'dropdown' },
   },
 })
 
@@ -45,13 +45,19 @@ vim.keymap.set('n', '<leader>fv', function()
   })
 end, bufopts)
 
+vim.keymap.set('n', '<leader>fy', function()
+	builtin.current_buffer_fuzzy_find({
+    skip_empty_lines = true,
+  })
+end)
+
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {}, bufopts)
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {}, bufopts)
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {}, bufopts)
-vim.keymap.set('n', '<leader>fy', builtin.current_buffer_fuzzy_find, bufopts)
-vim.keymap.set('n', '<leader>fr', builtin.resume, bufopts)
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {}, bufopts)
+vim.keymap.set('n', '<leader>fr', builtin.resume, bufopts)
 vim.keymap.set('n', '<leader>fs', builtin.git_status, {}, bufopts)
+vim.keymap.set('n', 'gs', builtin.grep_string, {}, bufopts)
 
 -- LSP Keymaps
 vim.keymap.set('n', '<leader>D', builtin.lsp_type_definitions, bufopts)
