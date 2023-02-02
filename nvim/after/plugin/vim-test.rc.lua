@@ -2,22 +2,21 @@ local coverage = require('coverage')
 local keymap = vim.keymap
 
 coverage.setup({
-  -- configuration options here
+  commands = true,
   highlights = {
-    -- customize highlights
+    covered = { fg = "#C3E88D" },
+    uncovered = { fg = "#F07178" },
   },
   signs = {
-    -- customize signs
+    covered = { priority = 100, hl = "CoverageCovered", text = "▎" },
+    uncovered = { priority = 100, hl = "CoverageUncovered", text = "▎" },
   },
-  summary = {
-    -- customize summary pop-up
-  },
-  lang = {
-    -- customize langauge specific settings
-  }
+  summary = { min_coverage = 80.0, },
+  lang = {},
 })
 
 keymap.set('n', '<leader>tf', ':TestFile<CR>');
 keymap.set('n', '<leader>tn', ':TestNearest<CR>');
 keymap.set('n', '<leader>tl', ':TestLast<CR>');
 keymap.set('n', '<leader>tv', ':TestVisit<CR>');
+keymap.set("n", "<leader>tc", "<cmd>vsplit | terminal npx jest --coverage -- %<CR>")

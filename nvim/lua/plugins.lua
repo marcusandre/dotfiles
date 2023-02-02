@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
-    requires = { { 'nvim-lua/plenary.nvim' } }
+    requires = { 'nvim-lua/plenary.nvim' }
   }
 
   -- Workflow
@@ -63,7 +63,10 @@ return require('packer').startup(function(use)
 
   -- Testing
   use 'vim-test/vim-test'
-  use 'andythigpen/nvim-coverage'
+  use {
+    'andythigpen/nvim-coverage',
+    requires = { 'nvim-lua/plenary.nvim' }
+  }
 
   -- UI
   use {
