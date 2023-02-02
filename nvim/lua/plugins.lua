@@ -82,7 +82,11 @@ return require('packer').startup(function(use)
   }
 
   -- Colorschemes
+  use 'EdenEast/nightfox.nvim'
+  use 'arcticicestudio/nord-vim'
+  use 'cocopon/iceberg.vim'
   use 'f-person/auto-dark-mode.nvim'
+  use 'folke/tokyonight.nvim'
   use {
     "catppuccin/nvim",
     as = "catppuccin"
