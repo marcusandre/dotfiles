@@ -29,7 +29,7 @@ vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 
 -- Alternate Files
-vim.keymap.set("n", "KK", "<cmd>AV<CR>")
+vim.keymap.set("n", "<leader>1", "<cmd>AV<CR>")
 
 -- Misc
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
+vim.keymap.set("n", "<leader>0", "<cmd>CellularAutomaton make_it_rain<CR>")
