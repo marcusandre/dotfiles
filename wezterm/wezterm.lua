@@ -3,9 +3,9 @@ local act = wezterm.action
 
 local function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
-    return 'Catppuccin Mocha'
+    return 'iceberg-dark'
   else
-    return 'Catppuccin Latte'
+    return 'iceberg-light'
   end
 end
 
@@ -20,7 +20,7 @@ wezterm.on('window-config-reloaded', function(window)
 end)
 
 return {
-  font = wezterm.font 'Berkeley Mono',
+  font = wezterm.font 'JetBrains Mono Medium',
   font_size = 12,
   font_hinting = "None",
   font_antialias = "Greyscale",

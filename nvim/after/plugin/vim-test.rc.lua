@@ -15,8 +15,12 @@ coverage.setup({
   lang = {},
 })
 
+vim.cmd([[
+let test#javascript#jest#options = '--coverage'
+]])
+
 keymap.set('n', '<leader>tf', ':TestFile<CR>');
 keymap.set('n', '<leader>tn', ':TestNearest<CR>');
 keymap.set('n', '<leader>tl', ':TestLast<CR>');
 keymap.set('n', '<leader>tv', ':TestVisit<CR>');
-keymap.set("n", "<leader>tc", "<cmd>vsplit | terminal npx jest --coverage -- %<CR>")
+keymap.set("n", "<leader>tc", "<cmd>vsplit | terminal npx jest --coverage --silent -- %<CR>")
