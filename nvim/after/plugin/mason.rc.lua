@@ -13,7 +13,7 @@ masonLSP.setup {
     "jsonls",
     "rust_analyzer",
     "stylelint_lsp",
-    "sumneko_lua", 
+    "lua_ls", 
     "tsserver",
   },
 }
