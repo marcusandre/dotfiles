@@ -37,14 +37,14 @@
   re = rebase --exit
 
   # Commit related aliases
-  wip = commit -m "WIP" -n
+  wip = !"git add . && git commit -n -m \"WIP\""
   amend = commit --amend --no-edit
   famend = commit --amend --no-edit --no-verify
 
   # Mistake related aliases
   nono = checkout -- .
   wait = reset HEAD
-  undo = reset --soft HEAD^
+  undo = !"git reset --soft \"HEAD^\" && git status --short"
 
   # Diff related aliases
   changes = diff --name-status
