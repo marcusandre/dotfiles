@@ -10,6 +10,7 @@ keymap.set('i', 'jk', '<ESC>');
 
 -- Search
 keymap.set("n", "<bs>", "<cmd>nohl<CR>")
+keymap.set("n", "<C-l>", "<cmd>nohl<CR>")
 
 -- Tabs
 keymap.set('n', ']t', ':tabn<cr>')
