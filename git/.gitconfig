@@ -6,11 +6,13 @@
   git = "!git"
 
   mainbranch = "!git remote show origin | sed -n '/HEAD branch/s/.*: //p'"
-  synced = "!git pull origin $(git mainbranch) --rebase"
+  sync = "!git pull origin $(git mainbranch) --rebase"
   update = "!git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase"
   squash = "!git rebase -v -i $(git mainbranch)"
   publish = push origin HEAD --force-with-lease
   overwrite = "!git add . && git commit --amend --no-edit --no-verify && git publish"
+  todo = git grep -iE '(FIXME|TODO)'
+  fixme = git grep -iE '(FIXME|TODO)'
 
   # The basic aliases
   s = status
@@ -23,10 +25,6 @@
   br = branch -a
   co = checkout
   com = checkout master
-  groom = "!f() { git branch --merged | egrep -v \"(^\\*|main|master)\" | xargs git branch -d; }; f"
-
-  # Syncing related aliases
-  prune = fetch --prune
 
   # Rebase related aliases
   ri = rebase -i
