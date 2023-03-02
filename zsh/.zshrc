@@ -100,6 +100,7 @@ alias gd='git diff'
 alias gl='git ll'
 alias gp="git symbolic-ref --short HEAD 2> /dev/null | xargs -L1 git push origin"
 alias gr='cd $(git root)'
+alias gu='git upgrade'
 alias la=' ls -laG'
 alias ld=' ls -ladG'
 alias ll=' ls -laG'
