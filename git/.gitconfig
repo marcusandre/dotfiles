@@ -11,8 +11,8 @@
   squash = "!git rebase -v -i $(git mainbranch)"
   publish = push origin HEAD --force-with-lease
   overwrite = "!git add . && git commit --amend --no-edit --no-verify && git publish"
-  todo = git grep -iE '(FIXME|TODO)'
-  fixme = git grep -iE '(FIXME|TODO)'
+  todo = git grep -niE '(FIXME|TODO)'
+  fixme = git grep -niE '(FIXME|TODO)'
 
   # The basic aliases
   s = status
