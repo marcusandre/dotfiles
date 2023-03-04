@@ -51,7 +51,6 @@ require('lazy').setup({
   { -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
-      -- See `:help gitsigns.txt`
       signs = {
         add = { text = '+' },
         change = { text = '~' },
@@ -60,6 +59,56 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
     },
+    config = function()
+      require('gitsigns').setup {
+        on_attach = function(bufnr)
+          local gs = package.loaded.gitsigns
+
+          local function map(mode, l, r, opts)
+            opts = opts or {}
+            opts.buffer = bufnr
+            vim.keymap.set(mode, l, r, opts)
+          end
+
+          -- Navigation
+          map('n', ']h', function()
+            if vim.wo.diff then return ']h' end
+            vim.schedule(function() gs.next_hunk() end)
+            return '<Ignore>'
+          end, { expr = true })
+
+          map('n', '[h', function()
+            if vim.wo.diff then return '[h' end
+            vim.schedule(function() gs.prev_hunk() end)
+            return '<Ignore>'
+          end, { expr = true })
+
+          -- Actions
+          map({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<CR>', { desc = "[H]unk [S]tage" })
+          map({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>', { desc = "[H]unk [R]eset" })
+          map('n', '<leader>hD', function() gs.diffthis('~') end, { desc = "[H]unk [D]iffthis!" })
+          map('n', '<leader>hR', gs.reset_buffer, { desc = "[H]unk [R]eset Buffer" })
+          map('n', '<leader>hS', gs.stage_buffer, { desc = "[H]unk [S]tage Buffer" })
+          map('n', '<leader>hb', function() gs.blame_line { full = true } end, { desc = "[H]unk [B]lame Line" })
+          map('n', '<leader>hd', gs.diffthis, { desc = "[H]unk [D]iff" })
+          map('n', '<leader>hp', gs.preview_hunk, { desc = "[H]unk [P]review" })
+          map('n', '<leader>hu', gs.undo_stage_hunk, { desc = "[H]unk [U]ndo" })
+          map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = "[T]oggle [B]lame" })
+          map('n', '<leader>td', gs.toggle_deleted, { desc = "[T]toggle [D]eleted" })
+
+          -- Text object
+          map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+        end
+      }
+    end
+  },
+
+  { -- My current theme of choice
+    "arcticicestudio/nord-vim",
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'nord'
+    end,
   },
 
   { -- Set lualine as statusline
@@ -67,19 +116,11 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'tokyonight',
+        theme = 'nord',
         component_separators = '|',
         section_separators = '',
       },
     },
-  },
-
-  { -- My current theme of choice
-    "folke/tokyonight.nvim",
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'tokyonight'
-    end,
   },
 
   { -- Add indentation guides even on blank lines
@@ -168,6 +209,9 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+
+-- Hightlight current line
+vim.opt.cursorline = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
