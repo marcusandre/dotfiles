@@ -20,7 +20,7 @@ wezterm.on('window-config-reloaded', function(window)
 end)
 
 return {
-  font = wezterm.font 'JetBrains Mono Medium',
+  font = wezterm.font 'Berkeley Mono',
   font_size = 12,
   font_hinting = "None",
   font_antialias = "Greyscale",
