@@ -5,13 +5,13 @@
         "revision": "4c5d4cf248f2981f66ea8988f81d6afc63edee85"
       },
       "homebrew/cask": {
-        "revision": "e59c72daea7c0f1e4f9320687efe77312e72f1e5"
+        "revision": "c73897bb8c797c9be85903e3c5d01eb9e8024d22"
       },
       "homebrew/cask-fonts": {
         "revision": "fc7b81ff084770ae7db4f3218f2569c4f731e335"
       },
       "homebrew/core": {
-        "revision": "2c9f881a09f82aa50d70c879859efeaed464bd97"
+        "revision": "471d5a5884d7c1cae9d1c05e415b68c5d05f831d"
       }
     },
     "brew": {
@@ -685,6 +685,18 @@
         "options": {
           "full_name": "wezterm"
         }
+      },
+      "keepingyouawake": {
+        "version": "1.6.4",
+        "options": {
+          "full_name": "keepingyouawake"
+        }
+      },
+      "rectangle": {
+        "version": "0.67",
+        "options": {
+          "full_name": "rectangle"
+        }
       }
     }
   },
@@ -693,7 +705,7 @@
       "ventura": {
         "HOMEBREW_VERSION": "4.0.6",
         "HOMEBREW_PREFIX": "/Users/mzui5of/Developer/homebrew",
-        "Homebrew/homebrew-core": "2c9f881a09f82aa50d70c879859efeaed464bd97",
+        "Homebrew/homebrew-core": "471d5a5884d7c1cae9d1c05e415b68c5d05f831d",
         "CLT": "14.2.0.0.1.1668646533",
         "Xcode": "14.1",
         "macOS": "13.2.1"
