@@ -10,7 +10,6 @@
   update = "!git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase"
   squash = "!git rebase -v -i $(git mainbranch)"
   publish = push origin HEAD --force-with-lease
-  overwrite = "!git add . && git commit --amend --no-edit --no-verify && git publish"
   todo = git grep -niE '(FIXME|TODO)'
   fixme = git grep -niE '(FIXME|TODO)'
 
