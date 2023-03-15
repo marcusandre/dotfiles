@@ -14,6 +14,7 @@ set laststatus=2
 set nostartofline
 set notimeout ttimeout ttimeoutlen=200
 set number
+set relativenumber
 set pastetoggle=<F11>
 set ruler
 set shiftwidth=4
