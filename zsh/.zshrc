@@ -93,10 +93,10 @@ cnprompt6
 # == ALIASES
 
 alias ..='cd ..'
-alias d='dirs -v'
-alias e='nvim'
+alias e='vim'
 alias flushdns='sudo killall -HUP mDNSResponder'
-alias gb='git branches'
+alias gap='git add . -p'
+alias gb='git branch -a'
 alias gd='git diff'
 alias gl='git ll'
 alias gp="git symbolic-ref --short HEAD 2> /dev/null | xargs -L1 git push origin"
@@ -105,6 +105,7 @@ alias gu='git upgrade'
 alias la=' ls -laG'
 alias ld=' ls -ladG'
 alias ll=' ls -laG'
+alias np='cat package.json | jq ".dependencies"'
 alias ns='cat package.json | jq ".scripts"'
 alias rf='rm -fr'
 alias rmds='find . -name ".DS_Store" -type f -delete'
