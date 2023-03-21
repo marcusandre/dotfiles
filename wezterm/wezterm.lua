@@ -21,10 +21,8 @@ end)
 
 return {
   font = wezterm.font 'Berkeley Mono',
-  font_size = 12,
-  font_hinting = "None",
-  font_antialias = "Greyscale",
-  line_height = 1.2,
+  font_size = 12.0,
+  line_height = 1.125,
   scrollback_lines = 10000,
   window_padding = {
     left = 0,
