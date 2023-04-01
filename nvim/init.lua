@@ -14,19 +14,27 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 require("lazy").setup({
-  -- echasnovski/mini
-  { 'echasnovski/mini.ai',         version = "*", config = function() require("mini.ai").setup({}) end },
-  { 'echasnovski/mini.bracketed',  version = "*", config = function() require("mini.bracketed").setup({}) end },
-  { 'echasnovski/mini.bufremove',  version = "*", config = function() require("mini.bufremove").setup({}) end },
-  { 'echasnovski/mini.comment',    version = "*", config = function() require("mini.comment").setup({}) end },
-  { 'echasnovski/mini.completion', version = "*", config = function() require("mini.completion").setup({}) end },
-  { 'echasnovski/mini.cursorword', version = "*", config = function() require("mini.cursorword").setup({}) end },
-  { 'echasnovski/mini.move',       version = "*", config = function() require("mini.move").setup({}) end },
-  { 'echasnovski/mini.pairs',      version = "*", config = function() require("mini.pairs").setup({}) end },
-  { 'echasnovski/mini.splitjoin',  version = "*", config = function() require("mini.splitjoin").setup({}) end },
-  { 'echasnovski/mini.statusline', version = "*", config = function() require("mini.statusline").setup({}) end },
-  { 'echasnovski/mini.surround',   version = "*", config = function() require("mini.surround").setup({}) end },
-  { 'echasnovski/mini.trailspace', version = "*", config = function() require("mini.trailspace").setup({}) end },
+  -- Testing
+  {
+    'vim-test/vim-test',
+    config = function()
+      vim.g['test#strategy'] = 'neovim'
+
+      vim.api.nvim_set_keymap('n', '<leader>tn', '<cmd>TestNearest<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>tf', '<cmd>TestFile<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>ts', '<cmd>TestSuite<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>tl', '<cmd>TestLast<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>tv', '<cmd>TestVisit<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>tc', '<cmd>Coverage<CR>', { noremap = true, silent = true })
+    end
+  },
+  {
+    'andythigpen/nvim-coverage',
+    config = function() require('coverage').setup() end,
+    dependencies = {
+      'nvim-lua/plenary.nvim'
+    }
+  },
 
   -- Git related plugins
   'tpope/vim-fugitive',
@@ -35,6 +43,9 @@ require("lazy").setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
+
+  -- Alternative files
+  'tpope/vim-projectionist',
 
   -- LSP
   {
@@ -70,6 +81,19 @@ require("lazy").setup({
     end,
   },
 
+  {
+    'stevearc/aerial.nvim',
+    config = function()
+      require('aerial').setup({
+        on_attach = function(bufnr)
+          vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', { buffer = bufnr })
+          vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', { buffer = bufnr })
+        end
+      })
+      vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
+    end
+  },
+
   -- User Interface
   {
     "folke/which-key.nvim",
@@ -83,6 +107,7 @@ require("lazy").setup({
   -- Theme
   { 'rose-pine/neovim',        name = 'rose-pine' },
   { 'arcticicestudio/nord-vim' },
+  { 'folke/tokyonight.nvim' },
 
   { import = 'custom.plugins' },
 
@@ -104,12 +129,13 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
+vim.o.splitbelow = true
+vim.o.splitright = true
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- vim.cmd('colorscheme rose-pine-moon')
-vim.cmd('colorscheme nord')
+vim.cmd('colorscheme tokyonight-moon')
 
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
