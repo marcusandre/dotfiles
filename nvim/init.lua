@@ -82,6 +82,7 @@ require("lazy").setup({
 
   -- Theme
   { 'rose-pine/neovim',        name = 'rose-pine' },
+  { 'arcticicestudio/nord-vim' },
 
   { import = 'custom.plugins' },
 
@@ -107,7 +108,8 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
-vim.cmd('colorscheme rose-pine-moon')
+-- vim.cmd('colorscheme rose-pine-moon')
+vim.cmd('colorscheme nord')
 
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -210,6 +212,7 @@ end
 local servers = {
   rust_analyzer = {},
   tsserver = {},
+  eslint = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -243,3 +246,9 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
+  command = 'silent! EslintFixAll',
+  group = vim.api.nvim_create_augroup('EslintFmt', {}),
+})

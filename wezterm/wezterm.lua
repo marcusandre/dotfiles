@@ -3,9 +3,9 @@ local act = wezterm.action
 
 local function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
-    return 'rose-pine-moon'
+    return 'nord'
   else
-    return 'rose-pine-dawn'
+    return 'nord'
   end
 end
 
