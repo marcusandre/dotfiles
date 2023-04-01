@@ -93,7 +93,7 @@ cnprompt6
 # == ALIASES
 
 alias ..='cd ..'
-alias e='vim'
+alias e='nvim'
 alias flushdns='sudo killall -HUP mDNSResponder'
 alias gap='git add . -p'
 alias gb='git branch -a'
