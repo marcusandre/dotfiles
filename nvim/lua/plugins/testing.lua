@@ -9,14 +9,14 @@ return {
       vim.api.nvim_set_keymap('n', '<leader>ts', '<cmd>TestSuite<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>tl', '<cmd>TestLast<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>tv', '<cmd>TestVisit<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("n", "<leader>tc", "<cmd>vsplit | terminal npx jest --coverage --silent -- %<CR>", { noremap = true, desc = '[T]est [F]ile' })
     end
   },
   {
     'andythigpen/nvim-coverage',
     config = function()
       require('coverage').setup()
-
-      vim.api.nvim_set_keymap('n', '<leader>tc', '<cmd>Coverage<CR>', { noremap = true, silent = true })
+      -- vim.api.nvim_set_keymap('n', '<leader>tc', '<cmd>Coverage<CR>', { noremap = true, silent = true })
     end,
     dependencies = {
       'nvim-lua/plenary.nvim'
