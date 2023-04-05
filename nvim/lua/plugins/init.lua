@@ -1,9 +1,9 @@
 return {
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
-
-  -- Alternative files
+  -- Blessings from the Pope
+  'tpope/vim-eunuch',
   'tpope/vim-projectionist',
+  'tpope/vim-sleuth',
+  'tpope/vim-surround',
 
   {
     "folke/which-key.nvim",
@@ -14,6 +14,7 @@ return {
     end
   },
 
+  { 'EdenEast/nightfox.nvim' },
   { 'arcticicestudio/nord-vim' },
   { 'folke/tokyonight.nvim' },
 }

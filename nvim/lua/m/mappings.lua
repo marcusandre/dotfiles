@@ -1,34 +1,29 @@
 -- Buffers
-vim.keymap.set('n', '<leader>ba', '<Cmd>b#<CR>', { desc = "Buffer: Alternate" })
-vim.keymap.set('n', '<leader>bd', '<cmd>lua minibufremove.delete()<cr>', { desc = "buffer: Delete" })
-vim.keymap.set('n', '<leader>bD', '<cmd>lua minibufremove.delete(0, true)<cr>', { desc = "buffer: Delete!" })
+vim.keymap.set('n', '<leader><leader>', '<Cmd>b#<CR>', { desc = "Buffer: Toggle" })
+vim.keymap.set('n', '<leader>q', '<cmd>lua MiniBufremove.delete()<cr>', { desc = "buffer: Delete" })
 vim.keymap.set('n', '<leader>bw', '<Cmd>lua MiniBufremove.wipeout()<CR>', { desc = "Buffer: Wipeout" })
 vim.keymap.set('n', '<leader>bW', '<Cmd>lua MiniBufremove.wipeout(0, true)<CR>', { desc = "Buffer: Wipeout!" })
-
--- Explore
-vim.keymap.set('n', '<leader>et', '<Cmd>NvimTreeToggle<CR>', { desc = "Explore: Tree" })
-vim.keymap.set('n', '<leader>eu', '<Cmd>UndotreeToggle<CR>', { desc = "Explore: Undo" })
 
 -- Find
 vim.keymap.set('n', '<leader>f/', '<Cmd>Telescope search_history<CR>',            { desc = '"/" history'})
 vim.keymap.set('n', '<leader>f:', '<Cmd>Telescope command_history<CR>',           { desc = 'Find: commands' })
-vim.keymap.set('n', '<leader>fb', '<Cmd>Telescope buffers<CR>',                   { desc = 'Find: open buffers' })
 vim.keymap.set('n', '<leader>fB', '<Cmd>Telescope current_buffer_fuzzy_find<CR>', { desc = 'Find: open buffers' })
-vim.keymap.set('n', '<leader>fc', '<Cmd>Telescope git_commits<CR>',               { desc = 'Find: commits' })
 vim.keymap.set('n', '<leader>fC', '<Cmd>Telescope git_bcommits<CR>',              { desc = 'Find: buffer commits' })
-vim.keymap.set('n', '<leader>fd', '<Cmd>Telescope diagnostics<CR>',               { desc = 'Find: diagnostic workspace' })
 vim.keymap.set('n', '<leader>fD', '<Cmd>Telescope diagnostics bufnr=0<CR>',       { desc = 'Find: diagnostic buffer' })
+vim.keymap.set('n', '<leader>fH', '<Cmd>Telescope highlights<CR>',                { desc = 'Find: highlight groups' })
+vim.keymap.set('n', '<leader>fO', '<Cmd>Telescope vim_options<CR>',               { desc = 'Find: options' })
+vim.keymap.set('n', '<leader>fR', '<Cmd>Telescope lsp_references<CR>',            { desc = 'Find: references (LSP)' })
+vim.keymap.set('n', '<leader>fS', '<Cmd>Telescope treesitter<CR>',                { desc = 'Find: symbols (treesitter)' })
+vim.keymap.set('n', '<leader>fb', '<Cmd>Telescope buffers<CR>',                   { desc = 'Find: open buffers' })
+vim.keymap.set('n', '<leader>fc', '<Cmd>Telescope git_commits<CR>',               { desc = 'Find: commits' })
+vim.keymap.set('n', '<leader>fd', '<Cmd>Telescope diagnostics<CR>',               { desc = 'Find: diagnostic workspace' })
 vim.keymap.set('n', '<leader>ff', '<Cmd>Telescope find_files<cr>',                { desc = 'Find: files' })
 vim.keymap.set('n', '<leader>fg', '<Cmd>Telescope live_grep<CR>',                 { desc = 'Find: grep search' })
 vim.keymap.set('n', '<leader>fh', '<Cmd>Telescope help_tags<CR>',                 { desc = 'Find: help tags' })
-vim.keymap.set('n', '<leader>fH', '<Cmd>Telescope highlights<CR>',                { desc = 'Find: highlight groups' })
 vim.keymap.set('n', '<leader>fj', '<Cmd>Telescope jumplist<CR>',                  { desc = 'Find: jumplist' })
 vim.keymap.set('n', '<leader>fo', '<Cmd>Telescope oldfiles<CR>',                  { desc = 'Find: old files' })
-vim.keymap.set('n', '<leader>fO', '<Cmd>Telescope vim_options<CR>',               { desc = 'Find: options' })
 vim.keymap.set('n', '<leader>fr', '<Cmd>Telescope resume<CR>',                    { desc = 'Find: resume' })
-vim.keymap.set('n', '<leader>fR', '<Cmd>Telescope lsp_references<CR>',            { desc = 'Find: references (LSP)' })
-vim.keymap.set('n', '<leader>fs', '<Cmd>Telescope spell_suggest<CR>',             { desc = 'Find: spell suggestions' })
-vim.keymap.set('n', '<leader>fS', '<Cmd>Telescope treesitter<CR>',                { desc = 'Find: symbols (treesitter)' })
+vim.keymap.set('n', '<leader>fs', '<Cmd>Telescope git_status<CR>',                { desc = 'Find: git status' })
 vim.keymap.set('n', '<leader>ft', '<Cmd>Telescope file_browser<CR>',              { desc = 'Find: file browser' })
 
 -- Git
@@ -36,15 +31,18 @@ vim.keymap.set('n', '[h', '<Cmd>lua require("gitsigns").prev_hunk()<CR>',       
 vim.keymap.set('n', ']h', '<Cmd>lua require("gitsigns").next_hunk()<CR>',                   { desc =  'Git: next hunk' })
 
 -- LSP
+vim.keymap.set('n', '<leader>le', '<Cmd>lua vim.lsp.buf.code_action()<CR>',            { desc =  'LSP: code action' })
 vim.keymap.set('n', '<leader>lf', '<Cmd>lua vim.lsp.buf.format({ async = true })<CR>', { desc =  'LSP: format' })
 vim.keymap.set('n', '<leader>lR', '<Cmd>lua vim.lsp.buf.references()<CR>',             { desc =  'LSP: references' })
 vim.keymap.set('n', '<leader>la', '<Cmd>lua vim.lsp.buf.signature_help()<CR>',         { desc =  'LSP: arguments popup' })
 vim.keymap.set('n', '<leader>ld', '<Cmd>lua vim.diagnostic.open_float()<CR>',          { desc =  'LSP: diagnostics popup' })
 vim.keymap.set('n', '<leader>li', '<Cmd>lua vim.lsp.buf.hover()<CR>',                  { desc =  'LSP: information' })
-vim.keymap.set('n', '<leader>lj', '<Cmd>lua vim.diagnostic.goto_next()<CR>',           { desc =  'LSP: next diagnostic' })
-vim.keymap.set('n', '<leader>lk', '<Cmd>lua vim.diagnostic.goto_prev()<CR>',           { desc =  'LSP: prev diagnostic' })
 vim.keymap.set('n', '<leader>lr', '<Cmd>lua vim.lsp.buf.rename()<CR>',                 { desc =  'LSP: rename' })
 vim.keymap.set('n', '<leader>ls', '<Cmd>lua vim.lsp.buf.definition()<CR>',             { desc =  'LSP: source definition' })
+
+-- Explore
+vim.keymap.set('n', '<leader>et', '<Cmd>NvimTreeToggle<CR>', { desc = "Explore: Tree" })
+vim.keymap.set('n', '<leader>eu', '<Cmd>UndotreeToggle<CR>', { desc = "Explore: Undo" })
 
 -- Test
 vim.keymap.set('n', '<leader>tF', '<Cmd>TestFile -strategy=make | copen<CR>',    { desc =  'Test: file (quickfix)' })

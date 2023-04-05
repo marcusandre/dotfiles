@@ -10,7 +10,6 @@ return {
   { 'echasnovski/mini.sessions',   config = function() require("mini.sessions").setup({}) end },
   { 'echasnovski/mini.splitjoin',  config = function() require("mini.splitjoin").setup({}) end },
   { 'echasnovski/mini.statusline', config = function() require("mini.statusline").setup({}) end },
-  { 'echasnovski/mini.surround',   config = function() require("mini.surround").setup({}) end },
   { 'echasnovski/mini.trailspace', config = function() require("mini.trailspace").setup({}) end },
   { 'echasnovski/mini.base16', },
   {

@@ -30,11 +30,7 @@ if vim.fn.exists("syntax_on") ~= 1 then
   vim.cmd([[syntax enable]])
 end
 
-vim.cmd('au VimEnter * nested ++once colorscheme tokyonight')
-vim.cmd('au ColorScheme * hi! link WinSeparator NormalFloat')
-vim.cmd('au ColorScheme * hi CursorLineNr gui=bold')
-vim.cmd('au ColorScheme * hi PmenuSel blend=0')
-vim.cmd('au ColorScheme * hi Delimiter gui=bold')
+vim.cmd('au VimEnter * nested ++once colorscheme dayfox')
 
 -- Editing
 vim.o.autoindent    = true                        -- Use auto indent
@@ -65,7 +61,9 @@ vim.o.spelloptions       = 'camel'    -- Treat parts of camelCase words as sepra
 vim.opt.complete:append('kspell')     -- Add spellcheck options for autocomplete
 vim.opt.complete:remove('t')          -- Don't use tags for completion
 
+-- Highlight Yanks
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     vim.highlight.on_yank()
