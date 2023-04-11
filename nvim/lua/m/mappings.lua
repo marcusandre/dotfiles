@@ -31,14 +31,17 @@ vim.keymap.set('n', '[h', '<Cmd>lua require("gitsigns").prev_hunk()<CR>',       
 vim.keymap.set('n', ']h', '<Cmd>lua require("gitsigns").next_hunk()<CR>',                   { desc =  'Git: next hunk' })
 
 -- LSP
-vim.keymap.set('n', '<leader>le', '<Cmd>lua vim.lsp.buf.code_action()<CR>',            { desc =  'LSP: code action' })
+vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc =  'LSP: diagnostics popup' })
 vim.keymap.set('n', '<leader>lf', '<Cmd>lua vim.lsp.buf.format({ async = true })<CR>', { desc =  'LSP: format' })
-vim.keymap.set('n', '<leader>lR', '<Cmd>lua vim.lsp.buf.references()<CR>',             { desc =  'LSP: references' })
-vim.keymap.set('n', '<leader>la', '<Cmd>lua vim.lsp.buf.signature_help()<CR>',         { desc =  'LSP: arguments popup' })
-vim.keymap.set('n', '<leader>ld', '<Cmd>lua vim.diagnostic.open_float()<CR>',          { desc =  'LSP: diagnostics popup' })
-vim.keymap.set('n', '<leader>li', '<Cmd>lua vim.lsp.buf.hover()<CR>',                  { desc =  'LSP: information' })
-vim.keymap.set('n', '<leader>lr', '<Cmd>lua vim.lsp.buf.rename()<CR>',                 { desc =  'LSP: rename' })
-vim.keymap.set('n', '<leader>ls', '<Cmd>lua vim.lsp.buf.definition()<CR>',             { desc =  'LSP: source definition' })
+vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition)
+vim.keymap.set('n', '<space>la', vim.lsp.buf.code_action)
+vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename)
+vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
+vim.keymap.set('n', 'gr', vim.lsp.buf.references)
 
 -- Explore
 vim.keymap.set('n', '<leader>et', '<Cmd>NvimTreeToggle<CR>', { desc = "Explore: Tree" })
@@ -54,9 +57,7 @@ vim.keymap.set('n', '<leader>tn', '<Cmd>TestNearest<CR>',                       
 vim.keymap.set('n', '<leader>tS', '<Cmd>TestSuite -strategy=make | copen<CR>',   { desc =  'Test: suite (quickfix)' })
 vim.keymap.set('n', '<leader>ts', '<Cmd>TestSuite<CR>',                          { desc =  'Test: suite' })
 
--- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
--- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-
+vim.keymap.set('n', 'q:', '<Nop>')
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
