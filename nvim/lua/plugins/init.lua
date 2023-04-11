@@ -14,6 +14,7 @@ return {
     end
   },
 
+  -- Themes
   { 'EdenEast/nightfox.nvim' },
   { 'arcticicestudio/nord-vim' },
   { 'folke/tokyonight.nvim' },

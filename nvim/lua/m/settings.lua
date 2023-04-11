@@ -30,7 +30,7 @@ if vim.fn.exists("syntax_on") ~= 1 then
   vim.cmd([[syntax enable]])
 end
 
-vim.cmd('au VimEnter * nested ++once colorscheme dayfox')
+-- vim.cmd('au VimEnter * nested ++once colorscheme dayfox')
 
 -- Editing
 vim.o.autoindent    = true                        -- Use auto indent
