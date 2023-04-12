@@ -1,6 +1,9 @@
 return {
   {
     "nvim-tree/nvim-tree.lua",
+    keys = {
+      { "<leader>et", "<CMD>NvimTreeToggle<CR>", desc = "Explore: Tree" },
+    },
     config = function()
       require("nvim-tree").setup({
         sort_by = "case_sensitive",
@@ -11,6 +14,6 @@ return {
           dotfiles = true,
         },
       })
-    end
-  }
+    end,
+  },
 }
