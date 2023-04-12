@@ -2,6 +2,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
+      "lukas-reineke/lsp-format.nvim",
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "folke/neodev.nvim",
@@ -14,6 +15,7 @@ return {
     },
     config = function()
       require("mason").setup()
+      require("lsp-format").setup({})
 
       local servers = {
         rust_analyzer = {},
@@ -34,7 +36,10 @@ return {
 
       local mason_lspconfig = require("mason-lspconfig")
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      local on_attach = function(_, bufnr)
+
+      local on_attach = function(client, bufnr)
+        require("lsp-format").on_attach(client)
+
         vim.api.nvim_buf_create_user_command(bufnr, "Format", function()
           vim.lsp.buf.format()
         end, { desc = "Format current buffer with LSP" })

@@ -13,4 +13,7 @@ wezterm:
 	@mkdir -p $(CONFIG_PATH)/wezterm
 	stow -v --target=$(CONFIG_PATH)/wezterm wezterm
 
-.PHONY: home nvim wezterm 
+lint:
+	stylua . -v
+
+.PHONY: home nvim wezterm lint
