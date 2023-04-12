@@ -1,6 +1,6 @@
 -- Buffers
 vim.keymap.set('n', '<leader><leader>', '<Cmd>b#<CR>', { desc = "Buffer: Toggle" })
-vim.keymap.set('n', '<leader>q', '<cmd>lua MiniBufremove.delete()<cr>', { desc = "buffer: Delete" })
+vim.keymap.set('n', '<leader>q', '<cmd>lua MiniBufremove.delete()<cr>', { desc = "Buffer: Delete" })
 vim.keymap.set('n', '<leader>bw', '<Cmd>lua MiniBufremove.wipeout()<CR>', { desc = "Buffer: Wipeout" })
 vim.keymap.set('n', '<leader>bW', '<Cmd>lua MiniBufremove.wipeout(0, true)<CR>', { desc = "Buffer: Wipeout!" })
 
@@ -57,7 +57,12 @@ vim.keymap.set('n', '<leader>tn', '<Cmd>TestNearest<CR>',                       
 vim.keymap.set('n', '<leader>tS', '<Cmd>TestSuite -strategy=make | copen<CR>',   { desc =  'Test: suite (quickfix)' })
 vim.keymap.set('n', '<leader>ts', '<Cmd>TestSuite<CR>',                          { desc =  'Test: suite' })
 
-vim.keymap.set('n', 'q:', '<Nop>')
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'J', 'mzJ`z')
+vim.keymap.set('n', 'Q', '<nop>')
+vim.keymap.set('n', 'Y', 'y$')
+vim.keymap.set('n', 'n', 'nzz')
+vim.keymap.set('n', '{', '{zz')
+vim.keymap.set('n', '}', '}zz')
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })

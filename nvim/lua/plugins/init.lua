@@ -1,10 +1,15 @@
 return {
-  -- Blessings from the Pope
   'tpope/vim-eunuch',
   'tpope/vim-projectionist',
   'tpope/vim-sleuth',
   'tpope/vim-surround',
+  'farmergreg/vim-lastplace',
 
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function() require("todo-comments").setup {} end
+  },
   {
     "folke/which-key.nvim",
     config = function()
