@@ -1,112 +1,64 @@
 return {
-  {
-    "echasnovski/mini.ai",
-    config = function()
-      require("mini.ai").setup({})
-    end,
-  },
-  {
-    "echasnovski/mini.bracketed",
-    config = function()
-      require("mini.bracketed").setup({})
-    end,
-  },
-  {
-    "echasnovski/mini.comment",
-    config = function()
-      require("mini.comment").setup({})
-    end,
-  },
-  {
-    "echasnovski/mini.completion",
-    config = function()
-      require("mini.completion").setup({})
-    end,
-  },
-  {
-    "echasnovski/mini.cursorword",
-    config = function()
-      require("mini.cursorword").setup({})
-    end,
-  },
-  {
-    "echasnovski/mini.misc",
-    config = function()
-      require("mini.misc").setup_restore_cursor()
-    end,
-  },
-  {
-    "echasnovski/mini.move",
-    config = function()
-      require("mini.move").setup({})
-    end,
-  },
-  {
-    "echasnovski/mini.pairs",
-    config = function()
-      require("mini.pairs").setup({})
-    end,
-  },
-  {
-    "echasnovski/mini.sessions",
-    config = function()
-      require("mini.sessions").setup({})
-    end,
-  },
-  {
-    "echasnovski/mini.splitjoin",
-    config = function()
-      require("mini.splitjoin").setup({})
-    end,
-  },
-  {
-    "echasnovski/mini.statusline",
-    config = function()
-      require("mini.statusline").setup({})
-    end,
-  },
-  {
-    "echasnovski/mini.trailspace",
-    config = function()
-      require("mini.trailspace").setup({})
-    end,
-  },
-  { "echasnovski/mini.base16" },
-  {
-    "echasnovski/mini.bufremove",
-    keys = {
-      { "<leader>q",  "<Cmd>lua MiniBufremove.delete()<CR>",         desc = "Buffer: Delete" },
-      { "<leader>bw", "<Cmd>lua MiniBufremove.wipeout()<CR>",        desc = "Buffer: Wipeout" },
-      { "<leader>bW", "<Cmd>lua MiniBufremove.wipeout(0, true)<CR>", desc = "Buffer: Wipeout!" },
-    },
-    config = function()
-      require("mini.bufremove").setup({})
-    end,
-  },
-  {
-    "echasnovski/mini.indentscope",
-    config = function()
-      local indentscope = require("mini.indentscope")
+  "echasnovski/mini.nvim",
+  version = false,
+  config = function()
+    local map = require("utils").map
 
-      indentscope.setup({ draw = { animation = indentscope.gen_animation.none() } })
-    end,
-  },
-  {
-    "echasnovski/mini.basics",
-    config = function()
-      local basics = require("mini.basics")
+    require("mini.ai").setup()
+    require("mini.align").setup()
+    -- require('mini.animate').setup()
+    -- require('mini.base16').setup()
+    require("mini.basics").setup({
+      options = {
+        basic = true,
+        extra_ui = true,
+        win_borders = "default",
+      },
+      mappings = {
+        basic = true,
+        option_toggle_prefix = [[\]],
+        windows = false,
+        move_with_alt = true,
+      },
+      autocommands = {
+        basic = true,
+        relnum_in_visual_mode = true,
+      },
+    })
+    require("mini.bracketed").setup()
 
-      basics.setup({
-        options = {
-          basic = true,
-          extra_ui = true,
-          win_borders = 'double',
-        },
-        mappings = {
-          basic = true,
-          move_with_alt = true,
-        }
-      })
-    end,
-  },
+    -- bufremove
+    require("mini.bufremove").setup()
+    map("n", "<leader>bq", "<Cmd>lua MiniBufremove.delete()<CR>", { desc = "Buffer: Delete" })
+    map("n", "<leader>bw", "<Cmd>lua MiniBufremove.wipeout()<CR>", { desc = "Buffer: Wipeout" })
+    map("n", "<leader>bW", "<Cmd>lua MiniBufremove.wipeout(0, true)<CR>", { desc = "Buffer: Wipeout!" })
+
+    require("mini.comment").setup()
+    require("mini.completion").setup()
+    require("mini.cursorword").setup()
+    -- require('mini.doc').setup()
+
+    require("mini.fuzzy").setup()
+
+    require("mini.indentscope").setup()
+    require("mini.jump").setup()
+    require("mini.jump2d").setup()
+    -- require('mini.map').setup()
+
+    require("mini.misc").setup()
+    require("mini.misc").setup_restore_cursor()
+
+    require("mini.move").setup()
+    require("mini.pairs").setup()
+    require("mini.sessions").setup()
+    require("mini.splitjoin").setup()
+    require("mini.starter").setup()
+    require("mini.statusline").setup()
+    require("mini.surround").setup()
+    require("mini.tabline").setup()
+    -- require('mini.test').setup()
+    require("mini.trailspace").setup()
+
+    vim.cmd([[ colorscheme minicyan ]])
+  end,
 }

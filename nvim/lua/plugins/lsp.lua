@@ -6,16 +6,12 @@ return {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "folke/neodev.nvim",
-      {
-        "j-hui/fidget.nvim",
-        config = function()
-          require("fidget").setup({})
-        end,
-      },
+      "j-hui/fidget.nvim",
     },
     config = function()
       require("mason").setup()
       require("lsp-format").setup({})
+      require("fidget").setup({})
 
       local servers = {
         rust_analyzer = {},
@@ -63,11 +59,11 @@ return {
 
       -- Keymaps
       keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)
-      keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "LSP: diagnostics popup" })
+      keymap.set("n", "<leader>le", vim.diagnostic.open_float, { desc = "LSP: diagnostics popup" })
       keymap.set("n", "<leader>lf", "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", { desc = "LSP: format" })
-      keymap.set("n", "<space>D", vim.lsp.buf.type_definition)
+      keymap.set("n", "<space>ld", vim.lsp.buf.type_definition)
       keymap.set("n", "<space>la", vim.lsp.buf.code_action)
-      keymap.set("n", "<space>rn", vim.lsp.buf.rename)
+      keymap.set("n", "<space>lr", vim.lsp.buf.rename)
       keymap.set("n", "K", vim.lsp.buf.hover)
       keymap.set("n", "gD", vim.lsp.buf.declaration)
       keymap.set("n", "gd", vim.lsp.buf.definition)

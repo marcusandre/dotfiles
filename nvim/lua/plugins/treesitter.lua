@@ -47,7 +47,7 @@ return {
         "vim",
         "yaml",
       },
-      highlight = { enable = true },
+      highlight = { enable = false },
       indent = { enable = true, disable = { "python" } },
     })
 

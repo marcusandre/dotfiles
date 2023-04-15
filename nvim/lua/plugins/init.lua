@@ -2,8 +2,6 @@ return {
   "tpope/vim-eunuch",
   "tpope/vim-projectionist",
   "tpope/vim-sleuth",
-  "tpope/vim-surround",
-
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -21,7 +19,7 @@ return {
   },
 
   -- Themes
-  { "EdenEast/nightfox.nvim",   lazy = true, priority = 1000 },
+  { "EdenEast/nightfox.nvim", lazy = true, priority = 1000 },
   { "arcticicestudio/nord-vim", lazy = true, priority = 1000 },
-  { "folke/tokyonight.nvim",    lazy = true, priority = 1000 },
+  { "folke/tokyonight.nvim", lazy = true, priority = 1000 },
 }
