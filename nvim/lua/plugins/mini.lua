@@ -30,6 +30,12 @@ return {
     end,
   },
   {
+    "echasnovski/mini.misc",
+    config = function()
+      require("mini.misc").setup_restore_cursor()
+    end,
+  },
+  {
     "echasnovski/mini.move",
     config = function()
       require("mini.move").setup({})
@@ -69,8 +75,8 @@ return {
   {
     "echasnovski/mini.bufremove",
     keys = {
-      { "<leader>q", "<Cmd>lua MiniBufremove.delete()<CR>", desc = "Buffer: Delete" },
-      { "<leader>bw", "<Cmd>lua MiniBufremove.wipeout()<CR>", desc = "Buffer: Wipeout" },
+      { "<leader>q",  "<Cmd>lua MiniBufremove.delete()<CR>",         desc = "Buffer: Delete" },
+      { "<leader>bw", "<Cmd>lua MiniBufremove.wipeout()<CR>",        desc = "Buffer: Wipeout" },
       { "<leader>bW", "<Cmd>lua MiniBufremove.wipeout(0, true)<CR>", desc = "Buffer: Wipeout!" },
     },
     config = function()
@@ -83,6 +89,24 @@ return {
       local indentscope = require("mini.indentscope")
 
       indentscope.setup({ draw = { animation = indentscope.gen_animation.none() } })
+    end,
+  },
+  {
+    "echasnovski/mini.basics",
+    config = function()
+      local basics = require("mini.basics")
+
+      basics.setup({
+        options = {
+          basic = true,
+          extra_ui = true,
+          win_borders = 'double',
+        },
+        mappings = {
+          basic = true,
+          move_with_alt = true,
+        }
+      })
     end,
   },
 }

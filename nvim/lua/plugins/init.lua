@@ -3,7 +3,6 @@ return {
   "tpope/vim-projectionist",
   "tpope/vim-sleuth",
   "tpope/vim-surround",
-  "farmergreg/vim-lastplace",
 
   {
     "folke/todo-comments.nvim",
@@ -22,7 +21,7 @@ return {
   },
 
   -- Themes
-  { "EdenEast/nightfox.nvim", lazy = true, priority = 1000 },
+  { "EdenEast/nightfox.nvim",   lazy = true, priority = 1000 },
   { "arcticicestudio/nord-vim", lazy = true, priority = 1000 },
-  { "folke/tokyonight.nvim", lazy = true, priority = 1000 },
+  { "folke/tokyonight.nvim",    lazy = true, priority = 1000 },
 }
