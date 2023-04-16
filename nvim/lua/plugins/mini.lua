@@ -58,7 +58,5 @@ return {
     require("mini.tabline").setup()
     -- require('mini.test').setup()
     require("mini.trailspace").setup()
-
-    vim.cmd([[ colorscheme minicyan ]])
   end,
 }

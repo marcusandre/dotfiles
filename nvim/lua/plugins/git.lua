@@ -7,6 +7,8 @@ return {
       { "[h", "<Cmd>Gitsigns prev_hunk<CR>", desc = "Git: previous hunk" },
       { "]h", "<Cmd>Gitsigns next_hunk<CR>", desc = "Git: next hunk" },
     },
-    opts = {},
+    config = function()
+      require('gitsigns').setup()
+    end,
   },
 }
