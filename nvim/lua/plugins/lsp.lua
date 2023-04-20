@@ -26,7 +26,7 @@ return {
             diagnostics = { globals = { "vim", }, },
           },
         },
-        rome = {},
+        -- rome = {},
         rust_analyzer = {},
         stylelint_lsp = {},
         terraformls = {},
