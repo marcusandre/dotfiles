@@ -23,10 +23,6 @@ return {
     })
 
     require("mini.bufremove").setup()
-    map("n", "<leader>bq", "<Cmd>lua MiniBufremove.delete()<CR>", { desc = "Buffer: Delete" })
-    map("n", "<leader>bw", "<Cmd>lua MiniBufremove.wipeout()<CR>", { desc = "Buffer: Wipeout" })
-    map("n", "<leader>bW", "<Cmd>lua MiniBufremove.wipeout(0, true)<CR>", { desc = "Buffer: Wipeout!" })
-
     require("mini.ai").setup()
     require("mini.align").setup()
     require("mini.bracketed").setup()
@@ -50,5 +46,10 @@ return {
     require("mini.trailspace").setup()
     -- require('mini.base16').setup()
     -- require('mini.animate').setup()
+
+    map("n", "<leader>bq", "<Cmd>lua MiniBufremove.delete()<CR>", { desc = "Buffer: Delete" })
+    map("n", "<leader>bw", "<Cmd>lua MiniBufremove.wipeout()<CR>", { desc = "Buffer: Wipeout" })
+    map("n", "<leader>bW", "<Cmd>lua MiniBufremove.wipeout(0, true)<CR>", { desc = "Buffer: Wipeout!" })
+    vim.keymap.del('n', '<C-z>')
   end,
 }
