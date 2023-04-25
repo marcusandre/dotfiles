@@ -64,7 +64,7 @@
   autosquash = true
 
 [core]
-  editor = vim
+  editor = nvim
 
 [add.interactive]
   useBuiltin = false
