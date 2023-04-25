@@ -12,10 +12,9 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
-  spec = {
-    { import = "plugins" },
-  },
-  checker = { enabled = true },
+  spec = { { import = "plugins" }, },
+  install = { colorscheme = { 'nord' } },
+  change_detection = { notify = false },
   performance = {
     rtp = {
       disabled_plugins = {
