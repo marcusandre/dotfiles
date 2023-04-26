@@ -1,11 +1,11 @@
 return {
-  "akinsho/toggleterm.nvim",
+  'akinsho/toggleterm.nvim',
   config = function()
     require('toggleterm').setup({
       size = function(term)
-        if term.direction == "horizontal" then
+        if term.direction == 'horizontal' then
           return 15
-        elseif term.direction == "vertical" then
+        elseif term.direction == 'vertical' then
           return vim.o.columns * 0.4
         end
       end,
@@ -23,5 +23,5 @@ return {
     end
 
     vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
-  end
+  end,
 }

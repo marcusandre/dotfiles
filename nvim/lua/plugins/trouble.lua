@@ -1,16 +1,16 @@
 return {
-  "folke/trouble.nvim",
+  'folke/trouble.nvim',
   keys = {
-    { "<leader>xx", "<cmd>TroubleToggle<cr>",                       desc = "Trouble: Toggle" },
-    { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Trouble: Workspace" },
-    { "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",  desc = "Trouble: Document" },
-    { "<leader>xl", "<cmd>TroubleToggle loclist<cr>",               desc = "Trouble: Loclist" },
-    { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",              desc = "Trouble: Quickfix" },
-    { "gR",         "<cmd>TroubleToggle lsp_references<cr>",        desc = "Trouble: LSP References" },
+    { '<leader>xx', '<cmd>troubletoggle<cr>', desc = 'trouble: toggle' },
+    { '<leader>xw', '<cmd>troubletoggle workspace_diagnostics<cr>', desc = 'trouble: workspace' },
+    { '<leader>xd', '<cmd>troubletoggle document_diagnostics<cr>', desc = 'trouble: document' },
+    { '<leader>xl', '<cmd>troubletoggle loclist<cr>', desc = 'trouble: loclist' },
+    { '<leader>xq', '<cmd>troubletoggle quickfix<cr>', desc = 'trouble: quickfix' },
+    { 'gr', '<cmd>troubletoggle lsp_references<cr>', desc = 'trouble: lsp references' },
   },
   config = function()
-    require("trouble").setup({
-      icons = false
+    require('trouble').setup({
+      icons = false,
     })
-  end
+  end,
 }
