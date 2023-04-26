@@ -1,15 +1,15 @@
-local wezterm = require("wezterm")
+local wezterm = require('wezterm')
 local act = wezterm.action
 
 local function scheme_for_appearance(appearance)
-  if appearance:find("Dark") then
-    return "nord"
+  if appearance:find('Dark') then
+    return 'nord'
   else
-    return "iceberg-light"
+    return 'iceberg-light'
   end
 end
 
-wezterm.on("window-config-reloaded", function(window)
+wezterm.on('window-config-reloaded', function(window)
   local overrides = window:get_config_overrides() or {}
   local appearance = window:get_appearance()
   local scheme = scheme_for_appearance(appearance)
@@ -20,7 +20,7 @@ wezterm.on("window-config-reloaded", function(window)
 end)
 
 return {
-  font = wezterm.font("Berkeley Mono"),
+  font = wezterm.font('Berkeley Mono'),
   font_size = 12.0,
   line_height = 1.125,
   scrollback_lines = 10000,
@@ -32,17 +32,17 @@ return {
   },
   keys = {
     {
-      key = "m",
-      mods = "CMD",
-      action = "DisableDefaultAssignment",
+      key = 'm',
+      mods = 'CMD',
+      action = 'DisableDefaultAssignment',
     },
     {
-      key = "k",
-      mods = "CMD",
+      key = 'k',
+      mods = 'CMD',
       action = act.Multiple({
         act.SendKey({
-          key = "L",
-          mods = "CTRL",
+          key = 'L',
+          mods = 'CTRL',
         }),
       }),
     },
