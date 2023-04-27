@@ -36,20 +36,25 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
 
       local on_attach = function(client, bufnr)
+        local function buf_set_option(name, value) vim.api.nvim_buf_set_option(bufnr, name, value) end
+
+        buf_set_option('omnifunc', 'v:lua.MiniCompletion.completefunc_lsp')
+
         if client.name == 'tsserver' then client.server_capabilities.documentFormattingProvider = false end
+
+        vim.api.nvim_buf_create_user_command(bufnr, 'Format', function()
+          vim.lsp.buf.format({
+            async = true,
+            bufnr = bufnr,
+            filter = function(fmtclient) return fmtclient.name == 'null-ls' end,
+          })
+        end, { desc = 'Format current buffer with LSP' })
 
         vim.api.nvim_create_autocmd('BufWritePre', {
           pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
           command = 'silent! EslintFixAll',
           group = vim.api.nvim_create_augroup('EslintFmt', {}),
         })
-
-        vim.api.nvim_buf_create_user_command(bufnr, 'Format', function()
-          vim.lsp.buf.format({
-            bufnr = bufnr,
-            filter = function(fmtclient) return fmtclient.name == 'null-ls' end,
-          })
-        end, { desc = 'Format current buffer with LSP' })
       end
 
       mason_lspconfig.setup({
@@ -79,7 +84,7 @@ return {
       keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'LSP: declaration' })
       keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'LSP: definition' })
       keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = 'LSP: implementation' })
-      keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'LSP: references' })
+      keymap.set('n', '<space>lr', vim.lsp.buf.references, { desc = 'LSP: references' })
     end,
   },
 }

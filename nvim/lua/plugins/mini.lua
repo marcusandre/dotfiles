@@ -22,12 +22,28 @@ return {
       },
     })
 
+    local spec_treesitter = require('mini.ai').gen_spec.treesitter
+
+    require('mini.ai').setup({
+      custom_textobjects = {
+        F = spec_treesitter({ a = '@function.outer', i = '@function.inner' }),
+        o = spec_treesitter({
+          a = { '@conditional.outer', '@loop.outer' },
+          i = { '@conditional.inner', '@loop.inner' },
+        }),
+      },
+    })
+
+    require('mini.completion').setup({
+      lsp_completion = {
+        source_func = 'omnifunc',
+      },
+    })
+
     require('mini.bufremove').setup()
-    require('mini.ai').setup()
     require('mini.align').setup()
     require('mini.bracketed').setup()
     require('mini.comment').setup()
-    require('mini.completion').setup()
     require('mini.cursorword').setup()
     require('mini.fuzzy').setup()
     require('mini.indentscope').setup()

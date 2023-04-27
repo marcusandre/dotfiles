@@ -6,7 +6,7 @@ return {
     { '<leader>xd', '<cmd>troubletoggle document_diagnostics<cr>', desc = 'trouble: document' },
     { '<leader>xl', '<cmd>troubletoggle loclist<cr>', desc = 'trouble: loclist' },
     { '<leader>xq', '<cmd>troubletoggle quickfix<cr>', desc = 'trouble: quickfix' },
-    { 'gr', '<cmd>troubletoggle lsp_references<cr>', desc = 'trouble: lsp references' },
+    { '<leader>xr', '<cmd>troubletoggle lsp_references<cr>', desc = 'trouble: lsp references' },
   },
   config = function()
     require('trouble').setup({
