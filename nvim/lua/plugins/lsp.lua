@@ -77,14 +77,9 @@ return {
       keymap.set('n', '<C-k>', vim.lsp.buf.signature_help)
       keymap.set('n', '<leader>le', vim.diagnostic.open_float, { desc = 'LSP: diagnostics popup' })
       keymap.set('n', '<leader>lf', '<Cmd>Format<CR>', { desc = 'LSP: format' })
-      keymap.set('n', '<space>ld', vim.lsp.buf.type_definition, { desc = 'LSP: type definition' })
       keymap.set('n', '<space>la', vim.lsp.buf.code_action, { desc = 'LSP: code action' })
       keymap.set('n', '<space>lr', vim.lsp.buf.rename, { desc = 'LSP: rename' })
       keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP: hover' })
-      keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'LSP: declaration' })
-      keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'LSP: definition' })
-      keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = 'LSP: implementation' })
-      keymap.set('n', '<space>lr', vim.lsp.buf.references, { desc = 'LSP: references' })
     end,
   },
 }
