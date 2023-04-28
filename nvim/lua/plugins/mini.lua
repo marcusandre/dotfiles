@@ -52,13 +52,14 @@ return {
     require('mini.misc').setup_restore_cursor()
     require('mini.move').setup()
     require('mini.pairs').setup()
-    require('mini.sessions').setup()
     require('mini.splitjoin').setup()
     require('mini.starter').setup()
     require('mini.statusline').setup()
     require('mini.surround').setup()
     require('mini.tabline').setup()
     require('mini.trailspace').setup()
+
+    -- require('mini.sessions').setup()
     -- require('mini.animate').setup()
     -- require('mini.base16').setup()
     -- require('mini.jump2d').setup()
@@ -66,6 +67,7 @@ return {
     map('n', '<leader>bq', '<Cmd>lua MiniBufremove.delete()<CR>', { desc = 'Buffer: Delete' })
     map('n', '<leader>bw', '<Cmd>lua MiniBufremove.wipeout()<CR>', { desc = 'Buffer: Wipeout' })
     map('n', '<leader>bW', '<Cmd>lua MiniBufremove.wipeout(0, true)<CR>', { desc = 'Buffer: Wipeout!' })
+
     vim.keymap.del('n', '<C-z>')
   end,
 }

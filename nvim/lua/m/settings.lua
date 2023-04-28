@@ -20,7 +20,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- Spelling
-vim.o.spelllang = 'en,de,uk' -- Define spelling dictionaries
+vim.o.spelllang = 'en' -- Define spelling dictionaries
 vim.o.spelloptions = 'camel' -- Treat parts of camelCase words as seprate words
 
 vim.opt.complete:append('kspell') -- Add spellcheck options for autocomplete
