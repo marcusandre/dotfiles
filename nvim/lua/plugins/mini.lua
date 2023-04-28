@@ -48,7 +48,6 @@ return {
     require('mini.fuzzy').setup()
     require('mini.indentscope').setup()
     require('mini.jump').setup()
-    require('mini.jump2d').setup()
     require('mini.misc').setup()
     require('mini.misc').setup_restore_cursor()
     require('mini.move').setup()
@@ -60,8 +59,9 @@ return {
     require('mini.surround').setup()
     require('mini.tabline').setup()
     require('mini.trailspace').setup()
-    -- require('mini.base16').setup()
     -- require('mini.animate').setup()
+    -- require('mini.base16').setup()
+    -- require('mini.jump2d').setup()
 
     map('n', '<leader>bq', '<Cmd>lua MiniBufremove.delete()<CR>', { desc = 'Buffer: Delete' })
     map('n', '<leader>bw', '<Cmd>lua MiniBufremove.wipeout()<CR>', { desc = 'Buffer: Wipeout' })
