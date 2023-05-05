@@ -58,8 +58,8 @@ return {
     require('mini.surround').setup()
     require('mini.tabline').setup()
     require('mini.trailspace').setup()
+    require('mini.sessions').setup()
 
-    -- require('mini.sessions').setup()
     -- require('mini.animate').setup()
     -- require('mini.base16').setup()
     -- require('mini.jump2d').setup()

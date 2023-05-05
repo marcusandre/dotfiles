@@ -19,9 +19,10 @@ return {
         jsonls = {},
         lua_ls = {
           Lua = {
-            workspace = { checkThirdParty = false },
-            telemetry = { enable = false },
             diagnostics = { globals = { 'vim' } },
+            runtime = { version = 'LuaJIT' },
+            telemetry = { enable = false },
+            workspace = { library = vim.api.nvim_get_runtime_file('', true) },
           },
         },
         -- rome = {},
@@ -80,6 +81,18 @@ return {
       keymap.set('n', '<space>la', vim.lsp.buf.code_action, { desc = 'LSP: code action' })
       keymap.set('n', '<space>lr', vim.lsp.buf.rename, { desc = 'LSP: rename' })
       keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP: hover' })
+    end,
+  },
+  {
+    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+    config = function()
+      require('lsp_lines').setup()
+
+      vim.diagnostic.config({
+        virtual_text = false,
+      })
+
+      vim.keymap.set('', '<Leader>dt', require('lsp_lines').toggle, { desc = 'Toggle lsp_lines' })
     end,
   },
 }
