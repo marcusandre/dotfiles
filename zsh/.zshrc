@@ -6,8 +6,13 @@ if [[ -f /Users/mzui5of/.zsh_private ]]; then
 fi
 
 # == PATH
+export GOPATH=$HOME/golang
+export GOROOT=$(brew --prefix go)/libexec
+
 CHUNKS=(
   $HOME/bin
+  $GOPATH/bin
+  $GOROOT/bin
   /usr/local/bin
   /usr/local/sbin
   $PATH
