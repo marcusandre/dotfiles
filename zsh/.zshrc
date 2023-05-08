@@ -17,7 +17,7 @@ CHUNKS_STR=${(j.:.)${:-${^CHUNKS}}}
 export PATH=$CHUNKS_STR
 
 # == EDITOR
-export EDITOR=nvim
+export EDITOR=hx
 
 # == OPTIONS
 
@@ -93,7 +93,7 @@ cnprompt6
 # == ALIASES
 
 alias ..='cd ..'
-alias e='nvim'
+alias e='hx'
 alias flushdns='sudo killall -HUP mDNSResponder'
 alias gap='git add . -p'
 alias gb='git branch -a'
