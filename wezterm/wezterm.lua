@@ -3,9 +3,9 @@ local act = wezterm.action
 
 local function scheme_for_appearance(appearance)
   if appearance:find('Dark') then
-    return 'nord'
+    return 'Sonokai (Gogh)'
   else
-    return 'iceberg-light'
+    return 'Sonokai (Gogh)'
   end
 end
 
@@ -24,6 +24,7 @@ return {
   font_size = 12.0,
   line_height = 1.125,
   scrollback_lines = 10000,
+  hide_tab_bar_if_only_one_tab = true,
   window_padding = {
     left = 0,
     right = 0,
