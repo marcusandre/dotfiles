@@ -7,7 +7,6 @@ cursorline = true
 true-color = true
 color-modes = true
 auto-pairs = true
-rulers = [120]
 
 [editor.cursor-shape]
 insert = "bar"
@@ -20,7 +19,6 @@ character = "▏"
 
 [editor.lsp]
 display-messages = true
-display-inlay-hints = true
 
 [editor.file-picker]
 hidden = false
