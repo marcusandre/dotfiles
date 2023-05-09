@@ -63,9 +63,6 @@
 [rebase]
   autosquash = true
 
-[core]
-  editor = nvim
-
 [add.interactive]
   useBuiltin = false
 
