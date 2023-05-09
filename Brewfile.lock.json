@@ -1315,6 +1315,50 @@
             }
           }
         }
+      },
+      "nushell": {
+        "version": "0.79.0_1",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_ventura": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/nushell/blobs/sha256:50cf7a00c864da78104c244cb81b9588f8b1249cb2575db0f7319211430fa8ac",
+              "sha256": "50cf7a00c864da78104c244cb81b9588f8b1249cb2575db0f7319211430fa8ac"
+            },
+            "arm64_monterey": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/nushell/blobs/sha256:48222d6bd0fcc62dc9d0bf707737d064a194de291e6e06560b27f2950424fa51",
+              "sha256": "48222d6bd0fcc62dc9d0bf707737d064a194de291e6e06560b27f2950424fa51"
+            },
+            "arm64_big_sur": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/nushell/blobs/sha256:3e029f99711609ab065ef5ec214b9df1223ed67fdc66b5f9220db36595c60856",
+              "sha256": "3e029f99711609ab065ef5ec214b9df1223ed67fdc66b5f9220db36595c60856"
+            },
+            "ventura": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/nushell/blobs/sha256:18523d29cd9d6957fe37fe46731756d30bf1e1ac7ca95799450700a189ec7de3",
+              "sha256": "18523d29cd9d6957fe37fe46731756d30bf1e1ac7ca95799450700a189ec7de3"
+            },
+            "monterey": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/nushell/blobs/sha256:50e22b31f55d491ebccefad8877841660f654ae51cfa1e0e4dd600ada737d28d",
+              "sha256": "50e22b31f55d491ebccefad8877841660f654ae51cfa1e0e4dd600ada737d28d"
+            },
+            "big_sur": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/nushell/blobs/sha256:ef5e2e7b9be92bd0bb5c84636451ce0c786f3cfb152b325211879724b20c2550",
+              "sha256": "ef5e2e7b9be92bd0bb5c84636451ce0c786f3cfb152b325211879724b20c2550"
+            },
+            "x86_64_linux": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/nushell/blobs/sha256:06c33909fae91b4058a644f06aa2935abef2802eef11a2093fc60f5f31b22c6a",
+              "sha256": "06c33909fae91b4058a644f06aa2935abef2802eef11a2093fc60f5f31b22c6a"
+            }
+          }
+        }
       }
     },
     "cask": {
