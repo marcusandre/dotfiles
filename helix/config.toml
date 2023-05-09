@@ -1,4 +1,4 @@
-theme = "sonokai"
+theme = "nord"
 
 [editor]
 line-number = "relative"

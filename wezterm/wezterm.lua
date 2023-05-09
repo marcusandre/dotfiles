@@ -3,9 +3,9 @@ local act = wezterm.action
 
 local function scheme_for_appearance(appearance)
   if appearance:find('Dark') then
-    return 'Sonokai (Gogh)'
+    return 'nord'
   else
-    return 'Sonokai (Gogh)'
+    return 'nord'
   end
 end
 
