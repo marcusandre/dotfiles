@@ -51,6 +51,14 @@ return {
           })
         end, { desc = 'Format current buffer with LSP' })
 
+        vim.api.nvim_buf_create_user_command(bufnr, 'FormatSync', function()
+          vim.lsp.buf.format({
+            async = false,
+            bufnr = bufnr,
+            filter = function(fmtclient) return fmtclient.name == 'null-ls' end,
+          })
+        end, { desc = 'Format current buffer with LSP' })
+
         -- vim.api.nvim_create_autocmd('BufWritePre', {
         --   pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
         --   command = 'silent! EslintFixAll',
@@ -81,6 +89,8 @@ return {
       keymap.set('n', '<space>la', vim.lsp.buf.code_action, { desc = 'LSP: code action' })
       keymap.set('n', '<space>lr', vim.lsp.buf.rename, { desc = 'LSP: rename' })
       keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP: hover' })
+
+      vim.cmd([[cabbrev wq execute "FormatSync" <bar> wq]])
     end,
   },
   {
