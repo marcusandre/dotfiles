@@ -3,7 +3,7 @@ CONFIG_PATH=${HOME}/.config
 all: home helix nvim ranger wezterm
 
 home:
-	stow - rangerv etc  rangergit vim zsh
+	stow -v etc git ranger vim zsh
 
 helix:
 	@mkdir -p $(CONFIG_PATH)/helix
@@ -24,4 +24,4 @@ wezterm:
 lint:
 	stylua . -v
 
-.PHONY: home helix nvim ranger wezterm li rangernt
+.PHONY: home helix nvim ranger wezterm lint
