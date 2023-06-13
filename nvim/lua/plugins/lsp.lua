@@ -12,10 +12,8 @@ return {
       require('fidget').setup({})
 
       local servers = {
-        bashls = {},
         cssls = {},
         eslint = {},
-        html = {},
         jsonls = {},
         lua_ls = {
           Lua = {
@@ -25,7 +23,6 @@ return {
             workspace = { library = vim.api.nvim_get_runtime_file('', true) },
           },
         },
-        -- rome = {},
         rust_analyzer = {},
         stylelint_lsp = {},
         terraformls = {},
@@ -47,7 +44,6 @@ return {
           vim.lsp.buf.format({
             async = true,
             bufnr = bufnr,
-            filter = function(fmtclient) return fmtclient.name == 'null-ls' end,
           })
         end, { desc = 'Format current buffer with LSP' })
 
@@ -55,15 +51,21 @@ return {
           vim.lsp.buf.format({
             async = false,
             bufnr = bufnr,
-            filter = function(fmtclient) return fmtclient.name == 'null-ls' end,
           })
         end, { desc = 'Format current buffer with LSP' })
 
-        -- vim.api.nvim_create_autocmd('BufWritePre', {
-        --   pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
-        --   command = 'silent! EslintFixAll',
-        --   group = vim.api.nvim_create_augroup('EslintFmt', {}),
-        -- })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = bufnr,
+          callback = function()
+            vim.lsp.buf.format { async = false }
+          end
+        })
+
+        vim.api.nvim_create_autocmd('BufWritePre', {
+          pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
+          command = 'silent! EslintFixAll',
+          group = vim.api.nvim_create_augroup('EslintFmt', {}),
+        })
       end
 
       mason_lspconfig.setup({

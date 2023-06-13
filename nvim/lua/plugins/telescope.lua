@@ -32,7 +32,6 @@ return {
     },
     config = function()
       local telescope = require('telescope')
-      local trouble = require('trouble.providers.telescope')
       local fuzzy = require('mini.fuzzy')
 
       telescope.setup({
@@ -49,10 +48,6 @@ return {
           generic_sorter = fuzzy.get_telescope_sorter,
           pickers = {
             buffers = { ignore_current_buffer = true },
-          },
-          mappings = {
-            i = { ['<c-t>'] = trouble.open_with_trouble },
-            n = { ['<c-t>'] = trouble.open_with_trouble },
           },
         },
         pickers = {
