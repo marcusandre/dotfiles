@@ -25,7 +25,4 @@ zed:
 	@mkdir -p $(CONFIG_PATH)/zed
 	stow -v --target=$(CONFIG_PATH)/zed zed
 
-lint:
-	stylua . -v
-
-.PHONY: home helix nvim ranger wezterm zed lint
+.PHONY: home helix nvim ranger wezterm zed
