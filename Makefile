@@ -1,6 +1,6 @@
 CONFIG_PATH=${HOME}/.config
 
-all: home helix nvim ranger wezterm
+all: home helix nvim ranger wezterm zed
 
 home:
 	stow -v etc git ranger vim zsh
@@ -21,7 +21,11 @@ wezterm:
 	@mkdir -p $(CONFIG_PATH)/wezterm
 	stow -v --target=$(CONFIG_PATH)/wezterm wezterm
 
+zed:
+	@mkdir -p $(CONFIG_PATH)/zed
+	stow -v --target=$(CONFIG_PATH)/zed zed
+
 lint:
 	stylua . -v
 
-.PHONY: home helix nvim ranger wezterm lint
+.PHONY: home helix nvim ranger wezterm zed lint
