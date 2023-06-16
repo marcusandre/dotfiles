@@ -5,11 +5,11 @@ return {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       'folke/neodev.nvim',
-      'j-hui/fidget.nvim',
+      -- 'j-hui/fidget.nvim',
     },
     config = function()
       require('mason').setup({})
-      require('fidget').setup({})
+      -- require('fidget').setup({})
 
       local servers = {
         cssls = {},
@@ -92,7 +92,7 @@ return {
       keymap.set('n', '<space>lr', vim.lsp.buf.rename, { desc = 'LSP: rename' })
       keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP: hover' })
 
-      vim.cmd([[cabbrev wq execute "FormatSync" <bar> wq]])
+      -- vim.cmd([[cabbrev wq execute "FormatSync" <bar> wq]])
     end,
   },
   {

@@ -7,7 +7,7 @@ return {
 
       ai.setup({
         custom_textobjects = {
-          F = ai.gen_spec.treesitter({
+          f = ai.gen_spec.treesitter({
             a = '@function.outer',
             i = '@function.inner',
           }),
@@ -63,7 +63,6 @@ return {
       local map = require('utils').map
 
       require('mini.bufremove').setup()
-
 
       map('n', '<leader>bd', '<Cmd>lua MiniBufremove.delete()<CR>', { desc = 'Buffer: Delete' })
       map('n', '<leader>bw', '<Cmd>lua MiniBufremove.wipeout()<CR>', { desc = 'Buffer: Wipeout' })
