@@ -47,6 +47,8 @@ return {
           relnum_in_visual_mode = true,
         },
       })
+
+      vim.keymap.del('n', '<C-z>')
     end,
   },
   {
