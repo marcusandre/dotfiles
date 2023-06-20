@@ -66,7 +66,10 @@ return {
 
       require('mini.bufremove').setup()
 
+      map('n', '<leader>bu', '<Cmd>lua MiniBufremove.unshow()<CR>', { desc = 'Buffer: Unshow' })
+      map('n', '<leader>bU', '<Cmd>bufdo lua MiniBufremove.unshow()<CR>', { desc = 'Buffer: Unshow all' })
       map('n', '<leader>bd', '<Cmd>lua MiniBufremove.delete()<CR>', { desc = 'Buffer: Delete' })
+      map('n', '<leader>bD', '<Cmd>bufdo lua MiniBufremove.delete()<CR>', { desc = 'Buffer: Delete all' })
       map('n', '<leader>bw', '<Cmd>lua MiniBufremove.wipeout()<CR>', { desc = 'Buffer: Wipeout' })
       map('n', '<leader>bW', '<Cmd>lua MiniBufremove.wipeout(0, true)<CR>', { desc = 'Buffer: Wipeout!' })
     end,
