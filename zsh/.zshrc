@@ -1,5 +1,7 @@
 export ZSH=~/.zsh
 
+eval "$(~/Developer/homebrew/bin/brew shellenv)"
+
 # == ENVIRONMENT
 if [[ -f /Users/mzui5of/.zsh_private ]]; then
   source /Users/mzui5of/.zsh_private
@@ -110,7 +112,7 @@ alias gu='git upgrade'
 alias la=' ls -laG'
 alias ld=' ls -ladG'
 alias ll=' ls -laG'
-alias np='cat package.json | jq ".dependencies"'
+alias nd='cat package.json | jq ".dependencies"'
 alias ns='cat package.json | jq ".scripts"'
 alias rf='rm -fr'
 alias rmds='find . -name ".DS_Store" -type f -delete'
