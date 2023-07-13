@@ -97,3 +97,6 @@ eval "$(starship init zsh)"
 
 # init z
 [ -f $(brew --prefix)/etc/profile.d/z.sh ] && . $(brew --prefix)/etc/profile.d/z.sh
+
+# init cargo
+[ -f ~/.cargo/env ] && source ~/.cargo/env
