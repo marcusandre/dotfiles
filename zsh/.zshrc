@@ -100,3 +100,6 @@ eval "$(starship init zsh)"
 
 # init cargo
 [ -f ~/.cargo/env ] && source ~/.cargo/env
+
+# fnm
+eval "$(fnm env --use-on-cd)"
