@@ -12,9 +12,9 @@ select = "underline"
 character = "▏"
 render = true
 
-# display-inlay-hints = true
 [editor.lsp]
 display-messages = true
+# display-inlay-hints = true
 
 [editor.file-picker]
 hidden = true
