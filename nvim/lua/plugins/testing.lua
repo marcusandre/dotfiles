@@ -17,7 +17,7 @@ return {
   {
     'andythigpen/nvim-coverage',
     keys = {
-      { '<leader>tc', '<Cmd>Coverage<CR>', desc = 'Test: Coverage' },
+      { '<leader>tc', '<Cmd>Coverage<CR>', desc = 'Test: coverage' },
     },
     config = function() require('coverage').setup() end,
     dependencies = { 'nvim-lua/plenary.nvim', },

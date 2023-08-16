@@ -2,36 +2,44 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      'williamboman/mason.nvim',
+      {
+        'williamboman/mason.nvim',
+        config = true
+      },
       'williamboman/mason-lspconfig.nvim',
+      {
+        'j-hui/fidget.nvim',
+        tag = 'legacy',
+        opts = {}
+      },
       'folke/neodev.nvim',
-      -- 'j-hui/fidget.nvim',
     },
     config = function()
-      require('mason').setup({})
-      -- require('fidget').setup({})
+      require("mason").setup()
+      local mason_lspconfig = require("mason-lspconfig")
 
       local servers = {
         cssls = {},
         eslint = {},
+        gopls = {},
         jsonls = {},
         lua_ls = {
           Lua = {
             diagnostics = { globals = { 'vim' } },
-            runtime = { version = 'LuaJIT' },
             telemetry = { enable = false },
-            workspace = { library = vim.api.nvim_get_runtime_file('', true) },
           },
         },
+        marksman = {},
         rust_analyzer = {},
-        stylelint_lsp = {},
+        -- stylelint_lsp = {},
         terraformls = {},
         tsserver = {},
         yamlls = {},
+        zls = {},
       }
 
-      local mason_lspconfig = require('mason-lspconfig')
       local capabilities = vim.lsp.protocol.make_client_capabilities()
+      local lspconfig = require('lspconfig')
 
       local on_attach = function(client, bufnr)
         local function buf_set_option(name, value) vim.api.nvim_buf_set_option(bufnr, name, value) end
@@ -43,13 +51,6 @@ return {
         vim.api.nvim_buf_create_user_command(bufnr, 'Format', function()
           vim.lsp.buf.format({
             async = true,
-            bufnr = bufnr,
-          })
-        end, { desc = 'Format current buffer with LSP' })
-
-        vim.api.nvim_buf_create_user_command(bufnr, 'FormatSync', function()
-          vim.lsp.buf.format({
-            async = false,
             bufnr = bufnr,
           })
         end, { desc = 'Format current buffer with LSP' })
@@ -85,15 +86,11 @@ return {
       local keymap = vim.keymap
 
       -- Keymaps
-      keymap.set('n', '<C-k>', vim.lsp.buf.signature_help)
-      keymap.set('n', '<leader>le', vim.diagnostic.open_float, { desc = 'LSP: diagnostics popup' })
-      keymap.set('n', '<leader>lf', '<Cmd>Format<CR>', { desc = 'LSP: format' })
-      keymap.set('n', '<space>la', vim.lsp.buf.code_action, { desc = 'LSP: code action' })
-      keymap.set('n', '<space>lr', vim.lsp.buf.rename, { desc = 'LSP: rename' })
-      keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP: hover' })
-
-      -- vim.cmd([[cabbrev wq execute "FormatSync" <bar> wq]])
-    end,
+      keymap.set('n', '<leader>a', vim.lsp.buf.code_action, { desc = 'Perform code action' })
+      keymap.set('n', '<leader>k', vim.lsp.buf.hover, { desc = 'Show docs for item under cursor' })
+      keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = 'Rename symbol' })
+      keymap.set('n', '<leader>K', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
+    end
   },
   {
     'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
@@ -102,9 +99,10 @@ return {
 
       vim.diagnostic.config({
         virtual_text = false,
+        virtual_lines = { only_current_line = true },
       })
 
-      vim.keymap.set('', '<Leader>dt', require('lsp_lines').toggle, { desc = 'Toggle lsp_lines' })
+      vim.keymap.set('', '<Leader>td', require('lsp_lines').toggle, { desc = 'Toggle LSP lines' })
     end,
   },
 }

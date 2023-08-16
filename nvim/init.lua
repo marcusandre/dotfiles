@@ -2,5 +2,5 @@
 vim.loader.enable()
 
 require('m.settings')
-require('m.mappings')
+require('m.keymaps')
 require('m.lazy')

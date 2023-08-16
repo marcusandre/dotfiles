@@ -10,7 +10,6 @@ return {
         ensure_installed = {
           'css',
           'diff',
-          'dockerfile',
           'git_rebase',
           'gitcommit',
           'gitignore',
@@ -24,10 +23,7 @@ return {
           'lua',
           'make',
           'markdown',
-          'nix',
-          'python',
           'regex',
-          'ruby',
           'rust',
           'scss',
           'sql',
@@ -38,9 +34,15 @@ return {
           'vim',
           'yaml',
         },
-        autopairs = { enable = true },
+        autopairs = {
+          enable = true
+        },
+        indent = {
+          enable = true
+        },
         highlight = {
           enable = true,
+          additional_vim_regex_highlighting = false,
           disable = function(_, buf)
             local max_filesize = 100 * 1024 -- 100 KB
             local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
@@ -48,50 +50,25 @@ return {
               return true
             end
           end,
-          additional_vim_regex_highlighting = false,
         },
-        indent = { enable = true, disable = { 'python' } },
-        -- textobjects = {
-        --   select = {
-        --     enable = true,
-        --     lookahead = true,
-        --     keymaps = {
-        --       ['aa'] = '@parameter.outer',
-        --       ['ia'] = '@parameter.inner',
-        --       ['af'] = '@function.outer',
-        --       ['if'] = '@function.inner',
-        --       ['ac'] = '@class.outer',
-        --       ['ic'] = '@class.inner',
-        --       ["iB"] = "@block.inner",
-        --       ["aB"] = "@block.outer",
-        --     },
-        --   },
-        --   move = {
-        --     enable = true,
-        --     set_jumps = true,
-        --     goto_next_start = {
-        --       [']]'] = '@function.outer',
-        --     },
-        --     goto_next_end = {
-        --       [']['] = '@function.outer',
-        --     },
-        --     goto_previous_start = {
-        --       ['[['] = '@function.outer',
-        --     },
-        --     goto_previous_end = {
-        --       ['[]'] = '@function.outer',
-        --     },
-        --   },
-        --   swap = {
-        --     enable = true,
-        --     swap_next = {
-        --       ['<leader>sn'] = '@parameter.inner',
-        --     },
-        --     swap_previous = {
-        --       ['<leader>sp'] = '@parameter.inner',
-        --     },
-        --   },
-        -- },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = '<c-space>',
+            node_incremental = '<c-space>',
+            scope_incremental = '<c-s>',
+            node_decremental = '<M-space>',
+          },
+        },
+        swap = {
+          enable = true,
+          swap_next = {
+            ['<leader>a'] = '@parameter.inner',
+          },
+          swap_previous = {
+            ['<leader>A'] = '@parameter.inner',
+          },
+        },
       })
     end,
   },
