@@ -1,3 +1,7 @@
+vim.keymap.set('n', '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
+vim.keymap.set('n', '<leader>q', '<cmd>bd<cr>', { desc = 'Buffer close' })
+vim.keymap.set('n', '<leader>Q', '<cmd>bufdo lua MiniBufremove.delete()<cr>', { desc = 'Buffer close (all)' })
+vim.keymap.set('n', '<leader><space>', '<cmd>bp<cr>', { desc = 'Buffer previous' })
 vim.keymap.set('n', 'J', 'mzJ`z')
 vim.keymap.set('n', 'Q', '<nop>')
 vim.keymap.set('n', 'Y', 'y$')

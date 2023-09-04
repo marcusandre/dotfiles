@@ -1,9 +1,9 @@
 return {
   {
-    "echasnovski/mini.nvim",
+    'echasnovski/mini.nvim',
     config = function()
       -- mini.ai
-      local ai = require('mini.ai');
+      local ai = require('mini.ai')
 
       ai.setup({
         custom_textobjects = {
@@ -89,23 +89,23 @@ return {
       -- mini.comment
       require('mini.comment').setup()
 
-      -- mini.completion
-      local MiniCompletion = require('mini.completion')
-
-      MiniCompletion.setup({
-        lsp_completion = {
-          source_func = 'omnifunc',
-          auto_setup = false,
-          process_items = function(items, base)
-            items = vim.tbl_filter(function(x) return x.kind ~= 1 and x.kind ~= 15 end, items)
-            return MiniCompletion.default_process_items(items, base)
-          end,
-        },
-        -- window = {
-        --   info = { border = 'double' },
-        --   signature = { border = 'double' },
-        -- },
-      })
+      -- -- mini.completion
+      -- local MiniCompletion = require('mini.completion')
+      --
+      -- MiniCompletion.setup({
+      --   lsp_completion = {
+      --     source_func = 'omnifunc',
+      --     auto_setup = false,
+      --     process_items = function(items, base)
+      --       items = vim.tbl_filter(function(x) return x.kind ~= 1 and x.kind ~= 15 end, items)
+      --       return MiniCompletion.default_process_items(items, base)
+      --     end,
+      --   },
+      --   window = {
+      --     info = { border = 'double' },
+      --     signature = { border = 'double' },
+      --   },
+      -- })
 
       -- mini.cursorword
       require('mini.cursorword').setup()
@@ -126,7 +126,7 @@ return {
       })
 
       -- mini.indentscope
-      require('mini.indentscope').setup()
+      -- require('mini.indentscope').setup()
 
       -- mini.move
       require('mini.move').setup({ options = { reindent_linewise = false } })
@@ -143,11 +143,14 @@ return {
       -- mini.surround
       require('mini.surround').setup()
 
+      -- mini.statusline
+      require('mini.statusline').setup()
+
       -- mini.tabline
       require('mini.tabline').setup()
 
       -- mini.trailspace
       require('mini.trailspace').setup()
-    end
+    end,
   },
 }
