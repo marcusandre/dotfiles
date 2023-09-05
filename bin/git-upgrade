@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+main() {
+  remote=origin/master
+
+  git stash \
+    && git fetch --prune \
+    && git rebase $remote \
+    && git delete-merged-branches
+}
+
+[ -d .git ] && main || git rev-parse --git-dir > /dev/null 2>&1

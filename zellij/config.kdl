@@ -1,0 +1,16 @@
+//  Send a request for a simplified ui (without arrow fonts) to plugins
+//  Options:
+//    - true
+//    - false (Default)
+//
+simplified_ui true
+
+// Choose the theme that is specified in the themes section.
+// Default: default
+//
+theme "tokyo-night-storm"
+
+// The name of the default layout to load on startup
+// Default: "default"
+//
+//default_layout "compact"

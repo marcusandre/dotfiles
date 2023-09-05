@@ -1,0 +1,112 @@
+[user]
+  email = hello+github@marcusandre.de
+  name = Marcus André
+
+[alias]
+  git = "!git"
+
+  # The basic aliases
+  s = status
+  cm = commit -m
+  root = rev-parse --show-toplevel
+  hash = log -1 --format='%H'
+  back = checkout -
+
+  # Branch related aliases
+  br = branch -a
+  co = checkout
+  com = checkout master
+  cleanup-branches = "!git branch | grep -v $(git main-branch) | grep -v $(git branch --show-current) | xargs git branch -D"
+
+  # Rebase related aliases
+  ri = rebase -i
+  rb = "!sh -c \"git rebase -i HEAD~$1\" -"
+  rc = rebase --continue
+  ra = rebase --abort
+  rs = rebase --skip
+  re = rebase --exit
+  upgrade = "!git fetch --prune && git rebase origin/$(git main-branch)"
+
+  # Commit related aliases
+  wip = !"git add . && git commit -n -m \"WIP\""
+  amend = commit --amend --no-edit
+  famend = commit --amend --no-edit --no-verify
+
+  # Mistake related aliases
+  nono = !git checkout -- . && git clean -f
+  wait = reset HEAD
+  undo = !"git reset --soft \"HEAD^\" && git status --short"
+
+  # Diff related aliases
+  changes = diff --name-status
+  dft = difftool
+  l = log --graph --decorate --pretty=oneline --abbrev-commit
+  ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
+
+  # Misc
+  main-branch = "!git remote show origin | sed -n '/HEAD branch/s/.*: //p'"
+  publish = push origin HEAD --force-with-lease
+  squash = "!git rebase -v -i $(git main-branch)"
+  update = "!git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase"
+  todo = git grep -niE '(FIXME|TODO)'
+  fixme = git grep -niE '(FIXME|TODO)'
+  private = "!git config user.name \"Marcus André\" && git config user.email \"andremarcus@johndeere.com\""
+
+  # GitHub
+  hub = !hub
+
+[commit]
+  template = ~/.config/git/template
+  verbose = true
+  push = current
+
+[core]
+  diffFilter = delta --color-only
+  excludesfile = ~/.gitignore_global
+  pager = delta
+
+[delta]
+  navigate = true
+  light = false
+  side-by-side = false
+  line-numbers = true
+  features = Dracula
+
+[push]
+  default = current
+  autoSetupRemote = true
+
+[pull]
+  rebase = true
+
+[diff]
+  colorMoved = default
+  compactionHeuristic = true
+  tool = difftastic
+
+[difftool]
+  prompt = false
+
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+  difftool = true
+
+[rebase]
+  autosquash = true
+
+[merge]
+  conflictstyle = diff3
+
+[credential]
+  helper = osxkeychain
+
+[init]
+  defaultBranch = main
+
+[rerere]
+  enabled = true
+
+[url "ssh://git@github.deere.com/"]
+  insteadOf = https://github.deere.com/
