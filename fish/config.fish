@@ -3,6 +3,10 @@ set fish_greeting
 # Path
 fish_add_path "$HOME/bin"
 
+if status --is-interactive
+  eval (/opt/homebrew/bin/brew shellenv)
+end
+
 # Env
 set -gx EDITOR nvim
 set -gx VISUAL nvim
