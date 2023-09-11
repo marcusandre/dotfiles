@@ -7,24 +7,15 @@
 
   # The basic aliases
   s = status
-  cm = commit -m
   root = rev-parse --show-toplevel
   hash = log -1 --format='%H'
-  back = checkout -
 
   # Branch related aliases
-  br = branch -a
   co = checkout
-  com = checkout master
   cleanup-branches = "!git branch | grep -v $(git main-branch) | grep -v $(git branch --show-current) | xargs git branch -D"
 
   # Rebase related aliases
-  ri = rebase -i
   rb = "!sh -c \"git rebase -i HEAD~$1\" -"
-  rc = rebase --continue
-  ra = rebase --abort
-  rs = rebase --skip
-  re = rebase --exit
   upgrade = "!git fetch --prune && git rebase origin/$(git main-branch)"
 
   # Commit related aliases
@@ -34,12 +25,9 @@
 
   # Mistake related aliases
   nono = !git checkout -- . && git clean -f
-  wait = reset HEAD
   undo = !"git reset --soft \"HEAD^\" && git status --short"
 
   # Diff related aliases
-  changes = diff --name-status
-  dft = difftool
   l = log --graph --decorate --pretty=oneline --abbrev-commit
   ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
 
@@ -63,7 +51,6 @@
 [core]
   diffFilter = delta --color-only
   excludesfile = ~/.gitignore_global
-  pager = delta
 
 [delta]
   navigate = true
