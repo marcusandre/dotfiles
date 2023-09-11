@@ -22,7 +22,10 @@ return {
       require('mini.align').setup()
 
       -- mini.basics
-      require('mini.basics').setup()
+      require('mini.basics').setup({
+        extra_ui = true,
+        win_borders = 'double',
+      })
 
       vim.keymap.del('n', '<C-z>')
 
@@ -31,6 +34,9 @@ return {
 
       -- mini.bufremove
       require('mini.bufremove').setup()
+
+      vim.keymap.set('n', '<leader>q', '<cmd>bd<cr>', { desc = 'Buffer close' })
+      vim.keymap.set('n', '<leader>Q', '<cmd>bufdo lua MiniBufremove.delete()<cr>', { desc = 'Buffer close (all)' })
 
       -- mini.clue
       local miniclue = require('mini.clue')
@@ -110,9 +116,6 @@ return {
       -- mini.cursorword
       require('mini.cursorword').setup()
 
-      -- mini.files
-      require('mini.files').setup()
-
       -- mini.hipatterns
       local hipatterns = require('mini.hipatterns')
       hipatterns.setup({
@@ -124,9 +127,6 @@ return {
           hex_color = hipatterns.gen_highlighter.hex_color(),
         },
       })
-
-      -- mini.indentscope
-      -- require('mini.indentscope').setup()
 
       -- mini.move
       require('mini.move').setup({ options = { reindent_linewise = false } })
