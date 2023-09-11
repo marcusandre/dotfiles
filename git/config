@@ -38,7 +38,6 @@
   update = "!git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase"
   todo = git grep -niE '(FIXME|TODO)'
   fixme = git grep -niE '(FIXME|TODO)'
-  private = "!git config user.name \"Marcus André\" && git config user.email \"andremarcus@johndeere.com\""
 
   # GitHub
   hub = !hub
@@ -94,6 +93,3 @@
 
 [rerere]
   enabled = true
-
-[url "ssh://git@github.deere.com/"]
-  insteadOf = https://github.deere.com/
