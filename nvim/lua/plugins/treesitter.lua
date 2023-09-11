@@ -6,8 +6,10 @@ return {
     },
     config = function()
       require('nvim-treesitter.install').prefer_git = true
+      ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup({
         ensure_installed = {
+          'bash',
           'css',
           'diff',
           'git_rebase',
@@ -35,10 +37,10 @@ return {
           'yaml',
         },
         autopairs = {
-          enable = true
+          enable = true,
         },
         indent = {
-          enable = true
+          enable = true,
         },
         highlight = {
           enable = true,
@@ -46,29 +48,27 @@ return {
           disable = function(_, buf)
             local max_filesize = 100 * 1024 -- 100 KB
             local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-            if ok and stats and stats.size > max_filesize then
-              return true
-            end
+            if ok and stats and stats.size > max_filesize then return true end
           end,
         },
         incremental_selection = {
           enable = true,
           keymaps = {
-            init_selection = '<c-space>',
-            node_incremental = '<c-space>',
-            scope_incremental = '<c-s>',
-            node_decremental = '<M-space>',
+            init_selection = '<C-j>',
+            node_incremental = '<C-j>',
+            scope_incremental = '<C-j>',
+            node_decremental = '<C-k>',
           },
         },
-        swap = {
-          enable = true,
-          swap_next = {
-            ['<leader>a'] = '@parameter.inner',
-          },
-          swap_previous = {
-            ['<leader>A'] = '@parameter.inner',
-          },
-        },
+        -- swap = {
+        --   enable = false,
+        --   swap_next = {
+        --     ['<leader>a'] = '@parameter.inner',
+        --   },
+        --   swap_previous = {
+        --     ['<leader>A'] = '@parameter.inner',
+        --   },
+        -- },
       })
     end,
   },
