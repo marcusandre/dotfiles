@@ -17,6 +17,9 @@ set -gx LS_COLORS "vivid generate dracula"
 set -gx GOPATH $HOME/golang
 set -gx GOROOT $(brew --prefix go)/libexec
 
+# OCaml
+source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+
 # prompt
 starship init fish | source
 
