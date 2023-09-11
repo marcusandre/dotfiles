@@ -9,7 +9,7 @@ end
 
 local function scheme_for_appearance(appearance)
   if appearance:find("Dark") then
-    return "Tokyo Night Moon"
+    return "Tokyo Night"
   else
     return "Tokyo Night Storm"
   end
@@ -36,7 +36,7 @@ config.scrollback_lines = 10000
 config.enable_scroll_bar = false
 
 config.use_fancy_tab_bar = false
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 config.tab_bar_at_bottom = true
 
 -- config.window_close_confirmation = "NeverPrompt"
@@ -65,7 +65,7 @@ config.keys = {
     }),
   },
   {
-    key = "1",
+    key = "\\",
     mods = "CMD",
     action = wezterm.action.ToggleFullScreen,
   },
