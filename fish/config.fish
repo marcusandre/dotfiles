@@ -58,12 +58,12 @@ alias gr 'cd $(git root)'
 alias gu 'git upgrade'
 alias lg 'lazygit'
 alias ll 'ls -la'
-alias ls exa
+alias ls eza
 alias rf 'rm -fr'
 alias s 'git s'
 alias sloc='tokei'
 alias ss 'git status'
-alias tree 'exa --tree'
+alias tree 'eza --tree'
 alias vim='nvim'
 alias vimdiff='nvim -d'
 
