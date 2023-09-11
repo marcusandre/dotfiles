@@ -64,6 +64,11 @@ config.keys = {
       }),
     }),
   },
+  {
+    key = "1",
+    mods = "CMD",
+    action = wezterm.action.ToggleFullScreen,
+  },
 }
 
 return config

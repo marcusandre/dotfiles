@@ -17,7 +17,8 @@ return {
       { '<leader>i', '<Cmd>Telescope current_buffer_fuzzy_find<CR>',     desc = 'Open buffer fuzzy search' },
       { '<leader>j', '<Cmd>Telescope jumplist<CR>',                      desc = 'Open jumplist picker' },
       { '<leader>l', '<Cmd>Telescope treesitter<CR>',                    desc = 'Open buffer treesitter search' },
-      { '<leader>o', '<Cmd>Telescope oldfiles<CR>',                      desc = 'Open old files' },
+      { '<leader>o', '<Cmd>Telescope oldfiles only_cwd=true<CR>',        desc = 'Open old files' },
+      { '<leader>O', '<Cmd>Telescope oldfiles<CR>',                      desc = 'Open old files' },
       { '<leader>s', '<Cmd>Telescope lsp_document_symbols<CR>',          desc = 'Open symbol picker' },
       { 'g/',        '<Cmd>Telescope grep_string<CR>',                   desc = 'Global search word under cursor' },
       { 'gD',        '<Cmd>Telescope lsp_type_definitions<CR>',          desc = 'Goto type definition' },
@@ -37,21 +38,11 @@ return {
       telescope.setup({
         defaults = {
           border = true,
-          sorting_strategy = 'ascending',
-          layout_strategy = 'flex',
-          layout_config = {
-            prompt_position = 'top',
-            vertical = { mirror = true },
-            flex = { flip_columns = 140 },
-          },
           file_sorter = fuzzy.get_telescope_sorter,
           generic_sorter = fuzzy.get_telescope_sorter,
-          pickers = {
-            buffers = { ignore_current_buffer = true },
-          },
         },
         pickers = {
-          buffers = { theme = 'dropdown' },
+          buffers = { theme = 'dropdown', ignore_current_buffer = true },
           lsp_definitions = { theme = 'ivy' },
           lsp_document_symbols = { theme = 'ivy' },
           lsp_dynamic_workspace_symbols = { theme = 'ivy' },
@@ -60,7 +51,7 @@ return {
           lsp_type_definitions = { theme = 'ivy' },
           find_files = {
             find_command = vim.fn.executable('fdfind') == 1 and { 'fdfind', '--strip-cwd-prefix', '--type', 'f' }
-              or nil,
+                or nil,
           },
         },
         extensions = {
