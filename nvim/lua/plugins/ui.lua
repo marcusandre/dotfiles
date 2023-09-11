@@ -1,8 +1,8 @@
 return {
-  {
-    'stevearc/dressing.nvim',
-    opts = {},
-  },
+  -- {
+  --   'stevearc/dressing.nvim',
+  --   opts = {},
+  -- },
   {
     'folke/tokyonight.nvim',
     lazy = false,
@@ -11,8 +11,6 @@ return {
       require('tokyonight').setup({
         day_brightness = 0.2,
       })
-
-      vim.cmd([[colorscheme tokyonight]])
     end,
   },
   {
@@ -40,11 +38,11 @@ return {
       update_interval = 1000,
       set_dark_mode = function()
         vim.api.nvim_set_option('background', 'dark')
-        vim.cmd([[colorscheme tokyonight-moon]])
+        vim.cmd([[colorscheme tokyonight-night]])
       end,
       set_light_mode = function()
-        vim.cmd([[colorscheme tokyonight-storm]])
         vim.api.nvim_set_option('background', 'dark')
+        vim.cmd([[colorscheme tokyonight-storm]])
       end,
     },
   },

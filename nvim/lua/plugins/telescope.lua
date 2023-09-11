@@ -43,6 +43,7 @@ return {
         },
         pickers = {
           buffers = { theme = 'dropdown', ignore_current_buffer = true },
+          colorscheme = { enable_preview = true },
           lsp_definitions = { theme = 'ivy' },
           lsp_document_symbols = { theme = 'ivy' },
           lsp_dynamic_workspace_symbols = { theme = 'ivy' },

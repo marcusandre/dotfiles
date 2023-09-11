@@ -20,8 +20,8 @@ return {
       'saadparwaiz1/cmp_luasnip',
 
       -- UI
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
       'onsails/lspkind-nvim',
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
     },
     config = function()
       -- Neodev
@@ -177,9 +177,9 @@ return {
         }),
         sources = cmp.config.sources({
           { name = 'nvim_lsp_signature_help' },
-          { name = 'nvim_lsp', keyword_length = 3 },
-          { name = 'path', keyword_length = 3 },
-          { name = 'buffer', keyword_length = 3 },
+          { name = 'nvim_lsp',               keyword_length = 3 },
+          { name = 'path',                   keyword_length = 3 },
+          { name = 'buffer',                 keyword_length = 3 },
           { name = 'luasnip' },
         }),
         ---@diagnostic disable-next-line: missing-fields
@@ -203,10 +203,15 @@ return {
       })
 
       -- Keymaps
-      vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, { desc = 'Perform code action' })
-      vim.keymap.set('n', '<leader>k', vim.lsp.buf.hover, { desc = 'Show docs for item under cursor' })
-      vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = 'Rename symbol' })
-      vim.keymap.set('n', '<leader>K', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
+      vim.api.nvim_create_autocmd('LspAttach', {
+        group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+        callback = function()
+          vim.keymap.set({ 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action, { desc = 'Perform code action' })
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Show docs for item under cursor' })
+          vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = 'Rename symbol' })
+          vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
+        end
+      })
     end,
   },
   {
