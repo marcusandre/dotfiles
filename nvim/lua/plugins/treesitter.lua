@@ -57,7 +57,7 @@ return {
             init_selection = '<C-j>',
             node_incremental = '<C-j>',
             scope_incremental = '<C-j>',
-            node_decremental = '<C-k>',
+            node_decremental = '<C-h>',
           },
         },
         -- swap = {

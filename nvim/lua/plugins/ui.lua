@@ -1,8 +1,8 @@
 return {
-  -- {
-  --   'stevearc/dressing.nvim',
-  --   opts = {},
-  -- },
+  {
+    'stevearc/dressing.nvim',
+    opts = {},
+  },
   {
     'folke/tokyonight.nvim',
     lazy = false,

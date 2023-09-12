@@ -134,11 +134,17 @@ return {
       -- mini.pairs
       require('mini.pairs').setup({ modes = { insert = true, command = true, terminal = true } })
 
+      -- mini.sessions
+      require('mini.sessions').setup()
+
       -- mini.splitjoin
       require('mini.splitjoin').setup()
 
       -- mini.surround
       require('mini.surround').setup()
+
+      -- mini.starter
+      require('mini.starter').setup()
 
       -- mini.statusline
       require('mini.statusline').setup()
