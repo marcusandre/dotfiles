@@ -14,6 +14,11 @@ return {
     end,
   },
   {
+    'EdenEast/nightfox.nvim',
+    lazy = false,
+    priority = 1000,
+  },
+  {
     'ellisonleao/gruvbox.nvim',
     lazy = false,
     priority = 1000,
@@ -24,26 +29,26 @@ return {
     end,
   },
   {
+    'f-person/auto-dark-mode.nvim',
+    opts = {
+      update_interval = 1000,
+      set_dark_mode = function()
+        vim.api.nvim_set_option('background', 'dark')
+        vim.cmd([[colorscheme tokyonight-storm]])
+      end,
+      set_light_mode = function()
+        vim.api.nvim_set_option('background', 'light')
+        vim.cmd([[colorscheme dayfox]])
+      end,
+    },
+  },
+  {
     'lukas-reineke/indent-blankline.nvim',
     opts = {
       char = '┊',
       show_trailing_blankline_indent = false,
       show_current_context = true,
       -- show_current_context_start = true,
-    },
-  },
-  {
-    'f-person/auto-dark-mode.nvim',
-    opts = {
-      update_interval = 1000,
-      set_dark_mode = function()
-        vim.api.nvim_set_option('background', 'dark')
-        vim.cmd([[colorscheme tokyonight-night]])
-      end,
-      set_light_mode = function()
-        vim.api.nvim_set_option('background', 'dark')
-        vim.cmd([[colorscheme tokyonight-storm]])
-      end,
     },
   },
 }

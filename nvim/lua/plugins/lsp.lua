@@ -33,6 +33,7 @@ return {
 
       local servers = {
         cssls = {},
+        elixirls = {},
         eslint = {},
         gopls = {
           usePlaceholders = true,
@@ -78,6 +79,7 @@ return {
           },
         },
         marksman = {},
+        ocamllsp = {},
         rust_analyzer = {},
         -- stylelint_lsp = {},
         terraformls = {},

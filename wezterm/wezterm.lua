@@ -9,9 +9,9 @@ end
 
 local function scheme_for_appearance(appearance)
   if appearance:find("Dark") then
-    return "Tokyo Night"
-  else
     return "Tokyo Night Storm"
+  else
+    return "dayfox"
   end
 end
 
@@ -25,7 +25,6 @@ wezterm.on("window-config-reloaded", function(window)
   end
 end)
 
--- config.font = wezterm.font("Berkeley Mono")
 config.font = wezterm.font {
   family = 'Berkeley Mono',
   harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },

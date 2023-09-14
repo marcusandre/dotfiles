@@ -144,7 +144,35 @@ return {
       require('mini.surround').setup()
 
       -- mini.starter
-      require('mini.starter').setup()
+      local MiniStarter = require('mini.starter')
+
+      local header = function()
+        local hour = tonumber(vim.fn.strftime('%H'))
+        local part_id = math.floor((hour + 4) / 8) + 1
+        local day_part = ({ 'evening', 'morning', 'afternoon', 'evening' })[part_id]
+
+        return ('Good %s!'):format(day_part)
+      end
+
+
+      MiniStarter.setup({
+        -- items = {
+        --   MiniStarter.sections.sessions(5, true),
+        --   MiniStarter.sections.recent_files(5, true, true),
+        --   MiniStarter.sections.builtin_actions(),
+        -- },
+        header = header,
+      })
+
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "LazyVimStarted",
+        callback = function()
+          local stats = require("lazy").stats()
+          local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+          MiniStarter.config.footer = "Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
+          pcall(MiniStarter.refresh)
+        end,
+      })
 
       -- mini.statusline
       require('mini.statusline').setup()

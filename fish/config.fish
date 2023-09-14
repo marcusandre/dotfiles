@@ -12,6 +12,8 @@ set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx PAGER "less -R --use-color -Dd+r -Du+b"
 set -gx LS_COLORS "vivid generate dracula"
+set -gx MANPAGER 'nvim +Man!'
+set -gx NVIM_LISTEN_ADDRESS "/tmp/nvimsocket"
 
 # Go
 set -gx GOPATH $HOME/golang
