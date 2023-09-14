@@ -5,37 +5,12 @@ return {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     config = function()
+      local ts = require "nvim-treesitter.configs"
+
       require('nvim-treesitter.install').prefer_git = true
+
       ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup({
-        ensure_installed = {
-          'bash',
-          'css',
-          'diff',
-          'git_rebase',
-          'gitcommit',
-          'gitignore',
-          'go',
-          'gomod',
-          'gosum',
-          'html',
-          'javascript',
-          'json',
-          'json5',
-          'lua',
-          'make',
-          'markdown',
-          'regex',
-          'rust',
-          'scss',
-          'sql',
-          'terraform',
-          'toml',
-          'tsx',
-          'typescript',
-          'vim',
-          'yaml',
-        },
+      ts.setup({
         autopairs = {
           enable = true,
         },
@@ -60,15 +35,52 @@ return {
             node_decremental = '<C-n>',
           },
         },
-        -- swap = {
-        --   enable = false,
-        --   swap_next = {
-        --     ['<leader>a'] = '@parameter.inner',
-        --   },
-        --   swap_previous = {
-        --     ['<leader>A'] = '@parameter.inner',
-        --   },
-        -- },
+        textobjects = {
+          swap = {
+            enable = true,
+            swap_next = {
+              ["<leader>m"] = "@parameter.inner",
+            },
+            swap_previous = {
+              ["<leader>M"] = "@parameter.inner",
+            },
+          },
+        },
+        playground = {
+          enable = true,
+          updatetime = 25,
+          persist_queries = false,
+        },
+        ensure_installed = {
+          'bash',
+          'css',
+          'diff',
+          'elixir',
+          'git_rebase',
+          'gitcommit',
+          'gitignore',
+          'go',
+          'gomod',
+          'gosum',
+          'html',
+          'javascript',
+          'json',
+          'json5',
+          'lua',
+          'make',
+          'markdown',
+          'regex',
+          'rust',
+          'scss',
+          'sql',
+          'terraform',
+          'toml',
+          'tsx',
+          'typescript',
+          'vim',
+          'yaml',
+          'zig',
+        },
       })
     end,
   },
