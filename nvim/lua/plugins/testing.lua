@@ -1,6 +1,6 @@
 return {
   {
-    'vim-test/vim-test',
+    "vim-test/vim-test",
     keys = {
       -- stylua: ignore start
       { '<leader>tf', '<Cmd>TestFile<CR>',               desc = 'Test: file' },
@@ -15,17 +15,19 @@ return {
       -- stylua: ignore end
     },
     config = function()
-      vim.g['test#strategy'] = 'neovim'
-      vim.g['test#neovim#start_normal'] = '1'
-      vim.g['test#neovim#term_position'] = 'vert'
+      vim.g["test#strategy"] = "neovim"
+      vim.g["test#neovim#start_normal"] = "1"
+      vim.g["test#neovim#term_position"] = "vert"
     end,
   },
   {
-    'andythigpen/nvim-coverage',
+    "andythigpen/nvim-coverage",
     keys = {
-      { '<leader>tc', '<Cmd>Coverage<CR>', desc = 'Test: coverage' },
+      { "<leader>tc", "<Cmd>Coverage<CR>", desc = "Test: coverage" },
     },
-    config = function() require('coverage').setup() end,
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require("coverage").setup()
+    end,
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
 }

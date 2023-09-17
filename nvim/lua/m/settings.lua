@@ -1,5 +1,5 @@
 -- General
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 -- UI
 -- stylua: ignore start

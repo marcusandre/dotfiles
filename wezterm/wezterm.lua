@@ -11,7 +11,8 @@ local function scheme_for_appearance(appearance)
   if appearance:find("Dark") then
     return "Tokyo Night Storm"
   else
-    return "dayfox"
+    -- return "dayfox"
+    return "Tokyo Night Storm"
   end
 end
 
@@ -25,16 +26,16 @@ wezterm.on("window-config-reloaded", function(window)
   end
 end)
 
-config.font = wezterm.font {
-  family = 'Berkeley Mono',
-  harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
-}
+config.font = wezterm.font({
+  family = "Berkeley Mono",
+  harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+})
 config.font_size = 12.0
-config.line_height = 1.125
+config.line_height = 1.15
 config.freetype_load_target = "HorizontalLcd"
 
 config.initial_cols = 200
-config.initial_rows = 53
+config.initial_rows = 55
 config.scrollback_lines = 10000
 config.enable_scroll_bar = false
 

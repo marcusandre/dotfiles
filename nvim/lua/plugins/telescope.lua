@@ -1,7 +1,7 @@
 return {
   {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.3',
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.3",
     keys = {
       -- stylua: ignore start
       { "<leader>'", '<Cmd>Telescope resume<CR>',                        desc = 'Open last picker' },
@@ -29,13 +29,13 @@ return {
       -- stylua: ignore end
     },
     dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope-ui-select.nvim',
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
     },
     config = function()
-      local telescope = require('telescope')
-      local actions = require "telescope.actions"
-      local fuzzy = require('mini.fuzzy')
+      local telescope = require("telescope")
+      local actions = require("telescope.actions")
+      local fuzzy = require("mini.fuzzy")
 
       telescope.setup({
         defaults = {
@@ -59,34 +59,36 @@ return {
         },
         pickers = {
           buffers = {
+            sort_lastused = true,
             sort_mru = true,
-            theme = 'dropdown',
+            theme = "dropdown",
             previewer = false,
             mappings = {
               i = { ["<c-d>"] = actions.delete_buffer },
             },
           },
           find_files = {
-            find_command = vim.fn.executable('fdfind') == 1 and { 'fdfind', '--strip-cwd-prefix', '--type', 'f' }
-                or nil,
+            find_command = vim.fn.executable("fd") == 1 and { "fd", "--strip-cwd-prefix", "--type", "f" } or nil,
           },
-          colorscheme = { enable_preview = true, previewer = false, },
+          git_files = { show_untracked = true },
+          colorscheme = { enable_preview = true, theme = "dropdown" },
           current_buffer_fuzzy_find = { theme = "dropdown" },
+          treesitter = { theme = "dropdown" },
           lsp_code_actions = { theme = "dropdown" },
-          lsp_definitions = { path_display = { "shorten" } },
+          lsp_definitions = { path_display = { "shorten" }, trim_text = true },
           lsp_dynamic_workspace_symbols = { path_display = { "shorten" } },
           lsp_implementations = { path_display = { "shorten" } },
           lsp_references = { path_display = { "shorten" } },
           lsp_type_definitions = { path_display = { "shorten" } },
         },
         extensions = {
-          ['ui-select'] = {
-            require('telescope.themes').get_dropdown({}),
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown({}),
           },
         },
       })
 
-      require('telescope').load_extension('ui-select')
+      require("telescope").load_extension("ui-select")
     end,
   },
 }

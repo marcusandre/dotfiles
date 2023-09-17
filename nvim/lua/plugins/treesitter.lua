@@ -1,13 +1,14 @@
 return {
   {
-    'nvim-treesitter/nvim-treesitter',
+    "nvim-treesitter/nvim-treesitter",
     dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      "nvim-treesitter/nvim-treesitter-context",
     },
     config = function()
-      local ts = require "nvim-treesitter.configs"
+      local ts = require("nvim-treesitter.configs")
 
-      require('nvim-treesitter.install').prefer_git = true
+      require("nvim-treesitter.install").prefer_git = true
 
       ---@diagnostic disable-next-line: missing-fields
       ts.setup({
@@ -23,16 +24,18 @@ return {
           disable = function(_, buf)
             local max_filesize = 100 * 1024 -- 100 KB
             local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-            if ok and stats and stats.size > max_filesize then return true end
+            if ok and stats and stats.size > max_filesize then
+              return true
+            end
           end,
         },
         incremental_selection = {
           enable = true,
           keymaps = {
-            init_selection = '<C-m>',
-            node_incremental = '<C-m>',
-            scope_incremental = '<C-m>',
-            node_decremental = '<C-n>',
+            init_selection = "<C-m>",
+            node_incremental = "<C-m>",
+            scope_incremental = "<C-m>",
+            node_decremental = "<C-n>",
           },
         },
         textobjects = {
@@ -52,39 +55,39 @@ return {
           persist_queries = false,
         },
         ensure_installed = {
-          'bash',
-          'css',
-          'diff',
-          'elixir',
-          'git_rebase',
-          'gitcommit',
-          'gitignore',
-          'go',
-          'gomod',
-          'gosum',
-          'html',
-          'javascript',
-          'json',
-          'json5',
-          'lua',
-          'make',
-          'markdown',
-          'regex',
-          'rust',
-          'scss',
-          'sql',
-          'terraform',
-          'toml',
-          'tsx',
-          'typescript',
-          'vim',
-          'yaml',
-          'zig',
+          "bash",
+          "css",
+          "diff",
+          "elixir",
+          "git_rebase",
+          "gitcommit",
+          "gitignore",
+          "go",
+          "gomod",
+          "gosum",
+          "html",
+          "javascript",
+          "json",
+          "json5",
+          "lua",
+          "make",
+          "markdown",
+          "regex",
+          "rust",
+          "scss",
+          "sql",
+          "terraform",
+          "toml",
+          "tsx",
+          "typescript",
+          "vim",
+          "yaml",
+          "zig",
         },
       })
     end,
   },
   {
-    'nvim-treesitter/playground',
+    "nvim-treesitter/playground",
   },
 }

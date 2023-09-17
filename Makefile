@@ -1,5 +1,8 @@
 CONFIG_PATH=${HOME}/.config
 
+lint:
+	stylua . --verbose
+
 all:
 	@stow -v etc vim
 	@mkdir -p $(HOME)/bin
@@ -26,4 +29,4 @@ all:
 	@mkdir -p $(CONFIG_PATH)/zellij
 	@stow -v --target=$(CONFIG_PATH)/zellij zellij
 
-.PHONY: all
+.PHONY: all lint
