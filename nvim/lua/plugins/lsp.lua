@@ -21,7 +21,11 @@ return {
 
       -- UI
       "onsails/lspkind-nvim",
-      { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
+      {
+        "j-hui/fidget.nvim",
+        tag = "legacy",
+        opts = {},
+      },
     },
     config = function()
       -- Neodev
@@ -180,9 +184,9 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp_signature_help" },
-          { name = "nvim_lsp", keyword_length = 3 },
-          { name = "path", keyword_length = 3 },
-          { name = "buffer", keyword_length = 3 },
+          { name = "nvim_lsp",               keyword_length = 3 },
+          { name = "path",                   keyword_length = 3 },
+          { name = "buffer",                 keyword_length = 3 },
           { name = "luasnip" },
         }),
         ---@diagnostic disable-next-line: missing-fields
@@ -212,11 +216,26 @@ return {
           vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, { desc = "Perform code action" })
           vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show docs for item under cursor" })
           vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename symbol" })
-          vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Show signature help" })
+          vim.keymap.set("n", "<leader>k", vim.lsp.buf.signature_help, { desc = "Show signature help" })
         end,
       })
     end,
   },
+  -- {
+  --   "dgagn/diagflow.nvim",
+  --   opts = {
+  --     enable = function()
+  --       return vim.bo.filetype ~= "lazy"
+  --     end,
+  --     format = function(diagnostic)
+  --       return '[LSP] ' .. diagnostic.message
+  --     end,
+  --     inline_padding_left = 3,
+  --     placement = 'inline',
+  --     scope = "line",
+  --     toggle_event = { "InsertEnter" },
+  --   },
+  -- },
   {
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     config = function()

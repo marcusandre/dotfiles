@@ -27,8 +27,8 @@ return {
     },
     keys = {
       -- stylua: ignore start
-      { '<leader>E', '<CMD>NvimTreeToggle<CR>',         desc = 'Explore: Tree (Root)' },
-      { '<leader>e', '<CMD>NvimTreeFindFileToggle<CR>', desc = 'Explore: Tree' },
+      { '<leader>E', '<Cmd>NvimTreeToggle<cr><Cmd>only<CR>',         desc = 'Explore: Tree (Root)' },
+      { '<leader>e', '<Cmd>NvimTreeFindFileToggle<cr><Cmd>only<CR>', desc = 'Explore: Tree' },
       -- stylua: ignore end
     },
     config = function()

@@ -35,8 +35,8 @@ return {
       -- mini.bufremove
       require("mini.bufremove").setup()
 
-      vim.keymap.set("n", "<leader>q", "<cmd>bd<cr>", { desc = "Buffer close" })
-      vim.keymap.set("n", "<leader>Q", "<cmd>bufdo lua MiniBufremove.delete()<cr>", { desc = "Buffer close (all)" })
+      vim.keymap.set("n", "<leader>q", "<Cmd>lua MiniBufremove.delete()<CR>", { desc = "Buffer close" })
+      vim.keymap.set("n", "<leader>Q", "<Cmd>bufdo lua MiniBufremove.delete()<CR>", { desc = "Buffer close (all)" })
 
       -- mini.clue
       local miniclue = require("mini.clue")
@@ -100,6 +100,7 @@ return {
 
       -- mini.hipatterns
       local hipatterns = require("mini.hipatterns")
+
       hipatterns.setup({
         highlighters = {
           fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
@@ -135,9 +136,10 @@ return {
 
       MiniStarter.setup({
         items = {
+          MiniStarter.sections.builtin_actions(),
           MiniStarter.sections.recent_files(5, false, true),
           MiniStarter.sections.recent_files(5, true, false),
-          MiniStarter.sections.builtin_actions(),
+          MiniStarter.sections.telescope(),
         },
         header = header,
       })
@@ -147,6 +149,7 @@ return {
         callback = function()
           local stats = require("lazy").stats()
           local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+
           MiniStarter.config.footer = "Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
           pcall(MiniStarter.refresh)
         end,
