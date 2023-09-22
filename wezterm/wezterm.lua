@@ -45,6 +45,7 @@ config.tab_bar_at_bottom = true
 config.show_new_tab_button_in_tab_bar = false
 
 -- config.window_close_confirmation = "NeverPrompt"
+-- config.window_background_opacity = 0.9
 
 config.window_padding = {
   left = 0,

@@ -11,7 +11,7 @@ return {
       require("tokyonight").setup({
         day_brightness = 0.2,
       })
-      vim.cmd([[colorscheme tokyonight-storm]])
+      vim.cmd([[colorscheme tokyonight]])
     end,
   },
   {

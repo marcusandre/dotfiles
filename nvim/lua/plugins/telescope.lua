@@ -2,6 +2,7 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.3",
+    lazy = false,
     keys = {
       -- stylua: ignore start
       { "<leader>'", '<Cmd>Telescope resume<CR>',                        desc = 'Open last picker' },
@@ -23,8 +24,8 @@ return {
       { '<leader>s', '<Cmd>Telescope lsp_document_symbols<CR>',          desc = 'Open symbol picker' },
       { 'g/',        '<Cmd>Telescope grep_string<CR>',                   desc = 'Global search word under cursor' },
       { 'gD',        '<Cmd>Telescope lsp_type_definitions<CR>',          desc = 'Goto type definition' },
-      { 'gd',        '<Cmd>Telescope lsp_definitions<CR>',               desc = 'Goto definition' },
-      { 'gi',        '<Cmd>Telescope lsp_implementations<CR>',           desc = 'Goto implementation' },
+      { 'gd',        '<Cmd>Telescope lsp_definitions<CR>',               desc = 'Goto definitions' },
+      { 'gi',        '<Cmd>Telescope lsp_implementations<CR>',           desc = 'Goto implementations' },
       { 'gr',        '<Cmd>Telescope lsp_references<CR>',                desc = 'Goto references' },
       -- stylua: ignore end
     },
