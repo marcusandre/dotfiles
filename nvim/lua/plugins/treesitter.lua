@@ -4,9 +4,11 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
       "nvim-treesitter/nvim-treesitter-context",
+      "JoosepAlviste/nvim-ts-context-commentstring",
     },
     config = function()
       local ts = require("nvim-treesitter.configs")
+      require("ts_context_commentstring").setup({})
 
       require("nvim-treesitter.install").prefer_git = true
 

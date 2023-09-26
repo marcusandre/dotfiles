@@ -36,15 +36,15 @@ return {
     end,
   },
   -- {
-  --   'f-person/auto-dark-mode.nvim',
+  --   "f-person/auto-dark-mode.nvim",
   --   opts = {
   --     update_interval = 1000,
   --     set_dark_mode = function()
-  --       vim.api.nvim_set_option('background', 'dark')
+  --       vim.api.nvim_set_option("background", "dark")
   --       vim.cmd([[colorscheme tokyonight-storm]])
   --     end,
   --     set_light_mode = function()
-  --       vim.api.nvim_set_option('background', 'light')
+  --       vim.api.nvim_set_option("background", "light")
   --       vim.cmd([[colorscheme dayfox]])
   --     end,
   --   },
@@ -54,8 +54,6 @@ return {
     opts = {
       char = "┊",
       show_trailing_blankline_indent = false,
-      show_current_context = true,
-      -- show_current_context_start = true,
     },
   },
 }

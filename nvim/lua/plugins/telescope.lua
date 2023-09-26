@@ -57,6 +57,10 @@ return {
               mirror = true,
             },
           },
+          file_ignore_patterns = {
+            "node_modules",
+            ".git",
+          },
         },
         pickers = {
           buffers = {

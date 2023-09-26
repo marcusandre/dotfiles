@@ -17,7 +17,29 @@ return {
     },
   },
   {
+    "dmmulroy/tsc.nvim",
+    ft = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+    },
+    opts = {},
+  },
+  {
     "prettier/vim-prettier",
-    ft = { "javascript", "typescript", "css", "less", "scss", "graphql", "markdown", "vue", "html" },
+    ft = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "css",
+      "less",
+      "scss",
+      "graphql",
+      "markdown",
+      "vue",
+      "html",
+    },
   },
 }

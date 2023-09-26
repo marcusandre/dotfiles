@@ -5,6 +5,8 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "Y", "y$")
 vim.keymap.set("n", "n", "nzz")
 
+vim.keymap.set("n", "<leader>z", "<Cmd>wq<cr>", { desc = "Save and Quit" })
+
 vim.keymap.set("n", "<C-L>", "<C-W><C-L>")
 vim.keymap.set("n", "<C-H>", "<C-W><C-H>")
 vim.keymap.set("n", "<C-K>", "<C-W><C-K>")

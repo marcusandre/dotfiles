@@ -184,9 +184,9 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp_signature_help" },
-          { name = "nvim_lsp", keyword_length = 3 },
-          { name = "path", keyword_length = 3 },
-          { name = "buffer", keyword_length = 3 },
+          { name = "nvim_lsp",               keyword_length = 3 },
+          { name = "path",                   keyword_length = 3 },
+          { name = "buffer",                 keyword_length = 3 },
           { name = "luasnip" },
         }),
         ---@diagnostic disable-next-line: missing-fields
@@ -248,5 +248,11 @@ return {
 
       vim.keymap.set("", "<Leader>td", require("lsp_lines").toggle, { desc = "Toggle LSP lines" })
     end,
+  },
+  {
+    "sourcegraph/sg.nvim",
+    opts = {
+      node_executable = "/opt/homebrew/bin/node",
+    },
   },
 }
