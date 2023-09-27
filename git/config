@@ -56,7 +56,7 @@
   light = false
   side-by-side = false
   line-numbers = true
-  features = Dracula
+  features = tokyonight_moon
 
 [push]
   default = current

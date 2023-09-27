@@ -11,7 +11,7 @@ end
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx PAGER "less -R --use-color -Dd+r -Du+b"
-set -gx LS_COLORS "vivid generate dracula"
+set -gx LS_COLORS "vivid generate catppuccin-macchiato"
 set -gx MANPAGER 'nvim +Man!'
 set -gx NVIM_LISTEN_ADDRESS "/tmp/nvimsocket"
 
@@ -49,9 +49,8 @@ end
 
 # Aliases
 alias .. 'cd ..'
-# alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo Dracula || echo GitHub)"
-alias cat="bat --theme=tokyonight_moon"
-alias cloc='tokei'
+alias cat bat
+alias cloc 'tokei'
 alias e nvim
 alias flushdns 'sudo killall -HUP mDNSResponder'
 alias gap 'git add . -p'
@@ -66,11 +65,11 @@ alias ll 'ls -la'
 alias ls eza
 alias rf 'rm -fr'
 alias s 'git s'
-alias sloc='tokei'
+alias sloc 'tokei'
 alias ss 'git status'
 alias tree 'eza --tree'
-alias vim='nvim'
-alias vimdiff='nvim -d'
+alias vim 'nvim'
+alias vimdiff 'nvim -d'
 
 # walk
 function lk

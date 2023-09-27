@@ -11,7 +11,7 @@ return {
       require("tokyonight").setup({
         day_brightness = 0.2,
       })
-      vim.cmd([[colorscheme tokyonight]])
+      -- vim.cmd([[colorscheme tokyonight]])
     end,
   },
   {
@@ -24,6 +24,9 @@ return {
     name = "catppuccin",
     lazy = false,
     priority = 1000,
+    config = function()
+      vim.cmd([[colorscheme catppuccin-macchiato]])
+    end,
   },
   {
     "ellisonleao/gruvbox.nvim",
