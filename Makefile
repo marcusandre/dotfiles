@@ -21,7 +21,10 @@ all:
 	@stow -v --target=$(CONFIG_PATH)/helix helix
 
 	@mkdir -p $(CONFIG_PATH)/nvim
-	@stow -v --target=$(CONFIG_PATH) nvim
+	@stow -v --target=$(CONFIG_PATH)/nvim nvim
+
+	@mkdir -p $(CONFIG_PATH)/starship
+	@stow -v --target=$(CONFIG_PATH)/starship starship
 
 	@mkdir -p $(CONFIG_PATH)/wezterm
 	@stow -v --target=$(CONFIG_PATH)/wezterm wezterm

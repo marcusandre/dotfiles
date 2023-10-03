@@ -2,7 +2,7 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.3",
-    lazy = false,
+    -- lazy = false,
     keys = {
       -- stylua: ignore start
       { "<leader>'", '<Cmd>Telescope resume<CR>',                        desc = 'Open last picker' },
@@ -37,32 +37,8 @@ return {
     config = function()
       local telescope = require("telescope")
       local actions = require("telescope.actions")
-      local fuzzy = require("mini.fuzzy")
 
       telescope.setup({
-        defaults = {
-          border = true,
-          cache = false,
-          dynamic_preview_title = true,
-          file_sorter = fuzzy.get_telescope_sorter,
-          generic_sorter = fuzzy.get_telescope_sorter,
-          layout_strategy = "flex",
-          scroll_strategy = "cycle",
-          selection_strategy = "reset",
-          winblend = 0,
-          layout_config = {
-            vertical = {
-              mirror = true,
-            },
-            center = {
-              mirror = true,
-            },
-          },
-          file_ignore_patterns = {
-            "node_modules",
-            ".git",
-          },
-        },
         pickers = {
           buffers = {
             sort_lastused = true,
@@ -80,12 +56,6 @@ return {
           colorscheme = { enable_preview = true, theme = "dropdown" },
           current_buffer_fuzzy_find = { theme = "dropdown" },
           treesitter = { theme = "dropdown" },
-          lsp_code_actions = { theme = "dropdown" },
-          lsp_definitions = { path_display = { "shorten" }, trim_text = true },
-          lsp_dynamic_workspace_symbols = { path_display = { "shorten" } },
-          lsp_implementations = { path_display = { "shorten" } },
-          lsp_references = { path_display = { "shorten" } },
-          lsp_type_definitions = { path_display = { "shorten" } },
         },
         extensions = {
           ["ui-select"] = {

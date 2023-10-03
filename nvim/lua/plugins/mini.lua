@@ -23,8 +23,12 @@ return {
 
       -- mini.basics
       require("mini.basics").setup({
-        extra_ui = true,
-        win_borders = "double",
+        optione = {
+          extra_ui = true,
+        },
+        mappings = {
+          windows = true,
+        }
       })
 
       vim.keymap.del("n", "<C-z>")
