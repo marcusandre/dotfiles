@@ -87,7 +87,7 @@ return {
         rust_analyzer = {},
         -- stylelint_lsp = {},
         terraformls = {},
-        -- tsserver = {},
+        tsserver = {},
         yamlls = {},
         zls = {},
       }

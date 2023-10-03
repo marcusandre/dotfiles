@@ -4,3 +4,4 @@
 require("m.settings")
 require("m.keymaps")
 require("m.lazy")
+require("m.text")

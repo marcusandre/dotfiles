@@ -55,11 +55,9 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
-      require('ibl').setup({
-        indent = {
-          char = "┊",
-        },
-        show_trailing_blankline_indent = false,
+      require("ibl").setup({
+        scope = { enabled = false },
+        indent = { char = "┊" },
       })
     end,
   },

@@ -20,6 +20,7 @@ return {
       { '<leader>h', '<Cmd>Telescope help_tags<cr>',                     desc = 'Open help tags' },
       { '<leader>i', '<Cmd>Telescope current_buffer_fuzzy_find<CR>',     desc = 'Open buffer fuzzy search' },
       { '<leader>j', '<Cmd>Telescope jumplist<CR>',                      desc = 'Open jumplist picker' },
+      { '<leader>l', '<Cmd>Telescope spell_suggest<CR>',                 desc = 'Open spelling picker' },
       { '<leader>o', '<Cmd>Telescope oldfiles only_cwd=true<CR>',        desc = 'Open old files' },
       { '<leader>s', '<Cmd>Telescope lsp_document_symbols<CR>',          desc = 'Open symbol picker' },
       { 'g/',        '<Cmd>Telescope grep_string<CR>',                   desc = 'Global search word under cursor' },
