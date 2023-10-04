@@ -212,11 +212,43 @@ return {
       -- Keymaps
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-        callback = function()
-          vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, { desc = "Perform code action" })
-          vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show docs for item under cursor" })
-          vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename symbol" })
-          vim.keymap.set("n", "<leader>k", vim.lsp.buf.signature_help, { desc = "Show signature help" })
+        callback = function(ev)
+          vim.keymap.set("n", "<leader>k", vim.lsp.buf.signature_help, {
+            buffer = ev.buf,
+            desc = "Show signature help",
+          })
+          vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {
+            buffer = ev.buf,
+            desc = "Rename symbol",
+          })
+          vim.keymap.set("n", "<leader>y", vim.lsp.buf.type_definition, {
+            buffer = ev.buf,
+            desc = "Goto type definition",
+          })
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, {
+            buffer = ev.buf,
+            desc = "Show docs for item under cursor",
+          })
+          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {
+            buffer = ev.buf,
+            desc = "Goto declaration",
+          })
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
+            buffer = ev.buf,
+            desc = "Goto definition",
+          })
+          vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {
+            buffer = ev.buf,
+            desc = "Goto implementation",
+          })
+          vim.keymap.set("n", "gr", vim.lsp.buf.references, {
+            buffer = ev.buf,
+            desc = "Goto references",
+          })
+          vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, {
+            buffer = ev.buf,
+            desc = "Perform code action",
+          })
         end,
       })
     end,

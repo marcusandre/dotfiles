@@ -24,10 +24,6 @@ return {
       { '<leader>o', '<Cmd>Telescope oldfiles only_cwd=true<CR>',        desc = 'Open old files' },
       { '<leader>s', '<Cmd>Telescope lsp_document_symbols<CR>',          desc = 'Open symbol picker' },
       { 'g/',        '<Cmd>Telescope grep_string<CR>',                   desc = 'Global search word under cursor' },
-      { 'gD',        '<Cmd>Telescope lsp_type_definitions<CR>',          desc = 'Goto type definition' },
-      { 'gd',        '<Cmd>Telescope lsp_definitions<CR>',               desc = 'Goto definitions' },
-      { 'gi',        '<Cmd>Telescope lsp_implementations<CR>',           desc = 'Goto implementations' },
-      { 'gr',        '<Cmd>Telescope lsp_references<CR>',                desc = 'Goto references' },
       -- stylua: ignore end
     },
     dependencies = {
