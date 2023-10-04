@@ -28,7 +28,7 @@ return {
         },
         mappings = {
           windows = true,
-        }
+        },
       })
 
       vim.keymap.del("n", "<C-z>")
