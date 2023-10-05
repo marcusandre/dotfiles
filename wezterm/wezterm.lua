@@ -9,10 +9,10 @@ end
 
 local function scheme_for_appearance(appearance)
   if appearance:find("Dark") then
-    return "Catppuccin Mocha"
+    return "Catppuccin Macchiato"
   else
     -- return "dayfox"
-    return "Catppuccin Mocha"
+    return "Catppuccin Macchiato"
   end
 end
 
@@ -26,12 +26,10 @@ wezterm.on("window-config-reloaded", function(window)
   end
 end)
 
-config.font = wezterm.font({
-  family = "Berkeley Mono",
-})
-config.font_size = 12.0
+config.font = wezterm.font("Berkeley Mono")
+config.font_size = 12
 config.line_height = 1.15
-config.freetype_load_target = "HorizontalLcd"
+config.adjust_window_size_when_changing_font_size = false
 
 config.initial_cols = 200
 config.initial_rows = 55

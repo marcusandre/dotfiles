@@ -18,6 +18,17 @@ return {
     end,
   },
   {
+    "nvim-pack/nvim-spectre",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    keys = {
+      -- stylua: ignore start
+      { '<leader>R', '<cmd>lua require("spectre").toggle()<CR>', desc = 'Spectre: Toggle' },
+      -- stylua: ignore end
+    },
+  },
+  {
     "antosha417/nvim-lsp-file-operations",
     version = "*",
     lazy = "false",

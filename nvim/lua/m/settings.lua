@@ -20,10 +20,8 @@ vim.o.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]]
 -- stylua: ignore end
 
 -- Netrw
--- stylua: ignore start
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
--- stylua: ignore end
 
 -- Spelling
 -- stylua: ignore start
