@@ -1,8 +1,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.3",
-    -- lazy = false,
+    version = false,
     keys = {
       -- stylua: ignore start
       { "<leader>'", '<Cmd>Telescope resume<CR>',                        desc = 'Open last picker' },
@@ -24,6 +23,10 @@ return {
       { '<leader>o', '<Cmd>Telescope oldfiles only_cwd=true<CR>',        desc = 'Open old files' },
       { '<leader>s', '<Cmd>Telescope lsp_document_symbols<CR>',          desc = 'Open symbol picker' },
       { 'g/',        '<Cmd>Telescope grep_string<CR>',                   desc = 'Global search word under cursor' },
+      { 'gD',        '<Cmd>Telescope lsp_type_definitions<CR>',          desc = 'Open type definitions' },
+      { 'gd',        '<Cmd>Telescope lsp_definitions<CR>',               desc = 'Open definitions' },
+      { 'gi',        '<Cmd>Telescope lsp_implementations<CR>',           desc = 'Open implementations' },
+      { 'gr',        '<Cmd>Telescope lsp_references<CR>',                desc = 'Open references' },
       -- stylua: ignore end
     },
     dependencies = {
@@ -35,6 +38,11 @@ return {
       local actions = require("telescope.actions")
 
       telescope.setup({
+        defaults = {
+          layout_config = {
+            prompt_position = "top",
+          },
+        },
         pickers = {
           buffers = {
             sort_lastused = true,

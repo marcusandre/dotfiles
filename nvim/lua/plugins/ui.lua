@@ -7,8 +7,9 @@ return {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
+    opts = { style = "storm" },
     config = function()
-      vim.cmd([[colorscheme tokyonight-storm]])
+      vim.cmd([[colorscheme tokyonight]])
     end,
   },
   {
@@ -17,25 +18,14 @@ return {
     priority = 1000,
   },
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    lazy = false,
-    priority = 1000,
+    "lukas-reineke/indent-blankline.nvim",
     config = function()
-      require("catppuccin").setup({
-        compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
-      })
-
-      -- vim.cmd([[colorscheme catppuccin-macchiato]])
-    end,
-  },
-  {
-    "ellisonleao/gruvbox.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("gruvbox").setup({
-        contrast = "hard",
+      require("ibl").setup({
+        indent = {
+          char = "│",
+          tab_char = "│",
+        },
+        scope = { enabled = false },
       })
     end,
   },
@@ -53,13 +43,4 @@ return {
   --     end,
   --   },
   -- },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    config = function()
-      require("ibl").setup({
-        indent = { char = "|" },
-        scope = { enabled = false },
-      })
-    end,
-  },
 }

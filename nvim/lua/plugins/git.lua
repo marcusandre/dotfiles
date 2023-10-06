@@ -6,13 +6,21 @@ return {
     config = function()
       require("gitsigns").setup({
         signs = {
-          add = { text = "▒" },
-          change = { text = "▒" },
-          changedelete = { text = "▓" },
-          delete = { text = "▓" },
-          topdelete = { text = "▓" },
-          untracked = { text = "░" },
+          add = { text = "▎" },
+          change = { text = "▎" },
+          delete = { text = "" },
+          topdelete = { text = "" },
+          changedelete = { text = "▎" },
+          untracked = { text = "▎" },
         },
+        -- signs = {
+        --   add = { text = "▒" },
+        --   change = { text = "▒" },
+        --   changedelete = { text = "▓" },
+        --   delete = { text = "▓" },
+        --   topdelete = { text = "▓" },
+        --   untracked = { text = "░" },
+        -- },
         preview_config = { border = "double" },
         watch_gitdir = { interval = 1000 },
       })

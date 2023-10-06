@@ -19,23 +19,19 @@ return {
   },
   {
     "nvim-pack/nvim-spectre",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = "Spectre",
+    opts = { open_cmd = "noswapfile vnew" },
     keys = {
-      -- stylua: ignore start
-      { '<leader>R', '<cmd>lua require("spectre").toggle()<CR>', desc = 'Spectre: Toggle' },
-      -- stylua: ignore end
+      { "<leader>R", '<cmd>lua require("spectre").toggle()<CR>', desc = "Spectre: Toggle" },
     },
   },
+  { "nvim-tree/nvim-web-devicons", lazy = true },
   {
     "antosha417/nvim-lsp-file-operations",
     version = "*",
     lazy = "false",
-    dependencies = {
-      "nvim-tree/nvim-tree.lua",
-      "nvim-tree/nvim-web-devicons",
-    },
+    dependencies = { "nvim-tree/nvim-tree.lua" },
     keys = {
       -- stylua: ignore start
       { '<leader>e', '<Cmd>NvimTreeToggle<cr>',         desc = 'Explore: Tree' },

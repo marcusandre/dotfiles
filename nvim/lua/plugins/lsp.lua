@@ -229,26 +229,26 @@ return {
             buffer = ev.buf,
             desc = "Show docs for item under cursor",
           })
-          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {
-            buffer = ev.buf,
-            desc = "Goto declaration",
-          })
-          vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
-            buffer = ev.buf,
-            desc = "Goto definition",
-          })
-          vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {
-            buffer = ev.buf,
-            desc = "Goto implementation",
-          })
-          vim.keymap.set("n", "gr", vim.lsp.buf.references, {
-            buffer = ev.buf,
-            desc = "Goto references",
-          })
           vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, {
             buffer = ev.buf,
             desc = "Perform code action",
           })
+          vim.keymap.set("n", "gY", vim.lsp.buf.declaration, {
+            buffer = ev.buf,
+            desc = "Goto declaration",
+          })
+          -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
+          --   buffer = ev.buf,
+          --   desc = "Goto definition",
+          -- })
+          -- vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {
+          --   buffer = ev.buf,
+          --   desc = "Goto implementation",
+          -- })
+          -- vim.keymap.set("n", "gr", vim.lsp.buf.references, {
+          --   buffer = ev.buf,
+          --   desc = "Goto references",
+          -- })
         end,
       })
     end,
