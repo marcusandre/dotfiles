@@ -8,9 +8,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      require("tokyonight").setup({
-        day_brightness = 0.2,
-      })
+      vim.cmd([[colorscheme tokyonight-storm]])
     end,
   },
   {
@@ -28,7 +26,7 @@ return {
         compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
       })
 
-      vim.cmd([[colorscheme catppuccin-macchiato]])
+      -- vim.cmd([[colorscheme catppuccin-macchiato]])
     end,
   },
   {
@@ -55,13 +53,13 @@ return {
   --     end,
   --   },
   -- },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    config = function()
-      require("ibl").setup({
-        indent = { char = "|" },
-        scope = { enabled = false },
-      })
-    end,
-  },
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   config = function()
+  --     require("ibl").setup({
+  --       indent = { char = "|" },
+  --       scope = { enabled = false },
+  --     })
+  --   end,
+  -- },
 }
