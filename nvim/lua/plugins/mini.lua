@@ -130,6 +130,12 @@ return {
         },
       })
 
+      -- mini.bufremove
+      require("mini.misc").setup()
+
+      vim.keymap.set("n", "<leader>or", "<Cmd>lua MiniMisc.resize_window()<CR>", { desc = "Resize to defaut width" })
+      vim.keymap.set("n", "<leader>oz", "<Cmd>lua MiniMisc.zoom()<CR>", { desc = "Zoom toggle" })
+
       -- mini.move
       require("mini.move").setup({ options = { reindent_linewise = false } })
 

@@ -37,7 +37,6 @@ return {
       vim.keymap.set("n", "<leader>gA", '<Cmd>lua require("gitsigns").stage_buffer()<CR>', { desc = "Add buffer" })
       vim.keymap.set("n", "<leader>ga", '<Cmd>lua require("gitsigns").stage_hunk()<CR>', { desc = "Add (stage) hunk" })
       vim.keymap.set("n", "<leader>gb", '<Cmd>lua require("gitsigns").blame_line()<CR>', { desc = "Blame line" })
-      vim.keymap.set("n", "<leader>gg", "<Cmd>lua EC.open_lazygit()<CR>", { desc = "Git tab" })
       vim.keymap.set("n", "<leader>gp", '<Cmd>lua require("gitsigns").preview_hunk()<CR>', { desc = "Preview hunk" })
       vim.keymap.set(
         "n",

@@ -183,11 +183,13 @@ return {
           end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
+          -- stylua: ignore start
           { name = "nvim_lsp_signature_help" },
-          { name = "nvim_lsp", keyword_length = 3 },
-          { name = "path", keyword_length = 3 },
-          { name = "buffer", keyword_length = 3 },
+          { name = "nvim_lsp",               keyword_length = 3 },
+          { name = "path",                   keyword_length = 3 },
+          { name = "buffer",                 keyword_length = 3 },
           { name = "luasnip" },
+          -- stylua: ignore end
         }),
         ---@diagnostic disable-next-line: missing-fields
         formatting = {
@@ -212,43 +214,20 @@ return {
       -- Keymaps
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-        callback = function(ev)
-          vim.keymap.set("n", "<leader>lk", vim.lsp.buf.signature_help, {
-            buffer = ev.buf,
-            desc = "LSP: Show signature help",
-          })
-          vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, {
-            buffer = ev.buf,
-            desc = "LSP: Rename symbol",
-          })
-          vim.keymap.set("n", "<leader>ld", vim.lsp.buf.type_definition, {
-            buffer = ev.buf,
-            desc = "LSP: Goto type definition",
-          })
-          vim.keymap.set("n", "K", vim.lsp.buf.hover, {
-            buffer = ev.buf,
-            desc = "LSP: Show docs for item under cursor",
-          })
-          vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, {
-            buffer = ev.buf,
-            desc = "LSP: Perform code action",
-          })
-          vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, {
-            buffer = ev.buf,
-            desc = "LSP: Goto declaration",
-          })
-          -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
-          --   buffer = ev.buf,
-          --   desc = "Goto definition",
-          -- })
-          -- vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {
-          --   buffer = ev.buf,
-          --   desc = "Goto implementation",
-          -- })
-          -- vim.keymap.set("n", "gr", vim.lsp.buf.references, {
-          --   buffer = ev.buf,
-          --   desc = "Goto references",
-          -- })
+        callback = function()
+          vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "Declaration" })
+          vim.keymap.set("n", "<leader>lR", vim.lsp.buf.references, { desc = "References" })
+          vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { desc = "Code Action" })
+          vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, { desc = "Definition" })
+          vim.keymap.set("n", "<leader>lf", "<Cmd>vim.lsp.buf.format({ async = true })<CR>", { desc = "Format" })
+          vim.keymap.set("x", "<leader>lf", "<Cmd>vim.lsp.buf.format({ async = true })<CR>", { desc = "Format" })
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Information" })
+          vim.keymap.set("n", "<leader>li", vim.lsp.buf.implementation, { desc = "Implementation" })
+          vim.keymap.set("n", "<leader>ls", vim.lsp.buf.signature_help, { desc = "Signature" })
+          vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, { desc = "Rename" })
+          vim.keymap.set("n", "<leader>ly", vim.lsp.buf.type_definition, { desc = "Type Definition" })
+          vim.keymap.set("v", "<leader>la", vim.lsp.buf.code_action, { desc = "Code Action" })
+          -- vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { desc = "Information", })
         end,
       })
     end,
