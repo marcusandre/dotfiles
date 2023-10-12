@@ -141,7 +141,7 @@ return {
       require("mini.move").setup({ options = { reindent_linewise = false } })
 
       -- mini.pairs
-      require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = true } })
+      require("mini.pairs").setup()
 
       -- mini.pick
       require("mini.pick").setup({})
