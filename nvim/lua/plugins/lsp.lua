@@ -215,27 +215,27 @@ return {
         callback = function(ev)
           vim.keymap.set("n", "<leader>k", vim.lsp.buf.signature_help, {
             buffer = ev.buf,
-            desc = "Show signature help",
+            desc = "LSP: Show signature help",
           })
           vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {
             buffer = ev.buf,
-            desc = "Rename symbol",
+            desc = "LSP: Rename symbol",
           })
           vim.keymap.set("n", "<leader>y", vim.lsp.buf.type_definition, {
             buffer = ev.buf,
-            desc = "Goto type definition",
+            desc = "LSP: Goto type definition",
           })
           vim.keymap.set("n", "K", vim.lsp.buf.hover, {
             buffer = ev.buf,
-            desc = "Show docs for item under cursor",
+            desc = "LSP: Show docs for item under cursor",
           })
           vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, {
             buffer = ev.buf,
-            desc = "Perform code action",
+            desc = "LSP: Perform code action",
           })
           vim.keymap.set("n", "gY", vim.lsp.buf.declaration, {
             buffer = ev.buf,
-            desc = "Goto declaration",
+            desc = "LSP: Goto declaration",
           })
           -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
           --   buffer = ev.buf,
@@ -280,11 +280,5 @@ return {
 
       vim.keymap.set("", "<Leader>td", require("lsp_lines").toggle, { desc = "Toggle LSP lines" })
     end,
-  },
-  {
-    "sourcegraph/sg.nvim",
-    opts = {
-      node_executable = "/opt/homebrew/bin/node",
-    },
   },
 }
