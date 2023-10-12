@@ -4,7 +4,7 @@ return {
   {
     "mbbill/undotree",
     keys = {
-      { "<leader>u", "<CMD>UndotreeToggle<CR>", desc = "Open undotree" },
+      { "<leader>eu", "<CMD>UndotreeToggle<CR>", desc = "Open undotree" },
     },
   },
   {
@@ -23,7 +23,7 @@ return {
     cmd = "Spectre",
     opts = { open_cmd = "noswapfile vnew" },
     keys = {
-      { "<leader>R", '<cmd>lua require("spectre").toggle()<CR>', desc = "Spectre: Toggle" },
+      { "<leader>os", '<cmd>lua require("spectre").toggle()<CR>', desc = "Spectre: Toggle" },
     },
   },
   { "nvim-tree/nvim-web-devicons", lazy = true },
@@ -34,8 +34,8 @@ return {
     dependencies = { "nvim-tree/nvim-tree.lua" },
     keys = {
       -- stylua: ignore start
-      { '<leader>e', '<Cmd>NvimTreeToggle<cr>',         desc = 'Explore: Tree' },
-      { '<leader>E', '<Cmd>NvimTreeFindFileToggle<cr>', desc = 'Explore: Tree (File)' },
+      { '<leader>ee', '<Cmd>NvimTreeToggle<cr>',         desc = 'Explore: Tree' },
+      { '<leader>ef', '<Cmd>NvimTreeFindFileToggle<cr>', desc = 'Explore: Tree (File)' },
       -- stylua: ignore end
     },
     config = function()

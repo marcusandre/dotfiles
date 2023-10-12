@@ -1,7 +1,6 @@
 vim.keymap.set("n", "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
-vim.keymap.set("n", "<leader><space>", "<cmd>bp<cr>", { desc = "Buffer: previous" })
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "n", "nzz")
 
-vim.keymap.set("n", "<leader>cc", "<Cmd>lua require('m.quickfix').toggle()<CR>", { desc = "Quickfix: Toggle" })
+vim.keymap.set("n", "<leader>oc", "<Cmd>lua require('m.quickfix').toggle()<CR>", { desc = "Quickfix: Toggle" })

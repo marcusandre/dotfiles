@@ -39,14 +39,27 @@ return {
       -- mini.bufremove
       require("mini.bufremove").setup()
 
-      vim.keymap.set("n", "<leader>q", "<Cmd>lua MiniBufremove.delete()<CR>", { desc = "Buffer close" })
-      vim.keymap.set("n", "<leader>Q", "<Cmd>bufdo lua MiniBufremove.delete()<CR>", { desc = "Buffer close (all)" })
+      vim.keymap.set("n", "<leader>bq", "<Cmd>lua MiniBufremove.delete()<CR>", { desc = "Buffer close" })
+      vim.keymap.set("n", "<leader>bQ", "<Cmd>bufdo lua MiniBufremove.delete()<CR>", { desc = "Buffer close (all)" })
 
       -- mini.clue
       local miniclue = require("mini.clue")
+
+      local leader_group_clues = {
+        { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
+        { mode = 'n', keys = '<Leader>e', desc = '+Explore' },
+        { mode = 'n', keys = '<Leader>f', desc = '+Fuzzy' },
+        { mode = 'n', keys = '<Leader>g', desc = '+Git' },
+        { mode = 'n', keys = '<Leader>l', desc = '+LSP' },
+        { mode = 'n', keys = '<Leader>o', desc = '+Other' },
+        { mode = 'n', keys = '<Leader>t', desc = '+Terminal/Test' },
+        { mode = 'x', keys = '<Leader>l', desc = '+LSP' },
+      }
+
+
       miniclue.setup({
         clues = {
-          -- EC.leader_group_clues,
+          leader_group_clues,
           miniclue.gen_clues.builtin_completion(),
           miniclue.gen_clues.g(),
           miniclue.gen_clues.marks(),

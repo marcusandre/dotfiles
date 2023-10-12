@@ -213,15 +213,15 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function(ev)
-          vim.keymap.set("n", "<leader>k", vim.lsp.buf.signature_help, {
+          vim.keymap.set("n", "<leader>lk", vim.lsp.buf.signature_help, {
             buffer = ev.buf,
             desc = "LSP: Show signature help",
           })
-          vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {
+          vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, {
             buffer = ev.buf,
             desc = "LSP: Rename symbol",
           })
-          vim.keymap.set("n", "<leader>y", vim.lsp.buf.type_definition, {
+          vim.keymap.set("n", "<leader>ld", vim.lsp.buf.type_definition, {
             buffer = ev.buf,
             desc = "LSP: Goto type definition",
           })
@@ -229,11 +229,11 @@ return {
             buffer = ev.buf,
             desc = "LSP: Show docs for item under cursor",
           })
-          vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, {
+          vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, {
             buffer = ev.buf,
             desc = "LSP: Perform code action",
           })
-          vim.keymap.set("n", "gY", vim.lsp.buf.declaration, {
+          vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, {
             buffer = ev.buf,
             desc = "LSP: Goto declaration",
           })
