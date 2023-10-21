@@ -55,6 +55,7 @@ return {
         { mode = "n", keys = "<Leader>g", desc = "+Git" },
         { mode = "n", keys = "<Leader>l", desc = "+LSP" },
         { mode = "n", keys = "<Leader>o", desc = "+Other" },
+        { mode = "n", keys = "<Leader>p", desc = "+Pick" },
         { mode = "n", keys = "<Leader>t", desc = "+Terminal/Test" },
         { mode = "x", keys = "<Leader>l", desc = "+LSP" },
       }
@@ -141,6 +142,14 @@ return {
 
       -- mini.pairs
       require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = true } })
+
+      -- mini.pick
+      require("mini.pick").setup({})
+
+      vim.keymap.set("n", "<leader>p/", "<Cmd>Pick grep_live<CR>", { desc = "Live Grep" })
+      vim.keymap.set("n", "<leader>pb", "<Cmd>Pick buffers<CR>", { desc = "Buffers" })
+      vim.keymap.set("n", "<leader>pf", "<Cmd>Pick files<CR>", { desc = "Files" })
+      vim.keymap.set("n", "<leader>pr", "<Cmd>Pick resume<CR>", { desc = "Resume" })
 
       -- mini.splitjoin
       require("mini.splitjoin").setup()

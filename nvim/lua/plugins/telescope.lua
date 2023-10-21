@@ -37,6 +37,7 @@ return {
 
       telescope.setup({
         defaults = {
+          generic_sorter = require('mini.fuzzy').get_telescope_sorter,
           layout_config = {
             prompt_position = "top",
           },
