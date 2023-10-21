@@ -4,36 +4,53 @@ set fish_greeting
 fish_add_path "$HOME/bin"
 
 if status --is-interactive
-  eval (/opt/homebrew/bin/brew shellenv)
+  if test -x /opt/homebrew/bin/brew
+    eval (/opt/homebrew/bin/brew shellenv)
+  end
+
+  if test -x /usr/local/bin/brew
+    eval (/usr/local/bin/brew shellenv)
+  end
 end
 
 # Env
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx PAGER "less -R --use-color -Dd+r -Du+b"
-# set -gx LS_COLORS "vivid generate catppuccin-macchiato"
 set -gx MANPAGER 'nvim +Man!'
 set -gx NVIM_LISTEN_ADDRESS "/tmp/nvimsocket"
+# set -gx LS_COLORS "vivid generate catppuccin-macchiato"
 
 # Go
 set -gx GOPATH $HOME/golang
 set -gx GOROOT $(brew --prefix go)/libexec
 
 # OCaml
-source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
-
-# prompt
-starship init fish | source
+if test -e $HOME/.opam/opam-init/init.fish
+  source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+end
 
 # cargo
-fish_add_path "$HOME/.cargo/bin"
+if test -d $HOME/.cargo/bin
+  fish_add_path "$HOME/.cargo/bin"
+end
 
 # zoxide
-zoxide init fish | source
+if type -q zoxide
+  zoxide init fish | source
+end
 
 # rtx
-rtx activate fish | source
+if type -q rtx
+  rtx activate fish | source
+end
 
+# prompt
+if type -q starship
+  starship init fish | source
+end
+
+# Create a directory and set CWD
 function md -d "Create a directory and set CWD"
     command mkdir -p $argv
     if test $status = 0
@@ -68,7 +85,6 @@ alias s 'git s'
 alias sloc 'tokei'
 alias ss 'git status'
 alias tree 'eza --tree'
-alias vim 'nvim'
 alias vimdiff 'nvim -d'
 
 # walk
