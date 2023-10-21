@@ -23,6 +23,9 @@ all:
 	@mkdir -p $(CONFIG_PATH)/nvim
 	@stow -v --target=$(CONFIG_PATH)/nvim nvim
 
+	@mkdir -p $(CONFIG_PATH)/ripgrep
+	@stow -v --target=$(CONFIG_PATH)/ripgrep ripgrep
+
 	@mkdir -p $(CONFIG_PATH)/starship
 	@stow -v --target=$(CONFIG_PATH)/starship starship
 
