@@ -1,6 +1,6 @@
 local M = {}
 
-M.toggle = function()
+M.toggle_quickfix = function()
   local qf_exists = false
   for _, win in pairs(vim.fn.getwininfo()) do
     if win["quickfix"] == 1 then
