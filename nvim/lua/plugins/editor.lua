@@ -34,8 +34,8 @@ return {
     dependencies = { "nvim-tree/nvim-tree.lua" },
     keys = {
       -- stylua: ignore start
-      { '<leader>ee', '<Cmd>NvimTreeToggle<cr>',         desc = 'Explore: Tree' },
-      { '<leader>ef', '<Cmd>NvimTreeFindFileToggle<cr>', desc = 'Explore: Tree (File)' },
+      { "<leader>ee", "<Cmd>NvimTreeToggle<cr>", desc = "Explore: Tree" },
+      { "<leader>ef", "<Cmd>NvimTreeFindFileToggle<cr>", desc = "Explore: Tree (File)" },
       -- stylua: ignore end
     },
     config = function()

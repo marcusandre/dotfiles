@@ -1,7 +1,7 @@
 CONFIG_PATH=${HOME}/.config
 
 lint:
-	stylua . --verbose
+	stylua .
 
 all:
 	@stow -v etc vim

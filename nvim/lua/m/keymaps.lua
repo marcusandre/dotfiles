@@ -3,4 +3,9 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("i", "kj", "<esc>")
-vim.keymap.set("n", "<leader>oc", "<Cmd>lua require('m.functions').toggle_quickfix()<CR>", { desc = "Quickfix: Toggle" })
+vim.keymap.set(
+  "n",
+  "<leader>oc",
+  "<Cmd>lua require('m.functions').toggle_quickfix()<CR>",
+  { desc = "Quickfix: Toggle" }
+)
