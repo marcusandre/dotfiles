@@ -89,7 +89,5 @@ return {
       })
     end,
   },
-  {
-    "nvim-treesitter/playground",
-  },
+  { "nvim-treesitter/playground" },
 }
