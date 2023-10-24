@@ -2,6 +2,10 @@ return {
   "tpope/vim-projectionist",
   "tpope/vim-sleuth",
   {
+    "nvim-tree/nvim-web-devicons",
+    lazy = true,
+  },
+  {
     "mbbill/undotree",
     keys = {
       { "<leader>eu", "<CMD>UndotreeToggle<CR>", desc = "Open undotree" },
@@ -17,14 +21,4 @@ return {
       })
     end,
   },
-  {
-    "nvim-pack/nvim-spectre",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    cmd = "Spectre",
-    opts = { open_cmd = "noswapfile vnew" },
-    keys = {
-      { "<leader>os", '<cmd>lua require("spectre").toggle()<CR>', desc = "Spectre: Toggle" },
-    },
-  },
-  { "nvim-tree/nvim-web-devicons", lazy = true },
 }
