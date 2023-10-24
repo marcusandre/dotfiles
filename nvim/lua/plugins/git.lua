@@ -27,8 +27,7 @@ return {
         --   untracked = { text = "░" },
         -- },
         numhl = true,
-        linehl = true,
-        preview_config = { border = "double" },
+        linehl = false,
         watch_gitdir = { interval = 1000 },
       })
 
