@@ -147,7 +147,7 @@ return {
       require("mini.pick").setup({})
 
       vim.keymap.set("n", "<leader>p/", "<Cmd>Pick grep_live<CR>", { desc = "Live Grep" })
-      vim.keymap.set("n", "<leader>pb", "<Cmd>Pick buffers<CR>", { desc = "Buffers" })
+      vim.keymap.set("n", "<leader>pb", "<Cmd>Pick buffers include_current=true<CR>", { desc = "Buffers" })
       vim.keymap.set("n", "<leader>pf", "<Cmd>Pick files<CR>", { desc = "Files" })
       vim.keymap.set("n", "<leader>pr", "<Cmd>Pick resume<CR>", { desc = "Resume" })
 
