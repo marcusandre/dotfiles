@@ -33,66 +33,11 @@ return {
 
       -- Mason
       require("mason").setup()
+
+      -- Config
+      local servers = require("m.configs.lsp").lua_servers
+
       local mason_lspconfig = require("mason-lspconfig")
-
-      local servers = {
-        cssls = {},
-        elixirls = {},
-        eslint = {},
-        gopls = {
-          usePlaceholders = true,
-          gofumpt = true,
-          analyses = {
-            nilness = true,
-            unusedparams = true,
-            unusedwrite = true,
-            useany = true,
-          },
-          codelenses = {
-            gc_details = false,
-            generate = true,
-            regenerate_cgo = true,
-            run_govulncheck = true,
-            test = true,
-            tidy = true,
-            upgrade_dependency = true,
-            vendor = true,
-          },
-          experimentalPostfixCompletions = true,
-          completeUnimported = true,
-          staticcheck = true,
-          directoryFilters = { "-.git", "-node_modules" },
-          semanticTokens = true,
-          hints = {
-            assignVariableTypes = true,
-            compositeLiteralFields = true,
-            compositeLiteralTypes = true,
-            constantValues = true,
-            functionTypeParameters = true,
-            parameterNames = true,
-            rangeVariableTypes = true,
-          },
-        },
-        jsonls = {},
-        lua_ls = {
-          Lua = {
-            completion = { callSnippet = "Replace" },
-            diagnostics = { globals = { "vim" } },
-            telemetry = { enable = false },
-            workspace = { checkThirdParty = false },
-          },
-        },
-        marksman = {},
-        ocamllsp = {},
-        rust_analyzer = {},
-        -- stylelint_lsp = {},
-        terraformls = {},
-        -- tsserver = {},
-        yamlls = {},
-        zls = {},
-      }
-
-      -- local capabilities = vim.lsp.protocol.make_client_capabilities()
 
       local on_attach = function(client, bufnr)
         if client.name == "tsserver" then
@@ -185,9 +130,9 @@ return {
         sources = cmp.config.sources({
           -- stylua: ignore start
           { name = "nvim_lsp_signature_help" },
-          { name = "nvim_lsp", keyword_length = 3 },
-          { name = "path", keyword_length = 3 },
-          { name = "buffer", keyword_length = 3 },
+          { name = "nvim_lsp",               keyword_length = 3 },
+          { name = "path",                   keyword_length = 3 },
+          { name = "buffer",                 keyword_length = 3 },
           { name = "luasnip" },
           -- stylua: ignore end
         }),
