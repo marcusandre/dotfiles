@@ -31,10 +31,11 @@ return {
 
       -- mini.basics
       require("mini.basics").setup({
-        optione = {
+        options = {
           extra_ui = true,
         },
         mappings = {
+          option_toggle_prefix = [[\]],
           windows = true,
         },
       })
@@ -126,6 +127,11 @@ return {
       -- mini.cursorword
       require("mini.cursorword").setup()
 
+      -- mini.files
+      require("mini.files").setup()
+
+      vim.keymap.set("n", "<leader>of", "<Cmd>lua MiniFiles.open()<cr>", { desc = "MiniFiles" })
+
       -- mini.hipatterns
       local hipatterns = require("mini.hipatterns")
 
@@ -139,7 +145,7 @@ return {
         },
       })
 
-      -- mini.bufremove
+      -- mini.misc
       require("mini.misc").setup()
 
       vim.keymap.set("n", "<leader>or", "<Cmd>lua MiniMisc.resize_window()<CR>", { desc = "Resize to defaut width" })
