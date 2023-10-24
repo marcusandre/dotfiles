@@ -35,7 +35,7 @@ return {
       local telescope = require("telescope")
       local actions = require("telescope.actions")
       local themes = require("telescope.themes")
-      local MiniFuzzy = require("telescope.themes")
+      local MiniFuzzy = require("mini.fuzzy")
 
       telescope.setup({
         defaults = {
