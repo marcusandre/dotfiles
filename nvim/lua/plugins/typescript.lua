@@ -16,30 +16,4 @@ return {
       end,
     },
   },
-  -- {
-  --   "dmmulroy/tsc.nvim",
-  --   ft = {
-  --     "javascript",
-  --     "javascriptreact",
-  --     "typescript",
-  --     "typescriptreact",
-  --   },
-  --   opts = {},
-  -- },
-  -- {
-  --   "prettier/vim-prettier",
-  --   ft = {
-  --     "javascript",
-  --     "javascriptreact",
-  --     "typescript",
-  --     "typescriptreact",
-  --     "css",
-  --     "less",
-  --     "scss",
-  --     "graphql",
-  --     "markdown",
-  --     "vue",
-  --     "html",
-  --   },
-  -- },
 }
