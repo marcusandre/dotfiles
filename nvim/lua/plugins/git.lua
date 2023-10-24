@@ -26,7 +26,7 @@ return {
         --   topdelete = { text = "▓" },
         --   untracked = { text = "░" },
         -- },
-        numhl = true,
+        numhl = false,
         linehl = false,
         watch_gitdir = { interval = 1000 },
       })
