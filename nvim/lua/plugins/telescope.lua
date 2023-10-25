@@ -2,6 +2,11 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     version = false,
+    cmd = { "Telescope" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
+    },
     keys = {
       -- stylua: ignore start
       { "<leader>/",  "<Cmd>Telescope live_grep<CR>",                        desc = "Grep live" },
@@ -26,10 +31,6 @@ return {
       { "gr",         "<Cmd>Telescope lsp_references<CR>",                   desc = "References (LSP)" },
       { "gw",         "<Cmd>Telescope grep_string<CR>",                      desc = "Grep current word" },
       -- stylua: ignore end
-    },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-ui-select.nvim",
     },
     config = function()
       local telescope = require("telescope")

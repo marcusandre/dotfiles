@@ -5,9 +5,9 @@ return {
       vim.keymap.set("n", "<leader>gg", "<Cmd>Git<CR>", { desc = "Open fugitive" })
     end,
   },
-  "tpope/vim-rhubarb",
   {
     "lewis6991/gitsigns.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       require("gitsigns").setup({
         signs = {
@@ -26,6 +26,9 @@ return {
         --   topdelete = { text = "▓" },
         --   untracked = { text = "░" },
         -- },
+        preview_config = {
+          border = "none",
+        },
         numhl = false,
         linehl = false,
         watch_gitdir = { interval = 1000 },
