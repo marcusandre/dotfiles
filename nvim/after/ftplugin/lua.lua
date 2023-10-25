@@ -2,10 +2,10 @@
 vim.api.nvim_buf_set_keymap(0, "i", "<M-i>", " = ", { noremap = true })
 
 -- Handle trainling comma when splitting inside curly brackets
-local status, MiniSplitjoin = pcall(require, "mini.splitjoin")
+local has_mini_splitjoin, mini_splitjoin = pcall(require, "mini.splitjoin")
 
-if status then
-  local gen_hook = MiniSplitjoin.gen_hook
+if has_mini_splitjoin then
+  local gen_hook = mini_splitjoin.gen_hook
   local curly = { brackets = { "%b{}" } }
 
   local add_comma_curly = gen_hook.add_trailing_separator(curly)
