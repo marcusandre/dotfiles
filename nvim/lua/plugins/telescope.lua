@@ -49,16 +49,12 @@ return {
           buffers = {
             sort_lastused = true,
             sort_mru = true,
-            theme = "dropdown",
-            previewer = false,
             mappings = {
               i = { ["<c-d>"] = actions.delete_buffer },
             },
           },
           git_files = { show_untracked = true },
-          colorscheme = { enable_preview = true, theme = "dropdown" },
-          current_buffer_fuzzy_find = { theme = "dropdown" },
-          treesitter = { theme = "dropdown" },
+          colorscheme = { enable_preview = true },
         },
         extensions = {
           ["ui-select"] = {

@@ -163,7 +163,7 @@ return {
         callback = function()
           vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "Declaration" })
           vim.keymap.set("n", "<leader>lR", vim.lsp.buf.references, { desc = "References" })
-          -- vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { desc = "Code Action" })
+          vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { desc = "Code Action" })
           vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, { desc = "Definition" })
           vim.keymap.set("n", "<leader>lf", "<Cmd>vim.lsp.buf.format({ async = true })<CR>", { desc = "Format" })
           vim.keymap.set("x", "<leader>lf", "<Cmd>vim.lsp.buf.format({ async = true })<CR>", { desc = "Format" })
@@ -173,28 +173,27 @@ return {
           vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, { desc = "Rename" })
           vim.keymap.set("n", "<leader>ly", vim.lsp.buf.type_definition, { desc = "Type Definition" })
           vim.keymap.set("v", "<leader>la", vim.lsp.buf.code_action, { desc = "Code Action" })
-          -- vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { desc = "Information", })
         end,
       })
     end,
   },
-  {
-    "luckasRanarison/clear-action.nvim",
-    event = "LspAttach",
-    opts = {
-      signs = {
-        show_count = false,
-        enable = true,
-        combine = true,
-      },
-      popup = {
-        border = "single",
-      },
-      mappings = {
-        code_action = "<leader>la",
-      },
-    },
-  },
+  -- {
+  --   "luckasRanarison/clear-action.nvim",
+  --   event = "LspAttach",
+  --   opts = {
+  --     signs = {
+  --       show_count = false,
+  --       enable = true,
+  --       combine = true,
+  --     },
+  --     popup = {
+  --       border = "single",
+  --     },
+  --     mappings = {
+  --       code_action = "<leader>la",
+  --     },
+  --   },
+  -- },
   -- {
   --   "dgagn/diagflow.nvim",
   --   opts = {
