@@ -182,7 +182,17 @@ return {
         return ("Good %s!"):format(day_part)
       end
 
+      local footer = (function()
+        local stats = require("lazy").stats()
+        local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+
+        return function()
+          return "Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
+        end
+      end)()
+
       MiniStarter.setup({
+        silent = true,
         items = {
           MiniStarter.sections.builtin_actions(),
           MiniStarter.sections.recent_files(5, true, false),
@@ -190,17 +200,7 @@ return {
           -- MiniStarter.sections.telescope(),
         },
         header = header,
-      })
-
-      vim.api.nvim_create_autocmd("User", {
-        pattern = "LazyVimStarted",
-        callback = function()
-          local stats = require("lazy").stats()
-          local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-
-          MiniStarter.config.footer = "Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
-          pcall(MiniStarter.refresh)
-        end,
+        footer = footer,
       })
 
       -- mini.statusline
