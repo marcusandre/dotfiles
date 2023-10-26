@@ -48,12 +48,6 @@ return {
       -- mini.bufremove
       require("mini.bufremove").setup()
 
-      vim.keymap.set("n", "<leader>ba", "<Cmd>b#<CR>", { desc = "Alternate" })
-      vim.keymap.set("n", "<leader>bd", "<Cmd>lua MiniBufremove.delete()<CR>", { desc = "Delete" })
-      vim.keymap.set("n", "<leader>bD", "<Cmd>lua MiniBufremove.delete(0, true)<CR>", { desc = "Delete!" })
-      vim.keymap.set("n", "<leader>bw", "<Cmd>lua MiniBufremove.wipeout()<CR>", { desc = "Wipeout" })
-      vim.keymap.set("n", "<leader>bW", "<Cmd>lua MiniBufremove.wipeout(0, true)<CR>", { desc = "Wipeout!" })
-
       -- mini.clue
       local miniclue = require("mini.clue")
 
@@ -130,8 +124,6 @@ return {
       -- mini.files
       require("mini.files").setup()
 
-      vim.keymap.set("n", "<leader>of", "<Cmd>lua MiniFiles.open()<cr>", { desc = "MiniFiles" })
-
       -- mini.hipatterns
       local hipatterns = require("mini.hipatterns")
 
@@ -148,9 +140,6 @@ return {
       -- mini.misc
       require("mini.misc").setup()
 
-      vim.keymap.set("n", "<leader>or", "<Cmd>lua MiniMisc.resize_window()<CR>", { desc = "Resize to defaut width" })
-      vim.keymap.set("n", "<leader>oz", "<Cmd>lua MiniMisc.zoom()<CR>", { desc = "Zoom toggle" })
-
       -- mini.move
       require("mini.move").setup({ options = { reindent_linewise = false } })
 
@@ -159,11 +148,6 @@ return {
 
       -- mini.pick
       require("mini.pick").setup({})
-
-      vim.keymap.set("n", "<leader>p/", "<Cmd>Pick grep_live<CR>", { desc = "Live Grep" })
-      vim.keymap.set("n", "<leader>pb", "<Cmd>Pick buffers include_current=true<CR>", { desc = "Buffers" })
-      vim.keymap.set("n", "<leader>pf", "<Cmd>Pick files<CR>", { desc = "Files" })
-      vim.keymap.set("n", "<leader>pr", "<Cmd>Pick resume<CR>", { desc = "Resume" })
 
       -- mini.splitjoin
       require("mini.splitjoin").setup()

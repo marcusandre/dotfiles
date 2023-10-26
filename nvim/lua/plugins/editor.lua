@@ -17,9 +17,7 @@ return {
   },
   {
     "mbbill/undotree",
-    keys = {
-      { "<leader>eu", "<CMD>UndotreeToggle<CR>", desc = "Open undotree" },
-    },
+    opts = nil,
   },
   {
     "ethanholz/nvim-lastplace",
