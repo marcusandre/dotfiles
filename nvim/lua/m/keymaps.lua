@@ -12,6 +12,7 @@ vim.keymap.set("n", "<leader>bD", "<Cmd>lua MiniBufremove.delete(0, true)<CR>", 
 vim.keymap.set("n", "<leader>bW", "<Cmd>lua MiniBufremove.wipeout(0, true)<CR>", { desc = "Wipeout!" })
 vim.keymap.set("n", "<leader>ba", "<Cmd>b#<CR>", { desc = "Alternate" })
 vim.keymap.set("n", "<leader>bd", "<Cmd>lua MiniBufremove.delete()<CR>", { desc = "Delete" })
+vim.keymap.set("n", "<leader>bq", "<Cmd>bufdo lua MiniBufremove.delete()<CR>", { desc = "Delete All" })
 vim.keymap.set("n", "<leader>bs", fns.make_scratch_buffer, { desc = "Scratch" })
 vim.keymap.set("n", "<leader>bw", "<Cmd>lua MiniBufremove.wipeout()<CR>", { desc = "Wipeout" })
 
