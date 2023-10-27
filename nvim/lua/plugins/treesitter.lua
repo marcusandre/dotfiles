@@ -46,7 +46,6 @@ return {
         "bash",
         "css",
         "diff",
-        "elixir",
         "git_rebase",
         "gitcommit",
         "gitignore",
