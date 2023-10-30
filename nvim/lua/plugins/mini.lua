@@ -1,6 +1,32 @@
 return {
   {
+    "echasnovski/mini.starter",
+    event = "VimEnter",
+    config = function()
+      local MiniStarter = require("mini.starter")
+
+      local header = function()
+        local hour = tonumber(vim.fn.strftime("%H"))
+        local part_id = math.floor((hour + 4) / 8) + 1
+        local day_part = ({ "evening", "morning", "afternoon", "evening" })[part_id]
+
+        return ("Good %s!"):format(day_part)
+      end
+
+      MiniStarter.setup({
+        silent = true,
+        items = {
+          MiniStarter.sections.builtin_actions(),
+          MiniStarter.sections.recent_files(5, true, false),
+          MiniStarter.sections.recent_files(5, false, false),
+        },
+        header = header,
+      })
+    end,
+  },
+  {
     "echasnovski/mini.nvim",
+    event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     config = function()
       -- mini.ai
       local ai = require("mini.ai")
@@ -154,38 +180,6 @@ return {
 
       -- mini.surround
       require("mini.surround").setup()
-
-      -- mini.starter
-      local MiniStarter = require("mini.starter")
-
-      local header = function()
-        local hour = tonumber(vim.fn.strftime("%H"))
-        local part_id = math.floor((hour + 4) / 8) + 1
-        local day_part = ({ "evening", "morning", "afternoon", "evening" })[part_id]
-
-        return ("Good %s!"):format(day_part)
-      end
-
-      local footer = (function()
-        local stats = require("lazy").stats()
-        local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-
-        return function()
-          return "Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
-        end
-      end)()
-
-      MiniStarter.setup({
-        silent = true,
-        items = {
-          MiniStarter.sections.builtin_actions(),
-          MiniStarter.sections.recent_files(5, true, false),
-          MiniStarter.sections.recent_files(5, false, false),
-          -- MiniStarter.sections.telescope(),
-        },
-        header = header,
-        footer = footer,
-      })
 
       -- mini.statusline
       require("mini.statusline").setup()

@@ -17,6 +17,7 @@ return {
   },
   {
     "mbbill/undotree",
+    event = "VeryLazy",
     opts = nil,
   },
   {

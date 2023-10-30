@@ -21,6 +21,7 @@ return {
       vim.cmd.colorscheme("tokyonight")
     end,
     opts = {
+      sidebars = {},
       styles = {
         keywords = { italic = false },
       },
