@@ -24,32 +24,20 @@ return {
       require("luasnip.loaders.from_vscode").lazy_load()
 
       local luasnip_go_left = function()
-        if luasnip.jumpable() then
-          luasnip.jump(-1)
-        end
+        if luasnip.jumpable() then luasnip.jump(-1) end
       end
 
       local luasnip_go_right = function()
-        if luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
-        end
+        if luasnip.expand_or_jumpable() then luasnip.expand_or_jump() end
       end
 
       local luasnip_change_choice = function()
-        if luasnip.choice_active() then
-          luasnip.change_choice(1)
-        end
+        if luasnip.choice_active() then luasnip.change_choice(1) end
       end
 
-      vim.keymap.set({ "i", "s" }, "<C-H>", function()
-        luasnip_go_left()
-      end)
-      vim.keymap.set({ "i", "s" }, "<C-L>", function()
-        luasnip_go_right()
-      end)
-      vim.keymap.set({ "i", "s" }, "<C-I>", function()
-        luasnip_change_choice()
-      end)
+      vim.keymap.set({ "i", "s" }, "<C-H>", function() luasnip_go_left() end)
+      vim.keymap.set({ "i", "s" }, "<C-L>", function() luasnip_go_right() end)
+      vim.keymap.set({ "i", "s" }, "<C-I>", function() luasnip_change_choice() end)
     end,
   },
 }

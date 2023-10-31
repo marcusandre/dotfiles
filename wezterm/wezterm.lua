@@ -3,9 +3,7 @@ local act = wezterm.action
 
 local config = {}
 
-if wezterm.config_builder then
-  config = wezterm.config_builder()
-end
+if wezterm.config_builder then config = wezterm.config_builder() end
 
 local function scheme_for_appearance(appearance)
   if appearance:find("Dark") then

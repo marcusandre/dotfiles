@@ -1,4 +1,4 @@
-local fns = require("m.functions")
+local utils = require("m.utils")
 
 -- Basics
 vim.keymap.set("i", "kj", "<esc>")
@@ -8,13 +8,14 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "n", "nzz")
 
 -- Buffers
-vim.keymap.set("n", "<leader>bD", "<Cmd>lua MiniBufremove.delete(0, true)<CR>", { desc = "Delete!" })
-vim.keymap.set("n", "<leader>bW", "<Cmd>lua MiniBufremove.wipeout(0, true)<CR>", { desc = "Wipeout!" })
 vim.keymap.set("n", "<leader>ba", "<Cmd>b#<CR>", { desc = "Alternate" })
-vim.keymap.set("n", "<leader>bd", "<Cmd>lua MiniBufremove.delete()<CR>", { desc = "Delete" })
-vim.keymap.set("n", "<leader>bq", "<Cmd>bufdo lua MiniBufremove.delete()<CR>", { desc = "Delete All" })
-vim.keymap.set("n", "<leader>bs", fns.make_scratch_buffer, { desc = "Scratch" })
-vim.keymap.set("n", "<leader>bw", "<Cmd>lua MiniBufremove.wipeout()<CR>", { desc = "Wipeout" })
+vim.keymap.set("n", "<leader>bd", utils.delete_buffer, { desc = "Delete" })
+vim.keymap.set("n", "<leader>bD", function() utils.delete_buffer(0, true) end, { desc = "Delete!" })
+vim.keymap.set("n", "<leader>bq", utils.delete_other_buffers, { desc = "Delete Others" })
+vim.keymap.set("n", "<leader>bQ", utils.delete_all_buffers, { desc = "Delete All" })
+vim.keymap.set("n", "<leader>bs", utils.make_scratch_buffer, { desc = "Scratch" })
+vim.keymap.set("n", "<leader>bw", utils.wipeout_buffer, { desc = "Wipeout" })
+vim.keymap.set("n", "<leader>bW", function() utils.wipeout_buffer(0, true) end, { desc = "Wipeout!" })
 
 -- Git
 vim.keymap.set("n", "<leader>gA", '<Cmd>lua require("gitsigns").stage_buffer()<CR>', { desc = "Add buffer" })
@@ -102,7 +103,7 @@ vim.keymap.set("n", "<leader>ee", "<Cmd>NvimTreeToggle<cr>", { desc = "Explore: 
 vim.keymap.set("n", "<leader>ef", "<Cmd>NvimTreeFindFileToggle<cr>", { desc = "Explore: Tree (File)" })
 
 -- Other
-vim.keymap.set("n", "<leader>oc", fns.toggle_quickfix, { desc = "Quickfix: Toggle" })
+vim.keymap.set("n", "<leader>oc", utils.toggle_quickfix, { desc = "Quickfix: Toggle" })
 vim.keymap.set("n", "<leader>of", "<Cmd>lua MiniFiles.open()<cr>", { desc = "MiniFiles" })
 vim.keymap.set("n", "<leader>ol", "<Cmd>Lazy<CR>", { desc = "Lazy" })
 vim.keymap.set("n", "<leader>om", "<Cmd>Mason<CR>", { desc = "Mason" })

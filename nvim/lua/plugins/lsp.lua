@@ -40,22 +40,23 @@ return {
       local mason_lspconfig = require("mason-lspconfig")
 
       local on_attach = function(client, bufnr)
-        if client.name == "tsserver" then
-          client.server_capabilities.documentFormattingProvider = false
-        end
+        if client.name == "tsserver" then client.server_capabilities.documentFormattingProvider = false end
 
-        vim.api.nvim_buf_create_user_command(bufnr, "Format", function()
-          vim.lsp.buf.format({
-            async = true,
-            bufnr = bufnr,
-          })
-        end, { desc = "Format current buffer with LSP" })
+        vim.api.nvim_buf_create_user_command(
+          bufnr,
+          "Format",
+          function()
+            vim.lsp.buf.format({
+              async = true,
+              bufnr = bufnr,
+            })
+          end,
+          { desc = "Format current buffer with LSP" }
+        )
 
         vim.api.nvim_create_autocmd("BufWritePre", {
           buffer = bufnr,
-          callback = function()
-            vim.lsp.buf.format({ async = false })
-          end,
+          callback = function() vim.lsp.buf.format({ async = false }) end,
         })
 
         vim.api.nvim_create_autocmd("BufWritePre", {
@@ -90,9 +91,7 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       cmp.setup({
         snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end,
+          expand = function(args) luasnip.lsp_expand(args.body) end,
         },
         window = {
           completion = cmp.config.window.bordered(),
