@@ -1,7 +1,7 @@
 return {
   {
-    "folke/neodev.nvim",
-    ft = "lua",
+    "j-hui/fidget.nvim",
+    tag = "legacy",
     opts = {},
   },
   {
@@ -10,6 +10,7 @@ return {
       -- LSP
       { "williamboman/mason.nvim", config = true },
       "williamboman/mason-lspconfig.nvim",
+      "folke/neodev.nvim",
 
       -- completion
       "hrsh7th/nvim-cmp",
@@ -25,13 +26,11 @@ return {
 
       -- UI
       "onsails/lspkind-nvim",
-      {
-        "j-hui/fidget.nvim",
-        tag = "legacy",
-        opts = {},
-      },
     },
     config = function()
+      -- Neodev
+      require("neodev").setup()
+
       -- Mason
       require("mason").setup()
 

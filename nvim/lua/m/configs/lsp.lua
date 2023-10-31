@@ -10,7 +10,6 @@ M.lua_servers = {
       completion = { callSnippet = "Replace" },
       diagnostics = { globals = { "vim" } },
       telemetry = { enable = false },
-      workspace = { checkThirdParty = false },
     },
   },
   marksman = {},
