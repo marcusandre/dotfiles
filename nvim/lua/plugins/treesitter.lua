@@ -6,7 +6,7 @@ return {
     build = ":TSUpdate",
     opts = {
       autopairs = {
-        enable = true,
+        enable = false,
       },
       indent = {
         enable = true,
