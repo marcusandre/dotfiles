@@ -26,7 +26,7 @@ wezterm.on("window-config-reloaded", function(window)
 end)
 
 config.font = wezterm.font("JetBrains Mono")
-config.font_size = 13.0
+config.font_size = 12.0
 -- config.line_height = 1.15
 
 config.freetype_load_target = "HorizontalLcd"

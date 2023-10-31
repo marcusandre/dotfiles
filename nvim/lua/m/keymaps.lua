@@ -70,13 +70,13 @@ vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "Declaration
 vim.keymap.set("n", "<leader>lR", vim.lsp.buf.references, { desc = "References" })
 vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { desc = "Code Action" })
 vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, { desc = "Definition" })
-vim.keymap.set("n", "<leader>lf", "<Cmd>vim.lsp.buf.format({ async = true })<CR>", { desc = "Format" })
+vim.keymap.set("n", "<leader>lf", "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", { desc = "Format" })
 vim.keymap.set("n", "<leader>li", vim.lsp.buf.implementation, { desc = "Implementation" })
 vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, { desc = "Rename" })
 vim.keymap.set("n", "<leader>ls", vim.lsp.buf.signature_help, { desc = "Signature" })
 vim.keymap.set("n", "<leader>ly", vim.lsp.buf.type_definition, { desc = "Type Definition" })
 vim.keymap.set("v", "<leader>la", vim.lsp.buf.code_action, { desc = "Code Action" })
-vim.keymap.set("x", "<leader>lf", "<Cmd>vim.lsp.buf.format({ async = true })<CR>", { desc = "Format" })
+vim.keymap.set("x", "<leader>lf", "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", { desc = "Format" })
 
 -- Pick
 vim.keymap.set("n", "<leader>p/", "<Cmd>Pick grep_live<CR>", { desc = "Live Grep" })

@@ -37,7 +37,6 @@ return {
 
       -- Config
       local servers = require("m.configs.lsp").lua_servers
-
       local mason_lspconfig = require("mason-lspconfig")
 
       local on_attach = function(client, bufnr)
@@ -129,13 +128,11 @@ return {
           end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
-          -- stylua: ignore start
           { name = "nvim_lsp_signature_help" },
           { name = "nvim_lsp", keyword_length = 3 },
           { name = "path", keyword_length = 3 },
           { name = "buffer", keyword_length = 3 },
           { name = "luasnip" },
-          -- stylua: ignore end
         }),
         ---@diagnostic disable-next-line: missing-fields
         formatting = {
