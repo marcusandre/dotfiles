@@ -27,6 +27,7 @@ M.open_starter_if_empty_buffer = function()
 
   local orig_cwd = os.getenv("PWD")
   vim.fn.chdir(orig_cwd)
+  vim.cmd("only")
   require("mini.starter").open()
   vim.api.nvim_buf_delete(buf_id, { force = true })
 end
