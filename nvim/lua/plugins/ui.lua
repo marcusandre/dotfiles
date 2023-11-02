@@ -1,18 +1,18 @@
 return {
-  {
-    "stevearc/dressing.nvim",
-    event = "VeryLazy",
-    config = function()
-      local theme = require("telescope.themes").get_dropdown()
-
-      require("dressing").setup({
-        select = {
-          backend = { "telescope" },
-          telescope = theme,
-        },
-      })
-    end,
-  },
+  -- {
+  --   "stevearc/dressing.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     local theme = require("telescope.themes").get_dropdown()
+  --
+  --     require("dressing").setup({
+  --       select = {
+  --         backend = { "telescope" },
+  --         telescope = theme,
+  --       },
+  --     })
+  --   end,
+  -- },
   {
     "folke/tokyonight.nvim",
     lazy = false,

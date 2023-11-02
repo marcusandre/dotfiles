@@ -28,8 +28,14 @@ return {
     "echasnovski/mini.nvim",
     event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     config = function()
+      -- mini.extra
+      local extra = require("mini.extra")
+
+      extra.setup()
+
       -- mini.ai
       local ai = require("mini.ai")
+      local gen_ai_spec = extra.gen_ai_spec
 
       ai.setup({
         custom_textobjects = {
@@ -49,6 +55,11 @@ return {
             a = { "@conditional.outer", "@loop.outer" },
             i = { "@conditional.inner", "@loop.inner" },
           }),
+          B = gen_ai_spec.buffer(),
+          D = gen_ai_spec.diagnostic(),
+          I = gen_ai_spec.indent(),
+          L = gen_ai_spec.line(),
+          N = gen_ai_spec.number(),
         },
       })
 
@@ -152,13 +163,14 @@ return {
 
       -- mini.hipatterns
       local hipatterns = require("mini.hipatterns")
+      local hi_words = require("mini.extra").gen_highlighter.words
 
       hipatterns.setup({
         highlighters = {
-          fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
-          hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
-          todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
-          note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+          todo = hi_words({ "TODO", "Todo", "todo" }, "MiniHipatternsTodo"),
+          fixme = hi_words({ "FIXME", "Fixme", "fixme" }, "MiniHipatternsFixme"),
+          hack = hi_words({ "HACK", "Hack", "hack" }, "MiniHipatternsHack"),
+          note = hi_words({ "NOTE", "Note", "note" }, "MiniHipatternsNote"),
           hex_color = hipatterns.gen_highlighter.hex_color(),
         },
       })
@@ -173,7 +185,11 @@ return {
       -- require("mini.pairs").setup()
 
       -- mini.pick
-      require("mini.pick").setup({})
+      local pick = require("mini.pick")
+
+      pick.setup()
+
+      vim.ui.select = pick.ui_select
 
       -- mini.splitjoin
       require("mini.splitjoin").setup()
