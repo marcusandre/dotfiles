@@ -1,4 +1,5 @@
 local utils = require("m.utils")
+local project_files = require("m.mini").project_files
 
 -- Basics
 vim.keymap.set("i", "kj", "<esc>")
@@ -42,7 +43,7 @@ vim.keymap.set("n", "<leader>:", "<Cmd>Pick history<CR>", { desc = "History" })
 vim.keymap.set("n", "<leader>fb", "<Cmd>Pick buffers include_current=true<CR>", { desc = "Buffers" })
 vim.keymap.set("n", "<leader>fD", "<Cmd>Pick diagnostic scope='all'<CR>", { desc = "Diagnostics (Workspace)" })
 vim.keymap.set("n", "<leader>fd", "<Cmd>Pick diagnostic scope='current'<CR>", { desc = "Diagnostics (Buffer)" })
-vim.keymap.set("n", "<leader>ff", "<Cmd>Pick git_files<CR>", { desc = "Files" })
+vim.keymap.set("n", "<leader>ff", project_files, { desc = "Files" })
 vim.keymap.set("n", "<leader>fg", "<Cmd>Pick git_files scope='modified'<CR>", { desc = "Git files" }) -- Todo
 vim.keymap.set("n", "<leader>fG", "<Cmd>Pick git_hunks<CR>", { desc = "Git hunks" })
 vim.keymap.set("n", "<leader>fh", "<Cmd>Pick help<CR>", { desc = "Help tags" })
