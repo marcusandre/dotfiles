@@ -26,7 +26,7 @@ return {
   },
   {
     "echasnovski/mini.nvim",
-    event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+    -- event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     config = function()
       -- mini.extra
       local extra = require("mini.extra")

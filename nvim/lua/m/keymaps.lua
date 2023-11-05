@@ -35,36 +35,32 @@ vim.keymap.set("n", "<leader>gx", '<Cmd>lua require("gitsigns").reset_hunk()<CR>
 vim.keymap.set("n", "[h", "<Cmd>Gitsigns prev_hunk<CR>zvzz", { desc = "Goto previous hunk" })
 vim.keymap.set("n", "]h", "<Cmd>Gitsigns next_hunk<CR>zvzz", { desc = "Goto next hunk" })
 
--- Telescope
-vim.keymap.set("n", "<leader>/", "<Cmd>Telescope live_grep<CR>", { desc = "Grep live" })
-vim.keymap.set("n", "<leader>:", "<Cmd>Telescope command_history<CR>", { desc = "Commands" })
-vim.keymap.set("n", "<leader>fD", "<Cmd>Telescope diagnostics<CR>", { desc = "Diagnostics (Workspace)" })
-vim.keymap.set("n", "<leader>fO", "<Cmd>Telescope oldfiles<CR>", { desc = "Old Files (Workspace)" })
-vim.keymap.set("n", "<leader>fb", "<Cmd>Telescope buffers<CR>", { desc = "Buffers" })
-vim.keymap.set("n", "<leader>fd", "<Cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Diagnostics (Buffer)" })
-vim.keymap.set("n", "<leader>ff", '<Cmd>lua require("m.telescope").project_files()<CR>', { desc = "Files" })
-vim.keymap.set("n", "<leader>fg", "<Cmd>Telescope git_status<cr>", { desc = "Git" })
-vim.keymap.set("n", "<leader>fh", "<Cmd>Telescope help_tags<cr>", { desc = "Help tags" })
-vim.keymap.set("n", "<leader>fj", "<Cmd>Telescope jumplist<CR>", { desc = "Jumplist" })
-vim.keymap.set("n", "<leader>fl", "<Cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Lines (current)" })
-vim.keymap.set("n", "<leader>fo", "<Cmd>Telescope oldfiles only_cwd=true<CR>", { desc = "Old Files" })
-vim.keymap.set("n", "<leader>fr", "<Cmd>Telescope resume<CR>", { desc = "Resume" })
-vim.keymap.set("n", "<leader>fs", "<Cmd>Telescope lsp_document_symbols<CR>", { desc = "Symbols current (LSP)" })
-vim.keymap.set("n", "<leader>ft", "<Cmd>Telescope treesitter<CR>", { desc = "Document (Treesitter)" })
-vim.keymap.set(
-  "n",
-  "<leader>fS",
-  "<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
-  { desc = "Symbols workspace (LSP)" }
-)
+-- Pick
+-- vim.keymap.set("n", "<leader>ff", "<Cmd>Pick files<CR>", { desc = "Files" })
+vim.keymap.set("n", "<leader>/", "<Cmd>Pick grep_live<CR>", { desc = "Live Grep" })
+vim.keymap.set("n", "<leader>:", "<Cmd>Pick history<CR>", { desc = "History" })
+vim.keymap.set("n", "<leader>fb", "<Cmd>Pick buffers include_current=true<CR>", { desc = "Buffers" })
+vim.keymap.set("n", "<leader>fD", "<Cmd>Pick diagnostic scope='all'<CR>", { desc = "Diagnostics (Workspace)" })
+vim.keymap.set("n", "<leader>fd", "<Cmd>Pick diagnostic scope='current'<CR>", { desc = "Diagnostics (Buffer)" })
+vim.keymap.set("n", "<leader>ff", "<Cmd>Pick git_files<CR>", { desc = "Files" })
+vim.keymap.set("n", "<leader>fg", "<Cmd>Pick git_files scope='modified'<CR>", { desc = "Git files" }) -- Todo
+vim.keymap.set("n", "<leader>fG", "<Cmd>Pick git_hunks<CR>", { desc = "Git hunks" })
+vim.keymap.set("n", "<leader>fh", "<Cmd>Pick help<CR>", { desc = "Help tags" })
+vim.keymap.set("n", "<leader>fl", "<Cmd>Pick buf_lines scope='current'<CR>", { desc = "Lines" })
+vim.keymap.set("n", "<leader>fr", "<Cmd>Pick resume<CR>", { desc = "Resume" })
+vim.keymap.set("n", "<leader>fo", "<Cmd>Pick oldfiles<CR>", { desc = "Old Files" }) -- Todo
+vim.keymap.set("n", "<leader>fj", "<Cmd>Pick list scope='jumplist'<CR>", { desc = "Jumplist" }) -- Todo
+vim.keymap.set("n", "<leader>fs", "<Cmd>Pick lsp scope='document_symbol'<CR>", { desc = "Symbols (Buffer)" })
+vim.keymap.set("n", "<leader>fS", "<Cmd>Pick lsp scope='workspace_symbol'<CR>", { desc = "Symbols (Workspace)" })
+vim.keymap.set("n", "<leader>ft", "<Cmd>Pick treesitter<CR>", { desc = "Treesitter" })
 
 -- LSP
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Information" })
-vim.keymap.set("n", "gD", "<Cmd>Telescope lsp_type_definitions<CR>", { desc = "Type definitions (LSP)" })
-vim.keymap.set("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", { desc = "Definitions (LSP)" })
-vim.keymap.set("n", "gi", "<Cmd>Telescope lsp_implementations<CR>", { desc = "Implementations (LSP)" })
-vim.keymap.set("n", "gr", "<Cmd>Telescope lsp_references<CR>", { desc = "References (LSP)" })
-vim.keymap.set("n", "gw", "<Cmd>Telescope grep_string<CR>", { desc = "Grep current word" })
+vim.keymap.set("n", "gD", "<Cmd>Pick lsp scope='declaration'<CR>", { desc = "Declaration (LSP)" })
+vim.keymap.set("n", "gy", "<Cmd>Pick lsp scope='type_definition'<CR>", { desc = "Type definition (LSP)" })
+vim.keymap.set("n", "gd", "<Cmd>Pick lsp scope='definition'<CR>", { desc = "Definition (LSP)" })
+vim.keymap.set("n", "gi", "<Cmd>Pick lsp scope='implementation'<CR>", { desc = "Implementation (LSP)" })
+vim.keymap.set("n", "gr", "<Cmd>Pick lsp scope='references'<CR>", { desc = "References (LSP)" })
 
 -- LSP (Leader)
 vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "Declaration" })
@@ -78,12 +74,6 @@ vim.keymap.set("n", "<leader>ls", vim.lsp.buf.signature_help, { desc = "Signatur
 vim.keymap.set("n", "<leader>ly", vim.lsp.buf.type_definition, { desc = "Type Definition" })
 vim.keymap.set("v", "<leader>la", vim.lsp.buf.code_action, { desc = "Code Action" })
 vim.keymap.set("x", "<leader>lf", "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", { desc = "Format" })
-
--- Pick
-vim.keymap.set("n", "<leader>p/", "<Cmd>Pick grep_live<CR>", { desc = "Live Grep" })
-vim.keymap.set("n", "<leader>pb", "<Cmd>Pick buffers include_current=true<CR>", { desc = "Buffers" })
-vim.keymap.set("n", "<leader>pf", "<Cmd>Pick files<CR>", { desc = "Files" })
-vim.keymap.set("n", "<leader>pr", "<Cmd>Pick resume<CR>", { desc = "Resume" })
 
 -- Testing
 vim.keymap.set("n", "<leader>tF", "<Cmd>TestFile --coverage<CR>", { desc = "Test: file (coverage)" })
