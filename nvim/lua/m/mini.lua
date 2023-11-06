@@ -2,7 +2,7 @@ local M = {}
 
 local is_inside_work_tree = {}
 
-M.project_files = function()
+M.pick_project_files = function()
   local opts = {}
   local cwd = vim.fn.getcwd()
   local pickers = require("mini.extra").pickers
@@ -18,6 +18,13 @@ M.project_files = function()
   else
     builtin.files(opts)
   end
+end
+
+M.pick_word_under_cursor = function()
+  local builtin = require("mini.pick").builtin
+  local curword = vim.fn.expand("<cword>")
+
+  builtin.grep({ pattern = curword })
 end
 
 return M

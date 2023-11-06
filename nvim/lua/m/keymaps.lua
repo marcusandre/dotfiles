@@ -1,5 +1,5 @@
 local utils = require("m.utils")
-local project_files = require("m.mini").project_files
+local mini_utils = require("m.mini")
 
 -- Basics
 vim.keymap.set("i", "kj", "<esc>")
@@ -37,31 +37,31 @@ vim.keymap.set("n", "[h", "<Cmd>Gitsigns prev_hunk<CR>zvzz", { desc = "Goto prev
 vim.keymap.set("n", "]h", "<Cmd>Gitsigns next_hunk<CR>zvzz", { desc = "Goto next hunk" })
 
 -- Pick
--- vim.keymap.set("n", "<leader>ff", "<Cmd>Pick files<CR>", { desc = "Files" })
 vim.keymap.set("n", "<leader>/", "<Cmd>Pick grep_live<CR>", { desc = "Live Grep" })
 vim.keymap.set("n", "<leader>:", "<Cmd>Pick history<CR>", { desc = "History" })
 vim.keymap.set("n", "<leader>fb", "<Cmd>Pick buffers include_current=true<CR>", { desc = "Buffers" })
-vim.keymap.set("n", "<leader>fD", "<Cmd>Pick diagnostic scope='all'<CR>", { desc = "Diagnostics (Workspace)" })
-vim.keymap.set("n", "<leader>fd", "<Cmd>Pick diagnostic scope='current'<CR>", { desc = "Diagnostics (Buffer)" })
-vim.keymap.set("n", "<leader>ff", project_files, { desc = "Files" })
-vim.keymap.set("n", "<leader>fg", "<Cmd>Pick git_files scope='modified'<CR>", { desc = "Git files" }) -- Todo
+vim.keymap.set("n", "<leader>fD", '<Cmd>Pick diagnostic scope="all"<CR>', { desc = "Diagnostics (Workspace)" })
+vim.keymap.set("n", "<leader>fd", '<Cmd>Pick diagnostic scope="current"<CR>', { desc = "Diagnostics (Buffer)" })
+vim.keymap.set("n", "<leader>ff", mini_utils.pick_project_files, { desc = "Files" })
 vim.keymap.set("n", "<leader>fG", "<Cmd>Pick git_hunks<CR>", { desc = "Git hunks" })
+vim.keymap.set("n", "<leader>fg", '<Cmd>Pick git_files scope="modified"<CR>', { desc = "Git files" })
 vim.keymap.set("n", "<leader>fh", "<Cmd>Pick help<CR>", { desc = "Help tags" })
-vim.keymap.set("n", "<leader>fl", "<Cmd>Pick buf_lines scope='current'<CR>", { desc = "Lines" })
+vim.keymap.set("n", "<leader>fj", '<Cmd>Pick list scope="jumplist"<CR>', { desc = "Jumplist" })
+vim.keymap.set("n", "<leader>fl", '<Cmd>Pick buf_lines scope="current"<CR>', { desc = "Lines" })
+vim.keymap.set("n", "<leader>fo", "<Cmd>Pick oldfiles<CR>", { desc = "Old Files" })
 vim.keymap.set("n", "<leader>fr", "<Cmd>Pick resume<CR>", { desc = "Resume" })
-vim.keymap.set("n", "<leader>fo", "<Cmd>Pick oldfiles<CR>", { desc = "Old Files" }) -- Todo
-vim.keymap.set("n", "<leader>fj", "<Cmd>Pick list scope='jumplist'<CR>", { desc = "Jumplist" }) -- Todo
-vim.keymap.set("n", "<leader>fs", "<Cmd>Pick lsp scope='document_symbol'<CR>", { desc = "Symbols (Buffer)" })
-vim.keymap.set("n", "<leader>fS", "<Cmd>Pick lsp scope='workspace_symbol'<CR>", { desc = "Symbols (Workspace)" })
+vim.keymap.set("n", "<leader>fs", '<Cmd>Pick lsp scope="document_symbol"<CR>', { desc = "Symbols (Buffer)" })
+vim.keymap.set("n", "<leader>fS", '<Cmd>Pick lsp scope="workspace_symbol"<CR>', { desc = "Symbols (Workspace)" })
 vim.keymap.set("n", "<leader>ft", "<Cmd>Pick treesitter<CR>", { desc = "Treesitter" })
 
 -- LSP
+vim.keymap.set("n", "gD", '<Cmd>Pick lsp scope="declaration"<CR>', { desc = "Declaration (LSP)" })
+vim.keymap.set("n", "gd", '<Cmd>Pick lsp scope="definition"<CR>', { desc = "Definition (LSP)" })
+vim.keymap.set("n", "gi", '<Cmd>Pick lsp scope="implementation"<CR>', { desc = "Implementation (LSP)" })
+vim.keymap.set("n", "gr", '<Cmd>Pick lsp scope="references"<CR>', { desc = "References (LSP)" })
+vim.keymap.set("n", "gw", mini_utils.pick_word_under_cursor, { desc = "References (LSP)" })
+vim.keymap.set("n", "gy", '<Cmd>Pick lsp scope="type_definition"<CR>', { desc = "Type definition (LSP)" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Information" })
-vim.keymap.set("n", "gD", "<Cmd>Pick lsp scope='declaration'<CR>", { desc = "Declaration (LSP)" })
-vim.keymap.set("n", "gy", "<Cmd>Pick lsp scope='type_definition'<CR>", { desc = "Type definition (LSP)" })
-vim.keymap.set("n", "gd", "<Cmd>Pick lsp scope='definition'<CR>", { desc = "Definition (LSP)" })
-vim.keymap.set("n", "gi", "<Cmd>Pick lsp scope='implementation'<CR>", { desc = "Implementation (LSP)" })
-vim.keymap.set("n", "gr", "<Cmd>Pick lsp scope='references'<CR>", { desc = "References (LSP)" })
 
 -- LSP (Leader)
 vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "Declaration" })
