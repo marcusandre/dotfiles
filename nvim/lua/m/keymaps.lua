@@ -1,5 +1,4 @@
 local utils = require("m.utils")
-local mini_utils = require("m.mini")
 
 -- Basics
 vim.keymap.set("i", "kj", "<esc>")
@@ -42,7 +41,8 @@ vim.keymap.set("n", "<leader>:", "<Cmd>Pick history<CR>", { desc = "History" })
 vim.keymap.set("n", "<leader>fb", "<Cmd>Pick buffers include_current=true<CR>", { desc = "Buffers" })
 vim.keymap.set("n", "<leader>fD", '<Cmd>Pick diagnostic scope="all"<CR>', { desc = "Diagnostics (Workspace)" })
 vim.keymap.set("n", "<leader>fd", '<Cmd>Pick diagnostic scope="current"<CR>', { desc = "Diagnostics (Buffer)" })
-vim.keymap.set("n", "<leader>ff", mini_utils.pick_project_files, { desc = "Files" })
+-- vim.keymap.set("n", "<leader>ff", utils.pick_project_files, { desc = "Files (Project)" })
+vim.keymap.set("n", "<leader>ff", "<Cmd>Pick files<CR>", { desc = "Files" })
 vim.keymap.set("n", "<leader>fG", "<Cmd>Pick git_hunks<CR>", { desc = "Git hunks" })
 vim.keymap.set("n", "<leader>fg", '<Cmd>Pick git_files scope="modified"<CR>', { desc = "Git files" })
 vim.keymap.set("n", "<leader>fh", "<Cmd>Pick help<CR>", { desc = "Help tags" })
@@ -59,7 +59,7 @@ vim.keymap.set("n", "gD", '<Cmd>Pick lsp scope="declaration"<CR>', { desc = "Dec
 vim.keymap.set("n", "gd", '<Cmd>Pick lsp scope="definition"<CR>', { desc = "Definition (LSP)" })
 vim.keymap.set("n", "gi", '<Cmd>Pick lsp scope="implementation"<CR>', { desc = "Implementation (LSP)" })
 vim.keymap.set("n", "gr", '<Cmd>Pick lsp scope="references"<CR>', { desc = "References (LSP)" })
-vim.keymap.set("n", "gw", mini_utils.pick_word_under_cursor, { desc = "References (LSP)" })
+vim.keymap.set("n", "gw", utils.pick_word_under_cursor, { desc = "References (LSP)" })
 vim.keymap.set("n", "gy", '<Cmd>Pick lsp scope="type_definition"<CR>', { desc = "Type definition (LSP)" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Information" })
 

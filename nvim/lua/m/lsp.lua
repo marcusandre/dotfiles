@@ -7,9 +7,15 @@ M.lua_servers = {
   jsonls = {},
   lua_ls = {
     Lua = {
-      completion = { callSnippet = "Replace" },
-      diagnostics = { globals = { "vim" } },
-      telemetry = { enable = false },
+      runtime = {
+        version = "LuaJIT",
+      },
+      diagnostics = {
+        globals = { "vim" },
+      },
+      telemetry = {
+        enable = false,
+      },
     },
   },
   marksman = {},

@@ -35,7 +35,7 @@ return {
       require("mason").setup()
 
       -- Config
-      local servers = require("m.configs.lsp").lua_servers
+      local servers = require("m.lsp").lua_servers
       local mason_lspconfig = require("mason-lspconfig")
 
       local on_attach = function(client, bufnr)
