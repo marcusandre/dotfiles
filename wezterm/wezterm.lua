@@ -7,9 +7,9 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 
 local function scheme_for_appearance(appearance)
   if appearance:find("Dark") then
-    return "tokyonight_storm"
+    return "tokyonight_moon"
   else
-    return "tokyonight_storm"
+    return "tokyonight_moon"
   end
 end
 
@@ -23,9 +23,9 @@ wezterm.on("window-config-reloaded", function(window)
   end
 end)
 
-config.font = wezterm.font("JetBrains Mono")
+config.font = wezterm.font("Berkeley Mono")
 config.font_size = 12.0
--- config.line_height = 1.15
+config.line_height = 1.15
 
 config.freetype_load_target = "HorizontalLcd"
 

@@ -5,16 +5,12 @@ return {
     priority = 1000,
     init = function() vim.cmd.colorscheme("tokyonight") end,
     opts = {
+      style = "moon",
       sidebars = {},
       styles = {
         keywords = { italic = false },
       },
     },
-  },
-  {
-    "EdenEast/nightfox.nvim",
-    lazy = false,
-    priority = 1000,
   },
   {
     "lukas-reineke/indent-blankline.nvim",
