@@ -89,12 +89,10 @@ vim.keymap.set("n", "<leader>tc", "<Cmd>Coverage<CR>", { desc = "Test: coverage"
 
 -- Explore
 vim.keymap.set("n", "<leader>eu", "<CMD>UndotreeToggle<CR>", { desc = "Open Undotree" })
-vim.keymap.set("n", "<leader>ee", "<Cmd>NvimTreeToggle<cr>", { desc = "Explore: Tree" })
-vim.keymap.set("n", "<leader>ef", "<Cmd>NvimTreeFindFileToggle<cr>", { desc = "Explore: Tree (File)" })
+vim.keymap.set("n", "<leader>ee", "<Cmd>lua MiniFiles.open()<cr>", { desc = "MiniFiles" })
 
 -- Other
 vim.keymap.set("n", "<leader>oc", utils.toggle_quickfix, { desc = "Quickfix: Toggle" })
-vim.keymap.set("n", "<leader>of", "<Cmd>lua MiniFiles.open()<cr>", { desc = "MiniFiles" })
 vim.keymap.set("n", "<leader>ol", "<Cmd>Lazy<CR>", { desc = "Lazy" })
 vim.keymap.set("n", "<leader>om", "<Cmd>Mason<CR>", { desc = "Mason" })
 vim.keymap.set("n", "<leader>oo", "<Cmd>only<CR>", { desc = "Window: Only" })
