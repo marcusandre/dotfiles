@@ -19,6 +19,7 @@ set -gx VISUAL nvim
 set -gx PAGER "less -R --use-color -Dd+r -Du+b"
 set -gx MANPAGER 'nvim +Man!'
 set -gx NVIM_LISTEN_ADDRESS "/tmp/nvimsocket"
+set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/.ripgreprc"
 # set -gx LS_COLORS "vivid generate catppuccin-macchiato"
 
 # Go

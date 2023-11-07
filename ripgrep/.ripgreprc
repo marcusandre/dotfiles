@@ -1,2 +1,3 @@
-# Exclude directories.
 --glob=!.git/*
+--hidden
+--smart-case
