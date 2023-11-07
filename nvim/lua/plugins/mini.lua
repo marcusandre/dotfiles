@@ -161,6 +161,13 @@ return {
       -- mini.files
       require("mini.files").setup()
 
+      local file_on_rename = require("m.utils").file_on_rename
+
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "MiniFilesActionRename",
+        callback = function(event) file_on_rename(event.data.from, event.data.to) end,
+      })
+
       -- mini.hipatterns
       local hipatterns = require("mini.hipatterns")
       local hi_words = require("mini.extra").gen_highlighter.words
