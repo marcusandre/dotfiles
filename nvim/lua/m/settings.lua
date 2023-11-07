@@ -57,10 +57,6 @@ vim.o.splitkeep = 'screen'                      -- Reduce scroll during window s
 vim.o.fillchars = "eob: "                       -- Don't show `~` outside of buffer
 -- stylua: ignore end
 
--- Netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- Spelling
 -- stylua: ignore start
 vim.o.spelllang = 'en'            -- Define spelling dictionaries

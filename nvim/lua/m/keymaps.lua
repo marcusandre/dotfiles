@@ -58,8 +58,8 @@ vim.keymap.set("n", "gD", '<Cmd>Pick lsp scope="declaration"<CR>', { desc = "Dec
 vim.keymap.set("n", "gd", '<Cmd>Pick lsp scope="definition"<CR>', { desc = "Definition (LSP)" })
 vim.keymap.set("n", "gi", '<Cmd>Pick lsp scope="implementation"<CR>', { desc = "Implementation (LSP)" })
 vim.keymap.set("n", "gr", '<Cmd>Pick lsp scope="references"<CR>', { desc = "References (LSP)" })
-vim.keymap.set("n", "gw", utils.pick_word_under_cursor, { desc = "References (LSP)" })
-vim.keymap.set("n", "gy", '<Cmd>Pick lsp scope="type_definition"<CR>', { desc = "Type definition (LSP)" })
+vim.keymap.set("n", "gw", utils.pick_word_under_cursor, { desc = "Grep word (LSP)" })
+vim.keymap.set("n", "gl", '<Cmd>Pick lsp scope="type_definition"<CR>', { desc = "Type definition (LSP)" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Information" })
 
 -- LSP (Leader)
@@ -90,6 +90,7 @@ vim.keymap.set("n", "<leader>tc", "<Cmd>Coverage<CR>", { desc = "Test: coverage"
 -- Explore
 vim.keymap.set("n", "<leader>eu", "<CMD>UndotreeToggle<CR>", { desc = "Open Undotree" })
 vim.keymap.set("n", "<leader>ee", "<Cmd>lua MiniFiles.open()<cr>", { desc = "MiniFiles" })
+vim.keymap.set("n", "-", "<Cmd>lua MiniFiles.open()<cr>", { desc = "MiniFiles" })
 
 -- Other
 vim.keymap.set("n", "<leader>oc", utils.toggle_quickfix, { desc = "Quickfix: Toggle" })
