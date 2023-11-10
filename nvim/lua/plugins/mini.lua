@@ -55,11 +55,7 @@ return {
             a = { "@conditional.outer", "@loop.outer" },
             i = { "@conditional.inner", "@loop.inner" },
           }),
-          B = gen_ai_spec.buffer(),
-          D = gen_ai_spec.diagnostic(),
           I = gen_ai_spec.indent(),
-          L = gen_ai_spec.line(),
-          N = gen_ai_spec.number(),
         },
       })
 
@@ -151,9 +147,6 @@ return {
 
         window = { config = { border = "double" } },
       })
-
-      -- mini.comment
-      -- require("mini.comment").setup()
 
       -- mini.cursorword
       require("mini.cursorword").setup()

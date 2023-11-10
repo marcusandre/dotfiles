@@ -8,13 +8,23 @@ M.pick_word_under_cursor = function()
   builtin.grep({ pattern = curword })
 end
 
+M.pick_modified_untracked = function()
+  local MiniPick = require("mini.pick")
+  local local_opts = { command = { "git", "ls-files", "--modified", "--others" } }
+  local source = {
+    name = "Git files (modified + untracked)",
+    show = function(buf_id, items, query) return MiniPick.default_show(buf_id, items, query, { show_icons = true }) end,
+  }
+  return MiniPick.builtin.cli(local_opts, { source = source })
+end
+
 local is_inside_work_tree = {}
 
 M.pick_project_files = function()
   local opts = {}
   local cwd = vim.fn.getcwd()
-  local pickers = require("mini.extra").pickers
-  local builtin = require("mini.pick").builtin
+  local MiniExtra = require("mini.extra")
+  local MiniPick = require("mini.pick")
 
   if is_inside_work_tree[cwd] == nil then
     vim.fn.system("git rev-parse --is-inside-work-tree")
@@ -22,9 +32,9 @@ M.pick_project_files = function()
   end
 
   if is_inside_work_tree[cwd] then
-    pickers.git_files(opts)
+    MiniExtra.pickers.git_files(opts)
   else
-    builtin.files(opts)
+    MiniPick.builtin.files(opts)
   end
 end
 

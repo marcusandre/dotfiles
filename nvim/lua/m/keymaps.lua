@@ -44,7 +44,7 @@ vim.keymap.set("n", "<leader>fD", '<Cmd>Pick diagnostic scope="all"<CR>', { desc
 vim.keymap.set("n", "<leader>fd", '<Cmd>Pick diagnostic scope="current"<CR>', { desc = "Diagnostics (Buffer)" })
 vim.keymap.set("n", "<leader>ff", "<Cmd>Pick files<CR>", { desc = "Files" })
 vim.keymap.set("n", "<leader>fG", "<Cmd>Pick git_hunks<CR>", { desc = "Git hunks" })
-vim.keymap.set("n", "<leader>fg", '<Cmd>Pick git_files scope="modified"<CR>', { desc = "Git files" })
+vim.keymap.set("n", "<leader>fg", utils.pick_modified_untracked, { desc = "Git files" })
 vim.keymap.set("n", "<leader>fh", "<Cmd>Pick help<CR>", { desc = "Help tags" })
 vim.keymap.set("n", "<leader>fj", '<Cmd>Pick list scope="jump"<CR>', { desc = "Jumplist" })
 vim.keymap.set("n", "<leader>fo", "<Cmd>Pick oldfiles<CR>", { desc = "Old Files" })
