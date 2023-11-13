@@ -10,7 +10,7 @@ end
 
 M.pick_modified_untracked = function()
   local MiniPick = require("mini.pick")
-  local local_opts = { command = { "git", "ls-files", "--modified", "--others" } }
+  local local_opts = { command = { "git", "ls-files", "--modified", "--others", "--exclude-standard" } }
   local source = {
     name = "Git files (modified + untracked)",
     show = function(buf_id, items, query) return MiniPick.default_show(buf_id, items, query, { show_icons = true }) end,
@@ -36,6 +36,15 @@ M.pick_project_files = function()
   else
     MiniPick.builtin.files(opts)
   end
+end
+
+M.yank_reative_path = function()
+  local MiniFiles = require("mini.files")
+  local path_entry = MiniFiles.get_fs_entry().path
+  local path = vim.fn.fnamemodify(path_entry, ":.")
+
+  vim.fn.setreg("+", path)
+  print(path)
 end
 
 -- Quickfix
