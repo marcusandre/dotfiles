@@ -152,13 +152,22 @@ return {
       require("mini.cursorword").setup()
 
       -- mini.files
-      require("mini.files").setup()
+      local utils = require("m.utils")
 
-      local file_on_rename = require("m.utils").file_on_rename
+      require("mini.files").setup()
 
       vim.api.nvim_create_autocmd("User", {
         pattern = "MiniFilesActionRename",
-        callback = function(event) file_on_rename(event.data.from, event.data.to) end,
+        callback = function(event) utils.file_on_rename(event.data.from, event.data.to) end,
+      })
+
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "MiniFilesBufferCreate",
+        callback = function(event)
+          vim.keymap.set("n", "gY", utils.yank_reative_path, {
+            buffer = event.data.buf_id,
+          })
+        end,
       })
 
       -- mini.hipatterns
