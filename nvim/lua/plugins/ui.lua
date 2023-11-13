@@ -5,7 +5,7 @@ return {
     priority = 1000,
     init = function() vim.cmd.colorscheme("tokyonight") end,
     opts = {
-      style = "moon",
+      style = "storm",
       sidebars = {},
       styles = {
         keywords = { italic = false },
