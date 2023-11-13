@@ -185,16 +185,16 @@ return {
   --     toggle_event = { "InsertEnter" },
   --   },
   -- },
-  -- {
-  --   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-  --   event = "LspAttach",
-  --   config = function()
-  --     require("lsp_lines").setup()
-  --
-  --     vim.diagnostic.config({
-  --       virtual_text = false,
-  --       virtual_lines = { only_current_line = true },
-  --     })
-  --   end,
-  -- },
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    event = "LspAttach",
+    config = function()
+      require("lsp_lines").setup()
+
+      vim.diagnostic.config({
+        virtual_text = false,
+        virtual_lines = { only_current_line = true },
+      })
+    end,
+  },
 }
