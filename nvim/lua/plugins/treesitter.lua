@@ -30,6 +30,9 @@ return {
         },
       },
       textobjects = {
+        move = {
+          enable = false,
+        },
         swap = {
           enable = true,
           swap_next = {

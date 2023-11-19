@@ -73,8 +73,6 @@ return {
         },
       })
 
-      vim.keymap.del("n", "<C-z>")
-
       -- mini.bracketed
       require("mini.bracketed").setup()
 
@@ -191,7 +189,7 @@ return {
       require("mini.move").setup({ options = { reindent_linewise = false } })
 
       -- mini.pairs
-      -- require("mini.pairs").setup()
+      require("mini.pairs").setup()
 
       -- mini.pick
       local pick = require("mini.pick")
