@@ -89,8 +89,13 @@ vim.keymap.set("n", "<leader>tc", "<Cmd>Coverage<CR>", { desc = "Test: coverage"
 
 -- Explore
 vim.keymap.set("n", "<leader>eu", "<CMD>UndotreeToggle<CR>", { desc = "Open Undotree" })
-vim.keymap.set("n", "<leader>ee", "<Cmd>lua MiniFiles.open()<cr>", { desc = "MiniFiles" })
-vim.keymap.set("n", "-", "<Cmd>lua MiniFiles.open()<cr>", { desc = "MiniFiles" })
+vim.keymap.set("n", "<leader>ee", utils.minifiles_toggle, { desc = "MiniFiles" })
+vim.keymap.set(
+  "n",
+  "<leader>ef",
+  "<Cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0), true)<cr>",
+  { desc = "MiniFiles (File)" }
+)
 
 -- Other
 vim.keymap.set("n", "<leader>oc", utils.toggle_quickfix, { desc = "Quickfix: Toggle" })

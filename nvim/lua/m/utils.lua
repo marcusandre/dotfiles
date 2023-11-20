@@ -38,6 +38,19 @@ M.pick_project_files = function()
   end
 end
 
+M.minifiles_toggle = function(...)
+  local MiniFiles = require("mini.files")
+  if not MiniFiles.close() then MiniFiles.open(...) end
+end
+
+M.minifiles_set_cwd = function(path)
+  local MiniFiles = require("mini.files")
+  local cur_entry_path = MiniFiles.get_fs_entry().path
+  local cur_directory = vim.fs.dirname(cur_entry_path)
+
+  vim.fn.chdir(cur_directory)
+end
+
 M.yank_reative_path = function()
   local MiniFiles = require("mini.files")
   local path_entry = MiniFiles.get_fs_entry().path
