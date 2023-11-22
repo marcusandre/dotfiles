@@ -1,3 +1,7 @@
+if not status is-interactive
+    return 0
+end
+
 set fish_greeting
 
 # Path
@@ -21,6 +25,13 @@ set -gx MANPAGER 'nvim +Man!'
 set -gx NVIM_LISTEN_ADDRESS "/tmp/nvimsocket"
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/.ripgreprc"
 # set -gx LS_COLORS "vivid generate catppuccin-macchiato"
+
+# Vi mode
+set -g fish_key_bindings fish_vi_key_bindings
+set fish_vi_force_cursor 1
+set fish_cursor_default block
+set fish_cursor_insert line
+set fish_cursor_replace_one underscore
 
 # Go
 set -gx GOPATH $HOME/golang
@@ -92,3 +103,5 @@ alias vimdiff 'nvim -d'
 function lk
   set loc (walk $argv); and cd $loc;
 end
+
+fish_config theme choose "tokyonight_moon"

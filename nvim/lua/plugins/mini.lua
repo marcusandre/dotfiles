@@ -1,42 +1,42 @@
 return {
-  "echasnovski/mini.nvim",
+  'echasnovski/mini.nvim',
   config = function()
     -- mini.extra
-    local extra = require("mini.extra")
+    local extra = require('mini.extra')
 
     extra.setup()
 
     -- mini.ai
-    local ai = require("mini.ai")
+    local ai = require('mini.ai')
     local gen_ai_spec = extra.gen_ai_spec
 
     ai.setup({
       custom_textobjects = {
         a = ai.gen_spec.treesitter({
-          a = "@parameter.outer",
-          i = "@parameter.inner",
+          a = '@parameter.outer',
+          i = '@parameter.inner',
         }),
         c = ai.gen_spec.treesitter({
-          a = "@class.outer",
-          i = "@class.inner",
+          a = '@class.outer',
+          i = '@class.inner',
         }),
         f = ai.gen_spec.treesitter({
-          a = "@function.outer",
-          i = "@function.inner",
+          a = '@function.outer',
+          i = '@function.inner',
         }),
         o = ai.gen_spec.treesitter({
-          a = { "@conditional.outer", "@loop.outer" },
-          i = { "@conditional.inner", "@loop.inner" },
+          a = { '@conditional.outer', '@loop.outer' },
+          i = { '@conditional.inner', '@loop.inner' },
         }),
         I = gen_ai_spec.indent(),
       },
     })
 
     -- mini.align
-    require("mini.align").setup()
+    require('mini.align').setup()
 
     -- mini.basics
-    require("mini.basics").setup({
+    require('mini.basics').setup({
       options = {
         extra_ui = true,
       },
@@ -47,24 +47,24 @@ return {
     })
 
     -- mini.bracketed
-    require("mini.bracketed").setup()
+    require('mini.bracketed').setup()
 
     -- mini.bufremove
-    require("mini.bufremove").setup()
+    require('mini.bufremove').setup()
 
     -- mini.clue
-    local miniclue = require("mini.clue")
+    local miniclue = require('mini.clue')
 
     local leader_group_clues = {
-      { mode = "n", keys = "<Leader>b", desc = "+Buffer" },
-      { mode = "n", keys = "<Leader>e", desc = "+Explore" },
-      { mode = "n", keys = "<Leader>f", desc = "+Fuzzy" },
-      { mode = "n", keys = "<Leader>g", desc = "+Git" },
-      { mode = "n", keys = "<Leader>l", desc = "+LSP" },
-      { mode = "n", keys = "<Leader>o", desc = "+Other" },
-      { mode = "n", keys = "<Leader>p", desc = "+Pick" },
-      { mode = "n", keys = "<Leader>t", desc = "+Terminal/Test" },
-      { mode = "x", keys = "<Leader>l", desc = "+LSP" },
+      { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
+      { mode = 'n', keys = '<Leader>e', desc = '+Explore' },
+      { mode = 'n', keys = '<Leader>f', desc = '+Fuzzy' },
+      { mode = 'n', keys = '<Leader>g', desc = '+Git' },
+      { mode = 'n', keys = '<Leader>l', desc = '+LSP' },
+      { mode = 'n', keys = '<Leader>o', desc = '+Other' },
+      { mode = 'n', keys = '<Leader>p', desc = '+Pick' },
+      { mode = 'n', keys = '<Leader>t', desc = '+Terminal/Test' },
+      { mode = 'x', keys = '<Leader>l', desc = '+LSP' },
     }
 
     miniclue.setup({
@@ -80,109 +80,109 @@ return {
 
       triggers = {
         -- Leader triggers
-        { mode = "n", keys = "<Leader>" },
-        { mode = "x", keys = "<Leader>" },
+        { mode = 'n', keys = '<Leader>' },
+        { mode = 'x', keys = '<Leader>' },
 
         -- 'mini.bracketed'
-        { mode = "n", keys = "[" },
-        { mode = "n", keys = "]" },
-        { mode = "x", keys = "[" },
-        { mode = "x", keys = "]" },
+        { mode = 'n', keys = '[' },
+        { mode = 'n', keys = ']' },
+        { mode = 'x', keys = '[' },
+        { mode = 'x', keys = ']' },
 
         -- Built-in completion
-        { mode = "i", keys = "<C-x>" },
+        { mode = 'i', keys = '<C-x>' },
 
         -- `g` key
-        { mode = "n", keys = "g" },
-        { mode = "x", keys = "g" },
+        { mode = 'n', keys = 'g' },
+        { mode = 'x', keys = 'g' },
 
         -- Marks
-        { mode = "n", keys = "'" },
-        { mode = "n", keys = "`" },
-        { mode = "x", keys = "'" },
-        { mode = "x", keys = "`" },
+        { mode = 'n', keys = "'" },
+        { mode = 'n', keys = '`' },
+        { mode = 'x', keys = "'" },
+        { mode = 'x', keys = '`' },
 
         -- Registers
-        { mode = "n", keys = '"' },
-        { mode = "x", keys = '"' },
-        { mode = "i", keys = "<C-r>" },
-        { mode = "c", keys = "<C-r>" },
+        { mode = 'n', keys = '"' },
+        { mode = 'x', keys = '"' },
+        { mode = 'i', keys = '<C-r>' },
+        { mode = 'c', keys = '<C-r>' },
 
         -- Window commands
-        { mode = "n", keys = "<C-w>" },
+        { mode = 'n', keys = '<C-w>' },
 
         -- `z` key
-        { mode = "n", keys = "z" },
-        { mode = "x", keys = "z" },
+        { mode = 'n', keys = 'z' },
+        { mode = 'x', keys = 'z' },
       },
 
-      window = { config = { border = "double" } },
+      window = { config = { border = 'double' } },
     })
 
     -- mini.cursorword
-    require("mini.cursorword").setup()
+    require('mini.cursorword').setup()
 
     -- mini.files
-    local utils = require("m.utils")
+    local utils = require('m.utils')
 
-    require("mini.files").setup()
+    require('mini.files').setup()
 
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "MiniFilesActionRename",
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'MiniFilesActionRename',
       callback = function(event) utils.file_on_rename(event.data.from, event.data.to) end,
     })
 
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "MiniFilesBufferCreate",
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'MiniFilesBufferCreate',
       callback = function(event)
-        vim.keymap.set("n", "gY", utils.yank_reative_path, {
+        vim.keymap.set('n', 'gY', utils.yank_reative_path, {
           buffer = event.data.buf_id,
         })
       end,
     })
 
     -- mini.hipatterns
-    local hipatterns = require("mini.hipatterns")
-    local hi_words = require("mini.extra").gen_highlighter.words
+    local hipatterns = require('mini.hipatterns')
+    local hi_words = require('mini.extra').gen_highlighter.words
 
     hipatterns.setup({
       highlighters = {
-        todo = hi_words({ "TODO", "Todo", "todo" }, "MiniHipatternsTodo"),
-        fixme = hi_words({ "FIXME", "Fixme", "fixme" }, "MiniHipatternsFixme"),
-        hack = hi_words({ "HACK", "Hack", "hack" }, "MiniHipatternsHack"),
-        note = hi_words({ "NOTE", "Note", "note" }, "MiniHipatternsNote"),
+        todo = hi_words({ 'TODO', 'Todo', 'todo' }, 'MiniHipatternsTodo'),
+        fixme = hi_words({ 'FIXME', 'Fixme', 'fixme' }, 'MiniHipatternsFixme'),
+        hack = hi_words({ 'HACK', 'Hack', 'hack' }, 'MiniHipatternsHack'),
+        note = hi_words({ 'NOTE', 'Note', 'note' }, 'MiniHipatternsNote'),
         hex_color = hipatterns.gen_highlighter.hex_color(),
       },
     })
 
     -- mini.misc
-    require("mini.misc").setup()
+    require('mini.misc').setup()
 
     -- mini.move
-    require("mini.move").setup({ options = { reindent_linewise = false } })
+    require('mini.move').setup({ options = { reindent_linewise = false } })
 
     -- mini.pairs
-    require("mini.pairs").setup()
+    require('mini.pairs').setup()
 
     -- mini.pick
-    local pick = require("mini.pick")
+    local pick = require('mini.pick')
 
     pick.setup()
 
     vim.ui.select = pick.ui_select
 
     -- mini.splitjoin
-    require("mini.splitjoin").setup()
+    require('mini.splitjoin').setup()
 
     -- mini.starter
-    local MiniStarter = require("mini.starter")
+    local MiniStarter = require('mini.starter')
 
     local header = function()
-      local hour = tonumber(vim.fn.strftime("%H"))
+      local hour = tonumber(vim.fn.strftime('%H'))
       local part_id = math.floor((hour + 4) / 8) + 1
-      local day_part = ({ "evening", "morning", "afternoon", "evening" })[part_id]
+      local day_part = ({ 'evening', 'morning', 'afternoon', 'evening' })[part_id]
 
-      return ("Good %s!"):format(day_part)
+      return ('Good %s!'):format(day_part)
     end
 
     MiniStarter.setup({
@@ -196,15 +196,15 @@ return {
     })
 
     -- mini.surround
-    require("mini.surround").setup()
+    require('mini.surround').setup()
 
     -- mini.statusline
-    require("mini.statusline").setup()
+    require('mini.statusline').setup()
 
     -- mini.tabline
-    require("mini.tabline").setup()
+    require('mini.tabline').setup()
 
     -- mini.trailspace
-    require("mini.trailspace").setup()
+    require('mini.trailspace').setup()
   end,
 }

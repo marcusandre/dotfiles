@@ -4,7 +4,7 @@ P = function(v)
 end
 
 RELOAD = function(...)
-  local ok, plenary_reload = pcall(require, "plenary.reload")
+  local ok, plenary_reload = pcall(require, 'plenary.reload')
   if ok then return plenary_reload.reload_module(...) end
   return nil
 end

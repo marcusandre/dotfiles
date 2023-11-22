@@ -1,17 +1,17 @@
 return {
-  { "tpope/vim-fugitive" },
+  { 'tpope/vim-fugitive' },
   {
-    "lewis6991/gitsigns.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    'lewis6991/gitsigns.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      require("gitsigns").setup({
+      require('gitsigns').setup({
         signs = {
-          add = { text = "▎" },
-          change = { text = "▎" },
-          delete = { text = "" },
-          topdelete = { text = "" },
-          changedelete = { text = "▎" },
-          untracked = { text = "▎" },
+          add = { text = '▎' },
+          change = { text = '▎' },
+          delete = { text = '' },
+          topdelete = { text = '' },
+          changedelete = { text = '▎' },
+          untracked = { text = '▎' },
         },
         -- signs = {
         --   add = { text = "▒" },
@@ -22,7 +22,7 @@ return {
         --   untracked = { text = "░" },
         -- },
         preview_config = {
-          border = "none",
+          border = 'none',
         },
         numhl = false,
         linehl = false,

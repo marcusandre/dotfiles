@@ -8,10 +8,10 @@ M.lua_servers = {
   lua_ls = {
     Lua = {
       completion = {
-        callSnippet = "Replace",
+        callSnippet = 'Replace',
       },
       runtime = {
-        version = "LuaJIT",
+        version = 'LuaJIT',
       },
       telemetry = {
         enable = false,

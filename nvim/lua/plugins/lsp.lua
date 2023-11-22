@@ -1,67 +1,67 @@
 return {
   {
-    "j-hui/fidget.nvim",
-    tag = "legacy",
+    'j-hui/fidget.nvim',
+    tag = 'legacy',
     opts = {},
   },
   {
-    "neovim/nvim-lspconfig",
+    'neovim/nvim-lspconfig',
     dependencies = {
       -- LSP
-      { "williamboman/mason.nvim", config = true },
-      "williamboman/mason-lspconfig.nvim",
-      "folke/neodev.nvim",
+      { 'williamboman/mason.nvim', config = true },
+      'williamboman/mason-lspconfig.nvim',
+      'folke/neodev.nvim',
 
       -- completion
-      "hrsh7th/nvim-cmp",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "hrsh7th/cmp-nvim-lsp-signature-help",
+      'hrsh7th/nvim-cmp',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
 
       -- snippets
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
 
       -- UI
-      "onsails/lspkind-nvim",
+      'onsails/lspkind-nvim',
     },
     config = function()
       -- Neodev
-      require("neodev").setup()
+      require('neodev').setup()
 
       -- Mason
-      require("mason").setup()
+      require('mason').setup()
 
       -- Config
-      local servers = require("m.lsp").lua_servers
-      local mason_lspconfig = require("mason-lspconfig")
+      local servers = require('m.lsp').lua_servers
+      local mason_lspconfig = require('mason-lspconfig')
 
       local on_attach = function(client, bufnr)
-        if client.name == "tsserver" then client.server_capabilities.documentFormattingProvider = false end
+        if client.name == 'tsserver' then client.server_capabilities.documentFormattingProvider = false end
 
         vim.api.nvim_buf_create_user_command(
           bufnr,
-          "Format",
+          'Format',
           function()
             vim.lsp.buf.format({
               async = true,
               bufnr = bufnr,
             })
           end,
-          { desc = "Format current buffer with LSP" }
+          { desc = 'Format current buffer with LSP' }
         )
 
-        vim.api.nvim_create_autocmd("BufWritePre", {
+        vim.api.nvim_create_autocmd('BufWritePre', {
           buffer = bufnr,
           callback = function() vim.lsp.buf.format({ async = false }) end,
         })
 
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          pattern = { "*.tsx", "*.ts", "*.jsx", "*.js" },
-          command = "silent! EslintFixAll",
-          group = vim.api.nvim_create_augroup("EslintFmt", {}),
+        vim.api.nvim_create_autocmd('BufWritePre', {
+          pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
+          command = 'silent! EslintFixAll',
+          group = vim.api.nvim_create_augroup('EslintFmt', {}),
         })
       end
 
@@ -70,11 +70,11 @@ return {
       })
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+      capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
       mason_lspconfig.setup_handlers({
         function(server_name)
-          require("lspconfig")[server_name].setup({
+          require('lspconfig')[server_name].setup({
             capabilities = capabilities,
             on_attach = on_attach,
             settings = servers[server_name],
@@ -83,9 +83,9 @@ return {
       })
 
       -- nvim-cmp
-      local cmp = require("cmp")
-      local luasnip = require("luasnip")
-      local lspkind = require("lspkind")
+      local cmp = require('cmp')
+      local luasnip = require('luasnip')
+      local lspkind = require('lspkind')
 
       ---@diagnostic disable-next-line: missing-fields
       cmp.setup({
@@ -97,16 +97,16 @@ return {
           documentation = cmp.config.window.bordered(),
         },
         mapping = cmp.mapping.preset.insert({
-          ["<C-n>"] = cmp.mapping.select_next_item(),
-          ["<C-p>"] = cmp.mapping.select_prev_item(),
-          ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-Space>"] = cmp.mapping.complete({}),
-          ["<CR>"] = cmp.mapping.confirm({
+          ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-p>'] = cmp.mapping.select_prev_item(),
+          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-Space>'] = cmp.mapping.complete({}),
+          ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           }),
-          ["<Tab>"] = cmp.mapping(function(fallback)
+          ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
             elseif luasnip.expand_or_locally_jumpable() then
@@ -114,8 +114,8 @@ return {
             else
               fallback()
             end
-          end, { "i", "s" }),
-          ["<S-Tab>"] = cmp.mapping(function(fallback)
+          end, { 'i', 's' }),
+          ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
             elseif luasnip.locally_jumpable(-1) then
@@ -123,26 +123,26 @@ return {
             else
               fallback()
             end
-          end, { "i", "s" }),
+          end, { 'i', 's' }),
         }),
         sources = cmp.config.sources({
-          { name = "nvim_lsp_signature_help" },
-          { name = "nvim_lsp" },
-          { name = "path" },
-          { name = "buffer" },
-          { name = "luasnip" },
+          { name = 'nvim_lsp_signature_help' },
+          { name = 'nvim_lsp' },
+          { name = 'path' },
+          { name = 'buffer' },
+          { name = 'luasnip' },
         }),
         ---@diagnostic disable-next-line: missing-fields
         formatting = {
           format = lspkind.cmp_format({
             with_text = true,
             menu = {
-              buffer = "[buf]",
-              nvim_lsp = "[LSP]",
-              nvim_lua = "[api]",
-              path = "[path]",
-              luasnip = "[snip]",
-              gh_issues = "[issues]",
+              buffer = '[buf]',
+              nvim_lsp = '[LSP]',
+              nvim_lua = '[api]',
+              path = '[path]',
+              luasnip = '[snip]',
+              gh_issues = '[issues]',
             },
           }),
         },
@@ -186,10 +186,10 @@ return {
   --   },
   -- },
   {
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    event = "LspAttach",
+    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+    event = 'LspAttach',
     config = function()
-      require("lsp_lines").setup()
+      require('lsp_lines').setup()
 
       vim.diagnostic.config({
         virtual_text = false,
