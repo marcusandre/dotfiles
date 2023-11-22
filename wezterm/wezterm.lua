@@ -48,6 +48,11 @@ config.keys = {
     action = "DisableDefaultAssignment",
   },
   {
+    key = "Enter",
+    mods = "ALT",
+    action = "DisableDefaultAssignment",
+  },
+  {
     key = "k",
     mods = "CMD",
     action = act.Multiple({
