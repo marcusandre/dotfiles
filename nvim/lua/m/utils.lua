@@ -42,10 +42,15 @@ M.pick_file_changes_from_branch = function()
 
   if is_inside_work_tree[cwd] then
     local main_branch = vim.fn.trim(vim.fn.system("sed -e 's/^.*\\///' < .git/refs/remotes/origin/HEAD"))
-
-    MiniPick.builtin.cli({
+    local local_opts = {
       command = { 'git', 'diff', main_branch, '--name-only' },
-    })
+    }
+    local source = {
+      name = 'Git changes (branch)',
+      show = function(buf_id, items, query) return MiniPick.default_show(buf_id, items, query, { show_icons = true }) end,
+    }
+
+    MiniPick.builtin.cli(local_opts, { source = source })
   end
 end
 
