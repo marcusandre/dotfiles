@@ -39,14 +39,16 @@ vim.keymap.set("n", "]h", "<Cmd>Gitsigns next_hunk<CR>zvzz", { desc = "Goto next
 vim.keymap.set("n", ",", '<Cmd>Pick buf_lines scope="current"<CR>', { desc = "Lines" })
 vim.keymap.set("n", "<leader>/", "<Cmd>Pick grep_live<CR>", { desc = "Live Grep" })
 vim.keymap.set("n", "<leader>:", "<Cmd>Pick history<CR>", { desc = "History" })
+vim.keymap.set("n", "<leader>fa", "<Cmd>Pick git_hunks<CR>", { desc = "Hunks (current)" })
 vim.keymap.set("n", "<leader>fb", "<Cmd>Pick buffers include_current=true<CR>", { desc = "Buffers" })
 vim.keymap.set("n", "<leader>fD", '<Cmd>Pick diagnostic scope="all"<CR>', { desc = "Diagnostics (Workspace)" })
 vim.keymap.set("n", "<leader>fd", '<Cmd>Pick diagnostic scope="current"<CR>', { desc = "Diagnostics (Buffer)" })
 vim.keymap.set("n", "<leader>ff", "<Cmd>Pick files<CR>", { desc = "Files" })
-vim.keymap.set("n", "<leader>fG", "<Cmd>Pick git_hunks<CR>", { desc = "Git hunks" })
 vim.keymap.set("n", "<leader>fg", utils.pick_modified_untracked, { desc = "Git files" })
 vim.keymap.set("n", "<leader>fh", "<Cmd>Pick help<CR>", { desc = "Help tags" })
 vim.keymap.set("n", "<leader>fj", '<Cmd>Pick list scope="jump"<CR>', { desc = "Jumplist" })
+vim.keymap.set("n", "<leader>fL", '<Cmd>Pick buf_lines scope="all"<CR>', { desc = "Lines (all)" })
+vim.keymap.set("n", "<leader>fl", '<Cmd>Pick buf_lines scope="current"<CR>', { desc = "Lines (current)" })
 vim.keymap.set("n", "<leader>fo", "<Cmd>Pick oldfiles<CR>", { desc = "Old Files" })
 vim.keymap.set("n", "<leader>fr", "<Cmd>Pick resume<CR>", { desc = "Resume" })
 vim.keymap.set("n", "<leader>fs", '<Cmd>Pick lsp scope="document_symbol"<CR>', { desc = "Symbols (Buffer)" })
@@ -57,23 +59,25 @@ vim.keymap.set("n", "<leader>ft", "<Cmd>Pick treesitter<CR>", { desc = "Treesitt
 vim.keymap.set("n", "gD", '<Cmd>Pick lsp scope="declaration"<CR>', { desc = "Declaration (LSP)" })
 vim.keymap.set("n", "gd", '<Cmd>Pick lsp scope="definition"<CR>', { desc = "Definition (LSP)" })
 vim.keymap.set("n", "gi", '<Cmd>Pick lsp scope="implementation"<CR>', { desc = "Implementation (LSP)" })
-vim.keymap.set("n", "gr", '<Cmd>Pick lsp scope="references"<CR>', { desc = "References (LSP)" })
-vim.keymap.set("n", "gw", utils.pick_word_under_cursor, { desc = "Grep word (LSP)" })
 vim.keymap.set("n", "gl", '<Cmd>Pick lsp scope="type_definition"<CR>', { desc = "Type definition (LSP)" })
+vim.keymap.set("n", "gr", '<Cmd>Pick lsp scope="references"<CR>', { desc = "References (LSP)" })
+vim.keymap.set("n", "gw", '<Cmd>Pick grep pattern="<cword>"<CR>', { desc = "Grep word (LSP)" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Information" })
 
 -- LSP (Leader)
-vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "Declaration" })
-vim.keymap.set("n", "<leader>lR", vim.lsp.buf.references, { desc = "References" })
 vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { desc = "Code Action" })
+vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "Declaration" })
 vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, { desc = "Definition" })
 vim.keymap.set("n", "<leader>lf", "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", { desc = "Format" })
 vim.keymap.set("n", "<leader>li", vim.lsp.buf.implementation, { desc = "Implementation" })
+vim.keymap.set("n", "<leader>lR", vim.lsp.buf.references, { desc = "References" })
 vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, { desc = "Rename" })
 vim.keymap.set("n", "<leader>ls", vim.lsp.buf.signature_help, { desc = "Signature" })
 vim.keymap.set("n", "<leader>ly", vim.lsp.buf.type_definition, { desc = "Type Definition" })
 vim.keymap.set("v", "<leader>la", vim.lsp.buf.code_action, { desc = "Code Action" })
 vim.keymap.set("x", "<leader>lf", "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", { desc = "Format" })
+vim.keymap.set("x", "<leader>lj", "<Cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Next diagnostic" })
+vim.keymap.set("x", "<leader>lk", "<Cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Prev diagnostic" })
 
 -- Testing
 vim.keymap.set("n", "<leader>tF", "<Cmd>TestFile --coverage<CR>", { desc = "Test: file (coverage)" })
@@ -88,17 +92,19 @@ vim.keymap.set("n", "<leader>tv", "<Cmd>TestVisit<CR>", { desc = "Test: visit" }
 vim.keymap.set("n", "<leader>tc", "<Cmd>Coverage<CR>", { desc = "Test: coverage" })
 
 -- Explore
-vim.keymap.set("n", "<leader>eu", "<CMD>UndotreeToggle<CR>", { desc = "Open Undotree" })
-vim.keymap.set("n", "<leader>ee", utils.minifiles_toggle, { desc = "MiniFiles" })
 vim.keymap.set(
   "n",
   "<leader>ef",
-  "<Cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0), true)<cr>",
+  "<Cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0), true)<CR>",
   { desc = "MiniFiles (File)" }
 )
+vim.keymap.set("n", "<leader>ee", utils.minifiles_toggle, { desc = "MiniFiles" })
+vim.keymap.set("n", "<leader>ek", "<Cmd>lua MiniExtra.pickers.keymaps()<CR>", { desc = "Keymaps" })
+vim.keymap.set("n", "<leader>en", "<Cmd>lua MiniFiles.open('~/.config/nvim')<CR>", { desc = "MiniFiles (File)" })
+vim.keymap.set("n", "<leader>eq", utils.toggle_quickfix, { desc = "Quickfix: Toggle" })
+vim.keymap.set("n", "<leader>eu", "<CMD>UndotreeToggle<CR>", { desc = "Open Undotree" })
 
 -- Other
-vim.keymap.set("n", "<leader>oc", utils.toggle_quickfix, { desc = "Quickfix: Toggle" })
 vim.keymap.set("n", "<leader>ol", "<Cmd>Lazy<CR>", { desc = "Lazy" })
 vim.keymap.set("n", "<leader>om", "<Cmd>Mason<CR>", { desc = "Mason" })
 vim.keymap.set("n", "<leader>oo", "<Cmd>only<CR>", { desc = "Window: Only" })

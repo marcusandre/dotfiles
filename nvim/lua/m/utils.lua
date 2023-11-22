@@ -1,13 +1,6 @@
 local M = {}
 
 -- Mini
-M.pick_word_under_cursor = function()
-  local builtin = require("mini.pick").builtin
-  local curword = vim.fn.expand("<cword>")
-
-  builtin.grep({ pattern = curword })
-end
-
 M.pick_modified_untracked = function()
   local MiniPick = require("mini.pick")
   local local_opts = { command = { "git", "ls-files", "--modified", "--others", "--exclude-standard" } }
@@ -43,7 +36,7 @@ M.minifiles_toggle = function(...)
   if not MiniFiles.close() then MiniFiles.open(...) end
 end
 
-M.minifiles_set_cwd = function(path)
+M.minifiles_set_cwd = function()
   local MiniFiles = require("mini.files")
   local cur_entry_path = MiniFiles.get_fs_entry().path
   local cur_directory = vim.fs.dirname(cur_entry_path)
