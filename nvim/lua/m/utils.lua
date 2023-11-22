@@ -31,6 +31,24 @@ M.pick_project_files = function()
   end
 end
 
+M.pick_file_changes_from_branch = function()
+  local cwd = vim.fn.getcwd()
+  local MiniPick = require("mini.pick")
+
+  if is_inside_work_tree[cwd] == nil then
+    vim.fn.system("git rev-parse --is-inside-work-tree")
+    is_inside_work_tree[cwd] = vim.v.shell_error == 0
+  end
+
+  if is_inside_work_tree[cwd] then
+    local main_branch = vim.fn.trim(vim.fn.system("sed -e 's/^.*\\///' < .git/refs/remotes/origin/HEAD"))
+
+    MiniPick.builtin.cli({
+      command = { "git", "diff", main_branch, "--name-only" },
+    })
+  end
+end
+
 M.minifiles_toggle = function(...)
   local MiniFiles = require("mini.files")
   if not MiniFiles.close() then MiniFiles.open(...) end
