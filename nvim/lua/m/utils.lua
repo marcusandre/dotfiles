@@ -49,6 +49,14 @@ M.pick_file_changes_from_branch = function()
   end
 end
 
+M.find_files_without_spec = function()
+  local MiniPick = require("mini.pick")
+
+  MiniPick.builtin.cli({
+    command = { "fd", "--type=f", "--no-follow", "--color=never", "-E=*.spec.js*", "-E=*.spec.ts*" },
+  })
+end
+
 M.minifiles_toggle = function(...)
   local MiniFiles = require("mini.files")
   if not MiniFiles.close() then MiniFiles.open(...) end
