@@ -38,31 +38,8 @@ return {
       local servers = require('m.lsp').lua_servers
       local mason_lspconfig = require('mason-lspconfig')
 
-      local on_attach = function(client, bufnr)
+      local on_attach = function(client)
         if client.name == 'tsserver' then client.server_capabilities.documentFormattingProvider = false end
-
-        vim.api.nvim_buf_create_user_command(
-          bufnr,
-          'Format',
-          function()
-            vim.lsp.buf.format({
-              async = true,
-              bufnr = bufnr,
-            })
-          end,
-          { desc = 'Format current buffer with LSP' }
-        )
-
-        vim.api.nvim_create_autocmd('BufWritePre', {
-          buffer = bufnr,
-          callback = function() vim.lsp.buf.format({ async = false }) end,
-        })
-
-        vim.api.nvim_create_autocmd('BufWritePre', {
-          pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
-          command = 'silent! EslintFixAll',
-          group = vim.api.nvim_create_augroup('EslintFmt', {}),
-        })
       end
 
       mason_lspconfig.setup({

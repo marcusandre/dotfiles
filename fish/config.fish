@@ -19,6 +19,7 @@ end
 
 # Env
 set -gx EDITOR nvim
+set -gx BROWSER chromium
 set -gx VISUAL nvim
 set -gx PAGER "less -R --use-color -Dd+r -Du+b"
 set -gx MANPAGER 'nvim +Man!'

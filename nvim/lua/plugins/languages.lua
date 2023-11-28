@@ -2,13 +2,28 @@ return {
   {
     'stevearc/conform.nvim',
     config = function()
+      require('conform.formatters.stylua').require_cwd = true
+      require('conform.formatters.eslint_d').require_cwd = true
+
       require('conform').setup({
         formatters_by_ft = {
           lua = { 'stylua' },
+          javascript = { { 'eslint_d' } },
+          javascriptreact = { { 'eslint_d' } },
+          typescript = { { 'eslint_d' } },
+          typescriptreact = { { 'eslint_d' } },
         },
         format_on_save = {
           timeout_ms = 500,
           lsp_fallback = true,
+        },
+        formatters = {
+          stylua = {
+            require_cwd = true,
+          },
+          eslint_d = {
+            require_cwd = true,
+          },
         },
       })
 
