@@ -43,7 +43,7 @@ M.pick_file_changes_from_branch = function()
   if is_inside_work_tree[cwd] then
     local main_branch = vim.fn.trim(vim.fn.system("sed -e 's/^.*\\///' < .git/refs/remotes/origin/HEAD"))
     local local_opts = {
-      command = { 'git', 'diff', main_branch, '--name-only' },
+      command = { 'git', 'diff', 'origin/' .. main_branch, '--name-only' },
     }
     local source = {
       name = 'Git changes (branch)',

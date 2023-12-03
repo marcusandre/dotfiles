@@ -48,7 +48,7 @@
   push = current
 
 [core]
-  editor = "vim"
+  editor = "nvim"
   diffFilter = delta --color-only
   excludesfile = ~/.gitignore_global
 
