@@ -11,6 +11,9 @@ all:
 	@mkdir -p $(CONFIG_PATH)/bat
 	@stow -v --target=$(CONFIG_PATH)/bat bat
 
+	@mkdir -p $(CONFIG_PATH)/btop
+	@stow -v --target=$(CONFIG_PATH)/btop btop
+
 	@mkdir -p $(CONFIG_PATH)/fish
 	@stow -v --target=$(CONFIG_PATH)/fish fish
 
@@ -19,9 +22,6 @@ all:
 
 	@mkdir -p $(CONFIG_PATH)/helix
 	@stow -v --target=$(CONFIG_PATH)/helix helix
-
-	@mkdir -p $(CONFIG_PATH)/nvim
-	@stow -v --target=$(CONFIG_PATH)/nvim nvim
 
 	@mkdir -p $(CONFIG_PATH)/ripgrep
 	@stow -v --target=$(CONFIG_PATH)/ripgrep ripgrep
