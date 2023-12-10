@@ -82,7 +82,6 @@ alias .. 'cd ..'
 alias cat bat
 alias cloc 'tokei'
 alias e nvim
-alias b 'NVIM_APPNAME=beta nvim'
 alias flushdns 'sudo killall -HUP mDNSResponder'
 alias gap 'git add . -p'
 alias gb 'git branch -a'
