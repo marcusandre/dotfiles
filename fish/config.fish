@@ -56,15 +56,6 @@ if type -q starship
   starship init fish | source
 end
 
-# pyenv
-if type -q pyenv
-  set -gx PYENV_ROOT $HOME/.pyenv
-  fish_add_path $PYENV_ROOT/bin
-
-  status --is-interactive; and . (pyenv init -|psub)
-end
-
-
 # Create a directory and set CWD
 function md -d "Create a directory and set CWD"
     command mkdir -p $argv
