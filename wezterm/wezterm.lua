@@ -10,7 +10,7 @@ config.font_size = 12.0
 config.line_height = 1.15
 config.underline_position = -5
 
-config.color_scheme = 'tokyonight_storm'
+config.color_scheme = 'tokyonight-storm'
 
 config.freetype_load_target = 'HorizontalLcd'
 
@@ -26,6 +26,11 @@ config.window_padding = {
   bottom = 0,
 }
 
+config.inactive_pane_hsb = {
+  saturation = 0.6,
+  brightness = 0.6,
+}
+
 wezterm.on('window-config-reloaded', function(window)
   if wezterm.gui.screens().active.name ~= 'LG HDR WQHD' then
     window:set_config_overrides({
@@ -35,6 +40,12 @@ wezterm.on('window-config-reloaded', function(window)
 end)
 
 config.keys = {
+  { mods = 'CMD', key = ',', action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }) },
+  { mods = 'CMD', key = '.', action = act.SplitVertical({ domain = 'CurrentPaneDomain' }) },
+  { mods = 'CMD', key = 'h', action = act.ActivatePaneDirection('Left') },
+  { mods = 'CMD', key = 'l', action = act.ActivatePaneDirection('Right') },
+  { mods = 'CMD', key = 'k', action = act.ActivatePaneDirection('Up') },
+  { mods = 'CMD', key = 'j', action = act.ActivatePaneDirection('Down') },
   {
     key = 'm',
     mods = 'CMD',
