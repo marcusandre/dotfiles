@@ -10,7 +10,7 @@ config.font_size = 12.0
 config.line_height = 1.15
 config.underline_position = -5
 
-config.color_scheme = 'tokyonight-storm'
+config.color_scheme = 'tokyonight_moon'
 
 config.freetype_load_target = 'HorizontalLcd'
 
@@ -55,16 +55,6 @@ config.keys = {
     key = 'Enter',
     mods = 'ALT',
     action = 'DisableDefaultAssignment',
-  },
-  {
-    key = 'k',
-    mods = 'CMD',
-    action = act.Multiple({
-      act.SendKey({
-        key = 'L',
-        mods = 'CTRL',
-      }),
-    }),
   },
   {
     key = '\\',
