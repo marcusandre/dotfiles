@@ -26,10 +26,10 @@ config.window_padding = {
   bottom = 0,
 }
 
-config.inactive_pane_hsb = {
-  saturation = 0.6,
-  brightness = 0.6,
-}
+-- config.inactive_pane_hsb = {
+--   saturation = 0.6,
+--   brightness = 0.6,
+-- }
 
 wezterm.on('window-config-reloaded', function(window)
   if wezterm.gui.screens().active.name ~= 'LG HDR WQHD' then
