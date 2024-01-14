@@ -41,27 +41,19 @@ wezterm.on('window-config-reloaded', function(window)
 end)
 
 config.keys = {
+  { mods = 'ALT', key = 'Enter', action = 'DisableDefaultAssignment' },
   { mods = 'CMD', key = ',', action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }) },
   { mods = 'CMD', key = '.', action = act.SplitVertical({ domain = 'CurrentPaneDomain' }) },
+  { mods = 'CMD', key = 'DownArrow', action = act.AdjustPaneSize({ 'Down', 5 }) },
+  { mods = 'CMD', key = 'LeftArrow', action = act.AdjustPaneSize({ 'Left', 5 }) },
+  { mods = 'CMD', key = 'RightArrow', action = act.AdjustPaneSize({ 'Right', 5 }) },
+  { mods = 'CMD', key = 'UpArrow', action = act.AdjustPaneSize({ 'Up', 5 }) },
+  { mods = 'CMD', key = '\\', action = wezterm.action.ToggleFullScreen },
   { mods = 'CMD', key = 'h', action = act.ActivatePaneDirection('Left') },
-  { mods = 'CMD', key = 'l', action = act.ActivatePaneDirection('Right') },
-  { mods = 'CMD', key = 'k', action = act.ActivatePaneDirection('Up') },
   { mods = 'CMD', key = 'j', action = act.ActivatePaneDirection('Down') },
-  {
-    key = 'm',
-    mods = 'CMD',
-    action = 'DisableDefaultAssignment',
-  },
-  {
-    key = 'Enter',
-    mods = 'ALT',
-    action = 'DisableDefaultAssignment',
-  },
-  {
-    key = '\\',
-    mods = 'CMD',
-    action = wezterm.action.ToggleFullScreen,
-  },
+  { mods = 'CMD', key = 'k', action = act.ActivatePaneDirection('Up') },
+  { mods = 'CMD', key = 'l', action = act.ActivatePaneDirection('Right') },
+  { mods = 'CMD', key = 'm', action = 'DisableDefaultAssignment' },
 }
 
 return config
