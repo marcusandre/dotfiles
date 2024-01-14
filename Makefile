@@ -32,7 +32,4 @@ all:
 	@mkdir -p $(CONFIG_PATH)/wezterm
 	@stow -v --target=$(CONFIG_PATH)/wezterm wezterm
 
-	@mkdir -p $(CONFIG_PATH)/zellij
-	@stow -v --target=$(CONFIG_PATH)/zellij zellij
-
 .PHONY: all lint
