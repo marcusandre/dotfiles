@@ -31,6 +31,10 @@ set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/.ripgreprc"
 set -gx GOPATH $HOME/golang
 set -gx GOROOT $(brew --prefix go)/libexec
 
+if test -d $HOME/golang/bin
+    fish_add_path "$HOME/golang/bin"
+end
+
 # OCaml
 if test -e $HOME/.opam/opam-init/init.fish
   source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
