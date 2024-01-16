@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+go install -v github.com/kisielk/errcheck@latest
+go install -v golang.org/x/tools/cmd/godoc@latest
+go install -v golang.org/x/tools/cmd/gonew@latest
