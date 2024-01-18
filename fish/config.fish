@@ -29,7 +29,6 @@ set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/.ripgreprc"
 
 # Go
 set -gx GOPATH $HOME/golang
-set -gx GOROOT $(brew --prefix go)/libexec
 
 if test -d $HOME/golang/bin
     fish_add_path "$HOME/golang/bin"
