@@ -13,8 +13,9 @@ return {
           ensure_installed = {
             'lua',
             'go',
+            'terraform',
           },
-          highlight = { enable = false },
+          highlight = { enable = true },
           indent = { enable = true },
           incremental_selection = {
             enable = true,

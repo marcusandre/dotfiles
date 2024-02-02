@@ -80,6 +80,14 @@ return {
             diagnostics = { disable = { 'missing-fields' } },
           },
         },
+        rust_analyzer = {
+          ['rust-analyzer'] = {
+            inlayHints = {
+              chainingHints = { enable = false },
+            },
+          },
+        },
+        terraformls = {},
         eslint = {},
         tsserver = {},
       }

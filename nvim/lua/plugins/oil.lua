@@ -2,7 +2,7 @@ return {
   {
     'stevearc/oil.nvim',
     keys = {
-      { '-', '<Cmd>Oil<CR>', desc = 'Open parent directory' },
+      { '<leader>e', '<Cmd>Oil<CR>', desc = 'Open parent directory' },
     },
     config = function()
       local oil = require('oil')
