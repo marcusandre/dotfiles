@@ -31,7 +31,7 @@ return {
     version = false,
     keys = {
       -- stylua: ignore start
-      { '<leader><leader>', '<Cmd>b#<CR>',                                 desc = 'Delete' },
+      { '<leader><leader>', '<Cmd>b#<CR>',                                 desc = 'Previous Buffer' },
       { '<leader>bd',       '<Cmd>lua MiniBufremove.delete()<CR>',         desc = 'Delete' },
       { '<leader>bD',       '<Cmd>lua MiniBufremove.delete(0, true)<CR>',  desc = 'Delete!' },
       { '<leader>bw',       '<Cmd>lua MiniBufremove.wipeout()<CR>',        desc = 'Wipeout' },

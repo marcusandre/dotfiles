@@ -1,11 +1,21 @@
 return {
   {
     'neovim/nvim-lspconfig',
+    lazy = false,
     dependencies = {
       { 'williamboman/mason.nvim', config = true, opts = {} },
       'williamboman/mason-lspconfig.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
       'folke/neodev.nvim',
+    },
+    keys = {
+      -- stylua: ignore start
+      { '<leader>lf', '<Cmd>Format<CR>',          desc = 'Format' },
+      { '<leader>lr', vim.lsp.buf.rename,         desc = 'Rename' },
+      { '<leader>la', vim.lsp.buf.code_action,    desc = 'Code Action' },
+      { 'K',          vim.lsp.buf.hover,          desc = 'Documentation' },
+      { '<leader>lk', vim.lsp.buf.signature_help, desc = 'Signature Documentation' },
+      -- stylua: ignore end
     },
     config = function()
       local mason_lspconfig = require('mason-lspconfig')
@@ -24,7 +34,40 @@ return {
       end
 
       local servers = {
-        gopls = {},
+        gopls = {
+          usePlaceholders = true,
+          gofumpt = true,
+          analyses = {
+            nilness = true,
+            unusedparams = true,
+            unusedwrite = true,
+            useany = true,
+          },
+          codelenses = {
+            gc_details = false,
+            generate = true,
+            regenerate_cgo = true,
+            run_govulncheck = true,
+            test = true,
+            tidy = true,
+            upgrade_dependency = true,
+            vendor = true,
+          },
+          experimentalPostfixCompletions = true,
+          completeUnimported = true,
+          staticcheck = true,
+          directoryFilters = { '-.git', '-node_modules' },
+          semanticTokens = true,
+          hints = {
+            assignVariableTypes = true,
+            compositeLiteralFields = true,
+            compositeLiteralTypes = true,
+            constantValues = true,
+            functionTypeParameters = true,
+            parameterNames = true,
+            rangeVariableTypes = true,
+          },
+        },
         lua_ls = {
           Lua = {
             workspace = { checkThirdParty = false },
@@ -35,6 +78,7 @@ return {
       }
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
 
       mason_lspconfig.setup({
         ensure_installed = vim.tbl_keys(servers),
