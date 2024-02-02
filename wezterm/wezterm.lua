@@ -10,7 +10,7 @@ config.font_size = 12.0
 config.line_height = 1.15
 config.underline_position = -5
 
-config.color_scheme = 'tokyonight_moon'
+config.color_scheme = 'tokyonight_storm'
 -- config.color_scheme = 'Catppuccin Macchiato'
 
 config.freetype_load_target = 'HorizontalLcd'
