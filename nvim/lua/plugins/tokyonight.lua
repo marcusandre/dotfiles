@@ -4,7 +4,6 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      style = 'night',
       styles = {
         comments = { italic = true },
         keywords = { italic = false },
@@ -13,7 +12,7 @@ return {
     config = function(opts)
       require('tokyonight').setup(opts)
 
-      vim.cmd([[colorscheme tokyonight]])
+      vim.cmd([[colorscheme tokyonight-moon]])
     end,
   },
 }

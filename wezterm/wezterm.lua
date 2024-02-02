@@ -5,16 +5,24 @@ local config = {}
 
 if wezterm.config_builder then config = wezterm.config_builder() end
 
+config.term = 'wezterm'
+
 config.font = wezterm.font('JetBrains Mono')
 config.font_size = 12.0
-config.line_height = 1.15
 config.underline_position = -5
 
-config.color_scheme = 'tokyonight_storm'
--- config.color_scheme = 'Catppuccin Macchiato'
+wezterm.on('window-config-reloaded', function(window)
+  if wezterm.gui.screens().active.name == 'HP E233' then
+    window:set_config_overrides({
+      dpi = 100.13,
+      font_size = 8.825,
+    })
+  end
+end)
 
-config.freetype_load_target = 'HorizontalLcd'
-config.freetype_load_flags = 'DEFAULT'
+config.freetype_load_flags = 'NO_HINTING'
+
+config.color_scheme = 'tokyonight_moon'
 
 config.enable_scroll_bar = false
 config.use_fancy_tab_bar = false
