@@ -17,8 +17,8 @@ all:
 	@mkdir -p $(CONFIG_PATH)/fish
 	@stow -v --target=$(CONFIG_PATH)/fish fish
 
-	@mkdir -p $(CONFIG_PATH)/git
-	@stow -v --target=$(CONFIG_PATH)/git git
+	# @mkdir -p $(CONFIG_PATH)/git
+	# @stow -v --target=$(CONFIG_PATH)/git git
 
 	@mkdir -p $(CONFIG_PATH)/helix
 	@stow -v --target=$(CONFIG_PATH)/helix helix
