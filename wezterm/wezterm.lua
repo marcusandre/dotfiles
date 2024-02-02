@@ -5,7 +5,7 @@ local config = {}
 
 if wezterm.config_builder then config = wezterm.config_builder() end
 
-config.font = wezterm.font('Berkeley Mono')
+config.font = wezterm.font('JetBrains Mono')
 config.font_size = 12.0
 config.line_height = 1.15
 config.underline_position = -5
@@ -14,6 +14,7 @@ config.color_scheme = 'tokyonight_moon'
 -- config.color_scheme = 'Catppuccin Macchiato'
 
 config.freetype_load_target = 'HorizontalLcd'
+config.freetype_load_flags = 'DEFAULT'
 
 config.enable_scroll_bar = false
 config.use_fancy_tab_bar = false
@@ -31,14 +32,6 @@ config.window_padding = {
 --   saturation = 0.6,
 --   brightness = 0.6,
 -- }
-
-wezterm.on('window-config-reloaded', function(window)
-  if wezterm.gui.screens().active.name ~= 'LG HDR WQHD' then
-    window:set_config_overrides({
-      front_end = 'WebGpu',
-    })
-  end
-end)
 
 config.keys = {
   { mods = 'ALT', key = 'Enter', action = 'DisableDefaultAssignment' },
