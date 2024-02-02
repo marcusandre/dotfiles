@@ -85,3 +85,7 @@ vim.keymap.set('n', '<C-H>', '<C-w>h', { desc = 'Focus on left window' })
 vim.keymap.set('n', '<C-J>', '<C-w>j', { desc = 'Focus on below window' })
 vim.keymap.set('n', '<C-K>', '<C-w>k', { desc = 'Focus on above window' })
 vim.keymap.set('n', '<C-L>', '<C-w>l', { desc = 'Focus on right window' })
+
+-- Use `<Tab>` and `<S-Tab>` for navigation through completion list
+vim.keymap.set('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true })
+vim.keymap.set('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { expr = true })
