@@ -22,7 +22,12 @@ return {
 
       require('neodev').setup()
 
-      local on_attach = function(_, buf_id)
+      local on_attach = function(client, buf_id)
+        if client.name == 'tsserver' then
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end
+
         vim.bo[buf_id].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
 
         vim.api.nvim_buf_create_user_command(
@@ -75,6 +80,8 @@ return {
             diagnostics = { disable = { 'missing-fields' } },
           },
         },
+        eslint = {},
+        tsserver = {},
       }
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()

@@ -14,6 +14,7 @@ return {
         ['<leader>f'] = { name = 'Fuzzy', _ = 'which_key_ignore' },
         ['<leader>g'] = { name = 'Git', _ = 'which_key_ignore' },
         ['<leader>l'] = { name = 'LSP', _ = 'which_key_ignore' },
+        ['<leader>t'] = { name = 'Test', _ = 'which_key_ignore' },
       })
     end,
   },

@@ -7,6 +7,7 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         go = { 'goimports', 'gofumpt' },
+        typescript = { { 'eslint_d', 'prettier' } },
       },
       format_on_save = {
         timeout_ms = 500,
