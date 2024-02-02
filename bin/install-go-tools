@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 go install -v golang.org/x/tools/cmd/godoc@latest
+go install -v golang.org/x/tools/cmd/goimports@latest
 go install -v golang.org/x/tools/cmd/gonew@latest
 go install -v golang.org/x/tools/go/analysis/passes/nilness/cmd/nilness@latest
 go install -v github.com/kisielk/errcheck@latest
