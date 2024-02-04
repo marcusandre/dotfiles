@@ -33,10 +33,10 @@ return {
     version = false,
     keys = {
       -- stylua: ignore start
-      { '<leader>bd',       '<Cmd>lua MiniBufremove.delete()<CR>',         desc = 'Delete' },
-      { '<leader>bD',       '<Cmd>lua MiniBufremove.delete(0, true)<CR>',  desc = 'Delete!' },
-      { '<leader>bw',       '<Cmd>lua MiniBufremove.wipeout()<CR>',        desc = 'Wipeout' },
-      { '<leader>bW',       '<Cmd>lua MiniBufremove.wipeout(0, true)<CR>', desc = 'Wipeout!' },
+      { '<leader>bd', '<Cmd>lua MiniBufremove.delete()<CR>',         desc = 'Delete' },
+      { '<leader>bD', '<Cmd>lua MiniBufremove.delete(0, true)<CR>',  desc = 'Delete!' },
+      { '<leader>bw', '<Cmd>lua MiniBufremove.wipeout()<CR>',        desc = 'Wipeout' },
+      { '<leader>bW', '<Cmd>lua MiniBufremove.wipeout(0, true)<CR>', desc = 'Wipeout!' },
       -- stylua: ignore end
     },
     opts = {},
@@ -100,11 +100,17 @@ return {
       { '<leader>fL', '<Cmd>Pick buf_lines scope="current"<CR>',         desc = 'Lines (current)' },
       { '<leader>fM', '<Cmd>Pick git_hunks path="%"<CR>',                desc = 'Modified hunks (current)' },
       { '<leader>fm', '<Cmd>Pick git_hunks<CR>',                         desc = 'Modified hunks (all)' },
-      { '<leader>fR', '<Cmd>Pick lsp scope="references"<CR>',            desc = 'References (LSP)' },
-      { '<leader>fr', '<Cmd>Pick resume<CR>',                            desc = 'Resume' },
+      { '<leader>fo', '<Cmd>Pick oldfiles<CR>',                          desc = 'Old files' },
+      { '<leader>fr', '<Cmd>Pick lsp scope="references"<CR>',            desc = 'References (LSP)' },
+      { '<leader>fR', '<Cmd>Pick resume<CR>',                            desc = 'Resume' },
       { '<leader>fS', '<Cmd>Pick lsp scope="document_symbol"<CR>',       desc = 'Symbols buffer (LSP)' },
       { '<leader>fs', '<Cmd>Pick lsp scope="workspace_symbol"<CR>',      desc = 'Symbols workspace (LSP)' },
+      { '<leader>fz', '<Cmd>Pick spellsuggest<CR>',                      desc = 'Spell suggest' },
+      { 'gd',         '<Cmd>Pick lsp scope="definition"<CR>',            desc = 'Definition (LSP)' },
+      { 'gI',         '<Cmd>Pick lsp scope="implementation"<CR>',        desc = 'Implementation (LSP)' },
+      { 'gr',         '<Cmd>Pick lsp scope="references"<CR>',            desc = 'References (LSP)' },
       { 'gw',         '<Cmd>Pick grep pattern="<cword>"<CR>',            desc = 'Grep current word' },
+      { 'gY',         '<Cmd>Pick lsp scope="type_definition"<CR>',       desc = 'Type Definition (LSP)' },
       -- stylua: ignore end
     },
     config = function()
