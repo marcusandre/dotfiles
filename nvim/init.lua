@@ -7,3 +7,4 @@ vim.g.maplocalleader = ' '
 -- Core
 require('m.lazy')
 require('m.settings')
+require('m.keymaps')

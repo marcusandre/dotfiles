@@ -9,12 +9,19 @@ return {
       vim.defer_fn(function()
         local treesitter = require('nvim-treesitter.configs')
 
+      -- stylua: ignore start
+        local parsers = {
+          'bash', 'comment', 'css', 'csv', 'diff', 'dockerfile', 'dot', 'fish',
+          'git_config', 'git_rebase', 'gitattributes', 'gitcommit', 'gitignore',
+          'go', 'hcl', 'html', 'http', 'javascript', 'jq', 'jsdoc', 'json', 'jsonnet',
+          'lua', 'luadoc', 'make', 'markdown', 'markdown_inline', 'nix', 'proto',
+          'r', 'rust', 'scss', 'sql', 'ssh_config', 'terraform', 'tsx', 'typescript',
+          'vim', 'vimdoc', 'xml', 'yaml',
+        }
+      -- stylua: ignore start
+
         treesitter.setup({
-          ensure_installed = {
-            'lua',
-            'go',
-            'terraform',
-          },
+          ensure_installed = parsers,
           highlight = { enable = true },
           indent = { enable = true },
           incremental_selection = {

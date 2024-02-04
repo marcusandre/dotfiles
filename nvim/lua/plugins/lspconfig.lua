@@ -10,11 +10,20 @@ return {
     },
     keys = {
       -- stylua: ignore start
-      { '<leader>lf', '<Cmd>Format<CR>',          desc = 'Format' },
-      { '<leader>lr', vim.lsp.buf.rename,         desc = 'Rename' },
-      { '<leader>la', vim.lsp.buf.code_action,    desc = 'Code Action' },
-      { 'K',          vim.lsp.buf.hover,          desc = 'Documentation' },
-      { '<leader>lk', vim.lsp.buf.signature_help, desc = 'Signature Documentation' },
+      { '<leader>la', vim.lsp.buf.code_action,                                           desc = 'Code Action' },
+      { '<leader>lo', vim.diagnostic.open_float,                                         desc = 'Open float' },
+      { '<leader>lD', vim.lsp.buf.declaration,                                           desc = 'Declaration' },
+      { '<leader>ld', vim.lsp.buf.definition,                                            desc = 'Definition' },
+      { '<leader>lF', '<Cmd>lua vim.lsp.buf.format({ async = true })<CR>',               desc = 'Format (legacy)' },
+      { '<leader>lf', '<Cmd>lua require("conform").format({ lsp_fallback = true })<CR>', desc = 'Format' },
+      { '<leader>li', vim.lsp.buf.implementation,                                        desc = 'Implementation' },
+      { '<leader>lk', vim.lsp.buf.signature_help,                                        desc = 'Signature Documentation' },
+      { '<leader>lR', vim.lsp.buf.references,                                            desc = 'References' },
+      { '<leader>lr', vim.lsp.buf.rename,                                                desc = 'Rename' },
+      { '<leader>ls', vim.lsp.buf.signature_help,                                        desc = 'Signature' },
+      { '<leader>lv', '<cmd>vsplit | lua vim.lsp.buf.definition()<CR>',                  desc = 'Definition (split)' },
+      { '<leader>ly', vim.lsp.buf.type_definition,                                       desc = 'Type Definition' },
+      { 'K',          vim.lsp.buf.hover,                                                 desc = 'Documentation' },
       -- stylua: ignore end
     },
     config = function()
@@ -29,13 +38,6 @@ return {
         end
 
         vim.bo[buf_id].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
-
-        vim.api.nvim_buf_create_user_command(
-          buf_id,
-          'Format',
-          function(_) vim.lsp.buf.format() end,
-          { desc = 'Format current buffer with LSP' }
-        )
       end
 
       local servers = {

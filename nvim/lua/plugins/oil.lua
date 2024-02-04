@@ -2,7 +2,7 @@ return {
   {
     'stevearc/oil.nvim',
     keys = {
-      { '<leader>e', '<Cmd>Oil<CR>', desc = 'Open parent directory' },
+      { '<leader>e', '<Cmd>Oil<CR>', desc = 'Oil' },
     },
     config = function()
       local oil = require('oil')
@@ -16,5 +16,9 @@ return {
         },
       })
     end,
+  },
+  {
+    'nvim-tree/nvim-web-devicons',
+    opts = {},
   },
 }

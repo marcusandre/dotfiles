@@ -1,3 +1,5 @@
+local utils = require('m.utils')
+
 return {
   {
     'echasnovski/mini.base16',
@@ -31,7 +33,6 @@ return {
     version = false,
     keys = {
       -- stylua: ignore start
-      { '<leader><leader>', '<Cmd>b#<CR>',                                 desc = 'Previous Buffer' },
       { '<leader>bd',       '<Cmd>lua MiniBufremove.delete()<CR>',         desc = 'Delete' },
       { '<leader>bD',       '<Cmd>lua MiniBufremove.delete(0, true)<CR>',  desc = 'Delete!' },
       { '<leader>bw',       '<Cmd>lua MiniBufremove.wipeout()<CR>',        desc = 'Wipeout' },
@@ -55,9 +56,62 @@ return {
     opts = {},
   },
   {
+    'echasnovski/mini.extra',
+    version = false,
+    opts = {},
+  },
+  {
+    'echasnovski/mini.fuzzy',
+    version = false,
+    opts = {},
+  },
+  {
+    'echasnovski/mini.hues',
+    version = false,
+  },
+  {
     'echasnovski/mini.move',
     version = false,
     opts = {},
+  },
+  {
+    'echasnovski/mini.pick',
+    version = false,
+    lazy = false,
+    keys = {
+      -- stylua: ignore start
+      { '<leader>/',  '<Cmd>Pick grep_live<CR>',                         desc = 'Grep live' },
+      { '<leader>f/', '<Cmd>Pick history scope="/"<CR>',                 desc = '"/" history' },
+      { '<leader>f:', '<Cmd>Pick history scope=":"<CR>',                 desc = '":" history' },
+      { '<leader>fA', '<Cmd>Pick git_hunks path="%" scope="staged"<CR>', desc = 'Added hunks (current)' },
+      { '<leader>fa', '<Cmd>Pick git_hunks scope="staged"<CR>',          desc = 'Added hunks (all)' },
+      { '<leader>fb', '<Cmd>Pick buffers<CR>',                           desc = 'Buffers' },
+      { '<leader>fC', '<Cmd>Pick git_commits path="%"<CR>',              desc = 'Commits (current)' },
+      { '<leader>fc', '<Cmd>Pick git_commits<CR>',                       desc = 'Commits (all)' },
+      { '<leader>fd', '<Cmd>Pick diagnostic scope="all"<CR>',            desc = 'Diagnostic workspace' },
+      { '<leader>fD', '<Cmd>Pick diagnostic scope="current"<CR>',        desc = 'Diagnostic buffer' },
+      { '<leader>ff', '<Cmd>Pick files<CR>',                             desc = 'Files' },
+      { '<leader>fG', utils.pick_file_changes_from_branch,               desc = 'Git changes (branch)' },
+      { '<leader>fg', utils.pick_modified_untracked,                     desc = 'Git files' },
+      { '<leader>fh', '<Cmd>Pick help<CR>',                              desc = 'Help tags' },
+      { '<leader>fH', '<Cmd>Pick hl_groups<CR>',                         desc = 'Highlight groups' },
+      { '<leader>fj', '<Cmd>Pick list scope="jump"<CR>',                 desc = 'Jumplist' },
+      { '<leader>fl', '<Cmd>Pick buf_lines scope="all"<CR>',             desc = 'Lines (all)' },
+      { '<leader>fL', '<Cmd>Pick buf_lines scope="current"<CR>',         desc = 'Lines (current)' },
+      { '<leader>fM', '<Cmd>Pick git_hunks path="%"<CR>',                desc = 'Modified hunks (current)' },
+      { '<leader>fm', '<Cmd>Pick git_hunks<CR>',                         desc = 'Modified hunks (all)' },
+      { '<leader>fR', '<Cmd>Pick lsp scope="references"<CR>',            desc = 'References (LSP)' },
+      { '<leader>fr', '<Cmd>Pick resume<CR>',                            desc = 'Resume' },
+      { '<leader>fS', '<Cmd>Pick lsp scope="document_symbol"<CR>',       desc = 'Symbols buffer (LSP)' },
+      { '<leader>fs', '<Cmd>Pick lsp scope="workspace_symbol"<CR>',      desc = 'Symbols workspace (LSP)' },
+      { 'gw',         '<Cmd>Pick grep pattern="<cword>"<CR>',            desc = 'Grep current word' },
+      -- stylua: ignore end
+    },
+    config = function()
+      local MiniPick = require('mini.pick')
+      MiniPick.setup()
+      vim.ui.select = MiniPick.ui_select
+    end,
   },
   {
     'echasnovski/mini.splitjoin',
