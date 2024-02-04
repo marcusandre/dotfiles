@@ -5,6 +5,7 @@ local map = vim.keymap.set
 map('n', 'Q', '<nop>')
 map('n', 'n', 'nzz')
 map('n', '<leader><leader>', '<Cmd>:b#<CR>', { desc = 'Alternate Buffer' })
+map('n', '<leader>bq', '<Cmd>:%bd|e#<CR>', { desc = 'Delete (all)' })
 map('n', '<Esc>', '<Cmd>nohl<CR><Esc>', { desc = 'Remove highlights' })
 map('i', 'kj', '<Esc>', { desc = 'Leave input mode' })
 
