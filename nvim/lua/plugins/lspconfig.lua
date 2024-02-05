@@ -11,13 +11,13 @@ return {
     keys = {
       -- stylua: ignore start
       { '<leader>la', vim.lsp.buf.code_action,                                           desc = 'Code Action' },
-      { '<leader>lo', vim.diagnostic.open_float,                                         desc = 'Open float' },
       { '<leader>lD', vim.lsp.buf.declaration,                                           desc = 'Declaration' },
       { '<leader>ld', vim.lsp.buf.definition,                                            desc = 'Definition' },
-      { '<leader>lF', '<Cmd>lua vim.lsp.buf.format({ async = true })<CR>',               desc = 'Format (legacy)' },
       { '<leader>lf', '<Cmd>lua require("conform").format({ lsp_fallback = true })<CR>', desc = 'Format' },
+      { '<leader>lF', '<Cmd>lua vim.lsp.buf.format({ async = true })<CR>',               desc = 'Format (legacy)' },
       { '<leader>li', vim.lsp.buf.implementation,                                        desc = 'Implementation' },
       { '<leader>lk', vim.lsp.buf.signature_help,                                        desc = 'Signature Documentation' },
+      { '<leader>lo', vim.diagnostic.open_float,                                         desc = 'Open float' },
       { '<leader>lR', vim.lsp.buf.references,                                            desc = 'References' },
       { '<leader>lr', vim.lsp.buf.rename,                                                desc = 'Rename' },
       { '<leader>ls', vim.lsp.buf.signature_help,                                        desc = 'Signature' },
