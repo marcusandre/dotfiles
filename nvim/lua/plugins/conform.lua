@@ -9,6 +9,7 @@ return {
         go = { 'goimports', 'gofumpt' },
         terraform = { { 'terraform_fmt' } },
         typescript = { { 'eslint_d', 'prettier' } },
+        typescriptreact = { { 'eslint_d', 'prettier' } },
       },
       format_on_save = {
         timeout_ms = 500,

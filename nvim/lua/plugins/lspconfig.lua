@@ -5,7 +5,7 @@ return {
     dependencies = {
       { 'williamboman/mason.nvim', config = true, opts = {} },
       'williamboman/mason-lspconfig.nvim',
-      { 'j-hui/fidget.nvim', opts = {} },
+      -- 'WhoIsSethDaniel/mason-tool-installer.nvim',
       'folke/neodev.nvim',
     },
     keys = {
@@ -28,6 +28,7 @@ return {
     },
     config = function()
       local mason_lspconfig = require('mason-lspconfig')
+      -- local mason_tool_installer = require('mason-tool-installer')
 
       require('neodev').setup()
 
@@ -35,6 +36,20 @@ return {
         if client.name == 'tsserver' then
           client.server_capabilities.documentFormattingProvider = false
           client.server_capabilities.documentRangeFormattingProvider = false
+        end
+
+        if client.name == 'gopls' then
+          if not client.server_capabilities.semanticTokensProvider then
+            local semantic = client.config.capabilities.textDocument.semanticTokens
+            client.server_capabilities.semanticTokensProvider = {
+              full = true,
+              legend = {
+                tokenTypes = semantic.tokenTypes,
+                tokenModifiers = semantic.tokenModifiers,
+              },
+              range = true,
+            }
+          end
         end
 
         vim.bo[buf_id].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
@@ -45,6 +60,7 @@ return {
           usePlaceholders = true,
           gofumpt = true,
           analyses = {
+            fieldalignment = true,
             nilness = true,
             unusedparams = true,
             unusedwrite = true,
@@ -89,9 +105,13 @@ return {
             },
           },
         },
+        tsserver = {
+          completions = {
+            completeFunctionCalls = true,
+          },
+        },
         terraformls = {},
         eslint = {},
-        tsserver = {},
       }
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -111,6 +131,26 @@ return {
           })
         end,
       })
+
+      -- mason_tool_installer.setup({
+      --   ensure_installed = {
+      --     'eslint',
+      --     'eslint_d',
+      --     'gofumpt',
+      --     'golines',
+      --     'gomodifytags',
+      --     'gopls',
+      --     'gotests',
+      --     'impl',
+      --     'json-to-struct',
+      --     'stylua',
+      --     'tflint',
+      --   },
+      -- })
     end,
+  },
+  {
+    'j-hui/fidget.nvim',
+    opts = {},
   },
 }
