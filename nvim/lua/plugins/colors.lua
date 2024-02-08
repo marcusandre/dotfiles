@@ -19,7 +19,24 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      require('gruvbox').setup({ contrast = 'hard' })
+      require('gruvbox').setup({
+        contrast = 'hard',
+        overrides = {
+          -- MiniPickBorder = { bg = '#fafafa' },
+          -- MiniPickBorderBusy = { bg = '#fafafa' },
+          -- MiniPickBorderText = { bg = '#fafafa' },
+          -- MiniPickIconDirectory = { bg = '#fafafa' },
+          -- MiniPickIconFile = { bg = '#fafafa' },
+          -- MiniPickHeader = { bg = '#fafafa' },
+          MiniPickMatchCurrent = { bg = '#665c54' },
+          -- MiniPickMatchMarked = { bg = '#fafafa' },
+          -- MiniPickMatchRanges = { bg = '#fafafa' },
+          -- MiniPickNormal = { bg = '#fafafa' },
+          -- MiniPickPreviewLine = { bg = '#fafafa' },
+          -- MiniPickPreviewRegion = { bg = '#fafafa' },
+          -- MiniPickPrompt = { bg = '#fafafa' },
+        },
+      })
       vim.cmd([[colorscheme gruvbox]])
     end,
   },
