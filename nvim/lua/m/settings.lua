@@ -3,6 +3,10 @@
 -- General
 vim.o.undofile = true -- Enable persistent undo
 vim.o.backup = false -- Don't store backup while overwriting the file
+vim.o.backup = false -- Don't store backup while overwriting the file
+vim.o.undofile = true
+vim.o.undolevels = 10000
+vim.o.updatetime = 200 -- Save swap file and trigger CursorHold
 vim.o.writebackup = false -- Don't store backup while overwriting the file
 vim.o.mouse = 'a' -- Enable mouse for all available modes
 
@@ -32,6 +36,8 @@ vim.o.fillchars = 'eob: ' -- Don't show `~` outside of buffer
 vim.o.listchars = 'tab:> ,extends:…,precedes:…,nbsp:␣' -- Define which helper symbols to show
 vim.o.list = true -- Show some helper symbols
 
+if vim.fn.has('nvim-0.10') == 1 then vim.opt.smoothscroll = true end
+
 -- Editing
 vim.o.autoindent = true -- Automatically indent
 vim.o.expandtab = true -- Tabs to spaces
@@ -48,6 +54,8 @@ vim.o.virtualedit = 'block' -- Allow going past the end of line in visual block 
 vim.o.formatoptions = 'qjl1' -- Don't autoformat comments
 
 vim.opt.iskeyword:append('-') -- Treat das separated words as a word text object
+
+vim.g.markdown_recommended_style = 0
 
 -- Neovim version dependent
 if vim.fn.has('nvim-0.9') == 1 then
