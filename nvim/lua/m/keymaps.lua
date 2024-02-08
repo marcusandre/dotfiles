@@ -36,7 +36,5 @@ map('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true })
 map('n', '<leader>c', utils.toggle_quickfix, { desc = 'Quickfix' })
 
 -- Other
-map('n', '<leader>oc', '<Cmd>colorscheme randomhue<CR>', { desc = 'Random colorscheme' })
-map('n', '<leader>ot', '<Cmd>colorscheme tokyonight-moon<CR>', { desc = 'Tokyonight Moon' })
 map('n', '<leader>om', '<Cmd>Mason<CR>', { desc = 'Mason' })
 map('n', '<leader>ol', '<Cmd>Lazy<CR>', { desc = 'Lazy' })
