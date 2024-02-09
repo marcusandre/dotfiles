@@ -9,10 +9,10 @@ return {
         keywords = { italic = false },
       },
     },
-    -- config = function(opts)
-    --   require('tokyonight').setup(opts)
-    --   vim.cmd([[colorscheme tokyonight]])
-    -- end,
+    config = function(opts)
+      require('tokyonight').setup(opts)
+      vim.cmd([[colorscheme tokyonight]])
+    end,
   },
   {
     'ellisonleao/gruvbox.nvim',
@@ -37,7 +37,7 @@ return {
           -- MiniPickPrompt = { bg = '#fafafa' },
         },
       })
-      vim.cmd([[colorscheme gruvbox]])
+      -- vim.cmd([[colorscheme gruvbox]])
     end,
   },
 }

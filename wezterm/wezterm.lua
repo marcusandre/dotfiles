@@ -7,7 +7,8 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 
 config.font = wezterm.font('JetBrains Mono')
 config.font_size = 12.0
-config.color_scheme = 'Gruvbox dark, hard (base16)'
+config.color_scheme = 'tokyonight_moon'
+-- config.color_scheme = 'Gruvbox dark, hard (base16)'
 
 config.adjust_window_size_when_changing_font_size = false
 config.enable_scroll_bar = false
