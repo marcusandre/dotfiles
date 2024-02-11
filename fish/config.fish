@@ -52,6 +52,15 @@ if type -q mise
     mise activate fish | source
 end
 
+# atuin
+if type -q atuin
+    set -gx ATUIN_NOBIND "true"
+    atuin init fish | source
+
+    bind \cr _atuin_search
+    bind -M insert \cr _atuin_search
+end
+
 # prompt
 if type -q starship
     starship init fish | source

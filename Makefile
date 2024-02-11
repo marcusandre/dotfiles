@@ -8,6 +8,9 @@ all:
 	@mkdir -p $(HOME)/bin
 	@stow -v --target=$(HOME)/bin bin
 
+	@mkdir -p $(CONFIG_PATH)/atuin
+	@stow -v --adopt --target=$(CONFIG_PATH)/atuin atuin
+
 	@mkdir -p $(CONFIG_PATH)/bat
 	@stow -v --target=$(CONFIG_PATH)/bat bat
 
