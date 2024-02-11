@@ -1,6 +1,7 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "conform.nvim": { "branch": "master", "commit": "c0e0e80f0c233cb3a249f719a44324c660163a3f" },
+  "everforest": { "branch": "master", "commit": "4ce8ea3588265dd7d82113d3a937f53c59685164" },
   "fidget.nvim": { "branch": "main", "commit": "ad8873c16faa123fe3f9fd6539c41dfb0f97a9e9" },
   "fzf-lua": { "branch": "main", "commit": "91ec17b4fd0d810599f054eef08db967a0457fbf" },
   "gitsigns.nvim": { "branch": "main", "commit": "2c2463dbd82eddd7dbab881c3a62cfbfbe3c67ae" },
@@ -27,6 +28,7 @@
   "mini.tabline": { "branch": "main", "commit": "9b9f5135a55fc2369ee4e64f8b4c22a4b4c5fc01" },
   "mini.trailspace": { "branch": "main", "commit": "91f2e0c1b0ee7b72189e6f88da03da9d04077051" },
   "neodev.nvim": { "branch": "main", "commit": "a09881379ac7abddb8091c5edd292805a53ccf18" },
+  "nightfox.nvim": { "branch": "main", "commit": "a408e6bb101066952b81de9c11be367114bd561f" },
   "nvim-coverage": { "branch": "main", "commit": "cf4b5c61dfac977026a51a2bcad9173c272986ce" },
   "nvim-lastplace": { "branch": "main", "commit": "0bb6103c506315044872e0f84b1f736c4172bb20" },
   "nvim-lspconfig": { "branch": "master", "commit": "41f40dc4b86f3e166cf08115f621001972565a20" },
