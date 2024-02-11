@@ -1,5 +1,3 @@
-local utils = require('m.utils')
-
 return {
   {
     'echasnovski/mini.base16',
