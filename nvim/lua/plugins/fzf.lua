@@ -17,7 +17,7 @@ return {
       { '<leader>fk', '<Cmd>FzfLua keymaps<CR>',                     desc = 'Keymaps' },
       { '<leader>fL', '<Cmd>FzfLua blines<CR>',                      desc = 'Lines (current)' },
       { '<leader>fl', '<Cmd>FzfLua lines<CR>',                       desc = 'Lines (all)' },
-      { '<leader>fo', '<Cmd>FzfLua oldfiles<CR>',                    desc = 'Recent Files' },
+      { '<leader>fo', '<Cmd>FzfLua oldfiles stat_file=false<CR>',    desc = 'Recent Files' },
       { '<leader>fr', '<Cmd>FzfLua resume<CR>',                      desc = 'Resume' },
       { '<leader>fz', '<Cmd>FzfLua spell_suggest<CR>',               desc = 'Spelling' },
       { '<leader>la', '<Cmd>FzfLua lsp_code_actions<CR>',            desc = 'Code Actions',         mode = { "n", "v" } },
