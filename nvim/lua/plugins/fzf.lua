@@ -46,9 +46,32 @@ return {
     },
     config = function()
       local fzf = require('fzf-lua')
+      local actions = fzf.actions
 
       fzf.setup({
-        'fzf-native',
+        fzf_opts = {
+          ['--info'] = 'default',
+          ['--layout'] = 'reverse-list',
+        },
+        files = {
+          winopts = {
+            preview = { hidden = 'hidden' },
+          },
+          actions = {
+            ['ctrl-g'] = actions.toggle_ignore,
+          },
+        },
+        helptags = {
+          actions = {
+            ['default'] = actions.help_vert,
+          },
+        },
+        oldfiles = {
+          include_current_session = true,
+          winopts = {
+            preview = { hidden = 'hidden' },
+          },
+        },
       })
       fzf.register_ui_select()
     end,
