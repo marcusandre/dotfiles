@@ -49,6 +49,7 @@ return {
       local actions = fzf.actions
 
       fzf.setup({
+        'skim',
         fzf_opts = {
           ['--info'] = 'default',
           ['--layout'] = 'reverse-list',
