@@ -32,8 +32,11 @@ all:
 	@mkdir -p $(CONFIG_PATH)/ripgrep
 	@stow -v --target=$(CONFIG_PATH)/ripgrep ripgrep
 
-	@mkdir -p $(CONFIG_PATH)/starship
-	@stow -v --target=$(CONFIG_PATH)/starship starship
+	@mkdir -p $(HOME)/Library/Application\ Support/nushell
+	@stow -v --target=$(HOME)/Library/Application\ Support/nushell nushell
+
+	@mkdir -p $(CONFIG_PATH)/wezterm
+	@stow -v --target=$(CONFIG_PATH)/wezterm wezterm
 
 	@mkdir -p $(CONFIG_PATH)/wezterm
 	@stow -v --target=$(CONFIG_PATH)/wezterm wezterm
