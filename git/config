@@ -1,6 +1,6 @@
 [user]
-  email = hello+github@marcusandre.de
   name = Marcus André
+  email = hello+github@marcusandre.de
 
 [alias]
   git = "!git"
@@ -43,7 +43,6 @@
   hub = !hub
 
 [commit]
-  template = ~/.config/git/template
   verbose = true
   push = current
 
@@ -93,3 +92,12 @@
 
 [rerere]
   enabled = true
+
+[column]
+  ui = auto
+
+[branch]
+  sort = -committerdate
+
+[includeIf "gitdir:~/src/work/"]
+    path = ~/.config/git/work
