@@ -1,3 +1,5 @@
+local utils = require('m.utils')
+
 return {
   {
     'echasnovski/mini.base16',
@@ -31,10 +33,10 @@ return {
     version = false,
     keys = {
       -- stylua: ignore start
-      { '<leader>bd', '<Cmd>lua MiniBufremove.delete()<CR>',         desc = 'Delete' },
-      { '<leader>bD', '<Cmd>lua MiniBufremove.delete(0, true)<CR>',  desc = 'Delete!' },
-      { '<leader>bw', '<Cmd>lua MiniBufremove.wipeout()<CR>',        desc = 'Wipeout' },
-      { '<leader>bW', '<Cmd>lua MiniBufremove.wipeout(0, true)<CR>', desc = 'Wipeout!' },
+      { '<leader>ba', utils.delete_all_buffers,   desc = 'Delete (all)' },
+      { '<leader>bd', utils.delete_buffer,        desc = 'Delete (current)' },
+      { '<leader>bo', utils.delete_other_buffers, desc = 'Delete (others)' },
+      { '<leader>bs', utils.open_scratch_buffer,  desc = 'Delete (all)' },
       -- stylua: ignore end
     },
     opts = {},

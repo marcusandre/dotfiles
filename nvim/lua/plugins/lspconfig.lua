@@ -22,7 +22,7 @@ return {
       { '<leader>lk', vim.lsp.buf.signature_help,                                        desc = 'Signature Documentation' },
       { '<leader>lo', vim.diagnostic.open_float,                                         desc = 'Open float' },
       { '<leader>lr', vim.lsp.buf.rename,                                                desc = 'Rename' },
-      { '<leader>lq', vim.diagnostic.setqflist,                                          desc = 'Rename' },
+      { '<leader>lq', vim.diagnostic.setqflist,                                          desc = 'Quickfix' },
       { 'K',          vim.lsp.buf.hover,                                                 desc = 'Documentation' },
       -- stylua: ignore end
     },
