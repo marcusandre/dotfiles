@@ -10,7 +10,7 @@ config.font_size = 12.0
 -- config.color_scheme = 'tokyonight_night'
 -- config.color_scheme = 'Gruvbox dark, dark (base16)'
 -- config.color_scheme = 'Everforest Dark (Gogh)'
-config.color_scheme = 'duskfox'
+config.color_scheme = 'carbonfox'
 
 config.adjust_window_size_when_changing_font_size = false
 config.enable_scroll_bar = false
@@ -21,6 +21,11 @@ config.term = 'wezterm'
 config.underline_position = -5
 config.use_fancy_tab_bar = false
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
+
+config.inactive_pane_hsb = {
+  saturation = 0.9,
+  brightness = 0.6,
+}
 
 wezterm.on('window-config-reloaded', function(window)
   if wezterm.gui.screens().active.name == 'HP E233' then

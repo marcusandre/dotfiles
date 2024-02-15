@@ -9,3 +9,4 @@ _site/
 .env
 .venv
 .projections.json
+.mise.toml
