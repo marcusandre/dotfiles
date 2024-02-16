@@ -3,10 +3,15 @@ return {
     'neovim/nvim-lspconfig',
     lazy = false,
     dependencies = {
+      -- mason
       { 'williamboman/mason.nvim', config = true, opts = {} },
       'williamboman/mason-lspconfig.nvim',
-      -- 'WhoIsSethDaniel/mason-tool-installer.nvim',
+
+      -- lua
       'folke/neodev.nvim',
+
+      -- cmp
+      'hrsh7th/nvim-cmp',
     },
     keys = {
       -- stylua: ignore start
@@ -28,11 +33,10 @@ return {
     },
     config = function()
       local mason_lspconfig = require('mason-lspconfig')
-      -- local mason_tool_installer = require('mason-tool-installer')
 
       require('neodev').setup()
 
-      local on_attach = function(client, buf_id)
+      local on_attach = function(client)
         if client.name == 'tsserver' then
           client.server_capabilities.documentFormattingProvider = false
           client.server_capabilities.documentRangeFormattingProvider = false
@@ -52,7 +56,7 @@ return {
           end
         end
 
-        vim.bo[buf_id].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
+        -- vim.bo[buf_id].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
       end
 
       local servers = {
@@ -119,6 +123,7 @@ return {
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
+      capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
       mason_lspconfig.setup({
         ensure_installed = vim.tbl_keys(servers),
@@ -134,22 +139,6 @@ return {
           })
         end,
       })
-
-      -- mason_tool_installer.setup({
-      --   ensure_installed = {
-      --     'eslint',
-      --     'eslint_d',
-      --     'gofumpt',
-      --     'golines',
-      --     'gomodifytags',
-      --     'gopls',
-      --     'gotests',
-      --     'impl',
-      --     'json-to-struct',
-      --     'stylua',
-      --     'tflint',
-      --   },
-      -- })
     end,
   },
   {

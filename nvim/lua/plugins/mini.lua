@@ -41,15 +41,15 @@ return {
     },
     opts = {},
   },
-  {
-    'echasnovski/mini.completion',
-    version = false,
-    opts = {
-      lsp_completion = {
-        source_func = 'omnifunc',
-      },
-    },
-  },
+  -- {
+  --   'echasnovski/mini.completion',
+  --   version = false,
+  --   opts = {
+  --     lsp_completion = {
+  --       source_func = 'omnifunc',
+  --     },
+  --   },
+  -- },
   {
     'echasnovski/mini.cursorword',
     version = false,

@@ -28,10 +28,6 @@ map('n', '<C-J>', '<C-w>j', { desc = 'Focus on below window' })
 map('n', '<C-K>', '<C-w>k', { desc = 'Focus on above window' })
 map('n', '<C-L>', '<C-w>l', { desc = 'Focus on right window' })
 
--- Use `<Tab>` and `<S-Tab>` for navigation through completion list
-map('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { expr = true })
-map('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true })
-
 -- Quickfix
 map('n', '<leader>c', utils.toggle_quickfix, { desc = 'Quickfix' })
 
