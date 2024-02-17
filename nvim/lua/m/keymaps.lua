@@ -2,12 +2,13 @@ local utils = require('m.utils')
 local map = vim.keymap.set
 
 -- General
+map('i', 'kj', '<Esc>', { desc = 'Leave input mode' })
+map('n', '<Esc>', '<Cmd>nohl<CR><Esc>', { desc = 'Remove highlights' })
+map('n', '<leader><leader>', '<Cmd>:b#<CR>', { desc = 'Alternate Buffer' })
+map('n', '<leader>Q', '<Cmd>qall<CR>', { desc = 'Leave editor' })
+map('n', '<leader>bq', '<Cmd>:%bd|e#<CR>', { desc = 'Delete (all)' })
 map('n', 'Q', '<nop>')
 map('n', 'n', 'nzz')
-map('n', '<leader><leader>', '<Cmd>:b#<CR>', { desc = 'Alternate Buffer' })
-map('n', '<leader>bq', '<Cmd>:%bd|e#<CR>', { desc = 'Delete (all)' })
-map('n', '<Esc>', '<Cmd>nohl<CR><Esc>', { desc = 'Remove highlights' })
-map('i', 'kj', '<Esc>', { desc = 'Leave input mode' })
 
 -- Move by visible lines. Notes:
 map({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'j']], { expr = true })

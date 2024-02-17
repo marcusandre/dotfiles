@@ -2,10 +2,7 @@ return {
   {
     'hrsh7th/nvim-cmp',
     dependencies = {
-      {
-        'L3MON4D3/LuaSnip',
-        build = 'make install_jsregexp',
-      },
+      { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' },
       'saadparwaiz1/cmp_luasnip',
 
       -- Adds LSP completion capabilities

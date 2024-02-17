@@ -27,6 +27,7 @@ return {
       { '<leader>lk', vim.lsp.buf.signature_help,                                        desc = 'Signature Documentation' },
       { '<leader>lo', vim.diagnostic.open_float,                                         desc = 'Open float' },
       { '<leader>lr', vim.lsp.buf.rename,                                                desc = 'Rename' },
+      { '<leader>lR', '<Cmd>LspRestart<CR>',                                             desc = 'Rename' },
       { '<leader>lq', vim.diagnostic.setqflist,                                          desc = 'Quickfix' },
       { 'K',          vim.lsp.buf.hover,                                                 desc = 'Documentation' },
       -- stylua: ignore end
@@ -38,6 +39,7 @@ return {
 
       local on_attach = function(client)
         if client.name == 'tsserver' then
+          -- client.server_capabilities.semanticTokensProvider = nil
           client.server_capabilities.documentFormattingProvider = false
           client.server_capabilities.documentRangeFormattingProvider = false
         end
@@ -113,6 +115,14 @@ return {
           },
         },
         tsserver = {
+          filetypes = {
+            'javascript',
+            'javascriptreact',
+            'javascript.jsx',
+            'typescript',
+            'typescriptreact',
+            'typescript.tsx',
+          },
           completions = {
             completeFunctionCalls = true,
           },
