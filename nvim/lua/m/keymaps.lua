@@ -5,7 +5,6 @@ local map = vim.keymap.set
 map('i', 'kj', '<Esc>', { desc = 'Leave input mode' })
 map('n', '<Esc>', '<Cmd>nohl<CR><Esc>', { desc = 'Remove highlights' })
 map('n', '<leader><leader>', '<Cmd>:b#<CR>', { desc = 'Alternate Buffer' })
-map('n', '<leader>Q', '<Cmd>qall<CR>', { desc = 'Leave editor' })
 map('n', '<leader>bq', '<Cmd>:%bd|e#<CR>', { desc = 'Delete (all)' })
 map('n', 'Q', '<nop>')
 map('n', 'n', 'nzz')
@@ -33,5 +32,7 @@ map('n', '<C-L>', '<C-w>l', { desc = 'Focus on right window' })
 map('n', '<leader>c', utils.toggle_quickfix, { desc = 'Quickfix' })
 
 -- Other
-map('n', '<leader>om', '<Cmd>Mason<CR>', { desc = 'Mason' })
 map('n', '<leader>ol', '<Cmd>Lazy<CR>', { desc = 'Lazy' })
+map('n', '<leader>om', '<Cmd>Mason<CR>', { desc = 'Mason' })
+map('n', '<leader>oq', '<Cmd>qall<CR>', { desc = 'Leave editor' })
+map('n', '<leader>ow', '<Cmd>wall<CR>', { desc = 'Write buffers' })
