@@ -11,11 +11,17 @@ return {
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
+
+      -- Further information for cmp list
+      'onsails/lspkind.nvim',
     },
     config = function()
       local cmp = require('cmp')
       local luasnip = require('luasnip')
+      local lspkind = require('lspkind')
+
       require('luasnip.loaders.from_vscode').lazy_load()
+
       luasnip.config.setup({})
 
       cmp.setup({
@@ -24,6 +30,9 @@ return {
         },
         completion = {
           completeopt = 'menu,menuone,noinsert',
+        },
+        formatting = {
+          format = lspkind.cmp_format({}),
         },
         mapping = cmp.mapping.preset.insert({
           -- ['<C-n>'] = cmp.mapping.select_next_item(),
