@@ -50,6 +50,11 @@ return {
 
       fzf.setup({
         'skim',
+        keymap = {
+          fzf = {
+            ['ctrl-q'] = 'select-all+accept',
+          },
+        },
         fzf_opts = {
           ['--info'] = 'default',
           ['--layout'] = 'reverse-list',

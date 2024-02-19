@@ -27,6 +27,8 @@ vim.o.winblend = 10 -- Transparent floating windows
 vim.o.ruler = false -- Dont show cursor position
 vim.o.showtabline = 2 -- Always show line with tab page labels
 
+vim.opt.smoothscroll = true -- Always show line with tab page labels
+
 vim.o.ruler = false -- Don't show cursor position in command line
 vim.o.wrap = false -- Display long lines as just one line
 
@@ -42,6 +44,7 @@ if vim.fn.has('nvim-0.10') == 1 then vim.opt.smoothscroll = true end
 vim.o.autoindent = true -- Automatically indent
 vim.o.expandtab = true -- Tabs to spaces
 vim.o.ignorecase = true -- Ignore case when searching (use `\C` to force not doing that)
+vim.o.inccommand = 'split' -- Show search results while typing
 vim.o.incsearch = true -- Show search results while typing
 vim.o.infercase = true -- Infer letter cases for a richer built-in keyword completion
 vim.o.smartcase = true -- Don't ignore case when searching if pattern has upper case
