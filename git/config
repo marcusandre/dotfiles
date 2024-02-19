@@ -68,6 +68,7 @@
   colorMoved = default
   compactionHeuristic = true
   tool = difftastic
+  algorithm = histogram
 
 [difftool]
   prompt = false
