@@ -80,6 +80,11 @@ function md -d "Create a directory and set CWD"
     end
 end
 
+# Interactive ripgrep
+function rgi -d "Interactive ripgrep"
+    command rg --json -C 2 $argv | delta
+end
+
 # Aliases
 alias .. 'cd ..'
 alias cat bat
@@ -90,22 +95,50 @@ alias gap 'git add . -p'
 alias gb 'git branch -a'
 alias gd 'git diff'
 alias gl 'git ll'
-alias gp "git symbolic-ref --short HEAD 2> /dev/null | xargs -L1 git push origin"
-alias gr 'cd $(git root)'
+# alias gp "git symbolic-ref --short HEAD 2> /dev/null | xargs -L1 git push origin"
+alias gp 'git push'
+alias gr 'cd $(git rev-parse --show-toplevel)'
 alias gu 'git upgrade'
-alias lg lazygit
 alias ll 'ls -la'
 alias ls eza
 alias rf 'rm -fr'
-alias s 'git s'
+alias s 'git status'
 alias sloc tokei
-alias ss 'git status'
 alias tree 'eza --tree'
 alias vimdiff 'nvim -d'
 
-# walk
-function lk
-    set loc (walk $argv); and cd $loc
-end
+# Nightfox Color Palette
+# Style: carbonfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/carbonfox/carbonfox.fish
+set -l foreground f2f4f8
+set -l selection 2a2a2a
+set -l comment 6e6f70
+set -l red ee5396
+set -l orange 3ddbd9
+set -l yellow 08bdba
+set -l green 25be6a
+set -l purple be95ff
+set -l cyan 33b1ff
+set -l pink ff7eb6
 
-fish_config theme choose tokyonight_moon
+# Syntax Highlighting Colors
+set -g fish_color_normal $foreground
+set -g fish_color_command $cyan
+set -g fish_color_keyword $pink
+set -g fish_color_quote $yellow
+set -g fish_color_redirection $foreground
+set -g fish_color_end $orange
+set -g fish_color_error $red
+set -g fish_color_param $purple
+set -g fish_color_comment $comment
+set -g fish_color_selection --background=$selection
+set -g fish_color_search_match --background=$selection
+set -g fish_color_operator $green
+set -g fish_color_escape $pink
+set -g fish_color_autosuggestion $comment
+
+# Completion Pager Colors
+set -g fish_pager_color_progress $comment
+set -g fish_pager_color_prefix $cyan
+set -g fish_pager_color_completion $foreground
+set -g fish_pager_color_description $comment

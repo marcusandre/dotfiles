@@ -5,14 +5,9 @@
 [alias]
   git = "!git"
 
-  # The basic aliases
-  s = status
-  root = rev-parse --show-toplevel
-  hash = log -1 --format='%H'
-
   # Branch related aliases
+  cleanup = "!git branch | grep -v $(git main-branch) | grep -v $(git branch --show-current) | xargs git branch -D"
   co = checkout
-  cleanup-branches = "!git branch | grep -v $(git main-branch) | grep -v $(git branch --show-current) | xargs git branch -D"
 
   # Rebase related aliases
   rb = "!sh -c \"git rebase -i HEAD~$1\" -"
@@ -28,34 +23,32 @@
   undo = !"git reset --soft \"HEAD^\" && git status --short"
 
   # Diff related aliases
-  l = log --graph --decorate --pretty=oneline --abbrev-commit
   ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
 
   # Misc
   main-branch = "!git remote show origin | sed -n '/HEAD branch/s/.*: //p'"
   publish = push origin HEAD --force-with-lease
   squash = "!git rebase -v -i $(git main-branch)"
-  update = "!git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase"
   todo = git grep -niE '(FIXME|TODO)'
-  fixme = git grep -niE '(FIXME|TODO)'
 
   # GitHub
   hub = !hub
 
 [commit]
-  verbose = true
   push = current
+  verbose = true
 
 [core]
-  diffFilter = delta --color-only
+  pager = delta
   excludesfile = ~/.gitignore_global
 
+[interactive]
+    diffFilter = delta --color-only
+
 [delta]
-  navigate = true
-  light = false
-  side-by-side = false
   line-numbers = true
-  features = tokyonight_moon
+  navigate = true
+  side-by-side = true
 
 [push]
   default = current
@@ -65,10 +58,10 @@
   rebase = true
 
 [diff]
+  algorithm = histogram
   colorMoved = default
   compactionHeuristic = true
   tool = difftastic
-  algorithm = histogram
 
 [difftool]
   prompt = false
@@ -83,7 +76,7 @@
   autosquash = true
 
 [merge]
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 
 [credential]
   helper = osxkeychain
@@ -101,4 +94,4 @@
   sort = -committerdate
 
 [includeIf "gitdir:~/src/work/"]
-    path = ~/.config/git/work
+  path = ~/.config/git/work
