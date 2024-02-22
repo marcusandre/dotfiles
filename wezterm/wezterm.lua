@@ -10,7 +10,7 @@ config.font_size = 12.0
 -- config.color_scheme = 'tokyonight_night'
 -- config.color_scheme = 'Gruvbox dark, dark (base16)'
 -- config.color_scheme = 'Everforest Dark (Gogh)'
-config.color_scheme = 'carbonfox'
+config.color_scheme = 'duskfox'
 
 config.adjust_window_size_when_changing_font_size = false
 config.enable_scroll_bar = false
