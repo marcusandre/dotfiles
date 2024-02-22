@@ -2,6 +2,11 @@ local utils = require('m.utils')
 
 return {
   {
+    'echasnovski/mini.ai',
+    version = false,
+    opts = { n_lines = 500 },
+  },
+  {
     'echasnovski/mini.base16',
     version = false,
   },
