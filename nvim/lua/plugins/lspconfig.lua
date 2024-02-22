@@ -6,6 +6,7 @@ return {
       -- mason
       { 'williamboman/mason.nvim', config = true, opts = {} },
       'williamboman/mason-lspconfig.nvim',
+      'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- lua
       'folke/neodev.nvim',
@@ -34,6 +35,7 @@ return {
     },
     config = function()
       local mason_lspconfig = require('mason-lspconfig')
+      local mason_tool_installer = require('mason-tool-installer')
 
       require('neodev').setup()
 
@@ -129,25 +131,36 @@ return {
         },
         terraformls = {},
         eslint = {},
+        dockerls = {},
       }
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
       capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-      mason_lspconfig.setup({
-        ensure_installed = vim.tbl_keys(servers),
+      local ensure_installed = vim.tbl_keys(servers or {})
+      vim.list_extend(ensure_installed, {
+        'actionlint',
+        'commitlint',
+        'eslint_d',
+        'gofumpt',
+        'goimports',
+        'prettier',
+        'stylua',
       })
+      mason_tool_installer.setup({ ensure_installed = ensure_installed })
 
-      mason_lspconfig.setup_handlers({
-        function(server_name)
-          require('lspconfig')[server_name].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = servers[server_name],
-            filetypes = (servers[server_name] or {}).filetypes,
-          })
-        end,
+      mason_lspconfig.setup({
+        handlers = {
+          function(server_name)
+            require('lspconfig')[server_name].setup({
+              capabilities = capabilities,
+              on_attach = on_attach,
+              settings = servers[server_name],
+              filetypes = (servers[server_name] or {}).filetypes,
+            })
+          end,
+        },
       })
     end,
   },
