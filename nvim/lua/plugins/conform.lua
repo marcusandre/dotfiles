@@ -1,21 +1,23 @@
-return {
-  {
-    'stevearc/conform.nvim',
-    event = { 'LspAttach', 'BufWritePre' },
-    opts = {
-      notify_on_error = false,
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        go = { 'goimports', 'gofumpt' },
-        terraform = { { 'terraform_fmt' } },
-        typescript = { { 'eslint_d', 'prettier' } },
-        typescriptreact = { { 'eslint_d', 'prettier' } },
-      },
-      format_on_save = {
-        timeout_ms = 500,
-        lsp_fallback = true,
-      },
+-- See `:help conform` to understand what the configuration keys do
+return { -- Autoformat
+  'stevearc/conform.nvim',
+  opts = {
+    notify_on_error = false,
+    format_on_save = {
+      timeout_ms = 500,
+      lsp_fallback = true,
     },
-    init = function() vim.o.formatexpr = "v:lua.require'conform'.formatexpr()" end,
+    formatters_by_ft = {
+      lua = { 'stylua' },
+      go = { 'goimports', 'gofumpt' },
+      terraform = { { 'terraform_fmt' } },
+      -- Conform can also run multiple formatters sequentially
+      -- python = { "isort", "black" },
+      --
+      -- You can use a sub-list to tell conform to run *until* a formatter
+      -- is found.
+      -- javascript = { { "prettierd", "prettier" } },
+    },
   },
+  init = function() vim.o.formatexpr = "v:lua.require'conform'.formatexpr()" end,
 }
