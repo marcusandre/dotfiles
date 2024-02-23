@@ -20,6 +20,7 @@ return {
       mappings = {
         basics = true,
         windows = true,
+        move_with_alt = true,
       },
       autocommands = {
         basic = true,
