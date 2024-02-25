@@ -1,5 +1,6 @@
 return { -- Adds git related signs to the gutter, as well as utilities for managing changes
   'lewis6991/gitsigns.nvim',
+  lazy = false,
   keys = {
     -- stylua: ignore start
     { '<leader>gA', '<Cmd>lua require("gitsigns").stage_buffer()<CR>',              desc = 'Add buffer' },
