@@ -274,9 +274,13 @@ return { -- LSP Configuration & Plugins
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
-      'stylua', -- Used to format lua code
-      'goimports', -- Used to update imports in Go files
+      'actionlint', -- Used to check GitHub Actions
       'gofumpt', -- Used to format Go code
+      'goimports', -- Used to update imports in Go files
+      'hadolint', -- Used to check Dockerfiles
+      'prettier', -- Used to check JS/TS/JSON files
+      'stylua', -- Used to format lua code
+      'tflint', -- Used to check Terraform files
     })
 
     -- Ensure the servers and tools above are installed

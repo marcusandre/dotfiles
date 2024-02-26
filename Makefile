@@ -27,7 +27,7 @@ all:
 	@stow -v --target=$(CONFIG_PATH)/helix helix
 
 	@mkdir -p $(CONFIG_PATH)/nvim
-	@stow -v --target=$(CONFIG_PATH)/nvim nvim
+	@stow -v --no-folding --target=$(CONFIG_PATH)/nvim nvim
 
 	@mkdir -p $(CONFIG_PATH)/ripgrep
 	@stow -v --target=$(CONFIG_PATH)/ripgrep ripgrep

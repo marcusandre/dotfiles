@@ -102,7 +102,7 @@ alias gu 'git upgrade'
 alias ll 'ls -la'
 alias ls eza
 alias rf 'rm -fr'
-alias s 'git status'
+alias s 'git status -s'
 alias sloc tokei
 alias tree 'eza --tree'
 alias vimdiff 'nvim -d'

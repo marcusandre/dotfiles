@@ -59,6 +59,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
           ignore_current_buffer = true,
           sort_mru = true,
         },
+        diagnostics = { theme = 'ivy' },
+        git_status = { theme = 'ivy' },
+        lsp_definitions = { theme = 'ivy' },
+        lsp_references = { theme = 'ivy' },
       },
       extensions = {
         ['ui-select'] = {
