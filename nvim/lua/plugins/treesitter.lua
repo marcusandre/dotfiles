@@ -72,6 +72,14 @@ return {
             node_decremental = '<M-space>',
           },
         },
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+            ['aa'] = '@parameter.outer',
+            ['ia'] = '@parameter.inner',
+          },
+        },
         textobjects = {
           swap = {
             enable = true,
