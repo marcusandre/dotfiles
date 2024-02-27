@@ -61,7 +61,7 @@ return { -- LSP Configuration & Plugins
         -- Jump to the definition of the word under your cursor.
         --  This is where a variable was first declared, or where a function is defined, etc.
         --  To jump back, press <C-T>.
-        map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+        map('gd', require('telescope.builtin').lsp_definitions, 'Definition')
         map(
           '<leader>lv',
           function() require('telescope.builtin').lsp_definitions({ jump_type = 'vsplit' }) end,
@@ -69,35 +69,35 @@ return { -- LSP Configuration & Plugins
         )
 
         -- Find references for the word under your cursor.
-        map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+        map('gr', require('telescope.builtin').lsp_references, 'References')
 
         -- Jump to the implementation of the word under your cursor.
         --  Useful when your language has ways of declaring types without an actual implementation.
-        map('<leader>li', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+        map('<leader>li', require('telescope.builtin').lsp_implementations, 'Implementation')
 
         -- Jump to the type of the word under your cursor.
         --  Useful when you're not sure what type a variable is and you want to see
         --  the definition of its *type*, not where it was *defined*.
-        map('<leader>lt', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+        map('<leader>lt', require('telescope.builtin').lsp_type_definitions, 'Type Definition')
 
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.
-        map('<leader>ls', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+        map('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
 
         -- Fuzzy find all the symbols in your current workspace
         --  Similar to document symbols, except searches over your whole project.
-        map('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+        map('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
 
         -- Rename the variable under your cursor
         --  Most Language Servers support renaming across files, etc.
-        map('<leader>lr', vim.lsp.buf.rename, '[R]e[n]ame')
+        map('<leader>lr', vim.lsp.buf.rename, 'Rename')
 
         -- Execute a code action, usually your cursor needs to be on top of an error
         -- or a suggestion from your LSP for this to activate.
         map(
           '<leader>la',
           function() vim.lsp.buf.code_action({ context = { only = { 'quickfix', 'refactor', 'source' } } }) end,
-          '[C]ode [A]ction'
+          'Code Action'
         )
 
         -- Opens a popup that displays documentation about the word under your cursor
@@ -109,7 +109,7 @@ return { -- LSP Configuration & Plugins
 
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header
-        map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+        map('gD', vim.lsp.buf.declaration, 'Declaration')
 
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.
@@ -202,7 +202,6 @@ return { -- LSP Configuration & Plugins
           end
         end,
       },
-      -- pyright = {},
       rust_analyzer = {
         settings = {
           ['rust-analyzer'] = {
@@ -230,6 +229,11 @@ return { -- LSP Configuration & Plugins
           'typescript',
           'typescriptreact',
           'typescript.tsx',
+        },
+        settings = {
+          experimental = {
+            enableProjectDiagnostics = true,
+          },
         },
         on_attach = function(client)
           client.server_capabilities.semanticTokensProvider = nil
@@ -273,9 +277,9 @@ return { -- LSP Configuration & Plugins
           })
         end,
       },
-      dockerls = {
-        on_attach = function() end,
-      },
+      dockerls = {},
+      marksman = {},
+      ocamllsp = {},
     }
 
     -- You can add other tools here that you want Mason to install
@@ -311,7 +315,7 @@ return { -- LSP Configuration & Plugins
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {}),
-            on_attach = server.on_attach,
+            on_attach = server.on_attach or function() end,
           })
         end,
       },
