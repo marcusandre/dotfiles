@@ -7,10 +7,10 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 
 config.font = wezterm.font('JetBrains Mono')
 config.font_size = 12.0
-config.color_scheme = 'tokyonight_storm'
+-- config.color_scheme = 'tokyonight_storm'
 -- config.color_scheme = 'Gruvbox dark, dark (base16)'
 -- config.color_scheme = 'Everforest Dark (Gogh)'
--- config.color_scheme = 'carbonfox'
+config.color_scheme = 'carbonfox'
 
 config.adjust_window_size_when_changing_font_size = false
 config.enable_scroll_bar = false
