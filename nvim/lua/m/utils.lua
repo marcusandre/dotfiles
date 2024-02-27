@@ -13,7 +13,7 @@ M.open_starter_if_empty_buffer = function()
   if not is_empty then return end
 
   local orig_cwd = os.getenv('PWD')
-  vim.fn.chdir(orig_cwd)
+  if orig_cwd then vim.fn.chdir(orig_cwd) end
   vim.cmd('only')
   require('mini.starter').open()
   vim.api.nvim_buf_delete(buf_id, { force = true })
