@@ -110,27 +110,6 @@ return { -- LSP Configuration & Plugins
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header
         map('gD', vim.lsp.buf.declaration, 'Declaration')
-
-        -- The following two autocommands are used to highlight references of the
-        -- word under your cursor when your cursor rests there for a little while.
-        --    See `:help CursorHold` for information about when this is executed
-        --
-        -- When you move your cursor, the highlights will be cleared (the second autocommand).
-        if client.supports_method('textDocument/documentHighlight') then
-          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-            buffer = event.buf,
-            callback = vim.lsp.buf.document_highlight,
-          })
-        end
-
-        if client.supports_method('textDocument/clearReferences') then
-          if vim.lsp.buf.clear_references then
-            vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-              buffer = event.buf,
-              callback = vim.lsp.buf.clear_references,
-            })
-          end
-        end
       end,
     })
 
@@ -295,6 +274,30 @@ return { -- LSP Configuration & Plugins
       'tflint', -- Used to check Terraform files
     })
 
+    -- This custom on_attach handler will apply custom functionality independent of the current lsp server.
+    local general_on_attach = function(client, bufnr)
+      -- The following two autocommands are used to highlight references of the
+      -- word under your cursor when your cursor rests there for a little while.
+      --    See `:help CursorHold` for information about when this is executed
+      --
+      -- When you move your cursor, the highlights will be cleared (the second autocommand).
+      if client.supports_method('textDocument/documentHighlight') then
+        vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+          buffer = bufnr,
+          callback = vim.lsp.buf.document_highlight,
+        })
+      end
+
+      if client.supports_method('textDocument/clearReferences') then
+        if vim.lsp.buf.clear_references then
+          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+            buffer = bufnr,
+            callback = vim.lsp.buf.clear_references,
+          })
+        end
+      end
+    end
+
     -- Ensure the servers and tools above are installed
     --  To check the current status of installed tools and/or manually install
     --  other tools, you can run
@@ -315,7 +318,10 @@ return { -- LSP Configuration & Plugins
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {}),
-            on_attach = server.on_attach or function() end,
+            on_attach = function(...)
+              general_on_attach(...)
+              if server.on_attach then server.on_attach() end
+            end,
           })
         end,
       },
