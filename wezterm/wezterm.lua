@@ -1,40 +1,35 @@
 local wezterm = require('wezterm')
-local act = wezterm.action
 
-local config = {}
+local config = wezterm.config_builder()
 
-if wezterm.config_builder then config = wezterm.config_builder() end
+-- General
+config.term = 'wezterm'
 
-config.font = wezterm.font('JetBrains Mono')
-config.font_size = 12.0
+-- Text
+config.font = wezterm.font('Berkeley Mono')
+
+-- Colors
+config.color_scheme = 'carbonfox'
 -- config.color_scheme = 'tokyonight_storm'
 -- config.color_scheme = 'Gruvbox dark, dark (base16)'
 -- config.color_scheme = 'Everforest Dark (Gogh)'
-config.color_scheme = 'carbonfox'
 
-config.adjust_window_size_when_changing_font_size = false
+-- UI
 config.enable_scroll_bar = false
-config.freetype_load_flags = 'NO_HINTING'
+
 config.hide_tab_bar_if_only_one_tab = false
 config.tab_bar_at_bottom = true
-config.term = 'wezterm'
-config.underline_position = -5
 config.use_fancy_tab_bar = false
-config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 
-config.inactive_pane_hsb = {
-  saturation = 0.9,
-  brightness = 0.6,
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
 }
 
-wezterm.on('window-config-reloaded', function(window)
-  if wezterm.gui.screens().active.name == 'HP E233' then
-    window:set_config_overrides({
-      dpi = 100.13,
-      font_size = 8.8,
-    })
-  end
-end)
+-- Keymaps
+local act = wezterm.action
 
 config.keys = {
   { mods = 'ALT', key = 'Enter', action = 'DisableDefaultAssignment' },
