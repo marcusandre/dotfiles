@@ -46,8 +46,6 @@ return { -- LSP Configuration & Plugins
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
-        local client = vim.lsp.get_client_by_id(event.data.client_id)
-
         -- NOTE: Remember that lua is a real programming language, and as such it is possible
         -- to define small helper and utility functions so you don't have to repeat yourself
         -- many times.
@@ -245,9 +243,6 @@ return { -- LSP Configuration & Plugins
         },
       },
 
-      terraformls = {
-        on_attach = function() end,
-      },
       eslint = {
         on_attach = function(_, bufnr)
           vim.api.nvim_create_autocmd('BufWritePre', {
@@ -256,6 +251,8 @@ return { -- LSP Configuration & Plugins
           })
         end,
       },
+
+      terraformls = {},
       dockerls = {},
       marksman = {},
       ocamllsp = {},
@@ -275,7 +272,7 @@ return { -- LSP Configuration & Plugins
     })
 
     -- This custom on_attach handler will apply custom functionality independent of the current lsp server.
-    local general_on_attach = function(client, bufnr)
+    local on_attach = function(client, bufnr)
       -- The following two autocommands are used to highlight references of the
       -- word under your cursor when your cursor rests there for a little while.
       --    See `:help CursorHold` for information about when this is executed
@@ -319,8 +316,8 @@ return { -- LSP Configuration & Plugins
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {}),
             on_attach = function(...)
-              general_on_attach(...)
-              if server.on_attach then server.on_attach() end
+              on_attach(...)
+              if server.on_attach then server.on_attach(...) end
             end,
           })
         end,

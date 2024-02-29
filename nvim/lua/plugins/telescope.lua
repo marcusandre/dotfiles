@@ -107,7 +107,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
           prompt_title = 'Live Grep in Open Files',
         })
       end,
-      { desc = '[F]ind [/] in Open Files' }
+      { desc = 'Grep (open files)' }
     )
 
     -- Shortcut for searching your neovim configuration files
@@ -119,7 +119,19 @@ return { -- Fuzzy Finder (files, lsp, etc)
           cwd = '~/.dotfiles/nvim',
         })
       end,
-      { desc = '[F]ind [N]eovim files' }
+      { desc = 'Configuration' }
+    )
+
+    -- Shortcut for searching my Obsidian vault
+    vim.keymap.set(
+      'n',
+      '<leader>fm',
+      function()
+        builtin.find_files({
+          cwd = '~/Documents/Sagittarius',
+        })
+      end,
+      { desc = 'Find Obsidian Documents' }
     )
   end,
 }
