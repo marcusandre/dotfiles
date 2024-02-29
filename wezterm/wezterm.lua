@@ -7,9 +7,10 @@ config.term = 'wezterm'
 
 -- Text
 config.font = wezterm.font('Berkeley Mono')
+config.line_height = 1.1
 
 -- Colors
-config.color_scheme = 'carbonfox'
+config.color_scheme = 'nightfox'
 -- config.color_scheme = 'tokyonight_storm'
 -- config.color_scheme = 'Gruvbox dark, dark (base16)'
 -- config.color_scheme = 'Everforest Dark (Gogh)'

@@ -27,7 +27,9 @@ return {
           ignore_current_buffer = true,
           sort_mru = true,
         },
-        git_status = { theme = 'ivy' },
+        git_status = {
+          theme = 'dropdown',
+        },
       },
       extensions = {
         ['ui-select'] = { themes.get_dropdown() },
