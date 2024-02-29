@@ -10,7 +10,7 @@ return { -- Autoformat
     formatters_by_ft = {
       lua = { 'stylua' },
       go = { 'goimports', 'gofumpt' },
-      terraform = { { 'terraform_fmt' } },
+      terraform = { 'terraform_fmt' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --

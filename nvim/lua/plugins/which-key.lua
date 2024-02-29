@@ -1,10 +1,9 @@
-return { -- Useful plugin to show you pending keybinds.
+return {
   'folke/which-key.nvim',
-  event = 'VeryLazy', -- Sets the loading event to 'VeryLazy'
-  config = function() -- This is the function that runs, AFTER loading
+  event = 'VeryLazy',
+  config = function()
     require('which-key').setup()
 
-    -- Document existing key chains
     require('which-key').register({
       ['<leader>b'] = { name = '[B]uffers', _ = 'which_key_ignore' },
       ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
