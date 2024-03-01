@@ -1,5 +1,4 @@
--- See `:help conform` to understand what the configuration keys do
-return { -- Autoformat
+return {
   'stevearc/conform.nvim',
   opts = {
     notify_on_error = false,
@@ -11,13 +10,9 @@ return { -- Autoformat
       lua = { 'stylua' },
       go = { 'goimports', 'gofumpt' },
       terraform = { 'terraform_fmt' },
-      -- Conform can also run multiple formatters sequentially
-      -- python = { "isort", "black" },
-      --
-      -- You can use a sub-list to tell conform to run *until* a formatter
-      -- is found.
-      -- javascript = { { "prettierd", "prettier" } },
+      markdown = { 'prettier' },
     },
+    log_level = vim.log.levels.DEBUG,
   },
   init = function() vim.o.formatexpr = "v:lua.require'conform'.formatexpr()" end,
 }

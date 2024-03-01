@@ -38,6 +38,7 @@
   "tokyonight.nvim": { "branch": "main", "commit": "610179f7f12db3d08540b6cc61434db2eaecbcff" },
   "ts-error-translator.nvim": { "branch": "main", "commit": "1d24a38427fd2030c5f4e82156c87ab7d6d44814" },
   "tsc.nvim": { "branch": "main", "commit": "ec4e6c2493df1b3a8d381ff7a482685cb4122063" },
+  "vim-fugitive": { "branch": "master", "commit": "2e88f14a585c014691904ba8fe39e6ea851c9422" },
   "vim-projectionist": { "branch": "master", "commit": "afc737df8cb62bf630813edb84fd344b025b8b1a" },
   "vim-sleuth": { "branch": "master", "commit": "1cc4557420f215d02c4d2645a748a816c220e99b" },
   "vim-test": { "branch": "master", "commit": "46d2067586b788e2194e812bbfdbb2061b93a5ee" },

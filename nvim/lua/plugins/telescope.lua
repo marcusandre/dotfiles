@@ -27,6 +27,24 @@ return {
           ignore_current_buffer = true,
           sort_mru = true,
         },
+        lsp_definitions = {
+          show_line = false,
+        },
+        lsp_references = {
+          show_line = false,
+        },
+        lsp_implementations = {
+          show_line = false,
+        },
+        lsp_type_definitions = {
+          show_line = false,
+        },
+        lsp_document_symbols = {
+          fname_width = 0,
+        },
+        lsp_dynamic_workspace_symbols = {
+          fname_width = 0,
+        },
         git_status = {
           theme = 'dropdown',
         },
