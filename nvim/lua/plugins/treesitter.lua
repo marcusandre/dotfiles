@@ -39,6 +39,8 @@ return {
         'markdown',
         'markdown_inline',
         'nix',
+        'ocaml',
+        'ocaml_interface',
         'proto',
         'r',
         'rust',
