@@ -99,3 +99,21 @@ $env.NU_PLUGIN_DIRS = [
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/go/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/bin')
+
+mkdir ~/.local/share/nushell
+
+# mise
+mise activate nu | save -f ~/.local/share/nushell/mise.nu
+
+# zoxide
+zoxide init nushell | save -f ~/.local/share/nushell/zoxide.nu
+
+# atuin
+atuin init nu | save -f ~/.local/share/nushell/atuin.nu
+
+# Todo
+# - aliases

@@ -882,3 +882,12 @@ $env.config = {
         }
     ]
 }
+
+# Atuin
+source ~/.local/share/nushell/atuin.nu
+
+# Mise
+source  ~/.local/share/nushell/mise.nu
+
+# Zoxide
+source  ~/.local/share/nushell/zoxide.nu
