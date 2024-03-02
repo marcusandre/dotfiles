@@ -16,7 +16,6 @@ return {
         'diff',
         'dockerfile',
         'dot',
-        'fish',
         'git_config',
         'git_rebase',
         'gitattributes',
