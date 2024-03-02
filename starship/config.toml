@@ -1,9 +1,0 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
-add_newline = true
-
-[directory]
-truncate_to_repo = false
-
-[buf]
-disable = true
