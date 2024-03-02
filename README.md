@@ -1,6 +1,6 @@
 # dotfiles
 
-[![neovim](https://img.shields.io/badge/neovim-v10-509947)](https://neovim.io/) ![formatting](https://github.com/marcusandre/dotfiles/actions/workflows/lint.yml/badge.svg)
+[![neovim](https://img.shields.io/badge/neovim-v10-509947)](https://neovim.io/) [![Linting and style checking](https://github.com/marcusandre/dotfiles/actions/workflows/lint.yml/badge.svg)](https://github.com/marcusandre/dotfiles/actions/workflows/lint.yml)
 
 This repository contains my Neovim setup and other configuration files.
 
