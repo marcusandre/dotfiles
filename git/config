@@ -11,16 +11,17 @@
 
   # Rebase related aliases
   rb = "!sh -c \"git rebase -i HEAD~$1\" -"
+  rbi = rebase -i --keep-base
   upgrade = "!git fetch --prune && git rebase origin/$(git main-branch)"
 
   # Commit related aliases
   wip = !"git add . && git commit -n -m \"WIP\""
-  amend = commit --amend --no-edit
+  amend = commit --amend
   famend = commit --amend --no-edit --no-verify
 
   # Mistake related aliases
   nono = !"git checkout -- .; git clean -fd"
-  undo = !"git reset --soft \"HEAD^\" && git status --short"
+  undo = !"git reset --soft \"HEAD^\" && git diff --stat"
 
   # Diff related aliases
   ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
@@ -68,6 +69,12 @@
 
 [interactive]
   diffFilter = riff --color=on
+
+[log]
+  date = local
+
+[tag]
+  sort = version:refname
 
 [rebase]
   autosquash = true

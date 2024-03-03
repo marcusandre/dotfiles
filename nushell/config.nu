@@ -749,6 +749,22 @@ $env.config = {
     ]
 }
 
+# Aliases
+alias ll = ls -a
+alias la = ls -la
+alias e = nvim
+
+alias d = git diff --stat
+alias s = git status -s
+alias gd = git diff
+alias gl = git ll
+alias gp = git push
+alias gu = git upgrade
+
+# Keep the `open` command working
+def nuopen [arg, --raw (-r)] { if $raw { open -r $arg } else { open $arg } }
+alias open = ^open
+
 # Atuin
 source ~/.local/share/nushell/atuin.nu
 
