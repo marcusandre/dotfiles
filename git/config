@@ -39,16 +39,7 @@
   verbose = true
 
 [core]
-  pager = delta
   excludesfile = ~/.gitignore_global
-
-[interactive]
-    diffFilter = delta --color-only
-
-[delta]
-  line-numbers = true
-  navigate = true
-  side-by-side = false
 
 [push]
   default = current
@@ -71,6 +62,12 @@
 
 [pager]
   difftool = true
+  diff = riff
+  show = riff
+  log = riff
+
+[interactive]
+  diffFilter = riff --color=on
 
 [rebase]
   autosquash = true
