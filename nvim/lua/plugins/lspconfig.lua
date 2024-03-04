@@ -20,11 +20,11 @@ return { -- LSP Configuration & Plugins
           vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
-        map('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
-        map('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
         map('<leader>li', require('telescope.builtin').lsp_implementations, 'Implementation')
+        map('<leader>lk', vim.lsp.buf.signature_help, 'Signature Documentation')
         map('<leader>lr', vim.lsp.buf.rename, 'Rename')
         map('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
+        map('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
         map('<leader>lt', require('telescope.builtin').lsp_type_definitions, 'Type Definition')
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
         map('gD', vim.lsp.buf.declaration, 'Declaration')
@@ -116,40 +116,40 @@ return { -- LSP Configuration & Plugins
         },
       },
 
-      tsserver = {
-        filetypes = {
-          'javascript',
-          'javascriptreact',
-          'javascript.jsx',
-          'typescript',
-          'typescriptreact',
-          'typescript.tsx',
-        },
-        settings = {
-          typescript = {
-            inlayHints = {
-              includeInlayEnumMemberValueHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayFunctionParameterTypeHints = false,
-              includeInlayParameterNameHints = 'all', -- 'none' | 'literals' | 'all';
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayPropertyDeclarationTypeHints = false,
-              includeInlayVariableTypeHints = true,
-            },
-          },
-          completions = {
-            completeFunctionCalls = true,
-          },
-          experimental = {
-            enableProjectDiagnostics = true,
-          },
-        },
-        on_attach = function(client)
-          -- client.server_capabilities.semanticTokensProvider = nil
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-        end,
-      },
+      -- tsserver = {
+      --   filetypes = {
+      --     'javascript',
+      --     'javascriptreact',
+      --     'javascript.jsx',
+      --     'typescript',
+      --     'typescriptreact',
+      --     'typescript.tsx',
+      --   },
+      --   settings = {
+      --     typescript = {
+      --       inlayHints = {
+      --         includeInlayEnumMemberValueHints = true,
+      --         includeInlayFunctionLikeReturnTypeHints = true,
+      --         includeInlayFunctionParameterTypeHints = false,
+      --         includeInlayParameterNameHints = 'all', -- 'none' | 'literals' | 'all';
+      --         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+      --         includeInlayPropertyDeclarationTypeHints = false,
+      --         includeInlayVariableTypeHints = true,
+      --       },
+      --     },
+      --     completions = {
+      --       completeFunctionCalls = true,
+      --     },
+      --     experimental = {
+      --       enableProjectDiagnostics = true,
+      --     },
+      --   },
+      --   on_attach = function(client)
+      --     -- client.server_capabilities.semanticTokensProvider = nil
+      --     client.server_capabilities.documentFormattingProvider = false
+      --     client.server_capabilities.documentRangeFormattingProvider = false
+      --   end,
+      -- },
 
       lua_ls = {
         -- cmd = {...},
