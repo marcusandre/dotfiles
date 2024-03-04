@@ -104,6 +104,8 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '~/go/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/bin')
 
+$env.EDITOR = "nvim"
+
 mkdir ~/.local/share/nushell
 
 # mise
@@ -115,5 +117,5 @@ zoxide init nushell | save -f ~/.local/share/nushell/zoxide.nu
 # atuin
 atuin init nu | save -f ~/.local/share/nushell/atuin.nu
 
-# Todo
-# - aliases
+# starship
+starship init nu | save -f ~/.local/share/nushell/starship.nu

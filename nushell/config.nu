@@ -773,3 +773,6 @@ source  ~/.local/share/nushell/mise.nu
 
 # Zoxide
 source  ~/.local/share/nushell/zoxide.nu
+
+# Starship
+source  ~/.local/share/nushell/starship.nu
