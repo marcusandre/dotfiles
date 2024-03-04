@@ -14,9 +14,6 @@ all:
 	@mkdir -p $(CONFIG_PATH)/bat
 	@stow -v --target=$(CONFIG_PATH)/bat bat
 
-	@mkdir -p $(CONFIG_PATH)/btop
-	@stow -v --target=$(CONFIG_PATH)/btop btop
-
 	@mkdir -p $(CONFIG_PATH)/git
 	@stow -v --target=$(CONFIG_PATH)/git git
 

@@ -14,7 +14,7 @@ return { -- LSP Configuration & Plugins
   },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+      group = vim.api.nvim_create_augroup('man-lsp-attach', { clear = true }),
       callback = function(event)
         local map = function(keys, func, desc)
           vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
@@ -52,38 +52,40 @@ return { -- LSP Configuration & Plugins
 
       gopls = {
         settings = {
-          usePlaceholders = true,
-          gofumpt = true,
-          analyses = {
-            fieldalignment = true,
-            nilness = true,
-            unusedparams = true,
-            unusedwrite = true,
-            useany = true,
-          },
-          codelenses = {
-            gc_details = false,
-            generate = true,
-            regenerate_cgo = true,
-            run_govulncheck = true,
-            test = true,
-            tidy = true,
-            upgrade_dependency = true,
-            vendor = true,
-          },
-          experimentalPostfixCompletions = true,
-          completeUnimported = true,
-          staticcheck = true,
-          directoryFilters = { '-.git', '-node_modules' },
-          semanticTokens = true,
-          hints = {
-            assignVariableTypes = true,
-            compositeLiteralFields = true,
-            compositeLiteralTypes = true,
-            constantValues = true,
-            functionTypeParameters = true,
-            parameterNames = true,
-            rangeVariableTypes = true,
+          gopls = {
+            usePlaceholders = true,
+            gofumpt = true,
+            analyses = {
+              fieldalignment = true,
+              nilness = true,
+              unusedparams = true,
+              unusedwrite = true,
+              useany = true,
+            },
+            codelenses = {
+              gc_details = false,
+              generate = true,
+              regenerate_cgo = true,
+              run_govulncheck = true,
+              test = true,
+              tidy = true,
+              upgrade_dependency = true,
+              vendor = true,
+            },
+            experimentalPostfixCompletions = true,
+            completeUnimported = true,
+            staticcheck = true,
+            directoryFilters = { '-.git', '-node_modules' },
+            semanticTokens = true,
+            hints = {
+              assignVariableTypes = true,
+              compositeLiteralFields = true,
+              compositeLiteralTypes = true,
+              constantValues = true,
+              functionTypeParameters = true,
+              parameterNames = true,
+              rangeVariableTypes = true,
+            },
           },
         },
         on_attach = function(client)
@@ -124,12 +126,26 @@ return { -- LSP Configuration & Plugins
           'typescript.tsx',
         },
         settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayEnumMemberValueHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayFunctionParameterTypeHints = false,
+              includeInlayParameterNameHints = 'all', -- 'none' | 'literals' | 'all';
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = false,
+              includeInlayVariableTypeHints = true,
+            },
+          },
+          completions = {
+            completeFunctionCalls = true,
+          },
           experimental = {
             enableProjectDiagnostics = true,
           },
         },
         on_attach = function(client)
-          client.server_capabilities.semanticTokensProvider = nil
+          -- client.server_capabilities.semanticTokensProvider = nil
           client.server_capabilities.documentFormattingProvider = false
           client.server_capabilities.documentRangeFormattingProvider = false
         end,
@@ -198,6 +214,29 @@ return { -- LSP Configuration & Plugins
           })
         end
       end
+
+      -- if client.supports_method('textDocument/inlayHint') then
+      --   local inlay_hints_group = vim.api.nvim_create_augroup('man-toggle_inlay_hints', { clear = false })
+      --
+      --   vim.defer_fn(function()
+      --     local mode = vim.api.nvim_get_mode().mode
+      --     vim.lsp.inlay_hint.enable(bufnr, mode == 'n' or mode == 'v')
+      --   end, 500)
+      --
+      --   vim.api.nvim_create_autocmd('InsertEnter', {
+      --     group = inlay_hints_group,
+      --     desc = 'Enable inlay hints',
+      --     buffer = bufnr,
+      --     callback = function() vim.lsp.inlay_hint.enable(bufnr, false) end,
+      --   })
+      --
+      --   vim.api.nvim_create_autocmd('InsertLeave', {
+      --     group = inlay_hints_group,
+      --     desc = 'Disable inlay hints',
+      --     buffer = bufnr,
+      --     callback = function() vim.lsp.inlay_hint.enable(bufnr, true) end,
+      --   })
+      -- end
     end
 
     require('mason').setup()
