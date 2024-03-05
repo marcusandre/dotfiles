@@ -761,6 +761,7 @@ alias gl = git ll
 alias gp = git push
 alias gu = git upgrade
 alias gr = cd (git rev-parse --show-toplevel)
+alias gap = git add . -p
 
 # Keep the `open` command working
 def nuopen [arg, --raw (-r)] { if $raw { open -r $arg } else { open $arg } }
