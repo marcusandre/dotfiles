@@ -31,4 +31,4 @@ $ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 ## Contributing
 
-Even if this configuration is tailored to my needs and habits, you are welcome to contribute.
+Even if this configuration is tailored to meet my needs and habits, you are welcome to contribute.
