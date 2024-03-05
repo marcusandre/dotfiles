@@ -4,14 +4,25 @@
 
 This repository contains my Neovim setup and other configuration files.
 
+## Building Blocks
+
+- [Neovim](https://neovim.io/)
+- [Nushell](https://www.nushell.sh/)
+- [wezterm](https://wezfurlong.org/wezterm)
+- [Git](https://git-scm.com/)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [Atuin](https://github.com/atuinsh/atuinb)
+- [Mise](https://mise.jdx.dev/)
+- and more
+
 ## Installation
 
 ```
-$ brew bundle && make all
+$ brew bundle && make all # or `stow` the individual folders
 $ nvim --headless "+Lazy! sync" +qa
 ```
 
-## Keyboard
+## Keyboard (MacOS)
 
 ```sh
 $ defaults write NSGlobalDomain KeyRepeat -int 1
