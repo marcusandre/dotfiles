@@ -108,7 +108,7 @@ return {
     vim.keymap.set(
       'n',
       '<leader>fm',
-      function() builtin.find_files({ cwd = '~/Documents/Sagittarius' }) end,
+      function() builtin.find_files({ cwd = '~/src/projects/github.com/marcusandre/obsidian' }) end,
       { desc = 'Find Obsidian Documents' }
     )
   end,

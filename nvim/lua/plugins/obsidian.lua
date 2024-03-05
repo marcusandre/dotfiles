@@ -11,7 +11,7 @@ return {
     workspaces = {
       {
         name = 'work',
-        path = '~/Documents/Sagittarius',
+        path = '~/src/projects/github.com/marcusandre/obsidian',
       },
     },
   },
