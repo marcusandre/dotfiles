@@ -8,7 +8,7 @@ This repository contains my Neovim setup and other configuration files.
 
 - [Neovim](https://neovim.io/)
 - [Nushell](https://www.nushell.sh/)
-- [wezterm](https://wezfurlong.org/wezterm)
+- [WezTerm](https://wezfurlong.org/wezterm)
 - [Git](https://git-scm.com/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [Atuin](https://github.com/atuinsh/atuinb)
