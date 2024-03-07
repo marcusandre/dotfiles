@@ -34,7 +34,7 @@ return { -- LSP Configuration & Plugins
         map(
           '<leader>lv',
           function() require('telescope.builtin').lsp_definitions({ jump_type = 'vsplit' }) end,
-          '[G]oto [D]efinition (vsplit)'
+          'Definition (vsplit)'
         )
         map(
           '<leader>la',

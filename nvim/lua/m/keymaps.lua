@@ -19,8 +19,6 @@ map('n', '<leader>ol', '<Cmd>Lazy<CR>', { desc = 'Lazy' })
 map('n', '<leader>om', '<Cmd>Mason<CR>', { desc = 'Mason' })
 
 -- Diagnostic keymaps
-map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 map('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 

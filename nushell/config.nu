@@ -750,8 +750,8 @@ $env.config = {
 }
 
 # Aliases
-alias ll = ls -a
-alias la = ls -la
+alias l = ls -a
+alias ll = ls -la
 alias e = nvim
 
 alias d = git diff --stat

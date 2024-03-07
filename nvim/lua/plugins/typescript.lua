@@ -1,10 +1,7 @@
 return {
   {
     'pmizio/typescript-tools.nvim',
-    event = {
-      'BufReadPre *.ts,*.tsx,*.js,*.jsx',
-      'BufNewFile *.ts,*.tsx,*.js,*.jsx',
-    },
+    ft = { 'typescript', 'typescriptreact' },
     keys = {
       { '<leader>va', '<Cmd>TSToolsAddMissingImports<CR>', desc = 'Add Missing Imports' },
       { '<leader>vf', '<Cmd>TSToolsFileReferences<CR>', desc = 'File References' },
