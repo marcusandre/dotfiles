@@ -27,6 +27,8 @@ return {
     local lspkind = require('lspkind')
     luasnip.config.setup({})
 
+    require('luasnip.loaders.from_vscode').load()
+
     cmp.setup({
       snippet = {
         expand = function(args) luasnip.lsp_expand(args.body) end,
