@@ -4,7 +4,7 @@ lint:
 	stylua .
 
 all:
-	@stow -v etc vim
+	@stow -v etc vim ocaml
 	@mkdir -p $(HOME)/bin
 	@stow -v --target=$(HOME)/bin bin
 

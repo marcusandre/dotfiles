@@ -61,7 +61,6 @@ return {
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = 'Grep (live)' })
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Buffers' })
-    vim.keymap.set('n', '<leader>fc', builtin.colorscheme, { desc = 'Colorscheme' })
     vim.keymap.set('n', '<leader>fF', builtin.find_files, { desc = 'Files' })
     vim.keymap.set('n', '<leader>ff', builtin.git_files, { desc = 'Files (git)' })
     vim.keymap.set('n', '<leader>fg', builtin.git_status, { desc = 'Files (changed)' })
@@ -95,6 +94,13 @@ return {
         })
       end,
       { desc = 'Grep (open files)' }
+    )
+
+    vim.keymap.set(
+      'n',
+      '<leader>fc',
+      function() builtin.colorscheme({ enable_preview = true }) end,
+      { desc = 'Colorscheme' }
     )
 
     -- Shortcut for searching your neovim configuration files

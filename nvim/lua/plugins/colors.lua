@@ -11,7 +11,7 @@ return {
     },
     -- config = function(opts)
     --   require('tokyonight').setup(opts)
-    --   vim.cmd([[colorscheme tokyonight]])
+    --   vim.cmd([[colorscheme tokyonight-moon]])
     -- end,
   },
   {
@@ -36,6 +36,6 @@ return {
     'EdenEast/nightfox.nvim',
     lazy = false,
     priority = 1000,
-    config = function() vim.cmd([[colorscheme carbonfox]]) end,
+    config = function() vim.cmd([[colorscheme nightfox]]) end,
   },
 }
