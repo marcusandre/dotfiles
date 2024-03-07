@@ -1,5 +1,12 @@
 local M = {}
 
+--- Keymaps
+M.map = function(mode, lhs, rhs, opts)
+  if lhs == '' then return end
+  opts = vim.tbl_deep_extend('force', { silent = true }, opts or {})
+  vim.keymap.set(mode, lhs, rhs, opts)
+end
+
 --- Buffers
 M.open_scratch_buffer = function()
   local buf_id = vim.api.nvim_create_buf(true, true)
