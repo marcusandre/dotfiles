@@ -184,7 +184,7 @@ return { -- LSP Configuration & Plugins
       terraformls = {},
       dockerls = {},
       marksman = {},
-      ocamllsp = {},
+      -- ocamllsp = {},
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})

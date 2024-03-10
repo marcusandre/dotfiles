@@ -10,6 +10,9 @@ return {
       },
     })
 
+    -- Handling pairing characters
+    require('mini.pairs').setup()
+
     -- Configurable Lua functions to go forward/backward to a certain target.
     require('mini.bracketed').setup()
 
