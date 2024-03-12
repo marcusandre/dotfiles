@@ -4,7 +4,8 @@ lint:
 	stylua .
 
 all:
-	@stow -v etc vim ocaml
+	@stow -v etc vim
+
 	@mkdir -p $(HOME)/bin
 	@stow -v --target=$(HOME)/bin bin
 
@@ -13,6 +14,9 @@ all:
 
 	@mkdir -p $(CONFIG_PATH)/bat
 	@stow -v --target=$(CONFIG_PATH)/bat bat
+
+	@mkdir -p $(CONFIG_PATH)/fish
+	@stow -v --target=$(CONFIG_PATH)/fish fish
 
 	@mkdir -p $(CONFIG_PATH)/git
 	@stow -v --target=$(CONFIG_PATH)/git git
