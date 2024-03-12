@@ -12,7 +12,7 @@ config.line_height = 1.125
 -- Colors
 config.color_scheme = 'duskfox'
 -- config.color_scheme = 'tokyonight_moon'
--- config.color_scheme = 'Gruvbox dark, dark (base16)'
+-- config.color_scheme = 'Gruvbox dark, hard (base16)'
 -- config.color_scheme = 'Everforest Dark (Gogh)'
 
 -- UI

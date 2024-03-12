@@ -4,6 +4,7 @@
 
 [alias]
   git = "!git"
+  root = rev-parse --show-toplevel
 
   # Branch related aliases
   cleanup = "!git branch | grep -v $(git main-branch) | grep -v $(git branch --show-current) | xargs git branch -D"
