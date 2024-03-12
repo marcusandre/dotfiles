@@ -753,6 +753,7 @@ $env.config = {
 alias l = ls -a
 alias ll = ls -la
 alias e = nvim
+alias rf = rm -fr
 
 alias d = git diff --stat
 alias s = git status -s
