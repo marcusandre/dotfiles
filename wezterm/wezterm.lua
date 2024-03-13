@@ -9,8 +9,13 @@ config.term = 'wezterm'
 config.font = wezterm.font('Berkeley Mono')
 config.line_height = 1.125
 
+config.term = 'wezterm'
+config.set_environment_variables = {
+  TERMINFO_DIRS = wezterm.home_dir .. '/.terminfo',
+}
+
 -- Colors
-config.color_scheme = 'duskfox'
+config.color_scheme = 'carbonfox'
 -- config.color_scheme = 'tokyonight_moon'
 -- config.color_scheme = 'Gruvbox dark, hard (base16)'
 -- config.color_scheme = 'Everforest Dark (Gogh)'
@@ -18,7 +23,7 @@ config.color_scheme = 'duskfox'
 -- UI
 config.enable_scroll_bar = false
 
-config.hide_tab_bar_if_only_one_tab = false
+config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 
@@ -30,23 +35,24 @@ config.window_padding = {
 }
 
 -- Keymaps
-local act = wezterm.action
+local action = wezterm.action
 
 config.keys = {
   { mods = 'ALT', key = 'Enter', action = 'DisableDefaultAssignment' },
-  { mods = 'ALT', key = '\\', action = act.ShowTabNavigator },
-  { mods = 'CMD', key = ',', action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }) },
-  { mods = 'CMD', key = '.', action = act.SplitVertical({ domain = 'CurrentPaneDomain' }) },
-  { mods = 'CMD', key = 'DownArrow', action = act.AdjustPaneSize({ 'Down', 5 }) },
-  { mods = 'CMD', key = 'LeftArrow', action = act.AdjustPaneSize({ 'Left', 5 }) },
-  { mods = 'CMD', key = 'RightArrow', action = act.AdjustPaneSize({ 'Right', 5 }) },
-  { mods = 'CMD', key = 'UpArrow', action = act.AdjustPaneSize({ 'Up', 5 }) },
+  { mods = 'ALT', key = '\\', action = action.ShowTabNavigator },
+  { mods = 'CMD', key = ',', action = action.SplitHorizontal({ domain = 'CurrentPaneDomain' }) },
+  { mods = 'CMD', key = '.', action = action.SplitVertical({ domain = 'CurrentPaneDomain' }) },
+  { mods = 'CMD', key = 'DownArrow', action = action.AdjustPaneSize({ 'Down', 5 }) },
+  { mods = 'CMD', key = 'LeftArrow', action = action.AdjustPaneSize({ 'Left', 5 }) },
+  { mods = 'CMD', key = 'RightArrow', action = action.AdjustPaneSize({ 'Right', 5 }) },
+  { mods = 'CMD', key = 'UpArrow', action = action.AdjustPaneSize({ 'Up', 5 }) },
   { mods = 'CMD', key = '\\', action = wezterm.action.ToggleFullScreen },
-  { mods = 'CMD', key = 'h', action = act.ActivatePaneDirection('Left') },
-  { mods = 'CMD', key = 'j', action = act.ActivatePaneDirection('Down') },
-  { mods = 'CMD', key = 'k', action = act.ActivatePaneDirection('Up') },
-  { mods = 'CMD', key = 'l', action = act.ActivatePaneDirection('Right') },
+  { mods = 'CMD', key = 'h', action = action.ActivatePaneDirection('Left') },
+  { mods = 'CMD', key = 'j', action = action.ActivatePaneDirection('Down') },
+  { mods = 'CMD', key = 'k', action = action.ActivatePaneDirection('Up') },
+  { mods = 'CMD', key = 'l', action = action.ActivatePaneDirection('Right') },
   { mods = 'CMD', key = 'm', action = 'DisableDefaultAssignment' },
+  { mods = 'CMD', key = ']', action = 'ActivateCopyMode' },
 }
 
 return config

@@ -5,7 +5,6 @@ set -x LC_ALL en_US.UTF-8
 set -x GIT_EDITOR "nvim"
 set -x EDITOR "nvim"
 set -x VISUAL "nvim"
-set -x MANPAGER "nvim -c 'set ft=man' -"
 
 set -x GOPATH $HOME
 
@@ -43,8 +42,9 @@ if type -q mise
     mise activate fish | source
 end
 
-alias l="ls -a"
-alias ll="ls -la"
+alias ls="eza"
+alias l="ls -ah"
+alias ll="ls -lah"
 alias cat='bat --paging=never'
 alias rf="rm -fr"
 alias e="nvim"
@@ -57,6 +57,21 @@ alias gp="git push"
 alias gu="git upgrade"
 alias gr="cd (git rev-parse --show-toplevel)"
 alias gap="git add . -p"
+
+function less
+    command less -i -M -R -S -X -F $argv
+end
+
+function mkdir
+    command mkdir -p $argv
+end
+
+function md -d "Create a new directory and cd into it"
+    mkdir -p -- $argv
+    if test $status = 0
+        cd $argv
+    end
+end
 
 function ef --description "Skim through files and open them in nvim"
     rg --files | sk --preview="bat {} --color=always" | xargs -r nvim

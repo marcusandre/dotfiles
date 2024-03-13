@@ -1,3 +1,4 @@
+# vi: ft=gitconfig
 [user]
   name = Marcus André
   email = hello+github@marcusandre.de
@@ -8,7 +9,9 @@
 
   # Branch related aliases
   cleanup = "!git branch | grep -v $(git main-branch) | grep -v $(git branch --show-current) | xargs git branch -D"
-  co = checkout
+  # co = checkout
+  co = "!echo Use git switch and git restore"
+
 
   # Rebase related aliases
   rb = "!sh -c \"git rebase -i HEAD~$1\" -"
@@ -32,6 +35,7 @@
   publish = push origin HEAD --force-with-lease
   squash = "!git rebase -v -i $(git main-branch)"
   todo = git grep -niE '(FIXME|TODO)'
+  fpp = "!git status -s | fpp"
 
   # GitHub
   hub = !hub
