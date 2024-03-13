@@ -11,7 +11,7 @@ return {
     })
 
     -- Autohighlight word under cursor
-    -- require('mini.cursorword').setup()
+    require('mini.cursorword').setup()
 
     -- Handling pairing characters
     require('mini.pairs').setup()

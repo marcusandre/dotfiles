@@ -199,21 +199,21 @@ return { -- LSP Configuration & Plugins
     })
 
     local on_attach = function(client, bufnr)
-      if client.supports_method('textDocument/documentHighlight') then
-        vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-          buffer = bufnr,
-          callback = vim.lsp.buf.document_highlight,
-        })
-      end
-
-      if client.supports_method('textDocument/clearReferences') then
-        if vim.lsp.buf.clear_references then
-          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-            buffer = bufnr,
-            callback = vim.lsp.buf.clear_references,
-          })
-        end
-      end
+      -- if client.supports_method('textDocument/documentHighlight') then
+      --   vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+      --     buffer = bufnr,
+      --     callback = vim.lsp.buf.document_highlight,
+      --   })
+      -- end
+      --
+      -- if client.supports_method('textDocument/clearReferences') then
+      --   if vim.lsp.buf.clear_references then
+      --     vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+      --       buffer = bufnr,
+      --       callback = vim.lsp.buf.clear_references,
+      --     })
+      --   end
+      -- end
 
       -- if client.supports_method('textDocument/inlayHint') then
       --   local inlay_hints_group = vim.api.nvim_create_augroup('man-toggle_inlay_hints', { clear = false })
