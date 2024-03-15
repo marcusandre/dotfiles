@@ -24,6 +24,7 @@ map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]ui
 
 -- Terminal
 map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+map('n', '<leader>tt', '<Cmd>vertical terminal<CR>', { desc = 'Open terminal to the right' })
 
 -- Panes
 map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })

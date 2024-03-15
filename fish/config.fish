@@ -73,10 +73,10 @@ function md -d "Create a new directory and cd into it"
     end
 end
 
-function ef --description "Skim through files and open them in nvim"
+function ef -d "Skim through files and open them in nvim"
     rg --files | sk --preview="bat {} --color=always" | xargs -r nvim
 end
 
-function eg --description "Skim through lines and open them in nvim"
+function eg -d "Skim through lines and open them in nvim"
     sk -m --ansi -i -c 'rg --line-number  "{}"'| awk -F':' '{print "+"$2, $1}' | xargs -r nvim
 end

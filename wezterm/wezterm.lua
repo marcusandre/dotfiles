@@ -15,7 +15,7 @@ config.set_environment_variables = {
 }
 
 -- Colors
-config.color_scheme = 'carbonfox'
+config.color_scheme = 'duskfox'
 -- config.color_scheme = 'tokyonight_moon'
 -- config.color_scheme = 'Gruvbox dark, hard (base16)'
 -- config.color_scheme = 'Everforest Dark (Gogh)'

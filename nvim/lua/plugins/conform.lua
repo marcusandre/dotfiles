@@ -11,10 +11,11 @@ return {
       lsp_fallback = true,
     },
     formatters_by_ft = {
-      lua = { 'stylua' },
       go = { 'goimports', 'gofumpt' },
-      terraform = { 'terraform_fmt' },
+      json = { 'prettier' },
+      lua = { 'stylua' },
       markdown = { 'prettier' },
+      terraform = { 'terraform_fmt' },
     },
     log_level = vim.log.levels.DEBUG,
   },

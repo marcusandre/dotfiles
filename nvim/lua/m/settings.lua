@@ -52,3 +52,9 @@ vim.opt.scrolloff = 10
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
+
+-- Don't show numbers inside the terminal
+vim.cmd('autocmd TermOpen * setlocal norelativenumber nonumber')
+
+-- Start terminal in insert mode
+vim.cmd('autocmd TermOpen * startinsert')
