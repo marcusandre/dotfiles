@@ -27,7 +27,7 @@ if test -d $HOME/.cargo/bin
 end
 
 if type -q atuin
-    atuin init fish | source
+    atuin init fish --disable-up-arrow | source
 end
 
 if type -q zoxide
@@ -71,6 +71,10 @@ function md -d "Create a new directory and cd into it"
     if test $status = 0
         cd $argv
     end
+end
+
+function t -d "List directory as tree with n levels"
+    eza --tree --level=$argv
 end
 
 function ef -d "Skim through files and open them in nvim"
