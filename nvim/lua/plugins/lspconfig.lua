@@ -20,8 +20,10 @@ return { -- LSP Configuration & Plugins
           vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
+        map('<leader>le', vim.diagnostic.open_float, 'Error Message')
         map('<leader>li', require('telescope.builtin').lsp_implementations, 'Implementation')
         map('<leader>lk', vim.lsp.buf.signature_help, 'Signature Documentation')
+        map('<leader>lq', vim.diagnostic.setloclist, 'Populate Quickfix')
         map('<leader>lr', vim.lsp.buf.rename, 'Rename')
         map('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
         map('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')

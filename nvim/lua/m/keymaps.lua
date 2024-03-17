@@ -22,10 +22,6 @@ map('n', '<leader>c', utils.toggle_quickfix, { desc = 'Quickfix' })
 map('n', '<leader>ol', '<Cmd>Lazy<CR>', { desc = 'Lazy' })
 map('n', '<leader>om', '<Cmd>Mason<CR>', { desc = 'Mason' })
 
--- Diagnostic keymaps
-map('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-
 -- Terminal
 map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 map('n', '<leader>tt', '<Cmd>vertical terminal<CR>', { desc = 'Open terminal to the right' })
