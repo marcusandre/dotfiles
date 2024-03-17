@@ -194,6 +194,7 @@ return { -- LSP Configuration & Plugins
       'goimports',
       'hadolint',
       'prettier',
+      'shfmt',
       'stylua',
       'tflint',
     })

@@ -46,6 +46,7 @@ M.delete_other_buffers = function()
   for _, buf_id in ipairs(buf_ids) do
     if buf_id ~= current_buf_id then M.delete_buffer(buf_id) end
   end
+  vim.cmd('only')
 end
 
 --- Quickfix

@@ -7,6 +7,10 @@ map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 map('n', '<leader><leader>', '<Cmd>:b#<CR>', { desc = 'Alternate Buffer' })
 map('n', 'n', 'nzz')
 
+-- Stay in indent mode
+map('v', '<', '<gv')
+map('v', '>', '>gv')
+
 -- Copy/paste with system clipboard
 map({ 'n', 'x' }, 'gy', '"+y', { desc = 'Copy to system clipboard' })
 map('n', 'gp', '"+p', { desc = 'Paste from system clipboard' })
