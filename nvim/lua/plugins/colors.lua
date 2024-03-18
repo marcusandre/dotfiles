@@ -20,10 +20,10 @@ return {
     priority = 1000,
     config = function()
       require('gruvbox').setup({
-        contrast = 'hard',
+        -- contrast = 'hard',
         overrides = {},
       })
-      -- vim.cmd([[colorscheme gruvbox]])
+      vim.cmd([[colorscheme gruvbox]])
     end,
   },
   {
@@ -36,6 +36,6 @@ return {
     'EdenEast/nightfox.nvim',
     lazy = false,
     priority = 1000,
-    config = function() vim.cmd([[colorscheme duskfox]]) end,
+    -- config = function() vim.cmd([[colorscheme duskfox]]) end,
   },
 }
