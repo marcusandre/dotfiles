@@ -42,9 +42,17 @@ if type -q mise
     mise activate fish | source
 end
 
-alias ls="eza"
-alias l="ls -ah"
-alias ll="ls -lah"
+if command -v eza > /dev/null
+    alias l='eza'
+    alias ls='eza'
+    alias ll='eza -l'
+    alias lll='eza -la'
+else
+    alias l='ls'
+    alias ll='ls -l'
+    alias lll='ls -la'
+end
+
 alias cat='bat --paging=never'
 alias rf="rm -fr"
 alias e="nvim"
