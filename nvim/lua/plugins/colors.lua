@@ -27,9 +27,9 @@ return {
     -- config = function() vim.cmd([[colorscheme everforest]]) end,
   },
   {
-    'EdenEast/nightfox.nvim',
+    'mkblast/nightfox.nvim',
     lazy = false,
     priority = 1000,
-    config = function() vim.cmd([[colorscheme carbonfox]]) end,
+    config = function() vim.cmd([[colorscheme gruvfox]]) end,
   },
 }
