@@ -47,12 +47,13 @@ config.keys = {
   { mods = 'CMD', key = 'RightArrow', action = action.AdjustPaneSize({ 'Right', 5 }) },
   { mods = 'CMD', key = 'UpArrow', action = action.AdjustPaneSize({ 'Up', 5 }) },
   { mods = 'CMD', key = '\\', action = wezterm.action.ToggleFullScreen },
+  { mods = 'CMD', key = 'e', action = 'ActivateCopyMode' },
   { mods = 'CMD', key = 'h', action = action.ActivatePaneDirection('Left') },
   { mods = 'CMD', key = 'j', action = action.ActivatePaneDirection('Down') },
   { mods = 'CMD', key = 'k', action = action.ActivatePaneDirection('Up') },
   { mods = 'CMD', key = 'l', action = action.ActivatePaneDirection('Right') },
   { mods = 'CMD', key = 'm', action = 'DisableDefaultAssignment' },
-  { mods = 'CMD', key = ']', action = 'ActivateCopyMode' },
+  { mods = 'CMD', key = 'w', action = action.CloseCurrentPane({ confirm = true }) },
 }
 
 return config
