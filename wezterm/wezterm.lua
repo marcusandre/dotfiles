@@ -7,7 +7,7 @@ config.term = 'wezterm'
 
 -- Text
 config.font = wezterm.font('Berkeley Mono')
-config.line_height = 1.125
+config.line_height = 1.1
 
 config.term = 'wezterm'
 config.set_environment_variables = {
@@ -22,8 +22,6 @@ config.color_scheme = 'carbonfox'
 
 -- UI
 config.enable_scroll_bar = false
-
-config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 
