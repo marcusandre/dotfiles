@@ -52,7 +52,6 @@ return {
     MiniStarter.setup({
       silent = true,
       items = {
-        MiniStarter.sections.builtin_actions(),
         MiniStarter.sections.recent_files(5, true, false),
         MiniStarter.sections.recent_files(5, false, false),
       },

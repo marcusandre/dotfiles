@@ -69,7 +69,6 @@ return {
     vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = 'Files (old)' })
     vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = 'Resume' })
     vim.keymap.set('n', '<leader>ft', builtin.builtin, { desc = 'Builtins' })
-    vim.keymap.set('n', '<leader>ld', builtin.diagnostics, { desc = 'Diagnostics' })
     vim.keymap.set('n', 'gw', builtin.grep_string, { desc = 'Grep (string)' })
 
     vim.keymap.set(

@@ -6,6 +6,7 @@ set -x LC_ALL en_US.UTF-8
 set -x GIT_EDITOR "nvim"
 set -x EDITOR "nvim"
 set -x VISUAL "nvim"
+set -x PAGER "moar"
 
 set -x GOPATH $HOME
 

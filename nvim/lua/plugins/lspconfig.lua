@@ -13,31 +13,28 @@ return { -- LSP Configuration & Plugins
     { 'j-hui/fidget.nvim', opts = {} },
   },
   config = function()
+    local builtin = require('telescope.builtin')
+
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('man-lsp-attach', { clear = true }),
       callback = function(event)
-        local map = function(keys, func, desc)
-          vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-        end
+        local map = function(keys, func, desc) vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc }) end
 
+        map('<leader>lS', builtin.lsp_dynamic_workspace_symbols, 'Workspace Symbols')
+        map('<leader>ld', builtin.diagnostics, 'Diagnostics')
         map('<leader>le', vim.diagnostic.open_float, 'Error Message')
-        map('<leader>li', require('telescope.builtin').lsp_implementations, 'Implementation')
+        map('<leader>li', builtin.lsp_implementations, 'Implementation')
         map('<leader>lk', vim.lsp.buf.signature_help, 'Signature Documentation')
         map('<leader>lq', vim.diagnostic.setloclist, 'Populate Quickfix')
         map('<leader>lr', vim.lsp.buf.rename, 'Rename')
-        map('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
-        map('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
-        map('<leader>lt', require('telescope.builtin').lsp_type_definitions, 'Type Definition')
+        map('<leader>ls', builtin.lsp_document_symbols, 'Document Symbols')
+        map('<leader>lt', builtin.lsp_type_definitions, 'Type Definition')
+        map('<leader>lv', function() builtin.lsp_definitions({ jump_type = 'vsplit' }) end, 'Definition (vsplit)')
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
         map('gD', vim.lsp.buf.declaration, 'Declaration')
-        map('gd', require('telescope.builtin').lsp_definitions, 'Definition')
-        map('gr', require('telescope.builtin').lsp_references, 'References')
+        map('gd', builtin.lsp_definitions, 'Definition')
+        map('gr', builtin.lsp_references, 'References')
 
-        map(
-          '<leader>lv',
-          function() require('telescope.builtin').lsp_definitions({ jump_type = 'vsplit' }) end,
-          'Definition (vsplit)'
-        )
         map(
           '<leader>la',
           function() vim.lsp.buf.code_action({ context = { only = { 'quickfix', 'refactor', 'source' } } }) end,
