@@ -13,9 +13,6 @@ return {
     -- Autohighlight word under cursor
     require('mini.cursorword').setup()
 
-    -- Handling pairing characters
-    require('mini.pairs').setup()
-
     -- Configurable Lua functions to go forward/backward to a certain target.
     require('mini.bracketed').setup()
 
@@ -31,6 +28,9 @@ return {
 
     -- Move any selection in any direction
     require('mini.move').setup()
+
+    -- Handling pairing characters
+    require('mini.pairs').setup()
 
     -- Split and join arguments
     require('mini.splitjoin').setup()

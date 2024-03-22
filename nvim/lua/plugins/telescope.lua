@@ -102,11 +102,19 @@ return {
       { desc = 'Colorscheme' }
     )
 
+    -- Find all files that differ from `origin/main`
+    vim.keymap.set(
+      'n',
+      '<leader>fG',
+      function() require('m.utils').find_changed_files(themes.get_dropdown()) end,
+      { desc = 'Files (differ)' }
+    )
+
     -- Shortcut for searching your neovim configuration files
     vim.keymap.set(
       'n',
       '<leader>fn',
-      function() builtin.find_files({ cwd = '~/.dotfiles/nvim' }) end,
+      function() builtin.find_files({ cwd = '~/.dotfiles' }) end,
       { desc = 'Configuration' }
     )
 

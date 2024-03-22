@@ -49,6 +49,27 @@ M.delete_other_buffers = function()
   vim.cmd('only')
 end
 
+-- Telescope
+M.find_changed_files = function(opts)
+  local conf = require('telescope.config').values
+  local finders = require('telescope.finders')
+  local pickers = require('telescope.pickers')
+
+  opts = opts or {}
+  pickers
+    .new(opts, {
+      prompt_title = 'Git Diff (origin/main)',
+      finder = finders.new_oneshot_job({
+        'git',
+        'diff',
+        'origin/main',
+        '--name-only',
+      }, opts),
+      sorter = conf.generic_sorter(),
+    })
+    :find()
+end
+
 --- Quickfix
 M.toggle_quickfix = function()
   local qf_exists = false
