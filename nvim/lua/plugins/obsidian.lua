@@ -8,6 +8,9 @@ return {
     'nvim-telescope/telescope.nvim',
   },
   opts = {
+    ui = {
+      enable = false,
+    },
     workspaces = {
       {
         name = 'work',
