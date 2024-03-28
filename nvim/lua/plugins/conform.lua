@@ -21,5 +21,5 @@ return {
     },
     log_level = vim.log.levels.DEBUG,
   },
-  init = function() vim.o.formatexpr = "v:lua.require'conform'.formatexpr()" end,
+  -- init = function() vim.o.formatexpr = "v:lua.require'conform'.formatexpr()" end,
 }
