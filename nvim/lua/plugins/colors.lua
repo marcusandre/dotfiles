@@ -3,7 +3,7 @@ return {
     'EdenEast/nightfox.nvim',
     lazy = false,
     priority = 1000,
-    config = function() vim.cmd([[colorscheme carbonfox]]) end,
+    -- config = function() vim.cmd([[colorscheme carbonfox]]) end,
   },
   {
     'folke/tokyonight.nvim',
@@ -15,7 +15,7 @@ return {
     'olivercederborg/poimandres.nvim',
     lazy = false,
     priority = 1000,
-    -- config = function() vim.cmd([[colorscheme tokyonight-night]]) end,
+    config = function() vim.cmd([[colorscheme poimandres]]) end,
   },
   {
     'ellisonleao/gruvbox.nvim',

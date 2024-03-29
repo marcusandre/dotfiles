@@ -24,7 +24,18 @@ return {
   {
     'andythigpen/nvim-coverage',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function() require('coverage').setup() end,
+    config = function()
+      require('coverage').setup({
+        signs = {
+          covered = {
+            text = ' ▒',
+          },
+          uncovered = {
+            text = ' ▒',
+          },
+        },
+      })
+    end,
   },
   {
     'tpope/vim-projectionist',
