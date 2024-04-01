@@ -55,6 +55,7 @@ return {
         'vimdoc',
         'xml',
         'yaml',
+        'zig',
       }
 
       ---@diagnostic disable-next-line: missing-fields

@@ -183,6 +183,7 @@ return { -- LSP Configuration & Plugins
         end,
       },
 
+      zls = {},
       terraformls = {},
       dockerls = {},
       marksman = {},
