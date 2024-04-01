@@ -1,5 +1,5 @@
 set -U fish_greeting
-set -g fish_key_bindings fish_vi_key_bindings
+# set -g fish_key_bindings fish_vi_key_bindings
 
 set -x LC_ALL en_US.UTF-8
 

@@ -7,6 +7,7 @@ config.term = 'wezterm'
 
 -- Text
 -- config.font = wezterm.font('Berkeley Mono')
+-- config.font = wezterm.font('JetBrains Mono')
 config.font = wezterm.font('Input Mono Narrow')
 config.font_size = 12
 config.line_height = 1.125
