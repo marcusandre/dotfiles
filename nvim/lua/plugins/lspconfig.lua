@@ -6,6 +6,9 @@ return { -- LSP Configuration & Plugins
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
+    -- Lua
+    { 'folke/neodev.nvim', opts = {} },
+
     -- Depend on Telescope for keybindings
     'nvim-telescope/telescope.nvim',
 

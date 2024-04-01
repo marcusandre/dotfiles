@@ -1,4 +1,4 @@
-theme = "tokyonight_storm"
+theme = "poimandres"
 
 [editor]
 bufferline = "always"
@@ -14,7 +14,7 @@ render = true
 
 [editor.lsp]
 display-messages = true
-# display-inlay-hints = true
+display-inlay-hints = true
 
 [editor.file-picker]
 hidden = true

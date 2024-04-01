@@ -12,12 +12,19 @@ return {
     },
     formatters_by_ft = {
       go = { 'goimports', 'gofumpt' },
-      json = { 'prettier' },
+      json = { 'jq' },
       lua = { 'stylua' },
       markdown = { 'prettier' },
       sh = { 'shfmt' },
       terraform = { 'terraform_fmt' },
       toml = { 'prettier' },
+      gleam = { 'gleam' },
+    },
+    formatters = {
+      gleam = {
+        command = 'gleam',
+        args = { 'format', '--stdin' },
+      },
     },
     log_level = vim.log.levels.DEBUG,
   },

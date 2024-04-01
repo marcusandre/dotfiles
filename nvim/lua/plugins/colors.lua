@@ -15,7 +15,13 @@ return {
     'olivercederborg/poimandres.nvim',
     lazy = false,
     priority = 1000,
-    config = function() vim.cmd([[colorscheme poimandres]]) end,
+    -- config = function() vim.cmd([[colorscheme poimandres]]) end,
+  },
+  {
+    'tomasr/molokai',
+    lazy = false,
+    priority = 1000,
+    config = function() vim.cmd([[colorscheme molokai]]) end,
   },
   {
     'ellisonleao/gruvbox.nvim',

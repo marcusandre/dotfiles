@@ -15,12 +15,20 @@ vim.opt.showmode = false
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- Modern filetype detection
+vim.g.do_filetype_lua = 1
+
 -- Save undo history
 vim.opt.undofile = true
 
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+-- Line wraps
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.showbreak = '↪'
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'

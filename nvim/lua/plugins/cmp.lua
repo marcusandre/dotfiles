@@ -13,6 +13,7 @@ return {
 
     -- Completion capabilities.
     'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
 
     -- Pre-configured snippets
@@ -74,7 +75,7 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
-        { name = 'buffer', keyword_length = 4 },
+        { name = 'buffer', keyword_length = 3 },
       },
     })
   end,
