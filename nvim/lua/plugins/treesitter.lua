@@ -49,6 +49,7 @@ return {
         'sql',
         'ssh_config',
         'terraform',
+        'toml',
         'tsx',
         'typescript',
         'vim',

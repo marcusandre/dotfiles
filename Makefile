@@ -24,6 +24,9 @@ all:
 	@mkdir -p $(CONFIG_PATH)/mise
 	@stow -v --target=$(CONFIG_PATH)/mise mise
 
+	@mkdir -p $(CONFIG_PATH)/jj
+	@stow -v --target=$(CONFIG_PATH)/jj jj
+
 	@mkdir -p $(CONFIG_PATH)/helix
 	@stow -v --target=$(CONFIG_PATH)/helix helix
 
