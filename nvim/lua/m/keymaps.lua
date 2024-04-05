@@ -18,6 +18,9 @@ map('n', 'gp', '"+p', { desc = 'Paste from system clipboard' })
 -- Quickfix
 map('n', '<leader>c', utils.toggle_quickfix, { desc = 'Quickfix' })
 
+-- Toggles
+map('n', '\\w', '<Cmd>setlocal wrap! wrap?<CR>', { desc = 'Toggle: Wrap' })
+
 -- Other
 map('n', '<leader>ol', '<Cmd>Lazy<CR>', { desc = 'Lazy' })
 map('n', '<leader>om', '<Cmd>Mason<CR>', { desc = 'Mason' })

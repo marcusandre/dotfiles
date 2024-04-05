@@ -1,4 +1,4 @@
-theme = "poimandres"
+theme = "molokai"
 
 [editor]
 bufferline = "always"

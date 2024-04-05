@@ -33,6 +33,9 @@ vim.opt.showbreak = '↪'
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 
+-- Disable intro message
+vim.opt.shortmess = 'I'
+
 -- Decrease update time
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300

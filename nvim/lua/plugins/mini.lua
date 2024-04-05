@@ -39,24 +39,24 @@ return {
     require('mini.surround').setup()
 
     -- Simple and easy starter.
-    local MiniStarter = require('mini.starter')
-
-    local header = function()
-      local hour = tonumber(vim.fn.strftime('%H'))
-      local part_id = math.floor((hour + 4) / 8) + 1
-      local day_part = ({ 'evening', 'morning', 'afternoon', 'evening' })[part_id]
-
-      return ('Good %s!'):format(day_part)
-    end
-
-    MiniStarter.setup({
-      silent = true,
-      items = {
-        MiniStarter.sections.recent_files(5, true, false),
-        MiniStarter.sections.recent_files(5, false, false),
-      },
-      header = header,
-    })
+    -- local MiniStarter = require('mini.starter')
+    --
+    -- local header = function()
+    --   local hour = tonumber(vim.fn.strftime('%H'))
+    --   local part_id = math.floor((hour + 4) / 8) + 1
+    --   local day_part = ({ 'evening', 'morning', 'afternoon', 'evening' })[part_id]
+    --
+    --   return ('Good %s!'):format(day_part)
+    -- end
+    --
+    -- MiniStarter.setup({
+    --   silent = true,
+    --   items = {
+    --     MiniStarter.sections.recent_files(5, true, false),
+    --     MiniStarter.sections.recent_files(5, false, false),
+    --   },
+    --   header = header,
+    -- })
 
     -- Simple and easy statusline.
     require('mini.statusline').setup()
