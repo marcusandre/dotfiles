@@ -52,12 +52,10 @@ end
 if command -v eza > /dev/null
     alias l='eza'
     alias ls='eza'
-    alias ll='eza -l'
-    alias lll='eza -la'
+    alias ll='eza -la'
 else
     alias l='ls'
-    alias ll='ls -l'
-    alias lll='ls -la'
+    alias lll='ls -l'
 end
 
 alias cat='bat --paging=never'
