@@ -14,7 +14,9 @@ return {
       { 'nvim-tree/nvim-web-devicons' },
     },
     config = function()
+      local utils = require('m.utils')
       local themes = require('telescope.themes')
+      local actions = require('telescope.actions')
 
       require('telescope').setup({
         defaults = {
@@ -27,6 +29,11 @@ return {
             theme = 'dropdown',
             ignore_current_buffer = true,
             sort_mru = true,
+            mappings = {
+              i = {
+                ['<C-d>'] = actions.delete_buffer + actions.move_to_top,
+              },
+            },
           },
           lsp_definitions = { show_line = false },
           lsp_references = { show_line = false },
@@ -62,11 +69,18 @@ return {
         'n',
         '<leader>ff',
         function()
-          builtin.git_files({
+          utils.project_files({
             show_untracked = true,
           })
         end,
         { desc = 'Files (git)' }
+      )
+
+      vim.keymap.set(
+        'n',
+        '<leader>fd',
+        function() builtin.find_files({ cwd = vim.fn.expand('%:p:h') }) end,
+        { desc = 'Files (directory)' }
       )
 
       vim.keymap.set(
