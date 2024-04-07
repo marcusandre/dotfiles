@@ -28,30 +28,16 @@ return {
             ignore_current_buffer = true,
             sort_mru = true,
           },
-          lsp_definitions = {
-            show_line = false,
-          },
-          lsp_references = {
-            show_line = false,
-          },
-          lsp_implementations = {
-            show_line = false,
-          },
-          lsp_type_definitions = {
-            show_line = false,
-          },
-          lsp_document_symbols = {
-            fname_width = 0,
-          },
-          lsp_dynamic_workspace_symbols = {
-            fname_width = 0,
-          },
-          git_status = {
-            theme = 'dropdown',
-          },
+          lsp_definitions = { show_line = false },
+          lsp_references = { show_line = false },
+          lsp_implementations = { show_line = false },
+          lsp_type_definitions = { show_line = false },
+          lsp_document_symbols = { fname_width = 0 },
+          lsp_dynamic_workspace_symbols = { fname_width = 0 },
+          git_status = { theme = 'dropdown' },
         },
         extensions = {
-          ['ui-select'] = { themes.get_dropdown() },
+          ['ui-select'] = { themes.get_cursor() },
         },
       })
 
@@ -61,9 +47,9 @@ return {
 
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = 'Grep (live)' })
+      vim.keymap.set('n', '<leader>:', builtin.commands, { desc = 'Commands' })
       vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Buffers' })
       vim.keymap.set('n', '<leader>fF', builtin.find_files, { desc = 'Files' })
-      vim.keymap.set('n', '<leader>ff', builtin.git_files, { desc = 'Files (git)' })
       vim.keymap.set('n', '<leader>fg', builtin.git_status, { desc = 'Files (changed)' })
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help' })
       vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Keymaps' })
@@ -74,14 +60,25 @@ return {
 
       vim.keymap.set(
         'n',
+        '<leader>ff',
+        function()
+          builtin.git_files({
+            show_untracked = true,
+          })
+        end,
+        { desc = 'Files (git)' }
+      )
+
+      vim.keymap.set(
+        'n',
         ',',
         function()
           builtin.current_buffer_fuzzy_find(themes.get_dropdown({
-            winblend = 10,
+            winblend = 15,
             previewer = false,
           }))
         end,
-        { desc = '[/] Fuzzily search in current buffer' }
+        { desc = 'Grep (buffer)' }
       )
 
       vim.keymap.set(
@@ -111,7 +108,7 @@ return {
         { desc = 'Files (differ)' }
       )
 
-      -- Shortcut for searching your neovim configuration files
+      -- Find dotfiles
       vim.keymap.set(
         'n',
         '<leader>fn',
@@ -119,7 +116,7 @@ return {
         { desc = 'Configuration' }
       )
 
-      -- Shortcut for searching my Obsidian vault
+      -- Find notes
       vim.keymap.set(
         'n',
         '<leader>fm',
