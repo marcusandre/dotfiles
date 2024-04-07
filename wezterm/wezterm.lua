@@ -19,11 +19,9 @@ config.set_environment_variables = {
 
 -- Colors
 -- config.color_scheme = 'carbonfox'
--- config.color_scheme = 'tokyonight_night'
--- config.color_scheme = 'Gruvbox dark, hard (base16)'
--- config.color_scheme = 'Everforest Dark (Gogh)'
+config.color_scheme = 'tokyonight_night'
 -- config.color_scheme = 'Poimandres'
-config.color_scheme = 'Molokai (Gogh)'
+-- config.color_scheme = 'Molokai (Gogh)'
 
 -- UI
 config.enable_scroll_bar = false
