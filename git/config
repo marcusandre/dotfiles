@@ -49,6 +49,7 @@
 
 [pull]
   rebase = true
+  twohead = ort
 
 [diff]
   algorithm = histogram
