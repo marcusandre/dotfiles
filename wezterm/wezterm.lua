@@ -6,8 +6,8 @@ local config = wezterm.config_builder()
 config.term = 'wezterm'
 
 -- Text
-config.font = wezterm.font('Berkeley Mono')
 -- config.font = wezterm.font('JetBrains Mono')
+config.font = wezterm.font('Berkeley Mono')
 -- config.font = wezterm.font('Input Mono Narrow')
 config.font_size = 12
 config.line_height = 1.125
@@ -18,8 +18,8 @@ config.set_environment_variables = {
 }
 
 -- Colors
-config.color_scheme = 'nightfox'
--- config.color_scheme = 'tokyonight_night'
+-- config.color_scheme = 'carbonfox'
+config.color_scheme = 'tokyonight_night'
 -- config.color_scheme = 'Poimandres'
 -- config.color_scheme = 'Molokai (Gogh)'
 

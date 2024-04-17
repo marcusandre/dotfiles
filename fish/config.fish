@@ -28,6 +28,10 @@ if test -d $HOME/.cargo/bin
     set -x PATH $PATH $HOME/.cargo/bin
 end
 
+if type -q fzf
+    fzf --fish | source
+end
+
 if type -q atuin
     atuin init fish --disable-up-arrow | source
 end
@@ -90,8 +94,8 @@ function md -d "Create a new directory and cd into it"
     end
 end
 
-function t -d "List directory as tree with n levels"
-    eza --tree --level=$argv
+function t -d "List directory recursively as tree"
+    eza --tree
 end
 
 function ef -d "Skim through files and open them in nvim"

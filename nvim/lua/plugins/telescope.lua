@@ -119,7 +119,7 @@ return {
         'n',
         '<leader>fG',
         function() require('m.utils').find_changed_files(themes.get_dropdown()) end,
-        { desc = 'Files (differ)' }
+        { desc = 'Files (different)' }
       )
 
       -- Find dotfiles
