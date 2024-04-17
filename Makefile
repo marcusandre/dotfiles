@@ -42,7 +42,7 @@ all:
 	@mkdir -p $(CONFIG_PATH)/wezterm
 	@stow -v --target=$(CONFIG_PATH)/wezterm wezterm
 
-	@mkdir -p $(CONFIG_PATH)/wezterm
-	@stow -v --target=$(CONFIG_PATH)/wezterm wezterm
+	@mkdir -p $(CONFIG_PATH)/zed
+	@stow -v --target=$(CONFIG_PATH)/zed zed
 
 .PHONY: all lint

@@ -1,0 +1,66 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+	"theme": "Atelier Sulphurpool Light",
+	"vim_mode": true,
+	"buffer_font_family": "JetBrains Mono",
+	"buffer_font_size": 13,
+	"base_keymap": "VSCode",
+	"format_on_save": "on",
+	"cursor_blink": false,
+	"show_whitespaces": "all",
+	"terminal": {
+		"dock": "bottom",
+		"blinking": "on"
+	},
+	"project_panel": { "dock": "left" },
+	"soft_wrap": "editor_width",
+	"scrollbar": { "show": "always" },
+	"inlay_hints": { "enabled": true },
+	"languages": {
+		"TypeScript": {
+			"code_actions_on_format": { "source.fixAll.eslint": true }
+		},
+		"TSX": {
+			"code_actions_on_format": { "source.fixAll.eslint": true }
+		}
+	},
+	"lsp": {
+		"rust_analyzer": {
+			"initialization_options": {
+				"checkOnSave": {
+					"command": "clippy"
+				},
+				"inlayHints": {
+					"maxLength": null,
+					"lifetimeElisionHints": {
+						"useParameterNames": true,
+						"enable": "skip_trivial"
+					},
+					"closureReturnTypeHints": {
+						"enable": "always"
+					}
+				}
+			}
+		},
+		"gopls": {
+			"initialization_options": {
+				"hints": {
+					"assignVariableTypes": true,
+					"compositeLiteralFields": true,
+					"compositeLiteralTypes": true,
+					"constantValues": true,
+					"functionTypeParameters": true,
+					"parameterNames": true,
+					"rangeVariableTypes": true
+				}
+			}
+		}
+	}
+}
