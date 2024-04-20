@@ -11,6 +11,32 @@ end
 
 M.toggle_inlay_hints = function() vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled()) end
 
+--- LSP
+M.enable_inlay_hints = function(client, bufnr)
+  if client.supports_method('textDocument/inlayHint') then
+    local inlay_hints_group = vim.api.nvim_create_augroup('man-toggle_inlay_hints', { clear = false })
+
+    vim.defer_fn(function()
+      local mode = vim.api.nvim_get_mode().mode
+      vim.lsp.inlay_hint.enable(bufnr, mode == 'n' or mode == 'v')
+    end, 500)
+
+    vim.api.nvim_create_autocmd('InsertEnter', {
+      group = inlay_hints_group,
+      desc = 'Enable inlay hints',
+      buffer = bufnr,
+      callback = function() vim.lsp.inlay_hint.enable(bufnr, false) end,
+    })
+
+    vim.api.nvim_create_autocmd('InsertLeave', {
+      group = inlay_hints_group,
+      desc = 'Disable inlay hints',
+      buffer = bufnr,
+      callback = function() vim.lsp.inlay_hint.enable(bufnr, true) end,
+    })
+  end
+end
+
 --- Buffers
 M.open_scratch_buffer = function()
   local buf_id = vim.api.nvim_create_buf(true, true)

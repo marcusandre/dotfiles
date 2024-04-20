@@ -17,6 +17,7 @@ return { -- LSP Configuration & Plugins
   },
   config = function()
     local builtin = require('telescope.builtin')
+    local utils = require('m.utils')
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('man-lsp-attach', { clear = true }),
@@ -116,6 +117,7 @@ return { -- LSP Configuration & Plugins
             },
           },
         },
+        on_attach = utils.enable_inlay_hints,
       },
 
       -- tsserver = {
@@ -202,47 +204,6 @@ return { -- LSP Configuration & Plugins
       'tflint',
     })
 
-    local on_attach = function(client, bufnr)
-      -- if client.supports_method('textDocument/documentHighlight') then
-      --   vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-      --     buffer = bufnr,
-      --     callback = vim.lsp.buf.document_highlight,
-      --   })
-      -- end
-      --
-      -- if client.supports_method('textDocument/clearReferences') then
-      --   if vim.lsp.buf.clear_references then
-      --     vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-      --       buffer = bufnr,
-      --       callback = vim.lsp.buf.clear_references,
-      --     })
-      --   end
-      -- end
-
-      if client.supports_method('textDocument/inlayHint') then
-        local inlay_hints_group = vim.api.nvim_create_augroup('man-toggle_inlay_hints', { clear = false })
-
-        vim.defer_fn(function()
-          local mode = vim.api.nvim_get_mode().mode
-          vim.lsp.inlay_hint.enable(bufnr, mode == 'n' or mode == 'v')
-        end, 500)
-
-        vim.api.nvim_create_autocmd('InsertEnter', {
-          group = inlay_hints_group,
-          desc = 'Enable inlay hints',
-          buffer = bufnr,
-          callback = function() vim.lsp.inlay_hint.enable(bufnr, false) end,
-        })
-
-        vim.api.nvim_create_autocmd('InsertLeave', {
-          group = inlay_hints_group,
-          desc = 'Disable inlay hints',
-          buffer = bufnr,
-          callback = function() vim.lsp.inlay_hint.enable(bufnr, true) end,
-        })
-      end
-    end
-
     require('mason').setup()
     require('mason-tool-installer').setup({ ensure_installed = ensure_installed })
     require('mason-lspconfig').setup({
@@ -255,7 +216,6 @@ return { -- LSP Configuration & Plugins
             filetypes = server.filetypes,
             capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {}),
             on_attach = function(...)
-              on_attach(...)
               if server.on_attach then server.on_attach(...) end
             end,
           })
