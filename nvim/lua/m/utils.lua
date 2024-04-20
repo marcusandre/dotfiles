@@ -9,6 +9,8 @@ M.map = function(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, opts)
 end
 
+M.toggle_inlay_hints = function() vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled()) end
+
 --- Buffers
 M.open_scratch_buffer = function()
   local buf_id = vim.api.nvim_create_buf(true, true)
