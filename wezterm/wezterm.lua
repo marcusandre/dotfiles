@@ -18,7 +18,7 @@ config.set_environment_variables = {
 }
 
 -- Colors
-config.color_scheme = 'duskfox'
+config.color_scheme = 'nightfox'
 -- config.color_scheme = 'tokyonight_night'
 -- config.color_scheme = 'Poimandres'
 -- config.color_scheme = 'Molokai (Gogh)'

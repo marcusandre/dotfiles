@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup('plugins', {
   install = {
     missing = true,
-    colorscheme = { 'duskfox' },
+    colorscheme = { 'nightfox' },
   },
   change_detection = { notify = false },
   performance = {
