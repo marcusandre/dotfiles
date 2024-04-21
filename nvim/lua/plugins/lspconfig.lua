@@ -120,41 +120,6 @@ return { -- LSP Configuration & Plugins
         on_attach = utils.enable_inlay_hints,
       },
 
-      -- tsserver = {
-      --   filetypes = {
-      --     'javascript',
-      --     'javascriptreact',
-      --     'javascript.jsx',
-      --     'typescript',
-      --     'typescriptreact',
-      --     'typescript.tsx',
-      --   },
-      --   settings = {
-      --     typescript = {
-      --       inlayHints = {
-      --         includeInlayEnumMemberValueHints = true,
-      --         includeInlayFunctionLikeReturnTypeHints = true,
-      --         includeInlayFunctionParameterTypeHints = false,
-      --         includeInlayParameterNameHints = 'all', -- 'none' | 'literals' | 'all';
-      --         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-      --         includeInlayPropertyDeclarationTypeHints = false,
-      --         includeInlayVariableTypeHints = true,
-      --       },
-      --     },
-      --     completions = {
-      --       completeFunctionCalls = true,
-      --     },
-      --     experimental = {
-      --       enableProjectDiagnostics = true,
-      --     },
-      --   },
-      --   on_attach = function(client)
-      --     -- client.server_capabilities.semanticTokensProvider = nil
-      --     client.server_capabilities.documentFormattingProvider = false
-      --     client.server_capabilities.documentRangeFormattingProvider = false
-      --   end,
-      -- },
-
       lua_ls = {
         -- cmd = {...},
         -- filetypes { ...},
@@ -189,7 +154,6 @@ return { -- LSP Configuration & Plugins
       terraformls = {},
       dockerls = {},
       marksman = {},
-      -- ocamllsp = {},
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})
