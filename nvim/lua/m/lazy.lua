@@ -13,22 +13,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins', {
-  install = {
-    missing = true,
-    colorscheme = { 'nightfox' },
-  },
-  change_detection = { notify = false },
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        'gzip',
-        'netrwPlugin',
-        'rplugin',
-        'tarPlugin',
-        'tohtml',
-        'tutor',
-        'zipPlugin',
-      },
+  install = { missing = false },
+  change_detection = { enabled = false },
+  rtp = {
+    disabled_plugins = {
+      'gzip',
+      'matchit',
+      'matchparen',
+      'netrwPlugin',
+      'tarPlugin',
+      'tohtml',
+      'tutor',
+      'zipPlugin',
     },
   },
 })

@@ -78,6 +78,11 @@ return {
     -- Simple and easy statusline.
     require('mini.statusline').setup()
 
+    -- Simple and easy tabline.
+    require('mini.tabline').setup({
+      show_icons = false,
+    })
+
     -- Trailspace (highlight and remove)
     require('mini.trailspace').setup()
   end,

@@ -1,6 +1,6 @@
 return {
   'lewis6991/gitsigns.nvim',
-  lazy = false,
+  event = 'BufReadPre',
   keys = {
     -- stylua: ignore start
     { '<leader>gA', '<Cmd>lua require("gitsigns").stage_buffer()<CR>',              desc = 'Add buffer' },
@@ -18,6 +18,8 @@ return {
     -- stylua: ignore end
   },
   opts = {
+    signcolumn = false,
+    numhl = true,
     signs = {
       add = { text = '▒' },
       change = { text = '▒' },

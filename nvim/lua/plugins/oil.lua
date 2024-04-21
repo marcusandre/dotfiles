@@ -4,11 +4,9 @@ return {
     { '<leader>e', '<Cmd>Oil<CR>', desc = 'Oil' },
   },
   config = function()
-    local oil = require('oil')
-
-    oil.setup({
+    require('oil').setup({
       default_file_explorer = true,
-      delete_to_trash = false,
+      delete_to_trash = true,
       lsp_file_methods = {
         lsp_rename_autosave = true,
       },
