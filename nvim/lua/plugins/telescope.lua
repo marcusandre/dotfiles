@@ -42,6 +42,7 @@ return {
           lsp_document_symbols = { fname_width = 0 },
           lsp_dynamic_workspace_symbols = { fname_width = 0 },
           git_status = { theme = 'dropdown' },
+          spell_suggest = { theme = 'dropdown' },
         },
         extensions = {
           ['ui-select'] = { themes.get_cursor() },
@@ -63,6 +64,7 @@ return {
       vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = 'Files (old)' })
       vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = 'Resume' })
       vim.keymap.set('n', '<leader>ft', builtin.builtin, { desc = 'Builtins' })
+      vim.keymap.set('n', '<leader>fz', builtin.spell_suggest, { desc = 'Spelling' })
       vim.keymap.set('n', 'gw', builtin.grep_string, { desc = 'Grep (string)' })
 
       vim.keymap.set(
