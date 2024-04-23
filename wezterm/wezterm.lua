@@ -18,10 +18,10 @@ config.set_environment_variables = {
 }
 
 -- Colors
--- config.color_scheme = 'nightfox'
+config.color_scheme = 'nightfox'
 -- config.color_scheme = 'tokyonight_night'
 -- config.color_scheme = 'Poimandres'
-config.color_scheme = 'Molokai (Gogh)'
+-- config.color_scheme = 'Molokai (Gogh)'
 
 -- UI
 config.enable_scroll_bar = false
