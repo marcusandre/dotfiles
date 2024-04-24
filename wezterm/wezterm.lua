@@ -6,11 +6,11 @@ local config = wezterm.config_builder()
 config.term = 'wezterm'
 
 -- Text
--- config.font = wezterm.font('JetBrains Mono')
-config.font = wezterm.font('Berkeley Mono')
+config.font = wezterm.font('JetBrains Mono')
+-- config.font = wezterm.font('Berkeley Mono')
 -- config.font = wezterm.font('Input Mono Narrow')
-config.font_size = 12
-config.line_height = 1.125
+config.font_size = 15
+-- config.line_height = 1.125
 
 config.term = 'wezterm'
 config.set_environment_variables = {

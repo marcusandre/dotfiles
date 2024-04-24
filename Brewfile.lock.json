@@ -12,6 +12,9 @@
       },
       "homebrew/core": {
         "revision": "b54c33d4ddde74ff52caf847fa0a04c34df5f952"
+      },
+      "charmbracelet/tap": {
+        "revision": "47778facb3061161a7a7723be09bc8e9f3967f7b"
       }
     },
     "brew": {
@@ -2940,6 +2943,10 @@
             }
           }
         }
+      },
+      "freeze": {
+        "version": "0.1.6",
+        "bottle": false
       }
     },
     "cask": {

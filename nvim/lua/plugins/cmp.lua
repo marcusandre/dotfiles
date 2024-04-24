@@ -77,6 +77,9 @@ return {
         { name = 'path' },
         { name = 'buffer', keyword_length = 3 },
       },
+      experimental = {
+        ghost_text = true,
+      },
     })
   end,
 }

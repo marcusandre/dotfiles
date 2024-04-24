@@ -23,4 +23,12 @@ return {
     'jghauser/mkdir.nvim',
     event = 'BufWritePre',
   },
+  {
+    'ethanholz/freeze.nvim',
+    keys = {
+      { '<leader>of', '<Cmd>Freeze<CR>', desc = 'Freeze', mode = 'v' },
+      { '<leader>of', '<Cmd>FreezeLine<CR>', desc = 'Freeze', mode = 'n' },
+    },
+    config = true,
+  },
 }
