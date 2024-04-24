@@ -28,6 +28,15 @@ if test -d $HOME/.cargo/bin
     set -x PATH $PATH $HOME/.cargo/bin
 end
 
+if test -d $HOME/.local/share/ocaml
+    set -x PATH $PATH $HOME/.local/share/ocaml
+end
+
+if test -f $HOME/.opam/opam-init/init.fish
+    source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+end
+
+
 if type -q fzf
     fzf --fish | source
 end
