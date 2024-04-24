@@ -70,8 +70,5 @@ vim.cmd('autocmd TermOpen * setlocal norelativenumber nonumber')
 -- Start terminal in insert mode
 vim.cmd('autocmd TermOpen * startinsert')
 
--- Highlight column vertically at
-vim.wo.colorcolumn = '80'
-
 -- Disable intro message
 vim.o.shortmess = vim.o.shortmess .. 'I'
