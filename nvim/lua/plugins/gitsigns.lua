@@ -18,7 +18,7 @@ return {
     -- stylua: ignore end
   },
   opts = {
-    signcolumn = false,
+    signcolumn = true,
     numhl = true,
     signs = {
       add = { text = '▒' },

@@ -6,6 +6,7 @@ local config = wezterm.config_builder()
 config.term = 'wezterm'
 
 -- Text
+-- config.font = wezterm.font('IBM Plex Mono')
 config.font = wezterm.font('JetBrains Mono')
 -- config.font = wezterm.font('Berkeley Mono')
 -- config.font = wezterm.font('Input Mono Narrow')
@@ -19,7 +20,7 @@ config.set_environment_variables = {
 
 -- Colors
 -- config.color_scheme = 'nightfox'
-config.color_scheme = 'tokyonight'
+config.color_scheme = 'tokyonight_moon'
 -- config.color_scheme = 'Poimandres'
 -- config.color_scheme = 'Molokai (Gogh)'
 
@@ -27,7 +28,7 @@ config.color_scheme = 'tokyonight'
 config.enable_scroll_bar = false
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
--- config.force_reverse_video_cursor = true
+config.force_reverse_video_cursor = true
 
 config.window_padding = {
   left = 0,
