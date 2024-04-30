@@ -24,6 +24,10 @@ return {
     event = 'BufWritePre',
   },
   {
+    'm4xshen/hardtime.nvim',
+    config = true,
+  },
+  {
     'ethanholz/freeze.nvim',
     keys = {
       { '<leader>of', '<Cmd>Freeze<CR>', desc = 'Freeze', mode = 'v' },
