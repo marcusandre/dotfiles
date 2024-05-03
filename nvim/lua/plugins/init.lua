@@ -23,10 +23,10 @@ return {
     'jghauser/mkdir.nvim',
     event = 'BufWritePre',
   },
-  {
-    'm4xshen/hardtime.nvim',
-    config = true,
-  },
+  -- {
+  --   'm4xshen/hardtime.nvim',
+  --   config = true,
+  -- },
   {
     'ethanholz/freeze.nvim',
     keys = {
