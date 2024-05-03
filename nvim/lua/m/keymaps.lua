@@ -31,12 +31,4 @@ map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 map('n', '<leader>tt', '<Cmd>vertical terminal<CR>', { desc = 'Open terminal to the right' })
 
 -- Panes
-map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
-map('n', '<leader>wo', '<Cmd>only<CR>', { desc = 'Make window the only one' })
-map('n', '<leader>wq', '<Cmd>quit<CR>', { desc = 'Close the current window' })
-map('n', '<leader>ws', '<Cmd>split<CR>', { desc = 'Split window horizontally' })
-map('n', '<leader>wv', '<Cmd>vsplit<CR>', { desc = 'Split window vertically' })
+map('n', '<C-l>', '<cmd>nohlsearch<CR>', { desc = 'Clear search higlighting' })
