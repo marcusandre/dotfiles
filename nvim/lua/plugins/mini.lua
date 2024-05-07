@@ -18,6 +18,9 @@ return {
       },
     })
 
+    -- Align text interactively
+    require('mini.align').setup()
+
     -- Autohighlight word under cursor
     require('mini.cursorword').setup()
 
@@ -27,7 +30,7 @@ return {
     -- Unshow, delete, and wipeout buffer while saving window layout
     require('mini.bufremove').setup()
 
-    -- Unshow, delete, and wipeout buffer while saving window layout
+    -- Comment lines
     require('mini.comment').setup({
       options = {
         custom_commentstring = function()
@@ -36,12 +39,10 @@ return {
       },
     })
 
-    -- stylua: ignore start
     vim.keymap.set('n', '<leader>ba', utils.delete_all_buffers, { desc = 'Delete (all)' })
     vim.keymap.set('n', '<leader>bd', utils.delete_buffer, { desc = 'Delete (current)' })
     vim.keymap.set('n', '<leader>bo', utils.delete_other_buffers, { desc = 'Delete (others)' })
     vim.keymap.set('n', '<leader>be', utils.open_scratch_buffer, { desc = 'Scratch buffer' })
-    -- stylua: ignore end
 
     -- Move any selection in any direction
     require('mini.move').setup()

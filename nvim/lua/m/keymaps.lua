@@ -20,7 +20,7 @@ map('n', '<leader>c', utils.toggle_quickfix, { desc = 'Quickfix' })
 
 -- Toggles
 map('n', '\\w', '<Cmd>setlocal wrap! wrap?<CR>', { desc = 'Toggle: Wrap' })
-map('n', '\\i', utils.toggle_inlay_hints, { desc = 'Toggle: Wrap' })
+map('n', '\\i', utils.toggle_inlay_hints, { desc = 'Toggle: Inlay hints' })
 
 -- Other
 map('n', '<leader>ol', '<Cmd>Lazy<CR>', { desc = 'Lazy' })

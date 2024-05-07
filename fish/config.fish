@@ -78,6 +78,7 @@ end
 alias cat='bat --paging=never'
 alias rf="rm -fr"
 alias e="nvim"
+alias r="NVIM_APPNAME=reboot nvim"
 
 alias d="git diff --stat"
 alias s="git status -s"

@@ -9,7 +9,10 @@ M.map = function(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, opts)
 end
 
-M.toggle_inlay_hints = function() vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled()) end
+M.toggle_inlay_hints = function(opts)
+  opts = opts or {}
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), opts)
+end
 
 --- LSP
 M.enable_inlay_hints = function(client, bufnr)
@@ -18,21 +21,21 @@ M.enable_inlay_hints = function(client, bufnr)
 
     vim.defer_fn(function()
       local mode = vim.api.nvim_get_mode().mode
-      vim.lsp.inlay_hint.enable(bufnr, mode == 'n' or mode == 'v')
+      vim.lsp.inlay_hint.enable(mode == 'n' or mode == 'v', { bufnr = bufnr })
     end, 500)
 
     vim.api.nvim_create_autocmd('InsertEnter', {
       group = inlay_hints_group,
       desc = 'Enable inlay hints',
       buffer = bufnr,
-      callback = function() vim.lsp.inlay_hint.enable(bufnr, false) end,
+      callback = function() vim.lsp.inlay_hint.enable(false, { bufnr = bufnr }) end,
     })
 
     vim.api.nvim_create_autocmd('InsertLeave', {
       group = inlay_hints_group,
       desc = 'Disable inlay hints',
       buffer = bufnr,
-      callback = function() vim.lsp.inlay_hint.enable(bufnr, true) end,
+      callback = function() vim.lsp.inlay_hint.enable(true, { bufnr = bufnr }) end,
     })
   end
 end
