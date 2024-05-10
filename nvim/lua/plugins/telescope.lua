@@ -73,7 +73,7 @@ return {
         'n',
         '<leader>ff',
         function()
-          utils.project_files({
+          builtin.git_files({
             show_untracked = true,
           })
         end,
