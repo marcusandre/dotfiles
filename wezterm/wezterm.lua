@@ -28,7 +28,7 @@ config.color_scheme = 'tokyonight_night'
 config.enable_scroll_bar = false
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
--- config.force_reverse_video_cursor = true
+config.force_reverse_video_cursor = true
 
 config.window_padding = {
   left = 0,
