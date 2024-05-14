@@ -45,7 +45,7 @@ return {
           spell_suggest = { theme = 'dropdown' },
         },
         extensions = {
-          ['ui-select'] = { themes.get_cursor() },
+          ['ui-select'] = { themes.get_dropdown() },
         },
       })
 
