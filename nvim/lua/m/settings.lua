@@ -55,6 +55,11 @@ vim.opt.listchars = {
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
+-- Completion Settings
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+---@diagnostic disable-next-line: param-type-mismatch
+vim.opt.shortmess:append('c')
+
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 

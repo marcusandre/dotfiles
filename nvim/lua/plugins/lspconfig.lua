@@ -12,6 +12,9 @@ return { -- LSP Configuration & Plugins
     -- Depend on Telescope for keybindings
     'nvim-telescope/telescope.nvim',
 
+    -- Schema information
+    'b0o/SchemaStore.nvim',
+
     -- Useful status updates for LSP.
     { 'j-hui/fidget.nvim', opts = {} },
   },
@@ -22,6 +25,8 @@ return { -- LSP Configuration & Plugins
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('man-lsp-attach', { clear = true }),
       callback = function(event)
+        vim.opt_local.omnifunc = 'v:lua.vim.lsp.omnifunc'
+
         local map = function(keys, func, desc) vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc }) end
 
         map('<leader>lS', builtin.lsp_dynamic_workspace_symbols, 'Workspace Symbols')
@@ -137,6 +142,27 @@ return { -- LSP Configuration & Plugins
             diagnostics = {
               disable = { 'missing-fields' },
             },
+          },
+        },
+      },
+
+      jsonls = {
+        settings = {
+          json = {
+            schemas = require('schemastore').json.schemas(),
+            validate = { enable = true },
+          },
+        },
+      },
+
+      yamlls = {
+        settings = {
+          yaml = {
+            schemaStore = {
+              enable = false,
+              url = '',
+            },
+            schemas = require('schemastore').yaml.schemas(),
           },
         },
       },
