@@ -4,7 +4,7 @@ return {
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
       'nvim-treesitter/playground',
-      'nushell/tree-sitter-nu',
+      -- 'nushell/tree-sitter-nu',
     },
     build = ':TSUpdate',
     config = function()
@@ -40,6 +40,7 @@ return {
         'markdown',
         'markdown_inline',
         'nix',
+        'nu',
         'ocaml',
         'ocaml_interface',
         'proto',
