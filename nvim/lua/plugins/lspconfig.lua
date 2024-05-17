@@ -39,7 +39,6 @@ return { -- LSP Configuration & Plugins
         map('<leader>ls', builtin.lsp_document_symbols, 'Document Symbols')
         map('<leader>lt', builtin.lsp_type_definitions, 'Type Definition')
         map('<leader>lv', function() builtin.lsp_definitions({ jump_type = 'vsplit' }) end, 'Definition (vsplit)')
-        map('K', vim.lsp.buf.hover, 'Hover Documentation')
         map('gD', vim.lsp.buf.declaration, 'Declaration')
         map('gd', builtin.lsp_definitions, 'Definition')
         map('gr', builtin.lsp_references, 'References')
