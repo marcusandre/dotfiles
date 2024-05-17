@@ -3,13 +3,13 @@ return {
     'EdenEast/nightfox.nvim',
     lazy = false,
     priority = 1000,
-    -- config = function() vim.cmd([[colorscheme carbonfox]]) end,
+    config = function() vim.cmd([[colorscheme nightfox]]) end,
   },
   {
     'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
-    config = function() vim.cmd([[colorscheme tokyonight-storm]]) end,
+    -- config = function() vim.cmd([[colorscheme tokyonight-storm]]) end,
   },
   {
     'olivercederborg/poimandres.nvim',
