@@ -7,8 +7,8 @@ config.term = 'wezterm'
 
 -- Text
 -- config.font = wezterm.font('JetBrains Mono')
--- config.font = wezterm.font('Berkeley Mono')
-config.font = wezterm.font('Fira Code')
+config.font = wezterm.font('Berkeley Mono')
+-- config.font = wezterm.font('Fira Code')
 -- config.font = wezterm.font('Input Mono Narrow')
 config.font_size = 14
 -- config.line_height = 1.125
@@ -28,7 +28,7 @@ config.color_scheme = 'nightfox'
 config.enable_scroll_bar = false
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
--- config.force_reverse_video_cursor = true
+config.force_reverse_video_cursor = true
 
 config.window_padding = {
   left = 0,

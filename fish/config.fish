@@ -3,10 +3,10 @@ set -U fish_greeting
 
 set -x LC_ALL en_US.UTF-8
 
-set -x GIT_EDITOR "nvim"
-set -x EDITOR "nvim"
-set -x VISUAL "nvim"
-set -x PAGER "moar"
+set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx XDG_DATA_HOME $HOME/.local/share
+set -gx XDG_CACHE_HOME $HOME/.cache
+set -gx XDG_STATE_HOME $HOME/.local/state
 
 set -x GOPATH $HOME
 
@@ -36,6 +36,15 @@ if test -f $HOME/.opam/opam-init/init.fish
     source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 end
 
+if type -q nvim
+    set -gx EDITOR nvim
+    set -gx VISUAL nvim
+    set -gx MANPAGER 'nvim +Man!'
+end
+
+if type -q moar
+    set -x PAGER "moar"
+end
 
 if type -q fzf
     fzf --fish | source
@@ -78,7 +87,6 @@ end
 alias cat='bat --paging=never'
 alias rf="rm -fr"
 alias e="nvim"
-alias r="NVIM_APPNAME=reboot nvim"
 
 alias d="git diff --stat"
 alias s="git status -s"

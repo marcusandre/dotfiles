@@ -3,7 +3,6 @@ name = "Marcus André"
 email = "hello+github@marcusandre.de"
 
 [ui]
-editor = "nvim"
 default-command = "status"
 # diff.tool = ["difft", "--color=always", "$left", "$right"]
 
@@ -14,3 +13,8 @@ push-branch-prefix = "man/push-"
 # sign-all = true
 # backend = "ssh"
 # key = "~/.ssh/id_ed25519_sign.pub"
+
+[aliases]
+l = ["log"]
+d = ["diff"]
+rb = ["rebase"]

@@ -3,26 +3,18 @@ root = true
 [*]
 charset = utf-8
 end_of_line = lf
-indent_size = 2
-indent_style = space
 trim_trailing_whitespace = true
+indent_style = space
 
-[*.rs]
+[*.lua]
+indent_size = 2
+
+[{justfile,*.fish,*.rs,*.zig}]
 indent_size = 4
 
-[*.zig]
-indent_size = 4
-
-[*.go]
-indent_size = 4
-indent_style = tab
-
-[Makefile]
+[{*.go,Makefile}]
 indent_size = 4
 indent_style = tab
 
 [*.md]
 trim_trailing_whitespace = false
-
-[*.fish]
-indent_size = 4
