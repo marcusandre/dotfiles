@@ -13,6 +13,9 @@ config.font = wezterm.font('Berkeley Mono')
 config.font_size = 14
 -- config.line_height = 1.125
 
+config.initial_rows = 54
+config.initial_cols = 180
+
 config.term = 'wezterm'
 config.set_environment_variables = {
   TERMINFO_DIRS = wezterm.home_dir .. '/.terminfo',
