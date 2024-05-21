@@ -1,13 +1,10 @@
 # dotfiles
 
-[![neovim](https://img.shields.io/badge/neovim-v10-509947)](https://neovim.io/) [![Linting and style checking](https://github.com/marcusandre/dotfiles/actions/workflows/lint.yml/badge.svg)](https://github.com/marcusandre/dotfiles/actions/workflows/lint.yml)
-
-This repository contains my Neovim setup and other configuration files.
+This repository contains my personal configuration files. My [Neovim](https://neovim.io/) configuration lives here: [marcusandre/nvim](https://github.com/marcusandre/nvim).
 
 ## Building Blocks
 
-- [Neovim](https://neovim.io/)
-- [Nushell](https://www.nushell.sh/)
+- [Fish](https://fishshell.com/)
 - [WezTerm](https://wezfurlong.org/wezterm)
 - [Git](https://git-scm.com/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
@@ -28,7 +25,3 @@ $ nvim --headless "+Lazy! sync" +qa
 $ defaults write NSGlobalDomain KeyRepeat -int 1
 $ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 ```
-
-## Contributing
-
-Even if this configuration is tailored to meet my needs and habits, you are welcome to contribute.
