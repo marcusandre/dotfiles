@@ -10,7 +10,7 @@ This repository contains my personal configuration files. My [Neovim](https://ne
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [Atuin](https://github.com/atuinsh/atuinb)
 - [Mise](https://mise.jdx.dev/)
-- and more
+- [and more](https://github.com/marcusandre/dotfiles/blob/main/Brewfile)
 
 ## Installation
 
