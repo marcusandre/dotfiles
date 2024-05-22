@@ -6,10 +6,15 @@ local config = wezterm.config_builder()
 config.term = "wezterm"
 
 -- Text
--- config.font = wezterm.font('JetBrains Mono')
-config.font = wezterm.font("Berkeley Mono")
--- config.font = wezterm.font('Fira Code')
--- config.font = wezterm.font('Input Mono Narrow')
+config.font = wezterm.font_with_fallback({
+  "Monaspace Neon",
+  "Berkeley Mono",
+  "JetBrains Mono",
+  "Fira Code",
+  "CommitMono",
+  "Input Mono Narrow",
+})
+
 config.font_size = 14
 -- config.line_height = 1.125
 
