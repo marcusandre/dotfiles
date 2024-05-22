@@ -16,7 +16,6 @@ This repository contains my personal configuration files. My [Neovim](https://ne
 
 ```
 $ brew bundle && make all # or `stow` the individual folders
-$ nvim --headless "+Lazy! sync" +qa
 ```
 
 ## Keyboard (MacOS)
