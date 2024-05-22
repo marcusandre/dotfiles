@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-npm install -g eslint_d
-npm install -g prettier
