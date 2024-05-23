@@ -15,7 +15,7 @@ This repository contains my personal configuration files. My [Neovim](https://ne
 ## Installation
 
 ```
-$ brew bundle && make all # or `stow` the individual folders
+$ brew bundle && just # or `stow` the individual folders
 ```
 
 ## Keyboard (MacOS)
