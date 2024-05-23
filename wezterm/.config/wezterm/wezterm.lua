@@ -7,6 +7,7 @@ config.term = "wezterm"
 
 -- Text
 config.font = wezterm.font_with_fallback({
+  "Monaspace Argon",
   "Monaspace Neon",
   "Berkeley Mono",
   "JetBrains Mono",
@@ -36,7 +37,7 @@ config.color_scheme = "nightfox"
 config.enable_scroll_bar = false
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
-config.force_reverse_video_cursor = true
+-- config.force_reverse_video_cursor = true
 
 config.window_padding = {
   left = 0,
