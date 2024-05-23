@@ -1,3 +1,7 @@
+if not status is-interactive
+    return 0
+end
+
 set -U fish_greeting
 # set -g fish_key_bindings fish_vi_key_bindings
 
@@ -82,6 +86,10 @@ if command -v eza > /dev/null
 else
     alias l='ls'
     alias lll='ls -l'
+end
+
+if command -v lazygit > /dev/null
+    alias lg='lazygit'
 end
 
 alias cat='bat --paging=never'
