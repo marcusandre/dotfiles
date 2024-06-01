@@ -37,7 +37,7 @@ if test -d $HOME/.local/share/ocaml
 end
 
 if test -f $HOME/.opam/opam-init/init.fish
-    source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+    source $HOME/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
 end
 
 if type -q nvim
@@ -47,7 +47,7 @@ if type -q nvim
 end
 
 if type -q moar
-    set -x PAGER "moar"
+    set -x PAGER moar
 end
 
 if type -q fzf
@@ -79,7 +79,7 @@ if type -q mise
     mise activate fish | source
 end
 
-if command -v eza > /dev/null
+if command -v eza >/dev/null
     alias l='eza'
     alias ls='eza'
     alias ll='eza -la'
@@ -88,7 +88,7 @@ else
     alias lll='ls -l'
 end
 
-if command -v lazygit > /dev/null
+if command -v lazygit >/dev/null
     alias lg='lazygit'
 end
 
@@ -129,5 +129,5 @@ function ef -d "Skim through files and open them in nvim"
 end
 
 function eg -d "Skim through lines and open them in nvim"
-    sk -m --ansi -i -c 'rg --line-number  "{}"'| awk -F':' '{print "+"$2, $1}' | xargs -r nvim
+    sk -m --ansi -i -c 'rg --line-number  "{}"' | awk -F':' '{print "+"$2, $1}' | xargs -r nvim
 end
