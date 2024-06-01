@@ -79,6 +79,10 @@ if type -q mise
     mise activate fish | source
 end
 
+if type -q thefuck
+    thefuck --alias | source
+end
+
 if command -v eza >/dev/null
     alias l='eza'
     alias ls='eza'
