@@ -7,16 +7,16 @@ config.term = "wezterm"
 
 -- Text
 config.font = wezterm.font_with_fallback({
+  "Fira Code",
+  "JetBrains Mono",
+  "Berkeley Mono",
   "Monaspace Argon",
   "Monaspace Neon",
-  "Berkeley Mono",
-  "JetBrains Mono",
-  "Fira Code",
   "CommitMono",
   "Input Mono Narrow",
 })
 
-config.font_size = 14
+config.font_size = 13
 -- config.line_height = 1.125
 
 config.initial_rows = 54
