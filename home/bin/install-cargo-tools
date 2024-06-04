@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
 cargo install cargo-binstall
+cargo binstall cargo-component
 cargo binstall usage-cli
