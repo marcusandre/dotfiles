@@ -125,7 +125,7 @@ function md -d "Create a new directory and cd into it"
 end
 
 function t -d "List directory recursively as tree"
-    eza --tree
+    eza --tree -la --git-ignore
 end
 
 function ef -d "Skim through files and open them in nvim"
