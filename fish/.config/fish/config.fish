@@ -96,6 +96,10 @@ if command -v lazygit >/dev/null
     alias lg='lazygit'
 end
 
+if command -v lazydocker >/dev/null
+    alias lr='lazydocker'
+end
+
 alias cat='bat --paging=never'
 alias rf="rm -fr"
 alias e="nvim"
