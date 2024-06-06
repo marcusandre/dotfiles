@@ -89,7 +89,7 @@ if command -v eza >/dev/null
     alias ll='eza -la'
 else
     alias l='ls'
-    alias lll='ls -l'
+    alias ll='ls -l'
 end
 
 if command -v lazygit >/dev/null
@@ -103,6 +103,7 @@ end
 alias cat='bat --paging=never'
 alias rf="rm -fr"
 alias e="nvim"
+alias r="NVIM_APPNAME=reboot nvim"
 
 alias d="git diff --stat"
 alias s="git status -s"
