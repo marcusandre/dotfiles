@@ -58,6 +58,11 @@ if type -q atuin
     atuin init fish --disable-up-arrow | source
 end
 
+if type -q rg
+    set -gx RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/ripgrep/.ripgreprc
+end
+
+
 if type -q zoxide
     zoxide init fish | source
 end
