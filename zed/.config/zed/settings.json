@@ -1,6 +1,28 @@
 {
+  "base_keymap": "VSCode",
   "buffer_font_size": 13,
+  "cursor_blink": false,
+  "inlay_hints": { "enabled": true },
+  "scrollbar": { "show": "never" },
+  "terminal": { "blinking": "on" },
+  "theme": "Gruvbox Dark",
   "ui_font_family": "JetBrains Mono",
   "ui_font_size": 13,
-  "vim_mode": true
+  "vim_mode": true,
+  "languages": {
+    "TypeScript": {
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
+    },
+    "TSX": {
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
+    }
+  }
 }
