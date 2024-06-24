@@ -7,8 +7,8 @@ config.term = "wezterm"
 
 -- Text
 config.font = wezterm.font_with_fallback({
-  "Fira Code",
   "JetBrains Mono",
+  "Fira Code",
   "Berkeley Mono",
   "Monaspace Argon",
   "Monaspace Neon",
