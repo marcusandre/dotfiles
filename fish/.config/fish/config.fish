@@ -89,11 +89,9 @@ if type -q thefuck
 end
 
 if command -v eza >/dev/null
-    alias l='eza'
-    alias ls='eza'
-    alias ll='eza -la'
+    alias ls='eza --icons'
+    alias ll='eza -la --icons'
 else
-    alias l='ls'
     alias ll='ls -l'
 end
 
@@ -134,7 +132,7 @@ function md -d "Create a new directory and cd into it"
 end
 
 function t -d "List directory recursively as tree"
-    eza --tree -la --git-ignore
+    eza --tree -la --git-ignore --icons
 end
 
 function ef -d "Skim through files and open them in nvim"
