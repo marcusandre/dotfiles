@@ -1,23 +1,32 @@
 {
   "base_keymap": "VSCode",
+  "buffer_font_family": "JetBrains Mono",
   "buffer_font_size": 13,
   "cursor_blink": false,
   "inlay_hints": { "enabled": false },
   "scrollbar": { "show": "never" },
   "terminal": { "blinking": "on" },
-  "theme": "Tokyo Night Storm",
+  "theme": {
+    "mode": "system",
+    "dark": "Carbonfox",
+    "light": "Dayfox"
+  },
   "ui_font_family": "JetBrains Mono",
   "ui_font_size": 13,
   "vim_mode": true,
   "languages": {
-    "TypeScript": {
+    "Markdown": {
+      "soft_wrap": "preferred_line_length",
+      "preferred_line_length": 80
+    },
+    "TSX": {
       "formatter": {
         "code_actions": {
           "source.fixAll.eslint": true
         }
       }
     },
-    "TSX": {
+    "TypeScript": {
       "formatter": {
         "code_actions": {
           "source.fixAll.eslint": true
