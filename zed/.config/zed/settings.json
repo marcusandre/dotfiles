@@ -1,3 +1,6 @@
 {
-    "vim_mode": true
+  "buffer_font_size": 13,
+  "ui_font_family": "JetBrains Mono",
+  "ui_font_size": 13,
+  "vim_mode": true
 }
