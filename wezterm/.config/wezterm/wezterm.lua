@@ -28,10 +28,23 @@ config.set_environment_variables = {
 }
 
 -- Colors
-config.color_scheme = "nightfox"
--- config.color_scheme = "tokyonight_night"
--- config.color_scheme = 'Poimandres'
--- config.color_scheme = 'Molokai (Gogh)'
+function scheme_for_appearance(appearance)
+  if appearance:find("Dark") then
+    return "carbonfox"
+  else
+    return "duskfox"
+  end
+end
+
+wezterm.on("window-config-reloaded", function(window, pane)
+  local overrides = window:get_config_overrides() or {}
+  local appearance = window:get_appearance()
+  local scheme = scheme_for_appearance(appearance)
+  if overrides.color_scheme ~= scheme then
+    overrides.color_scheme = scheme
+    window:set_config_overrides(overrides)
+  end
+end)
 
 -- UI
 config.enable_scroll_bar = false
