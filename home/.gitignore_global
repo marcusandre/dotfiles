@@ -10,3 +10,4 @@ _site/
 .venv
 .projections.json
 .mise.toml
+.zed
