@@ -9,7 +9,7 @@
   "theme": {
     "mode": "system",
     "dark": "Carbonfox",
-    "light": "Dayfox"
+    "light": "Duskfox"
   },
   "ui_font_family": "JetBrains Mono",
   "ui_font_size": 13,
@@ -18,6 +18,13 @@
     "Markdown": {
       "soft_wrap": "preferred_line_length",
       "preferred_line_length": 80
+    },
+    "JavaScript": {
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
     },
     "TSX": {
       "formatter": {
