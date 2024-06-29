@@ -30,9 +30,9 @@ config.set_environment_variables = {
 -- Colors
 function scheme_for_appearance(appearance)
   if appearance:find("Dark") then
-    return "nightfox"
+    return "carbonfox"
   else
-    return "dayfox"
+    return "duskfox"
   end
 end
 

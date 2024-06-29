@@ -8,8 +8,8 @@
   "terminal": { "blinking": "on" },
   "theme": {
     "mode": "system",
-    "dark": "Nightfox",
-    "light": "Dayfox"
+    "dark": "Carbonfox",
+    "light": "Duskfox"
   },
   "ui_font_family": "JetBrains Mono",
   "ui_font_size": 13,
