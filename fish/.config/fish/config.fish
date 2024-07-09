@@ -106,6 +106,7 @@ end
 alias cat='bat --paging=never'
 alias rf="rm -fr"
 alias e="nvim"
+alias serve="python3 -m http.server"
 
 alias d="git diff --stat"
 alias s="git status -s"
