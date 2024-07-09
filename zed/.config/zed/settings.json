@@ -8,12 +8,18 @@
   "terminal": { "blinking": "on" },
   "theme": {
     "mode": "system",
-    "dark": "Carbonfox",
-    "light": "Atelier Sulphurpool Light"
+    "dark": "Nightfox",
+    "light": "Nightfox"
   },
   "ui_font_family": "JetBrains Mono",
   "ui_font_size": 13,
   "vim_mode": true,
+  "terminal": {
+    "blinking": "on",
+    "env": {
+      "GIT_EDITOR": "zed --wait"
+    }
+  },
   "languages": {
     "Markdown": {
       "soft_wrap": "preferred_line_length",
