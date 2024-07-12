@@ -30,9 +30,9 @@ config.set_environment_variables = {
 -- Colors
 local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
-    return "tokyonight_night"
+    return "tokyonight_storm"
   else
-    return "tokyonight_night"
+    return "tokyonight_storm"
   end
 end
 
