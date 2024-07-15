@@ -30,9 +30,9 @@ config.set_environment_variables = {
 -- Colors
 local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
-    return "tokyonight_storm"
+    return "Gruvbox dark, medium (base16)"
   else
-    return "tokyonight_storm"
+    return "Gruvbox dark, medium (base16)"
   end
 end
 
