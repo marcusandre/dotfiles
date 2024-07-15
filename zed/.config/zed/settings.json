@@ -5,11 +5,10 @@
   "cursor_blink": false,
   "inlay_hints": { "enabled": false },
   "scrollbar": { "show": "never" },
-  "terminal": { "blinking": "on" },
   "theme": {
     "mode": "system",
-    "dark": "Tokyo Night Storm",
-    "light": "Tokyo Night Storm"
+    "dark": "Gruvbox Dark",
+    "light": "Gruvbox Dark"
   },
   "ui_font_family": "JetBrains Mono",
   "ui_font_size": 13,

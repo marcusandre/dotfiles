@@ -1,4 +1,4 @@
-theme = "nightfox"
+theme = "gruvbox"
 
 [editor]
 bufferline = "always"
