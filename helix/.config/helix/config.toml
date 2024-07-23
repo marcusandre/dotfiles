@@ -1,4 +1,4 @@
-theme = "gruvbox"
+theme = "tokyonight_moon"
 
 [editor]
 bufferline = "always"
