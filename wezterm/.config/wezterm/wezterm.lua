@@ -30,9 +30,9 @@ config.set_environment_variables = {
 -- Colors
 local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
-    return "duskfox"
+    return "carbonfox"
   else
-    return "duskfox"
+    return "carbonfox"
   end
 end
 

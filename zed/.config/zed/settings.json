@@ -7,8 +7,8 @@
   "scrollbar": { "show": "never" },
   "theme": {
     "mode": "system",
-    "dark": "Tokyo Night Storm",
-    "light": "Tokyo Night Storm"
+    "dark": "Carbonfox",
+    "light": "Carbonfox"
   },
   "ui_font_family": "JetBrains Mono",
   "ui_font_size": 13,
