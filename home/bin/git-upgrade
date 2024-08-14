@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 
+delete-merged-branches() {
+  git branch --merged | grep -wv 'main' | grep -wv 'master' | xargs -n 1 git branch -d
+}
+
 main() {
-  remote=origin/master
+  remote=$(git rev-parse --abbrev-ref origin/HEAD)
 
   git stash \
     && git fetch --prune \
     && git rebase $remote \
-    && git delete-merged-branches
+    && delete-merged-branches
 }
 
 [ -d .git ] && main || git rev-parse --git-dir > /dev/null 2>&1
