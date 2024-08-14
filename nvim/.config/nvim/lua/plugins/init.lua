@@ -1,4 +1,4 @@
 return {
-  -- { "ethanholz/nvim-lastplace", opts = {} },
+  { "kylechui/nvim-surround", opts = {} },
   "jghauser/mkdir.nvim",
 }
