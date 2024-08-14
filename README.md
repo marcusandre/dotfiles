@@ -1,5 +1,7 @@
 # dotfiles
 
+[![neovim](https://img.shields.io/badge/neovim-v10-509947)](https://neovim.io/)
+
 This repository contains my personal configuration files. My [Neovim](https://neovim.io/) configuration lives here: [marcusandre/nvim](https://github.com/marcusandre/nvim).
 
 ## Building Blocks
@@ -7,6 +9,7 @@ This repository contains my personal configuration files. My [Neovim](https://ne
 - [Fish](https://fishshell.com/)
 - [WezTerm](https://wezfurlong.org/wezterm)
 - [Git](https://git-scm.com/)
+- [Neovim](https://neovim.io/)
 - [Zed](https://zed.dev/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [Atuin](https://github.com/atuinsh/atuinb)
@@ -16,7 +19,13 @@ This repository contains my personal configuration files. My [Neovim](https://ne
 ## Installation
 
 ```bash
-brew bundle && just # or `stow` the individual folders
+brew bundle && just
+```
+
+### Neovim
+
+```sh
+nvim --headless "+Lazy! sync" +qa
 ```
 
 ## Keyboard (MacOS)
