@@ -1,10 +1,10 @@
 return {
-  'nvim-treesitter/nvim-treesitter',
+  "nvim-treesitter/nvim-treesitter",
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    { "windwp/nvim-ts-autotag", opts = {} }
+    { "windwp/nvim-ts-autotag", opts = {} },
   },
-  build = ':TSUpdate',
+  build = ":TSUpdate",
   lazy = false,
   config = function()
     local ensure_installed = {
@@ -25,17 +25,17 @@ return {
       "rust",
       "terraform",
       "toml",
-      'comment',
-      'diff',
-      'git_config',
-      'git_rebase',
-      'gitattributes',
-      'gitcommit',
-      'json',
-      'toml',
-      'vim',
-      'vimdoc',
-      'yaml',
+      "comment",
+      "diff",
+      "git_config",
+      "git_rebase",
+      "gitattributes",
+      "gitcommit",
+      "json",
+      "toml",
+      "vim",
+      "vimdoc",
+      "yaml",
       "vimdoc",
     }
 
@@ -43,10 +43,13 @@ return {
       local max_filesize = 100 * 1024 -- 100 KB
       ---@diagnostic disable-next-line: undefined-field
       local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-      if ok and stats and stats.size > max_filesize then return true end
+      if ok and stats and stats.size > max_filesize then
+        return true
+      end
     end
 
-    require('nvim-treesitter.configs').setup({
+    ---@diagnostic disable-next-line: missing-fields
+    require("nvim-treesitter.configs").setup({
       ensure_installed = ensure_installed,
       highlight = { enable = true, should_disable = should_disable },
       indent = { enable = true, align = true },
