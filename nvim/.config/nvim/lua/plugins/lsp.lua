@@ -138,9 +138,7 @@ return {
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
     for name, config in pairs(servers) do
-      if config == true then
-        config = {}
-      end
+      if config == true then config = {} end
       config = vim.tbl_deep_extend("force", {}, {
         capabilities = capabilities,
       }, config)
@@ -188,9 +186,7 @@ return {
 
         local filetype = vim.bo[bufnr].filetype
         local client = assert(vim.lsp.get_client_by_id(args.data.client_id), "must have valid client")
-        if disable_semantic_tokens[filetype] then
-          client.server_capabilities.semanticTokensProvider = nil
-        end
+        if disable_semantic_tokens[filetype] then client.server_capabilities.semanticTokensProvider = nil end
       end,
     })
   end,

@@ -20,5 +20,5 @@ return {
     local fzf = require("fzf-lua")
     fzf.setup({ fzf_colors = true })
     fzf.register_ui_select()
-  end
+  end,
 }

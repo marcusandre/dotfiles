@@ -25,6 +25,6 @@ require("lazy").setup({
     disabled_plugins = {
       "netrwPlugin",
       "tutor",
-    }
+    },
   },
 })
