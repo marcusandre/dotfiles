@@ -8,5 +8,6 @@ return {
   keys = {
     { "<leader>gg", "<Cmd>Neogit<CR>", desc = "Neogit" },
   },
+  lazy = false,
   config = true,
 }
