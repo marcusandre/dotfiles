@@ -24,3 +24,5 @@ map('n', ']b', ':bn<CR>', { desc = 'next buffer' })
 map("n", "<leader>ba", "<Cmd>b#<CR>", { desc = "Alternate" })
 map("n", "<leader>bd", "<Cmd>lua MiniBufremove.delete()<CR>", { desc = "Delete" })
 map("n", "<leader>bo", "<Cmd>%bd|e#|bd#<CR>", { desc = "Delete Other Buffers" })
+
+map("n", "<leader>sr", ":%s/<C-r><C-w>//g<Left><Left>")
