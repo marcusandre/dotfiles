@@ -51,7 +51,7 @@ vim.opt.wrap = false
 vim.opt.formatoptions:remove("o")
 
 -- Completion settings with consecutive presses of TAB:
-vim.o.wildmode = "longest,list,full"
+-- vim.o.wildmode = "longest,list,full"
 
 -- Keep some lines above and below cursor:
 vim.o.scrolloff = 3
