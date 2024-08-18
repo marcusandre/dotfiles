@@ -26,4 +26,12 @@ return {
       vim.cmd("colorscheme gruvbox")
     end,
   },
+  {
+    "catppuccin/nvim",
+    enabled = false,
+    name = "catppuccin",
+    opts = {},
+    lazy = false,
+    config = function() vim.cmd("colorscheme catppuccin-macchiato") end,
+  },
 }
