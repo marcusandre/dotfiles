@@ -9,14 +9,14 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {},
-    config = function() vim.cmd("colorscheme tokyonight-moon") end,
+    config = function() vim.cmd("colorscheme tokyonight-storm") end,
   },
   {
     "ellisonleao/gruvbox.nvim",
+    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {},
