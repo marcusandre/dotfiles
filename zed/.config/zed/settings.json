@@ -3,12 +3,12 @@
   "buffer_font_family": "JetBrains Mono",
   "buffer_font_size": 13,
   "cursor_blink": false,
-  "inlay_hints": { "enabled": false },
+  "inlay_hints": { "enabled": true },
   "scrollbar": { "show": "never" },
   "theme": {
     "mode": "system",
     "dark": "Tokyo Night Storm",
-    "light": "Tokyo Night Storm"
+    "light": "Tokyo Night Light"
   },
   "ui_font_family": "JetBrains Mono",
   "ui_font_size": 13,

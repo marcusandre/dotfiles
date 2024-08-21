@@ -8,7 +8,13 @@ return {
   lazy = false,
   config = function()
     local ensure_installed = {
+      "comment",
+      "diff",
       "fish",
+      "git_config",
+      "git_rebase",
+      "gitattributes",
+      "gitcommit",
       "go",
       "gomod",
       "gosum",
@@ -25,18 +31,10 @@ return {
       "rust",
       "terraform",
       "toml",
-      "comment",
-      "diff",
-      "git_config",
-      "git_rebase",
-      "gitattributes",
-      "gitcommit",
-      "json",
-      "toml",
       "vim",
       "vimdoc",
       "yaml",
-      "vimdoc",
+      "zig",
     }
 
     local should_disable = function(_, buf)
