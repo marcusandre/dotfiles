@@ -2,7 +2,7 @@
 
 [![neovim](https://img.shields.io/badge/neovim-v10-509947)](https://neovim.io/)
 
-This repository contains my personal configuration files. My [Neovim](https://neovim.io/) configuration lives here: [marcusandre/nvim](https://github.com/marcusandre/nvim).
+This repository contains my personal configuration files.
 
 ## Building Blocks
 
