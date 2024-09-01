@@ -16,7 +16,7 @@ config.font = wezterm.font_with_fallback({
   "Input Mono Narrow",
 })
 
-config.font_size = 13
+config.font_size = 14
 -- config.line_height = 1.125
 
 config.initial_rows = 54
