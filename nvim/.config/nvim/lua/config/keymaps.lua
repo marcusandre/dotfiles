@@ -48,3 +48,10 @@ map("n", "<leader>lx", "<Cmd>lua vim.diagnostic.setloclist()<CR>", { desc = "Dia
 map("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", { buffer = 0 })
 map("n", "gr", "<Cmd>Telescope lsp_references<CR>", { buffer = 0 })
 map({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, { buffer = 0 })
+
+-- "t" stands for testing
+map("n", "tf", "<Cmd>TestFile<CR>", { desc = "File" })
+map("n", "tF", "<Cmd>TestFile --coverage<CR>", { desc = "File (coverage)" })
+map("n", "tl", "<Cmd>TestLast<CR>", { desc = "Last" })
+map("n", "tt", "<Cmd>TestNearest<CR>", { desc = "Nearest" })
+map("n", "tv", "<Cmd>TestVisit<CR>", { desc = "Visit" })
