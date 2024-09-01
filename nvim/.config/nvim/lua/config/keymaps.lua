@@ -29,7 +29,6 @@ map("n", "<leader>ff", "<Cmd>Telescope find_files<CR>", { desc = "Files" })
 map("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", { desc = "Grep" })
 map("n", "<leader>fh", "<Cmd>Telescope help_tags<CR>", { desc = "Help" })
 map("n", "<leader>ft", "<Cmd>TodoTelescope<CR>", { desc = "Todo" })
-map("n", "<leader><space>", "<Cmd>Telescope builtin<CR>", { desc = "Builtins" })
 
 -- "g" stands for git
 map("n", "<leader>gg", "<Cmd>Neogit<CR>", { desc = "Neogit" })
@@ -45,9 +44,9 @@ map("n", "<leader>lw", "<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>", { des
 map("n", "<leader>lx", "<Cmd>lua vim.diagnostic.setloclist()<CR>", { desc = "Diagnostics (LocList)", buffer = 0 })
 
 -- Related LSP mappings
-map("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", { buffer = 0 })
-map("n", "gr", "<Cmd>Telescope lsp_references<CR>", { buffer = 0 })
-map({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, { buffer = 0 })
+map("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", { buffer = 0, desc = "Definitions" })
+map("n", "gr", "<Cmd>Telescope lsp_references<CR>", { buffer = 0, desc = "References" })
+map({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, { buffer = 0, desc = "Code action" })
 
 -- "t" stands for testing
 map("n", "tf", "<Cmd>TestFile<CR>", { desc = "File" })
