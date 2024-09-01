@@ -1,6 +1,6 @@
 local map = function(mode, lhs, rhs, opts)
   if lhs == "" then return end
-  opts = vim.tbl_deep_extend("force", { silent = true }, opts or {})
+  opts = vim.tbl_deep_extend("force", { silent = true, unique = true }, opts or {})
   vim.keymap.set(mode, lhs, rhs, opts)
 end
 
@@ -29,11 +29,12 @@ map("n", "<leader>ff", "<Cmd>Telescope find_files<CR>", { desc = "Files" })
 map("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", { desc = "Grep" })
 map("n", "<leader>fh", "<Cmd>Telescope help_tags<CR>", { desc = "Help" })
 map("n", "<leader>ft", "<Cmd>TodoTelescope<CR>", { desc = "Todo" })
+map("n", "<leader><space>", "<Cmd>Telescope builtin<CR>", { desc = "Builtins" })
 
 -- "g" stands for git
 map("n", "<leader>gg", "<Cmd>Neogit<CR>", { desc = "Neogit" })
 
--- "l" stand for LSP
+-- "l" stands for LSP
 map("n", "<leader>ld", "<Cmd>Telescope diagnostics<cr>", { desc = "diagnostics", buffer = 0 })
 map("n", "<leader>le", vim.diagnostic.open_float, { desc = "Diagnostics", buffer = 0 })
 map("n", "<leader>li", "<Cmd>Telescope lsp_implementations<CR>", { desc = "Implementations", buffer = 0 })
