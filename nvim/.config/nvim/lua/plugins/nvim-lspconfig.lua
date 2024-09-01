@@ -25,6 +25,7 @@ return {
             runtime = { version = "LuaJIT" },
             workspace = { checkThirdParty = false },
             telemetry = { enable = false },
+            hint = { enable = false },
           },
         },
       },
