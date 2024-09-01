@@ -48,10 +48,11 @@ return {
         miniclue.gen_clues.windows(),
         miniclue.gen_clues.z(),
         { mode = "n", keys = "<Leader>b", desc = "+Buffers" },
-        { mode = "n", keys = "<Leader>l", desc = "+LSP" },
         { mode = "n", keys = "<Leader>e", desc = "+Explore" },
         { mode = "n", keys = "<Leader>f", desc = "+Fuzzy" },
         { mode = "n", keys = "<Leader>g", desc = "+Git" },
+        { mode = "n", keys = "<Leader>h", desc = "+Hunks" },
+        { mode = "n", keys = "<Leader>l", desc = "+LSP" },
       },
     })
   end,
