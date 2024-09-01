@@ -51,4 +51,4 @@ vim.opt.breakindent = true -- Indent wrapped lines to match line start
 vim.opt.cursorline = true -- Highlight current line
 
 -- Colorscheme
-vim.cmd("colorscheme tokyonight-storm")
+vim.cmd("colorscheme kanagawa")
