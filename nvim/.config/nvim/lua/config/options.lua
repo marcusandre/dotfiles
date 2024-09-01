@@ -1,7 +1,7 @@
 vim.cmd("filetype plugin indent on") -- Enable all filetype plugins
 
 -- Backups
-vim.opt.undofile = true -- Enable persistent undo
+vim.opt.undofile = true -- Enable persistent undo history
 vim.opt.backup = false -- Don't store backup while overwriting a file
 vim.opt.writebackup = false -- Don't store backup while overwriting a file
 
@@ -41,9 +41,10 @@ vim.opt.completeopt = "menuone,noselect"
 vim.opt.conceallevel = 2
 vim.opt.laststatus = 2
 vim.opt.colorcolumn = "80"
-vim.opt.shortmess:append("Wc") -- Reduce command line messages
+vim.opt.iskeyword:append("-") -- treat `-` same as `_` character
 vim.opt.listchars = "tab:> ,extends:…,precedes:…,nbsp:␣" -- Define which helper symbols to show
 vim.opt.list = true -- Show some helper symbols
+vim.opt.showtabline = 0
 
 vim.opt.wrap = false -- Display long lines as just one line
 vim.opt.linebreak = true -- Wrap long lines at 'breakat' (if 'wrap' is set)
@@ -52,3 +53,8 @@ vim.opt.cursorline = true -- Highlight current line
 
 -- Colorscheme
 vim.cmd("colorscheme kanagawa")
+
+-- Highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function() vim.highlight.on_yank({ timeout = 1000 }) end,
+})
