@@ -28,7 +28,23 @@ map("n", "<leader>fb", "<Cmd>Telescope buffers<CR>", { desc = "Buffers" })
 map("n", "<leader>ff", "<Cmd>Telescope find_files<CR>", { desc = "Files" })
 map("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", { desc = "Grep" })
 map("n", "<leader>fh", "<Cmd>Telescope help_tags<CR>", { desc = "Help" })
+map("n", "<leader>fl", "<Cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Lines" })
 map("n", "<leader>ft", "<Cmd>TodoTelescope<CR>", { desc = "Todo" })
+
+local pickers = require("telescope.builtin")
+
+map(
+  "n",
+  "gw",
+  function() pickers.current_buffer_fuzzy_find({ default_text = vim.fn.expand("<cword>") }) end,
+  { desc = "Telescope: fuzzy find word under cursor in current buffer" }
+)
+map(
+  "n",
+  "<leader>fw",
+  function() pickers.live_grep({ default_text = vim.fn.expand("<cword>") }) end,
+  { desc = "Telescope: live grep word under cursor (cwd>" }
+)
 
 -- "g" stands for git
 map("n", "<leader>gg", "<Cmd>Neogit<CR>", { desc = "Neogit" })
