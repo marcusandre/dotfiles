@@ -1,4 +1,4 @@
-theme = "kanagawa"
+theme = "tokyonight_storm"
 
 [editor]
 bufferline = "always"

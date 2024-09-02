@@ -16,7 +16,7 @@ config.font = wezterm.font_with_fallback({
   "Input Mono Narrow",
 })
 
-config.font_size = 14
+config.font_size = 13
 -- config.line_height = 1.125
 
 config.initial_rows = 54
@@ -30,9 +30,9 @@ config.set_environment_variables = {
 -- Colors
 local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
-    return "Kanagawa (Gogh)"
+    return "tokyonight_storm"
   else
-    return "Kanagawa (Gogh)"
+    return "tokyonight_storm"
   end
 end
 

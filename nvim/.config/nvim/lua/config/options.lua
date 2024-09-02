@@ -52,7 +52,7 @@ vim.opt.breakindent = true -- Indent wrapped lines to match line start
 vim.opt.cursorline = true -- Highlight current line
 
 -- Colorscheme
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme tokyonight-storm")
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
