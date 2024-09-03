@@ -9,3 +9,6 @@ safeRequire("config.leader")
 safeRequire("config.lazy")
 safeRequire("config.options")
 safeRequire("config.keymaps")
+
+local colours = require("config.colorscheme")
+colours.apply("light")

@@ -51,9 +51,6 @@ vim.opt.linebreak = true -- Wrap long lines at 'breakat' (if 'wrap' is set)
 vim.opt.breakindent = true -- Indent wrapped lines to match line start
 vim.opt.cursorline = true -- Highlight current line
 
--- Colorscheme
-vim.cmd("colorscheme tokyonight-storm")
-
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function() vim.highlight.on_yank({ timeout = 1000 }) end,
