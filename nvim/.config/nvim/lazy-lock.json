@@ -17,7 +17,7 @@
   "iceberg.vim": { "branch": "master", "commit": "23835d5ed696436f716cbfdb56a93a7850fe3b18" },
   "indentmini.nvim": { "branch": "main", "commit": "466af749b62c0e7192dbc2826918fad0ba5f01b9" },
   "kanagawa.nvim": { "branch": "master", "commit": "f491b0fe68fffbece7030181073dfe51f45cda81" },
-  "lackluster.nvim": { "branch": "main", "commit": "bf786ce1cfd01d97e603ac55bf9ddff12aec0d92" },
+  "lackluster.nvim": { "branch": "main", "commit": "16a9f7022533f66b7a209fe4bd60c79a706e15a1" },
   "lazy.nvim": { "branch": "main", "commit": "48b52b5cfcf8f88ed0aff8fde573a5cc20b1306d" },
   "lazydev.nvim": { "branch": "main", "commit": "491452cf1ca6f029e90ad0d0368848fac717c6d2" },
   "lualine.nvim": { "branch": "master", "commit": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056" },
