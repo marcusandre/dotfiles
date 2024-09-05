@@ -12,4 +12,4 @@ safeRequire("config.keymaps")
 safeRequire("config.autocmds")
 
 local colours = require("config.colorscheme")
-colours.apply("dark")
+colours.apply("light")
