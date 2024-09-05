@@ -120,6 +120,7 @@ alias s="git status -s"
 alias gd="git diff"
 alias gl="git ll"
 alias gp="git push"
+alias gg='nvim -c "Neogit"'
 alias gu="git upgrade"
 alias gr="cd (git rev-parse --show-toplevel)"
 alias gap="git add . -p"
