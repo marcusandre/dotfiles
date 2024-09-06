@@ -13,24 +13,15 @@ return {
     opts = {},
   },
   {
-    "AlexvZyl/nordic.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
-  {
     "EdenEast/nightfox.nvim",
     lazy = false,
     priority = 1000,
     opts = {},
   },
   {
-    "morhetz/gruvbox",
+    "projekt0n/github-nvim-theme",
     lazy = false,
     priority = 1000,
-  },
-  {
-    "projekt0n/github-nvim-theme",
   },
   {
     "cocopon/iceberg.vim",
@@ -49,7 +40,12 @@ return {
     opts = {},
   },
   {
-    "slugbyte/lackluster.nvim",
+    "morhetz/gruvbox",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "AlexvZyl/nordic.nvim",
     lazy = false,
     priority = 1000,
     opts = {},
