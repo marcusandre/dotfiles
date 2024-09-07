@@ -1,6 +1,4 @@
-local set = vim.opt_local
-
-local function augroup(name) return vim.api.nvim_create_augroup("m_" .. name, { clear = true }) end
+local function augroup(name) return vim.api.nvim_create_augroup("m_autocmds_" .. name, { clear = true }) end
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -18,29 +16,33 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
--- Set options for terminal buffers
-vim.api.nvim_create_autocmd("TermOpen", {
-  group = augroup("term_open"),
-  callback = function()
-    vim.bo.filetype = "terminal"
+-- Toggle `relativenumber` on insert enter/leave
+vim.api.nvim_create_autocmd("InsertEnter", {
+  pattern = "*",
+  group = augroup("enter_relativenumber"),
+  command = "setlocal norelativenumber",
+})
 
-    set.number = false
-    set.relativenumber = false
-    set.scrolloff = 0
-  end,
+vim.api.nvim_create_autocmd("InsertLeave", {
+  pattern = "*",
+  group = augroup("leave_relativenumber"),
+  command = "setlocal relativenumber",
 })
 
 -- Display diagnostics as virtual text only if not in insert mode
 vim.api.nvim_create_autocmd("InsertEnter", {
   pattern = "*",
+  group = augroup("insert_diagnostics"),
   callback = function()
     vim.diagnostic.config({
       virtual_text = false,
     })
   end,
 })
+
 vim.api.nvim_create_autocmd("InsertLeave", {
   pattern = "*",
+  group = augroup("leaver_diagnostics"),
   callback = function()
     vim.diagnostic.config({
       virtual_text = true,

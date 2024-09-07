@@ -4,72 +4,62 @@ local map = function(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, opts)
 end
 
-map("i", "kj", "<ESC><Cmd>silent! update | redraw<CR>", { desc = "Escape" })
+local map_leader = function(mode, lhs, rhs, opts) map(mode, "<leader>" .. lhs, rhs, opts) end
 
--- Improve j/k motions
+-- Move by visible lines
 map({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true })
 map({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'k']], { expr = true })
 
--- Copy/paste with system clipboard
-map({ "n", "x" }, "gy", '"+y', { desc = "Copy to system clipboard" })
-map("n", "gp", '"+p', { desc = "Paste from system clipboard" })
-map("x", "gp", '"+P', { desc = "Paste from system clipboard" })
+-- Save and exit to normal mode
+map("n", "<C-S>", "<Cmd>silent! update | redraw<CR>", { desc = "Save" })
+map({ "i", "x" }, "<C-S>", "<Esc><Cmd>silent! update | redraw<CR>", { desc = "Save and go to Normal mode" })
 
--- "b" stands for buffers
-map("n", "<leader>ba", "<Cmd>b#<CR>", { desc = "Alternate" })
-map("n", "<leader>bd", "<Cmd>lua MiniBufremove.delete()<CR>", { desc = "Delete" })
+-- Buffers
+map_leader("n", "x", "<Cmd>lua MiniBufremove.delete()<CR>", { desc = "Delete buffer" })
+map_leader("n", "<space>", "<Cmd>b#<CR>", { desc = "Show alternate buffer" })
 
--- "e" stands for explore
-map("n", "<leader>ee", "<Cmd>Oil<CR>", { desc = "Oil" })
+-- LSP
+map_leader("n", "k", vim.lsp.buf.hover, { desc = "Show docs for item under cursor" })
+map_leader("n", "r", vim.lsp.buf.rename, { desc = "Rename symbol" })
+map_leader("n", "e", vim.diagnostic.open_float, { desc = "Show diagnostics" })
+map_leader({ "n", "v" }, "a", vim.lsp.buf.code_action, { desc = "Perform code action" })
 
--- "f" stands for fuzzy
-map("n", "<leader>fa", "<Cmd>Telescope git_status<CR>", { desc = "Status" })
-map("n", "<leader>fb", "<Cmd>Telescope buffers<CR>", { desc = "Buffers" })
-map("n", "<leader>ff", "<Cmd>Telescope find_files<CR>", { desc = "Files" })
-map("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", { desc = "Grep" })
-map("n", "<leader>fh", "<Cmd>Telescope help_tags<CR>", { desc = "Help" })
-map("n", "<leader>fl", "<Cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Lines" })
-map("n", "<leader>ft", "<Cmd>TodoTelescope<CR>", { desc = "Todo" })
+map_leader("n", "s", '<Cmd>Pick lsp scope="document_symbol"<CR>', { desc = "Open symbol picker" })
+map_leader("n", "S", '<Cmd>Pick lsp scope="workspace_symbol"<CR>', { desc = "Open workspace symbol picker" })
 
-local pickers = require("telescope.builtin")
+map("n", "gD", '<Cmd>Pick lsp scope="declaration"<CR>', { desc = "Goto declaration" })
+map("n", "gd", '<Cmd>Pick lsp scope="definition"<CR>', { desc = "Goto definition" })
+map("n", "gI", '<Cmd>Pick lsp scope="implementation"<CR>', { desc = "Goto implementation" })
+map("n", "gr", '<Cmd>Pick lsp scope="references"<CR>', { desc = "Goto references" })
+map("n", "gy", '<Cmd>Pick lsp scope="type_definition"<CR>', { desc = "Goto type definition" })
 
-map(
+-- Clipboard
+map_leader({ "n", "x" }, "y", '"+y', { desc = "Yank selection to clipboard" })
+map_leader("n", "p", '"+p', { desc = "Paste clipboard after selection" })
+map_leader("n", "P", '"+P', { desc = "Paste clipboard before selection" })
+
+-- Mini.Pick
+map_leader("n", "f", "<Cmd>Pick files<CR>", { desc = "Open file picker" })
+map_leader("n", "b", "<Cmd>Pick buffers<CR>", { desc = "Open buffer picker" })
+map_leader("n", "g", "<Cmd>Pick git_hunks<CR>", { desc = "Open changed file picker" })
+
+map_leader("n", "d", '<Cmd>Pick diagnostic scope="current"<CR>', { desc = "Open diagnostic picker" })
+map_leader("n", "D", '<Cmd>Pick diagnostic scope="all"<CR>', { desc = "Open workspace diagnostic picker" })
+
+map_leader("n", "'", "<Cmd>Pick resume<CR>", { desc = "Open last picker" })
+map_leader("n", "/", "<Cmd>Pick grep_live<CR>", { desc = "Global search in workspace folder" })
+map_leader("n", "?", "<Cmd>Pick commands<CR>", { desc = "Show command palette" })
+
+-- Wansmer/treesj
+vim.keymap.set("n", "<leader>m", require("treesj").toggle, { desc = "Split/join node under cursor" })
+vim.keymap.set(
   "n",
-  "gw",
-  function() pickers.current_buffer_fuzzy_find({ default_text = vim.fn.expand("<cword>") }) end,
-  { desc = "Telescope: fuzzy find word under cursor in current buffer" }
-)
-map(
-  "n",
-  "<leader>fw",
-  function() pickers.live_grep({ default_text = vim.fn.expand("<cword>") }) end,
-  { desc = "Telescope: live grep word under cursor (cwd>" }
+  "<leader>M",
+  function() require("treesj").toggle({ split = { recursive = true } }) end,
+  { desc = "Split/join node under cursor recursive" }
 )
 
--- "g" stands for git
-map("n", "<leader>gg", "<Cmd>Neogit<CR>", { desc = "Neogit" })
-
--- "l" stands for LSP
-map("n", "<leader>ld", "<Cmd>Telescope diagnostics<cr>", { desc = "diagnostics" })
-map("n", "<leader>le", vim.diagnostic.open_float, { desc = "Diagnostics" })
-map("n", "<leader>li", "<Cmd>Telescope lsp_implementations<CR>", { desc = "Implementations" })
-map("n", "<leader>lr", vim.lsp.buf.rename, { desc = "Rename" })
-map("n", "<leader>ls", "<Cmd>Telescope lsp_document_symbols<CR>", { desc = "Symbols (buffer)" })
-map("n", "<leader>lt", "<Cmd>FzfLua lsp_typedefs<CR>", { desc = "Type Definitions" })
-map("n", "<leader>lw", "<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>", { desc = "Symbols (workspace)" })
-map("n", "<leader>lx", "<Cmd>lua vim.diagnostic.setloclist()<CR>", { desc = "Diagnostics (LocList)" })
-
--- "o" stands for other/toggle
-map({ "i", "n" }, "<Leader>om", ":write<CR>:make<CR>", { desc = "Make" })
-
--- Related LSP mappings
-map("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", { desc = "Definitions" })
-map("n", "gr", "<Cmd>Telescope lsp_references<CR>", { desc = "References" })
-map({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, { desc = "Code action" })
-
--- "t" stands for testing
-map("n", "tf", "<Cmd>TestFile<CR>", { desc = "File" })
-map("n", "tF", "<Cmd>TestFile --coverage<CR>", { desc = "File (coverage)" })
-map("n", "tl", "<Cmd>TestLast<CR>", { desc = "Last" })
-map("n", "tt", "<Cmd>TestNearest<CR>", { desc = "Nearest" })
-map("n", "tv", "<Cmd>TestVisit<CR>", { desc = "Visit" })
+-- Open/Others
+map_leader("n", "og", "<Cmd>Neogit<CR>", { desc = "Neogit" })
+map_leader("n", "oo", "<Cmd>Oil<CR>", { desc = "Oil" })
+map_leader({ "i", "n" }, "om", ":write<CR>:make<CR>", { desc = "Make" })
