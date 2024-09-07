@@ -46,10 +46,6 @@ if type -q nvim
     set -gx MANPAGER 'nvim +Man!'
 end
 
-if type -q moar
-    set -x PAGER moar
-end
-
 if type -q fzf
     fzf --fish | source
 
