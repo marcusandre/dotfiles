@@ -51,5 +51,3 @@ o.list = true -- Show some helper symbols
 
 -- Enable syntax highlighting if it wasn't already
 if vim.fn.exists("syntax_on") ~= 1 then vim.cmd([[syntax enable]]) end
-
-vim.cmd("colorscheme tokyonight-storm")

@@ -32,8 +32,7 @@ local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
     return "tokyonight_storm"
   else
-    -- return "iceberg-light"
-    return "tokyonight_storm"
+    return "dayfox"
   end
 end
 
