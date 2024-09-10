@@ -4,8 +4,10 @@ return {
   config = function()
     require("conform").setup({
       formatters_by_ft = {
+        gitconfig = { "squeeze_blanks", "indent_expr" },
+        just = { "just", "squeeze_blanks", "indent_expr" },
         lua = { "stylua" },
-        just = { "just", "squeeze_blanks" },
+        markdown = { "markdown-toc", "markdownlint" },
         query = { "format-queries" },
       },
       format_on_save = {
