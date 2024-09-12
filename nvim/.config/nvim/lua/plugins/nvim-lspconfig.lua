@@ -125,12 +125,14 @@ return {
       "actionlint",
       "gofumpt",
       "goimports",
+      "golines",
       "hadolint",
       "markdown-toc",
       "markdownlint",
       "prettier",
       "shfmt",
       "stylua",
+      "taplo",
       "tflint",
     }
 
