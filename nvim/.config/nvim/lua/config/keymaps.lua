@@ -51,6 +51,10 @@ map_leader("n", "'", "<Cmd>Pick resume<CR>", { desc = "Open last picker" })
 map_leader("n", "/", "<Cmd>Pick grep_live<CR>", { desc = "Global search in workspace folder" })
 map_leader("n", "?", "<Cmd>Pick commands<CR>", { desc = "Show command palette" })
 
+-- Testing
+map_leader("n", "tt", "<Cmd>TestNearest<CR>", { desc = "Test nearest" })
+map_leader("n", "tT", "<Cmd>TestNearest --coverage<CR>", { desc = "Test nearest with coverage" })
+
 -- Wansmer/treesj
 vim.keymap.set("n", "<leader>m", require("treesj").toggle, { desc = "Split/join node under cursor" })
 vim.keymap.set(
