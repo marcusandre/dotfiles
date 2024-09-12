@@ -63,6 +63,16 @@ config.window_padding = {
 -- Keymaps
 local action = wezterm.action
 
+local close_other_panes = function(win, pane)
+  local tab = win:active_tab()
+  for _, p in ipairs(tab:panes()) do
+    if p:pane_id() ~= pane:pane_id() then
+      p:activate()
+      win:perform_action(action.CloseCurrentPane({ confirm = false }), p)
+    end
+  end
+end
+
 config.keys = {
   { mods = "ALT", key = "Enter", action = "DisableDefaultAssignment" },
   { mods = "ALT", key = "\\", action = action.ShowTabNavigator },
@@ -80,6 +90,7 @@ config.keys = {
   { mods = "CMD", key = "l", action = action.ActivatePaneDirection("Right") },
   { mods = "CMD", key = "m", action = "DisableDefaultAssignment" },
   { mods = "CMD", key = "w", action = action.CloseCurrentPane({ confirm = true }) },
+  { mods = "CMD", key = "W", action = wezterm.action_callback(close_other_panes) },
 }
 
 return config
