@@ -66,5 +66,6 @@ vim.keymap.set(
 
 -- Open/Others
 map_leader("n", "og", "<Cmd>Neogit<CR>", { desc = "Neogit" })
+map_leader("n", "ol", "<Cmd>Lazy<CR>", { desc = "Lazy" })
 map_leader("n", "oo", "<Cmd>Oil<CR>", { desc = "Oil" })
 map_leader({ "i", "n" }, "om", ":write<CR>:make<CR>", { desc = "Make" })
