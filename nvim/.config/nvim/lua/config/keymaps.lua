@@ -46,6 +46,7 @@ map_leader("n", "g", "<Cmd>Pick git_hunks<CR>", { desc = "Open changed file pick
 map_leader("n", "d", '<Cmd>Pick diagnostic scope="current"<CR>', { desc = "Open diagnostic picker" })
 map_leader("n", "D", '<Cmd>Pick diagnostic scope="all"<CR>', { desc = "Open workspace diagnostic picker" })
 
+map_leader("n", "h", "<Cmd>Pick help<CR>", { desc = "Open help tags" })
 map_leader("n", "'", "<Cmd>Pick resume<CR>", { desc = "Open last picker" })
 map_leader("n", "/", "<Cmd>Pick grep_live<CR>", { desc = "Global search in workspace folder" })
 map_leader("n", "?", "<Cmd>Pick commands<CR>", { desc = "Show command palette" })
