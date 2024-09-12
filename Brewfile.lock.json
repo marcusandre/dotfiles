@@ -68,7 +68,7 @@
         }
       },
       "bandwhich": {
-        "version": "0.22.2",
+        "version": "0.23.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -117,7 +117,7 @@
         }
       },
       "bash": {
-        "version": "5.2.26",
+        "version": "5.2.32",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -254,7 +254,7 @@
         }
       },
       "curl": {
-        "version": "8.9.0",
+        "version": "8.10.0",
         "bottle": {
           "rebuild": 1,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -303,7 +303,7 @@
         }
       },
       "difftastic": {
-        "version": "0.59.0",
+        "version": "0.60.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -460,7 +460,7 @@
         }
       },
       "eza": {
-        "version": "0.18.23",
+        "version": "0.19.3",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -509,7 +509,7 @@
         }
       },
       "fd": {
-        "version": "10.1.0",
+        "version": "10.2.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -625,7 +625,7 @@
         }
       },
       "fzf": {
-        "version": "0.54.2",
+        "version": "0.55.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -674,7 +674,7 @@
         }
       },
       "gh": {
-        "version": "2.54.0",
+        "version": "2.56.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -821,7 +821,7 @@
         }
       },
       "git-delta": {
-        "version": "0.17.0",
+        "version": "0.18.2",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -884,7 +884,7 @@
         }
       },
       "glow": {
-        "version": "1.5.1",
+        "version": "2.0.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -982,7 +982,7 @@
         }
       },
       "go": {
-        "version": "1.22.5",
+        "version": "1.23.1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1144,7 +1144,7 @@
         }
       },
       "jj": {
-        "version": "0.19.0_1",
+        "version": "0.21.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1242,7 +1242,7 @@
         }
       },
       "just": {
-        "version": "1.32.0",
+        "version": "1.35.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1438,7 +1438,7 @@
         }
       },
       "macchina": {
-        "version": "6.1.8",
+        "version": "6.2.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1482,7 +1482,7 @@
         }
       },
       "mise": {
-        "version": "2024.7.5",
+        "version": "2024.9.2",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1668,11 +1668,16 @@
         }
       },
       "numbat": {
-        "version": "1.12.0",
+        "version": "1.13.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
           "files": {
+            "arm64_sequoia": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/numbat/blobs/sha256:beccc8a028d824b91b7a721203ca1a1393514b2a40fc5bdbf93607731e6ad44b",
+              "sha256": "beccc8a028d824b91b7a721203ca1a1393514b2a40fc5bdbf93607731e6ad44b"
+            },
             "arm64_sonoma": {
               "cellar": ":any_skip_relocation",
               "url": "https://ghcr.io/v2/homebrew/core/numbat/blobs/sha256:b0d693da21ed40cc6c93d24a95519fe644d828d26c1e31647607aae67fac5e43",
@@ -1712,7 +1717,7 @@
         }
       },
       "nushell": {
-        "version": "0.96.1",
+        "version": "0.97.1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1845,7 +1850,7 @@
         }
       },
       "ripgrep": {
-        "version": "14.1.0",
+        "version": "14.1.1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2154,7 +2159,7 @@
         }
       },
       "stow": {
-        "version": "2.4.0",
+        "version": "2.4.1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2434,7 +2439,7 @@
         }
       },
       "typos-cli": {
-        "version": "1.23.5",
+        "version": "1.24.5",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2777,7 +2782,7 @@
         }
       },
       "zx": {
-        "version": "8.1.4",
+        "version": "8.1.6",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -2791,7 +2796,7 @@
         }
       },
       "lazygit": {
-        "version": "0.43.1",
+        "version": "0.44.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -3080,7 +3085,7 @@
         }
       },
       "colima": {
-        "version": "0.7.0",
+        "version": "0.7.5",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -3129,7 +3134,7 @@
         }
       },
       "zola": {
-        "version": "0.19.1",
+        "version": "0.19.2",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -3192,11 +3197,16 @@
         }
       },
       "fastfetch": {
-        "version": "2.22.0",
+        "version": "2.24.0",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
           "files": {
+            "arm64_sequoia": {
+              "cellar": "/opt/homebrew/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/fastfetch/blobs/sha256:bfd4f65ad7dd32f3806b729bf598a95784cef107b9a377558309ef4d205e7c2e",
+              "sha256": "bfd4f65ad7dd32f3806b729bf598a95784cef107b9a377558309ef4d205e7c2e"
+            },
             "arm64_sonoma": {
               "cellar": "/opt/homebrew/Cellar",
               "url": "https://ghcr.io/v2/homebrew/core/fastfetch/blobs/sha256:2bd8421b7c4d9f9bb7b2e3942496387829bcf80a161643d40874f94e0cfa3361",
@@ -3334,7 +3344,7 @@
         }
       },
       "yazi": {
-        "version": "0.3.2",
+        "version": "0.3.3",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -3434,7 +3444,7 @@
     },
     "cask": {
       "cleanshot": {
-        "version": "4.7.3",
+        "version": "4.7.4",
         "options": {
           "full_name": "cleanshot"
         }
@@ -3582,7 +3592,7 @@
   "system": {
     "macos": {
       "sonoma": {
-        "HOMEBREW_VERSION": "4.3.20-77-g0fb4d51",
+        "HOMEBREW_VERSION": "4.3.21-2-g9042eb9",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "15.3.0.0.1.1708646388",
