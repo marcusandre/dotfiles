@@ -1,0 +1,10 @@
+add_newline = false
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$jobs\
+$status\
+$character
+"""
