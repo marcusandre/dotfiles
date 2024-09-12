@@ -4,6 +4,7 @@ return {
   config = function()
     require("conform").setup({
       formatters_by_ft = {
+        fish = { "fish_indent" },
         gitconfig = { "squeeze_blanks", "indent_expr" },
         just = { "just", "squeeze_blanks", "indent_expr" },
         lua = { "stylua" },

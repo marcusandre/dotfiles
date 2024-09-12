@@ -3,3 +3,6 @@ all:
 
 delete:
     stow --verbose --target=$HOME --delete */
+
+fmt:
+    fish_indent -w fish/.config/fish/config.fish
