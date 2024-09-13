@@ -64,8 +64,13 @@ vim.keymap.set(
   { desc = "Split/join node under cursor recursive" }
 )
 
+-- linrongbin16/gitlinker.nvim
+map({ "n", "v" }, "gl", "<Cmd>GitLink<CR>", { desc = "Yank git link" })
+map({ "n", "v" }, "gL", "<Cmd>GitLink!<CR>", { desc = "Yank and open git link" })
+
 -- Open/Others
 map_leader("n", "og", "<Cmd>Neogit<CR>", { desc = "Neogit" })
 map_leader("n", "ol", "<Cmd>Lazy<CR>", { desc = "Lazy" })
 map_leader("n", "oo", "<Cmd>Oil<CR>", { desc = "Oil" })
+
 map_leader({ "i", "n" }, "om", ":write<CR>:make<CR>", { desc = "Make" })
