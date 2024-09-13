@@ -6,6 +6,7 @@ return {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-buffer",
     "zbirenbaum/copilot-cmp",
+    "petertriho/cmp-git",
   },
   config = function()
     local cmp = require("cmp")
@@ -38,6 +39,7 @@ return {
         { name = "nvim_lsp" },
         { name = "path" },
         { name = "buffer" },
+        { name = "git" },
       }),
       experimental = {
         ghost_text = {
@@ -46,4 +48,5 @@ return {
       },
     })
   end,
+  init = function() table.insert(require("cmp").get_config().sources, { name = "git" }) end,
 }
