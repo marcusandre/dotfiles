@@ -15,6 +15,7 @@ return {
       "git_rebase",
       "gitattributes",
       "gitcommit",
+      "gitignore",
       "go",
       "gomod",
       "gosum",
