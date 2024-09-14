@@ -44,6 +44,8 @@ if type -q nvim
     set -gx EDITOR nvim
     set -gx VISUAL nvim
     set -gx MANPAGER 'nvim +Man!'
+else
+    set -gx EDITOR vim
 end
 
 if type -q fzf
@@ -56,6 +58,10 @@ if type -q fzf
     end
 end
 
+# Homebrew
+set -gx HOMEBREW_NO_EMOJI 1
+set -gx HOMEBREW_NO_ANALYTICS 1
+
 if type -q atuin
     atuin init fish --disable-up-arrow | source
 end
@@ -63,7 +69,6 @@ end
 if type -q rg
     set -gx RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/ripgrep/.ripgreprc
 end
-
 
 if type -q zoxide
     zoxide init fish | source
@@ -93,14 +98,6 @@ else
     alias ll='ls -l'
 end
 
-if command -v lazygit >/dev/null
-    alias lg='lazygit'
-end
-
-if command -v lazydocker >/dev/null
-    alias lr='lazydocker'
-end
-
 alias cat='bat --paging=never'
 alias rf="rm -fr"
 alias e="nvim"
@@ -116,30 +113,3 @@ alias gg='nvim -c "Neogit"'
 alias gu="git upgrade"
 alias gr="cd (git rev-parse --show-toplevel)"
 alias gap="git add . -p"
-
-function less
-    command less -i -M -R -S -X -F $argv
-end
-
-function mkdir
-    command mkdir -p $argv
-end
-
-function md -d "Create a new directory and cd into it"
-    mkdir -p -- $argv
-    if test $status = 0
-        cd $argv
-    end
-end
-
-function t -d "List directory recursively as tree"
-    eza --tree -la --git-ignore --icons
-end
-
-function ef -d "Skim through files and open them in nvim"
-    rg --files | sk --preview="bat {} --color=always" | xargs -r nvim
-end
-
-function eg -d "Skim through lines and open them in nvim"
-    sk -m --ansi -i -c 'rg --line-number  "{}"' | awk -F':' '{print "+"$2, $1}' | xargs -r nvim
-end
