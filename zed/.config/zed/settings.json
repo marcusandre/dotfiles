@@ -7,8 +7,8 @@
     "version": "2"
   },
   "base_keymap": "VSCode",
-  "buffer_font_family": "JetBrains Mono",
-  "buffer_font_size": 13,
+  "buffer_font_family": "Input Mono Condensed",
+  "buffer_font_size": 14,
   "cursor_blink": false,
   "inlay_hints": { "enabled": true },
   "scrollbar": { "show": "never" },
@@ -17,7 +17,7 @@
     "dark": "Tokyo Night Storm",
     "light": "Tokyo Night Light"
   },
-  "ui_font_family": "JetBrains Mono",
+  "ui_font_family": "Input Mono Condensed",
   "ui_font_size": 13,
   "vim_mode": true,
   "terminal": {
