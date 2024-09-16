@@ -14,6 +14,8 @@ map({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'k']], { expr = true })
 map("n", "<C-S>", "<Cmd>silent! update | redraw<CR>", { desc = "Save" })
 map({ "i", "x" }, "<C-S>", "<Esc><Cmd>silent! update | redraw<CR>", { desc = "Save and go to Normal mode" })
 
+map("n", "Q", "<nop>")
+
 -- Buffers
 map_leader("n", "x", "<Cmd>lua MiniBufremove.delete()<CR>", { desc = "Delete buffer" })
 map_leader("n", "<space>", "<Cmd>b#<CR>", { desc = "Show alternate buffer" })
