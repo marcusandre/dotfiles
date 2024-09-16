@@ -4,10 +4,13 @@ return {
     version = false,
     config = function()
       require("mini.bufremove").setup()
+      require("mini.bracketed").setup()
+      require("mini.cursorword").setup()
       require("mini.diff").setup()
       require("mini.extra").setup()
       require("mini.move").setup()
       require("mini.tabline").setup()
+      require("mini.trailspace").setup()
 
       require("mini.pick").setup()
       vim.ui.select = MiniPick.ui_select
