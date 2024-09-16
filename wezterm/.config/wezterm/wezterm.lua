@@ -9,12 +9,7 @@ config.term = "wezterm"
 config.font = wezterm.font_with_fallback({
   "Input Mono Condensed",
   "JetBrains Mono",
-  "Fira Code",
   "Berkeley Mono",
-  "Monaspace Argon",
-  "Monaspace Neon",
-  "CommitMono",
-  "Input Mono Narrow",
 })
 
 config.font_size = 14
