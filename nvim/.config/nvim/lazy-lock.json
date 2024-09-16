@@ -10,6 +10,7 @@
   "crates.nvim": { "branch": "main", "commit": "5a24e3ba60e28e0cfde540696630b3c5a4db6dfd" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "fidget.nvim": { "branch": "main", "commit": "d855eed8a06531a7e8fd0684889b2943f373c469" },
+  "git-blame.nvim": { "branch": "master", "commit": "8c56e864d448e84e0162872c381dd2715824dce2" },
   "gitlinker.nvim": { "branch": "master", "commit": "542f51784f20107ef9ecdadc47825204837efed5" },
   "indentmini.nvim": { "branch": "main", "commit": "466af749b62c0e7192dbc2826918fad0ba5f01b9" },
   "lazy.nvim": { "branch": "main", "commit": "460e1cd8f24e364d54543a4b0e83f6f4ec1f65fb" },
