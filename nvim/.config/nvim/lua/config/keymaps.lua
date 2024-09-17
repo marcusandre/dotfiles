@@ -53,8 +53,11 @@ map_leader("n", "/", "<Cmd>Pick grep_live<CR>", { desc = "Global search in works
 map_leader("n", "?", "<Cmd>Pick commands<CR>", { desc = "Show command palette" })
 
 -- Testing
-map_leader("n", "tt", "<Cmd>TestNearest<CR>", { desc = "Test nearest" })
-map_leader("n", "tT", "<Cmd>TestNearest --coverage<CR>", { desc = "Test nearest with coverage" })
+map_leader("n", "tN", "<Cmd>TestNearest --coverage<CR>", { desc = "Test nearest with coverage" })
+map_leader("n", "tn", "<Cmd>TestNearest<CR>", { desc = "Test nearest" })
+map_leader("n", "tT", "<Cmd>TestFile --coverage<CR>", { desc = "Test file with coverage" })
+map_leader("n", "tt", "<Cmd>TestFile<CR>", { desc = "Test file" })
+map_leader("n", "tv", "<Cmd>TestVisit<CR>", { desc = "Visit test" })
 
 -- Wansmer/treesj
 vim.keymap.set("n", "<leader>m", require("treesj").toggle, { desc = "Split/join node under cursor" })

@@ -2,7 +2,15 @@ return {
   {
     "vim-test/vim-test",
     dependencies = { "tpope/vim-projectionist" },
-    config = function() vim.g["test#strategy"] = "wezterm" end,
+    init = function()
+      vim.g["test#custom_strategies"] = {
+        wezterm_wrapped = function(cmd)
+          vim.fn["test#strategy#wezterm"]("clear; " .. cmd .. "\n")
+          vim.g["test#wezterm#pane_id"] = nil
+        end,
+      }
+      vim.g["test#strategy"] = "wezterm_wrapped"
+    end,
   },
   {
     "andythigpen/nvim-coverage",
