@@ -37,14 +37,9 @@ o.wrap = false -- Display long lines as just one line
 o.signcolumn = "yes" -- Always show sign column (otherwise it will shift text)
 o.fillchars = "eob: " -- Don't show `~` outside of buffer
 o.shortmess:append("Wc") -- Reduce command line messages
-o.pumblend = 10 -- Make builtin completion menus slightly transparent
 o.pumheight = 10 -- Make popup menu smaller
-o.winblend = 10 -- Make floating windows slightly transparent
 o.laststatus = 2 -- Always show statusline
-
-o.pumblend = 10 -- Make builtin completion menus slightly transparent
 o.pumheight = 10 -- Make popup menu smaller
-o.winblend = 10 -- Make floating windows slightly transparent
 
 o.listchars = "tab:> ,extends:…,precedes:…,nbsp:␣" -- Define which helper symbols to show
 o.list = true -- Show some helper symbols

@@ -2,6 +2,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    "RRethy/nvim-treesitter-endwise",
     { "windwp/nvim-ts-autotag", opts = {} },
   },
   build = ":TSUpdate",
@@ -48,6 +49,7 @@ return {
     ---@diagnostic disable-next-line: missing-fields
     require("nvim-treesitter.configs").setup({
       ensure_installed = ensure_installed,
+      endwise = true,
       highlight = { enable = true, should_disable = should_disable },
       indent = { enable = true, align = true },
       incremental_selection = {

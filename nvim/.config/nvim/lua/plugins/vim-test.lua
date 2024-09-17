@@ -1,7 +1,13 @@
 return {
   {
     "vim-test/vim-test",
-    dependencies = { "tpope/vim-projectionist" },
+    cmd = {
+      "TestFile",
+      "TestLast",
+      "TestNearest",
+      "TestSuite",
+      "TestVisit",
+    },
     init = function()
       vim.g["test#custom_strategies"] = {
         wezterm_wrapped = function(cmd)
@@ -13,7 +19,12 @@ return {
     end,
   },
   {
+    "tpope/vim-projectionist",
+    event = "VeryLazy",
+  },
+  {
     "andythigpen/nvim-coverage",
+    cmd = "Coverage",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
   },

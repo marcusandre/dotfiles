@@ -52,29 +52,33 @@ map_leader("n", "'", "<Cmd>Pick resume<CR>", { desc = "Open last picker" })
 map_leader("n", "/", "<Cmd>Pick grep_live<CR>", { desc = "Global search in workspace folder" })
 map_leader("n", "?", "<Cmd>Pick commands<CR>", { desc = "Show command palette" })
 
--- Testing
-map_leader("n", "tN", "<Cmd>TestNearest --coverage<CR>", { desc = "Test nearest with coverage" })
-map_leader("n", "tn", "<Cmd>TestNearest<CR>", { desc = "Test nearest" })
-map_leader("n", "tT", "<Cmd>TestFile --coverage<CR>", { desc = "Test file with coverage" })
-map_leader("n", "tt", "<Cmd>TestFile<CR>", { desc = "Test file" })
-map_leader("n", "tv", "<Cmd>TestVisit<CR>", { desc = "Visit test" })
-
 -- Wansmer/treesj
-vim.keymap.set("n", "<leader>m", require("treesj").toggle, { desc = "Split/join node under cursor" })
-vim.keymap.set(
+map("n", "<leader>m", require("treesj").toggle, { desc = "Split/join node under cursor" })
+map(
   "n",
   "<leader>M",
   function() require("treesj").toggle({ split = { recursive = true } }) end,
   { desc = "Split/join node under cursor recursive" }
 )
 
+-- stevearc/conform.nvim
+map_leader("n", "F", function() require("conform").format({ lsp_format = "fallback" }) end, { desc = "Format buffer" })
+
 -- linrongbin16/gitlinker.nvim
 map({ "n", "v" }, "gl", "<Cmd>GitLink<CR>", { desc = "Yank git link" })
 map({ "n", "v" }, "gL", "<Cmd>GitLink!<CR>", { desc = "Yank and open git link" })
 
--- Open/Others
+-- vim-test/vim-test
+map_leader("n", "tN", "<Cmd>TestNearest --coverage<CR>", { desc = "Test nearest with coverage" })
+map_leader("n", "tn", "<Cmd>TestNearest<CR>", { desc = "Test nearest" })
+map_leader("n", "tT", "<Cmd>TestFile --coverage<CR>", { desc = "Test file with coverage" })
+map_leader("n", "tt", "<Cmd>TestFile<CR>", { desc = "Test file" })
+map_leader("n", "tv", "<Cmd>TestVisit<CR>", { desc = "Visit test" })
+
+-- Open
 map_leader("n", "og", "<Cmd>Neogit<CR>", { desc = "Neogit" })
 map_leader("n", "ol", "<Cmd>Lazy<CR>", { desc = "Lazy" })
 map_leader("n", "oo", "<Cmd>Oil<CR>", { desc = "Oil" })
 
+-- Others
 map_leader({ "i", "n" }, "om", ":write<CR>:make<CR>", { desc = "Make" })
