@@ -75,8 +75,8 @@ map(
 map_leader("n", "F", function() require("conform").format({ lsp_format = "fallback" }) end, { desc = "Format buffer" })
 
 -- linrongbin16/gitlinker.nvim
-map({ "n", "v" }, "gl", "<Cmd>GitLink<CR>", { desc = "Yank git link" })
-map({ "n", "v" }, "gL", "<Cmd>GitLink!<CR>", { desc = "Yank and open git link" })
+map({ "n", "v" }, "gl", "<Cmd>GitBlameCopyFileURL<CR>", { desc = "Yank git link" })
+map({ "n", "v" }, "gL", "<Cmd>GitBlameOpenFileURL<CR>", { desc = "Open git link" })
 
 -- vim-test/vim-test
 map_leader("n", "tN", "<Cmd>TestNearest --coverage<CR>", { desc = "Test nearest with coverage" })
