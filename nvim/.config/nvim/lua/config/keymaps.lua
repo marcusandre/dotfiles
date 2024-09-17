@@ -10,6 +10,16 @@ local map_leader = function(mode, lhs, rhs, opts) map(mode, "<leader>" .. lhs, r
 map({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true })
 map({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'k']], { expr = true })
 
+-- Keeping the cursor centered.
+map("n", "<C-d>", "<C-d>zz", { desc = "Scroll downwards" })
+map("n", "<C-u>", "<C-u>zz", { desc = "Scroll upwards" })
+map("n", "N", "Nzzzv", { desc = "Previous result" })
+map("n", "n", "nzzzv", { desc = "Next result" })
+
+-- Indent while remaining in visual mode.
+map("v", "<", "<gv", { desc = "Indent current selection" })
+map("v", ">", ">gv", { desc = "Outdent current selection" })
+
 -- Save and exit to normal mode
 map("n", "<C-S>", "<Cmd>silent! update | redraw<CR>", { desc = "Save" })
 map({ "i", "x" }, "<C-S>", "<Esc><Cmd>silent! update | redraw<CR>", { desc = "Save and go to Normal mode" })
