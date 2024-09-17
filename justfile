@@ -6,3 +6,4 @@ delete:
 
 fmt:
     fish_indent -w fish/.config/fish/config.fish
+    stylua ./nvim/.config/nvim/**/*.lua
