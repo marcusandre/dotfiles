@@ -6,7 +6,6 @@ return {
       require("mini.bufremove").setup()
       require("mini.bracketed").setup()
       require("mini.cursorword").setup()
-      require("mini.diff").setup()
       require("mini.extra").setup()
       require("mini.move").setup()
       require("mini.tabline").setup()
