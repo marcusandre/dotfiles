@@ -29,6 +29,7 @@ return {
       "lua",
       "markdown",
       "markdown_inline",
+      "nix",
       "ron",
       "rust",
       "terraform",
