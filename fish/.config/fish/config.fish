@@ -91,7 +91,7 @@ if type -q thefuck
     thefuck --alias | source
 end
 
-if command -v eza >/dev/null
+if type -q eza
     alias ls='eza --icons'
     alias ll='eza -la --icons'
 else
