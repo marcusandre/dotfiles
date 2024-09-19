@@ -98,12 +98,6 @@ else
     alias ll='ls -l'
 end
 
-alias cat='bat --paging=never'
-alias rf="rm -fr"
-alias e="nvim"
-alias eu='nvim --headless "+Lazy! sync" +qa'
-alias serve="python3 -m http.server"
-
 alias d="git diff --stat"
 alias s="git status -s"
 alias gd="git diff"
