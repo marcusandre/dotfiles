@@ -12,7 +12,7 @@ config.font = wezterm.font_with_fallback({
   "Berkeley Mono",
 })
 
-config.font_size = 14
+config.font_size = 13
 config.line_height = 1.2
 
 config.initial_rows = 54
