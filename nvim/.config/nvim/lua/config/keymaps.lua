@@ -62,6 +62,8 @@ map_leader("n", "'", "<Cmd>Pick resume<CR>", { desc = "Open last picker" })
 map_leader("n", "/", "<Cmd>Pick grep_live<CR>", { desc = "Global search in workspace folder" })
 map_leader("n", "?", "<Cmd>Pick commands<CR>", { desc = "Show command palette" })
 
+map("n", ",", "<Cmd>Pick buf_lines scope='current'<CR>", { nowait = true })
+
 -- Wansmer/treesj
 map("n", "<leader>m", require("treesj").toggle, { desc = "Split/join node under cursor" })
 map(
