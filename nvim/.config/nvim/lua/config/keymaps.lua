@@ -91,6 +91,7 @@ map_leader("n", "tv", "<Cmd>TestVisit<CR>", { desc = "Visit test" })
 map_leader("n", "og", "<Cmd>Neogit<CR>", { desc = "Neogit" })
 map_leader("n", "ol", "<Cmd>Lazy<CR>", { desc = "Lazy" })
 map_leader("n", "oo", "<Cmd>Oil<CR>", { desc = "Oil" })
+map_leader("n", "or", "<Cmd>OverseerRun<CR>", { desc = "Overseer" })
 
 -- Others
 map_leader({ "i", "n" }, "om", ":write<CR>:make<CR>", { desc = "Make" })
