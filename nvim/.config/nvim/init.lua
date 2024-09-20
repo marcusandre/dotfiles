@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 ---@param module string
 local function safeRequire(module)
   local success, loadedModule = pcall(require, module)
