@@ -17,61 +17,7 @@ fish_add_path -mg $HOME/go/bin
 fish_add_path -mg $HOME/.cargo/bin
 fish_add_path -mg $HOME/bin
 
-set -x GOPATH $HOME
-
-if type -q nvim
-    set -gx EDITOR nvim
-    set -gx VISUAL nvim
-    set -gx MANPAGER 'nvim +Man!'
-else
-    set -gx EDITOR vim
-end
-
-if type -q fzf
-    fzf --fish | source
-
-    if command -sq bat
-        set -gx FZF_CTRL_T_OPTS "--ansi --preview 'bat -f -p --line-range :300 {}'"
-    else
-        set -gx FZF_CTRL_T_OPTS "--preview 'cat {}'"
-    end
-end
-
-# Homebrew
-set -gx HOMEBREW_NO_EMOJI 1
-set -gx HOMEBREW_NO_ANALYTICS 1
-
-if type -q atuin
-    atuin init fish --disable-up-arrow | source
-end
-
-if type -q rg
-    set -gx RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/ripgrep/.ripgreprc
-end
-
-if type -q zoxide
-    zoxide init fish | source
-end
-
-if type -q jj
-    set -x JJ_CONFIG ~/.config/jj/config.toml
-    jj util completion fish | source
-end
-
-if type -q direnv
-    direnv hook fish | source
-end
-
-if type -q mise
-    mise activate fish | source
-end
-
-if type -q eza
-    alias ls='eza --icons'
-    alias ll='eza -la --icons'
-else
-    alias ll='ls -l'
-end
+alias ll='ls -l'
 
 alias d="git diff --stat"
 alias s="git status -s"
