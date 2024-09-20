@@ -3,42 +3,20 @@ if not status is-interactive
 end
 
 set -U fish_greeting
-#set -g fish_key_bindings fish_vi_key_bindings
-
 set -x LC_ALL en_US.UTF-8
 
+set -gx XDG_CACHE_HOME $HOME/.cache
 set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx XDG_DATA_HOME $HOME/.local/share
-set -gx XDG_CACHE_HOME $HOME/.cache
 set -gx XDG_STATE_HOME $HOME/.local/state
 
+fish_add_path -mg /usr/local/bin
+fish_add_path -mg /opt/homebrew/bin
+fish_add_path -mg $HOME/go/bin
+fish_add_path -mg $HOME/.cargo/bin
+fish_add_path -mg $HOME/bin
+
 set -x GOPATH $HOME
-
-set -x PATH /usr/local/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin
-
-if test -d $HOME/bin
-    set -x PATH $PATH $HOME/bin
-end
-
-if test -d /opt/homebrew/bin
-    set -x PATH $PATH /opt/homebrew/bin
-end
-
-if test -d $HOME/go/bin
-    set -x PATH $PATH $HOME/go/bin
-end
-
-if test -d $HOME/.cargo/bin
-    set -x PATH $PATH $HOME/.cargo/bin
-end
-
-if test -d $HOME/.local/share/ocaml
-    set -x PATH $PATH $HOME/.local/share/ocaml
-end
-
-if test -f $HOME/.opam/opam-init/init.fish
-    source $HOME/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
-end
 
 if type -q nvim
     set -gx EDITOR nvim
@@ -85,10 +63,6 @@ end
 
 if type -q mise
     mise activate fish | source
-end
-
-if type -q thefuck
-    thefuck --alias | source
 end
 
 if type -q eza
