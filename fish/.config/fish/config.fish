@@ -12,6 +12,7 @@ set -gx XDG_STATE_HOME $HOME/.local/state
 
 fish_add_path -mg /usr/local/bin
 fish_add_path -mg /opt/homebrew/bin
+fish_add_path -mg $HOME/.local/share/bob/nvim-bin
 fish_add_path -mg $HOME/go/bin
 fish_add_path -mg $HOME/.cargo/bin
 fish_add_path -mg $HOME/bin
