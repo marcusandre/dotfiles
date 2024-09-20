@@ -21,8 +21,8 @@ map("v", "<", "<gv", { desc = "Indent current selection" })
 map("v", ">", ">gv", { desc = "Outdent current selection" })
 
 -- Save and exit to normal mode
-map("n", "<C-S>", "<Cmd>silent! update | redraw<CR>", { desc = "Save" })
-map({ "i", "x" }, "<C-S>", "<Esc><Cmd>silent! update | redraw<CR>", { desc = "Save and go to Normal mode" })
+map_leader("n", "w", "<Cmd>silent! update | redraw<CR>", { desc = "Save" })
+map({ "i", "x" }, "kj", "<Esc><Cmd>silent! update | redraw<CR>", { desc = "Save and go to Normal mode" })
 
 map("n", "Q", "<nop>")
 
