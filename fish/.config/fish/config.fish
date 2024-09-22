@@ -2,7 +2,6 @@ if not status is-interactive
     return 0
 end
 
-set -U fish_greeting
 set -x LC_ALL en_US.UTF-8
 
 set -gx XDG_CACHE_HOME $HOME/.cache
@@ -18,7 +17,6 @@ fish_add_path -mg $HOME/.cargo/bin
 fish_add_path -mg $HOME/bin
 
 alias ll='ls -l'
-
 alias d="git diff --stat"
 alias s="git status -s"
 alias gd="git diff"
