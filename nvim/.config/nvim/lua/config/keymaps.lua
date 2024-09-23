@@ -36,33 +36,10 @@ map_leader("n", "r", vim.lsp.buf.rename, { desc = "Rename symbol" })
 map_leader("n", "e", vim.diagnostic.open_float, { desc = "Show diagnostics" })
 map_leader({ "n", "v" }, "a", vim.lsp.buf.code_action, { desc = "Perform code action" })
 
-map_leader("n", "s", '<Cmd>Pick lsp scope="document_symbol"<CR>', { desc = "Open symbol picker" })
-map_leader("n", "S", '<Cmd>Pick lsp scope="workspace_symbol"<CR>', { desc = "Open workspace symbol picker" })
-
-map("n", "gD", '<Cmd>Pick lsp scope="declaration"<CR>', { desc = "Goto declaration" })
-map("n", "gd", '<Cmd>Pick lsp scope="definition"<CR>', { desc = "Goto definition" })
-map("n", "gI", '<Cmd>Pick lsp scope="implementation"<CR>', { desc = "Goto implementation" })
-map("n", "gr", '<Cmd>Pick lsp scope="references"<CR>', { desc = "Goto references" })
-map("n", "gy", '<Cmd>Pick lsp scope="type_definition"<CR>', { desc = "Goto type definition" })
-
 -- Clipboard
 map_leader({ "n", "x" }, "y", '"+y', { desc = "Yank selection to clipboard" })
 map_leader("n", "p", '"+p', { desc = "Paste clipboard after selection" })
 map_leader("n", "P", '"+P', { desc = "Paste clipboard before selection" })
-
--- Mini.Pick
-map_leader("n", "f", "<Cmd>Pick files<CR>", { desc = "Open file picker" })
-map_leader("n", "b", "<Cmd>Pick buffers<CR>", { desc = "Open buffer picker" })
-map_leader("n", "g", "<Cmd>Pick git_hunks<CR>", { desc = "Open changed file picker" })
-
-map_leader("n", "d", '<Cmd>Pick diagnostic scope="current"<CR>', { desc = "Open diagnostic picker" })
-map_leader("n", "D", '<Cmd>Pick diagnostic scope="all"<CR>', { desc = "Open workspace diagnostic picker" })
-
-map_leader("n", "'", "<Cmd>Pick resume<CR>", { desc = "Open last picker" })
-map_leader("n", "/", "<Cmd>Pick grep_live<CR>", { desc = "Global search in workspace folder" })
-map_leader("n", "?", "<Cmd>Pick commands<CR>", { desc = "Show command palette" })
-
-map("n", ",", "<Cmd>Pick buf_lines scope='current'<CR>", { nowait = true })
 
 -- Wansmer/treesj
 map("n", "<leader>m", require("treesj").toggle, { desc = "Split/join node under cursor" })
