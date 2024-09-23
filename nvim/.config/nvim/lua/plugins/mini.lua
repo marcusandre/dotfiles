@@ -14,7 +14,7 @@ return {
   },
   {
     "echasnovski/mini.pick",
-    enabled = true,
+    enabled = false,
     version = false,
     keys = {
       -- Buffers
