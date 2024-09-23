@@ -41,7 +41,7 @@
   verbose = true
 
 [core]
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.config/git/ignore
 
 [push]
   default = current
