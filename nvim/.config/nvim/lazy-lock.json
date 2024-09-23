@@ -39,7 +39,7 @@
   "overseer.nvim": { "branch": "master", "commit": "a2734d90c514eea27c4759c9f502adbcdfbce485" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
   "quicker.nvim": { "branch": "master", "commit": "183041a46d6c908eefb1c23ea02cce9c8f41256e" },
-  "render-markdown.nvim": { "branch": "main", "commit": "f187721a5381f4443ef97ad1a7c0681a65511d28" },
+  "render-markdown.nvim": { "branch": "main", "commit": "75a0a9596a91130fae43d3b7c0d6c651645ef1df" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },

@@ -10,6 +10,8 @@ local map_leader = function(mode, lhs, rhs, opts) map(mode, "<leader>" .. lhs, r
 map({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true })
 map({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'k']], { expr = true })
 
+map_leader("n", "q", "<Cmd>qall<CR>", { desc = "Exit nvim, unless there are some buffers which have been changed" })
+
 -- Keeping the cursor centered.
 map("n", "<C-d>", "<C-d>zz", { desc = "Scroll downwards" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Scroll upwards" })
