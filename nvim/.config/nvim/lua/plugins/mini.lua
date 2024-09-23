@@ -8,6 +8,7 @@ return {
       require("mini.cursorword").setup()
       require("mini.extra").setup()
       require("mini.move").setup()
+      require("mini.statusline").setup()
       require("mini.tabline").setup()
       require("mini.trailspace").setup()
     end,
