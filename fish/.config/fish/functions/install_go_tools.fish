@@ -1,4 +1,4 @@
-function install-go-tools
+function install_go_tools
     set tools \
         golang.org/x/tools/cmd/godoc@latest \
         golang.org/x/tools/cmd/goimports@latest \

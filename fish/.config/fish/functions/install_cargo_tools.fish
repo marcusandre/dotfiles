@@ -1,4 +1,4 @@
-function install-cargo-tools
+function install_cargo_tools
     cargo install cargo-binstall
 
     set tools cargo-component usage-cli
