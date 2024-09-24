@@ -153,16 +153,17 @@ return {
       lspconfig[name].setup(config)
     end
 
-    local disable_semantic_tokens = {
-      lua = true,
-    }
+    -- local disable_semantic_tokens = {
+    --   lua = true,
+    -- }
 
     vim.api.nvim_create_autocmd("LspAttach", {
       callback = function(args)
-        local bufnr = args.buf
-        local filetype = vim.bo[bufnr].filetype
+        -- local bufnr = args.buf
+        -- local filetype = vim.bo[bufnr].filetype
         local client = assert(vim.lsp.get_client_by_id(args.data.client_id), "must have valid client")
-        if disable_semantic_tokens[filetype] then client.server_capabilities.semanticTokensProvider = nil end
+        -- if disable_semantic_tokens[filetype] then client.server_capabilities.semanticTokensProvider = nil end
+        client.server_capabilities.semanticTokensProvider = nil
       end,
     })
   end,
