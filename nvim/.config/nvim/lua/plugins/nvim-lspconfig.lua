@@ -18,6 +18,7 @@ return {
     local servers = {
       dockerls = true,
       eslint = true,
+      html = true,
       marksman = true,
       terraformls = true,
       zls = true,
