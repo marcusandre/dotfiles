@@ -23,5 +23,5 @@ require("lazy").setup({
   change_detection = { notify = false },
   checker = { enabled = true, frequency = 60 * 60 * 24 * 7 },
   diff = { cmd = "browser" },
-  install = { colorscheme = { "tokyonight-night", "default" } },
+  install = { colorscheme = { "nightfly", "default" } },
 })

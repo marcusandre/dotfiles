@@ -13,7 +13,7 @@ config.font = wezterm.font_with_fallback({
 })
 
 config.font_size = 13
-config.line_height = 1.2
+config.line_height = 1.125
 
 config.initial_rows = 54
 config.initial_cols = 180
@@ -26,10 +26,9 @@ config.set_environment_variables = {
 -- Colors
 local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
-    return "tokyonight_night"
+    return "Nightfly (Gogh)"
   else
-    -- return "dayfox"
-    return "tokyonight_night"
+    return "Nightfly (Gogh)"
   end
 end
 
