@@ -3,20 +3,16 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   opts = {
     signs = {
-      add = { text = "▒" },
-      change = { text = "▒" },
-      delete = { text = "▒" },
-      topdelete = { text = "▒" },
-      changedelete = { text = "▒" },
-      untracked = { text = "▒" },
+      add = { text = "▐" },
+      change = { text = "▐" },
+      delete = { text = "▐" },
+      topdelete = { text = "▐" },
+      changedelete = { text = "▐" },
+      untracked = { text = "▐" },
     },
-    signs_staged = {
-      add = { text = "▒" },
-      change = { text = "▒" },
-      delete = { text = "▒" },
-      topdelete = { text = "▒" },
-      changedelete = { text = "▒" },
-    },
+    signcolumn = true,
+    numhl = false,
+    watch_gitdir = { interval = 1000 },
     on_attach = function(bufnr)
       local gitsigns = require("gitsigns")
 

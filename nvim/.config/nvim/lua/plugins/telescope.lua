@@ -18,6 +18,9 @@ return {
     { "gr", "<Cmd>Telescope lsp_references<CR>", { desc = "Goto references" } },
     { "gy", "<Cmd>Telescope lsp_type_definitions<CR>", { desc = "Goto type definition" } },
 
+    -- Utilities
+    { "<leader>u", "<Cmd>Telescope undo<CR>", { desc = "Open and show undo tree" } },
+
     -- Others
     { ",", "<Cmd>Telescope current_buffer_fuzzy_find<CR>" },
     { "<leader>'", "<Cmd>Telescope resume<CR>", { desc = "Open last picker" } },
@@ -26,11 +29,13 @@ return {
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
+    "debugloop/telescope-undo.nvim",
     "nvim-telescope/telescope-ui-select.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   opts = {
     extensions = {
+      undo = {},
       ["ui-select"] = {
         require("telescope.themes").get_dropdown({}),
       },
@@ -38,6 +43,7 @@ return {
   },
   config = function(opts)
     require("telescope").setup(opts)
+    require("telescope").load_extension("fzf")
     require("telescope").load_extension("fzf")
     require("telescope").load_extension("ui-select")
   end,
