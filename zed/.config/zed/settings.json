@@ -8,7 +8,7 @@
   },
   "base_keymap": "VSCode",
   "buffer_font_family": "Input Mono Condensed",
-  "buffer_font_size": 14,
+  "buffer_font_size": 13,
   "cursor_blink": false,
   "inlay_hints": { "enabled": true },
   "scrollbar": { "show": "never" },
