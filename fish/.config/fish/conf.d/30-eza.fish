@@ -1,6 +1,5 @@
 if type -q eza
-    abbr -a ls eza
-    abbr -a ll eza -l
-    abbr -a la eza -la
+    abbr -a ls eza -l
+    abbr -a ll eza -la
     abbr -a tree eza -tree
 end
