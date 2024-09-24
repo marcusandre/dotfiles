@@ -26,7 +26,6 @@ vim.opt.inccommand = "split" -- Show the effect of substitutions
 o.relativenumber = true -- Show relative line numbers
 o.breakindent = true -- Indent wrapped lines to match line start
 o.termguicolors = true -- Enable gui colors
-o.cursorline = true -- Highlight current line
 o.linebreak = true -- Wrap long lines at 'breakat' (if 'wrap' is set)
 o.number = true -- Show line numbers
 o.splitbelow = true -- Horizontal splits will be below
