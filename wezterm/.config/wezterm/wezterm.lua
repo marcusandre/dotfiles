@@ -15,9 +15,6 @@ config.font = wezterm.font_with_fallback({
 config.font_size = 14
 config.line_height = 1.125
 
-config.initial_rows = 54
-config.initial_cols = 180
-
 config.term = "wezterm"
 config.set_environment_variables = {
   TERMINFO_DIRS = wezterm.home_dir .. "/.terminfo",
@@ -26,9 +23,10 @@ config.set_environment_variables = {
 -- Colors
 local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
-    return "tokyonight_night"
+    return "melange_dark"
   else
-    return "tokyonight_night"
+    -- return "melange_light"
+    return "melange_dark"
   end
 end
 
@@ -46,7 +44,6 @@ end)
 config.enable_scroll_bar = false
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
--- config.force_reverse_video_cursor = true
 
 config.window_padding = {
   left = 0,
