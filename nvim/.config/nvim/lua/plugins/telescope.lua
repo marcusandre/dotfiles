@@ -2,6 +2,12 @@ return {
   "nvim-telescope/telescope.nvim",
   tag = "0.1.8",
   cmd = "Telescope",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "debugloop/telescope-undo.nvim",
+    "nvim-telescope/telescope-ui-select.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+  },
   keys = {
     -- Buffers
     { "<leader>f", "<Cmd>Telescope find_files<CR>", { desc = "Open file picker" } },
@@ -26,12 +32,6 @@ return {
     { "<leader>'", "<Cmd>Telescope resume<CR>", { desc = "Open last picker" } },
     { "<leader>/", "<Cmd>Telescope live_grep<CR>", { desc = "Global search in workspace folder" } },
     { "<leader>?", "<Cmd>Telescope command_history<CR>", { desc = "Show command palette" } },
-  },
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "debugloop/telescope-undo.nvim",
-    "nvim-telescope/telescope-ui-select.nvim",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   opts = {
     extensions = {
