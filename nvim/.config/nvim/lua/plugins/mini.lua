@@ -3,10 +3,11 @@ return {
     "echasnovski/mini.nvim",
     version = false,
     config = function()
-      require("mini.bufremove").setup()
       require("mini.bracketed").setup()
+      require("mini.bufremove").setup()
       require("mini.cursorword").setup()
       require("mini.extra").setup()
+      require("mini.icons").setup()
       require("mini.move").setup()
       require("mini.tabline").setup()
       require("mini.trailspace").setup()
@@ -43,10 +44,5 @@ return {
       require("mini.pick").setup()
       vim.ui.select = MiniPick.ui_select
     end,
-  },
-  {
-    "echasnovski/mini.icons",
-    version = false,
-    enabled = vim.g.have_nerd_font,
   },
 }
