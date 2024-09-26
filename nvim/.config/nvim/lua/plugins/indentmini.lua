@@ -1,5 +1,6 @@
 return {
   "nvimdev/indentmini.nvim",
+  enabled = false,
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     require("indentmini").setup()
@@ -13,8 +14,8 @@ return {
     -- vim.cmd.highlight("IndentLineCurrent guifg=#4b6479")
 
     -- Melange highlights
-    vim.cmd.highlight("IndentLine guifg=#403a36")
-    vim.cmd.highlight("IndentLineCurrent guifg=#8b7449")
+    -- vim.cmd.highlight("IndentLine guifg=#403a36")
+    -- vim.cmd.highlight("IndentLineCurrent guifg=#8b7449")
 
     -- Kanagawa highlights
     -- vim.cmd.highlight("IndentLine guifg=#54546d")
