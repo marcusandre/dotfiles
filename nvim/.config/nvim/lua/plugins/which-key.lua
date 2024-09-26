@@ -4,6 +4,7 @@ return {
   opts = function()
     local wk = require("which-key")
     wk.add({
+      { "<leader>h", group = "Hunks" },
       { "<leader>o", group = "Other" },
       { "<leader>t", group = "Testing" },
     })

@@ -6,6 +6,7 @@ return {
     "nvim-lua/plenary.nvim",
     "debugloop/telescope-undo.nvim",
     "nvim-telescope/telescope-ui-select.nvim",
+    "nvim-telescope/telescope-github.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   keys = {
@@ -44,7 +45,7 @@ return {
   config = function(opts)
     require("telescope").setup(opts)
     require("telescope").load_extension("fzf")
-    require("telescope").load_extension("fzf")
+    require("telescope").load_extension("gh")
     require("telescope").load_extension("ui-select")
   end,
 }
