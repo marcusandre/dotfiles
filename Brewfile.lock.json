@@ -3444,6 +3444,12 @@
         "options": {
           "full_name": "zed"
         }
+      },
+      "visual-studio-code": {
+        "version": "1.93.1",
+        "options": {
+          "full_name": "visual-studio-code"
+        }
       }
     }
   },
@@ -3458,7 +3464,7 @@
         "macOS": "14.5"
       },
       "sequoia": {
-        "HOMEBREW_VERSION": "4.3.24-67-gd1509cb",
+        "HOMEBREW_VERSION": "4.3.24-82-g05cde76",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "16.0.0.0.1.1724870825",
