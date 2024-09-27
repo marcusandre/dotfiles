@@ -2,6 +2,7 @@ if type -q git
     abbr -a d "git diff --stat"
     abbr -a g git
     abbr -a ga "git add"
+    abbr -a gm "git switch (git_main_branch)"
     abbr -a ga. "git add ."
     abbr -a gap "git add --patch"
     abbr -a gb "git branch"
