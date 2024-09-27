@@ -1,11 +1,8 @@
 return {
   "stevearc/conform.nvim",
-  event = { "BufWritePre" },
-  cmd = { "ConformInfo" },
   opts = {
     formatters_by_ft = {
       fish = { "fish_indent" },
-      gitconfig = { "squeeze_blanks", "indent_expr" },
       gleam = { "gleam" },
       go = { "gofumpt", "goimports", "golines" },
       hcl = { "hcl" },
