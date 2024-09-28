@@ -1,0 +1,15 @@
+
+# type[(scope)][!]: Description
+
+# TYPES:
+# feat     Add new feature
+# fix      Patch bug
+# refactor Change that neither adds features nor fixes bugs
+# build    Change build system
+# docs     Change documentation
+# style    Update formatting
+# test     Add/Update tests
+
+# BODY:    Explain change. Use the imperative present tense
+
+# FOOTER:  Mention Breaking Changes and reference GitHub issues
