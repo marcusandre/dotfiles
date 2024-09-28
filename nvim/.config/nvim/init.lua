@@ -18,15 +18,23 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 require("lazy").setup({
-  spec = {
-    { import = "plugins" },
-  },
+  spec = { { import = "plugins" } },
   install = { colorscheme = { "melange" } },
   checker = { enabled = true },
   change_detection = { enabled = false },
 })
 
+vim.opt.visualbell = true
+vim.opt.colorcolumn = "80"
+
 vim.cmd("colorscheme melange")
 
 vim.keymap.set("n", "<leader>w", "<Cmd>write<CR>", { desc = "Write" })
 vim.keymap.set("n", "<leader>q", "<Cmd>quit<CR>", { desc = "Quit" })
+
+vim.keymap.set("n", "<leader><space>", "<Cmd>b#<CR>", { desc = "Alternate buffer" })
+
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
+
+vim.keymap.set("i", "kj", "<Esc>")

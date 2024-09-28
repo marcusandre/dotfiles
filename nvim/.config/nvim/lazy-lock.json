@@ -2,7 +2,7 @@
   "conform.nvim": { "branch": "master", "commit": "1a99fdc1d3aa9ccdf3021e67982a679a8c5c740c" },
   "lazy.nvim": { "branch": "main", "commit": "460e1cd8f24e364d54543a4b0e83f6f4ec1f65fb" },
   "melange-nvim": { "branch": "master", "commit": "706a33f0a883fae9ec00ad648586792248a0575e" },
-  "mini.nvim": { "branch": "main", "commit": "73af55e44865f2ede67a772b0972a5d34dcedd0e" },
+  "mini.nvim": { "branch": "main", "commit": "848c5e8f428faf843051768e0d56104cd02aea1f" },
   "oil.nvim": { "branch": "master", "commit": "1360be5fda9c67338331abfcd80de2afbb395bcd" },
   "tokyonight.nvim": { "branch": "main", "commit": "817bb6ffff1b9ce72cdd45d9fcfa8c9cd1ad3839" }
 }
