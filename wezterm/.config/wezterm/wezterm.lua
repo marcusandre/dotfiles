@@ -15,6 +15,9 @@ config.font = wezterm.font_with_fallback({
 config.font_size = 14
 config.line_height = 1.125
 
+config.initial_rows = 50
+config.initial_cols = 200
+
 config.term = "wezterm"
 config.set_environment_variables = {
   TERMINFO_DIRS = wezterm.home_dir .. "/.terminfo",
