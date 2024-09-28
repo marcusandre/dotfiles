@@ -21,12 +21,12 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
-  install = { colorscheme = { "tokyonight" } },
+  install = { colorscheme = { "melange" } },
   checker = { enabled = true },
   change_detection = { enabled = false },
 })
 
-vim.cmd("colorscheme tokyonight-night")
+vim.cmd("colorscheme melange")
 
 vim.keymap.set("n", "<leader>w", "<Cmd>write<CR>", { desc = "Write" })
 vim.keymap.set("n", "<leader>q", "<Cmd>quit<CR>", { desc = "Quit" })
