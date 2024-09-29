@@ -19,7 +19,7 @@ vim.g.maplocalleader = " "
 
 require("lazy").setup({
   spec = { { import = "plugins" } },
-  install = { colorscheme = { "melange" } },
+  install = { colorscheme = { "tokyonight-night" } },
   checker = { enabled = true },
   change_detection = { enabled = false },
 })
@@ -27,7 +27,7 @@ require("lazy").setup({
 vim.opt.visualbell = true
 vim.opt.colorcolumn = "80"
 
-vim.cmd("colorscheme melange")
+vim.cmd("colorscheme tokyonight-night")
 
 vim.keymap.set("n", "<leader>w", "<Cmd>write<CR>", { desc = "Write" })
 vim.keymap.set("n", "<leader>q", "<Cmd>quit<CR>", { desc = "Quit" })
