@@ -25,7 +25,6 @@ require("lazy").setup({
 })
 
 vim.opt.visualbell = true
-vim.opt.colorcolumn = "80"
 
 vim.cmd("colorscheme tokyonight-night")
 
