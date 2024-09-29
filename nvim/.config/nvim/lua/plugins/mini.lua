@@ -1,6 +1,7 @@
 return {
   "echasnovski/mini.nvim",
   version = false,
+  lazy = false,
   keys = {
     -- mini.pick
     { "<leader>'", "<Cmd>Pick resume<CR>", desc = "Open last picker" },
