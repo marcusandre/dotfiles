@@ -8,12 +8,14 @@ This repository contains my personal configuration files.
 
 - [Fish](https://fishshell.com/)
 - [WezTerm](https://wezfurlong.org/wezterm)
-- [Git](https://git-scm.com/)
 - [Neovim](https://neovim.io/)
+- [Jujutsu (`jj`)](https://github.com/martinvonz/jj)
 - [Zed](https://zed.dev/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [Atuin](https://github.com/atuinsh/atuinb)
 - [Mise](https://mise.jdx.dev/)
+- [Just](https://github.com/casey/just)
+- [Git](https://git-scm.com/)
 - [and more](https://github.com/marcusandre/dotfiles/blob/main/Brewfile)
 
 ## Installation

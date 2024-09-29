@@ -1,0 +1,5 @@
+[ui]
+default-command = "log"
+
+[git]
+uto-local-branch = true
