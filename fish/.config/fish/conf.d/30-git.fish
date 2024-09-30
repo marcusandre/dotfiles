@@ -3,7 +3,6 @@ if type -q git
     abbr -a g git
     abbr -a ga "git add"
     abbr -a gm "git switch (git_main_branch)"
-    abbr -a ga. "git add ."
     abbr -a gap "git add --patch"
     abbr -a gb "git branch"
     abbr -a gc "git commit"
@@ -11,8 +10,6 @@ if type -q git
     abbr -a gl "git ll"
     abbr -a gp "git push"
     abbr -a gr "cd (git_root)"
-    abbr -a gss "git status"
-    abbr -a gsw "git switch"
-    abbr -a gu "git upgrade"
+    abbr -a gs "git switch"
     abbr -a s "git status --short"
 end
