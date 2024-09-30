@@ -24,6 +24,7 @@ require("lazy").setup({
   change_detection = { enabled = false },
 })
 
+vim.opt.inccommand = "split"
 vim.opt.visualbell = true
 
 vim.cmd("colorscheme tokyonight-night")

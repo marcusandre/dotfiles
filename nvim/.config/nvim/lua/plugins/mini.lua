@@ -8,7 +8,7 @@ return {
     { "<leader>b", "<Cmd>Pick buffers<CR>", desc = "Open buffers picker" },
     { "<leader>f", "<Cmd>Pick files<CR>", desc = "Open files picker" },
     { "<leader>/", "<Cmd>Pick grep_live<CR>", desc = "Global search in workspace folder" },
-    { "<leader>h", "<Cmd>Pick help_tags<CR>", desc = "Open help tags" },
+    { "<leader>h", "<Cmd>Pick help<CR>", desc = "Open help tags" },
     { "<leader>d", "<Cmd>Pick diagnostic<CR>", desc = "Open diagnostics" },
     { "<leader>g", "<Cmd>Pick git_hunks<CR>", desc = "Open modified buffers" },
     { ",", "<Cmd>Pick buf_lines<CR>", desc = "Open buffer lines" },
