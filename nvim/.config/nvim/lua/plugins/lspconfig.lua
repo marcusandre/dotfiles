@@ -8,7 +8,14 @@ return {
   },
   config = function()
     local tools = {
+      "gofumpt",
+      "goimports",
+      "golines",
+      "hclfmt",
+      "markdown-toc",
+      "markdownlint",
       "stylua",
+      "taplo",
     }
 
     local servers = {
