@@ -12,8 +12,6 @@ return {
       "goimports",
       "golines",
       "hclfmt",
-      "markdown-toc",
-      "markdownlint",
       "stylua",
       "taplo",
     }

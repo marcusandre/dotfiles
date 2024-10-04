@@ -8,7 +8,7 @@ return {
       hcl = { "hclfmt" },
       just = { "just", "squeeze_blanks", "indent_expr" },
       lua = { "stylua" },
-      markdown = { "markdown-toc", "markdownlint" },
+      -- markdown = { "markdown-toc", "markdownlint" },
       query = { "format-queries" },
       roc = { "roc" },
       rust = { "rustfmt" },
