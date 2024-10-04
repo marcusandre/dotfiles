@@ -9,7 +9,7 @@
   "melange-nvim": { "branch": "master", "commit": "706a33f0a883fae9ec00ad648586792248a0575e" },
   "mini.nvim": { "branch": "main", "commit": "61e5d46fc0cf71306c51275383767d996f559a60" },
   "neogit": { "branch": "master", "commit": "a021838dc2762cfc1c1808e56e112c36f5ca2154" },
-  "nvim-lspconfig": { "branch": "master", "commit": "3f9fe72100b5f8ca8da00e54ab70707647c822b3" },
+  "nvim-lspconfig": { "branch": "master", "commit": "f5c2a085110923d2f6aa8d62306b02a563b965b7" },
   "nvim-treesitter": { "branch": "master", "commit": "45386764cc9535200d2288cab929c5093d33660e" },
   "oil.nvim": { "branch": "master", "commit": "ccab9d5e09e2d0042fbbe5b6bd05e82426247067" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },

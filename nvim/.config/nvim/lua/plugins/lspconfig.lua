@@ -14,6 +14,7 @@ return {
       "hclfmt",
       "stylua",
       "taplo",
+      "zls",
     }
 
     local servers = {
@@ -32,7 +33,19 @@ return {
           },
         },
       },
+      zls = {
+        settings = {
+          zls = {
+            enable_inlay_hints = true,
+            enable_snippets = true,
+            warn_style = true,
+          },
+        },
+      },
     }
+
+    vim.g.zig_fmt_parse_errors = 0
+    vim.g.zig_fmt_autosave = 0
 
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, tools)
@@ -43,8 +56,8 @@ return {
     })
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    local lspconfig = require("lspconfig")
-    lspconfig.lua_ls.setup({
+
+    require("mason-lspconfig").setup({
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}

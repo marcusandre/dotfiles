@@ -21,6 +21,7 @@ return {
         "vimdoc",
         "xml",
         "yaml",
+        "zig",
       },
       sync_install = false,
       highlight = { enable = true },
