@@ -11,5 +11,6 @@ if type -q git
     abbr -a gp "git push"
     abbr -a gr "cd (git_root)"
     abbr -a gs "git switch"
+    abbr -a gu "git sync"
     abbr -a s "git status --short"
 end

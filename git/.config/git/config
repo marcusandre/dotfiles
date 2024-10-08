@@ -18,8 +18,8 @@
   root = rev-parse --show-toplevel
   squash = "!git rebase -v -i $(git main-branch)"
   todo = git grep -niE '(FIXME|TODO)'
-  ; undo = !"git reset --soft \"HEAD^\" && git diff --stat"
-  ; sync = "!git fetch --prune && git rebase origin/$(git main-branch)"
+  undo = !"git reset --soft \"HEAD^\" && git diff --stat"
+  sync = "!git fetch --prune && git rebase origin/$(git main-branch)"
   wip = !"git add . && git commit -n -m \"WIP\""
 
 [commit]
