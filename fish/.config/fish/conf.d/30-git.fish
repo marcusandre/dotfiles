@@ -7,6 +7,7 @@ if type -q git
     abbr -a gb "git branch"
     abbr -a gc "git commit"
     abbr -a gd "git diff"
+    abbr -a gdc "git diff --cached"
     abbr -a gl "git ll"
     abbr -a gp "git push"
     abbr -a gr "cd (git_root)"
