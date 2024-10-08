@@ -9,10 +9,9 @@ This repository contains my personal configuration files.
 - [Fish](https://fishshell.com/)
 - [WezTerm](https://wezfurlong.org/wezterm)
 - [Neovim](https://neovim.io/)
+- [Helix](https://helix-editor.com/)
 - [Jujutsu (`jj`)](https://github.com/martinvonz/jj)
-- [Zed](https://zed.dev/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [Atuin](https://github.com/atuinsh/atuinb)
 - [Mise](https://mise.jdx.dev/)
 - [Just](https://github.com/casey/just)
 - [Git](https://git-scm.com/)
@@ -30,7 +29,7 @@ brew bundle && just
 nvim --headless "+Lazy! sync" +qa
 ```
 
-## Keyboard (MacOS)
+## MacOS
 
 ```bash
 defaults write NSGlobalDomain KeyRepeat -int 1

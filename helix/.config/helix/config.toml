@@ -21,6 +21,8 @@ hidden = false
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
+C-j = "shrink_selection"
+C-k = "expand_selection"
 A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 A-k = [
   "extend_to_line_bounds",
@@ -28,3 +30,11 @@ A-k = [
   "move_line_up",
   "paste_before",
 ]
+
+[keys.normal.space]
+q = ":quit-all"
+x = ":buffer-close"
+w = { h = "hsplit", v = "vsplit", q = "wclose" }
+"space" = ":buffer-previous"
+[keys.insert]
+k = { j = "normal_mode" }
