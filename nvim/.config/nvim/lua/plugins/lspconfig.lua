@@ -57,6 +57,8 @@ return {
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
 
+    require("lspconfig").gleam.setup({})
+
     require("mason-lspconfig").setup({
       handlers = {
         function(server_name)
