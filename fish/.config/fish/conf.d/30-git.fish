@@ -9,6 +9,7 @@ if type -q git
     abbr -a gd "git diff"
     abbr -a gdc "git diff --cached"
     abbr -a gl "git ll"
+    abbr -a gll git_log_pretty
     abbr -a gp "git push"
     abbr -a gr "cd (git_root)"
     abbr -a gs "git switch"
