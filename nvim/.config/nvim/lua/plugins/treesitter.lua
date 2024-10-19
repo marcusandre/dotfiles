@@ -9,6 +9,7 @@ return {
     configs.setup({
       ensure_installed = {
         "diff",
+        "gitcommit",
         "gleam",
         "json",
         "jsonc",
