@@ -68,5 +68,16 @@ return {
         end,
       },
     })
+
+    vim.api.nvim_create_autocmd("LspAttach", {
+      group = vim.api.nvim_create_augroup("custom-lsp-attach", { clear = true }),
+      callback = function(event)
+        -- Code Actions
+        vim.keymap.set({ "n", "x" }, "<space>a", vim.lsp.buf.code_action, { desc = "Apply code action (LSP)" })
+
+        -- Rename
+        vim.keymap.set("n", "<space>r", vim.lsp.buf.rename, { desc = "Rename symbol (LSP)" })
+      end,
+    })
   end,
 }
