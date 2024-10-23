@@ -1,0 +1,6 @@
+[tools]
+usage = "latest"
+
+[settings]
+verbose = false
+not_found_auto_install = false
