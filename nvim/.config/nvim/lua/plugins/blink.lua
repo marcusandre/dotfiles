@@ -1,12 +1,24 @@
 return {
   "saghen/blink.cmp",
   lazy = false,
-  dependencies = "rafamadriz/friendly-snippets",
+  dependencies = {
+    "rafamadriz/friendly-snippets",
+    "niuiic/blink-cmp-rg.nvim",
+  },
   version = "v0.*",
+  ---@module 'blink.cmp'
+  ---@type blink.cmp.Config
   opts = {
-    highlight = {
-      use_nvim_cmp_as_default = true,
+    sources = {
+      completion = {
+        enabled_providers = { "lsp", "path", "snippets", "buffer", "ripgrep" },
+      },
+      providers = {
+        ripgrep = {
+          module = "blink-cmp-rg",
+          name = "Ripgrep",
+        },
+      },
     },
-    nerd_font_variant = "normal",
   },
 }

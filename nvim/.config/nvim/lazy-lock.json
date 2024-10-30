@@ -1,4 +1,5 @@
 {
+  "blink-cmp-rg.nvim": { "branch": "main", "commit": "666cb50da71171efd539f6a6ca3732cfd180741c" },
   "blink.cmp": { "branch": "main", "commit": "70438ac5016d3ab609f422d1ef084870cb9ceb29" },
   "conform.nvim": { "branch": "master", "commit": "6a28c90082a67f62a323ab90d988e000a718a8c7" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
