@@ -20,7 +20,7 @@ vim.g.maplocalleader = " "
 
 require("lazy").setup({
   spec = { { import = "plugins" } },
-  install = { colorscheme = { "tokyonight" } },
+  install = { colorscheme = { "terafox" } },
   checker = { enabled = false },
   change_detection = { enabled = false },
 })
@@ -28,7 +28,7 @@ require("lazy").setup({
 vim.opt.inccommand = "split"
 vim.opt.visualbell = true
 
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme terafox")
 
 vim.keymap.set("n", "<leader>w", "<Cmd>write<CR>", { desc = "Write" })
 vim.keymap.set("n", "<leader>q", "<Cmd>quit<CR>", { desc = "Quit" })

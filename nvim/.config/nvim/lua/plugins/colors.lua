@@ -12,6 +12,11 @@ return {
     },
   },
   {
+    "EdenEast/nightfox.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
     "savq/melange-nvim",
     lazy = false,
     priority = 1000,
