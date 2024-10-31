@@ -34,7 +34,6 @@ return {
     require("mini.diff").setup()
     require("mini.extra").setup()
     require("mini.move").setup()
-    require("mini.pairs").setup()
     require("mini.pick").setup()
     require("mini.splitjoin").setup()
     require("mini.statusline").setup()
