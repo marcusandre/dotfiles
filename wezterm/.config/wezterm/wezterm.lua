@@ -26,9 +26,9 @@ config.set_environment_variables = {
 -- Colors
 local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
-    return "terafox"
+    return "tokyonight_night"
   else
-    return "terafox"
+    return "tokyonight_night"
   end
 end
 
