@@ -7,6 +7,7 @@ config.term = "wezterm"
 
 -- Text
 config.font = wezterm.font_with_fallback({
+  "Essential PragmataPro",
   "Input Mono Condensed",
   "JetBrains Mono",
   "Berkeley Mono",
