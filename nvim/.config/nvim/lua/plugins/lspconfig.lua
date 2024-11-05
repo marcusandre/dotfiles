@@ -5,6 +5,7 @@ return {
     { "williamboman/mason-lspconfig.nvim", opts = {} },
     { "WhoIsSethDaniel/mason-tool-installer.nvim" },
     { "folke/lazydev.nvim", ft = "lua", opts = {} },
+    { "b0o/SchemaStore.nvim", lazy = true, version = false },
   },
   config = function()
     local tools = {
@@ -18,6 +19,18 @@ return {
     }
 
     local servers = {
+      jsonls = {
+        on_new_config = function(new_config)
+          new_config.settings.json.schemas = new_config.settings.json.schemas or {}
+          vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
+        end,
+        settings = {
+          json = {
+            format = { enable = true },
+            validate = { enable = true },
+          },
+        },
+      },
       lua_ls = {
         settings = {
           Lua = {

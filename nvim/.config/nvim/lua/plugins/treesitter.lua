@@ -9,9 +9,14 @@ return {
     configs.setup({
       ensure_installed = {
         "diff",
+        "git_config",
+        "git_rebase",
+        "gitattributes",
         "gitcommit",
+        "gitignore",
         "gleam",
         "json",
+        "json5",
         "jsonc",
         "lua",
         "luadoc",
