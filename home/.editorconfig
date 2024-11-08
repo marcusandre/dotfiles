@@ -10,7 +10,10 @@ trim_trailing_whitespace = true
 [{*.go,Makefile}]
 indent_style = tab
 
-[*.json]
+[{*.json, *.lua}]
+indent_size = 2
+
+[*.lua]
 indent_size = 2
 
 [*.gleam]
