@@ -1,6 +1,7 @@
 # dotfiles
 
-[![neovim](https://img.shields.io/badge/neovim-v10-509947)](https://neovim.io/)
+
+[![neovim](https://img.shields.io/badge/neovim-v11-dev)](https://neovim.io/)
 
 This repository contains my personal configuration files.
 
