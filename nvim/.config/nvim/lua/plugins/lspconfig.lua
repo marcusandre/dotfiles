@@ -16,6 +16,7 @@ return {
       "stylua",
       "taplo",
       "zls",
+      "vtsls",
     }
 
     local servers = {

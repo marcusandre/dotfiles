@@ -15,13 +15,17 @@
   "melange-nvim": { "branch": "master", "commit": "4963ebe8336a78eeedbb18b4fbd546dc27bae510" },
   "mini.nvim": { "branch": "main", "commit": "7b4d5d48b6b5a75009d63f8f3e4ef4819b7e8139" },
   "nightfox.nvim": { "branch": "main", "commit": "7557f26defd093c4e9bc17f28b08403f706f5a44" },
+  "nvim-coverage": { "branch": "main", "commit": "aa4b4400588e2259e87e372b1e4e90ae13cf5a39" },
   "nvim-lspconfig": { "branch": "master", "commit": "d2d153a179ed59aa7134d7ebdf4d7dcb156efa22" },
   "nvim-treesitter": { "branch": "master", "commit": "e1e3108cd23d7f967842261bd66126b6734d8907" },
   "oil.nvim": { "branch": "master", "commit": "8735d185b37457bd899cd4e47a4517b899407949" },
-  "snacks.nvim": { "branch": "main", "commit": "f704f7479f79def638b92d011cbf74e2d1b8db86" },
+  "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
+  "snacks.nvim": { "branch": "main", "commit": "f29c5865a8c71691b0be2311a7aa8d82caf4f4f3" },
   "tokyonight.nvim": { "branch": "main", "commit": "ce91ba480070c95f40753e4663e32b4632ac6db3" },
   "treesj": { "branch": "main", "commit": "0d81326b5afd36babe7dd480aabbb0b05f33e688" },
   "ts-comments.nvim": { "branch": "main", "commit": "2002692ad1d3f6518d016550c20c2a890f0cbf0e" },
+  "vim-projectionist": { "branch": "master", "commit": "104394c31ead4b09fbf0e16f9d367e3e179ee50a" },
+  "vim-test": { "branch": "master", "commit": "b0661402277de193a374ae241f0742898cbcb319" },
   "which-key.nvim": { "branch": "main", "commit": "68e37e12913a66b60073906f5d3f14dee0de19f2" },
   "zen-mode.nvim": { "branch": "main", "commit": "29b292bdc58b76a6c8f294c961a8bf92c5a6ebd6" }
 }

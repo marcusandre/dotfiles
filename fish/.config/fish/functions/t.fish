@@ -1,4 +1,3 @@
 function t --wraps=tre --description 'alias t tre'
-  tre $argv
-        
+    tre $argv
 end
