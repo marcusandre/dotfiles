@@ -4,7 +4,11 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
-    gitbrowse = { what = "file" },
+    bigfile = { enabled = true },
+    gitbrowse = { enabled = true, what = "file" },
+    quickfile = { enabled = true },
+    words = { enabled = true, what = "file" },
+    statuscolumn = { enabled = true, what = "file" },
   },
   keys = {
     { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },

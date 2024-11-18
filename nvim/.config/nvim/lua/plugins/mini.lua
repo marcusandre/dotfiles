@@ -30,7 +30,6 @@ return {
     require("mini.basics").setup({ extra_ui = true })
     require("mini.bracketed").setup()
     require("mini.bufremove").setup()
-    require("mini.cursorword").setup()
     require("mini.diff").setup()
     require("mini.extra").setup()
     require("mini.move").setup()
