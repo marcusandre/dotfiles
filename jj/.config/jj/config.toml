@@ -1,5 +1,6 @@
 [ui]
 default-command = "log"
+diff-editor = "diffedit3"
 
 [git]
 auto-local-branch = true
