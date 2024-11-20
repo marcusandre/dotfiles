@@ -16,6 +16,7 @@
   "mini.nvim": { "branch": "main", "commit": "6714e738555b1cfbef646a23af29aa113f91f4fe" },
   "nightfox.nvim": { "branch": "main", "commit": "7557f26defd093c4e9bc17f28b08403f706f5a44" },
   "nvim-coverage": { "branch": "main", "commit": "aa4b4400588e2259e87e372b1e4e90ae13cf5a39" },
+  "nvim-lsp-endhints": { "branch": "main", "commit": "3ca957934bfa2bdd594b49bda4666755ee31e529" },
   "nvim-lspconfig": { "branch": "master", "commit": "f012c1b176f0e3c71f40eb309bdec0316689462e" },
   "nvim-treesitter": { "branch": "master", "commit": "c50981479e4271ec87c5a15ec991472bdec4f1b8" },
   "oil.nvim": { "branch": "master", "commit": "8ea40b5506115b6d355e304dd9ee5089f7d78601" },
