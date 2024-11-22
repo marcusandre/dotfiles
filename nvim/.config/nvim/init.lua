@@ -20,7 +20,7 @@ vim.g.maplocalleader = " "
 
 require("lazy").setup({
   spec = { { import = "plugins" } },
-  install = { colorscheme = { "nightfox" } },
+  install = { colorscheme = { "kanagawa" } },
   checker = { enabled = false },
   change_detection = { enabled = false },
 })
@@ -28,7 +28,7 @@ require("lazy").setup({
 vim.opt.inccommand = "split"
 vim.opt.visualbell = true
 
-vim.cmd("colorscheme nightfox")
+vim.cmd("colorscheme kanagawa")
 
 vim.keymap.set("n", "<leader>w", "<Cmd>write<CR>", { desc = "Write" })
 vim.keymap.set("n", "<leader>q", "<Cmd>quit<CR>", { desc = "Quit" })
