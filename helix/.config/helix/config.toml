@@ -1,20 +1,4 @@
-theme = "kanagawa"
-
-[editor]
-bufferline = "always"
-line-number = "relative"
-
-[editor.cursor-shape]
-insert = "bar"
-select = "underline"
-
-[editor.indent-guides]
-character = "▏"
-render = true
-
-[editor.lsp]
-display-messages = true
-display-inlay-hints = true
+theme = "tokyonight"
 
 [editor.file-picker]
 hidden = false
@@ -34,7 +18,5 @@ A-k = [
 [keys.normal.space]
 q = ":quit-all"
 x = ":buffer-close"
-w = { h = "hsplit", v = "vsplit", q = "wclose" }
+w = ":write"
 "space" = ":buffer-previous"
-[keys.insert]
-k = { j = "normal_mode" }
