@@ -1,13 +1,7 @@
 *~
 .DS_Store
-tags
-.tags
 node_modules/
 npm-debug.log
-_site/
-.bundle/
 .env
-.venv
 .projections.json
 .mise.toml
-.zed

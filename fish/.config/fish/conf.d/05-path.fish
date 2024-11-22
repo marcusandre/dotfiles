@@ -1,3 +1,5 @@
-fish_add_path -mg "$HOME/go/bin"
-fish_add_path -mg "$HOME/.cargo/bin"
-fish_add_path -mg "$HOME/bin"
+if status --is-interactive
+    if test -f $HOME/.cargo/env.fish
+        fish_add_path -mg "$HOME/bin"
+    end
+end

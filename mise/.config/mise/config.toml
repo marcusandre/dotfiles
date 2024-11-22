@@ -1,6 +1,5 @@
 [tools]
 usage = "latest"
-neovim = "nightly"
 
 [settings]
 verbose = false

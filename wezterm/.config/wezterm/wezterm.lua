@@ -1,5 +1,4 @@
 local wezterm = require("wezterm")
-
 local config = wezterm.config_builder()
 
 -- General
@@ -13,23 +12,18 @@ config.font = wezterm.font_with_fallback({
   "Berkeley Mono",
 })
 
-config.font_size = 14
+config.font_size = 15
 config.line_height = 1.125
 
 config.initial_rows = 50
 config.initial_cols = 200
 
-config.term = "wezterm"
-config.set_environment_variables = {
-  TERMINFO_DIRS = wezterm.home_dir .. "/.terminfo",
-}
-
 -- Colors
 local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
-    return "tokyonight"
+    return "Poimandres"
   else
-    return "tokyonight"
+    return "Poimandres"
   end
 end
 
@@ -70,7 +64,6 @@ end
 
 config.keys = {
   { mods = "ALT", key = "Enter", action = "DisableDefaultAssignment" },
-  { mods = "ALT", key = "\\", action = action.ShowTabNavigator },
   { mods = "CMD", key = ",", action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
   { mods = "CMD", key = ".", action = action.SplitVertical({ domain = "CurrentPaneDomain" }) },
   { mods = "CMD", key = "DownArrow", action = action.AdjustPaneSize({ "Down", 5 }) },

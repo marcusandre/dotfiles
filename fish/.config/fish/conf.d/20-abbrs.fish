@@ -1,4 +1,4 @@
+abbr -a do "cd ~/src/projects/github.com/marcusandre/dotfiles"
 abbr -a mkdir "mkdir -p"
-abbr -a rf "rm -fr"
-abbr -a tcd "cd (mktemp -d)"
-abbr -a x exit
+abbr -a rf "rm -rf"
+abbr -a lg lazygit
