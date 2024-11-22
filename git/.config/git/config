@@ -5,38 +5,13 @@
 [includeIf "gitdir:~/src/work/"]
   path = ~/.config/git/config-work/
 
-[alias]
-  amend = commit --amend
-  cleanup = "!git branch | grep -v $(git main-branch) | grep -v $(git branch --show-current) | xargs git branch -D"
-  famend = commit --amend --no-edit --no-verify
-  git = "!git"
-  ll = log --pretty=format:'%C(yellow)%h%C(cyan)%d%C(reset) %s %C(green)(%ar) %C(blue)<%an>%C(reset)' --graph --decorate
-  main-branch = "!git remote show origin | sed -n '/HEAD branch/s/.*: //p'"
-  nana = !"git checkout -- .; git clean -fd"
-  publish = push origin HEAD --force-with-lease
-  rb = "!sh -c \"git rebase -i HEAD~$1\" -"
-  rbi = rebase -i --keep-base
-  root = rev-parse --show-toplevel
-  squash = "!git rebase -v -i $(git main-branch)"
-  sync = "!git fetch --prune && git rebase origin/$(git main-branch)"
-  undo = !"git reset --soft \"HEAD^\" && git diff --stat"
-  wip = !"git add . && git commit -n -m \"wip\""
+[core]
+  excludesfile = ~/.config/git/ignore
 
 [commit]
   push = current
   verbose = true
   gpgSign = true
-
-[core]
-  excludesfile = ~/.config/git/ignore
-
-[push]
-  default = current
-  autoSetupRemote = true
-
-[pull]
-  rebase = true
-  twohead = ort
 
 [diff]
   algorithm = histogram
@@ -46,20 +21,19 @@
 [log]
   date = local
 
+[push]
+  default = current
+  autoSetupRemote = true
+
+[pull]
+  rebase = true
+  twohead = ort
+
 [rebase]
   autosquash = true
 
 [merge]
   conflictstyle = zdiff3
-
-[tag]
-  gpgSign = true
-
-[gpg]
-  format = ssh
-
-[credential]
-  helper = osxkeychain
 
 [rerere]
   enabled = true
@@ -72,3 +46,12 @@
 
 [init]
   defaultBranch = main
+
+[tag]
+  gpgSign = true
+
+[gpg]
+  format = ssh
+
+[credential]
+  helper = osxkeychain

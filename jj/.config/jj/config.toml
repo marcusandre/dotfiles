@@ -1,6 +1,11 @@
-[ui]
-default-command = "log"
-diff-editor = "diffedit3"
+[user]
+name = "Marcus André"
+email = "102828+marcusandre@users.noreply.github.com"
 
-[git]
-auto-local-branch = true
+[signing]
+sign-all = true
+backend = "ssh"
+key = "~/.ssh/id_ed25519_personal_sign.pub"
+
+[ui]
+diff-editor = "diffedit3"
