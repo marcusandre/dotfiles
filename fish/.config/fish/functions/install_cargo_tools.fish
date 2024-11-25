@@ -2,7 +2,8 @@ function install_cargo_tools
     if type -q cargo
         set tools \
             cargo-update \
-            diffedit3
+            diffedit3 \
+            simple-http-server
 
         cargo install cargo-binstall
 
