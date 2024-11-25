@@ -14,7 +14,7 @@
   "ui_font_family": "Input Mono Condensed",
   "theme": {
     "mode": "system",
-    "light": "poimandres",
-    "dark": "poimandres"
+    "light": "Tokyo Night Light",
+    "dark": "Tokyo Night"
   }
 }

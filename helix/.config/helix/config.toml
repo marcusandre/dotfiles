@@ -1,4 +1,4 @@
-theme = "poimandres"
+theme = "tokyonight"
 
 [editor]
 bufferline = "always"
