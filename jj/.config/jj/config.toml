@@ -8,4 +8,5 @@ backend = "ssh"
 key = "~/.ssh/id_ed25519_personal_sign.pub"
 
 [ui]
+default-command = "log"
 diff-editor = "diffedit3"
