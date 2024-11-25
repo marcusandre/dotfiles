@@ -3,6 +3,6 @@ if status --is-interactive
         abbr -a gd "git diff"
         abbr -a gp "git push"
         abbr -a gs "git status --short"
-        abbr -a gl "git log"
+        abbr -a gl "git log --oneline --graph --decorate --branches"
     end
 end
