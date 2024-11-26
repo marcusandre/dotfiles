@@ -33,3 +33,4 @@ x = ":buffer-close"
 X = ":buffer-close-others"
 w = ":write"
 "space" = ":buffer-previous"
+o = { f = [":toggle-option auto-format"] }
