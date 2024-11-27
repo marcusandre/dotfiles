@@ -11,13 +11,15 @@ return {
   opts = {
     sources = {
       completion = {
-        enabled_providers = { "lsp", "path", "snippets", "buffer", "ripgrep" },
+        enabled_providers = { "lsp", "path", "snippets", "buffer", "ripgrep", "lazydev" },
       },
       providers = {
         ripgrep = {
           module = "blink-cmp-rg",
           name = "Ripgrep",
         },
+        lsp = { fallback_for = { "lazydev" } },
+        lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
       },
     },
   },
