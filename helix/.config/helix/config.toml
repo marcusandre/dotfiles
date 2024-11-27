@@ -31,7 +31,7 @@ A-k = [
 
 [keys.normal.space]
 X = ":buffer-close-others"
-q = ":quit-all"
+q = ":quit"
 w = ":write"
 x = ":buffer-close"
 "space" = ":buffer-previous"
