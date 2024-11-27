@@ -1,4 +1,4 @@
-if type -q hx
-    set -gx EDITOR hx
-    abbr -a e hx
+if type -q nvim
+    set -gx EDITOR nvim
+    abbr -a e nvim
 end

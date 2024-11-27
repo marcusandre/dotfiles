@@ -1,4 +1,5 @@
 [tools]
+neovim = "nightly"
 usage = "latest"
 
 [settings]

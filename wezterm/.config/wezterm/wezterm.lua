@@ -21,9 +21,9 @@ config.initial_cols = 200
 -- Colors
 local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
-    return "tokyonight"
+    return "NvimDark"
   else
-    return "tokyonight"
+    return "NvimDark"
   end
 end
 
