@@ -1,9 +1,11 @@
 theme = "tokyonight"
 
 [editor]
+auto-pairs = false
 bufferline = "always"
 color-modes = true
 line-number = "relative"
+true-color = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -28,9 +30,16 @@ A-k = [
 ]
 
 [keys.normal.space]
-q = ":quit-all"
-x = ":buffer-close"
 X = ":buffer-close-others"
+q = ":quit-all"
 w = ":write"
+x = ":buffer-close"
 "space" = ":buffer-previous"
-o = { f = [":toggle-option auto-format"] }
+
+[keys.normal.space.o]
+f = [":toggle-option auto-format"]
+i = [":toggle-option lsp.inlay-hints"]
+
+[keys.normal.space.l]
+f = [":format"]
+g = [":sh gh browse"]
