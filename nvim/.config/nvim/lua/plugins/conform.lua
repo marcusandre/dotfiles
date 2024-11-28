@@ -9,11 +9,9 @@ return {
       just = { "just", "squeeze_blanks", "indent_expr" },
       lua = { "stylua" },
       query = { "format-queries" },
-      roc = { "roc" },
       rust = { "rustfmt" },
       terraform = { "terraform_fmt" },
       toml = { "taplo" },
-      zig = { "zigfmt" },
     },
     format_on_save = {
       timeout_ms = 500,

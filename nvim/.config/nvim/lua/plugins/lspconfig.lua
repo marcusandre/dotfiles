@@ -15,7 +15,6 @@ return {
       "hclfmt",
       "stylua",
       "taplo",
-      "zls",
       "vtsls",
     }
 
@@ -46,6 +45,28 @@ return {
             },
           },
         },
+      },
+      rust_analyzer = {
+        settings = {
+          ["rust-analyzer"] = {
+            imports = {
+              granularity = {
+                group = "module",
+              },
+              prefix = "self",
+            },
+            cargo = {
+              buildScripts = {
+                enable = true,
+              },
+            },
+            procMacro = {
+              enable = true,
+            },
+          },
+        },
+        ---@diagnostic disable-next-line: unused-local
+        on_attach = function(client, bufnr) vim.lsp.inlay_hint.enable(true, { bufnr = bufnr }) end,
       },
     }
 

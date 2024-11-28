@@ -29,17 +29,20 @@ require("lazy").setup({
   change_detection = { enabled = false },
 })
 
+-- Options
 vim.opt.inccommand = "split"
 vim.opt.visualbell = true
+vim.opt.relativenumber = true
 
+-- Color
 vim.cmd("colorscheme default")
 
+-- Keymaps
+vim.keymap.set("i", "kj", "<Esc>")
+
+-- Keymaps (leader)
 vim.keymap.set("n", "<leader>w", "<Cmd>write<CR>", { desc = "Write" })
 vim.keymap.set("n", "<leader>q", "<Cmd>quit<CR>", { desc = "Quit" })
 
+-- Keymaps (buffer)
 vim.keymap.set("n", "<leader><space>", "<Cmd>b#<CR>", { desc = "Alternate buffer" })
-
-vim.keymap.set("n", "j", "gj")
-vim.keymap.set("n", "k", "gk")
-
-vim.keymap.set("i", "kj", "<Esc>")
