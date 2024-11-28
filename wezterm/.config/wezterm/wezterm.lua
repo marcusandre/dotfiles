@@ -23,7 +23,7 @@ local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
     return "NvimDark"
   else
-    return "NvimDark"
+    return "NvimLight"
   end
 end
 
