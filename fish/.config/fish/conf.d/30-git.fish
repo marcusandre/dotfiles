@@ -1,5 +1,6 @@
 if status --is-interactive
     if type -q git
+        abbr -a gap "git add -p"
         abbr -a gd "git diff"
         abbr -a gl "git log --oneline --graph --decorate --branches"
         abbr -a gp "git push"
