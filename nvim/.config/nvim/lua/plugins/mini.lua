@@ -32,6 +32,7 @@ return {
     require("mini.bufremove").setup()
     require("mini.diff").setup()
     require("mini.extra").setup()
+    require("mini.git").setup()
     require("mini.icons").setup()
     require("mini.move").setup()
     require("mini.notify").setup()
