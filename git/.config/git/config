@@ -9,7 +9,7 @@
   famend = commit --amend --no-edit --no-verify
   git = "!git"
   main-branch = "!git remote show origin | sed -n '/HEAD branch/s/.*: //p'"
-  forget = !"git checkout -- .; git clean -fd"
+  nana = !"git checkout -- .; git clean -fd"
   overwrite = push origin HEAD --force-with-lease
   rb = "!sh -c \"git rebase -i HEAD~$1\" -"
   root = rev-parse --show-toplevel
