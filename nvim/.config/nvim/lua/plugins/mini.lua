@@ -34,11 +34,17 @@ return {
     require("mini.extra").setup()
     require("mini.icons").setup()
     require("mini.move").setup()
+    require("mini.notify").setup()
     require("mini.pick").setup()
     require("mini.statusline").setup()
     require("mini.surround").setup()
     require("mini.tabline").setup()
     require("mini.trailspace").setup()
+
+    local MiniMisc = require("mini.misc")
+
+    MiniMisc.setup_auto_root()
+    MiniMisc.setup_restore_cursor()
 
     vim.ui.select = MiniPick.ui_select
   end,
