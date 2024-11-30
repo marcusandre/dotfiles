@@ -27,7 +27,6 @@ return {
   },
   config = function()
     require("mini.ai").setup()
-    require("mini.basics").setup({ options = { extra_ui = true } })
     require("mini.bracketed").setup()
     require("mini.bufremove").setup()
     require("mini.diff").setup()
@@ -42,11 +41,19 @@ return {
     require("mini.tabline").setup()
     require("mini.trailspace").setup()
 
+    -- MiniBasics
+    require("mini.basics").setup({
+      options = { extra_ui = true },
+      autocommands = { relnum_in_visual_mode = false },
+    })
+
+    -- MiniMisc
     local MiniMisc = require("mini.misc")
 
     MiniMisc.setup_auto_root()
     MiniMisc.setup_restore_cursor()
 
+    -- MiniPick
     vim.ui.select = MiniPick.ui_select
   end,
 }

@@ -32,10 +32,9 @@ require("lazy").setup({
 -- Options
 vim.opt.inccommand = "split"
 vim.opt.visualbell = true
-vim.opt.relativenumber = true
 
 -- Color
--- vim.cmd("colorscheme randomhue")
+vim.cmd("colorscheme minigrey")
 
 -- Keymaps
 vim.keymap.set("i", "kj", "<Esc>")

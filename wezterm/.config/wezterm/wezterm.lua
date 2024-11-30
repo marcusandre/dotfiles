@@ -13,7 +13,7 @@ config.font = wezterm.font_with_fallback({
 })
 
 config.font_size = 16
-config.line_height = 1.125
+config.line_height = 1.1
 
 config.initial_rows = 50
 config.initial_cols = 200
