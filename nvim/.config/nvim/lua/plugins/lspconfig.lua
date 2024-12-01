@@ -18,6 +18,7 @@ return {
       "stylua",
       "taplo",
       "vtsls",
+      "zls",
     }
 
     local servers = {
@@ -97,6 +98,7 @@ return {
     local capabilities = vim.lsp.protocol.make_client_capabilities()
 
     require("lspconfig").gleam.setup({})
+    require("lspconfig").zls.setup({})
 
     require("mason-lspconfig").setup({
       handlers = {
