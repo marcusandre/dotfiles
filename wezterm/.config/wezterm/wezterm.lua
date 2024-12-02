@@ -19,6 +19,17 @@ config.initial_rows = 50
 config.initial_cols = 200
 
 -- Colors
+local dark_theme = wezterm.color.get_builtin_schemes()["NvimDark"]
+dark_theme.background = "#212223"
+
+local light_theme = wezterm.color.get_builtin_schemes()["NvimLight"]
+light_theme.background = "#e1e2e3"
+
+config.color_schemes = {
+  ["NvimDark"] = dark_theme,
+  ["NvimLight"] = light_theme,
+}
+
 local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
     return "NvimDark"
