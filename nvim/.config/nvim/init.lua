@@ -32,6 +32,7 @@ require("lazy").setup({
 -- Options
 vim.opt.inccommand = "split"
 vim.opt.visualbell = true
+vim.opt.relativenumber = true
 
 -- Color
 vim.cmd("colorscheme minigrey")

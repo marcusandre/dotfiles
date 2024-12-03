@@ -44,7 +44,6 @@ return {
     -- MiniBasics
     require("mini.basics").setup({
       options = { extra_ui = true },
-      autocommands = { relnum_in_visual_mode = false },
     })
 
     -- MiniMisc
