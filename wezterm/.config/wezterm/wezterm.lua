@@ -32,9 +32,9 @@ config.color_schemes = {
 
 local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
-    return "NvimDark"
+    return "tokyonight"
   else
-    return "NvimLight"
+    return "tokyonight"
   end
 end
 

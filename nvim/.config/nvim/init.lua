@@ -35,7 +35,7 @@ vim.opt.visualbell = true
 vim.opt.relativenumber = true
 
 -- Color
-vim.cmd("colorscheme minigrey")
+vim.cmd("colorscheme tokyonight")
 
 -- Keymaps
 vim.keymap.set("i", "kj", "<Esc>")
