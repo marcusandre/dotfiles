@@ -32,9 +32,9 @@ config.color_schemes = {
 
 local scheme_for_appearance = function(appearance)
   if appearance:find("Dark") then
-    return "tokyonight"
+    return "terafox"
   else
-    return "tokyonight"
+    return "terafox"
   end
 end
 
