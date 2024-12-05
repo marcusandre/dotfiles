@@ -12,6 +12,11 @@
   "buffer_font_size": 14,
   "buffer_font_family": "Input Mono Condensed",
   "ui_font_family": "Input Mono Condensed",
+  "terminal": {
+    "env": {
+      "EDITOR": "zed --wait"
+    }
+  },
   "theme": {
     "mode": "system",
     "light": "Tokyo Night Light",
