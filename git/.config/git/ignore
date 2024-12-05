@@ -6,3 +6,4 @@ npm-debug.log
 .projections.json
 .mise.toml
 mise.toml
+.zed/
