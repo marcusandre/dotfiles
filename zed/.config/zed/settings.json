@@ -19,7 +19,11 @@
   },
   "theme": {
     "mode": "system",
-    "light": "Dayfox",
+    "light": "Atelier Sulphurpool Light",
     "dark": "Terafox"
+  },
+  "features": {
+    "copilot": false,
+    "inline_completion_provider": "none"
   }
 }
