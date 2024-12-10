@@ -3,6 +3,10 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-ui-select.nvim",
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
+    },
   },
   enabled = true,
   tag = "0.1.8",
@@ -39,5 +43,6 @@ return {
     })
 
     telescope.load_extension("ui-select")
+    telescope.load_extension("fzf")
   end,
 }
