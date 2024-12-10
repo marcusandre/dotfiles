@@ -5,7 +5,7 @@ return {
     "nvim-telescope/telescope-ui-select.nvim",
     {
       "nvim-telescope/telescope-fzf-native.nvim",
-      build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
+      build = "make",
     },
   },
   enabled = true,
@@ -16,10 +16,11 @@ return {
     { "<leader>'", "<Cmd>Telescope resume<CR>", desc = "Open last picker" },
     { "<leader>/", "<Cmd>Telescope live_grep<CR>", desc = "Global search in workspace folder" },
     { "<leader>b", "<Cmd>Telescope buffers<CR>", desc = "Open buffers picker" },
-    { "<leader>F", "<Cmd>Telescope git_files<CR>", desc = "Open git files picker" },
     { "<leader>f", "<Cmd>Telescope find_files<CR>", desc = "Open files picker" },
+    { "<leader>F", "<Cmd>Telescope git_files<CR>", desc = "Open git files picker" },
     { "<leader>g", "<Cmd>Telescope git_status<CR>", desc = "Open modified buffers" },
     { "<leader>h", "<Cmd>Telescope help_tags<CR>", desc = "Open help tags" },
+    { "<leader>O", "<Cmd>Telescope oldfiles<CR>", desc = "Open previous files" },
     {
       "<leader>C",
       function()
@@ -43,10 +44,28 @@ return {
   config = function()
     local telescope = require("telescope")
 
+    local picker_options = function(picker_options)
+      local options = picker_options or {}
+      return vim.tbl_extend("force", { theme = "ivy" }, options)
+    end
+
     telescope.setup({
+      pickers = {
+        buffers = picker_options(),
+        diagnostics = picker_options(),
+        find_files = picker_options(),
+        git_files = picker_options(),
+        git_status = picker_options(),
+        lsp_definitions = picker_options(),
+        lsp_document_symbols = picker_options(),
+        lsp_dynamic_workspace_symbols = picker_options(),
+        lsp_implementations = picker_options(),
+        lsp_references = picker_options(),
+        lsp_type_definitions = picker_options(),
+      },
       extensions = {
         ["ui-select"] = {
-          require("telescope.themes").get_dropdown(),
+          require("telescope.themes").get_ivy(),
         },
       },
     })
