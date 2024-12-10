@@ -9,15 +9,18 @@ return {
   },
   config = function()
     local tools = {
+      "bashls",
       "eslint-lsp",
       "gofumpt",
       "goimports",
       "golines",
       "hclfmt",
       "prettier",
+      "shfmt",
       "stylua",
       "taplo",
       "vtsls",
+      "yamlfmt",
       "zls",
     }
 
@@ -97,6 +100,7 @@ return {
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
 
+    require("lspconfig").bashls.setup({})
     require("lspconfig").gleam.setup({})
     require("lspconfig").zls.setup({})
 

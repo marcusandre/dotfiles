@@ -12,10 +12,12 @@ return {
       lua = { "stylua" },
       query = { "format-queries" },
       rust = { "rustfmt" },
+      sh = { "shfmt" },
       terraform = { "terraform_fmt" },
       toml = { "taplo" },
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
+      yaml = { "yamlfmt" },
     },
     format_on_save = {
       timeout_ms = 500,
