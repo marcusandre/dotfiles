@@ -20,6 +20,15 @@ return {
     { "<leader>f", "<Cmd>Telescope find_files<CR>", desc = "Open files picker" },
     { "<leader>g", "<Cmd>Telescope git_status<CR>", desc = "Open modified buffers" },
     { "<leader>h", "<Cmd>Telescope help_tags<CR>", desc = "Open help tags" },
+    {
+      "<leader>C",
+      function()
+        require("telescope.builtin").find_files({
+          cwd = vim.fn.stdpath("config"),
+        })
+      end,
+      desc = "Open help tags",
+    },
 
     -- LSP
     { "<leader>d", "<Cmd>Telescope diagnostics<CR>", desc = "Open workspace diagnostics picker (LSP)" },
