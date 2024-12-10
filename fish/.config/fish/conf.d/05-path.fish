@@ -1,5 +1,5 @@
 if status --is-interactive
-    if test -f $HOME/.cargo/env.fish
+    if test -d $HOME/bin
         fish_add_path -mg "$HOME/bin"
     end
 end
