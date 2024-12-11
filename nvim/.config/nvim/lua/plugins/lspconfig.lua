@@ -14,12 +14,13 @@ return {
       "gofumpt",
       "goimports",
       "golines",
-      "hclfmt",
       "prettier",
       "ruff",
       "shfmt",
       "stylua",
       "taplo",
+      "terraformls",
+      "tflint",
       "vtsls",
       "yamlfmt",
       "zls",
@@ -113,6 +114,7 @@ return {
 
     require("lspconfig").bashls.setup({})
     require("lspconfig").gleam.setup({})
+    require("lspconfig").terraformls.setup({})
     require("lspconfig").zls.setup({})
 
     ---@diagnostic disable-next-line: missing-fields
