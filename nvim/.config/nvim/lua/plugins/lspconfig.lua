@@ -16,6 +16,7 @@ return {
       "golines",
       "hclfmt",
       "prettier",
+      "ruff",
       "shfmt",
       "stylua",
       "taplo",
@@ -66,6 +67,16 @@ return {
           },
         },
       },
+      ruff = {
+        settings = {
+          cmd_env = { RUFF_TRACE = "messages" },
+          init_options = {
+            settings = {
+              logLevel = "error",
+            },
+          },
+        },
+      },
       rust_analyzer = {
         settings = {
           ["rust-analyzer"] = {
@@ -104,6 +115,7 @@ return {
     require("lspconfig").gleam.setup({})
     require("lspconfig").zls.setup({})
 
+    ---@diagnostic disable-next-line: missing-fields
     require("mason-lspconfig").setup({
       handlers = {
         function(server_name)
@@ -116,6 +128,7 @@ return {
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("custom-lsp-attach", { clear = true }),
+      ---@diagnostic disable-next-line: unused-local
       callback = function(event)
         -- Code Actions
         vim.keymap.set({ "n", "x" }, "<space>a", vim.lsp.buf.code_action, { desc = "Apply code action (LSP)" })

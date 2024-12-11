@@ -10,6 +10,7 @@ return {
       javascriptreact = { "prettier" },
       just = { "just", "squeeze_blanks", "indent_expr" },
       lua = { "stylua" },
+      python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
       query = { "format-queries" },
       rust = { "rustfmt" },
       sh = { "shfmt" },

@@ -9,8 +9,11 @@ return {
     configs.setup({
       ensure_installed = {
         "diff",
+        "python",
         "fish",
         "git_config",
+        "ninja",
+        "rst",
         "git_rebase",
         "gitattributes",
         "gitcommit",
