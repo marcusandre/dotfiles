@@ -21,6 +21,12 @@ return {
     { "<leader>g", "<Cmd>Telescope git_status<CR>", desc = "Open modified buffers" },
     { "<leader>h", "<Cmd>Telescope help_tags<CR>", desc = "Open help tags" },
     { "<leader>O", "<Cmd>Telescope oldfiles<CR>", desc = "Open previous files" },
+    { "<leader>W", "<Cmd>Telescope grep_string<CR>", desc = "Find word under cursor" },
+    {
+      "<leader>M",
+      function() require("utils.telescope").live_multigrep(require("telescope.themes").get_ivy()) end,
+      desc = "Find word under cursor",
+    },
     {
       "<leader>C",
       function()
@@ -56,6 +62,7 @@ return {
         find_files = picker_options(),
         git_files = picker_options(),
         git_status = picker_options(),
+        grep_string = picker_options(),
         lsp_definitions = picker_options(),
         lsp_document_symbols = picker_options(),
         lsp_dynamic_workspace_symbols = picker_options(),
