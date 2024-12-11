@@ -7,5 +7,6 @@ if status --is-interactive
         abbr -a gp "git push"
         abbr -a gr "cd (git root)"
         abbr -a gs "git status --short"
+        abbr -a gu "git sync"
     end
 end
