@@ -110,8 +110,6 @@ return {
       ensure_installed = ensure_installed,
     })
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-
     require("lspconfig").bashls.setup({})
     require("lspconfig").gleam.setup({})
     require("lspconfig").terraformls.setup({})
@@ -122,20 +120,22 @@ return {
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}
-          server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+
+          local capabilities = vim.lsp.protocol.make_client_capabilities()
+          local blick_capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+          server.capabilities = vim.tbl_deep_extend("force", {}, blick_capabilities, server.capabilities or {})
+
           require("lspconfig")[server_name].setup(server)
         end,
       },
     })
 
     vim.api.nvim_create_autocmd("LspAttach", {
-      group = vim.api.nvim_create_augroup("custom-lsp-attach", { clear = true }),
-      ---@diagnostic disable-next-line: unused-local
-      callback = function(event)
-        -- Code Actions
-        vim.keymap.set({ "n", "x" }, "<space>a", vim.lsp.buf.code_action, { desc = "Apply code action (LSP)" })
+      callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if not client then return end
 
-        -- Rename
+        vim.keymap.set({ "n", "x" }, "<space>a", vim.lsp.buf.code_action, { desc = "Apply code action (LSP)" })
         vim.keymap.set("n", "<space>r", vim.lsp.buf.rename, { desc = "Rename symbol (LSP)" })
       end,
     })
