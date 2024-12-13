@@ -56,20 +56,7 @@ return {
     end
 
     telescope.setup({
-      pickers = {
-        buffers = picker_options(),
-        diagnostics = picker_options(),
-        find_files = picker_options(),
-        git_files = picker_options(),
-        git_status = picker_options(),
-        grep_string = picker_options(),
-        lsp_definitions = picker_options(),
-        lsp_document_symbols = picker_options(),
-        lsp_dynamic_workspace_symbols = picker_options(),
-        lsp_implementations = picker_options(),
-        lsp_references = picker_options(),
-        lsp_type_definitions = picker_options(),
-      },
+      defaults = require("telescope.themes").get_ivy(),
       extensions = {
         ["ui-select"] = {
           require("telescope.themes").get_ivy(),
